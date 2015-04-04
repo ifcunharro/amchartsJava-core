@@ -1,6 +1,6 @@
-package amcharts.AmXYChart;
+package amcharts.model.AmXYChart;
 
-import amcharts.TrendLine.ITrendLine;
+import amcharts.model.api.TrendLine.ITrendLine;
 
 public class TrendLineXY extends ITrendLine{
 	
@@ -19,6 +19,7 @@ public class TrendLineXY extends ITrendLine{
 	public void setInitialXValue(Number initialXValue){
 		trendLine.put("initialXValue", initialXValue);
 	}
-	//falta valueaxis not implemented
+	
+	
 
 }

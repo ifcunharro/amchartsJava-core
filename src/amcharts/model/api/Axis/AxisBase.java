@@ -1,4 +1,4 @@
-package amcharts.Axis;
+package amcharts.model.api.Axis;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,13 +38,11 @@ public abstract class AxisBase {
 		
 	}
 
-	public Object getId() {
-		return null;
-	}
+	
 
-	public void setId(String string) {
+	
 		
-	}
+	
 	
 
 	

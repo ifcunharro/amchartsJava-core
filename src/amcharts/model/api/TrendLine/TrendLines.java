@@ -1,4 +1,4 @@
-package amcharts.TrendLine;
+package amcharts.model.api.TrendLine;
 
 
 import java.util.ArrayList;

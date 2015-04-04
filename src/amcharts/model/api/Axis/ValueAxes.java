@@ -1,10 +1,8 @@
-package amcharts.ValueAxes;
+package amcharts.model.api.Axis;
 
 
 import java.util.ArrayList;
 import java.util.List;
-
-import amcharts.Axis.AxisBase;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -21,11 +19,10 @@ public class ValueAxes implements IValueAxes{
 		valueAxes = new ArrayList<AxisBase>();	
 	}
 	
-	
-	
 	public List<AxisBase> getValueAxes() {
 		return valueAxes;
 	}
+	
 
 	@JsonIgnore
 	public static int getSize(){

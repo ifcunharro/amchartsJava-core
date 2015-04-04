@@ -1,8 +1,6 @@
-package amcharts.ValueAxes;
+package amcharts.model.api.Axis;
 
 import java.util.List;
-
-import amcharts.Axis.AxisBase;
 
 public interface IValueAxes {
 

@@ -2,16 +2,13 @@ package pruebaJackson;
 
 import java.io.IOException;
 
-import amcharts.AmSerialChart.TrendLine;
-import amcharts.AmXYChart.TrendLineXY;
-import amcharts.Axis.AxisBase;
-import amcharts.TrendLine.ITrendLine;
-import amcharts.TrendLine.TrendLines;
-import amcharts.ValueAxis.ValueAxis;
+import amcharts.model.AmSerialChart.TrendLineSerial;
+import amcharts.model.api.Axis.ValueAxis;
+import amcharts.model.api.TrendLine.ITrendLine;
+import amcharts.model.api.TrendLine.TrendLines;
+import amcharts.model.parser.ParserJson;
 
-import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 
 
 
@@ -25,21 +22,24 @@ public class Principal {
 	      
 	      TrendLines nt = new TrendLines();
 	     
-	      ITrendLine tren = new TrendLine();
+	      ITrendLine tren = new TrendLineSerial();
 	      
 	      tren.setFinalValue(11);
 	      tren.setLineColor("#FF6600");
-	      TrendLine tren2 = new TrendLine();
+	      ValueAxis val = new ValueAxis();
+	      val.setId("ola");
+	      val.setDurationUnits("DD","mola");
+	      TrendLineSerial tren2 = new TrendLineSerial();
 	      tren2.setFinalValue(11);
 	      tren2.setLineColor("#FF6600");
+	      tren2.setValueAxis(val.getId().toString());
+	      
 	      nt.addTrendLine(tren);
 	      nt.addTrendLine(tren2);
-	      AxisBase val = new ValueAxis();
-	      val.setId("ola");
 	      
 	      
 	    
-	      ObjectMapper mapper = new ObjectMapper();
+	      ObjectMapper mapper = ParserJson.getParserJson();
 	     
 	       try {
 	    	  //escribe a fichero 
@@ -48,13 +48,11 @@ public class Principal {
 	    	   
 	    	   //mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, false);
 	    	   //mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
-	    	   mapper.enable(SerializationFeature.INDENT_OUTPUT);
-	    	   
-	    	   mapper.writeValue(System.out,val);
-	    	   
+	    	
+	    	   mapper.writeValue(System.out,nt);
 	    	   
 	    	   
-		} catch (IOException e) {
+	    } catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -69,6 +67,6 @@ public class Principal {
 	       //System.out.println(employee);
 	   }
 
-	}
+}
 
 

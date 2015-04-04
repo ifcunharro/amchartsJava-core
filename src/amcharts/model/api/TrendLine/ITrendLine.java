@@ -1,4 +1,4 @@
-package amcharts.TrendLine;
+package amcharts.model.api.TrendLine;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -110,6 +110,14 @@ public abstract class ITrendLine {
 
 	public final void setLineThickness(Integer lineThickness) {
 		trendLine.put("lineThickness", lineThickness);
+	}
+	
+	public Object getValueAxis(){
+		return trendLine.get("valueAxis");
+	}
+	
+	public void setValueAxis(String idValueAxis){
+		trendLine.put("valueAxis", idValueAxis);
 	}
 	
 }
