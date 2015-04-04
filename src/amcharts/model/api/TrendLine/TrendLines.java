@@ -4,10 +4,7 @@ package amcharts.model.api.TrendLine;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-@JsonInclude(Include.NON_EMPTY)
 public class TrendLines implements ITrendLines{
 	//trendLines es un list para ayudar al parseo Json
 	private List<ITrendLine> trendLines;

@@ -85,6 +85,15 @@ public class ValueAxis extends AxisBase{
 		axis.put("labelFunction", labelFunction);
 	}
 	
+	public Object IsLogarithmic(){
+		return axis.get("logarithmic");
+	}
+	
+	public void setLogarithmic(Boolean logarithmic){
+		axis.put("logarithmic", logarithmic);
+	}
+	
+	
 	
 	public Object getId(){
 		return axis.get("id");

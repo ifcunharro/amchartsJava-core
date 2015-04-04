@@ -1,4 +1,4 @@
-package amcharts.model.AmSerialChart;
+package amcharts.model.impl.TrendLine;
 
 import amcharts.model.api.TrendLine.ITrendLine;
 

@@ -2,10 +2,11 @@ package pruebaJackson;
 
 import java.io.IOException;
 
-import amcharts.model.AmSerialChart.TrendLineSerial;
 import amcharts.model.api.Axis.ValueAxis;
 import amcharts.model.api.TrendLine.ITrendLine;
 import amcharts.model.api.TrendLine.TrendLines;
+import amcharts.model.impl.TrendLine.TrendLineSerial;
+import amcharts.model.impl.TrendLine.TrendLineXY;
 import amcharts.model.parser.ParserJson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,11 +29,13 @@ public class Principal {
 	      tren.setLineColor("#FF6600");
 	      ValueAxis val = new ValueAxis();
 	      val.setId("ola");
+	      val.setLogarithmic(true);
 	      val.setDurationUnits("DD","mola");
-	      TrendLineSerial tren2 = new TrendLineSerial();
+	      ITrendLine tren2 = new TrendLineXY();
 	      tren2.setFinalValue(11);
 	      tren2.setLineColor("#FF6600");
 	      tren2.setValueAxis(val.getId().toString());
+	      
 	      
 	      nt.addTrendLine(tren);
 	      nt.addTrendLine(tren2);
