@@ -1,6 +1,6 @@
 package model.charts;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.AmBalloon;
@@ -8,33 +8,35 @@ import model.AmLegend;
 import model.Export;
 import model.IModel;
 import model.Label;
+import model.Prefix;
+import model.Title;
 
 public abstract class AmChart extends IModel {
 	protected List<Label> labels;
 	protected Export export;
 	protected AmBalloon amBalloon;
-	protected String creditsPosition;
+	protected List<Prefix> bigPrefixes;
+	protected List<Prefix> smallPrefixes;
 	//cambiar por clase y no es map es List<Map>
 	//protected DataProvider dataProvider;
 	//para filtros svg
 	//protected Defs defs;
 	protected AmLegend legend;
+	protected List<Title> titles;
 	
-	{
-		config = new HashMap<String, Object>();
-		//dataProvider = new DataProvider();
-	}
-
-	public Object getLabels() {
+	public List<Label> getLabels() {
 		return labels;
 	}
 
 	public void addLabel(Label label) {
+		if(labels==null){
+			labels = new ArrayList<Label>();
+		}
 		labels.add(label);
 		
 	}
 
-	public Object getExport() {
+	public Export getExport() {
 		return export;
 	}
 
@@ -43,7 +45,7 @@ public abstract class AmChart extends IModel {
 		
 	}
 
-	public Object getBalloon() {
+	public AmBalloon getBalloon() {
 		return amBalloon;
 	}
 
@@ -60,12 +62,46 @@ public abstract class AmChart extends IModel {
 		dataProvider.addData(dat);
 	}*/
 
-	public Object getLegend() {
+	public AmLegend getLegend() {
 		return legend;
 	}
 	
 	public void addLegend(AmLegend amLegend) {
 		legend = amLegend;
+		
+	}
+	
+	public List<Prefix> getBigPrefixes(){
+		return bigPrefixes;
+	}
+	
+	public void addBigPrefix(Number number, String prefix){
+		if(bigPrefixes==null){
+			bigPrefixes = new ArrayList<Prefix>();
+		}
+		bigPrefixes.add(new Prefix(number,prefix));
+	}
+	
+	public List<Prefix> getSmallPrefixes(){
+		return bigPrefixes;
+	}
+	
+	public void addSmallPrefix(Number number, String prefix){
+		if(smallPrefixes==null){
+			smallPrefixes = new ArrayList<Prefix>();
+		}
+		smallPrefixes.add(new Prefix(number,prefix));
+	}
+	
+	public List<Title> getTitles() {
+		return titles;
+	}
+
+	public void addTitle(Title title) {
+		if(titles==null){
+			titles = new ArrayList<Title>();
+		}
+		titles.add(title);
 		
 	}
 

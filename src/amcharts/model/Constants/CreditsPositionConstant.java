@@ -3,12 +3,11 @@ package amcharts.model.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
-import amcharts.model.Constants.MarkerTypeConstant.MarkerType;
 
 public final class CreditsPositionConstant {
 	
 	private static CreditsPositionConstant instance;
-	private static List<String> credits;
+	private List<String> credits;
 	
 	
 	private CreditsPositionConstant(){
@@ -18,7 +17,6 @@ public final class CreditsPositionConstant {
 	public static CreditsPositionConstant getInstance(){
 		if(instance==null){
 			instance = new CreditsPositionConstant();
-			credits = new ArrayList<String>();
 		}
 		return instance;
 	}
@@ -62,10 +60,12 @@ public final class CreditsPositionConstant {
 	}
 	
 	public List<String> values(){
-		for(MarkerType unit: MarkerType.values()){
-			credits.add(unit.toString());
+		if(credits==null){
+			credits = new ArrayList<String>();
+			for(CreditsPosition position: CreditsPosition.values()){
+				credits.add(position.toString());
+			}
 		}
-		
 		return credits;
 	}
 }

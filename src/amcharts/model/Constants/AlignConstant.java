@@ -3,12 +3,12 @@ package amcharts.model.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
-import amcharts.model.Constants.DurationUnitsConstant.DurationUnits;
 
 public final class AlignConstant {
 	
 	private static AlignConstant instance;
-	private static List<String> aligns;
+	private List<String> aligns;
+	private List<String> valueAligns;
 	
 	
 	private AlignConstant(){
@@ -18,13 +18,16 @@ public final class AlignConstant {
 	public static AlignConstant getInstance(){
 		if(instance==null){
 			instance = new AlignConstant();
-			aligns = new ArrayList<String>();
 		}
 		return instance;
 	}
 	
 	public enum Align{
 		 left, center, right;	 
+	}
+	
+	public enum ValueAlign{
+		left, right;
 	}
 	
 	public Align getLeft(){
@@ -39,13 +42,35 @@ public final class AlignConstant {
 		return Align.center;
 	}
 	
-	public List<String> values(){
-		for(DurationUnits unit: DurationUnits.values()){
-			aligns.add(unit.toString());
+	public ValueAlign getValueLeft(){
+		return ValueAlign.left;
+	}
+	
+	public ValueAlign getValueRight(){
+		return ValueAlign.right;
+	}
+	
+	public List<String> getAligns(){
+		if(aligns==null){
+			aligns = new ArrayList<String>();
+			for(Align unit: Align.values()){
+				aligns.add(unit.toString());
+			}
 		}
-		
 		return aligns;
 	}
+	
+	public List<String> getValueAligns(){
+		if(valueAligns==null){
+			valueAligns = new ArrayList<String>();
+			for(Align align: Align.values()){
+				valueAligns.add(align.toString());
+			}
+		}
+		return valueAligns;
+	}
+	
+	
 	
 }
 

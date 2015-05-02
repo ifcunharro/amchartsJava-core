@@ -3,7 +3,7 @@ package amcharts.model.api.Axis;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public abstract class AxisBase {
 	protected Map<String,Object> axis;
@@ -12,7 +12,7 @@ public abstract class AxisBase {
 		axis = new HashMap<String,Object>();
 	}
 	
-	@JsonGetter(value="autoGridCount")
+	@JsonProperty
 	public Object isAutoGridCount(){
 		return axis.get("autoGridCount");
 	}
@@ -37,15 +37,5 @@ public abstract class AxisBase {
 	public void setAxisColor(String axisColor){
 		
 	}
-
-	
-
-	
-		
-	
-	
-
-	
-
 	
 }

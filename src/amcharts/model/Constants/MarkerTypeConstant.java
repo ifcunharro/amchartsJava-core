@@ -6,7 +6,7 @@ import java.util.List;
 public final class MarkerTypeConstant {
 	
 	private static MarkerTypeConstant instance;
-	private static List<String> types; 
+	private List<String> types; 
 	
 	
 	private MarkerTypeConstant(){
@@ -16,7 +16,7 @@ public final class MarkerTypeConstant {
 	public static MarkerTypeConstant getInstance(){
 		if(instance==null){
 			instance = new MarkerTypeConstant(); 
-			types = new ArrayList<String>();
+			
 		}
 		return instance;
 	}
@@ -67,8 +67,11 @@ public final class MarkerTypeConstant {
 	}
 	
 	public List<String> values(){
-		for(MarkerType unit: MarkerType.values()){
-			types.add(unit.toString());
+		if(types==null){
+			types = new ArrayList<String>();
+			for(MarkerType type: MarkerType.values()){
+				types.add(type.toString());
+			}
 		}
 		
 		return types;

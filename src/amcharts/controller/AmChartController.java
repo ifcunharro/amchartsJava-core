@@ -1,14 +1,23 @@
 package amcharts.controller;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import amcharts.model.Constants.ChartTypesConstant.ChartType;
 import amcharts.model.Constants.CreditsPositionConstant.CreditsPosition;
+import amcharts.model.Constants.SeparatorConstant.Separator;
 import model.AmLegend;
 import model.Label;
+import model.Title;
 import model.charts.AmChart;
 
 public abstract class AmChartController {
 	
 	private AmChart amchart;
+	
+	private AmChartController(){
+		amchart.setFeature("pathToImages", "../amcharts/images");
+	}
 	
 	
 	//properties
@@ -80,8 +89,8 @@ public abstract class AmChartController {
 		return amchart.getFeature("decimalSeparator");
 	}
 	//punto o coma, ningun otro
-	public void setDecimalSeparator(String decimalSeparator){
-		amchart.setFeature("decimalSeparator",decimalSeparator);
+	public void setDecimalSeparator(Separator decimalSeparator){
+		amchart.setFeature("decimalSeparator",decimalSeparator.toString());
 	}
 	
 	public Object getFontFamily(){
@@ -140,6 +149,97 @@ public abstract class AmChartController {
 	public void setLanguage(String language){
 		amchart.setFeature("language", language);
 	}
+	
+	//only-read
+	public Object getLegendDiv(){
+		return amchart.getLegend().getFeature("divId");
+	}
+	
+	@JsonProperty
+	public Object isPanEventsEnabled(){
+		return amchart.getFeature("panEventsEnabled");
+	}
+	
+	public void setPanEventsEnabled(Boolean panEventsEnabled){
+		amchart.setFeature("panEventsEnabled", panEventsEnabled);
+	}
+	
+	public Object getPathToImages(){
+		return amchart.getFeature("pathToImages");
+	}
+	
+	public void setPathToImages(String pathToImages){
+		amchart.setFeature("pathToImages", pathToImages);
+	}
+	
+	public Object getPercentPrecision(){
+		return amchart.getFeature("percentPrecision");
+	}
+	
+	public void setPercentPrecision(Number percentPrecision){
+		amchart.setFeature("percentPrecision", percentPrecision);
+	}
+	
+	public Object getPrecision(){
+		return amchart.getFeature("precision");
+	}
+	
+	public void setPrecision(Number precision){
+		amchart.setFeature("precision", precision);
+	}
+	
+	public Object getPrefixesOfBigNumbers(){
+		return amchart.getBigPrefixes();
+	}
+	
+	public void addPrefixBigNumber(Number number, String prefix){
+		amchart.addBigPrefix(number, prefix);
+	}
+	
+	public Object getPrefixesOfSmallNumbers(){
+		return amchart.getBigPrefixes();
+	}
+	
+	public void addPrefixSmallNumber(Number number, String prefix){
+		amchart.addSmallPrefix(number, prefix);
+	}
+	
+	//nombre file js in folder themes sin extension,
+	//se puede crear el tuyo propio
+	public Object getTheme(){
+		return amchart.getFeature("theme");
+	}
+	
+	public void setTheme(String theme){
+		amchart.setFeature("theme", theme);
+	}
+	
+	public Object getThousandsSeparator(){
+		return amchart.getFeature("thousandsFeature");
+	}
+	
+	public void setThousandsSeparator(Separator thousandsSeparator){
+		amchart.setFeature("thousandsSeparator", thousandsSeparator.toString());
+	}
+	
+	public Object getTitles(){
+		return amchart.getTitles();
+	}
+	
+	public void addTitle(Title title){
+		amchart.addTitle(title);
+	}
+	
+	public Object getType(){
+		return amchart.getFeature("type");
+	}
+	
+	public void setType(ChartType type){
+		amchart.setFeature("type", type.toString());
+	}
+	
+	
+	
 	//methods 
 	//propio
 	public Object getAllLabels(){

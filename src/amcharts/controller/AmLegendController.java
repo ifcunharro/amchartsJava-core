@@ -1,11 +1,10 @@
 package amcharts.controller;
 
-
-
-
-import amcharts.model.Constants.AlignConstant;
+import amcharts.model.Constants.AlignConstant.Align;
+import amcharts.model.Constants.AlignConstant.ValueAlign;
 import amcharts.model.Constants.LegendPositionConstant.LegendPosition;
 import amcharts.model.Constants.MarkerTypeConstant.MarkerType;
+import amcharts.model.Constants.SwitchTypeConstant.SwitchType;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -26,7 +25,7 @@ public class AmLegendController {
 		return legend.getFeature("align");
 	}
 	//left center or right
-	public void setALign(AlignConstant align){
+	public void setALign(Align align){
 		legend.setFeature("align", align.toString());
 	}
 	
@@ -275,13 +274,172 @@ public class AmLegendController {
 		legend.setFeature("position", position.toString());
 	}
 	
+	@JsonProperty
+	public Object isReversedOrder(){
+		return legend.getFeature("reversedOrder");
+	}
 	
+	public void setReversedOrder(Boolean reversedOrder){
+		legend.setFeature("reversedOrder", reversedOrder);
+	}
 	
+	public Object getRight(){
+		return legend.getFeature("right");
+	}
 	
+	public void setRight(Number right){
+		legend.setFeature("right", right);
+	}
 	
+	public Object getRollOverColor(){
+		return legend.getFeature("rollOverColor");
+	}
 	
+	public void setRollOverColor(String rollOverColor){
+		legend.setFeature("rollOverColor", rollOverColor);
+	}
 	
+	public Object getRollOverGraphAlpha(){
+		return legend.getFeature("rollOverGraphAlpha");
+	}
 	
+	public void setRollOverGraphAlpha(Number rollOverGraphAlpha){
+		legend.setFeature("rollOverGraphAlpha", rollOverGraphAlpha);
+	}
 	
+	@JsonProperty
+	public Object isShowEntries(){
+		return legend.getFeature("showEntries");
+	}
+	
+	public void setShowEntries(Boolean showEntries){
+		legend.setFeature("showEntries", showEntries);
+	}
+	
+	public Object getSpacing(){
+		return legend.getFeature("spacing");
+	}
+	
+	public void setSpacing(Number spacing){
+		legend.setFeature("spacing", spacing);
+	}
+	
+	@JsonProperty
+	public Object isSwitchable(){
+		return legend.getFeature("switchable");
+	}
+	
+	public void setSwitchable(Boolean switchable){
+		legend.setFeature("switchable", switchable);
+	}
+	
+	public Object getSwitchColor(){
+		return legend.getFeature("switchable");
+	}
+	
+	public void setSwitchColor(String switchcolor){
+		legend.setFeature("switchcolor", switchcolor);
+	}
+	
+	public Object getSwitchType(){
+		return legend.getFeature("switchType");
+	}
+	
+	public void setSwitchType(SwitchType switchType){
+		legend.setFeature("switchType", switchType.toString());
+	}
+	
+	@JsonProperty
+	public Object isTextClickEnabled(){
+		return legend.getFeature("textClickEnabled");
+	}
+	
+	public void setTextClickEnabled(Boolean textClickEnabled){
+		legend.setFeature("textClickEnabled", textClickEnabled);
+	}
+	
+	public Object getTop(){
+		return legend.getFeature("top");
+	}
+	
+	public void setTop(Number top){
+		legend.setFeature("top", top);
+	}
+	
+	@JsonProperty
+	public Object isUseGraphSettings(){
+		return legend.getFeature("useGraphSettings");
+	}
+	
+	public void setUseGraphSettings(Boolean useGraphSettings){
+		legend.setFeature("useGraphSettings", useGraphSettings);
+	}
+	
+	@JsonProperty
+	public Object isUseMarkerColorForLabels(){
+		return legend.getFeature("useMarkerColorForLabels");
+	}
+	
+	public void setUseMarkerColorForLabels(Boolean useMarkerColorForLabels){
+		legend.setFeature("useMarkerColorForLabels", useMarkerColorForLabels);
+	}
+	
+	@JsonProperty
+	public Object isUseMarkerColorForValues(){
+		return legend.getFeature("useMarkerColorForValues");
+	}
+	
+	public void setUseMarkerColorForValues(Boolean useMarkerColorForValues){
+		legend.setFeature("useMarkerColorForValues", useMarkerColorForValues);
+	}
+	
+	public Object getValueAlign(){
+		return legend.getFeature("valueAlign");
+	}
+	
+	public void setValueAlign(ValueAlign valueAlign){
+		legend.setFeature("valueAlign", valueAlign.toString());
+	}
+	
+	public Object getValueFunction(){
+		return legend.getFeature("valueFunction");
+	}
+	
+	public void setValueFunction(String valueFunction){
+		legend.setFeature("valueFunction", valueFunction);
+	}
+	
+	public Object getValueText(){
+		return legend.getFeature("valueText");
+	}
+	
+	//texto entre [[]]
+	public void setValueText(String valueText){
+		legend.setFeature("valueText", valueText);
+	}
+	
+	public Object getValueWidth(){
+		return legend.getFeature("valueWidth");
+	}
+	
+	public void setValueWidth(Number valueWidth){
+		legend.setFeature("valueWidth", valueWidth);
+	}
+	
+	public Object getVerticalGap(){
+		return legend.getFeature("verticalGap");
+	}
+	
+	public void setVerticalGap(Number verticalGap){
+		legend.setFeature("verticalGap", verticalGap);
+	}
+	
+	public Object getWidth(){
+		return legend.getFeature("width");
+	}
+	
+	public void setWidth(Number width){
+		legend.setFeature("width", width);
+	}
 	
 }

@@ -7,7 +7,7 @@ import java.util.List;
 public final class DurationUnitsConstant {
 	
 	private static DurationUnitsConstant instance;
-	private static List<String> units;
+	private List<String> units;
 	
 	
 	private DurationUnitsConstant(){
@@ -17,7 +17,6 @@ public final class DurationUnitsConstant {
 	public static DurationUnitsConstant getInstance(){
 		if(instance==null){
 			instance = new DurationUnitsConstant();
-			units = new ArrayList<String>();
 		}
 		return instance;
 	}
@@ -43,8 +42,11 @@ public final class DurationUnitsConstant {
 	}
 	
 	public List<String> values(){
-		for(DurationUnits unit: DurationUnits.values()){
-			units.add(unit.toString());
+		if(units==null){
+			units = new ArrayList<String>();
+			for(DurationUnits unit: DurationUnits.values()){
+				units.add(unit.toString());
+			}
 		}
 		
 		return units;

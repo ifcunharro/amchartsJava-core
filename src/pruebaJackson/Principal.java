@@ -21,12 +21,13 @@ public class Principal {
 	public static void main(String[] args) {
 		
 		
-		
+		 
 	      
 	      TrendLines nt = new TrendLines();
 	     
 	      ITrendLine tren = new TrendLineSerial();
 	      LabelController lab = new LabelController();
+	      
 	      lab.setAlign(AmchartsConstants.ALIGN.getRight());
 	      lab.setId("ola");
 	      lab.setAlpha(9.9);

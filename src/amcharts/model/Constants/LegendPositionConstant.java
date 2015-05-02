@@ -3,13 +3,11 @@ package amcharts.model.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
-import amcharts.model.Constants.DurationUnitsConstant.DurationUnits;
-
 
 public final class LegendPositionConstant {
 	
 	private static LegendPositionConstant instance;
-	private static List<String> positions;
+	private List<String> positions;
 	
 	
 	private LegendPositionConstant(){
@@ -19,7 +17,6 @@ public final class LegendPositionConstant {
 	public static LegendPositionConstant getInstance(){
 		if(instance==null){
 			instance = new LegendPositionConstant(); 
-			positions = new ArrayList<String>();
 		}
 		return instance;
 	}
@@ -50,8 +47,11 @@ public final class LegendPositionConstant {
 	}
 	
 	public List<String> values(){
-		for(DurationUnits unit: DurationUnits.values()){
-			positions.add(unit.toString());
+		if(positions==null){
+			positions = new ArrayList<String>();
+			for(LegendPosition position: LegendPosition.values()){
+				positions.add(position.toString());
+			}
 		}
 		
 		return positions;
