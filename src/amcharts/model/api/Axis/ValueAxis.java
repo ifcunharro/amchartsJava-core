@@ -3,7 +3,8 @@ package amcharts.model.api.Axis;
 import java.util.HashMap;
 import java.util.Map;
 
-import amcharts.model.Constants.DurationUnits;
+import amcharts.model.Constants.AmchartsConstants;
+import amcharts.model.Constants.DurationUnitsConstant.DurationUnits;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -17,8 +18,8 @@ public class ValueAxis extends AxisBase{
 	
 	{
 		durationUnits = new HashMap<String,String>();
-		for(DurationUnits unit: DurationUnits.values()){
-			durationUnits.put(unit.toString(), null);
+		for(String unit: AmchartsConstants.DURATIONUNITS.values()){
+			durationUnits.put(unit, null);
 		}
 
 	}
@@ -40,8 +41,8 @@ public class ValueAxis extends AxisBase{
 		return axis.get("duration");
 	}
 	
-	public void setDuration(String duration){
-		axis.put("duration",duration);
+	public void setDuration(DurationUnits duration){
+		axis.put("duration",duration.toString());
 	}
 	
 	public Object getDurationUnits(){
@@ -49,8 +50,8 @@ public class ValueAxis extends AxisBase{
 	}
 	
 	//comprobar que key solo recibe valores DD,hh,mm,ss
-	public void setDurationUnits(String key,String value){
-		durationUnits.put(key, value);
+	public void setDurationUnits(DurationUnits key,String value){
+		durationUnits.put(key.toString(), value);
 	}
 	
 	public Object IsIncludeGuidesInMinMax(){
