@@ -2,8 +2,9 @@ package model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Observable;
 
-public abstract class IModel {
+public abstract class IModel extends Observable {
 	protected Map<String,Object> config;
 	
 	{
@@ -27,5 +28,4 @@ public abstract class IModel {
 	}
 	
 	
-
 }

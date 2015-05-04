@@ -1,6 +1,9 @@
 package amcharts.controller;
 
 
+import java.util.Observable;
+import java.util.Observer;
+
 import amcharts.model.Constants.AlignConstant.Align;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -9,12 +12,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import model.Label;
 
-@JsonInclude(Include.NON_EMPTY)
-public class LabelController {
+@JsonInclude(Include.NON_NULL)
+public class LabelController implements Observer {
 	private Label label;
 	
 	{
 		label = new Label();
+		
+	}
+	
+	@Override
+	public void update(Observable o, Object arg) {
+		this.setId("Label-"+arg.toString());
+		
 	}
 	
 	public Object getAlign(){
@@ -33,7 +43,7 @@ public class LabelController {
 		label.setFeature("alpha", alpha);
 	}
 	
-	@JsonProperty
+	@JsonProperty(value = "bold")
 	public Object isBold(){
 		return label.getFeature("bold");
 	}
@@ -54,7 +64,7 @@ public class LabelController {
 		return label.getFeature("id");
 	}
 	
-	public void setId(String id){
+	private void setId(String id){
 		label.setFeature("id", id);
 	}
 	
@@ -105,4 +115,6 @@ public class LabelController {
 	public void setY(String yCoord){
 		label.setFeature("y", yCoord);
 	}
+	
+	
 }

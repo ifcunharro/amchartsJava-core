@@ -6,10 +6,14 @@ import amcharts.model.Constants.LegendPositionConstant.LegendPosition;
 import amcharts.model.Constants.MarkerTypeConstant.MarkerType;
 import amcharts.model.Constants.SwitchTypeConstant.SwitchType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import model.AmLegend;
 
+@JsonInclude(Include.NON_NULL)
 public class AmLegendController {
 	private AmLegend legend;
 
@@ -17,7 +21,8 @@ public class AmLegendController {
 		legend = new AmLegend();
 	}
 
-	public Object getLegend() {
+	@JsonIgnore
+	public AmLegend getLegend() {
 		return legend;
 	}
 	

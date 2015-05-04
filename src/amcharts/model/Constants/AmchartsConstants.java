@@ -12,4 +12,5 @@ public class AmchartsConstants {
 	public static final MarkerTypeConstant MARKER_TYPES = MarkerTypeConstant.getInstance();
 	public static final LegendPositionConstant LEGEND_POSITIONS = LegendPositionConstant.getInstance();
 	public static final SwitchTypeConstant SWITCH_TYPES = SwitchTypeConstant.getInstance();
+	public static final ChartTypesConstant CHART_TYPES = ChartTypesConstant.getInstance();
 }

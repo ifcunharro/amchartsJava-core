@@ -3,16 +3,17 @@ package model.charts;
 import java.util.ArrayList;
 import java.util.List;
 
+import amcharts.controller.AmLegendController;
+import amcharts.controller.LabelController;
+import amcharts.controller.TitleController;
+
 import model.AmBalloon;
-import model.AmLegend;
 import model.Export;
 import model.IModel;
-import model.Label;
 import model.Prefix;
-import model.Title;
 
 public abstract class AmChart extends IModel {
-	protected List<Label> labels;
+	protected List<LabelController> labels;
 	protected Export export;
 	protected AmBalloon amBalloon;
 	protected List<Prefix> bigPrefixes;
@@ -21,18 +22,24 @@ public abstract class AmChart extends IModel {
 	//protected DataProvider dataProvider;
 	//para filtros svg
 	//protected Defs defs;
-	protected AmLegend legend;
-	protected List<Title> titles;
+	protected AmLegendController legend;
+	protected List<TitleController> titles;
 	
-	public List<Label> getLabels() {
+	
+	public List<LabelController> getLabels() {
 		return labels;
 	}
 
-	public void addLabel(Label label) {
+	public void addLabel(LabelController labelController) {
 		if(labels==null){
-			labels = new ArrayList<Label>();
+			labels = new ArrayList<LabelController>();
 		}
-		labels.add(label);
+		
+		addObserver(labelController);
+		setChanged();
+		notifyObservers(labels.size()+1);
+		labels.add(labelController);
+		deleteObservers();
 		
 	}
 
@@ -62,13 +69,17 @@ public abstract class AmChart extends IModel {
 		dataProvider.addData(dat);
 	}*/
 
-	public AmLegend getLegend() {
+	public AmLegendController getLegend() {
 		return legend;
 	}
 	
-	public void addLegend(AmLegend amLegend) {
+	public void addLegend(AmLegendController amLegend) {
 		legend = amLegend;
 		
+	}
+	
+	public Object getLegendDiv(){
+		return legend.getLegend().getFeature("divId");
 	}
 	
 	public List<Prefix> getBigPrefixes(){
@@ -93,15 +104,31 @@ public abstract class AmChart extends IModel {
 		smallPrefixes.add(new Prefix(number,prefix));
 	}
 	
-	public List<Title> getTitles() {
+	public List<TitleController> getTitles() {
 		return titles;
 	}
 
-	public void addTitle(Title title) {
+	public void addTitle(TitleController titleController) {
 		if(titles==null){
-			titles = new ArrayList<Title>();
+			titles = new ArrayList<TitleController>();
 		}
-		titles.add(title);
+		addObserver(titleController);
+		setChanged();
+		notifyObservers(titles.size()+1);
+		titles.add(titleController);
+		deleteObservers();
+		
+	}
+
+	public void clearLabels() {
+		labels = null;
+		System.gc();
+		
+	}
+
+	public void removeLegend() {
+		legend = null;
+		System.gc();
 		
 	}
 
