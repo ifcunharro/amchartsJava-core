@@ -3,11 +3,11 @@ package amcharts.model.api.Axis;
 import java.util.HashMap;
 import java.util.Map;
 
-import amcharts.model.Constants.AmchartsConstants;
-import amcharts.model.Constants.DurationUnitsConstant.DurationUnits;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import es.uvigo.esei.amchartsJava.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.constants.DurationUnitsConstant.DurationUnits;
 
 @JsonInclude(Include.NON_EMPTY)
 public class ValueAxis extends AxisBase{
