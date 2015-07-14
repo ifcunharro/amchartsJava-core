@@ -145,7 +145,7 @@ public class AmLegendController {
 		return legend.getFeature("labelText");
 	}
 	
-	//texto entre [[]]
+	//cualquier texto pero si es [[title]] muestra como texto el title del graph
 	public void setLabelText(String labelText){
 		legend.setFeature("labelText", labelText);
 	}
@@ -417,7 +417,7 @@ public class AmLegendController {
 		return legend.getFeature("valueText");
 	}
 	
-	//texto entre [[]]
+	//cualquier texto pero tiene más sentido dejarlo en blanco, usa el valueField
 	public void setValueText(String valueText){
 		legend.setFeature("valueText", valueText);
 	}

@@ -3,6 +3,10 @@ package es.uvigo.esei.amchartsJava.constants;
 
 
 public class AmchartsConstants {
+	
+	private AmchartsConstants(){
+		
+	}
 
 	public static final DurationUnitsConstant DURATIONUNITS = DurationUnitsConstant.getInstance();
 	//usada para ser escogida por interfaz
@@ -13,4 +17,6 @@ public class AmchartsConstants {
 	public static final LegendPositionConstant LEGEND_POSITIONS = LegendPositionConstant.getInstance();
 	public static final SwitchTypeConstant SWITCH_TYPES = SwitchTypeConstant.getInstance();
 	public static final ChartTypesConstant CHART_TYPES = ChartTypesConstant.getInstance();
+	public static final StartEffectConstant START_EFFECTS = StartEffectConstant.getInstance();
+	public static final BulletConstant BULLET = BulletConstant.getInstance();
 }

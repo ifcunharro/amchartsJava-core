@@ -1,24 +1,18 @@
 package es.uvigo.esei.amchartsJava.constants;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public final class LegendPositionConstant {
-	
-	private static LegendPositionConstant instance;
-	private List<String> positions;
-	
 	
 	private LegendPositionConstant(){
 		
 	}
 	
+	private static class InitSingleton{
+		private static final LegendPositionConstant INSTANCE = new LegendPositionConstant();
+	}
+	
 	public static LegendPositionConstant getInstance(){
-		if(instance==null){
-			instance = new LegendPositionConstant(); 
-		}
-		return instance;
+		return InitSingleton.INSTANCE;
 	}
 	
 	public enum LegendPosition{
@@ -46,14 +40,7 @@ public final class LegendPositionConstant {
 		return LegendPosition.absolute;
 	}
 	
-	public List<String> values(){
-		if(positions==null){
-			positions = new ArrayList<String>();
-			for(LegendPosition position: LegendPosition.values()){
-				positions.add(position.toString());
-			}
-		}
-		
-		return positions;
+	public LegendPosition[] values(){
+		return LegendPosition.values();
 	}
 }

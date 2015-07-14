@@ -1,12 +1,8 @@
 package es.uvigo.esei.amchartsJava.constants;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public final class SeparatorConstant {
 	
 	private static SeparatorConstant instance;
-	private List<String> separators;
 	
 	
 	private SeparatorConstant(){
@@ -44,15 +40,8 @@ public final class SeparatorConstant {
 		return Separator.colon;
 	}
 	
-	public List<String> values(){
-		if(separators==null){
-			separators = new ArrayList<String>();
-			for(Separator sep: Separator.values()){
-				separators.add(sep.toString());
-			}
-		}
-		
-		return separators;
+	public Separator[] values(){
+		return Separator.values();
 	}
 	
 	

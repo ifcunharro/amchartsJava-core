@@ -1,23 +1,17 @@
 package es.uvigo.esei.amchartsJava.constants;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public final class ChartTypesConstant {
-	
-	private static ChartTypesConstant instance;
-	private List<String> types; 
-	
 	
 	private ChartTypesConstant(){
 		
 	}
 	
+	private static class InitSingleton{
+		private static ChartTypesConstant INSTANCE = new ChartTypesConstant();
+	}
+	
 	public static ChartTypesConstant getInstance(){
-		if(instance==null){
-			instance = new ChartTypesConstant(); 
-		}
-		return instance;
+		return InitSingleton.INSTANCE;
 	}
 	
 	public enum ChartType{
@@ -52,15 +46,9 @@ public final class ChartTypesConstant {
 		return ChartType.gantt;
 	}
 	
-	public List<String> values(){
-		if(types==null){
-			types = new ArrayList<String>();
-			for(ChartType type: ChartType.values()){
-				types.add(type.toString());
-			}
-		}
+	public ChartType[] values(){
+		return ChartType.values();
 		
-		return types;
 	}
 	
 	

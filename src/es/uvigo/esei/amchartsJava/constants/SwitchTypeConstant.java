@@ -1,13 +1,9 @@
 package es.uvigo.esei.amchartsJava.constants;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public final class SwitchTypeConstant {
 	
 	private static SwitchTypeConstant instance;
-	private List<String> types;
 	
 	
 	private SwitchTypeConstant(){
@@ -33,15 +29,8 @@ public final class SwitchTypeConstant {
 		return SwitchType.v;
 	}
 	
-	public List<String> values(){
-		if(types==null){
-			types = new ArrayList<String>();
-			for(SwitchType type: SwitchType.values()){
-				types.add(type.toString());
-			}
-		}
-		
-		return types;
+	public SwitchType[] values(){
+		return SwitchType.values();
 	}
 	
 	

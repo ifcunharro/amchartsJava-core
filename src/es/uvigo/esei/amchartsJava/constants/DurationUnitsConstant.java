@@ -1,24 +1,19 @@
 package es.uvigo.esei.amchartsJava.constants;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public final class DurationUnitsConstant {
-	
-	private static DurationUnitsConstant instance;
-	private List<String> units;
 	
 	
 	private DurationUnitsConstant(){
 		
 	}
 	
+	private static class InitSingleton{
+		private static final DurationUnitsConstant INSTANCE = new DurationUnitsConstant();
+	}
+	
 	public static DurationUnitsConstant getInstance(){
-		if(instance==null){
-			instance = new DurationUnitsConstant();
-		}
-		return instance;
+		return InitSingleton.INSTANCE;
 	}
 	
 	public enum DurationUnits{
@@ -41,15 +36,8 @@ public final class DurationUnitsConstant {
 		return DurationUnits.ss;
 	}
 	
-	public List<String> values(){
-		if(units==null){
-			units = new ArrayList<String>();
-			for(DurationUnits unit: DurationUnits.values()){
-				units.add(unit.toString());
-			}
-		}
-		
-		return units;
+	public DurationUnits[] values(){
+		return DurationUnits.values();
 	}
 	
 	

@@ -1,24 +1,18 @@
 package es.uvigo.esei.amchartsJava.constants;
 
-import java.util.ArrayList;
-import java.util.List;
-
 
 public final class CreditsPositionConstant {
-	
-	private static CreditsPositionConstant instance;
-	private List<String> credits;
-	
 	
 	private CreditsPositionConstant(){
 		
 	}
 	
+	private static class InitSingleton{
+		private static final CreditsPositionConstant INSTANCE = new CreditsPositionConstant();
+	}
+	
 	public static CreditsPositionConstant getInstance(){
-		if(instance==null){
-			instance = new CreditsPositionConstant();
-		}
-		return instance;
+		return InitSingleton.INSTANCE;
 	}
 	
 	public enum CreditsPosition{
@@ -59,13 +53,7 @@ public final class CreditsPositionConstant {
 		return CreditsPosition.bottomright;
 	}
 	
-	public List<String> values(){
-		if(credits==null){
-			credits = new ArrayList<String>();
-			for(CreditsPosition position: CreditsPosition.values()){
-				credits.add(position.toString());
-			}
-		}
-		return credits;
+	public CreditsPosition[] values(){
+		return CreditsPosition.values();
 	}
 }

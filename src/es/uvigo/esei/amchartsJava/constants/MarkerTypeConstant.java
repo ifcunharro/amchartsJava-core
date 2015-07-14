@@ -1,12 +1,8 @@
 package es.uvigo.esei.amchartsJava.constants;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public final class MarkerTypeConstant {
 	
 	private static MarkerTypeConstant instance;
-	private List<String> types; 
 	
 	
 	private MarkerTypeConstant(){
@@ -66,15 +62,8 @@ public final class MarkerTypeConstant {
 		return MarkerType.none;
 	}
 	
-	public List<String> values(){
-		if(types==null){
-			types = new ArrayList<String>();
-			for(MarkerType type: MarkerType.values()){
-				types.add(type.toString());
-			}
-		}
-		
-		return types;
+	public MarkerType[] values(){
+		return MarkerType.values();
 	}
 	
 	
