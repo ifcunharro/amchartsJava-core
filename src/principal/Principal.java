@@ -6,7 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.uvigo.esei.amchartsJava.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.controllers.AmLegendController;
-import es.uvigo.esei.amchartsJava.controllers.AmGraphXyController;
 import es.uvigo.esei.amchartsJava.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.parser.ParserJson;
@@ -22,10 +21,9 @@ public class Principal {
 		
 		
 		//testeado
-		AmGraphXyController ab = new AmGraphXyController();
-		ab.setType(AmchartsConstants.CHART_TYPES.getSerial());
-		ab.changeColorsDefault(new String[]{"#AAAAAA","#BBBBBB"});
-		ab.addColor("#CCCCCC");
+		
+		//AmGraphXyController ab = new AmGraphXyController();
+		
 		
 		LabelController lab = new LabelController();
 		lab.setAlign(AmchartsConstants.ALIGN.getRight());
@@ -45,22 +43,10 @@ public class Principal {
 		TitleController tc = new TitleController();
 		TitleController tc2 = new TitleController();
 		tc.setSize(9);
-		tc2.setText("mierda");
-		
-		ab.addLabel(lab);
-		ab.addLegend(lc);
-		ab.addTitle(tc);
-		ab.addTitle(tc2);
-		ab.addLabel(lab2);
-		
-		/*AmGraphController am = new AmGraphController();
-		AmGraphController am2 = new AmGraphController();
+		tc2.setText("prueba");
+	
 		
 		
-		ab.addGraph(am);
-		ab.addGraph(am2);
-		am2.setBalloonColor(ColorsChart.GRAY);
-		ab.removeGraph("AmGraph-1");*/
 		//fin testeo
 		
 
@@ -75,7 +61,7 @@ public class Principal {
 			//mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, false);
 			//mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
 
-			mapper.writeValue(System.out,ab);
+			mapper.writeValue(System.out,lc);
 
 
 		} catch (IOException e) {

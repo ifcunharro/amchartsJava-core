@@ -1,10 +1,11 @@
-package es.uvigo.esei.amchartsJava.controllers;
+package es.uvigo.esei.amchartsJava.controllers.charts;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.constants.StartEffectConstant.StartEffect;
+import es.uvigo.esei.amchartsJava.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.model.charts.AmCoordinateChart;
 
 @JsonInclude(Include.NON_NULL)
@@ -17,8 +18,7 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 
 	}
 	
-	
-	
+
 	//chartData solo lectura
 	
 	//colors problema tipo prefixes

@@ -10,9 +10,6 @@ package es.uvigo.esei.amchartsJava.constants;
 public final class AlignConstant {
 	
 	
-	//private List<String> aligns;
-	//private List<String> valueAligns;
-	
 	/**
 	 *  Default Contructor
 	 */

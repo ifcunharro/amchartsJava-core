@@ -1,6 +1,6 @@
 package es.uvigo.esei.amchartsJava.constants;
 
-public enum ColorsChart {
+public enum ColorsAmCharts {
 	//nombres de colores inventados, puestos por semejanza visual
 	ORANGE("#FF6600"),YELLOW("#FCD202"),LIME("#B0DE09"),BLUE("#0D8ECF"),
 	INDIGO("#2A0CD0"),PINK("#CD0D74"),RED("#CC0000"),GRASS("#00CC00"),
@@ -8,7 +8,7 @@ public enum ColorsChart {
 	
 	private String color;
 	
-	private ColorsChart(String nombre){
+	private ColorsAmCharts(String nombre){
 		color = nombre;
 	}
 	

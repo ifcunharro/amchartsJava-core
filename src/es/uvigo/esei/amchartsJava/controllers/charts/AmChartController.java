@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.controllers;
+package es.uvigo.esei.amchartsJava.controllers.charts;
 
 
 import java.util.List;
@@ -10,6 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import es.uvigo.esei.amchartsJava.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.constants.SeparatorConstant.Separator;
+import es.uvigo.esei.amchartsJava.controllers.AmLegendController;
+import es.uvigo.esei.amchartsJava.controllers.LabelController;
+import es.uvigo.esei.amchartsJava.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.model.charts.AmChart;
 
 @JsonInclude(Include.NON_NULL)
