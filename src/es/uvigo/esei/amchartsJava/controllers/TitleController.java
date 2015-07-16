@@ -7,7 +7,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import es.uvigo.esei.amchartsJava.exceptions.ColorException;
+import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.model.Title;
+import es.uvigo.esei.amchartsJava.validators.ColorValidator;
+import es.uvigo.esei.amchartsJava.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
 public class TitleController implements Observer {
@@ -26,8 +31,10 @@ public class TitleController implements Observer {
 		return title.getFeature("alpha");
 	}
 	
-	public void setAlpha(Number alpha){
-		title.setFeature("alpha", alpha);
+	public void setAlpha(Number alpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(alpha, 0, 1)){
+			title.setFeature("alpha", alpha);
+		}
 	}
 	
 	@JsonProperty
@@ -43,8 +50,10 @@ public class TitleController implements Observer {
 		return title.getFeature("color");
 	}
 	
-	public void setColor(String color){
-		title.setFeature("color", color);
+	public void setColor(String color) throws ColorException{
+		if(ColorValidator.checkFormatColor(color)){
+			title.setFeature("color", color);
+		}
 	}
 	
 	public Object getId(){
@@ -59,8 +68,10 @@ public class TitleController implements Observer {
 		return title.getFeature("size");
 	}
 	
-	public void setSize(Number size){
-		title.setFeature("size", size);
+	public void setSize(Number size) throws IntegerException{
+		if(NumberValidator.IntegerValidator(size)){
+			title.setFeature("size", size);
+		}
 	}
 	
 	public Object getText(){

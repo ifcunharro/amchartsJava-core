@@ -87,7 +87,12 @@ public class Principal {
 		
 		TitleController tc = new TitleController();
 		TitleController tc2 = new TitleController();
-		tc.setSize(9);
+		try {
+			tc.setSize(9);
+		} catch (IntegerException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		tc2.setText("prueba");
 	
 		
