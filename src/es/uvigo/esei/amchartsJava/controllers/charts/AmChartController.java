@@ -13,7 +13,12 @@ import es.uvigo.esei.amchartsJava.constants.SeparatorConstant.Separator;
 import es.uvigo.esei.amchartsJava.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.controllers.TitleController;
+import es.uvigo.esei.amchartsJava.exceptions.ColorException;
+import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.model.AmChart;
+import es.uvigo.esei.amchartsJava.validators.ColorValidator;
+import es.uvigo.esei.amchartsJava.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmChartController<E extends AmChart>{
@@ -42,33 +47,41 @@ public abstract class AmChartController<E extends AmChart>{
 	public Object getBackgroundAlpha(){
 		return amchart.getFeature("backGroundAlpha");
 	}
-	//limit 0 a 1 en float
-	public void setBackGroundAlpha(Number backGroundAlpha){
-		amchart.setFeature("backGroundAlpha", backGroundAlpha);
+	
+	public void setBackGroundAlpha(Number backGroundAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(backGroundAlpha, 0, 1)){
+			amchart.setFeature("backGroundAlpha", backGroundAlpha);
+		}
 	}
 	
 	public Object getBackGroundColor(){
 		return amchart.getFeature("backGroundColor");
 	}
 	
-	public void setBackGroundColor(String backGrouncColor){
-		amchart.setFeature("backGroundColor", backGrouncColor);
+	public void setBackGroundColor(String backGrouncColor) throws ColorException{
+		if(ColorValidator.checkFormatColor(backGrouncColor)){
+			amchart.setFeature("backGroundColor", backGrouncColor);
+		}
 	}
 	
 	public Object getBorderAlpha(){
 		return amchart.getFeature("borderAlpha");
 	}
-	//limit o a 1 en float
-	public void setBorderAlpha(Number borderAlpha){
-		amchart.setFeature("borderAlpha", borderAlpha);
+	
+	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(borderAlpha, 0, 1)){
+			amchart.setFeature("borderAlpha", borderAlpha);
+		}
 	}
 	
 	public Object getBorderColor(){
 		return amchart.getFeature("borderColor");
 	}
 	
-	public void setBorderColor(String borderColor){
-		amchart.setFeature("borderColor", borderColor);
+	public void setBorderColor(String borderColor) throws ColorException{
+		if(ColorValidator.checkFormatColor(borderColor)){
+			amchart.setFeature("borderColor", borderColor);
+		}
 	}
 	
 	public Object getClassNamePrefix(){
@@ -83,14 +96,16 @@ public abstract class AmChartController<E extends AmChart>{
 		return amchart.getFeature("color");
 	}
 	
-	public void setColor(String color){
-		amchart.setFeature("color", color);
+	public void setColor(String color) throws ColorException{
+		if(ColorValidator.checkFormatColor(color)){
+			amchart.setFeature("color", color);
+		}
 	}
 	
 	public Object getCreditsPosition(){
 		return amchart.getFeature("creditsPosition");
 	}
-	//usar constant creditsPosition
+	
 	public void setCreditsPosition(CreditsPosition creditsPosition){
 		amchart.setFeature("creditsPosition", creditsPosition.toString());
 	}
@@ -115,8 +130,10 @@ public abstract class AmChartController<E extends AmChart>{
 		return amchart.getFeature("fontSize");
 	}
 	
-	public void setFontSize(Number fontSize){
-		amchart.setFeature("fontSize", fontSize);
+	public void setFontSize(Number fontSize) throws IntegerException{
+		if(NumberValidator.IntegerValidator(fontSize)){
+			amchart.setFeature("fontSize", fontSize);
+		}
 	}
 	
 	@JsonProperty(value = "handDrawn")
@@ -132,24 +149,30 @@ public abstract class AmChartController<E extends AmChart>{
 		return amchart.getFeature("handDrawScatter");
 	}
 	
-	public void setHandDrawScatter(Number handDrawScatter){
-		amchart.setFeature("handDrawScatter", handDrawScatter);
+	public void setHandDrawScatter(Number handDrawScatter) throws IntegerException{
+		if(NumberValidator.IntegerValidator(handDrawScatter)){
+			amchart.setFeature("handDrawScatter", handDrawScatter);
+		}
 	}
 	
 	public Object getHandDrawThickness(){
 		return amchart.getFeature("handDrawThickness");
 	}
 	
-	public void setHandDrasThickness(Number handDrawThickness){
-		amchart.setFeature("handDrawThickness", handDrawThickness);
+	public void setHandDrasThickness(Number handDrawThickness) throws IntegerException{
+		if(NumberValidator.IntegerValidator(handDrawThickness)){
+			amchart.setFeature("handDrawThickness", handDrawThickness);
+		}
 	}
 	
 	public Object getHideBalloonTime(){
 		return amchart.getFeature("hideBalloonTime");
 	}
 	
-	public void setHideBalloonTime(Number hideBalloonTime){
-		amchart.setFeature("hideBalloonTime", hideBalloonTime);
+	public void setHideBalloonTime(Number hideBalloonTime) throws IntegerException{
+		if(NumberValidator.IntegerValidator(hideBalloonTime)){
+			amchart.setFeature("hideBalloonTime", hideBalloonTime);
+		}
 	}
 	
 	//necesario un archivo js de idioma escogido
@@ -183,6 +206,7 @@ public abstract class AmChartController<E extends AmChart>{
 		return amchart.getFeature("pathToImages");
 	}
 	
+	//FALTA VALIDAR PATH, SE DA UNO POR DEFECTO ../amcharts/images
 	public void setPathToImages(String pathToImages){
 		amchart.setFeature("pathToImages", pathToImages);
 	}
@@ -191,16 +215,20 @@ public abstract class AmChartController<E extends AmChart>{
 		return amchart.getFeature("percentPrecision");
 	}
 	
-	public void setPercentPrecision(Number percentPrecision){
-		amchart.setFeature("percentPrecision", percentPrecision);
+	public void setPercentPrecision(Number percentPrecision) throws IntegerException{
+		if(NumberValidator.IntegerValidator(percentPrecision)){
+			amchart.setFeature("percentPrecision", percentPrecision);
+		}
 	}
 	
 	public Object getPrecision(){
 		return amchart.getFeature("precision");
 	}
 	
-	public void setPrecision(Number precision){
-		amchart.setFeature("precision", precision);
+	public void setPrecision(Number precision) throws IntegerException{
+		if(NumberValidator.IntegerValidator(precision)){
+			amchart.setFeature("precision", precision);
+		}
 	}
 	
 	
@@ -230,6 +258,7 @@ public abstract class AmChartController<E extends AmChart>{
 		return amchart.getFeature("theme");
 	}
 	
+	//debe existir file theme
 	public void setTheme(String theme){
 		amchart.setFeature("theme", theme);
 	}
