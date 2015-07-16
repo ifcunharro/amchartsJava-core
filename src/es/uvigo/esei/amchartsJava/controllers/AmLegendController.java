@@ -10,12 +10,15 @@ import es.uvigo.esei.amchartsJava.constants.AlignConstant.ValueAlign;
 import es.uvigo.esei.amchartsJava.constants.LegendPositionConstant.LegendPosition;
 import es.uvigo.esei.amchartsJava.constants.MarkerTypeConstant.MarkerType;
 import es.uvigo.esei.amchartsJava.constants.SwitchTypeConstant.SwitchType;
+
 import es.uvigo.esei.amchartsJava.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
-import es.uvigo.esei.amchartsJava.model.AmLegend;
+
 import es.uvigo.esei.amchartsJava.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.validators.NumberValidator;
+
+import es.uvigo.esei.amchartsJava.model.AmLegend;
 
 @JsonInclude(Include.NON_NULL)
 public class AmLegendController {

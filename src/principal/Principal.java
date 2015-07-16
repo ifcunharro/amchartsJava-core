@@ -9,12 +9,11 @@ import es.uvigo.esei.amchartsJava.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.controllers.TitleController;
-import es.uvigo.esei.amchartsJava.exceptions.ColorException;
+import es.uvigo.esei.amchartsJava.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.parser.ParserJson;
-import es.uvigo.esei.amchartsJava.validators.ColorValidator;
-import es.uvigo.esei.amchartsJava.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.validators.StringValidator;
 
 
 
@@ -24,39 +23,46 @@ public class Principal {
 	public static void main(String[] args) {
 
 		
-		//testeo excepciones
-		
 		try {
-			System.out.println(ColorValidator.checkFormatColor("#99ffas"));
-		} catch (ColorException e2) {
+			StringValidator.coordFormat("12");
+		} catch (CoordException e5) {
 			// TODO Auto-generated catch block
-			e2.printStackTrace();
+			e5.printStackTrace();
 		}
 		
-		I18n.setLanguage("ENs");
-		
-		try {
-			NumberValidator.IntegerValidator(9.5);
-		} catch (IntegerException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-		
-		//fin testeo excepciones
-		
+		I18n.setLanguage("EN");
 		//testeado
 		
 		//AmGraphXyController ab = new AmGraphXyController();
 		
 		
 		LabelController lab = new LabelController();
+		try {
+			lab.setRotation(94);
+		} catch (OutOfRangeException e4) {
+			// TODO Auto-generated catch block
+			e4.printStackTrace();
+		} catch (IntegerException e4) {
+			// TODO Auto-generated catch block
+			e4.printStackTrace();
+		}
 		lab.setAlign(AmchartsConstants.ALIGN.getRight());
-		lab.setAlpha(9.9);
+		try {
+			lab.setAlpha(0.3);
+		} catch (OutOfRangeException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
 		lab.setBold(true);
 		
 		LabelController lab2 = new LabelController();
 		lab2.setAlign(AmchartsConstants.ALIGN.getRight());
-		lab2.setAlpha(9.9);
+		try {
+			lab2.setAlpha(0.6);
+		} catch (OutOfRangeException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
 		lab2.setBold(true);
 		
 		
@@ -73,7 +79,7 @@ public class Principal {
 	
 		
 		try {
-			lc.setBackgroundAlpha(-1);
+			lc.setBackgroundAlpha(1);
 		} catch (OutOfRangeException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

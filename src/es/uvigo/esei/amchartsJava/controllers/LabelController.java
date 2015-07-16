@@ -9,7 +9,14 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.constants.AlignConstant.Align;
+import es.uvigo.esei.amchartsJava.exceptions.ColorException;
+import es.uvigo.esei.amchartsJava.exceptions.CoordException;
+import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.model.Label;
+import es.uvigo.esei.amchartsJava.validators.ColorValidator;
+import es.uvigo.esei.amchartsJava.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.validators.StringValidator;
 
 @JsonInclude(Include.NON_NULL)
 public class LabelController implements Observer {
@@ -38,8 +45,10 @@ public class LabelController implements Observer {
 		return label.getFeature("alpha");
 	}
 	
-	public void setAlpha(Number alpha){
-		label.setFeature("alpha", alpha);
+	public void setAlpha(Number alpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(alpha, 0, 1)){
+			label.setFeature("alpha", alpha);
+		}
 	}
 	
 	@JsonProperty(value = "bold")
@@ -55,8 +64,10 @@ public class LabelController implements Observer {
 		return label.getFeature("color");
 	}
 	
-	public void setColor(String color){
-		label.setFeature("color", color);
+	public void setColor(String color) throws ColorException{
+		if(ColorValidator.checkFormatColor(color)){
+			label.setFeature("color", color);
+		}
 	}
 	
 	public Object getId(){
@@ -71,16 +82,21 @@ public class LabelController implements Observer {
 		return label.getFeature("rotation");
 	}
 	
-	public void setRotation(Number rotation){
-		label.setFeature("rotation", rotation);
+	public void setRotation(Number rotation) throws OutOfRangeException,IntegerException{
+		if(NumberValidator.IntegerValidator(rotation) && 
+				NumberValidator.rangeIntegerValidator(rotation, -90, 90)){
+					label.setFeature("rotation", rotation);
+		}
 	}
 	
 	public Object getSize(){
 		return label.getFeature("size");
 	}
 	
-	public void setSize(Number size){
-		label.setFeature("size", size);
+	public void setSize(Number size) throws IntegerException{
+		if(NumberValidator.IntegerValidator(size)){
+			label.setFeature("size", size);
+		}
 	}
 	
 	public Object getText(){
@@ -103,16 +119,20 @@ public class LabelController implements Observer {
 		return label.getFeature("xCoord");
 	}
 	
-	public void setX(String xCoord){
-		label.setFeature("x", xCoord);
+	public void setX(String xCoord) throws CoordException{
+		if(StringValidator.coordFormat(xCoord)){
+			label.setFeature("x", xCoord);
+		}
 	}
 	
 	public Object getY(){
 		return label.getFeature("yCoord");
 	}
 	
-	public void setY(String yCoord){
-		label.setFeature("y", yCoord);
+	public void setY(String yCoord) throws CoordException{
+		if(StringValidator.coordFormat(yCoord)){
+			label.setFeature("y", yCoord);
+		}
 	}
 	
 	
