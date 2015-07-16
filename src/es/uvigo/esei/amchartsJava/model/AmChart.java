@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.model.charts;
+package es.uvigo.esei.amchartsJava.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +6,6 @@ import java.util.List;
 import es.uvigo.esei.amchartsJava.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.controllers.TitleController;
-import es.uvigo.esei.amchartsJava.model.AmBalloon;
-import es.uvigo.esei.amchartsJava.model.Export;
-import es.uvigo.esei.amchartsJava.model.IModel;
-import es.uvigo.esei.amchartsJava.model.Prefix;
 
 public abstract class AmChart extends IModel {
 	protected List<LabelController> labels;

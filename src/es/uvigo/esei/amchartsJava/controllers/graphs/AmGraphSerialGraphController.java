@@ -1,7 +1,7 @@
 package es.uvigo.esei.amchartsJava.controllers.graphs;
 
 import es.uvigo.esei.amchartsJava.constants.PointPositionConstant.PointPosition;
-import es.uvigo.esei.amchartsJava.model.graphs.AmGraph;
+import es.uvigo.esei.amchartsJava.model.AmGraph;
 import es.uvigo.esei.amchartsJava.model.graphs.AmGraphSerialGraph;
 
 public class AmGraphSerialGraphController extends AmGraphController<AmGraph>{

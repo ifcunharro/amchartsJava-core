@@ -17,8 +17,8 @@ import es.uvigo.esei.amchartsJava.constants.LabelPositionConstant.LabelPosition;
 import es.uvigo.esei.amchartsJava.constants.TagsTextConstant.TagsText;
 import es.uvigo.esei.amchartsJava.constants.LegendPeriodValueTextConstant.LegendPeriodValueText;
 import es.uvigo.esei.amchartsJava.constants.MarkerTypeConstant.MarkerType;
+import es.uvigo.esei.amchartsJava.model.AmGraph;
 import es.uvigo.esei.amchartsJava.model.charts.AmCoordinateChart;
-import es.uvigo.esei.amchartsJava.model.graphs.AmGraph;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmGraphController<E extends AmGraph> implements Observer {

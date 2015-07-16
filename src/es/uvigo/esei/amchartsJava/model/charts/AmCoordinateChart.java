@@ -6,7 +6,8 @@ import java.util.List;
 
 import es.uvigo.esei.amchartsJava.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.controllers.graphs.AmGraphController;
-import es.uvigo.esei.amchartsJava.model.graphs.AmGraph;
+import es.uvigo.esei.amchartsJava.model.AmChart;
+import es.uvigo.esei.amchartsJava.model.AmGraph;
 
 public abstract class AmCoordinateChart extends AmChart {
 	private List<String> colors;

@@ -13,7 +13,7 @@ import es.uvigo.esei.amchartsJava.constants.SeparatorConstant.Separator;
 import es.uvigo.esei.amchartsJava.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.controllers.TitleController;
-import es.uvigo.esei.amchartsJava.model.charts.AmChart;
+import es.uvigo.esei.amchartsJava.model.AmChart;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmChartController<E extends AmChart>{

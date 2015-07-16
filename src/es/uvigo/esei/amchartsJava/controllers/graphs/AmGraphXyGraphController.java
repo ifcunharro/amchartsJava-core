@@ -1,6 +1,6 @@
 package es.uvigo.esei.amchartsJava.controllers.graphs;
 
-import es.uvigo.esei.amchartsJava.model.graphs.AmGraph;
+import es.uvigo.esei.amchartsJava.model.AmGraph;
 import es.uvigo.esei.amchartsJava.model.graphs.AmGraphXyGraph;
 
 public class AmGraphXyGraphController extends AmGraphController<AmGraph> {
