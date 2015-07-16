@@ -10,9 +10,12 @@ public class EN implements Idiom {
 	
 	static{
 		textsEN.put("RangeFloatException", "Number must be between 0 and 1");
+		textsEN.put("RangeIntegerException", "Number out of range: must be between ");
 		textsEN.put("LanguageException", "Language not valid");
 		textsEN.put("ColorException", "Format color should be #000000");
 		textsEN.put("IntegerException", "Number must be an integer");
+		textsEN.put("and"," and ");
+		textsEN.put("CoordException","Format coords must be a number integer or a percent");
 	}
 	
 	
