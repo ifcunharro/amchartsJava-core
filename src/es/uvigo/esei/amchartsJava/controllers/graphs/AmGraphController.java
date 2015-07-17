@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Observable;
 import java.util.Observer;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,33 +13,41 @@ import es.uvigo.esei.amchartsJava.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.constants.BulletConstant.Bullet;
 import es.uvigo.esei.amchartsJava.constants.DateFormatConstant;
 import es.uvigo.esei.amchartsJava.constants.GradientOrientationConstant.GradientOrientation;
+import es.uvigo.esei.amchartsJava.constants.GraphTypesConstant.GraphType;
 import es.uvigo.esei.amchartsJava.constants.LabelAnchorConstant.LabelAnchor;
 import es.uvigo.esei.amchartsJava.constants.LabelPositionConstant.LabelPosition;
 import es.uvigo.esei.amchartsJava.constants.TagsTextConstant.TagsText;
+import es.uvigo.esei.amchartsJava.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.constants.LegendPeriodValueTextConstant.LegendPeriodValueText;
 import es.uvigo.esei.amchartsJava.constants.MarkerTypeConstant.MarkerType;
-import es.uvigo.esei.amchartsJava.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.exceptions.FloatException;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.model.AmGraph;
 import es.uvigo.esei.amchartsJava.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.validators.StringValidator;
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AmGraphController<E extends AmGraph> implements Observer {
+public abstract class AmGraphController implements Observer {
 	
-	protected E amGraph;
+	protected AmGraph amGraph;
+	//chart que usa el graph
+	private AmCoordinateChart chart;
 	
-	public AmGraphController(E graph){
-		amGraph = graph;
+	
+	{
+		amGraph = new AmGraph();
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
 		this.setId("AmGraph-"+arg.toString());
 		this.setTitle("AmGraph-"+arg.toString());
+	}
+	
+	@JsonIgnore
+	public void setChart(AmCoordinateChart c) {
+		chart = c;
 		
 	}
 
@@ -81,15 +90,6 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 	
 	public void setBalloonFunction(String balloonFunction){
 		amGraph.setFeature("balloonFunction", balloonFunction);
-	}
-	
-	@JsonProperty(value="behindColumns")
-	public Object isBehindColumns(){
-		return amGraph.getFeature("behindColumns");
-	}
-	
-	public void setBehindColumns(Boolean behindColumns){
-		amGraph.setFeature("behindColumns", behindColumns);
 	}
 	
 	public Object getBullet(){
@@ -190,15 +190,6 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		amGraph.setFeature("closeField", closeField);
 	}
 	
-	@JsonProperty(value="clustered")
-	public Object isClustered(){
-		return amGraph.getFeature("clustered");
-	}
-	
-	public void setClustered(Boolean clustered){
-		amGraph.setFeature("clustered", clustered);
-	}
-	
 	public Object getColor(){
 		return amGraph.getFeature("color");
 	}
@@ -215,16 +206,6 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		amGraph.setFeature("colorField", colorField);
 	}
 	
-	public Object getColumnWidth(){
-		return amGraph.getFeature("columnWidth");
-	}
-	
-	public void setColumnWidth(Number columnWidth) throws IntegerException{
-		if(NumberValidator.integerValidator(columnWidth)){
-			amGraph.setFeature("columnWidth", columnWidth);
-		}
-	}
-	
 	@JsonProperty(value="connect")
 	public Object isConnect(){
 		return amGraph.getFeature("connect");
@@ -232,16 +213,6 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 	
 	public void setConnect(Boolean connect){
 		amGraph.setFeature("connect", connect);
-	}
-	
-	public Object getCornerRadiusTop(){
-		return amGraph.getFeature("cornerRadiusTop");
-	}
-	
-	public void setCornerRadiusTop(String cornerRadiusTop) throws CoordException{
-		if(StringValidator.pixelOrPercent(cornerRadiusTop)){
-			amGraph.setFeature("cornerRadiusTop", cornerRadiusTop);
-		}
 	}
 	
 	public Object getCursorBulletAlpha(){
@@ -276,22 +247,6 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 	
 	public void setCustomMarker(String customMarker){
 		amGraph.setFeature("customMarker", customMarker);
-	}
-	
-	public Object getDashLength(){
-		return amGraph.getFeature("dashLength");
-	}
-	
-	public void setDashLength(Number dashLength){
-		amGraph.setFeature("dashLength", dashLength);
-	}
-	
-	public Object getDashLengthField(){
-		return amGraph.getFeature("dashLengthField");
-	}
-	
-	public void setDashLengthField(String dashLengthField){
-		amGraph.setFeature("dashLengthField", dashLengthField);
 	}
 	
 	public Object getDateFormat(){
@@ -332,22 +287,6 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		}
 	}
 	
-	public Object getFillColors(){
-		return amGraph.getFeature("fillColors");
-	}
-	
-	public void setFillColors(ColorsAmCharts fillColors){
-		amGraph.setFeature("fillColors", fillColors.toString());
-	}
-	
-	public Object getFillColorsField(){
-		return amGraph.getFeature("fillColorsField");
-	}
-	
-	public void setFillColorsField(String fillColorsField){
-		amGraph.setFeature("fillColorsField", fillColorsField);
-	}
-	
 	public Object getFillToGraph(){
 		return amGraph.getFeature("fillToGraph");
 	}
@@ -356,16 +295,6 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 	public void setFillToGraph(String fillToGraph){
 		if(AmCoordinateChart.existGraph(fillToGraph)){
 			amGraph.setFeature("fillToGraph", fillToGraph);
-		}
-	}
-	
-	public Object getFixedColumnWidth(){
-		return amGraph.getFeature("fixedColumnWidth");
-	}
-	
-	public void setFixedColumnWidth(Number fixedColumnWidth) throws IntegerException{
-		if(NumberValidator.integerValidator(fixedColumnWidth)){
-			amGraph.setFeature("fixedColumnWidth", fixedColumnWidth);
 		}
 	}
 	
@@ -422,14 +351,6 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		if(NumberValidator.integerValidator(hideBulletsCount)){
 			amGraph.setFeature("hideBulletsCount", hideBulletsCount);
 		}
-	}
-	
-	public Object getHighField(){
-		return amGraph.getFeature("highField");
-	}
-	
-	public void setHighField(String highField){
-		amGraph.setFeature("highField", highField);
 	}
 	
 	@JsonProperty(value="includeInMinMax")
@@ -545,32 +466,6 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		}
 	}
 	
-	public Object getLineColor(){
-		return amGraph.getFeature("lineColor");
-	}
-	
-	public void setLineColor(ColorsAmCharts lineColor){
-		amGraph.setFeature("lineColor", lineColor.toString());
-	}
-	
-	public Object getLineThickness(){
-		return amGraph.getFeature("lineThickness");
-	}
-	
-	public void setLineThickness(Number lineThickness) throws IntegerException{
-		if(NumberValidator.integerValidator(lineThickness)){
-			amGraph.setFeature("lineThickness", lineThickness);
-		}
-	}
-	
-	public Object getLowField(){
-		return amGraph.getFeature("lowField");
-	}
-	
-	public void setLowField(String lowField){
-		amGraph.setFeature("lowField", lowField);
-	}
-	
 	public Object getMakerType(){
 		return amGraph.getFeature("markerType");
 	}
@@ -617,62 +512,81 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		amGraph.setFeature("negativeFillColors", negativeFillColors.toString());
 	}
 	
-	public Object getNegativeLineAlpha(){
-		return amGraph.getFeature("negativeLineAlpha");
-	}
-	
-	public void setNegativeLineAlpha(Number negativeLineAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(negativeLineAlpha, 0, 1)){
-			amGraph.setFeature("negativeLineAlpha", negativeLineAlpha);
-		}
-	}
-	
-	public Object getNegativeLineColor(){
-		return amGraph.getFeature("negativeLineColor");
-	}
-	
-	public void setNegativeLineColor(ColorsAmCharts negativeLineColor){
-		amGraph.setFeature("negativeLineColor", negativeLineColor.toString());
-	}
-	
-	@JsonProperty(value="newStack")
-	public Object isNewStack(){
-		return amGraph.getFeature("newStack");
-	}
-	
-	public void setNewStack(Boolean newStack){
-		amGraph.setFeature("newStack", newStack);
-	}
-	
-	@JsonProperty(value="noStepRisers")
-	public Object isNoStepRisers(){
-		return amGraph.getFeature("noStepRisers");
-	}
-	
-	public void setNoStepRisers(Boolean noStepRisers){
-		amGraph.setFeature("noStepRisers", noStepRisers);
-	}
-	
-	public Object getOpenField(){
-		return amGraph.getFeature("openField");
-	}
-	
-	public void setOpenField(String openField){
-		amGraph.setFeature("openField", openField);
-	}
-	
 	//pattern
 	
 	//patternField
 	
-	public Object getPeriodSpan(){
-		return amGraph.getFeature("periodSpan");
+	public Object getPrecision(){
+		return amGraph.getFeature("precision");
 	}
 	
-	public void setPeriodSpan(Number periodSpan) throws IntegerException{
-		if(NumberValidator.integerValidator(periodSpan)){
-			amGraph.setFeature("periodSpan", periodSpan);
+	public void setPrecision(Number precision) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(precision, -1, 2)){
+			amGraph.setFeature("precision", precision);
 		}
+	}
+	
+	@JsonProperty(value="proCandleSticks")
+	public Object isProCandleSticks(){
+		return amGraph.getFeature("proCandleSticks");
+	}
+	
+	public void setProCandleSticks(Boolean proCandleSticks){
+		amGraph.setFeature("proCandleSticks", proCandleSticks);
+	}
+	
+	@JsonProperty(value="showAllValueLabels")
+	public Object isSwowAllValueLabels(){
+		return amGraph.getFeature("showAllValueLabels");
+	}
+	
+	public void setShowAllValueLabels(Boolean showAllValueLabels){
+		amGraph.setFeature("showAllValueLabels", showAllValueLabels);
+	}
+	
+	@JsonProperty(value="showBalloon")
+	public Object isShowBalloon(){
+		return amGraph.getFeature("showBalloon");
+	}
+	
+	public void setShowBalloon(Boolean showBalloon){
+		amGraph.setFeature("showBalloon", showBalloon);
+	}
+	
+	@JsonProperty(value="showHandOnHover")
+	public Object isShowHandOnHover(){
+		return amGraph.getFeature("showHandOnHover");
+	}
+	
+	public void setShowHandOnHover(Boolean showHandOnHover){
+		amGraph.setFeature("showHandOnHover", showHandOnHover);
+	}
+	
+	@JsonProperty(value="showOnAxis")
+	public Object isShowOnAxis(){
+		return amGraph.getFeature("showOnAxis");
+	}
+	
+	public void setShowOnAxis(Boolean showOnAxis){
+		amGraph.setFeature("showOnAxis", showOnAxis);
+	}
+	
+	@JsonProperty(value="stackable")
+	public Object isStackable(){
+		return amGraph.getFeature("stackable");
+	}
+	
+	public void setStackable(Boolean stackable){
+		amGraph.setFeature("stackable", stackable);
+	}
+	
+	@JsonProperty(value="switchable")
+	public Object isSwitchable(){
+		return amGraph.getFeature("switchable");
+	}
+	
+	public void setSwitchable(Boolean switchable){
+		amGraph.setFeature("switchable", switchable);
 	}
 	
 	public Object getTitle(){
@@ -683,6 +597,55 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		amGraph.setFeature("title", title);
 	}
 	
+	public Object getType(){
+		return amGraph.getFeature("type");
+	}
 	
-
+	public void setType(GraphType type){
+		amGraph.setFeature("type", type.toString());
+	}
+	
+	public Object getUrlField(){
+		return amGraph.getFeature("urlField");
+	}
+	
+	public void setUrlField(String urlField){
+		amGraph.setFeature("urlField", urlField);
+	}
+	
+	public Object getUrlTarget(){
+		return amGraph.getFeature("urlTarget");
+	}
+	
+	public void setUrlTarget(UrlTarget urlTarget){
+		amGraph.setFeature("urlTarget", urlTarget.toString());
+	}
+	
+	public Object getValueAxis(){
+		return amGraph.getFeature("valueAxis");
+	}
+	
+	public void setValueAxis(String valueAxis){
+		if(chart.existValueAxis(valueAxis)){
+			amGraph.setFeature("valueAxis", valueAxis);
+		}
+	}
+	
+	public Object getValueField(){
+		return amGraph.getFeature("valueField");
+	}
+	
+	public void setValueField(String valueField){
+		amGraph.setFeature("valueField", valueField);
+	}
+	
+	@JsonProperty(value="visibleInLegend")
+	public Object isVisibleInLegend(){
+		return amGraph.getFeature("visibleInLegend");
+	}
+	
+	public void setVisibleInLegend(Boolean visibleInLegend){
+		amGraph.setFeature("visibleInLegend", visibleInLegend);
+	}
+	
 }

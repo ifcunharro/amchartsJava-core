@@ -105,7 +105,7 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 	//valueAxes
 	
 	//methods
-	public void addGraph(AmGraphController<?> amGraphController){
+	public <T extends AmGraphController> void addGraph(T amGraphController){
 		amchart.addGraph(amGraphController);
 	}
 	

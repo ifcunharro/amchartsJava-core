@@ -27,5 +27,7 @@ public class AmchartsConstants {
 	public static final TagsTextConstant TAGS_TEXT = TagsTextConstant.getInstance();
 	public static final LegendPeriodValueTextConstant LEGEND_PERIOD_VALUE_TEXT = LegendPeriodValueTextConstant.getInstance();
 	public static final PointPositionConstant POINT_POSITION = PointPositionConstant.getInstance();
+	public static final ShowAtConstant SHOW_AT = ShowAtConstant.getInstance();
+	public static final GraphTypesConstant GRAPH_TYPES = GraphTypesConstant.getInstance();
 	
 }

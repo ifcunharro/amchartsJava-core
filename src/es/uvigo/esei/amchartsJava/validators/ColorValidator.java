@@ -24,5 +24,12 @@ public class ColorValidator {
 		}
 		return true;
 	}
+	
+	public static boolean canActivateNegativeColor(String graphType){
+		if("line".equals(graphType) || "column".equals(graphType) || "step".equals(graphType)){
+			return true;
+		}
+		return false;
+	}
 
 }

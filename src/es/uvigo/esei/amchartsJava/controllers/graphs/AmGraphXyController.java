@@ -1,14 +1,13 @@
 package es.uvigo.esei.amchartsJava.controllers.graphs;
 
+import es.uvigo.esei.amchartsJava.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
-import es.uvigo.esei.amchartsJava.model.AmGraph;
-import es.uvigo.esei.amchartsJava.model.graphs.AmGraphXyGraph;
 import es.uvigo.esei.amchartsJava.validators.NumberValidator;
 
-public class AmGraphXyGraphController extends AmGraphController<AmGraph> {
+public class AmGraphXyController extends AmGraphSerialController {
 
-	public AmGraphXyGraphController(){
-		super(new AmGraphXyGraph());
+	{
+		setType(AmchartsConstants.GRAPH_TYPES.getLine());
 	}
 	
 	//bulletAxis
@@ -33,6 +32,26 @@ public class AmGraphXyGraphController extends AmGraphController<AmGraph> {
 		if(NumberValidator.integerValidator(minBulletSize)){
 			amGraph.setFeature("minBulletSize", minBulletSize);
 		}
+	}
+	
+	//xAxis
+	
+	public Object getXField(){
+		return amGraph.getFeature("xField");
+	}
+	
+	public void setXField(String xField){
+		amGraph.setFeature("xField", xField);
+	}
+	
+	//yAxis
+	
+	public Object getYField(){
+		return amGraph.getFeature("yField");
+	}
+	
+	public void setYField(String yField){
+		amGraph.setFeature("yField", yField);
 	}
 	
 	

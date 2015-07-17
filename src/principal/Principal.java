@@ -26,7 +26,6 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		
 		try {
 			NumberValidator.floatValidator(5);
 		} catch (FloatException e7) {
@@ -132,7 +131,7 @@ public class Principal {
 			//mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, false);
 			//mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
 
-			mapper.writeValue(System.out,lc);
+			mapper.writeValue(System.out,tc2);
 
 
 		} catch (IOException e) {

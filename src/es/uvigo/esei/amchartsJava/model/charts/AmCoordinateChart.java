@@ -7,13 +7,16 @@ import java.util.List;
 import es.uvigo.esei.amchartsJava.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.model.AmChart;
-import es.uvigo.esei.amchartsJava.model.AmGraph;
+import es.uvigo.esei.amchartsJava.model.ValueAxis;
 
 public abstract class AmCoordinateChart extends AmChart {
 	private List<String> colors;
-	private List<AmGraphController<?>> graphs;
+	private List<AmGraphController> graphs;
+	private List<ValueAxis> valueAxes;
 	private static List<String> idGraphs;
+	private static List<String> idValueAxes;
 	private int deleteGraphs;
+	
 	
 	{
 		colors = new ArrayList<String>();
@@ -36,15 +39,16 @@ public abstract class AmCoordinateChart extends AmChart {
 		colors.add(color);
 	}
 
-	public void addGraph(AmGraphController<? extends AmGraph> amGraphController) {
+	public void addGraph(AmGraphController amGraphController) {
 		if(graphs==null){
-			graphs = new ArrayList<AmGraphController<?>>();
+			graphs = new ArrayList<AmGraphController>();
 			idGraphs = new ArrayList<String>();
 		}
 		
 		addObserver(amGraphController);
 		setChanged();
 		notifyObservers(graphs.size()+1+deleteGraphs);
+		amGraphController.setChart(this);
 		graphs.add(amGraphController);
 		deleteObservers();
 		idGraphs.add("AmGraph-"+graphs.size()+deleteGraphs);
@@ -66,7 +70,10 @@ public abstract class AmCoordinateChart extends AmChart {
 	
 	public static boolean existGraph(String idGraph){
 		return idGraphs.contains(idGraph);
-		
+	}
+	
+	public boolean existValueAxis(String idValueAxis){
+		return idValueAxes.contains(idValueAxis);
 	}
 
 }

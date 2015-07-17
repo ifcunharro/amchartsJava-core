@@ -66,7 +66,7 @@ public final class AlignConstant {
 	 * @return text alignment 
 	 */
 	public Align[] getAligns(){
-		return Align.class.getEnumConstants();
+		return Align.values();
 	}
 	
 	/**
