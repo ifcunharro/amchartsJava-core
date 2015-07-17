@@ -14,6 +14,7 @@ public class ES implements Idiom {
 		textsES.put("LanguageException", "El idioma no es válido");
 		textsES.put("ColorException", "El formato de color debe ser #000000");
 		textsES.put("IntegerException", "El número debe ser un entero");
+		textsES.put("FloatException", "El número debe ser un real");
 		textsES.put("and"," y ");
 		textsES.put("CoordException","Las coordenadas deben ser un entero o porcentaje");
 	}

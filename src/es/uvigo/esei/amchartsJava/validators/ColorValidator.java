@@ -17,5 +17,12 @@ public class ColorValidator {
 		};
 		return true;
 	}
+	
+	public static boolean checkFormatColors(String... colors) throws ColorException{
+		for(String color: colors){
+			ColorValidator.checkFormatColor(color);
+		}
+		return true;
+	}
 
 }

@@ -14,6 +14,7 @@ public class EN implements Idiom {
 		textsEN.put("LanguageException", "Language not valid");
 		textsEN.put("ColorException", "Format color should be #000000");
 		textsEN.put("IntegerException", "Number must be an integer");
+		textsEN.put("FloatException", "Number must be a float");
 		textsEN.put("and"," and ");
 		textsEN.put("CoordException","Format coords must be a number integer or a percent");
 	}

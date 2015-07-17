@@ -95,7 +95,7 @@ public class AmLegendController {
 	}
 	
 	public void setBottom(Number bottom) throws IntegerException{
-		if(NumberValidator.IntegerValidator(bottom)){
+		if(NumberValidator.integerValidator(bottom)){
 			legend.setFeature("bottom", bottom);
 		}
 	}
@@ -141,7 +141,7 @@ public class AmLegendController {
 	}
 	
 	public void setFontSize(Number fontSize) throws IntegerException{
-		if(NumberValidator.IntegerValidator(fontSize)){
+		if(NumberValidator.integerValidator(fontSize)){
 			legend.setFeature("fontSize", fontSize);
 		}
 	}
@@ -160,7 +160,7 @@ public class AmLegendController {
 	}
 	
 	public void setHorizontalGap(Number horizontalGap) throws IntegerException{
-		if(NumberValidator.IntegerValidator(horizontalGap)){
+		if(NumberValidator.integerValidator(horizontalGap)){
 			legend.setFeature("horizontalGap", horizontalGap);
 		}
 	}
@@ -179,7 +179,7 @@ public class AmLegendController {
 	}
 	
 	public void setLabelWidth(Number labelWidth) throws IntegerException{
-		if(NumberValidator.IntegerValidator(labelWidth)){
+		if(NumberValidator.integerValidator(labelWidth)){
 			legend.setFeature("labelWidth", labelWidth);
 		}
 	}
@@ -189,7 +189,7 @@ public class AmLegendController {
 	}
 	
 	public void setLeft(Number left) throws IntegerException{
-		if(NumberValidator.IntegerValidator(left)){
+		if(NumberValidator.integerValidator(left)){
 			legend.setFeature("left", left);
 		}
 	}
@@ -199,7 +199,7 @@ public class AmLegendController {
 	}
 	
 	public void setMarginBottom(Number marginBottom) throws IntegerException{
-		if(NumberValidator.IntegerValidator(marginBottom)){
+		if(NumberValidator.integerValidator(marginBottom)){
 			legend.setFeature("marginBottom", marginBottom);
 		}
 	}
@@ -209,7 +209,7 @@ public class AmLegendController {
 	}
 	
 	public void setMarginLeft(Number marginLeft) throws IntegerException{
-		if(NumberValidator.IntegerValidator(marginLeft)){
+		if(NumberValidator.integerValidator(marginLeft)){
 			legend.setFeature("marginLeft", marginLeft);
 		}
 	}
@@ -219,7 +219,7 @@ public class AmLegendController {
 	}
 	
 	public void setMarginRight(Number marginRight) throws IntegerException{
-		if(NumberValidator.IntegerValidator(marginRight)){
+		if(NumberValidator.integerValidator(marginRight)){
 			legend.setFeature("marginRight", marginRight);
 		}
 	}
@@ -229,7 +229,7 @@ public class AmLegendController {
 	}
 	
 	public void setMarginTop(Number marginTop) throws IntegerException{
-		if(NumberValidator.IntegerValidator(marginTop)){
+		if(NumberValidator.integerValidator(marginTop)){
 			legend.setFeature("marginTop", marginTop);
 		}
 	}
@@ -259,7 +259,7 @@ public class AmLegendController {
 	}
 	
 	public void setMarkerBorderThickness(Number markerBorderThickness) throws IntegerException{
-		if(NumberValidator.IntegerValidator(markerBorderThickness)){
+		if(NumberValidator.integerValidator(markerBorderThickness)){
 			legend.setFeature("markerBorderThickness", markerBorderThickness);
 		}
 	}
@@ -279,7 +279,7 @@ public class AmLegendController {
 	}
 	
 	public void setMarkerLabelGap(Number markerLabelGap) throws IntegerException{
-		if(NumberValidator.IntegerValidator(markerLabelGap)){
+		if(NumberValidator.integerValidator(markerLabelGap)){
 			legend.setFeature("markerLabelGap", markerLabelGap);
 		}
 	}
@@ -289,7 +289,7 @@ public class AmLegendController {
 	}
 	
 	public void setMarkerSize(Number markerSize) throws IntegerException{
-		if(NumberValidator.IntegerValidator(markerSize)){
+		if(NumberValidator.integerValidator(markerSize)){
 			legend.setFeature("markerSize", markerSize);
 		}
 	}
@@ -307,7 +307,7 @@ public class AmLegendController {
 	}
 	
 	public void setMaxColumns(Number maxColumns) throws IntegerException{
-		if(NumberValidator.IntegerValidator(maxColumns)){
+		if(NumberValidator.integerValidator(maxColumns)){
 			legend.setFeature("maxColumns", maxColumns);
 		}
 	}
@@ -342,7 +342,7 @@ public class AmLegendController {
 	}
 	
 	public void setRight(Number right) throws IntegerException{
-		if(NumberValidator.IntegerValidator(right)){
+		if(NumberValidator.integerValidator(right)){
 			legend.setFeature("right", right);
 		}
 	}
@@ -381,7 +381,7 @@ public class AmLegendController {
 	}
 	
 	public void setSpacing(Number spacing) throws IntegerException{
-		if(NumberValidator.IntegerValidator(spacing)){
+		if(NumberValidator.integerValidator(spacing)){
 			legend.setFeature("spacing", spacing);
 		}
 	}
@@ -427,7 +427,7 @@ public class AmLegendController {
 	}
 	
 	public void setTop(Number top) throws IntegerException{
-		if(NumberValidator.IntegerValidator(top)){
+		if(NumberValidator.integerValidator(top)){
 			legend.setFeature("top", top);
 		}
 	}
@@ -489,7 +489,7 @@ public class AmLegendController {
 	}
 	
 	public void setValueWidth(Number valueWidth) throws IntegerException{
-		if(NumberValidator.IntegerValidator(valueWidth)){
+		if(NumberValidator.integerValidator(valueWidth)){
 			legend.setFeature("valueWidth", valueWidth);
 		}
 	}
@@ -499,7 +499,7 @@ public class AmLegendController {
 	}
 	
 	public void setVerticalGap(Number verticalGap) throws IntegerException{
-		if(NumberValidator.IntegerValidator(verticalGap)){
+		if(NumberValidator.integerValidator(verticalGap)){
 			legend.setFeature("verticalGap", verticalGap);
 		}
 	}
@@ -509,7 +509,7 @@ public class AmLegendController {
 	}
 	
 	public void setWidth(Number width) throws IntegerException{
-		if(NumberValidator.IntegerValidator(width)){
+		if(NumberValidator.integerValidator(width)){
 			legend.setFeature("width", width);
 		}
 	}

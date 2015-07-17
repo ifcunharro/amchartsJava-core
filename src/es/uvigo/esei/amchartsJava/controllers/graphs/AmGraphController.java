@@ -17,8 +17,14 @@ import es.uvigo.esei.amchartsJava.constants.LabelPositionConstant.LabelPosition;
 import es.uvigo.esei.amchartsJava.constants.TagsTextConstant.TagsText;
 import es.uvigo.esei.amchartsJava.constants.LegendPeriodValueTextConstant.LegendPeriodValueText;
 import es.uvigo.esei.amchartsJava.constants.MarkerTypeConstant.MarkerType;
+import es.uvigo.esei.amchartsJava.exceptions.CoordException;
+import es.uvigo.esei.amchartsJava.exceptions.FloatException;
+import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.model.AmGraph;
 import es.uvigo.esei.amchartsJava.model.charts.AmCoordinateChart;
+import es.uvigo.esei.amchartsJava.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.validators.StringValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmGraphController<E extends AmGraph> implements Observer {
@@ -98,16 +104,20 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("bulletAlpha");
 	}
 	
-	public void setBulletAlpha(Number bulletAlpha){
-		amGraph.setFeature("bulletAlpha", bulletAlpha);
+	public void setBulletAlpha(Number bulletAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(bulletAlpha, 0, 1)){
+			amGraph.setFeature("bulletAlpha", bulletAlpha);
+		}
 	}
 	
 	public Object getBulletBorderAlpha(){
 		return amGraph.getFeature("bulletBorderAlpha");
 	}
 	
-	public void setBulletBorderAlpha(Number bulletBorderAlpha){
-		amGraph.setFeature("bulletBorderAlpha", bulletBorderAlpha);
+	public void setBulletBorderAlpha(Number bulletBorderAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(bulletBorderAlpha, 0, 1)){
+			amGraph.setFeature("bulletBorderAlpha", bulletBorderAlpha);
+		}
 	}
 	
 	public Object getBulletBordeColor(){
@@ -122,8 +132,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("bulletBorderThickness");
 	}
 	
-	public void setBulletBorderThickness(Number bulletBorderThickness){
-		amGraph.setFeature("bulletBorderThickness", bulletBorderThickness);
+	public void setBulletBorderThickness(Number bulletBorderThickness) throws IntegerException{
+		if(NumberValidator.integerValidator(bulletBorderThickness)){
+			amGraph.setFeature("bulletBorderThickness", bulletBorderThickness);
+		}
 	}
 	
 	public Object getBulletColor(){
@@ -146,16 +158,20 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("bulletOffset");
 	}
 	
-	public void setBulletOffset(Number bulletOffset){
-		amGraph.setFeature("bulletOffset", bulletOffset);
+	public void setBulletOffset(Number bulletOffset) throws IntegerException{
+		if(NumberValidator.integerValidator(bulletOffset)){
+			amGraph.setFeature("bulletOffset", bulletOffset);
+		}
 	}
 	
 	public Object getBulletSize(){
 		return amGraph.getFeature("bulletSize");
 	}
 	
-	public void setBulletSize(Number bulletSize){
-		amGraph.setFeature("bulletSize", bulletSize);
+	public void setBulletSize(Number bulletSize) throws IntegerException{
+		if(NumberValidator.integerValidator(bulletSize)){
+			amGraph.setFeature("bulletSize", bulletSize);
+		}
 	}
 	
 	public Object getBulletSizeField(){
@@ -203,8 +219,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("columnWidth");
 	}
 	
-	public void setColumnWidth(Number columnWidth){
-		amGraph.setFeature("columnWidth", columnWidth);
+	public void setColumnWidth(Number columnWidth) throws IntegerException{
+		if(NumberValidator.integerValidator(columnWidth)){
+			amGraph.setFeature("columnWidth", columnWidth);
+		}
 	}
 	
 	@JsonProperty(value="connect")
@@ -220,22 +238,26 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("cornerRadiusTop");
 	}
 	
-	public void setCornerRadiusTop(Number cornerRadiusTop){
-		amGraph.setFeature("cornerRadiusTop", cornerRadiusTop);
+	public void setCornerRadiusTop(String cornerRadiusTop) throws CoordException{
+		if(StringValidator.pixelOrPercent(cornerRadiusTop)){
+			amGraph.setFeature("cornerRadiusTop", cornerRadiusTop);
+		}
 	}
 	
 	public Object getCursorBulletAlpha(){
 		return amGraph.getFeature("cursorBulletAlpha");
 	}
 	
-	public void setCursorBulletAlpha(Number cursorBulletAlpha){
-		amGraph.setFeature("cursorBulletAlpha", cursorBulletAlpha);
+	public void setCursorBulletAlpha(Number cursorBulletAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(cursorBulletAlpha, 0, 1)){
+			amGraph.setFeature("cursorBulletAlpha", cursorBulletAlpha);
+		}
 	}
-	
+	//path to image custom bullet
 	public Object getCustomBullet(){
 		return amGraph.getFeature("customBullet");
 	}
-	
+	//FALTA VALIDAR PATH
 	public void setCustomBullet(String customBullet){
 		amGraph.setFeature("customBullet", customBullet);
 	}
@@ -304,8 +326,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("fillAlphas");
 	}
 	
-	public void setFillAlphas(Number fillAlphas){
-		amGraph.setFeature("fillAlphas",fillAlphas);
+	public void setFillAlphas(Number fillAlphas) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(fillAlphas, 0, 1)){
+			amGraph.setFeature("fillAlphas",fillAlphas);
+		}
 	}
 	
 	public Object getFillColors(){
@@ -339,16 +363,20 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("fixedColumnWidth");
 	}
 	
-	public void setFixedColumnWidth(Number fixedColumnWidth){
-		amGraph.setFeature("fixedColumnWidth", fixedColumnWidth);
+	public void setFixedColumnWidth(Number fixedColumnWidth) throws IntegerException{
+		if(NumberValidator.integerValidator(fixedColumnWidth)){
+			amGraph.setFeature("fixedColumnWidth", fixedColumnWidth);
+		}
 	}
 	
 	public Object getFontSize(){
 		return amGraph.getFeature("fontSize");
 	}
 	
-	public void setFontSize(Number fontSize){
-		amGraph.setFeature("fontSize", fontSize);
+	public void setFontSize(Number fontSize) throws IntegerException{
+		if(NumberValidator.integerValidator(fontSize)){
+			amGraph.setFeature("fontSize", fontSize);
+		}
 	}
 	
 	public Object getGapField(String gapField){
@@ -363,8 +391,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("gapPeriod");
 	}
 	
-	public void setGapPeriod(Number gapPeriod){
-		amGraph.setFeature("gapPeriod", gapPeriod);
+	public void setGapPeriod(Number gapPeriod) throws FloatException{
+		if(NumberValidator.floatValidator(gapPeriod)){
+			amGraph.setFeature("gapPeriod", gapPeriod);
+		}
 	}
 	
 	public Object getGradientOrientation(){
@@ -388,8 +418,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("hideBulletsCount");
 	}
 	
-	public void setHideBulletsCount(Number hideBulletsCount){
-		amGraph.setFeature("hideBulletsCount", hideBulletsCount);
+	public void setHideBulletsCount(Number hideBulletsCount) throws IntegerException{
+		if(NumberValidator.integerValidator(hideBulletsCount)){
+			amGraph.setFeature("hideBulletsCount", hideBulletsCount);
+		}
 	}
 	
 	public Object getHighField(){
@@ -437,8 +469,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("labelOffset");
 	}
 	
-	public void setLabelOffset(Number labelOffset){
-		amGraph.setFeature("labelOffset", labelOffset);
+	public void setLabelOffset(Number labelOffset) throws IntegerException{
+		if(NumberValidator.integerValidator(labelOffset)){
+			amGraph.setFeature("labelOffset", labelOffset);
+		}
 	}
 	
 	public Object getLabelPosition(){
@@ -453,8 +487,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("labelRotation");
 	}
 	
-	public void setLabelRotation(Number labelRotation){
-		amGraph.setFeature("labelRotation", labelRotation);
+	public void setLabelRotation(Number labelRotation) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(labelRotation, 0, 360)){
+			amGraph.setFeature("labelRotation", labelRotation);
+		}
 	}
 	
 	public Object getLabelText(){
@@ -469,8 +505,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("legendAlpha");
 	}
 	
-	public void setLegendAlpha(Number legendAlpha){
-		amGraph.setFeature("legendAlpha", legendAlpha);
+	public void setLegendAlpha(Number legendAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(legendAlpha, 0, 1)){
+			amGraph.setFeature("legendAlpha", legendAlpha);
+		}
 	}
 	
 	public Object getLegendColor(){
@@ -501,8 +539,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("lineAlpha");
 	}
 	
-	public void setLineAlpha(Number lineAlpha){
-		amGraph.setFeature("lineAlpha", lineAlpha);
+	public void setLineAlpha(Number lineAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(lineAlpha, 0, 1)){
+			amGraph.setFeature("lineAlpha", lineAlpha);
+		}
 	}
 	
 	public Object getLineColor(){
@@ -517,8 +557,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("lineThickness");
 	}
 	
-	public void setLineThickness(Number lineThickness){
-		amGraph.setFeature("lineThickness", lineThickness);
+	public void setLineThickness(Number lineThickness) throws IntegerException{
+		if(NumberValidator.integerValidator(lineThickness)){
+			amGraph.setFeature("lineThickness", lineThickness);
+		}
 	}
 	
 	public Object getLowField(){
@@ -541,24 +583,30 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("minDistance");
 	}
 	
-	public void setMinDistance(Number minDistance){
-		amGraph.setFeature("minDistance", minDistance);
+	public void setMinDistance(Number minDistance) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(minDistance, 0, 100)){
+			amGraph.setFeature("minDistance", minDistance);
+		}
 	}
 	
 	public Object getNegativeBase(){
 		return amGraph.getFeature("negativeBase");
 	}
 	
-	public void setNegativeBase(Number negativeBase){
-		amGraph.setFeature("negativeBase", negativeBase);
+	public void setNegativeBase(Number negativeBase) throws IntegerException{
+		if(NumberValidator.integerValidator(negativeBase)){
+			amGraph.setFeature("negativeBase", negativeBase);
+		}
 	}
 	
 	public Object getNegativeFillAlphas(){
 		return amGraph.getFeature("negativeFillAlphas");
 	}
 	
-	public void setNegativeFillAlphas(Number negativeFillAlhas){
-		amGraph.setFeature("negativeFillAlhas", negativeFillAlhas);
+	public void setNegativeFillAlphas(Number negativeFillAlhas) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(negativeFillAlhas, 0, 1)){
+			amGraph.setFeature("negativeFillAlhas", negativeFillAlhas);
+		}
 	}
 	
 	public Object getNegativeFillColors(){
@@ -573,8 +621,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("negativeLineAlpha");
 	}
 	
-	public void setNegativeLineAlpha(Number negativeLineAlpha){
-		amGraph.setFeature("negativeLineAlpha", negativeLineAlpha);
+	public void setNegativeLineAlpha(Number negativeLineAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(negativeLineAlpha, 0, 1)){
+			amGraph.setFeature("negativeLineAlpha", negativeLineAlpha);
+		}
 	}
 	
 	public Object getNegativeLineColor(){
@@ -619,8 +669,10 @@ public abstract class AmGraphController<E extends AmGraph> implements Observer {
 		return amGraph.getFeature("periodSpan");
 	}
 	
-	public void setPeriodSpan(Number periodSpan){
-		amGraph.setFeature("periodSpan", periodSpan);
+	public void setPeriodSpan(Number periodSpan) throws IntegerException{
+		if(NumberValidator.integerValidator(periodSpan)){
+			amGraph.setFeature("periodSpan", periodSpan);
+		}
 	}
 	
 	public Object getTitle(){

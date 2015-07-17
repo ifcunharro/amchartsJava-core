@@ -1,7 +1,9 @@
 package es.uvigo.esei.amchartsJava.controllers.graphs;
 
+import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.model.AmGraph;
 import es.uvigo.esei.amchartsJava.model.graphs.AmGraphXyGraph;
+import es.uvigo.esei.amchartsJava.validators.NumberValidator;
 
 public class AmGraphXyGraphController extends AmGraphController<AmGraph> {
 
@@ -17,16 +19,20 @@ public class AmGraphXyGraphController extends AmGraphController<AmGraph> {
 		return amGraph.getFeature("maxBulletSize");
 	}
 	
-	public void setMaxBulletSize(Number maxBulletSize){
-		amGraph.setFeature("maxBulletSize", maxBulletSize);
+	public void setMaxBulletSize(Number maxBulletSize) throws IntegerException{
+		if(NumberValidator.integerValidator(maxBulletSize)){
+			amGraph.setFeature("maxBulletSize", maxBulletSize);
+		}
 	}
 	
 	public Object getMinBulletSize(){
 		return amGraph.getFeature("minBulletSize");
 	}
 	
-	public void setMinBulletSize(Number minBulletSize){
-		amGraph.setFeature("minBulletSize", minBulletSize);
+	public void setMinBulletSize(Number minBulletSize) throws IntegerException{
+		if(NumberValidator.integerValidator(minBulletSize)){
+			amGraph.setFeature("minBulletSize", minBulletSize);
+		}
 	}
 	
 	

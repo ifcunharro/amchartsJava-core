@@ -9,10 +9,14 @@ import es.uvigo.esei.amchartsJava.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.controllers.TitleController;
+import es.uvigo.esei.amchartsJava.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.exceptions.CoordException;
+import es.uvigo.esei.amchartsJava.exceptions.FloatException;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.parser.ParserJson;
+import es.uvigo.esei.amchartsJava.validators.ColorValidator;
+import es.uvigo.esei.amchartsJava.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.validators.StringValidator;
 
 
@@ -24,7 +28,24 @@ public class Principal {
 
 		
 		try {
-			StringValidator.coordFormat("12");
+			NumberValidator.floatValidator(5);
+		} catch (FloatException e7) {
+			// TODO Auto-generated catch block
+			e7.printStackTrace();
+		}
+		
+		
+		String[] colors = {"#999999","#AAAAA"};
+		try {
+			ColorValidator.checkFormatColors(colors);
+		} catch (ColorException e6) {
+			// TODO Auto-generated catch block
+			e6.printStackTrace();
+		}
+		
+		
+		try {
+			StringValidator.pixelOrPercent("12");
 		} catch (CoordException e5) {
 			// TODO Auto-generated catch block
 			e5.printStackTrace();
@@ -38,7 +59,7 @@ public class Principal {
 		
 		LabelController lab = new LabelController();
 		try {
-			lab.setRotation(94);
+			lab.setRotation(90);
 		} catch (OutOfRangeException e4) {
 			// TODO Auto-generated catch block
 			e4.printStackTrace();

@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.validators;
 
 import es.uvigo.esei.amchartsJava.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.exceptions.FloatException;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
 
@@ -24,19 +25,18 @@ public class NumberValidator {
 		return true;
 	}
 	
-	public static boolean IntegerValidator(Number number) throws IntegerException{
+	public static boolean integerValidator(Number number) throws IntegerException{
 		if(number instanceof Integer){
 			return true;
 		}
 		throw new IntegerException(I18n.get("IntegerException"));
 	}
 
-	public static boolean IntegerValidator(String xCoord) throws IntegerException {
-		try{
-			Integer.valueOf(xCoord);
-		}catch(NumberFormatException e1){
-			throw new IntegerException(I18n.get("IntegerException"));
+	public static boolean floatValidator(Number number) throws FloatException {
+		if(number instanceof Float || number instanceof Integer){
+			return true;
 		}
-		return true;
+		throw new FloatException(I18n.get("FloatException"));
 	}
+
 }

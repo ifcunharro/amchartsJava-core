@@ -10,7 +10,7 @@ public class StringValidator {
 		
 	}
 	
-	public static boolean coordFormat(String coord) throws CoordException{
+	public static boolean pixelOrPercent(String coord) throws CoordException{
 		if(Pattern.matches("[0-9]+%?", coord)){
 			return true;
 		}

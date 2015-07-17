@@ -131,7 +131,7 @@ public abstract class AmChartController<E extends AmChart>{
 	}
 	
 	public void setFontSize(Number fontSize) throws IntegerException{
-		if(NumberValidator.IntegerValidator(fontSize)){
+		if(NumberValidator.integerValidator(fontSize)){
 			amchart.setFeature("fontSize", fontSize);
 		}
 	}
@@ -150,7 +150,7 @@ public abstract class AmChartController<E extends AmChart>{
 	}
 	
 	public void setHandDrawScatter(Number handDrawScatter) throws IntegerException{
-		if(NumberValidator.IntegerValidator(handDrawScatter)){
+		if(NumberValidator.integerValidator(handDrawScatter)){
 			amchart.setFeature("handDrawScatter", handDrawScatter);
 		}
 	}
@@ -160,7 +160,7 @@ public abstract class AmChartController<E extends AmChart>{
 	}
 	
 	public void setHandDrasThickness(Number handDrawThickness) throws IntegerException{
-		if(NumberValidator.IntegerValidator(handDrawThickness)){
+		if(NumberValidator.integerValidator(handDrawThickness)){
 			amchart.setFeature("handDrawThickness", handDrawThickness);
 		}
 	}
@@ -170,7 +170,7 @@ public abstract class AmChartController<E extends AmChart>{
 	}
 	
 	public void setHideBalloonTime(Number hideBalloonTime) throws IntegerException{
-		if(NumberValidator.IntegerValidator(hideBalloonTime)){
+		if(NumberValidator.integerValidator(hideBalloonTime)){
 			amchart.setFeature("hideBalloonTime", hideBalloonTime);
 		}
 	}
@@ -215,8 +215,8 @@ public abstract class AmChartController<E extends AmChart>{
 		return amchart.getFeature("percentPrecision");
 	}
 	
-	public void setPercentPrecision(Number percentPrecision) throws IntegerException{
-		if(NumberValidator.IntegerValidator(percentPrecision)){
+	public void setPercentPrecision(Number percentPrecision) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(percentPrecision, -1, 2)){
 			amchart.setFeature("percentPrecision", percentPrecision);
 		}
 	}
@@ -225,8 +225,8 @@ public abstract class AmChartController<E extends AmChart>{
 		return amchart.getFeature("precision");
 	}
 	
-	public void setPrecision(Number precision) throws IntegerException{
-		if(NumberValidator.IntegerValidator(precision)){
+	public void setPrecision(Number precision) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(precision, -1, 2)){
 			amchart.setFeature("precision", precision);
 		}
 	}

@@ -18,6 +18,7 @@ public class AmchartsConstants {
 	public static final SwitchTypeConstant SWITCH_TYPES = SwitchTypeConstant.getInstance();
 	public static final ChartTypesConstant CHART_TYPES = ChartTypesConstant.getInstance();
 	public static final StartEffectConstant START_EFFECTS = StartEffectConstant.getInstance();
+	public static final UrlTargetConstant URL_TARGET = UrlTargetConstant.getInstance();
 	public static final BulletConstant BULLET = BulletConstant.getInstance();
 	public static final String[] DATE_FORMAT = DateFormatConstant.getDateFormat();
 	public static final GradientOrientationConstant GRADIENT_ORIENTATION = GradientOrientationConstant.getInstance();

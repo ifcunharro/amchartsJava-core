@@ -83,7 +83,7 @@ public class LabelController implements Observer {
 	}
 	
 	public void setRotation(Number rotation) throws OutOfRangeException,IntegerException{
-		if(NumberValidator.IntegerValidator(rotation) && 
+		if(NumberValidator.integerValidator(rotation) && 
 				NumberValidator.rangeIntegerValidator(rotation, -90, 90)){
 					label.setFeature("rotation", rotation);
 		}
@@ -93,8 +93,8 @@ public class LabelController implements Observer {
 		return label.getFeature("size");
 	}
 	
-	public void setSize(Number size) throws IntegerException{
-		if(NumberValidator.IntegerValidator(size)){
+	public void setSize(Number size) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(size, -90, 90)){
 			label.setFeature("size", size);
 		}
 	}
@@ -120,7 +120,7 @@ public class LabelController implements Observer {
 	}
 	
 	public void setX(String xCoord) throws CoordException{
-		if(StringValidator.coordFormat(xCoord)){
+		if(StringValidator.pixelOrPercent(xCoord)){
 			label.setFeature("x", xCoord);
 		}
 	}
@@ -130,7 +130,7 @@ public class LabelController implements Observer {
 	}
 	
 	public void setY(String yCoord) throws CoordException{
-		if(StringValidator.coordFormat(yCoord)){
+		if(StringValidator.pixelOrPercent(yCoord)){
 			label.setFeature("y", yCoord);
 		}
 	}

@@ -69,7 +69,7 @@ public class TitleController implements Observer {
 	}
 	
 	public void setSize(Number size) throws IntegerException{
-		if(NumberValidator.IntegerValidator(size)){
+		if(NumberValidator.integerValidator(size)){
 			title.setFeature("size", size);
 		}
 	}
