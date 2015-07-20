@@ -52,7 +52,9 @@ public abstract class AmChart extends IModel {
 	}
 
 	public void createBalloon() {
-		amBalloon = new AmBalloon();
+		if(amBalloon==null){
+			amBalloon = new AmBalloon();
+		}
 		
 	}
 
@@ -71,10 +73,6 @@ public abstract class AmChart extends IModel {
 	public void addLegend(AmLegendController amLegend) {
 		legend = amLegend;
 		
-	}
-	
-	public Object getLegendDiv(){
-		return legend.getLegend().getFeature("divId");
 	}
 	
 	public List<Prefix> getBigPrefixes(){

@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.constants.UrlTargetConstant.UrlTarget;
+import es.uvigo.esei.amchartsJava.controllers.GuideController;
+import es.uvigo.esei.amchartsJava.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
@@ -21,9 +23,6 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 		super(chart);
 
 	}
-	
-
-	//chartData solo lectura
 	
 	//colors problema tipo prefixes
 	
@@ -48,14 +47,20 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 		amchart.setFeature("gridAboveGraphs", gridAboveGraphs);
 	}
 	
-	
-	
 	//graphs
 	public Object getGraphs(){
 		return amchart.getGraphs();
 	}
 	
 	//guides
+	public Object getGuides(){
+		return amchart.getGuides();
+	}
+	
+	//valueAxes
+	public Object getValueAxes(){
+		return amchart.getValueAxes();
+	}
 	
 	@JsonProperty(value="sequencedAnimation")
 	public Object isSequencedAnimation(){
@@ -102,21 +107,36 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 		amchart.setFeature("urlTarget", urlTarget.toString());
 	}
 	
-	//valueAxes
-	
 	//methods
 	public <T extends AmGraphController> void addGraph(T amGraphController){
 		amchart.addGraph(amGraphController);
 	}
 	
-	//remove by id
-	public void removeGraph(String id){
-		amchart.removeGraph(id);
+	public void addGuide(GuideController guideController){
+		amchart.addGuide(guideController);
 	}
-
-
-
 	
-
+	public void addValueAxis(ValueAxisController valueAxisController){
+		amchart.addValueAxis(valueAxisController);
+	}
+	
+	//remove by id
+	public void removeGraph(String idGraph){
+		if(amchart.existGraph(idGraph)){
+			amchart.removeGraph(idGraph);
+		}
+	}
+	
+	public void removeGuide(String idGuide){
+		if(amchart.existGuide(idGuide)){
+			amchart.removeGuide(idGuide);
+		}
+	}
+	
+	public void removeValueAxis(String idValueAxis){
+		if(amchart.existGuide(idValueAxis)){
+			amchart.removeGuide(idValueAxis);
+		}
+	}
 	
 }

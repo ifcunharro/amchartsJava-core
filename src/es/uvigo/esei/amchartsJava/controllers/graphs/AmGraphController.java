@@ -293,7 +293,7 @@ public abstract class AmGraphController implements Observer {
 	
 	//debe ser el id de otro graph
 	public void setFillToGraph(String fillToGraph){
-		if(AmCoordinateChart.existGraph(fillToGraph)){
+		if(chart.existGraph(fillToGraph)){
 			amGraph.setFeature("fillToGraph", fillToGraph);
 		}
 	}

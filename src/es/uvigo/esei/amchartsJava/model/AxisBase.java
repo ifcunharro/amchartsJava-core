@@ -1,5 +1,5 @@
 package es.uvigo.esei.amchartsJava.model;
 
-public class ValueAxis {
+public class AxisBase extends IModel {
 
 }

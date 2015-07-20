@@ -29,7 +29,7 @@ public abstract class AmChartController<E extends AmChart>{
 	
 	protected AmChartController(E chart) {
 		amchart = chart;
-		amchart.setFeature("pathToImages", "../amcharts/images");
+		this.setPathToImages("../amcharts/images");
 	}
 
 	
@@ -184,15 +184,6 @@ public abstract class AmChartController<E extends AmChart>{
 		amchart.setFeature("language", language);
 	}
 	
-	//only-read
-	public Object getLegendDiv(){
-		if(amchart.getLegend()!=null){
-			return amchart.getLegendDiv();
-		}else{
-			return null;
-		}
-	}
-	
 	@JsonProperty(value = "panEventsEnabled")
 	public Object isPanEventsEnabled(){
 		return amchart.getFeature("panEventsEnabled");
@@ -291,12 +282,6 @@ public abstract class AmChartController<E extends AmChart>{
 	public void setUsePrefixes(Boolean usePrefixes){
 		amchart.setFeature("usePrefixes", usePrefixes);
 	}
-	
-	//only read
-	public Object getVersion(){
-		return amchart.getFeature("version");
-	}
-	
 	
 	//methods 
 	//propio
