@@ -13,6 +13,8 @@ public class AmchartsConstants {
 	public static final CreditsPositionConstant CREDITS_POSITION = CreditsPositionConstant.getInstance();
 	public static final PointPositionConstant POINT_POSITION = PointPositionConstant.getInstance();
 	public static final AxisPositionConstant AXIS_POSITION = AxisPositionConstant.getInstance();
+	public static final PositionConstant UNIT_POSITION = PositionConstant.getInstance();
+	public static final CategoryPositionConstant GRID_POSITION = CategoryPositionConstant.getInstance();
 	public static final ShowAtConstant SHOW_AT = ShowAtConstant.getInstance();
 	public static final AlignConstant ALIGN = AlignConstant.getInstance();
 	public static final SeparatorConstant SEPARATOR = SeparatorConstant.getInstance();
@@ -21,6 +23,7 @@ public class AmchartsConstants {
 	public static final UrlTargetConstant URL_TARGET = UrlTargetConstant.getInstance();
 	public static final BulletConstant BULLET = BulletConstant.getInstance();
 	public static final String[] DATE_FORMAT = DateFormatConstant.getDateFormat();
+	public static final PeriodConstant PERIODS = PeriodConstant.getInstance();
 	public static final GradientOrientationConstant GRADIENT_ORIENTATION = GradientOrientationConstant.getInstance();
 	public static final LabelPositionConstant LABEL_POSITION = LabelPositionConstant.getInstance();
 	public static final LabelAnchorConstant LABEL_ANCHOR = LabelAnchorConstant.getInstance();
@@ -31,6 +34,7 @@ public class AmchartsConstants {
 	public static final MarkerTypeConstant MARKER_TYPES = MarkerTypeConstant.getInstance();
 	public static final SwitchTypeConstant SWITCH_TYPES = SwitchTypeConstant.getInstance();
 	public static final ChartTypesConstant CHART_TYPES = ChartTypesConstant.getInstance();
+	public static final AxisTypeConstant AXIS_TYPES = AxisTypeConstant.getInstance();
 	
 	
 	

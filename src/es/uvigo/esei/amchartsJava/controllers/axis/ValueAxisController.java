@@ -7,22 +7,23 @@ import java.util.Observer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import es.uvigo.esei.amchartsJava.constants.AxisTypeConstant.AxisType;
 import es.uvigo.esei.amchartsJava.constants.DurationConstant.Duration;
 import es.uvigo.esei.amchartsJava.constants.StackTypeConstant.StackType;
+import es.uvigo.esei.amchartsJava.constants.PositionConstant.Position;
+import es.uvigo.esei.amchartsJava.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.exceptions.FloatException;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
-import es.uvigo.esei.amchartsJava.model.axis.ValueAxis;
 import es.uvigo.esei.amchartsJava.model.charts.AmCoordinateChart;
+import es.uvigo.esei.amchartsJava.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.validators.NumberValidator;
 
-public abstract class ValueAxisController extends AxisBaseController<ValueAxis> implements Observer {
+public abstract class ValueAxisController extends AxisBaseController implements Observer {
 
 	private AmCoordinateChart chart;
 	
-	public ValueAxisController() {
-		super(new ValueAxis());	
-	}
+	
 	
 	@Override
 	public void update(Observable o, Object arg) {
@@ -201,5 +202,95 @@ public abstract class ValueAxisController extends AxisBaseController<ValueAxis> 
 		if(NumberValidator.floatValidator(synchronizationMultiplier)){
 			axes.setFeature("synchronizationMultiplier", synchronizationMultiplier);
 		}
+	}
+	
+	public Object getSynchronizeWith(){
+		return axes.getFeature("synchronizeWith");
+	}
+	
+	public void setSynchronizedWith(String synchronizedWith){
+		if(chart.existValueAxis(synchronizedWith)){
+			axes.setFeature("synchronizedWith", synchronizedWith);
+		}
+	}
+	
+	public Object getTotalText(){
+		return axes.getFeature("totalText");
+	}
+	
+	public void enabledTotalText(){
+		axes.setFeature("totalText", "[[total]]");
+	}
+	
+	public Object getTotalTextColor(){
+		return axes.getFeature("totalTextColor");
+	}
+	
+	public void setTotalTextColor(String totalTextColor) throws ColorException{
+		if(ColorValidator.checkFormatColor(totalTextColor)){
+			axes.setFeature("totalTextColor", totalTextColor);
+		}
+	}
+	
+	public Object getTotalTextOffset(){
+		return axes.getFeature("totalTextOffset");
+	}
+	
+	public void setTotalTextOffset(Number totalTextOffset) throws IntegerException{
+		if(NumberValidator.integerValidator(totalTextOffset)){
+			axes.setFeature("totalTextOffset", totalTextOffset);
+		}
+	}
+	
+	public Object getTreatZeroAs(){
+		return axes.getFeature("treatZeroAs");
+	}
+	
+	public void setTreatZeroAs(Number treatZeroAs) throws IntegerException{
+		if(NumberValidator.integerValidator(treatZeroAs)){
+			axes.setFeature("treatZeroAs", treatZeroAs);
+		}
+	}
+	
+	public Object getType(){
+		return axes.getFeature("type");
+	}
+	
+	public void setType(AxisType type){
+		axes.setFeature("type", type.toString());
+	}
+	
+	public Object getUnit(){
+		return axes.getFeature("unit");
+	}
+	
+	public void setUnit(String unit){
+		axes.setFeature("unit", unit);
+	}
+	
+	public Object getUnitPosition(){
+		return axes.getFeature("unitPosition");
+	}
+	
+	public void setUnitPosition(Position unitPosition){
+		axes.setFeature("unitPosition", unitPosition.toString());
+	}
+	
+	@JsonProperty(value="usePrefixes")
+	public Object isUsePrefixes(){
+		return axes.getFeature("usePrefixes");
+	}
+	
+	public void setUsePrefixes(Boolean usePrefixes){
+		axes.setFeature("usePrefixes", usePrefixes);
+	}
+	
+	@JsonProperty(value="useScientificNotation")
+	public Object isUseScientificNotation(){
+		return axes.getFeature("useScientificNotation");
+	}
+	
+	public void setUseScientificNotation(Boolean useScientificNotation){
+		axes.setFeature("useScientificNotation", useScientificNotation);
 	}
 }

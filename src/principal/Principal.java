@@ -26,6 +26,11 @@ public class Principal {
 
 	public static void main(String[] args) {
 
+		Number l = 9.935655;
+		Number p = 5.82434343;
+		System.out.println(l.floatValue()+p.floatValue());
+		
+		
 		try {
 			NumberValidator.floatValidator(5);
 		} catch (FloatException e7) {

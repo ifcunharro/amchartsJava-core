@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import es.uvigo.esei.amchartsJava.constants.ColorsAmCharts;
-import es.uvigo.esei.amchartsJava.controllers.GuideController;
 import es.uvigo.esei.amchartsJava.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.controllers.graphs.AmGraphController;
+import es.uvigo.esei.amchartsJava.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.model.AmChart;
 
 public abstract class AmCoordinateChart extends AmChart {

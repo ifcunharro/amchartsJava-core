@@ -35,5 +35,4 @@ public class ValueAxisRadarChartController extends ValueAxisController {
 		axes.setFeature("radarCategoriesEnabled", radarCategoriesEnabled);
 	}
 	
-	
 }

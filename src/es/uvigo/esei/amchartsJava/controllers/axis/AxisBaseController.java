@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import es.uvigo.esei.amchartsJava.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.constants.AxisPositionConstant.Position;
 import es.uvigo.esei.amchartsJava.constants.ColorsAmCharts;
+import es.uvigo.esei.amchartsJava.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
@@ -15,12 +16,12 @@ import es.uvigo.esei.amchartsJava.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AxisBaseController<E extends AxisBase> {
+public abstract class AxisBaseController {
 	
-	protected E axes;
+	protected AxisBase axes;
 	
-	protected AxisBaseController(E axis){
-		axes = axis;
+	{
+		axes = new AxisBase();
 	}
 	
 	@JsonProperty(value="autoGridCount")
@@ -337,6 +338,17 @@ public abstract class AxisBaseController<E extends AxisBase> {
 	public void setTitleFontSize(Number titleFontSize) throws IntegerException{
 		if(NumberValidator.integerValidator(titleFontSize)){
 			axes.setFeature("titleFontSize", titleFontSize);
+		}
+	}
+	
+	public void addGuide(GuideController guideController){
+		guideController.removeId();
+		axes.addGuide(guideController);
+	}
+	
+	public void removeGuide(GuideController guideController){
+		if(axes.existGuide(guideController)){
+			axes.removeGuide(guideController);
 		}
 	}
 	

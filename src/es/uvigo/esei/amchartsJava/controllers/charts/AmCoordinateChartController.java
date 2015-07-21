@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.constants.UrlTargetConstant.UrlTarget;
-import es.uvigo.esei.amchartsJava.controllers.GuideController;
 import es.uvigo.esei.amchartsJava.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.controllers.graphs.AmGraphController;
+import es.uvigo.esei.amchartsJava.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.model.charts.AmCoordinateChart;
@@ -24,20 +24,6 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 
 	}
 	
-	//colors problema tipo prefixes
-	
-	public Object getColors(){
-		return amchart.getColors();
-	}
-	
-	public void changeColorsDefault(String... newColors){
-		amchart.changeColorsDefault(newColors);
-	}
-	
-	public void addColor(String color){
-		amchart.addColor(color);
-	}
-	
 	@JsonProperty(value="gridAboveGraphs")
 	public Object isGridAboveGraphs(){
 		return amchart.getFeature("gridAboveGraphs");
@@ -45,21 +31,6 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 	
 	public void setGridAboveGraphs(Boolean gridAboveGraphs){
 		amchart.setFeature("gridAboveGraphs", gridAboveGraphs);
-	}
-	
-	//graphs
-	public Object getGraphs(){
-		return amchart.getGraphs();
-	}
-	
-	//guides
-	public Object getGuides(){
-		return amchart.getGuides();
-	}
-	
-	//valueAxes
-	public Object getValueAxes(){
-		return amchart.getValueAxes();
 	}
 	
 	@JsonProperty(value="sequencedAnimation")
@@ -108,10 +79,38 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 	}
 	
 	//methods
+	//colors problema tipo prefixes
+	public Object getColors(){
+		return amchart.getColors();
+	}
+	
+	public void addColor(String color){
+		amchart.addColor(color);
+	}
+	
+	public void changeColorsDefault(String... newColors){
+		amchart.changeColorsDefault(newColors);
+	}
+	
 	public <T extends AmGraphController> void addGraph(T amGraphController){
 		amchart.addGraph(amGraphController);
 	}
 	
+	//graphs
+	public Object getGraphs(){
+		return amchart.getGraphs();
+	}
+	
+	//guides
+	public Object getGuides(){
+		return amchart.getGuides();
+	}
+	
+	//valueAxes
+	public Object getValueAxes(){
+		return amchart.getValueAxes();
+	}
+		
 	public void addGuide(GuideController guideController){
 		amchart.addGuide(guideController);
 	}
