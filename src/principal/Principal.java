@@ -4,20 +4,24 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import es.uvigo.esei.amchartsJava.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.constants.lang.I18n;
-import es.uvigo.esei.amchartsJava.controllers.AmLegendController;
-import es.uvigo.esei.amchartsJava.controllers.LabelController;
-import es.uvigo.esei.amchartsJava.controllers.TitleController;
-import es.uvigo.esei.amchartsJava.exceptions.ColorException;
-import es.uvigo.esei.amchartsJava.exceptions.CoordException;
-import es.uvigo.esei.amchartsJava.exceptions.FloatException;
-import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
-import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
-import es.uvigo.esei.amchartsJava.parser.ParserJson;
-import es.uvigo.esei.amchartsJava.validators.ColorValidator;
-import es.uvigo.esei.amchartsJava.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
+import es.uvigo.esei.amchartsJava.core.api.ILabelController;
+import es.uvigo.esei.amchartsJava.core.api.ITitleController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
+import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
+import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
+
+import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
+import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
+import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
+import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
+import es.uvigo.esei.amchartsJava.core.parser.ParserJson;
+import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
+import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 
 
@@ -61,7 +65,8 @@ public class Principal {
 		//AmGraphXyController ab = new AmGraphXyController();
 		
 		
-		LabelController lab = new LabelController();
+		ILabelController lab = new LabelController();
+		
 		try {
 			lab.setRotation(90);
 		} catch (OutOfRangeException e4) {
@@ -80,7 +85,7 @@ public class Principal {
 		}
 		lab.setBold(true);
 		
-		LabelController lab2 = new LabelController();
+		ILabelController lab2 = new LabelController();
 		lab2.setAlign(AmchartsConstants.ALIGN.getRight());
 		try {
 			lab2.setAlpha(0.6);
@@ -91,7 +96,7 @@ public class Principal {
 		lab2.setBold(true);
 		
 		
-		AmLegendController lc = new AmLegendController();
+		IAmLegendController lc = new AmLegendController();
 		lc.setAutoMargins(false);
 		try {
 			lc.setBottom(9);
@@ -110,8 +115,8 @@ public class Principal {
 			e1.printStackTrace();
 		}
 		
-		TitleController tc = new TitleController();
-		TitleController tc2 = new TitleController();
+		ITitleController tc = new TitleController();
+		ITitleController tc2 = new TitleController();
 		try {
 			tc.setSize(9);
 		} catch (IntegerException e1) {
@@ -136,7 +141,7 @@ public class Principal {
 			//mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, false);
 			//mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
 
-			mapper.writeValue(System.out,tc2);
+			mapper.writeValue(System.out,lab);
 
 
 		} catch (IOException e) {
