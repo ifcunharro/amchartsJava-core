@@ -149,5 +149,5 @@ public abstract class AmCoordinateChart extends AmChart {
 		return idGuides.contains(idGuide);
 	}
 
-	
+
 }

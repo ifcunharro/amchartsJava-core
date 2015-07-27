@@ -13,6 +13,7 @@ import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
+import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -23,19 +24,19 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AmChartController<E extends AmChart> implements Serializable{
+public abstract class AmChartController<S extends AmChart> implements Serializable{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7092242905740908767L;
-	protected E amchart;
+	protected S amchart;
 	
 
 	
-	protected AmChartController(E chart) {
+	protected AmChartController(S chart) {
 		amchart = chart;
-		this.setPathToImages("../amcharts/images");
+		this.setPathToImages("../"+AmchartsJavaPaths.IMAGES_PATH);
 	}
 
 	

@@ -8,7 +8,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IAxisBaseController {
+public abstract interface IAxisBaseController {
 
 	abstract Object isAutoGridCount();
 

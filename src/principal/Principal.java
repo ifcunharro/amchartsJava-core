@@ -1,7 +1,8 @@
 package principal;
 
-import java.io.IOException;
 
+
+import java.io.IOException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
@@ -12,7 +13,6 @@ import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
-
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
@@ -30,6 +30,8 @@ public class Principal {
 
 	public static void main(String[] args) {
 
+		System.out.println(StringValidator.imageExist("lens.png"));
+		
 		Number l = 9.935655;
 		Number p = 5.82434343;
 		System.out.println(l.floatValue()+p.floatValue());

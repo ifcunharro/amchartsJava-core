@@ -31,12 +31,14 @@ public class AmchartsConstants {
 	public static final LabelAnchorConstant LABEL_ANCHOR = LabelAnchorConstant.getInstance();
 	public static final TagsTextConstant TAGS_TEXT = TagsTextConstant.getInstance();
 	public static final LegendPeriodValueTextConstant LEGEND_PERIOD_VALUE_TEXT = LegendPeriodValueTextConstant.getInstance();
+	public static final GradientAngleConstant GRADIENT_ANGLE = GradientAngleConstant.getInstance();
 	public static final GraphTypesConstant GRAPH_TYPES = GraphTypesConstant.getInstance();
 	public static final GridTypesConstant GRID_TYPES = GridTypesConstant.getInstance();
 	public static final MarkerTypeConstant MARKER_TYPES = MarkerTypeConstant.getInstance();
 	public static final SwitchTypeConstant SWITCH_TYPES = SwitchTypeConstant.getInstance();
 	public static final ChartTypesConstant CHART_TYPES = ChartTypesConstant.getInstance();
 	public static final AxisTypeConstant AXIS_TYPES = AxisTypeConstant.getInstance();
+	
 	
 	
 	

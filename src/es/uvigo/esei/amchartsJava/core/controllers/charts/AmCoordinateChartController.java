@@ -15,19 +15,20 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
-			extends AmChartController<AmCoordinateChart> {
+public abstract class AmCoordinateChartController<U extends AmCoordinateChart>
+			extends AmChartController<U>{
 
 	
+	protected AmCoordinateChartController(U chart) {
+		super(chart);
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -4021796361267991139L;
 
-	public AmCoordinateChartController(E chart){
-		super(chart);
-
-	}
 	
 	@JsonProperty(value="gridAboveGraphs")
 	public Object isGridAboveGraphs(){
@@ -97,10 +98,6 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 		amchart.changeColorsDefault(newColors);
 	}
 	
-	public <T extends AmGraphController> void addGraph(T amGraphController){
-		amchart.addGraph(amGraphController);
-	}
-	
 	//graphs
 	public Object getGraphs(){
 		return amchart.getGraphs();
@@ -116,6 +113,10 @@ public abstract class AmCoordinateChartController<E extends AmCoordinateChart>
 		return amchart.getValueAxes();
 	}
 		
+	public <T extends AmGraphController> void addGraph(T amGraphController){
+		amchart.addGraph(amGraphController);
+	}
+	
 	public void addGuide(GuideController guideController){
 		amchart.addGuide(guideController);
 	}

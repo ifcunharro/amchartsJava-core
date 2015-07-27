@@ -1,5 +1,5 @@
 package es.uvigo.esei.amchartsJava.core.model.charts;
 
-public class AmSerialChart extends AmCoordinateChart {
+public class AmSerialChart extends AmRectangularChart {
 
 }

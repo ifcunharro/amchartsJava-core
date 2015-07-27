@@ -23,7 +23,7 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	private static final long serialVersionUID = -6979086957398166592L;
 	private AmBalloon balloon;
 	
-	{
+	public AmBalloonController(){
 		balloon = new AmBalloon();
 	}
 	

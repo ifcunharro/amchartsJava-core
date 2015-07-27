@@ -6,10 +6,9 @@ import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
-import es.uvigo.esei.amchartsJava.core.model.AmChart;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
-public abstract interface IAmCoordinateChartController<E extends AmCoordinateChart> extends IAmchartController<AmChart> {
+public abstract interface IAmCoordinateChartController<E extends AmCoordinateChart> extends IAmchartController<AmCoordinateChart> {
 
 	abstract Object isGridAboveGraphs();
 
