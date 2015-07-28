@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import es.uvigo.esei.amchartsJava.core.api.IChartCursorController;
+
+
+import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
+import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
 
 public abstract class AmRectangularChart extends AmCoordinateChart {
 	private List<String> plotAreaFillColors;
-	private IChartCursorController chartCursor;
+	private ChartCursorController chartCursor;
+	private ChartScrollBarController scrollBar;
 	
 	{
 		plotAreaFillColors = new ArrayList<String>();
@@ -20,16 +24,29 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		plotAreaFillColors.addAll(Arrays.asList(colors));
 	}
 	
-	public IChartCursorController getChartCursor(){
+	public ChartCursorController getChartCursor(){
 		return chartCursor;
 	}
 	
-	public void addChartCursor(IChartCursorController chartCursorController){
+	public ChartScrollBarController getChartScrollBar(){
+		return scrollBar;
+	}
+	
+	public void addChartCursor(ChartCursorController chartCursorController){
 		chartCursor = chartCursorController;
+	}
+	
+	public void addScrollBar(ChartScrollBarController chartScrollBarController){
+		scrollBar = chartScrollBarController;
 	}
 	
 	public void removeChartCursor(){
 		chartCursor = null;
+		System.gc();
+	}
+	
+	public void removeChartScrollBar(){
+		scrollBar = null;
 		System.gc();
 	}
 

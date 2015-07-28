@@ -44,10 +44,6 @@ public class StringValidator {
 		
 		return new File(resourcesPath.getFile()).exists();
 		
-		
 	}
 	
-	
-	
-
 }

@@ -42,6 +42,20 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	
 
 	//properties
+	/*
+	 * solo para version 3.15.1 de amcharts, no usar con version 3.14.0
+	 */
+	@JsonProperty(value="autoResize")
+	public Object isAutoResize(){
+		return amchart.getFeature("autoResize");
+	}
+	/*
+	 * solo para version 3.14.1 y superior de amcharts, no usar con version 3.14.0
+	 */
+	public void setAutoResize(Boolean autoResize){
+		amchart.setFeature("autoResize", autoResize);
+	}
+	
 	@JsonProperty(value = "addClassNames")
 	public Object IsAddClassNames(){
 		return amchart.getFeature("addClassNames");
@@ -200,6 +214,19 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		amchart.setFeature("panEventsEnabled", panEventsEnabled);
 	}
 	
+	/*
+	 * recomendado en lugar de pathToImages a partir de la version 3.14.12 de amcharts
+	 */
+	public Object getPath(){
+		return amchart.getFeature("path");
+	}
+	
+	public void setPath(String path){
+		amchart.setFeature("path", path);
+	}
+	/*
+	 * deprecated a partir de version 3.14.12 de amcharts
+	 */
 	public Object getPathToImages(){
 		return amchart.getFeature("pathToImages");
 	}
