@@ -2,6 +2,7 @@
 /target
 /assembly
 /logs
+/src/amcharts_3.14.0
 .project
 .classpath
 .settings
