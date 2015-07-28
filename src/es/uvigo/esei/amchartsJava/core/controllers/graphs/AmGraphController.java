@@ -1,7 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -12,9 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.IAmGraphController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
-import es.uvigo.esei.amchartsJava.core.constants.DateFormatConstant;
 import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
-import es.uvigo.esei.amchartsJava.core.constants.GradientOrientationConstant.GradientOrientation;
+import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
 import es.uvigo.esei.amchartsJava.core.constants.GraphTypesConstant.GraphType;
 import es.uvigo.esei.amchartsJava.core.constants.LabelAnchorConstant.LabelAnchor;
 import es.uvigo.esei.amchartsJava.core.constants.LabelPositionConstant.LabelPosition;
@@ -28,6 +26,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AmGraph;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmGraphController implements Observer, Serializable, IAmGraphController {
@@ -38,7 +37,9 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	private static final long serialVersionUID = 5885650666487286522L;
 	protected AmGraph amGraph;
 	//chart que usa el graph
-	private AmCoordinateChart chart;
+	protected AmCoordinateChart amchart;
+	
+	
 	
 	
 	{
@@ -52,11 +53,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonIgnore
-	public void setChart(AmCoordinateChart c) {
-		chart = c;
-		
+	public void setChart(AmCoordinateChart chart){
+		amchart = chart;
 	}
-
+	
 	public Object getId(){
 		return amGraph.getFeature("id");
 	}
@@ -262,7 +262,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	//escogido de DateFormatConstant, filtrar a nivel interfaz, 
 	// si se usa sin interfaz propia o sin ninguna interfaz no se realiza ningún cambio
 	public void setDateFormat(String dateFormat){
-		if(Arrays.asList(DateFormatConstant.getDateFormat()).contains(dateFormat)){
+		if(StringValidator.checkDateFormat(dateFormat)){
 			amGraph.setFeature("dateFormat", dateFormat);
 		}
 	}
@@ -299,7 +299,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	//debe ser el id de otro graph
 	public void setFillToGraph(String fillToGraph){
-		if(chart.existGraph(fillToGraph)){
+		if(amchart.existGraph(fillToGraph)){
 			amGraph.setFeature("fillToGraph", fillToGraph);
 		}
 	}
@@ -336,7 +336,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return amGraph.getFeature("gradientOrientation");
 	}
 	
-	public void setGradientOrientation(GradientOrientation gradientOrientation){
+	public void setGradientOrientation(Orientation gradientOrientation){
 		amGraph.setFeature("gradientOrientation", gradientOrientation.toString());
 	}
 	
@@ -632,7 +632,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setValueAxis(String valueAxis){
-		if(chart.existValueAxis(valueAxis)){
+		if(amchart.existValueAxis(valueAxis)){
 			amGraph.setFeature("valueAxis", valueAxis);
 		}
 	}

@@ -4,7 +4,7 @@ package es.uvigo.esei.amchartsJava.core.api;
 
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
-import es.uvigo.esei.amchartsJava.core.constants.GradientOrientationConstant.GradientOrientation;
+import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
 import es.uvigo.esei.amchartsJava.core.constants.GraphTypesConstant.GraphType;
 import es.uvigo.esei.amchartsJava.core.constants.LabelAnchorConstant.LabelAnchor;
 import es.uvigo.esei.amchartsJava.core.constants.LabelPositionConstant.LabelPosition;
@@ -15,12 +15,9 @@ import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
-import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
-public abstract interface IAmGraphController {
-
-	abstract void setChart(AmCoordinateChart c);
-
+public abstract interface IAmGraphController  {
+	
 	abstract Object getId();
 
 	abstract Object getAlphaField();
@@ -153,7 +150,7 @@ public abstract interface IAmGraphController {
 
 	abstract Object getGradientOrientation();
 
-	abstract void setGradientOrientation(GradientOrientation gradientOrientation);
+	abstract void setGradientOrientation(Orientation gradientOrientation);
 
 	abstract Object isHidden();
 

@@ -15,13 +15,16 @@ import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 public abstract class AmGraphSerialController extends AmGraphController implements IAmGraphSerialController{
 
-	//bulletAxis
 	
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 9098330065218597495L;
+	
+	
+	
+	
 
 	@JsonProperty(value="behindColumns")
 	public Object isBehindColumns(){
@@ -200,5 +203,6 @@ public abstract class AmGraphSerialController extends AmGraphController implemen
 			amGraph.setFeature("useNegativeColorIfDown", useNegativeColorIfDown);
 		}
 	}
+
 	
 }

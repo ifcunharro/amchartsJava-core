@@ -16,7 +16,6 @@ public class AmGraphCandleController extends AmGraphSerialController implements 
 		setType(AmchartsConstants.GRAPH_TYPES.getCandleStick());
 	}
 	
-	
 	public Object getShowBulletsAt(){
 		return amGraph.getFeature("showBulletsAt");
 	}

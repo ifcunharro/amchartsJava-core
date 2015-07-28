@@ -38,6 +38,18 @@ public abstract class AmCoordinateChart extends AmChart {
 		return colors;
 	}
 	
+	public List<AmGraphController> getGraphs() {
+		return graphs;
+	}
+	
+	public List<GuideController> getGuides(){
+		return guides;
+	}
+	
+	public List<ValueAxisController> getValueAxes(){
+		return valueAxes;
+	}
+	
 	public void changeColorsDefault(String... newColors){
 		colors.clear();
 		colors.addAll(Arrays.asList(newColors));
@@ -95,9 +107,6 @@ public abstract class AmCoordinateChart extends AmChart {
 		
 	}
 	
-	
-
-
 	public void removeGraph(String idGraph) {
 		if(graphs!=null){
 			graphs.remove(Integer.valueOf(idGraph.substring(idGraph.length() - 1))-1);
@@ -125,17 +134,6 @@ public abstract class AmCoordinateChart extends AmChart {
 		
 	}
 
-	public Object getGraphs() {
-		return graphs;
-	}
-	
-	public Object getGuides(){
-		return guides;
-	}
-	
-	public Object getValueAxes(){
-		return valueAxes;
-	}
 	
 	public boolean existGraph(String idGraph){
 		return idGraphs.contains(idGraph);

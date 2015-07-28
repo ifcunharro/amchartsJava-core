@@ -5,6 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 
+
+
+
+
+import es.uvigo.esei.amchartsJava.core.api.IChartCursorController;
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -12,6 +17,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmRectangularChartController<V extends AmRectangularChart> 
@@ -187,7 +193,61 @@ public abstract class AmRectangularChartController<V extends AmRectangularChart>
 	
 	//debe existir en /amcharts/images
 	public void setZoomOutButtonImage(String zoomOutButtonImage){
-		amchart.setFeature("zoomOutButtonImage", zoomOutButtonImage);
+		if(StringValidator.imageExist(zoomOutButtonImage)){
+			amchart.setFeature("zoomOutButtonImage", zoomOutButtonImage);
+		}
+	}
+	
+	public Object getZoomOutButtonImageSize(){
+		return amchart.getFeature("zoomOutButtonImageSize");
+	}
+	
+	public void setZoomOutButtonImageSize(Number zoomOutButtonImageSize) throws IntegerException{
+		if(NumberValidator.integerValidator(zoomOutButtonImageSize)){
+			amchart.setFeature("zoomOutButtonImageSize", zoomOutButtonImageSize);
+		}
+	}
+	
+	public Object getZoomOutButtonPadding(){
+		return amchart.getFeature("zoomOutButtonPadding");
+	}
+	
+	public void setZoomOutButtonPadding(Number zoomOutButtonPadding) throws IntegerException{
+		if(NumberValidator.integerValidator(zoomOutButtonPadding)){
+			amchart.setFeature("zoomOutButtonPadding", zoomOutButtonPadding);
+		}
+	}
+	
+	public Object getZoomOutButtonRollOverAlpha(){
+		return amchart.getFeature("zoomOutButtonRollOverAlpha");
+	}
+	
+	public void setZoomOutButtonRollOverAlpha(Number zoomOutButtonRollOverAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeFloatValidator(zoomOutButtonRollOverAlpha, 0, 1)){
+			amchart.setFeature("zoomOutButtonRollOverAlpha", zoomOutButtonRollOverAlpha);
+		}
+	}
+	
+	public Object getZoomOutText(){
+		return amchart.getFeature("zoomOutText");
+	}
+	
+	public void setZoomOutText(String zoomOutText){
+		amchart.setFeature("zoomOutText", zoomOutText);
+	}
+	
+	//methods
+	
+	public Object getChartCursor(){
+		return amchart.getChartCursor();
+	}
+	
+	public void addChartCursor(IChartCursorController chartCursorController){
+		amchart.addChartCursor(chartCursorController);
+	}
+	
+	public void removeChartCursor(){
+		amchart.removeChartCursor();
 	}
 
 }

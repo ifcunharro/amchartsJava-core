@@ -11,7 +11,6 @@ public interface ILabelController  {
 
 	public Object getAlign();
 
-	//solo left, center o right
 	public void setAlign(Align labelAlign);
 
 	public Object getAlpha();

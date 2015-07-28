@@ -50,7 +50,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	public Object getAlign(){
 		return label.getFeature("align");
 	}
-	//solo left, center o right
+	
 	public void setAlign(Align labelAlign){
 		label.setFeature("align", labelAlign.toString());
 	}
@@ -108,7 +108,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setSize(Number size) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(size, -90, 90)){
+		if(NumberValidator.rangeIntegerValidator(size, 10, 24)){
 			label.setFeature("size", size);
 		}
 	}

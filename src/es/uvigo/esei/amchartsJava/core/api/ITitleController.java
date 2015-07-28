@@ -2,7 +2,6 @@ package es.uvigo.esei.amchartsJava.core.api;
 
 
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
-import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public interface ITitleController {
@@ -23,7 +22,7 @@ public interface ITitleController {
 
 	public Object getSize();
 
-	public void setSize(Number size) throws IntegerException;
+	public void setSize(Number size) throws OutOfRangeException;
 
 	public Object getText();
 

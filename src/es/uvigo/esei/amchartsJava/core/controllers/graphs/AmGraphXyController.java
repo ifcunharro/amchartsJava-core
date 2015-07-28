@@ -16,9 +16,25 @@ public class AmGraphXyController extends AmGraphSerialController implements IAmG
 		setType(AmchartsConstants.GRAPH_TYPES.getLine());
 	}
 	
-	//bulletAxis
+	public Object getBulletAxis(){
+		return amGraph.getFeature("bulletAxis");
+	}
 	
-	//fillToAxis
+	public void setBulletAxis(String bulletAxis){
+		if(amchart.existValueAxis(bulletAxis)){
+			amGraph.setFeature("bulletAxis", bulletAxis);
+		}
+	}
+	
+	public Object getFillToAxis(){
+		return amGraph.getFeature("fillToAxis");
+	}
+	
+	public void setFillToAxis(String fillToAxis){
+		if(amchart.existValueAxis(fillToAxis)){
+			amGraph.setFeature("fillToAxis", fillToAxis);
+		}
+	}
 	
 	public Object getMaxBulletSize(){
 		return amGraph.getFeature("maxBulletSize");
@@ -40,7 +56,15 @@ public class AmGraphXyController extends AmGraphSerialController implements IAmG
 		}
 	}
 	
-	//xAxis
+	public Object getXAxis(){
+		return amGraph.getFeature("xAxis");
+	}
+	
+	public void setXAxis(String xAxis){
+		if(amchart.existValueAxis(xAxis)){
+			amGraph.setFeature("xAxis", xAxis);
+		}
+	}
 	
 	public Object getXField(){
 		return amGraph.getFeature("xField");
@@ -50,7 +74,15 @@ public class AmGraphXyController extends AmGraphSerialController implements IAmG
 		amGraph.setFeature("xField", xField);
 	}
 	
-	//yAxis
+	public Object getYAxis(){
+		return amGraph.getFeature("yAxis");
+	}
+	
+	public void setYAxis(String yAxis){
+		if(amchart.existValueAxis(yAxis)){
+			amGraph.setFeature("yAxis", yAxis);
+		}
+	}
 	
 	public Object getYField(){
 		return amGraph.getFeature("yField");

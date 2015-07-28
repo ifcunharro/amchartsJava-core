@@ -3,6 +3,7 @@ package principal;
 
 
 import java.io.IOException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
@@ -30,7 +31,8 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		System.out.println(StringValidator.imageExist("lens.png"));
+		
+		
 		
 		Number l = 9.935655;
 		Number p = 5.82434343;
@@ -121,7 +123,7 @@ public class Principal {
 		ITitleController tc2 = new TitleController();
 		try {
 			tc.setSize(9);
-		} catch (IntegerException e1) {
+		} catch (OutOfRangeException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}

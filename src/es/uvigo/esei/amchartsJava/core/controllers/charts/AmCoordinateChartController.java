@@ -19,15 +19,11 @@ public abstract class AmCoordinateChartController<U extends AmCoordinateChart>
 			extends AmChartController<U>{
 
 	
+	private static final long serialVersionUID = -4021796361267991139L;
+	
 	protected AmCoordinateChartController(U chart) {
 		super(chart);
-		// TODO Auto-generated constructor stub
 	}
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -4021796361267991139L;
 
 	
 	@JsonProperty(value="gridAboveGraphs")

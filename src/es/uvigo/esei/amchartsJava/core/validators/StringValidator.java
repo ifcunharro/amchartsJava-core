@@ -3,8 +3,10 @@ package es.uvigo.esei.amchartsJava.core.validators;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
+import es.uvigo.esei.amchartsJava.core.constants.DateFormatConstant;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 
@@ -20,6 +22,10 @@ public class StringValidator {
 		}
 		throw new CoordException("");
 		
+	}
+	
+	public static boolean checkDateFormat(String dateFormat){
+		return Arrays.asList(DateFormatConstant.getDateFormat()).contains(dateFormat);
 	}
 	
 	public static boolean imageExist(String image){
@@ -40,6 +46,8 @@ public class StringValidator {
 		
 		
 	}
+	
+	
 	
 
 }
