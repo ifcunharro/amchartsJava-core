@@ -1,19 +1,28 @@
 package principal;
 
+
+
 import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import es.uvigo.esei.amchartsJava.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.constants.lang.I18n;
-import es.uvigo.esei.amchartsJava.controllers.AmLegendController;
-import es.uvigo.esei.amchartsJava.controllers.LabelController;
-import es.uvigo.esei.amchartsJava.controllers.TitleController;
-import es.uvigo.esei.amchartsJava.exceptions.CoordException;
-import es.uvigo.esei.amchartsJava.exceptions.IntegerException;
-import es.uvigo.esei.amchartsJava.exceptions.OutOfRangeException;
-import es.uvigo.esei.amchartsJava.parser.ParserJson;
-import es.uvigo.esei.amchartsJava.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
+import es.uvigo.esei.amchartsJava.core.api.ILabelController;
+import es.uvigo.esei.amchartsJava.core.api.ITitleController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
+import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
+import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
+import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
+import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
+import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
+import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
+import es.uvigo.esei.amchartsJava.core.parser.ParserJson;
+import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
+import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 
 
@@ -23,8 +32,32 @@ public class Principal {
 	public static void main(String[] args) {
 
 		
+		
+		
+		Number l = 9.935655;
+		Number p = 5.82434343;
+		System.out.println(l.floatValue()+p.floatValue());
+		
+		
 		try {
-			StringValidator.coordFormat("12");
+			NumberValidator.floatValidator(5);
+		} catch (FloatException e7) {
+			// TODO Auto-generated catch block
+			e7.printStackTrace();
+		}
+		
+		
+		String[] colors = {"#999999","#AAAAA"};
+		try {
+			ColorValidator.checkFormatColors(colors);
+		} catch (ColorException e6) {
+			// TODO Auto-generated catch block
+			e6.printStackTrace();
+		}
+		
+		
+		try {
+			StringValidator.pixelOrPercent("12");
 		} catch (CoordException e5) {
 			// TODO Auto-generated catch block
 			e5.printStackTrace();
@@ -36,9 +69,10 @@ public class Principal {
 		//AmGraphXyController ab = new AmGraphXyController();
 		
 		
-		LabelController lab = new LabelController();
+		ILabelController lab = new LabelController();
+		
 		try {
-			lab.setRotation(94);
+			lab.setRotation(90);
 		} catch (OutOfRangeException e4) {
 			// TODO Auto-generated catch block
 			e4.printStackTrace();
@@ -55,7 +89,7 @@ public class Principal {
 		}
 		lab.setBold(true);
 		
-		LabelController lab2 = new LabelController();
+		ILabelController lab2 = new LabelController();
 		lab2.setAlign(AmchartsConstants.ALIGN.getRight());
 		try {
 			lab2.setAlpha(0.6);
@@ -66,7 +100,7 @@ public class Principal {
 		lab2.setBold(true);
 		
 		
-		AmLegendController lc = new AmLegendController();
+		IAmLegendController lc = new AmLegendController();
 		lc.setAutoMargins(false);
 		try {
 			lc.setBottom(9);
@@ -85,9 +119,14 @@ public class Principal {
 			e1.printStackTrace();
 		}
 		
-		TitleController tc = new TitleController();
-		TitleController tc2 = new TitleController();
-		tc.setSize(9);
+		ITitleController tc = new TitleController();
+		ITitleController tc2 = new TitleController();
+		try {
+			tc.setSize(9);
+		} catch (OutOfRangeException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		tc2.setText("prueba");
 	
 		
@@ -106,7 +145,7 @@ public class Principal {
 			//mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, false);
 			//mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
 
-			mapper.writeValue(System.out,lc);
+			mapper.writeValue(System.out,lab);
 
 
 		} catch (IOException e) {
