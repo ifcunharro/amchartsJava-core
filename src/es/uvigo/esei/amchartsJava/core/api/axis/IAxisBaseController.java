@@ -1,6 +1,7 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.axis;
 
 
+import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;

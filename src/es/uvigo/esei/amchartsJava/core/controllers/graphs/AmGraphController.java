@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import es.uvigo.esei.amchartsJava.core.api.IAmGraphController;
+import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
 import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
@@ -212,15 +212,6 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("colorField", colorField);
 	}
 	
-	@JsonProperty(value="connect")
-	public Object isConnect(){
-		return amGraph.getFeature("connect");
-	}
-	
-	public void setConnect(Boolean connect){
-		amGraph.setFeature("connect", connect);
-	}
-	
 	public Object getCursorBulletAlpha(){
 		return amGraph.getFeature("cursorBulletAlpha");
 	}
@@ -312,14 +303,6 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		if(NumberValidator.integerValidator(fontSize)){
 			amGraph.setFeature("fontSize", fontSize);
 		}
-	}
-	
-	public Object getGapField(String gapField){
-		return amGraph.getFeature("gapField");
-	}
-	
-	public void setGapField(String gapField){
-		amGraph.setFeature("gapField", gapField);
 	}
 	
 	public Object getGapPeriod(){

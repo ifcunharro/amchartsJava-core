@@ -37,6 +37,10 @@ public interface IAmBalloonController {
 	public Object getCornerRadius();
 
 	public void setCornerRadius(Number cornerRadius) throws IntegerException;
+	
+	public Object isDisableMouseEvents();
+	
+	public void setDisableMouseEvents(Boolean disableMouseEvents);
 
 	public Object getFadeOutDuration();
 

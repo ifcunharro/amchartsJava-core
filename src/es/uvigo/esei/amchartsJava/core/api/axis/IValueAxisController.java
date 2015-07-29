@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.axis;
 
 import java.sql.Date;
 

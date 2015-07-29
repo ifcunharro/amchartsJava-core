@@ -1,8 +1,8 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.graphs;
 
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 
-public interface IAmGraphXyController extends IAmGraphSerialController {
+public interface IAmGraphXyController extends IAmGraphSerialChartController {
 
 	public Object getBulletAxis();
 	

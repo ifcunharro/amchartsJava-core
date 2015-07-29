@@ -1,9 +1,12 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.charts;
 
 import java.util.List;
 
 
 
+
+import es.uvigo.esei.amchartsJava.core.api.IAmBalloonController;
+import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
@@ -20,6 +23,10 @@ public abstract interface IAmchartController<E extends AmChart> {
 	abstract Object IsAddClassNames();
 
 	abstract void setAddClassNames(Boolean addClassNames);
+	
+	abstract Object isAutoResize();
+	
+	abstract void setAutoResize(Boolean autoResize);
 
 	abstract Object getBackgroundAlpha();
 
@@ -91,6 +98,10 @@ public abstract interface IAmchartController<E extends AmChart> {
 	abstract Object isPanEventsEnabled();
 
 	abstract void setPanEventsEnabled(Boolean panEventsEnabled);
+	
+	abstract Object getPath();
+	
+	abstract void setPath(String path);
 
 	abstract Object getPathToImages();
 

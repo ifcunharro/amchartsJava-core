@@ -7,7 +7,7 @@ import java.util.Observer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import es.uvigo.esei.amchartsJava.core.api.IValueAxisController;
+import es.uvigo.esei.amchartsJava.core.api.axis.IValueAxisController;
 import es.uvigo.esei.amchartsJava.core.constants.AxisTypeConstant.AxisType;
 import es.uvigo.esei.amchartsJava.core.constants.DurationConstant.Duration;
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;

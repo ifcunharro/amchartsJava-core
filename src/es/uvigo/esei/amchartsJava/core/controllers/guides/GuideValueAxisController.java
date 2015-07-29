@@ -1,6 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.controllers.guides;
 
-import es.uvigo.esei.amchartsJava.core.api.IGuideValueAxisController;
+import es.uvigo.esei.amchartsJava.core.api.guides.IGuideValueAxisController;
 import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 

@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.axis;
 
 
 import es.uvigo.esei.amchartsJava.core.constants.CategoryPositionConstant.CategoryPosition;

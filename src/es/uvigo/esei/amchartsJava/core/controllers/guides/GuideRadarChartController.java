@@ -1,6 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.controllers.guides;
 
-import es.uvigo.esei.amchartsJava.core.api.IGuideRadarChartController;
+import es.uvigo.esei.amchartsJava.core.api.guides.IGuideRadarChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 

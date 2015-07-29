@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.guides;
 
 import java.sql.Date;
 import java.util.Observable;

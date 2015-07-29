@@ -1,10 +1,10 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.graphs;
 
 
 import es.uvigo.esei.amchartsJava.core.constants.StepDirectionConstant.StepDirection;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 
-public interface IAmGraphStepController extends IAmGraphSerialController {
+public interface IAmGraphStepController extends IAmGraphSerialChartController {
 
 	public Object isNoStepRisers();
 

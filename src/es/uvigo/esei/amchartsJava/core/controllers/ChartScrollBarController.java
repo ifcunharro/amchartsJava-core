@@ -9,6 +9,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.ChartScrollBar;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 public class ChartScrollBarController implements Serializable {
 
@@ -66,7 +67,38 @@ public class ChartScrollBarController implements Serializable {
 	}
 	
 	public void setDragIcon(String dragIcon){
-		//falta comprobar path imagen, hacerlo sobre amcharts debido a nueva propiedad path
+		if(StringValidator.imageExist(dragIcon)){
+			scrollBar.setFeature("dragIcon", dragIcon);
+		}
+	}
+	
+	public Object getDragIconHeight(){
+		return scrollBar.getFeature("dragIconHeight");
+	}
+	
+	public void setDragIconHeight(Number dragIconHeight) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(dragIconHeight, 10, 35)){
+			scrollBar.setFeature("dragIconHeight", dragIconHeight);
+		}
+	}
+	
+	public Object getDragIconWidth(){
+		return scrollBar.getFeature("dragIconWidth");
+	}
+	
+	public void setDragIconWidth(Number dragIconWidth) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(dragIconWidth, 16, 35)){
+			scrollBar.setFeature("dragIconHeight", dragIconWidth);
+		}
+	}
+	
+	@JsonProperty(value="enabled")
+	public Object isEnabled(){
+		return scrollBar.getFeature("enabled");
+	}
+	
+	public void setEnabled(Boolean enabled){
+		scrollBar.setFeature("enabled", enabled);
 	}
 
 }

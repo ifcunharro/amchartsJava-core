@@ -3,7 +3,7 @@ package es.uvigo.esei.amchartsJava.core.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.uvigo.esei.amchartsJava.core.api.IGuideController;
+import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 
 public class AxisBase extends IModel {

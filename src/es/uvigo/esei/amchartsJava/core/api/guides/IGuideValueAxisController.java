@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.guides;
 
 import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
 

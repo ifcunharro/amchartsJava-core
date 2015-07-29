@@ -1,9 +1,10 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
-import es.uvigo.esei.amchartsJava.core.api.IAmGraphCandleOhlcController;
+import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphCandleOhlcController;
+import es.uvigo.esei.amchartsJava.core.constants.ShowAtConstant.ShowAt;
 
 
-public class AmGraphCandleOhlcController extends AmGraphSerialController implements IAmGraphCandleOhlcController {
+public abstract class AmGraphCandleOhlcController extends AmGraphSerialController implements IAmGraphCandleOhlcController {
 
 	/**
 	 * 
@@ -24,6 +25,14 @@ public class AmGraphCandleOhlcController extends AmGraphSerialController impleme
 	
 	public void setLowField(String lowField){
 		amGraph.setFeature("lowField", lowField);
+	}
+	
+	public Object getShowBulletsAt(){
+		return amGraph.getFeature("showBulletsAt");
+	}
+	
+	public void setShowBulletsAt(ShowAt showBulletsAt){
+		amGraph.setFeature("showBulletsAt", showBulletsAt.toString());
 	}
 	
 }

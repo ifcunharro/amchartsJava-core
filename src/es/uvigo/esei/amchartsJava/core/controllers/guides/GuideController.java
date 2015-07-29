@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import es.uvigo.esei.amchartsJava.core.api.IGuideController;
+import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;

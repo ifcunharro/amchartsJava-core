@@ -37,7 +37,7 @@ public class StringValidator {
 									   .getLocation();
 		
 		try {
-			resourcesPath = new URL(resourcesPath,"../"+AmchartsJavaPaths.IMAGES_PATH+image);
+			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+image);
 		} catch (MalformedURLException e) {
 			return false;
 		}

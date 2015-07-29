@@ -1,6 +1,8 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.charts;
 
 
+import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphController;
+import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;

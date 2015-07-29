@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.axis;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import es.uvigo.esei.amchartsJava.core.api.IValueAxisRadarChartController;
+import es.uvigo.esei.amchartsJava.core.api.axis.IValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.constants.GridTypesConstant.GridType;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;

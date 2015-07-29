@@ -3,7 +3,6 @@ package principal;
 
 
 import java.io.IOException;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
@@ -30,8 +29,6 @@ import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 public class Principal {
 
 	public static void main(String[] args) {
-
-		
 		
 		
 		Number l = 9.935655;

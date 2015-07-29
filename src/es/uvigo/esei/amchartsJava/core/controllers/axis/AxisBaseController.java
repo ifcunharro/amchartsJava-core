@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import es.uvigo.esei.amchartsJava.core.api.IAxisBaseController;
-import es.uvigo.esei.amchartsJava.core.api.IGuideController;
+import es.uvigo.esei.amchartsJava.core.api.axis.IAxisBaseController;
+import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;

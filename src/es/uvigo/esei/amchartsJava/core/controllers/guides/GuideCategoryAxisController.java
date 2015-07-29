@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.guides;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import es.uvigo.esei.amchartsJava.core.api.IGuideCategoryAxisController;
+import es.uvigo.esei.amchartsJava.core.api.guides.IGuideCategoryAxisController;
 
 public class GuideCategoryAxisController extends GuideController implements IGuideCategoryAxisController {
 	

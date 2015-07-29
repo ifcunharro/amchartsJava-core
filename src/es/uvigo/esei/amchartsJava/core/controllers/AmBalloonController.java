@@ -96,6 +96,16 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
+	
+	@JsonProperty(value="disableMouseEvents")
+	public Object isDisableMouseEvents(){
+		return balloon.getFeature("disableMouseEvents");
+	}
+	
+	public void setDisableMouseEvents(Boolean disableMouseEvents){
+		balloon.setFeature("disableMouseEvents", disableMouseEvents);
+	}
+	
 	public Object getFadeOutDuration(){
 		return balloon.getFeature("fadeOutDuration");
 	}

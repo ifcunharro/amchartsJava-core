@@ -1,11 +1,10 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
-import es.uvigo.esei.amchartsJava.core.api.IAmGraphXyController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-public class AmGraphXyController extends AmGraphSerialController implements IAmGraphXyController {
+public class AmGraphXyController extends AmGraphSerialChartController {
 
 	/**
 	 * 

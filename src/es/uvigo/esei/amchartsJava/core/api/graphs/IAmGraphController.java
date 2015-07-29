@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.api;
+package es.uvigo.esei.amchartsJava.core.api.graphs;
 
 
 
@@ -90,10 +90,6 @@ public abstract interface IAmGraphController  {
 
 	abstract void setColorField(String colorField);
 
-	abstract Object isConnect();
-
-	abstract void setConnect(Boolean connect);
-
 	abstract Object getCursorBulletAlpha();
 
 	abstract void setCursorBulletAlpha(Number cursorBulletAlpha)
@@ -139,10 +135,6 @@ public abstract interface IAmGraphController  {
 	abstract Object getFontSize();
 
 	abstract void setFontSize(Number fontSize) throws IntegerException;
-
-	abstract Object getGapField(String gapField);
-
-	abstract void setGapField(String gapField);
 
 	abstract Object getGapPeriod();
 
