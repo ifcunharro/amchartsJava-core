@@ -65,8 +65,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("axisThickness");
 	}
 	
-	public void setAxisThickness(Number axisThickness) throws IntegerException{
-		if(NumberValidator.integerValidator(axisThickness)){
+	public void setAxisThickness(Number axisThickness) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(axisThickness, 0, 2)){
 			axes.setFeature("axisThickness", axisThickness);
 		}
 	}
@@ -126,8 +126,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("fontSize");
 	}
 	
-	public void setFontSize(Number fontSize) throws IntegerException{
-		if(NumberValidator.integerValidator(fontSize)){
+	public void setFontSize(Number fontSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 16)){
 			axes.setFeature("fontSize", fontSize);
 		}
 	}
@@ -156,8 +156,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("gridCount");
 	}
 	
-	public void setGridCount(Number gridCount) throws IntegerException{
-		if(NumberValidator.integerValidator(gridCount)){
+	public void setGridCount(Number gridCount) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(gridCount, 5, 10)){
 			axes.setFeature("gridCount", gridCount);
 		}
 	}
@@ -166,8 +166,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("gridThickness");
 	}
 	
-	public void setGridThikness(Number gridThickness) throws IntegerException{
-		if(NumberValidator.integerValidator(gridThickness)){
+	public void setGridThikness(Number gridThickness) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(gridThickness, 0, 2)){
 			axes.setFeature("gridThickness", gridThickness);
 		}
 	}
@@ -194,8 +194,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("labelFrequency");
 	}
 	
-	public void setLabelFrequency(Number labelFrequency) throws IntegerException{
-		if(NumberValidator.integerValidator(labelFrequency)){
+	public void setLabelFrequency(Number labelFrequency) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(labelFrequency, 1, 10)){
 			axes.setFeature("labelFrequency", labelFrequency);
 		}
 	}
@@ -204,8 +204,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("labelOffset");
 	}
 	
-	public void setLabelOffset(Number labelOffset) throws IntegerException{
-		if(NumberValidator.integerValidator(labelOffset)){
+	public void setLabelOffset(Number labelOffset) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(labelOffset, 0, 5)){
 			axes.setFeature("labelOffset", labelOffset);
 		}
 	}
@@ -258,6 +258,17 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		axes.setFeature("minorGridEnabled", minorGridEnabled);
 	}
 	
+	public Object getMinorTickLength(){
+		return axes.getFeature("minorTickLength");
+	}
+	
+	public void setMinorTickLength(Number minorTickLength) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(minorTickLength, 0, 10)){
+			axes.setFeature("minorTickLength",minorTickLength);
+		}
+		
+	}
+	
 	public Object getMinVerticalGap(){
 		return axes.getFeature("minVerticalGap");
 	}
@@ -270,8 +281,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("offset");
 	}
 	
-	public void setOffset(Number offset) throws IntegerException{
-		if(NumberValidator.integerValidator(offset)){
+	public void setOffset(Number offset) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(offset, 4, 10)){
 			axes.setFeature("offset", offset);
 		}
 	}
@@ -306,8 +317,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("tickLength");
 	}
 	
-	public void setTickLength(Number tickLength) throws IntegerException{
-		if(NumberValidator.integerValidator(tickLength)){
+	public void setTickLength(Number tickLength) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(tickLength, 0, 10)){
 			axes.setFeature("tickLength", tickLength);
 		}
 	}
@@ -343,8 +354,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("titleFontSize");
 	}
 	
-	public void setTitleFontSize(Number titleFontSize) throws IntegerException{
-		if(NumberValidator.integerValidator(titleFontSize)){
+	public void setTitleFontSize(Number titleFontSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(titleFontSize, 10, 18)){
 			axes.setFeature("titleFontSize", titleFontSize);
 		}
 	}

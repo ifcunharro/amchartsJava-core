@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.IAmBalloonController;
 import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
+import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
@@ -24,7 +25,7 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AmChartController<S extends AmChart> implements Serializable{
+public abstract class AmChartController<S extends AmChart> implements Serializable, IAmchartController<AmChart>{
 	
 	/**
 	 * 
@@ -147,8 +148,8 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		return amchart.getFeature("fontSize");
 	}
 	
-	public void setFontSize(Number fontSize) throws IntegerException{
-		if(NumberValidator.integerValidator(fontSize)){
+	public void setFontSize(Number fontSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 16)){
 			amchart.setFeature("fontSize", fontSize);
 		}
 	}
@@ -166,8 +167,8 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		return amchart.getFeature("handDrawScatter");
 	}
 	
-	public void setHandDrawScatter(Number handDrawScatter) throws IntegerException{
-		if(NumberValidator.integerValidator(handDrawScatter)){
+	public void setHandDrawScatter(Number handDrawScatter) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(handDrawScatter, 2, 10)){
 			amchart.setFeature("handDrawScatter", handDrawScatter);
 		}
 	}
@@ -176,8 +177,8 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		return amchart.getFeature("handDrawThickness");
 	}
 	
-	public void setHandDrasThickness(Number handDrawThickness) throws IntegerException{
-		if(NumberValidator.integerValidator(handDrawThickness)){
+	public void setHandDrasThickness(Number handDrawThickness) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(handDrawThickness, 0, 5)){
 			amchart.setFeature("handDrawThickness", handDrawThickness);
 		}
 	}

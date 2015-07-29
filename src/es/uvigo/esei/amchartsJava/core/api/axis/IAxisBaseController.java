@@ -26,7 +26,7 @@ public abstract interface IAxisBaseController {
 	abstract Object getAxisThickness();
 
 	abstract void setAxisThickness(Number axisThickness)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	abstract Object isBoldLabels();
 
@@ -52,7 +52,7 @@ public abstract interface IAxisBaseController {
 
 	abstract Object getFontSize();
 
-	abstract void setFontSize(Number fontSize) throws IntegerException;
+	abstract void setFontSize(Number fontSize) throws OutOfRangeException;
 
 	abstract Object getGridAlpha();
 
@@ -64,11 +64,11 @@ public abstract interface IAxisBaseController {
 
 	abstract Object getGridCount();
 
-	abstract void setGridCount(Number gridCount) throws IntegerException;
+	abstract void setGridCount(Number gridCount) throws OutOfRangeException;
 
 	abstract Object getGridThickness();
 
-	abstract void setGridThikness(Number gridThickness) throws IntegerException;
+	abstract void setGridThikness(Number gridThickness) throws OutOfRangeException;
 
 	abstract Object isIgnoreAxisWidth();
 
@@ -81,11 +81,11 @@ public abstract interface IAxisBaseController {
 	abstract Object getLabelFrequency();
 
 	abstract void setLabelFrequency(Number labelFrequency)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	abstract Object getLabelOffset();
 
-	abstract void setLabelOffset(Number labelOffset) throws IntegerException;
+	abstract void setLabelOffset(Number labelOffset) throws OutOfRangeException;
 
 	abstract Object getLabelRotation();
 
@@ -109,6 +109,11 @@ public abstract interface IAxisBaseController {
 	abstract Object isMinorGridEnabled();
 
 	abstract void setMinorGridEnabled(Boolean minorGridEnabled);
+	
+	abstract Object getMinorTickLength();
+	
+	abstract void setMinorTickLength(Number minorTickLength) 
+			throws OutOfRangeException;
 
 	abstract Object getMinVerticalGap();
 
@@ -116,7 +121,7 @@ public abstract interface IAxisBaseController {
 
 	abstract Object getOffset();
 
-	abstract void setOffset(Number offset) throws IntegerException;
+	abstract void setOffset(Number offset) throws OutOfRangeException;
 
 	abstract Object getPosition();
 
@@ -132,7 +137,7 @@ public abstract interface IAxisBaseController {
 
 	abstract Object getTickLength();
 
-	abstract void setTickLength(Number tickLength) throws IntegerException;
+	abstract void setTickLength(Number tickLength) throws OutOfRangeException;
 
 	abstract Object getTitle();
 
@@ -149,7 +154,7 @@ public abstract interface IAxisBaseController {
 	abstract Object getTitleFontSize();
 
 	abstract void setTitleFontSize(Number titleFontSize)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	abstract void addGuide(GuideController guideController);
 

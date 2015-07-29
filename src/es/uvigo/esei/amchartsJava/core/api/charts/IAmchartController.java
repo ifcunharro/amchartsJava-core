@@ -69,7 +69,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	abstract Object getFontSize();
 
-	abstract void setFontSize(Number fontSize) throws IntegerException;
+	abstract void setFontSize(Number fontSize) throws OutOfRangeException;
 
 	abstract Object isHandDrawn();
 
@@ -78,12 +78,12 @@ public abstract interface IAmchartController<E extends AmChart> {
 	abstract Object getHandDrawScatter();
 
 	abstract void setHandDrawScatter(Number handDrawScatter)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	abstract Object getHandDrawThickness();
 
 	abstract void setHandDrasThickness(Number handDrawThickness)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	abstract Object getHideBalloonTime();
 

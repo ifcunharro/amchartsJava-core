@@ -107,7 +107,7 @@ public interface IValueAxisController extends IAxisBaseController {
 	public Object getTotalTextOffset();
 
 	public void setTotalTextOffset(Number totalTextOffset)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	public Object getTreatZeroAs();
 

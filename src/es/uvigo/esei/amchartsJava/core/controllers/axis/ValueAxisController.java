@@ -241,8 +241,8 @@ public abstract class ValueAxisController extends AxisBaseController implements 
 		return axes.getFeature("totalTextOffset");
 	}
 	
-	public void setTotalTextOffset(Number totalTextOffset) throws IntegerException{
-		if(NumberValidator.integerValidator(totalTextOffset)){
+	public void setTotalTextOffset(Number totalTextOffset) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(totalTextOffset, 0, 10)){
 			axes.setFeature("totalTextOffset", totalTextOffset);
 		}
 	}
@@ -250,7 +250,7 @@ public abstract class ValueAxisController extends AxisBaseController implements 
 	public Object getTreatZeroAs(){
 		return axes.getFeature("treatZeroAs");
 	}
-	
+	//donde va a comenzar el eje de coordenadas
 	public void setTreatZeroAs(Number treatZeroAs) throws IntegerException{
 		if(NumberValidator.integerValidator(treatZeroAs)){
 			axes.setFeature("treatZeroAs", treatZeroAs);

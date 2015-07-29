@@ -1,16 +1,16 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
 
-import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphController;
-import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
-import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
+import es.uvigo.esei.amchartsJava.core.model.AmChart;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
-public abstract interface IAmCoordinateChartController<E extends AmCoordinateChart> extends IAmchartController<AmCoordinateChart> {
+public abstract interface IAmCoordinateChartController<U extends AmCoordinateChart> extends IAmchartController<AmChart> {
 
 	abstract Object isGridAboveGraphs();
 
@@ -27,7 +27,7 @@ public abstract interface IAmCoordinateChartController<E extends AmCoordinateCha
 	abstract Object getStartDuration();
 
 	abstract void setStartDuration(Number startDuration)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	abstract Object getStartEffect();
 
@@ -45,8 +45,6 @@ public abstract interface IAmCoordinateChartController<E extends AmCoordinateCha
 
 	abstract void changeColorsDefault(String... newColors);
 
-	abstract <T extends IAmGraphController> void addGraph(T amGraphController);
-
 	//graphs
 	abstract Object getGraphs();
 
@@ -55,8 +53,10 @@ public abstract interface IAmCoordinateChartController<E extends AmCoordinateCha
 
 	//valueAxes
 	abstract Object getValueAxes();
-
-	abstract void addGuide(IGuideController guideController);
+	
+	abstract <T extends AmGraphController> void addGraph(T amGraphController);
+	
+	abstract void addGuide(GuideController guideController);
 
 	abstract void addValueAxis(ValueAxisController valueAxisController);
 

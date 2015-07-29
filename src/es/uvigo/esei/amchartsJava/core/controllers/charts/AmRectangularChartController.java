@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 
+
+
+import es.uvigo.esei.amchartsJava.core.api.charts.IAmRectangularChartController;
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -17,7 +20,7 @@ import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmRectangularChartController<V extends AmRectangularChart> 
-				extends AmCoordinateChartController<V> {
+				extends AmCoordinateChartController<V> implements IAmRectangularChartController<AmRectangularChart> {
 
 	
 	
@@ -45,8 +48,8 @@ public abstract class AmRectangularChartController<V extends AmRectangularChart>
 		return amchart.getFeature("autoMarginsOffset");
 	}
 	
-	public void setAutoMarginsOffset(Number autoMarginsOffset) throws IntegerException{
-		if(NumberValidator.integerValidator(autoMarginsOffset)){
+	public void setAutoMarginsOffset(Number autoMarginsOffset) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(autoMarginsOffset, 0, 10)){
 			amchart.setFeature("autoMarginsOffset", autoMarginsOffset);
 		}
 	}
@@ -196,8 +199,8 @@ public abstract class AmRectangularChartController<V extends AmRectangularChart>
 		return amchart.getFeature("zoomOutButtonImageSize");
 	}
 	
-	public void setZoomOutButtonImageSize(Number zoomOutButtonImageSize) throws IntegerException{
-		if(NumberValidator.integerValidator(zoomOutButtonImageSize)){
+	public void setZoomOutButtonImageSize(Number zoomOutButtonImageSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(zoomOutButtonImageSize, 10, 26)){
 			amchart.setFeature("zoomOutButtonImageSize", zoomOutButtonImageSize);
 		}
 	}
@@ -206,8 +209,8 @@ public abstract class AmRectangularChartController<V extends AmRectangularChart>
 		return amchart.getFeature("zoomOutButtonPadding");
 	}
 	
-	public void setZoomOutButtonPadding(Number zoomOutButtonPadding) throws IntegerException{
-		if(NumberValidator.integerValidator(zoomOutButtonPadding)){
+	public void setZoomOutButtonPadding(Number zoomOutButtonPadding) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(zoomOutButtonPadding, 5, 20)){
 			amchart.setFeature("zoomOutButtonPadding", zoomOutButtonPadding);
 		}
 	}

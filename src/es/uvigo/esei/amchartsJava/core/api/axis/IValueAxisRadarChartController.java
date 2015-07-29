@@ -2,14 +2,14 @@ package es.uvigo.esei.amchartsJava.core.api.axis;
 
 
 import es.uvigo.esei.amchartsJava.core.constants.GridTypesConstant.GridType;
-import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public interface IValueAxisRadarChartController extends IValueAxisController {
 
 	public Object getAxisTitleOffset();
 
 	public void setAxixTitleOffset(Number axisTitleOffset)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	public Object getGridType();
 

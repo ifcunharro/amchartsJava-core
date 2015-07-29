@@ -4,19 +4,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import es.uvigo.esei.amchartsJava.core.api.charts.IAmCoordinateChartController;
 import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
-import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmCoordinateChartController<U extends AmCoordinateChart>
-			extends AmChartController<U>{
+			extends AmChartController<U> implements IAmCoordinateChartController<AmCoordinateChart>{
 
 	
 	private static final long serialVersionUID = -4021796361267991139L;
@@ -58,8 +58,8 @@ public abstract class AmCoordinateChartController<U extends AmCoordinateChart>
 		return amchart.getFeature("startDuration");
 	}
 	
-	public void setStartDuration(Number startDuration) throws IntegerException{
-		if(NumberValidator.integerValidator(startDuration)){
+	public void setStartDuration(Number startDuration) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(startDuration, 1, 10)){
 			amchart.setFeature("startDuration", startDuration);
 		}
 	}
