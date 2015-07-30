@@ -28,7 +28,7 @@ public interface IAmBalloonController {
 	public Object getBorderThickness();
 
 	public void setBorderThickness(Number borderThickness)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	public Object getColor();
 
@@ -36,7 +36,7 @@ public interface IAmBalloonController {
 
 	public Object getCornerRadius();
 
-	public void setCornerRadius(Number cornerRadius) throws IntegerException;
+	public void setCornerRadius(Number cornerRadius) throws OutOfRangeException;
 	
 	public Object isDisableMouseEvents();
 	
@@ -61,12 +61,12 @@ public interface IAmBalloonController {
 
 	public Object getFontSize();
 
-	public void setFontSize(Number fontSize) throws IntegerException;
+	public void setFontSize(Number fontSize) throws OutOfRangeException;
 
 	public Object getHorizontalPadding();
 
-	public void setHorizontalPaddint(Number horizontalPadding)
-			throws IntegerException;
+	public void setHorizontalPadding(Number horizontalPadding)
+			throws OutOfRangeException;
 
 	public Object getMaxWidth();
 
@@ -82,7 +82,7 @@ public interface IAmBalloonController {
 
 	public Object getPointerWidth();
 
-	public void setPointerWidth(Number pointerWidth) throws IntegerException;
+	public void setPointerWidth(Number pointerWidth) throws OutOfRangeException;
 
 	public Object getShadowAlpha();
 
@@ -103,6 +103,6 @@ public interface IAmBalloonController {
 	public Object getVerticalPadding();
 
 	public void setVerticalPadding(Number verticalPadding)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 }

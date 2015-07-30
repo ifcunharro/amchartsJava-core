@@ -70,8 +70,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		return balloon.getFeature("borderThickness");
 	}
 	
-	public void setBorderThickness(Number borderThickness) throws IntegerException{
-		if(NumberValidator.integerValidator(borderThickness)){
+	public void setBorderThickness(Number borderThickness) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(borderThickness, 0, 10)){
 			balloon.setFeature("borderThickness", borderThickness);
 		}
 	}
@@ -90,8 +90,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		return balloon.getFeature("cornerRadius");
 	}
 	
-	public void setCornerRadius(Number cornerRadius) throws IntegerException{
-		if(NumberValidator.integerValidator(cornerRadius)){
+	public void setCornerRadius(Number cornerRadius) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(cornerRadius, 0, 14)){
 			balloon.setFeature("cornerRadius", cornerRadius);
 		}
 	}
@@ -149,8 +149,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		return balloon.getFeature("fontSize");
 	}
 	
-	public void setFontSize(Number fontSize) throws IntegerException{
-		if(NumberValidator.integerValidator(fontSize)){
+	public void setFontSize(Number fontSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 16)){
 			balloon.setFeature("fontSize", fontSize);
 		}
 	}
@@ -159,8 +159,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		return balloon.getFeature("horizontalPadding");
 	}
 	
-	public void setHorizontalPaddint(Number horizontalPadding) throws IntegerException{
-		if(NumberValidator.integerValidator(horizontalPadding)){
+	public void setHorizontalPadding(Number horizontalPadding) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(horizontalPadding, 8, 20)){
 			balloon.setFeature("horizontalPadding", horizontalPadding);
 		}
 	}
@@ -170,7 +170,7 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setMaxWidth(Number maxWidth) throws IntegerException{
-		if(NumberValidator.integerValidator(maxWidth)){
+		if(NumberValidator.integerValidator(maxWidth) && maxWidth.intValue()>0){
 			balloon.setFeature("maxWidth", maxWidth);
 		}
 	}
@@ -199,8 +199,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		return balloon.getFeature("pointerWidth");
 	}
 	
-	public void setPointerWidth(Number pointerWidth) throws IntegerException{
-		if(NumberValidator.integerValidator(pointerWidth)){
+	public void setPointerWidth(Number pointerWidth) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(pointerWidth, 0, 36)){
 			balloon.setFeature("pointerWidth", pointerWidth);
 		}
 	}
@@ -246,8 +246,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		return balloon.getFeature("verticalPadding");
 	}
 	
-	public void setVerticalPadding(Number verticalPadding) throws IntegerException{
-		if(NumberValidator.integerValidator(verticalPadding)){
+	public void setVerticalPadding(Number verticalPadding) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(verticalPadding, 0, 10)){
 			balloon.setFeature("verticalPadding", verticalPadding);
 		}
 	}

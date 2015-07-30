@@ -51,7 +51,7 @@ public abstract interface IAmGraphSerialChartController extends IAmGraphControll
 
 	abstract Object getLineThickness();
 
-	abstract void setLineThickness(Number lineThickness) throws IntegerException;
+	abstract void setLineThickness(Number lineThickness) throws OutOfRangeException;
 
 	abstract Object getNegativeLineAlpha();
 

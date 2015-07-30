@@ -81,7 +81,7 @@ public abstract class AmGraphSerialChartController extends AmGraphController imp
 	}
 	
 	public void setFixedColumnWidth(Number fixedColumnWidth) throws IntegerException{
-		if(NumberValidator.integerValidator(fixedColumnWidth)){
+		if(NumberValidator.integerValidator(fixedColumnWidth) && fixedColumnWidth.intValue()>1){
 			amGraph.setFeature("fixedColumnWidth", fixedColumnWidth);
 		}
 	}
@@ -106,8 +106,8 @@ public abstract class AmGraphSerialChartController extends AmGraphController imp
 		return amGraph.getFeature("lineThickness");
 	}
 	
-	public void setLineThickness(Number lineThickness) throws IntegerException{
-		if(NumberValidator.integerValidator(lineThickness)){
+	public void setLineThickness(Number lineThickness) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(lineThickness, 0, 12)){
 			amGraph.setFeature("lineThickness", lineThickness);
 		}
 	}

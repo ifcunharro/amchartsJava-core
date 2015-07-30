@@ -138,8 +138,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return amGraph.getFeature("bulletBorderThickness");
 	}
 	
-	public void setBulletBorderThickness(Number bulletBorderThickness) throws IntegerException{
-		if(NumberValidator.integerValidator(bulletBorderThickness)){
+	public void setBulletBorderThickness(Number bulletBorderThickness) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(bulletBorderThickness, 0, 5)){
 			amGraph.setFeature("bulletBorderThickness", bulletBorderThickness);
 		}
 	}
@@ -164,8 +164,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return amGraph.getFeature("bulletOffset");
 	}
 	
-	public void setBulletOffset(Number bulletOffset) throws IntegerException{
-		if(NumberValidator.integerValidator(bulletOffset)){
+	public void setBulletOffset(Number bulletOffset) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(bulletOffset, 0, 10)){
 			amGraph.setFeature("bulletOffset", bulletOffset);
 		}
 	}
@@ -174,8 +174,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return amGraph.getFeature("bulletSize");
 	}
 	
-	public void setBulletSize(Number bulletSize) throws IntegerException{
-		if(NumberValidator.integerValidator(bulletSize)){
+	public void setBulletSize(Number bulletSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(bulletSize, 5, 36)){
 			amGraph.setFeature("bulletSize", bulletSize);
 		}
 	}
@@ -299,8 +299,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return amGraph.getFeature("fontSize");
 	}
 	
-	public void setFontSize(Number fontSize) throws IntegerException{
-		if(NumberValidator.integerValidator(fontSize)){
+	public void setFontSize(Number fontSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 36)){
 			amGraph.setFeature("fontSize", fontSize);
 		}
 	}
@@ -379,8 +379,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return amGraph.getFeature("labelOffset");
 	}
 	
-	public void setLabelOffset(Number labelOffset) throws IntegerException{
-		if(NumberValidator.integerValidator(labelOffset)){
+	public void setLabelOffset(Number labelOffset) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(labelOffset, 0, 10)){
 			amGraph.setFeature("labelOffset", labelOffset);
 		}
 	}

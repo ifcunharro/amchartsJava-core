@@ -62,7 +62,7 @@ public interface IAmLegendController  {
 
 	public Object getFontSize();
 
-	public void setFontSize(Number fontSize) throws IntegerException;
+	public void setFontSize(Number fontSize) throws OutOfRangeException;
 
 	public Object isForceWidth();
 
@@ -114,7 +114,7 @@ public interface IAmLegendController  {
 	public Object getMarkerBorderThickness();
 
 	public void setMarkerBorderThickness(Number markerBorderThickness)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	public Object getMarkerDisabledColor();
 
@@ -124,11 +124,11 @@ public interface IAmLegendController  {
 	public Object getMarkerLabelGap();
 
 	public void setMarkerLabelGap(Number markerLabelGap)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	public Object getMarkerSize();
 
-	public void setMarkerSize(Number markerSize) throws IntegerException;
+	public void setMarkerSize(Number markerSize) throws OutOfRangeException;
 
 	public Object getMarkerType();
 
@@ -136,7 +136,7 @@ public interface IAmLegendController  {
 
 	public Object getMaxColumns();
 
-	public void setMaxColumns(Number maxColumns) throws IntegerException;
+	public void setMaxColumns(Number maxColumns) throws OutOfRangeException;
 
 	public Object getPeriodValueText();
 
@@ -169,7 +169,7 @@ public interface IAmLegendController  {
 
 	public Object getSpacing();
 
-	public void setSpacing(Number spacing) throws IntegerException;
+	public void setSpacing(Number spacing) throws OutOfRangeException;
 
 	public Object isSwitchable();
 
@@ -218,11 +218,11 @@ public interface IAmLegendController  {
 
 	public Object getValueWidth();
 
-	public void setValueWidth(Number valueWidth) throws IntegerException;
+	public void setValueWidth(Number valueWidth) throws OutOfRangeException;
 
 	public Object getVerticalGap();
 
-	public void setVerticalGap(Number verticalGap) throws IntegerException;
+	public void setVerticalGap(Number verticalGap) throws OutOfRangeException;
 
 	public Object getWidth();
 

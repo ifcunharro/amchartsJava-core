@@ -13,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
-import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.Guide;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
@@ -102,8 +101,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		return guide.getFeature("dashLength");
 	}
 	
-	public void setDashLength(Number dashLength) throws IntegerException{
-		if(NumberValidator.integerValidator(dashLength)){
+	public void setDashLength(Number dashLength) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(dashLength, 0, 36)){
 			guide.setFeature("dashLength", dashLength);
 		}
 	}
@@ -140,8 +139,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		return guide.getFeature("fontSize");
 	}
 	
-	public void setFontSize(Number fontSize) throws IntegerException{
-		if(NumberValidator.integerValidator(fontSize)){
+	public void setFontSize(Number fontSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(fontSize, 8, 20)){
 			guide.setFeature("fontSize", fontSize);
 		}
 	}
@@ -205,8 +204,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		return guide.getFeature("lineThickness");
 	}
 	
-	public void setLineThickness(Number lineThickness) throws IntegerException{
-		if(NumberValidator.integerValidator(lineThickness)){
+	public void setLineThickness(Number lineThickness) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(lineThickness, 1, 20)){
 			guide.setFeature("lineThickness", lineThickness);
 		}
 	}
@@ -223,8 +222,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		return guide.getFeature("tickLength");
 	}
 	
-	public void setTickLength(Number tickLength) throws IntegerException{
-		if(NumberValidator.integerValidator(tickLength)){
+	public void setTickLength(Number tickLength) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(tickLength, 0, 5)){
 			guide.setFeature("tickLength", tickLength);
 		}
 	}

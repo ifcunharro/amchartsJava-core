@@ -151,8 +151,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("fontSize");
 	}
 	
-	public void setFontSize(Number fontSize) throws IntegerException{
-		if(NumberValidator.integerValidator(fontSize)){
+	public void setFontSize(Number fontSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 18)){
 			legend.setFeature("fontSize", fontSize);
 		}
 	}
@@ -171,7 +171,7 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setHorizontalGap(Number horizontalGap) throws IntegerException{
-		if(NumberValidator.integerValidator(horizontalGap)){
+		if(NumberValidator.integerValidator(horizontalGap) && horizontalGap.intValue()>=0){
 			legend.setFeature("horizontalGap", horizontalGap);
 		}
 	}
@@ -269,8 +269,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("markerBorderThickness");
 	}
 	
-	public void setMarkerBorderThickness(Number markerBorderThickness) throws IntegerException{
-		if(NumberValidator.integerValidator(markerBorderThickness)){
+	public void setMarkerBorderThickness(Number markerBorderThickness) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(markerBorderThickness, 1, 16)){
 			legend.setFeature("markerBorderThickness", markerBorderThickness);
 		}
 	}
@@ -289,8 +289,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("markerLabelGap");
 	}
 	
-	public void setMarkerLabelGap(Number markerLabelGap) throws IntegerException{
-		if(NumberValidator.integerValidator(markerLabelGap)){
+	public void setMarkerLabelGap(Number markerLabelGap) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(markerLabelGap, 5, 16)){
 			legend.setFeature("markerLabelGap", markerLabelGap);
 		}
 	}
@@ -299,8 +299,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("markerSize");
 	}
 	
-	public void setMarkerSize(Number markerSize) throws IntegerException{
-		if(NumberValidator.integerValidator(markerSize)){
+	public void setMarkerSize(Number markerSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(markerSize, 1, 36)){
 			legend.setFeature("markerSize", markerSize);
 		}
 	}
@@ -317,8 +317,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("maxColumns");
 	}
 	
-	public void setMaxColumns(Number maxColumns) throws IntegerException{
-		if(NumberValidator.integerValidator(maxColumns)){
+	public void setMaxColumns(Number maxColumns) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(maxColumns, 1, 5)){
 			legend.setFeature("maxColumns", maxColumns);
 		}
 	}
@@ -391,8 +391,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("spacing");
 	}
 	
-	public void setSpacing(Number spacing) throws IntegerException{
-		if(NumberValidator.integerValidator(spacing)){
+	public void setSpacing(Number spacing) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(spacing, 0, 10)){
 			legend.setFeature("spacing", spacing);
 		}
 	}
@@ -499,8 +499,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("valueWidth");
 	}
 	
-	public void setValueWidth(Number valueWidth) throws IntegerException{
-		if(NumberValidator.integerValidator(valueWidth)){
+	public void setValueWidth(Number valueWidth) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(valueWidth, 0, 50)){
 			legend.setFeature("valueWidth", valueWidth);
 		}
 	}
@@ -509,8 +509,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("verticalGap");
 	}
 	
-	public void setVerticalGap(Number verticalGap) throws IntegerException{
-		if(NumberValidator.integerValidator(verticalGap)){
+	public void setVerticalGap(Number verticalGap) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(verticalGap, 0, 10)){
 			legend.setFeature("verticalGap", verticalGap);
 		}
 	}

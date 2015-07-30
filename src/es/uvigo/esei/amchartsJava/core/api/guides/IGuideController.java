@@ -6,7 +6,6 @@ import java.util.Observable;
 
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
-import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
@@ -42,7 +41,7 @@ public abstract interface IGuideController {
 
 	abstract Object getDashLength();
 
-	abstract void setDashLength(Number dashLength) throws IntegerException;
+	abstract void setDashLength(Number dashLength) throws OutOfRangeException;
 
 	abstract Object getDate();
 
@@ -58,7 +57,7 @@ public abstract interface IGuideController {
 
 	abstract Object getFontSize();
 
-	abstract void setFontSize(Number fontSize) throws IntegerException;
+	abstract void setFontSize(Number fontSize) throws OutOfRangeException;
 
 	abstract Object getId();
 
@@ -86,7 +85,7 @@ public abstract interface IGuideController {
 	abstract Object getLineThickness();
 
 	abstract void setLineThickness(Number lineThickness)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	abstract Object getPosition();
 
@@ -94,7 +93,7 @@ public abstract interface IGuideController {
 
 	abstract Object getTickLength();
 
-	abstract void setTickLength(Number tickLength) throws IntegerException;
+	abstract void setTickLength(Number tickLength) throws OutOfRangeException;
 
 	abstract Object getToDate();
 

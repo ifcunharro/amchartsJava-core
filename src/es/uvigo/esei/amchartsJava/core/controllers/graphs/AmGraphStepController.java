@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphStepController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.StepDirectionConstant.StepDirection;
-import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 public class AmGraphStepController extends AmGraphSerialChartController implements IAmGraphStepController {
@@ -33,8 +33,8 @@ public class AmGraphStepController extends AmGraphSerialChartController implemen
 		return amGraph.getFeature("periodSpan");
 	}
 	
-	public void setPeriodSpan(Number periodSpan) throws IntegerException{
-		if(NumberValidator.integerValidator(periodSpan)){
+	public void setPeriodSpan(Number periodSpan) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(periodSpan, -2, 2)){
 			amGraph.setFeature("periodSpan", periodSpan);
 		}
 	}

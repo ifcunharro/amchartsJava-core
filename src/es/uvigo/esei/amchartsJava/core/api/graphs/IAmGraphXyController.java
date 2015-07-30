@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api.graphs;
 
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public interface IAmGraphXyController extends IAmGraphSerialChartController {
 
@@ -14,7 +15,7 @@ public interface IAmGraphXyController extends IAmGraphSerialChartController {
 	
 	public Object getMaxBulletSize();
 
-	public void setMaxBulletSize(Number maxBulletSize) throws IntegerException;
+	public void setMaxBulletSize(Number maxBulletSize) throws OutOfRangeException;
 
 	public Object getMinBulletSize();
 

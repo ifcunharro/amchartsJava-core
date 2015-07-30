@@ -1,10 +1,12 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
+import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphXyController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-public class AmGraphXyController extends AmGraphSerialChartController {
+public class AmGraphXyController extends AmGraphSerialChartController implements IAmGraphXyController {
 
 	/**
 	 * 
@@ -39,8 +41,8 @@ public class AmGraphXyController extends AmGraphSerialChartController {
 		return amGraph.getFeature("maxBulletSize");
 	}
 	
-	public void setMaxBulletSize(Number maxBulletSize) throws IntegerException{
-		if(NumberValidator.integerValidator(maxBulletSize)){
+	public void setMaxBulletSize(Number maxBulletSize) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(maxBulletSize, 50, 100)){
 			amGraph.setFeature("maxBulletSize", maxBulletSize);
 		}
 	}
@@ -50,7 +52,7 @@ public class AmGraphXyController extends AmGraphSerialChartController {
 	}
 	
 	public void setMinBulletSize(Number minBulletSize) throws IntegerException{
-		if(NumberValidator.integerValidator(minBulletSize)){
+		if(NumberValidator.integerValidator(minBulletSize) && minBulletSize.intValue()>=0){
 			amGraph.setFeature("minBulletSize", minBulletSize);
 		}
 	}

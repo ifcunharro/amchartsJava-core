@@ -56,7 +56,7 @@ public abstract interface IAmGraphController  {
 	abstract Object getBulletBorderThickness();
 
 	abstract void setBulletBorderThickness(Number bulletBorderThickness)
-			throws IntegerException;
+			throws OutOfRangeException;
 
 	abstract Object getBulletColor();
 
@@ -68,11 +68,11 @@ public abstract interface IAmGraphController  {
 
 	abstract Object getBulletOffset();
 
-	abstract void setBulletOffset(Number bulletOffset) throws IntegerException;
+	abstract void setBulletOffset(Number bulletOffset) throws OutOfRangeException;
 
 	abstract Object getBulletSize();
 
-	abstract void setBulletSize(Number bulletSize) throws IntegerException;
+	abstract void setBulletSize(Number bulletSize) throws OutOfRangeException;
 
 	abstract Object getBulletSizeField();
 
@@ -134,7 +134,7 @@ public abstract interface IAmGraphController  {
 
 	abstract Object getFontSize();
 
-	abstract void setFontSize(Number fontSize) throws IntegerException;
+	abstract void setFontSize(Number fontSize) throws OutOfRangeException;
 
 	abstract Object getGapPeriod();
 
@@ -171,7 +171,7 @@ public abstract interface IAmGraphController  {
 
 	abstract Object getLabelOffset();
 
-	abstract void setLabelOffset(Number labelOffset) throws IntegerException;
+	abstract void setLabelOffset(Number labelOffset) throws OutOfRangeException;
 
 	abstract Object getLabelPosition();
 
