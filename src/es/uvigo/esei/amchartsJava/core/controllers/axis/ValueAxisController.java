@@ -20,7 +20,7 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-public abstract class ValueAxisController extends AxisBaseController implements Observer, IValueAxisController {
+public class ValueAxisController extends AxisBaseController implements Observer, IValueAxisController {
 
 	/**
 	 * 

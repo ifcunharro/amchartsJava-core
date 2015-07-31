@@ -7,11 +7,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.axis.IAxisBaseController;
-import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
-import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -359,17 +357,5 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 			axes.setFeature("titleFontSize", titleFontSize);
 		}
 	}
-	
-	public void addGuide(GuideController guideController){
-		guideController.removeId();
-		axes.addGuide(guideController);
-	}
-	
-	public void removeGuide(IGuideController guideController){
-		if(axes.existGuide(guideController)){
-			axes.removeGuide(guideController);
-		}
-	}
-	
 	
 }

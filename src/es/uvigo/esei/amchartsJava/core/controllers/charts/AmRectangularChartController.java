@@ -68,8 +68,6 @@ public abstract class AmRectangularChartController<V extends AmRectangularChart>
 		amchart.setFeature("autoMargins", autoMargins);
 	}
 	
-	//chartScrollbar
-	
 	public Object getDepth3D(){
 		return amchart.getFeature("depth3D");
 	}
@@ -262,6 +260,12 @@ public abstract class AmRectangularChartController<V extends AmRectangularChart>
 	
 	public void removeChartScrollBar(){
 		amchart.removeChartScrollBar();
+	}
+	
+	public void removeTrendLine(String trendLine){
+		if(amchart.existTrendLine(trendLine)){
+			amchart.removeTrendLine(trendLine);
+		}
 	}
 
 }

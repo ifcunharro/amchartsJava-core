@@ -1,10 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.api.axis;
 
 
-import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
-import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -155,9 +153,5 @@ public abstract interface IAxisBaseController {
 
 	abstract void setTitleFontSize(Number titleFontSize)
 			throws OutOfRangeException;
-
-	abstract void addGuide(GuideController guideController);
-
-	abstract void removeGuide(IGuideController guideController);
 
 }

@@ -61,8 +61,6 @@ public abstract interface IGuideController {
 
 	abstract Object getId();
 
-	abstract void removeId();
-
 	abstract Object isInside();
 
 	abstract Object getLabel();

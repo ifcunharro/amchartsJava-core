@@ -113,6 +113,12 @@ public abstract class AmCoordinateChart extends AmChart {
 			idGraphs.remove(idGraph);
 			deleteGraphs++;
 		}
+		if(graphs.size()==0){
+			graphs=null;
+			idGraphs=null;
+			deleteGraphs=0;
+			System.gc();
+		}
 		
 	}
 	
@@ -122,6 +128,12 @@ public abstract class AmCoordinateChart extends AmChart {
 			idGuides.remove(idGuide);
 			deleteGuides++;
 		}
+		if(guides.size()==0){
+			guides=null;
+			idGuides=null;
+			deleteGuides=0;
+			System.gc();
+		}
 		
 	}
 	
@@ -130,6 +142,12 @@ public abstract class AmCoordinateChart extends AmChart {
 			valueAxes.remove(Integer.valueOf(idValueAxis.substring(idValueAxis.length() - 1))-1);
 			idValueAxes.remove(idValueAxis);
 			deleteValueAxis++;
+		}
+		if(valueAxes.size()==0){
+			valueAxes=null;
+			idValueAxes=null;
+			deleteValueAxis=0;
+			System.gc();
 		}
 		
 	}

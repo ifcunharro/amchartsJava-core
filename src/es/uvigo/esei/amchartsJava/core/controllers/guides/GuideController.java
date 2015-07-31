@@ -153,10 +153,6 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		guide.setFeature("id", id);
 	}
 	
-	public void removeId(){
-		setId(null);
-	}
-	
 	@JsonProperty(value="inside")
 	public Object isInside(){
 		return guide.getFeature("inside");
