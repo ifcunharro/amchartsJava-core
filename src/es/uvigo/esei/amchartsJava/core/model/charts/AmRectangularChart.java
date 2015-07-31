@@ -6,6 +6,9 @@ import java.util.List;
 
 
 
+
+
+
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
 
@@ -36,7 +39,8 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		chartCursor = chartCursorController;
 	}
 	
-	public void addScrollBar(ChartScrollBarController chartScrollBarController){
+	public void addChartScrollBar(ChartScrollBarController chartScrollBarController){
+		chartScrollBarController.setChart(this);
 		scrollBar = chartScrollBarController;
 	}
 	
