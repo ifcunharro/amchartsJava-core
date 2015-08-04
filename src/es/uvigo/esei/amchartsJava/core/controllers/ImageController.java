@@ -13,7 +13,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.Image;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 @JsonInclude(Include.NON_NULL)
 public class ImageController implements Serializable, IImageController {
@@ -115,7 +115,7 @@ public class ImageController implements Serializable, IImageController {
 	//en vez de url, introduce solo nombre imagen con su extensión, la url se completa con
 	//IMAGES_PATH definido en AmchartsJavaPaths
 	public void setUrl(String nameImage){
-		if(StringValidator.imageExist(AmchartsJavaPaths.IMAGES_PATH+nameImage)){
+		if(PathValidator.imageExist(AmchartsJavaPaths.IMAGES_PATH+nameImage)){
 			image.setFeature("url", AmchartsJavaPaths.IMAGES_PATH+nameImage);
 		}
 		

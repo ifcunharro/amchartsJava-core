@@ -16,7 +16,7 @@ import es.uvigo.esei.amchartsJava.core.model.ChartScrollBar;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 @JsonInclude(Include.NON_NULL)
 public class ChartScrollBarController implements Serializable, IChartScrollBarController {
@@ -82,7 +82,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setDragIcon(String dragIcon){
-		if(StringValidator.imageExist(dragIcon)){
+		if(PathValidator.imageExist(dragIcon)){
 			scrollBar.setFeature("dragIcon", dragIcon);
 		}
 	}

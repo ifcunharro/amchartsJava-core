@@ -7,9 +7,11 @@ import java.util.List;
 
 
 
+
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
+import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
@@ -95,7 +97,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	//necesario un archivo js de idioma escogido
 	abstract Object getLanguage();
 
-	abstract void setLanguage(String language);
+	abstract void setLanguage(Idioms language);
 
 	abstract Object isPanEventsEnabled();
 

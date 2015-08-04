@@ -17,9 +17,9 @@ public class IdiomValidator {
 		
 		try{
 			switch(Idioms.valueOf(language)){
-				case ES:
+				case es:
 					return ES.getInstance();
-				case EN:
+				case en:
 					return EN.getInstance();
 			}
 			

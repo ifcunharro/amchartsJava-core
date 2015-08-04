@@ -22,6 +22,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.parser.ParserJson;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 
@@ -31,7 +32,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		
+		System.out.println(PathValidator.imageExist("lens.svg"));
 	
 		Number l = 9.935655;
 		Number p = 5.82434343;
@@ -62,7 +63,7 @@ public class Principal {
 			e5.printStackTrace();
 		}
 		
-		I18n.setLanguage("EN");
+		I18n.setLanguage("en");
 		//testeado
 		
 		//AmGraphXyController ab = new AmGraphXyController();

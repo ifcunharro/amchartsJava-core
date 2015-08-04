@@ -12,6 +12,7 @@ import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
+import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
@@ -129,6 +130,8 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		amchart.setFeature("creditsPosition", creditsPosition.toString());
 	}
 	
+	//dataProvider
+	
 	public Object getDecimalSepartator(){
 		return amchart.getFeature("decimalSeparator");
 	}
@@ -136,6 +139,10 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	public void setDecimalSeparator(Separator decimalSeparator){
 		amchart.setFeature("decimalSeparator",decimalSeparator.toString());
 	}
+	
+	//defs
+	
+	//export
 	
 	public Object getFontFamily(){
 		return amchart.getFeature("fontFamily");
@@ -199,9 +206,11 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		return amchart.getFeature("language");
 	}
 	
-	public void setLanguage(String language){
-		amchart.setFeature("language", language);
+	public void setLanguage(Idioms language){
+		amchart.setFeature("language", language.toString());
 	}
+	
+	//listeners
 	
 	@JsonProperty(value = "panEventsEnabled")
 	public Object isPanEventsEnabled(){
@@ -211,7 +220,6 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	public void setPanEventsEnabled(Boolean panEventsEnabled){
 		amchart.setFeature("panEventsEnabled", panEventsEnabled);
 	}
-	
 	
 	public Object getPath(){
 		return amchart.getFeature("path");
@@ -308,13 +316,16 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	}
 	
 	//methods 
-	public Object getTitles(){
-		return amchart.getTitles();
-	}
+	
 	//propio
 	public List<LabelController> getAllLabels(){
 		return amchart.getLabels();
 	}
+	
+	public Object getTitles(){
+		return amchart.getTitles();
+	}
+	
 	
 	//propio
 	public Object getExport(){

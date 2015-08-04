@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 
 
+
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmRectangularChartController;
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
@@ -23,7 +24,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmRectangularChartController 
@@ -194,7 +195,7 @@ public abstract class AmRectangularChartController
 	
 	//debe existir en /amcharts/images
 	public void setZoomOutButtonImage(String zoomOutButtonImage){
-		if(StringValidator.imageExist(zoomOutButtonImage)){
+		if(PathValidator.imageExist(zoomOutButtonImage)){
 			amchart.setFeature("zoomOutButtonImage", zoomOutButtonImage);
 		}
 	}
