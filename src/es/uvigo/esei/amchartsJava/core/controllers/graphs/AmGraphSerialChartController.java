@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphSerialChartController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
-import es.uvigo.esei.amchartsJava.core.constants.PointPositionConstant.PointPosition;
+import es.uvigo.esei.amchartsJava.core.constants.PointPositionGraphConstant.PointPositionGraph;
 import es.uvigo.esei.amchartsJava.core.constants.ShowAtConstant.ShowAt;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -151,7 +151,7 @@ public abstract class AmGraphSerialChartController extends AmGraphController imp
 		return amGraph.getFeature("pointPosition");
 	}
 	
-	public void setPointPosition(PointPosition pointPosition){
+	public void setPointPosition(PointPositionGraph pointPosition){
 		amGraph.setFeature("pointPosition", pointPosition.toString());
 	}
 	

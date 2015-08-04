@@ -8,4 +8,6 @@ public final class AmchartsJavaPaths {
 	public static final String IMAGES_PATH = "../amcharts/amcharts/images/";
 	
 	
+	
+	
 }

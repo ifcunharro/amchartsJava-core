@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.axis.IValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.constants.GridTypesConstant.GridType;
+import es.uvigo.esei.amchartsJava.core.constants.PointPositionAxisRadarConstant.PointPositionAxisRadar;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
@@ -30,6 +31,14 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 	
 	public void setGridType(GridType gridType){
 		axes.setFeature("gridType", gridType.toString());
+	}
+	
+	public Object getPointPosition(){
+		return axes.getFeature("pointPosition");
+	}
+	
+	public void setPointPosition(PointPositionAxisRadar pointPosition){
+		axes.setFeature("pointPosition", pointPosition.toString());
 	}
 	
 	@JsonProperty(value="radarCategoriesEnabled")

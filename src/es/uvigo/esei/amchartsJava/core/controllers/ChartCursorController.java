@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.IChartCursorController;
+import es.uvigo.esei.amchartsJava.core.constants.CategoryBalloonTextConstant.CategoryBalloonText;
 import es.uvigo.esei.amchartsJava.core.constants.CursorPositionConstant.CursorPosition;
 import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -142,6 +143,14 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	
 	public void setCategoryBalloonFunction(String categoryBalloonFunction){
 		chartCursor.setFeature("categoryBalloonFunction", categoryBalloonFunction);
+	}
+	
+	public Object getCategoryBalloonText(){
+		return chartCursor.getFeature("categoryBalloonText");
+	}
+	
+	public void setCategoryBalloonText(CategoryBalloonText categoryBalloonText){
+		chartCursor.setFeature("categoryBalloonText", categoryBalloonText.toString());
 	}
 	
 	public Object getColor(){

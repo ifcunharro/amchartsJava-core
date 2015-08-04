@@ -78,6 +78,15 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		axes.setFeature("boldLabels", boldLabels);
 	}
 	
+	@JsonProperty(value="centerLabels")
+	public Object isCenterLabels(){
+		return axes.getFeature("centerLabels");
+	}
+	
+	public void setCenterLabels(Boolean centerLabels){
+		axes.setFeature("centerLabels", centerLabels);
+	}
+	
 	public Object getColor(){
 		return axes.getFeature("color");
 	}
@@ -355,6 +364,16 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	public void setTitleFontSize(Number titleFontSize) throws OutOfRangeException{
 		if(NumberValidator.rangeIntegerValidator(titleFontSize, 10, 18)){
 			axes.setFeature("titleFontSize", titleFontSize);
+		}
+	}
+	
+	public Object getTitleRotation(){
+		return axes.getFeature("titleRotation");
+	}
+	
+	public void setTitleRotation(Number titleRotation) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(titleRotation, 0, 360)){
+			axes.setFeature("titleRotation", titleRotation);
 		}
 	}
 	

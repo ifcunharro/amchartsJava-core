@@ -5,11 +5,13 @@ import java.util.List;
 
 
 
-import es.uvigo.esei.amchartsJava.core.api.IAmBalloonController;
-import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
+
+
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
+import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
+import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -158,13 +160,13 @@ public abstract interface IAmchartController<E extends AmChart> {
 	abstract void addLabel(LabelController labelController);
 
 	//method amcharts
-	abstract void addLegend(IAmLegendController amLegendController);
+	abstract void addLegend(AmLegendController amLegendController);
 
 	//method amcharts
 	abstract void addTitle(TitleController titleController);
 
 	//propio
-	abstract void addBalloon(IAmBalloonController amBalloon);
+	abstract void addBalloon(AmBalloonController amBalloon);
 
 	//method amcharts
 	abstract void clearLabels();

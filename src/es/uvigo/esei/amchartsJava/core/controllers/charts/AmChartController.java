@@ -8,13 +8,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import es.uvigo.esei.amchartsJava.core.api.IAmBalloonController;
-import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
+import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
+import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -38,6 +38,7 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	protected AmChartController(S chart) {
 		amchart = chart;
 		this.setPath(AmchartsJavaPaths.AMCHARTS_PATH);
+		this.setPathToImages(AmchartsJavaPaths.IMAGES_PATH);
 	}
 
 	
@@ -350,7 +351,7 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		amchart.addLabel(labelController);
 	}
 	//method amcharts
-	public void addLegend(IAmLegendController amLegendController){
+	public void addLegend(AmLegendController amLegendController){
 		amchart.addLegend(amLegendController);
 	}
 	//method amcharts
@@ -359,7 +360,7 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	}
 	
 	//propio
-		public void addBalloon(IAmBalloonController amBalloon){
+		public void addBalloon(AmBalloonController amBalloon){
 			amchart.addBalloon(amBalloon);
 		}
 	

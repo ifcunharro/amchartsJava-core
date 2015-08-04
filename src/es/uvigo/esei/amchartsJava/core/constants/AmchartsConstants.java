@@ -11,7 +11,7 @@ public class AmchartsConstants {
 	public static final DurationConstant DURATION_UNITS = DurationConstant.getInstance();
 	//usada para ser escogida por interfaz
 	public static final CreditsPositionConstant CREDITS_POSITION = CreditsPositionConstant.getInstance();
-	public static final PointPositionConstant POINT_POSITION = PointPositionConstant.getInstance();
+	public static final PointPositionGraphConstant POINT_POSITION = PointPositionGraphConstant.getInstance();
 	public static final AxisPositionConstant AXIS_POSITION = AxisPositionConstant.getInstance();
 	public static final PositionConstant POSITION = PositionConstant.getInstance();
 	public static final CursorPositionConstant CURSOR_POSITION = CursorPositionConstant.getInstance();
@@ -31,6 +31,7 @@ public class AmchartsConstants {
 	public static final LabelPositionConstant LABEL_POSITION = LabelPositionConstant.getInstance();
 	public static final LabelAnchorConstant LABEL_ANCHOR = LabelAnchorConstant.getInstance();
 	public static final TagsTextConstant TAGS_TEXT = TagsTextConstant.getInstance();
+	public static final CategoryBalloonTextConstant CATEGORY_BALLOON_TEXT = CategoryBalloonTextConstant.getInstance();
 	public static final LegendPeriodValueTextConstant LEGEND_PERIOD_VALUE_TEXT = LegendPeriodValueTextConstant.getInstance();
 	public static final GradientAngleConstant GRADIENT_ANGLE = GradientAngleConstant.getInstance();
 	public static final GraphTypesConstant GRAPH_TYPES = GraphTypesConstant.getInstance();

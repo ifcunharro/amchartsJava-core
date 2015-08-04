@@ -11,10 +11,12 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 
 
+
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmRectangularChartController;
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
+import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -246,12 +248,20 @@ public abstract class AmRectangularChartController<V extends AmRectangularChart>
 		return amchart.getChartScrollBar();
 	}
 	
+	public Object getTrendLines(){
+		return amchart.getTrendLines();
+	}
+	
 	public void addChartCursor(ChartCursorController chartCursorController){
 		amchart.addChartCursor(chartCursorController);
 	}
 	
 	public void addChartScrollBar(ChartScrollBarController chartScrollBarController){
 		amchart.addChartScrollBar(chartScrollBarController);
+	}
+	
+	public <P extends TrendLineSerialChartController>void addTrendLine(P trendLineController){
+		amchart.addTrendLine(trendLineController);
 	}
 	
 	public void removeChartCursor(){

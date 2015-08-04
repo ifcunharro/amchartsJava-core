@@ -3,6 +3,7 @@ package principal;
 
 
 import java.io.IOException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
@@ -30,7 +31,8 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		
+	
+	
 		Number l = 9.935655;
 		Number p = 5.82434343;
 		System.out.println(l.floatValue()+p.floatValue());

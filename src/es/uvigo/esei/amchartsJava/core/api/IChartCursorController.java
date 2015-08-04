@@ -1,5 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.api;
 
+import es.uvigo.esei.amchartsJava.core.constants.CategoryBalloonTextConstant.CategoryBalloonText;
 import es.uvigo.esei.amchartsJava.core.constants.CursorPositionConstant.CursorPosition;
 import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -60,6 +61,10 @@ public interface IChartCursorController {
 	public Object getCategoryBalloonFunction();
 
 	public void setCategoryBalloonFunction(String categoryBalloonFunction);
+	
+	public Object getCategoryBalloonText();
+	
+	public void setCategoryBalloonText(CategoryBalloonText categoryBalloonText);
 
 	public Object getColor();
 

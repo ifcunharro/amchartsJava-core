@@ -6,15 +6,16 @@ import java.util.Arrays;
 import java.util.List;
 
 
+
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
-import es.uvigo.esei.amchartsJava.core.controllers.TrendLineController;
+import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 
 public abstract class AmRectangularChart extends AmCoordinateChart {
 	private List<String> plotAreaFillColors;
 	private ChartCursorController chartCursor;
 	private ChartScrollBarController scrollBar;
-	private List<TrendLineController> trendLines;
+	private List<TrendLineSerialChartController> trendLines;
 	private List<String> idTrendLines;
 	private int deleteTrendLines;
 	
@@ -36,7 +37,7 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		return scrollBar;
 	}
 	
-	public List<TrendLineController> getTrendLines(){
+	public List<TrendLineSerialChartController> getTrendLines(){
 		return trendLines;
 	}
 	
@@ -49,14 +50,15 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		scrollBar = chartScrollBarController;
 	}
 	
-	public void addTrendLine(TrendLineController trendLineController){
+	public void addTrendLine(TrendLineSerialChartController trendLineController){
 		if(trendLines==null){
-			trendLines = new ArrayList<TrendLineController>();
+			trendLines = new ArrayList<TrendLineSerialChartController>();
 			idTrendLines = new ArrayList<String>();
 		}
 		addObserver(trendLineController);
 		setChanged();
 		notifyObservers(trendLines.size()+1+deleteTrendLines);
+		trendLineController.setChart(this);
 		trendLines.add(trendLineController);
 		deleteObservers();
 		idTrendLines.add("TrendLine-"+trendLines.size()+deleteTrendLines);

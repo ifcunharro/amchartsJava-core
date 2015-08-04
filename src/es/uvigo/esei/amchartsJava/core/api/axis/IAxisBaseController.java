@@ -29,6 +29,10 @@ public abstract interface IAxisBaseController {
 	abstract Object isBoldLabels();
 
 	abstract void setBoldLabels(Boolean boldLabels);
+	
+	abstract Object isCenterLabels();
+	
+	abstract void setCenterLabels(Boolean centerLabels);
 
 	abstract Object getColor();
 
@@ -153,5 +157,9 @@ public abstract interface IAxisBaseController {
 
 	abstract void setTitleFontSize(Number titleFontSize)
 			throws OutOfRangeException;
+	
+	abstract Object getTitleRotation();
+	
+	abstract void setTitleRotation(Number titleRotation) throws OutOfRangeException;
 
 }

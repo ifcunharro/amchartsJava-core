@@ -3,7 +3,7 @@ package es.uvigo.esei.amchartsJava.core.api.graphs;
 
 
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
-import es.uvigo.esei.amchartsJava.core.constants.PointPositionConstant.PointPosition;
+import es.uvigo.esei.amchartsJava.core.constants.PointPositionGraphConstant.PointPositionGraph;
 import es.uvigo.esei.amchartsJava.core.constants.ShowAtConstant.ShowAt;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -72,7 +72,7 @@ public abstract interface IAmGraphSerialChartController extends IAmGraphControll
 
 	abstract Object getPointPosition();
 
-	abstract void setPointPosition(PointPosition pointPosition);
+	abstract void setPointPosition(PointPositionGraph pointPosition);
 
 	abstract Object getShowBalloonAt();
 

@@ -3,22 +3,25 @@ package es.uvigo.esei.amchartsJava.core.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import es.uvigo.esei.amchartsJava.core.api.IAmBalloonController;
-import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
+
+
+
+import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
+import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 
 public abstract class AmChart extends IModel {
 	protected List<LabelController> labels;
 	protected Export export;
-	protected IAmBalloonController balloon;
+	protected AmBalloonController balloon;
 	protected List<Prefix> bigPrefixes;
 	protected List<Prefix> smallPrefixes;
 	//cambiar por clase y no es map es List<Map>
 	//protected DataProvider dataProvider;
 	//para filtros svg
 	//protected Defs defs;
-	protected IAmLegendController legend;
+	protected AmLegendController legend;
 	protected List<TitleController> titles;
 	
 	
@@ -48,11 +51,11 @@ public abstract class AmChart extends IModel {
 		
 	}
 
-	public IAmBalloonController getBalloon() {
+	public AmBalloonController getBalloon() {
 		return balloon;
 	}
 
-	public void addBalloon(IAmBalloonController amBalloon) {
+	public void addBalloon(AmBalloonController amBalloon) {
 			balloon = amBalloon;	
 	}
 
@@ -64,11 +67,11 @@ public abstract class AmChart extends IModel {
 		dataProvider.addData(dat);
 	}*/
 
-	public IAmLegendController getLegend() {
+	public AmLegendController getLegend() {
 		return legend;
 	}
 	
-	public void addLegend(IAmLegendController amLegend) {
+	public void addLegend(AmLegendController amLegend) {
 		legend = amLegend;
 		
 	}

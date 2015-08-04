@@ -16,7 +16,7 @@ public final class ShowAtConstant {
 	}
 	
 	public enum ShowAt{
-		open, close, high, low;
+		open, close, high, low, top, bottom;
 	}
 	
 	
@@ -34,6 +34,14 @@ public final class ShowAtConstant {
 	
 	public ShowAt getLow(){
 		return ShowAt.low;
+	}
+	
+	public ShowAt getTop(){
+		return ShowAt.top;
+	}
+	
+	public ShowAt getBottom(){
+		return ShowAt.bottom;
 	}
 	
 	public ShowAt[] values(){
