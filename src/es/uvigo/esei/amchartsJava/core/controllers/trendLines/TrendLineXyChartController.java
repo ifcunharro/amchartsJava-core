@@ -1,11 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.controllers.trendLines;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineXyChartController;
 
-@JsonInclude(Include.NON_NULL)
+
 public class TrendLineXyChartController extends TrendLineSerialChartController implements ITrendLineXyChartController {
 
 	/**

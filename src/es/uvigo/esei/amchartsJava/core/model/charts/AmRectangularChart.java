@@ -11,7 +11,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 
-public abstract class AmRectangularChart extends AmCoordinateChart {
+public class AmRectangularChart extends AmCoordinateChart {
 	private List<String> plotAreaFillColors;
 	private ChartCursorController chartCursor;
 	private ChartScrollBarController scrollBar;

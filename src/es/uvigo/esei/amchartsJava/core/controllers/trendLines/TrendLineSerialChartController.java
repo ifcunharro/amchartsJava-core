@@ -6,6 +6,8 @@ import java.util.Observable;
 import java.util.Observer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineController;
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
@@ -16,7 +18,8 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-public abstract class TrendLineSerialChartController implements Observer, Serializable, ITrendLineController {
+@JsonInclude(Include.NON_NULL)
+public class TrendLineSerialChartController implements Observer, Serializable, ITrendLineController {
 	
 	/**
 	 * 

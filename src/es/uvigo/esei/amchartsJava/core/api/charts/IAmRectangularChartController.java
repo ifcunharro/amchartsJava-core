@@ -3,13 +3,14 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
+import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
+import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
-import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface IAmRectangularChartController<V extends AmRectangularChart> extends IAmCoordinateChartController<AmCoordinateChart> {
+public interface IAmRectangularChartController extends IAmCoordinateChartController<AmCoordinateChart> {
 
 	abstract Object getAngle();
 
@@ -102,9 +103,18 @@ public interface IAmRectangularChartController<V extends AmRectangularChart> ext
 	abstract void setZoomOutText(String zoomOutText);
 
 	abstract Object getChartCursor();
-
+	
+	abstract Object getChartScrollBar();
+	
+	abstract Object getTrendLines();
+	
 	abstract void addChartCursor(ChartCursorController chartCursorController);
 
+	abstract void addChartScrollBar(ChartScrollBarController chartScrollBarController);
+	
+	abstract <P extends TrendLineSerialChartController> void addTrendLine(
+			P trendLineController);
+	
 	abstract void removeChartCursor();
 
 }

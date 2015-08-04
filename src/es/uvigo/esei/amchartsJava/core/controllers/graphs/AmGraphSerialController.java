@@ -1,13 +1,11 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 
-@JsonInclude(Include.NON_NULL)
+
 public class AmGraphSerialController extends AmGraphSerialChartController implements IAmGraphSerialController {
 
 	/**

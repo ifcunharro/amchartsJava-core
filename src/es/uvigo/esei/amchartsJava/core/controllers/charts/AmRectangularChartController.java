@@ -26,8 +26,8 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AmRectangularChartController<V extends AmRectangularChart> 
-				extends AmCoordinateChartController<V> implements IAmRectangularChartController<AmRectangularChart> {
+public abstract class AmRectangularChartController 
+				extends AmCoordinateChartController<AmRectangularChart> implements IAmRectangularChartController {
 
 	
 	
@@ -36,9 +36,8 @@ public abstract class AmRectangularChartController<V extends AmRectangularChart>
 	 */
 	private static final long serialVersionUID = 3477512389234890479L;
 
-	protected AmRectangularChartController(V chart) {
+	protected AmRectangularChartController(AmRectangularChart chart) {
 		super(chart);
-		
 	}
 	
 	public Object getAngle(){
@@ -260,7 +259,7 @@ public abstract class AmRectangularChartController<V extends AmRectangularChart>
 		amchart.addChartScrollBar(chartScrollBarController);
 	}
 	
-	public <P extends TrendLineSerialChartController>void addTrendLine(P trendLineController){
+	public <P extends TrendLineSerialChartController> void addTrendLine(P trendLineController){
 		amchart.addTrendLine(trendLineController);
 	}
 	
