@@ -112,11 +112,12 @@ public class ImageController implements Serializable, IImageController {
 		return image.getFeature("url");
 	}
 	
-	//en vez de url, introduce solo nombre imagen con su extensión, la url se completa con
+	//en vez de url, introduce solo nombre imagen con su extensión o sin ella, la url se completa con
 	//IMAGES_PATH definido en AmchartsJavaPaths
 	public void setUrl(String nameImage){
-		if(PathValidator.imageExist(AmchartsJavaPaths.IMAGES_PATH+nameImage)){
-			image.setFeature("url", AmchartsJavaPaths.IMAGES_PATH+nameImage);
+		String nameImageValidated = PathValidator.imageExist(AmchartsJavaPaths.IMAGES_PATH+nameImage);
+		if(nameImageValidated.length()>0){
+			image.setFeature("url", AmchartsJavaPaths.IMAGES_PATH+nameImageValidated);
 		}
 		
 	}

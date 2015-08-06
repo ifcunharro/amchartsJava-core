@@ -24,6 +24,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmChartController<S extends AmChart> implements Serializable, IAmchartController<AmChart>{
@@ -287,7 +288,9 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	
 	//debe existir file theme
 	public void setTheme(String theme){
-		amchart.setFeature("theme", theme);
+		if(PathValidator.themeExist(theme)){
+			amchart.setFeature("theme", theme);
+		}
 	}
 	
 	public Object getThousandsSeparator(){

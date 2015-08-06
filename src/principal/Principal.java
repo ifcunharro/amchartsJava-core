@@ -32,7 +32,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		System.out.println(PathValidator.imageExist("lens.svg"));
+		System.out.println(PathValidator.imageExist("lens.png"));
 	
 		Number l = 9.935655;
 		Number p = 5.82434343;

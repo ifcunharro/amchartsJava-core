@@ -12,7 +12,7 @@ public class PathValidator {
 		
 	}
 	
-	public static boolean imageExist(String image){
+	public static String imageExist(String image){
 		
 		URL resourcesPath = null;
 		
@@ -24,23 +24,53 @@ public class PathValidator {
 			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+image);
 			//se ha pasado image con extension
 			if(new File(resourcesPath.getFile()).exists()){
-				return true;
+				return image;
 			}else if(image.lastIndexOf(".") != image.length()-4){
 				
 				//se comprueba con todas las extensiones soportadas para imagen
 				for(ImageExtensions extension: ImageExtensions.values()){
 					resourcesPath = new URL(resourcesPath,image+"."+extension.toString());
-					System.out.println(resourcesPath.toString());
 					if(new File(resourcesPath.getFile()).exists()){
-						return true;
+						return image+"."+extension.toString();
 					}
 				}
 			}
 		} catch (MalformedURLException e) {
-			return false;
+			return "";
 		}
 		
-		return false;
+		return "";
+		
+	}
+	
+	public static String dragIconExist(String icon){
+		
+		URL resourcesPath = null;
+		
+		resourcesPath = StringValidator.class.getProtectionDomain()
+									   .getCodeSource()
+									   .getLocation();
+
+		try {
+			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+icon);
+			//se ha pasado icon con extension
+			if(new File(resourcesPath.getFile()).exists()){
+				return icon.substring(0, icon.length()-4);
+			}else if(icon.lastIndexOf(".") != icon.length()-4){
+				
+				//se comprueba con todas las extensiones soportadas para imagen
+				for(ImageExtensions extension: ImageExtensions.values()){
+					resourcesPath = new URL(resourcesPath,icon+"."+extension.toString());
+					if(new File(resourcesPath.getFile()).exists()){
+						return icon;
+					}
+				}
+			}
+		} catch (MalformedURLException e) {
+			return "";
+		}
+		
+		return "";
 		
 	}
 	
@@ -54,13 +84,7 @@ public class PathValidator {
 									   .getLocation();
 		
 		try {
-			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.THEMES_PATH+theme);
-			//si se ha pasado con extension
-			if(new File(resourcesPath.getFile()).exists()){
-				return true;
-			}
-			//se pone la extension en caso de no llevarla
-			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.THEMES_PATH+theme+".js");
+			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.THEMES_PATH+theme+".js");			
 		} catch (MalformedURLException e) {
 			return false;
 		}

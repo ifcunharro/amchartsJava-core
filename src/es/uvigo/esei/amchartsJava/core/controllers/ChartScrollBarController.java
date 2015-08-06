@@ -82,7 +82,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setDragIcon(String dragIcon){
-		if(PathValidator.imageExist(dragIcon)){
+		String iconValidated = PathValidator.dragIconExist(dragIcon);
+		if(iconValidated.length()>0){
 			scrollBar.setFeature("dragIcon", dragIcon);
 		}
 	}
