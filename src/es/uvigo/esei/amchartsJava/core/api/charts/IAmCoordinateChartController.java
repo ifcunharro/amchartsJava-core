@@ -4,13 +4,13 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
-import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
+import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
-public abstract interface IAmCoordinateChartController<U extends AmCoordinateChart> extends IAmchartController<AmChart> {
+public abstract interface IAmCoordinateChartController<F extends AmCoordinateChart> extends IAmchartController<AmChart> {
 
 	abstract Object isGridAboveGraphs();
 
@@ -54,12 +54,12 @@ public abstract interface IAmCoordinateChartController<U extends AmCoordinateCha
 	//valueAxes
 	abstract Object getValueAxes();
 	
-	abstract <T extends AmGraphController> void addGraph(T amGraphController);
+	abstract <T extends AmGraphSerialController> void addGraph(T amGraphController);
 	
 	abstract void addGuide(GuideController guideController);
 
 	abstract void addValueAxis(ValueAxisController valueAxisController);
-
+	
 	//remove by id
 	abstract void removeGraph(String idGraph);
 

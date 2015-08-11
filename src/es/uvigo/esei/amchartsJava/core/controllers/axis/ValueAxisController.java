@@ -6,7 +6,6 @@ import java.util.Observer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import es.uvigo.esei.amchartsJava.core.api.axis.IValueAxisController;
 import es.uvigo.esei.amchartsJava.core.constants.AxisTypeConstant.AxisType;
 import es.uvigo.esei.amchartsJava.core.constants.DurationConstant.Duration;
@@ -223,6 +222,7 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		return axes.getFeature("totalText");
 	}
 	
+	
 	public void enabledTotalText(){
 		axes.setFeature("totalText", "[[total]]");
 	}
@@ -297,5 +297,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	
 	public void setUseScientificNotation(Boolean useScientificNotation){
 		axes.setFeature("useScientificNotation", useScientificNotation);
+	}
+	
+	//para deserializar json
+	protected void setTotalText(String total){
+		axes.setFeature("totalText", total);
 	}
 }

@@ -6,103 +6,103 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IAmBalloonController {
+public abstract interface IAmBalloonController {
 
-	public Object isAdjustColor();
+	abstract Object isAdjustColor();
 
-	public void setAdjustColor(Boolean adjustColor);
+	abstract void setAdjustColor(Boolean adjustColor);
 
-	public Object getAnimationDuration();
+	abstract Object getAnimationDuration();
 
-	public void setAnimationDuration(Number animationDuration)
+	abstract void setAnimationDuration(Number animationDuration)
 			throws OutOfRangeException;
 
-	public Object getBorderAlpha();
+	abstract Object getBorderAlpha();
 
-	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
+	abstract void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
 
-	public Object getBorderColor();
+	abstract Object getBorderColor();
 
-	public void setBorderColor(String borderColor) throws ColorException;
+	abstract void setBorderColor(String borderColor) throws ColorException;
 
-	public Object getBorderThickness();
+	abstract Object getBorderThickness();
 
-	public void setBorderThickness(Number borderThickness)
+	abstract void setBorderThickness(Number borderThickness)
 			throws OutOfRangeException;
 
-	public Object getColor();
+	abstract Object getColor();
 
-	public void setColor(String color) throws ColorException;
+	abstract void setColor(String color) throws ColorException;
 
-	public Object getCornerRadius();
+	abstract Object getCornerRadius();
 
-	public void setCornerRadius(Number cornerRadius) throws OutOfRangeException;
+	abstract void setCornerRadius(Number cornerRadius) throws OutOfRangeException;
 	
-	public Object isDisableMouseEvents();
+	abstract Object isDisableMouseEvents();
 	
-	public void setDisableMouseEvents(Boolean disableMouseEvents);
+	abstract void setDisableMouseEvents(Boolean disableMouseEvents);
 
-	public Object getFadeOutDuration();
+	abstract Object getFadeOutDuration();
 
-	public void setFadeOutDuration(Number fadeOutDuration)
+	abstract void setFadeOutDuration(Number fadeOutDuration)
 			throws OutOfRangeException;
 
-	public Object getFillAlpha();
+	abstract Object getFillAlpha();
 
-	public void setFillAlpha(Number fillAlpha) throws OutOfRangeException;
+	abstract void setFillAlpha(Number fillAlpha) throws OutOfRangeException;
 
-	public Object getFillColor();
+	abstract Object getFillColor();
 
-	public void setFillColor(String fillColor) throws ColorException;
+	abstract void setFillColor(String fillColor) throws ColorException;
 
-	public Object isFixedPosition();
+	abstract Object isFixedPosition();
 
-	public void setFixedPosition(Boolean fixedPosition);
+	abstract void setFixedPosition(Boolean fixedPosition);
 
-	public Object getFontSize();
+	abstract Object getFontSize();
 
-	public void setFontSize(Number fontSize) throws OutOfRangeException;
+	abstract void setFontSize(Number fontSize) throws OutOfRangeException;
 
-	public Object getHorizontalPadding();
+	abstract Object getHorizontalPadding();
 
-	public void setHorizontalPadding(Number horizontalPadding)
+	abstract void setHorizontalPadding(Number horizontalPadding)
 			throws OutOfRangeException;
 
-	public Object getMaxWidth();
+	abstract Object getMaxWidth();
 
-	public void setMaxWidth(Number maxWidth) throws IntegerException;
+	abstract void setMaxWidth(Number maxWidth) throws IntegerException;
 
-	public Object getOffsetX();
+	abstract Object getOffsetX();
 
-	public void setOffsetX(Number offsetX) throws IntegerException;
+	abstract void setOffsetX(Number offsetX) throws IntegerException;
 
-	public Object getOffsetY();
+	abstract Object getOffsetY();
 
-	public void setOffsetY(Number offsetY) throws IntegerException;
+	abstract void setOffsetY(Number offsetY) throws IntegerException;
 
-	public Object getPointerWidth();
+	abstract Object getPointerWidth();
 
-	public void setPointerWidth(Number pointerWidth) throws OutOfRangeException;
+	abstract void setPointerWidth(Number pointerWidth) throws OutOfRangeException;
 
-	public Object getShadowAlpha();
+	abstract Object getShadowAlpha();
 
-	public void setShadowAlpha(Number shadowAlpha) throws OutOfRangeException;
+	abstract void setShadowAlpha(Number shadowAlpha) throws OutOfRangeException;
 
-	public Object getShadowColor();
+	abstract Object getShadowColor();
 
-	public void setShadowColor(String shadowColor) throws ColorException;
+	abstract void setShadowColor(String shadowColor) throws ColorException;
 
-	public Object isShowBullet();
+	abstract Object isShowBullet();
 
-	public void setShowBullet(Boolean showBullet);
+	abstract void setShowBullet(Boolean showBullet);
 
-	public Object getTextAlign();
+	abstract Object getTextAlign();
 
-	public void setTextAlign(TextAlign textAlign);
+	abstract void setTextAlign(TextAlign textAlign);
 
-	public Object getVerticalPadding();
+	abstract Object getVerticalPadding();
 
-	public void setVerticalPadding(Number verticalPadding)
+	abstract void setVerticalPadding(Number verticalPadding)
 			throws OutOfRangeException;
 
 }

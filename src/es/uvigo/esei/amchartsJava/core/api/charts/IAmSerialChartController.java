@@ -2,8 +2,9 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
+import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface IAmSerialChartController extends IAmRectangularChartController {
+public interface IAmSerialChartController extends IAmRectangularChartController<AmRectangularChart> {
 
 	public Object getBalloonDateFormat();
 

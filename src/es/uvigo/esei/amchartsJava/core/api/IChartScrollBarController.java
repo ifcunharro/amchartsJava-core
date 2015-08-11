@@ -6,7 +6,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface IChartScrollBarController {
+public abstract interface IChartScrollBarController {
 
 	abstract void setChart(AmRectangularChart chart);
 

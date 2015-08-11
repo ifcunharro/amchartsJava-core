@@ -2,16 +2,8 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
-
-
-
-
-
-
-
-
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmRectangularChartController;
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
@@ -27,8 +19,8 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AmRectangularChartController 
-				extends AmCoordinateChartController<AmRectangularChart> implements IAmRectangularChartController {
+public abstract class AmRectangularChartController<G extends AmRectangularChart> 
+				extends AmCoordinateChartController<G> implements IAmRectangularChartController<AmRectangularChart> {
 
 	
 	
@@ -37,7 +29,7 @@ public abstract class AmRectangularChartController
 	 */
 	private static final long serialVersionUID = 3477512389234890479L;
 
-	protected AmRectangularChartController(AmRectangularChart chart) {
+	protected AmRectangularChartController(G chart) {
 		super(chart);
 	}
 	
@@ -253,10 +245,12 @@ public abstract class AmRectangularChartController
 		return amchart.getTrendLines();
 	}
 	
+	@JsonSetter(value="chartCursor")
 	public void addChartCursor(ChartCursorController chartCursorController){
 		amchart.addChartCursor(chartCursorController);
 	}
 	
+	@JsonSetter(value="chartScrollbar")
 	public void addChartScrollBar(ChartScrollBarController chartScrollBarController){
 		amchart.addChartScrollBar(chartScrollBarController);
 	}

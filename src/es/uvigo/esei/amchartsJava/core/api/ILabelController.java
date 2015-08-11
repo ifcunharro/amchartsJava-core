@@ -7,49 +7,49 @@ import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface ILabelController  {
+public abstract interface ILabelController  {
 
-	public Object getAlign();
+	abstract Object getAlign();
 
-	public void setAlign(Align labelAlign);
+	abstract void setAlign(Align labelAlign);
 
-	public Object getAlpha();
+	abstract Object getAlpha();
 
-	public void setAlpha(Number alpha) throws OutOfRangeException;
+	abstract void setAlpha(Number alpha) throws OutOfRangeException;
 
-	public Object isBold();
+	abstract Object isBold();
 
-	public void setBold(Boolean bold);
+	abstract void setBold(Boolean bold);
 
-	public Object getColor();
+	abstract Object getColor();
 
-	public void setColor(String color) throws ColorException;
+	abstract void setColor(String color) throws ColorException;
 
-	public Object getId();
+	abstract Object getId();
 
-	public Object getRotation();
+	abstract Object getRotation();
 
-	public void setRotation(Number rotation) throws OutOfRangeException,
+	abstract void setRotation(Number rotation) throws OutOfRangeException,
 			IntegerException;
 
-	public Object getSize();
+	abstract Object getSize();
 
-	public void setSize(Number size) throws OutOfRangeException;
+	abstract void setSize(Number size) throws OutOfRangeException;
 
-	public Object getText();
+	abstract Object getText();
 
-	public void setText(String text);
+	abstract void setText(String text);
 
-	public Object getUrl();
+	abstract Object getUrl();
 
-	public void setUrl(String url);
+	abstract void setUrl(String url);
 
-	public Object getX();
+	abstract Object getX();
 
-	public void setX(String xCoord) throws CoordException;
+	abstract void setX(String xCoord) throws CoordException;
 
-	public Object getY();
+	abstract Object getY();
 
-	public void setY(String yCoord) throws CoordException;
+	abstract void setY(String yCoord) throws CoordException;
 
 }

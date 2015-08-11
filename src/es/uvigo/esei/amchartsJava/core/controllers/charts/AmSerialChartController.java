@@ -3,27 +3,34 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmSerialChartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.controllers.axis.CategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
-import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
+import es.uvigo.esei.amchartsJava.core.model.charts.AmSerialChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
-public class AmSerialChartController extends AmRectangularChartController implements IAmSerialChartController {
+
+
+
+public class AmSerialChartController extends AmRectangularChartController<AmSerialChart> implements IAmSerialChartController {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -4770522225786632974L;
+	
 
 	public AmSerialChartController() {
-		super(new AmRectangularChart());
+		super(new AmSerialChart());
+		setType(AmchartsConstants.CHART_TYPES.getSerial());
 	}
 	
 	public Object getBalloonDateFormat(){
 		return amchart.getFeature("balloonDateFormat");
 	}
-	
+
 	public void setBalloonDateFormat(String balloonDateFormat){
 		if(StringValidator.checkDateFormat(balloonDateFormat)){
 			amchart.setFeature("balloonDateFormat", balloonDateFormat);
@@ -144,4 +151,8 @@ public class AmSerialChartController extends AmRectangularChartController implem
 		amchart.setFeature("zoomOutOnDataUpdated", zoomOutOnDataUpdated);
 	}
 	
+	public void addCategoryAxis(CategoryAxisController categoryAxisController){
+		amchart.addCategoryAxis(categoryAxisController);
+	}
+
 }

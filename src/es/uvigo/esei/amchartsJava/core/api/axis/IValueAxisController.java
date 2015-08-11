@@ -4,6 +4,7 @@ import java.sql.Date;
 
 
 
+
 import es.uvigo.esei.amchartsJava.core.constants.AxisTypeConstant.AxisType;
 import es.uvigo.esei.amchartsJava.core.constants.DurationConstant.Duration;
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
@@ -132,5 +133,5 @@ public interface IValueAxisController extends IAxisBaseController {
 	public Object isUseScientificNotation();
 
 	public void setUseScientificNotation(Boolean useScientificNotation);
-
+	
 }

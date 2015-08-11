@@ -2,18 +2,25 @@ package principal;
 
 
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
-import es.uvigo.esei.amchartsJava.core.api.ILabelController;
-import es.uvigo.esei.amchartsJava.core.api.ITitleController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
+import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
+import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
@@ -32,7 +39,34 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		System.out.println(PathValidator.imageExist("lens.png"));
+		System.out.println(PathValidator.dragIconExist("lens.png"));
+		AmSerialChartController asc = new AmSerialChartController();
+		AmGraphSerialController ags = new AmGraphSerialController();
+		ValueAxisController va = new ValueAxisController();
+		ValueAxisRadarChartController var = new ValueAxisRadarChartController();
+		var.setGridType(AmchartsConstants.GRID_TYPES.getCircles());
+		va.enabledTotalText();
+		ags.setAlphaField("laaaa");
+		asc.setCategoryField("lola");
+	
+		try {
+			asc.setAngle(90);
+		} catch (OutOfRangeException e8) {
+			// TODO Auto-generated catch block
+			e8.printStackTrace();
+		}
+		AmBalloonController abc = new AmBalloonController();
+		abc.setAdjustColor(true);
+		abc.setTextAlign(AmchartsConstants.TEXT_ALIGN.getTextAlignLeft());
+		asc.addBalloon(abc);
+		ChartCursorController ccc = new ChartCursorController();
+		try {
+			ccc.setBulletSize(20);
+		} catch (OutOfRangeException e8) {
+			// TODO Auto-generated catch block
+			e8.printStackTrace();
+		}
+		//asc.addChartCursor(ccc);
 	
 		Number l = 9.935655;
 		Number p = 5.82434343;
@@ -69,7 +103,7 @@ public class Principal {
 		//AmGraphXyController ab = new AmGraphXyController();
 		
 		
-		ILabelController lab = new LabelController();
+		LabelController lab = new LabelController();
 		
 		try {
 			lab.setRotation(90);
@@ -89,7 +123,7 @@ public class Principal {
 		}
 		lab.setBold(true);
 		
-		ILabelController lab2 = new LabelController();
+		LabelController lab2 = new LabelController();
 		lab2.setAlign(AmchartsConstants.ALIGN.getRight());
 		try {
 			lab2.setAlpha(0.6);
@@ -100,7 +134,7 @@ public class Principal {
 		lab2.setBold(true);
 		
 		
-		IAmLegendController lc = new AmLegendController();
+		AmLegendController lc = new AmLegendController();
 		lc.setAutoMargins(false);
 		try {
 			lc.setBottom(9);
@@ -119,8 +153,8 @@ public class Principal {
 			e1.printStackTrace();
 		}
 		
-		ITitleController tc = new TitleController();
-		ITitleController tc2 = new TitleController();
+		TitleController tc = new TitleController();
+		TitleController tc2 = new TitleController();
 		try {
 			tc.setSize(9);
 		} catch (OutOfRangeException e1) {
@@ -132,35 +166,58 @@ public class Principal {
 		
 		
 		//fin testeo
+		asc.addLabel(lab);
+		asc.addLabel(lab2);
+		asc.addTitle(tc);
+		asc.addTitle(tc2);
+		asc.addLegend(lc);
+		asc.addValueAxis(va);
+		//asc.addValueAxis(var);
+		//falta conseguir deserializar any graph
+		//asc.addGraph(ags);
 		
-
-
 		ObjectMapper mapper = ParserJson.getParserJson();
+		/////
+		
+		//////
 
 		try {
 			//escribe a fichero 
-			//mapper.writeValue(new File("C:/Users/iago/Desktop/employee.json"), nt);
-			//mapper.writeValue(System.out, employee);
-
-			//mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, false);
-			//mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
-
-			mapper.writeValue(System.out,lab);
-
-
+			mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, true);
+			mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
+	
+			mapper.writeValue(new File("I:/prueba.json"), asc);
+			
+			//mapper.writeValue(System.out, asc);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//lee de fichero json a java
-		/*try {
-				employee =  mapper.readValue(new File("C:/Users/iago/Desktop/employee.json"), Employee.class);
+		
+		AmSerialChartController employee = null;
+		try {
+				
+				
+				employee =  mapper.readValue(new File("I:/prueba.json"), AmSerialChartController.class);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}*/
+			}
 
-		//System.out.println(employee);
+		try {
+			mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET,false);
+			mapper.writeValue(System.out,employee);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			
+			@SuppressWarnings("unchecked")
+			List<ValueAxisController> vv = (List<ValueAxisController>)employee.getValueAxes();
+			System.out.println(vv.get(0).getTotalText());
+		}
+		
 	}
 
 }

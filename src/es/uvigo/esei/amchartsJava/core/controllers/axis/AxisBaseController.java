@@ -2,6 +2,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.axis;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -105,6 +106,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
+	@JsonIgnore
 	public Object getDateFormats(){
 		return AmchartsConstants.DATE_FORMAT;
 	}

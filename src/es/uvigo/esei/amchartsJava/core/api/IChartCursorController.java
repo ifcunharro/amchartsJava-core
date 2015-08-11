@@ -8,146 +8,146 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface IChartCursorController {
+public abstract interface IChartCursorController {
 
-	public void setChart(AmRectangularChart c);
+	abstract void setChart(AmRectangularChart c);
 
-	public Object getAdjustment();
+	abstract Object getAdjustment();
 
 	//no se recomienda cambiar esta propiedad, es la distancia entre el cursor y
 	//el mensaje del balloon que aparece
-	public void setAdjustment(Number adjustment) throws IntegerException;
+	abstract void setAdjustment(Number adjustment) throws IntegerException;
 
-	public Object getAnimationDuration();
+	abstract Object getAnimationDuration();
 
-	public void setAnimationDuration(Number animationDuration)
+	abstract void setAnimationDuration(Number animationDuration)
 			throws OutOfRangeException;
 
-	public Object isAvoidBalloonOverlapping();
+	abstract Object isAvoidBalloonOverlapping();
 
-	public void setAvoidBalloonOverlapping(Boolean avoidBalloonOverlapping);
+	abstract void setAvoidBalloonOverlapping(Boolean avoidBalloonOverlapping);
 
-	public Object getBalloonPointerOrientation();
+	abstract Object getBalloonPointerOrientation();
 
-	public void setBalloonPointerOrientation(
+	abstract void setBalloonPointerOrientation(
 			Orientation balloonPointerOrientation);
 
-	public Object isBulletsEnabled();
+	abstract Object isBulletsEnabled();
 
-	public void setBulletsEnabled(Boolean bulletsEnabled);
+	abstract void setBulletsEnabled(Boolean bulletsEnabled);
 
-	public Object getBulletSize();
+	abstract Object getBulletSize();
 
-	public void setBulletSize(Number bulletSize) throws OutOfRangeException;
+	abstract void setBulletSize(Number bulletSize) throws OutOfRangeException;
 
-	public Object getCategoryBallonAlpha();
+	abstract Object getCategoryBallonAlpha();
 
-	public void setCategoryBalloonAlpha(Number categoryBalloonAlpha)
+	abstract void setCategoryBalloonAlpha(Number categoryBalloonAlpha)
 			throws OutOfRangeException;
 
-	public Object getCategoryBalloonColor();
+	abstract Object getCategoryBalloonColor();
 
-	public void setCategoryBallonColor(String categoryBalloonColor)
+	abstract void setCategoryBallonColor(String categoryBalloonColor)
 			throws ColorException;
 
-	public Object getCategoryBalloonDateFormat();
+	abstract Object getCategoryBalloonDateFormat();
 
-	public void setCategoryBalloonDateFormat(String categoryBalloonDateFormat);
+	abstract void setCategoryBalloonDateFormat(String categoryBalloonDateFormat);
 
-	public Object isCategoryBalloonEnabled();
+	abstract Object isCategoryBalloonEnabled();
 
-	public void setCategoryBalloonEnaled(Boolean categoryBalloonEnabled);
+	abstract void setCategoryBalloonEnaled(Boolean categoryBalloonEnabled);
 
-	public Object getCategoryBalloonFunction();
+	abstract Object getCategoryBalloonFunction();
 
-	public void setCategoryBalloonFunction(String categoryBalloonFunction);
+	abstract void setCategoryBalloonFunction(String categoryBalloonFunction);
 	
-	public Object getCategoryBalloonText();
+	abstract Object getCategoryBalloonText();
 	
-	public void setCategoryBalloonText(CategoryBalloonText categoryBalloonText);
+	abstract void setCategoryBalloonText(CategoryBalloonText categoryBalloonText);
 
-	public Object getColor();
+	abstract Object getColor();
 
-	public void setColor(String color) throws ColorException;
+	abstract void setColor(String color) throws ColorException;
 
-	public Object getCursorAlpha();
+	abstract Object getCursorAlpha();
 
-	public void setCursorAlpha(Number cursorAlpha) throws OutOfRangeException;
+	abstract void setCursorAlpha(Number cursorAlpha) throws OutOfRangeException;
 
-	public Object getCursorColor();
+	abstract Object getCursorColor();
 
-	public void setCursorColor(String cursorColor) throws ColorException;
+	abstract void setCursorColor(String cursorColor) throws ColorException;
 
-	public Object getCursorPosition();
+	abstract Object getCursorPosition();
 
-	public void setCursorPosition(CursorPosition cursorPosition);
+	abstract void setCursorPosition(CursorPosition cursorPosition);
 
-	public Object isEnabled();
+	abstract Object isEnabled();
 
-	public void setEnabled(Boolean enabled);
+	abstract void setEnabled(Boolean enabled);
 
-	public Object isFullWidth();
+	abstract Object isFullWidth();
 
-	public void setFullWidth(Boolean fullWidth);
+	abstract void setFullWidth(Boolean fullWidth);
 
-	public Object getGraphBulletAlpha();
+	abstract Object getGraphBulletAlpha();
 
-	public void setGraphBulletAlpha(Number graphBulletAlpha)
+	abstract void setGraphBulletAlpha(Number graphBulletAlpha)
 			throws OutOfRangeException;
 
-	public Object getGraphBulletSize();
+	abstract Object getGraphBulletSize();
 
-	public void setGraphBulletSize(Number graphBulletSize)
+	abstract void setGraphBulletSize(Number graphBulletSize)
 			throws OutOfRangeException;
 
-	public Object isLeaveCursor();
+	abstract Object isLeaveCursor();
 
-	public void setLeaveCursor(Boolean leaveCursor);
+	abstract void setLeaveCursor(Boolean leaveCursor);
 
-	public Object isOneBalloonOnly();
+	abstract Object isOneBalloonOnly();
 
-	public void setOneBalloonOnly(Boolean oneBalloonOnly);
+	abstract void setOneBalloonOnly(Boolean oneBalloonOnly);
 
-	public Object isPan();
+	abstract Object isPan();
 
-	public void setPan(Boolean pan);
+	abstract void setPan(Boolean pan);
 
-	public Object getSelectionAlpha();
+	abstract Object getSelectionAlpha();
 
-	public void setSelectionAlpha(Number selectionAlpha)
+	abstract void setSelectionAlpha(Number selectionAlpha)
 			throws OutOfRangeException;
 
-	public Object isSelectWithoutZooming();
+	abstract Object isSelectWithoutZooming();
 
-	public void setSelectWithoutZooming(Boolean selectWithoutZooming);
+	abstract void setSelectWithoutZooming(Boolean selectWithoutZooming);
 
-	public Object isShowNextAvailable();
+	abstract Object isShowNextAvailable();
 
-	public void setShowNextAvailable(Boolean showNextAvailable);
+	abstract void setShowNextAvailable(Boolean showNextAvailable);
 
-	public Object isValueBalloonsEnabled();
+	abstract Object isValueBalloonsEnabled();
 
-	public void setValueBalloonsEnabled(Boolean valueBalloonsEnabled);
+	abstract void setValueBalloonsEnabled(Boolean valueBalloonsEnabled);
 
-	public Object getValueLineAlpha();
+	abstract Object getValueLineAlpha();
 
-	public void setValueLineAlpha(Number valueLineAlpha)
+	abstract void setValueLineAlpha(Number valueLineAlpha)
 			throws OutOfRangeException;
 
-	public Object getValueLineAxis();
+	abstract Object getValueLineAxis();
 
-	public void setValueLineAxis(String valueLineAxis);
+	abstract void setValueLineAxis(String valueLineAxis);
 
-	public Object isValueLineBalloonEnabled();
+	abstract Object isValueLineBalloonEnabled();
 
-	public void setValueLineBalloonEnabled(Boolean valueLineBalloonEnabled);
+	abstract void setValueLineBalloonEnabled(Boolean valueLineBalloonEnabled);
 
-	public Object isValueLineEnabled();
+	abstract Object isValueLineEnabled();
 
-	public void setValueLineEnabled(Boolean valueLineEnabled);
+	abstract void setValueLineEnabled(Boolean valueLineEnabled);
 
-	public Object isZoomable();
+	abstract Object isZoomable();
 
-	public void setZommable(Boolean zoomable);
+	abstract void setZommable(Boolean zoomable);
 
 }

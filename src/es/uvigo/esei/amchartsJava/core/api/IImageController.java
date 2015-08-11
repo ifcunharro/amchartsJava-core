@@ -4,48 +4,48 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IImageController {
+public abstract interface IImageController {
 
-	public Object getBalloonColor();
+	abstract Object getBalloonColor();
 
-	public void setBalloonColor(String balloonColor) throws ColorException;
+	abstract void setBalloonColor(String balloonColor) throws ColorException;
 
-	public Object getBalloonText();
+	abstract Object getBalloonText();
 
-	public void setBalloonText(String balloonText);
+	abstract void setBalloonText(String balloonText);
 
-	public Object getColor();
+	abstract Object getColor();
 
-	public void setColor(String color) throws ColorException;
+	abstract void setColor(String color) throws ColorException;
 
-	public Object getHeight();
+	abstract Object getHeight();
 
-	public void setHeight(Number height) throws OutOfRangeException;
+	abstract void setHeight(Number height) throws OutOfRangeException;
 
-	public Object getOffsetX();
+	abstract Object getOffsetX();
 
-	public void setOffsetX(Number offsetX) throws IntegerException;
+	abstract void setOffsetX(Number offsetX) throws IntegerException;
 
-	public Object getOffsetY();
+	abstract Object getOffsetY();
 
-	public void setOffsetY(Number offsetY) throws IntegerException;
+	abstract void setOffsetY(Number offsetY) throws IntegerException;
 
-	public Object getOutlineColor();
+	abstract Object getOutlineColor();
 
-	public void setOutlineColor(String outlineColor) throws ColorException;
+	abstract void setOutlineColor(String outlineColor) throws ColorException;
 
-	public Object getRotation();
+	abstract Object getRotation();
 
-	public void setRotation(Number rotation) throws OutOfRangeException;
+	abstract void setRotation(Number rotation) throws OutOfRangeException;
 
-	public Object getUrl();
+	abstract Object getUrl();
 
 	//en vez de url, introduce solo nombre imagen con su extensión, la url se completa con
 	//IMAGES_PATH definido en AmchartsJavaPaths
-	public void setUrl(String nameImage);
+	abstract void setUrl(String nameImage);
 
-	public Object getWidth();
+	abstract Object getWidth();
 
-	public void setWidth(Number width) throws OutOfRangeException;
+	abstract void setWidth(Number width) throws OutOfRangeException;
 
 }

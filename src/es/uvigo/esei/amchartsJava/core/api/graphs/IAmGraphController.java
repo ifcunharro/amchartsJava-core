@@ -16,7 +16,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public abstract interface IAmGraphController  {
+public interface IAmGraphController  {
 	
 	abstract Object getId();
 

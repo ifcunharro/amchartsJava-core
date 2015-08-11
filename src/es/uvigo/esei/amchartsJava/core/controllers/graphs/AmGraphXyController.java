@@ -8,6 +8,8 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 public class AmGraphXyController extends AmGraphSerialChartController implements IAmGraphXyController {
 
+	
+
 	/**
 	 * 
 	 */

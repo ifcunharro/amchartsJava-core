@@ -6,10 +6,13 @@ import java.util.List;
 
 
 
+
+
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
+
 
 public abstract class AmChart extends IModel {
 	protected List<LabelController> labels;
@@ -27,6 +30,13 @@ public abstract class AmChart extends IModel {
 	
 	public List<LabelController> getLabels() {
 		return labels;
+	}
+	
+	public void setAllLabels(List<LabelController> allLabels){
+		if(labels==null){
+			labels = new ArrayList<LabelController>();
+		}
+		labels = allLabels;
 	}
 
 	public void addLabel(LabelController labelController) {
@@ -112,6 +122,11 @@ public abstract class AmChart extends IModel {
 		titles.add(titleController);
 		deleteObservers();
 		
+	}
+	
+	//usado para deserializar json
+	public void setTitles(List<TitleController> t){
+		titles = t;
 	}
 
 	public void clearLabels() {

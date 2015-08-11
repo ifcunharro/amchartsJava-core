@@ -12,220 +12,220 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IAmLegendController  {
+public abstract interface IAmLegendController  {
 
-	public Object getAlign();
+	abstract Object getAlign();
 
-	public void setALign(Align align);
+	abstract void setALign(Align align);
 
-	public Object isAutoMargins();
+	abstract Object isAutoMargins();
 
-	public void setAutoMargins(Boolean autoMargins);
+	abstract void setAutoMargins(Boolean autoMargins);
 
-	public Object getBackgroundAlpha();
+	abstract Object getBackgroundAlpha();
 
-	public void setBackgroundAlpha(Number backgroundAlpha)
+	abstract void setBackgroundAlpha(Number backgroundAlpha)
 			throws OutOfRangeException;
 
-	public Object getBackgroundColor();
+	abstract Object getBackgroundColor();
 
-	public void setBackgroundColor(String backGroundColor)
+	abstract void setBackgroundColor(String backGroundColor)
 			throws ColorException;
 
-	public Object getBorderAlpha();
+	abstract Object getBorderAlpha();
 
-	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
+	abstract void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
 
-	public Object getBorderColor();
+	abstract Object getBorderColor();
 
-	public void setBorderColor(String borderColor) throws ColorException;
+	abstract void setBorderColor(String borderColor) throws ColorException;
 
-	public Object getBottom();
+	abstract Object getBottom();
 
-	public void setBottom(Number bottom) throws IntegerException;
+	abstract void setBottom(Number bottom) throws IntegerException;
 
-	public Object getColor();
+	abstract Object getColor();
 
-	public void setColor(String color) throws ColorException;
+	abstract void setColor(String color) throws ColorException;
 
-	public Object getDivId();
+	abstract Object getDivId();
 
-	public void setDivId(String divId);
+	abstract void setDivId(String divId);
 
-	public Object isEnabled();
+	abstract Object isEnabled();
 
-	public void setEnabled(Boolean enabled);
+	abstract void setEnabled(Boolean enabled);
 
-	public Object isEqualWidths();
+	abstract Object isEqualWidths();
 
-	public void setEqualWidths(Boolean equalWidths);
+	abstract void setEqualWidths(Boolean equalWidths);
 
-	public Object getFontSize();
+	abstract Object getFontSize();
 
-	public void setFontSize(Number fontSize) throws OutOfRangeException;
+	abstract void setFontSize(Number fontSize) throws OutOfRangeException;
 
-	public Object isForceWidth();
+	abstract Object isForceWidth();
 
-	public void setForceWidth(Boolean forceWidth);
+	abstract void setForceWidth(Boolean forceWidth);
 
-	public Object getHorizontalGap();
+	abstract Object getHorizontalGap();
 
-	public void setHorizontalGap(Number horizontalGap) throws IntegerException;
+	abstract void setHorizontalGap(Number horizontalGap) throws IntegerException;
 
-	public Object getLabelText();
+	abstract Object getLabelText();
 
 	//cualquier texto pero si es [[title]] muestra como texto el title del graph
-	public void setLabelText(String labelText);
+	abstract void setLabelText(String labelText);
 
-	public Object getLabelWidth();
+	abstract Object getLabelWidth();
 
-	public void setLabelWidth(Number labelWidth) throws IntegerException;
+	abstract void setLabelWidth(Number labelWidth) throws IntegerException;
 
-	public Object getLeft();
+	abstract Object getLeft();
 
-	public void setLeft(Number left) throws IntegerException;
+	abstract void setLeft(Number left) throws IntegerException;
 
-	public Object getMarginBottom();
+	abstract Object getMarginBottom();
 
-	public void setMarginBottom(Number marginBottom) throws IntegerException;
+	abstract void setMarginBottom(Number marginBottom) throws IntegerException;
 
-	public Object getMarginLeft();
+	abstract Object getMarginLeft();
 
-	public void setMarginLeft(Number marginLeft) throws IntegerException;
+	abstract void setMarginLeft(Number marginLeft) throws IntegerException;
 
-	public Object getMarginRight();
+	abstract Object getMarginRight();
 
-	public void setMarginRight(Number marginRight) throws IntegerException;
+	abstract void setMarginRight(Number marginRight) throws IntegerException;
 
-	public Object getMarginTop();
+	abstract Object getMarginTop();
 
-	public void setMarginTop(Number marginTop) throws IntegerException;
+	abstract void setMarginTop(Number marginTop) throws IntegerException;
 
-	public Object getMarkerBorderAlpha();
+	abstract Object getMarkerBorderAlpha();
 
-	public void setMarkerBorderAlpha(Number markerBorderAlpha)
+	abstract void setMarkerBorderAlpha(Number markerBorderAlpha)
 			throws OutOfRangeException;
 
-	public Object getMarkerBorderColor();
+	abstract Object getMarkerBorderColor();
 
-	public void setMarkerBorderColor(String markerBorderColor)
+	abstract void setMarkerBorderColor(String markerBorderColor)
 			throws ColorException;
 
-	public Object getMarkerBorderThickness();
+	abstract Object getMarkerBorderThickness();
 
-	public void setMarkerBorderThickness(Number markerBorderThickness)
+	abstract void setMarkerBorderThickness(Number markerBorderThickness)
 			throws OutOfRangeException;
 
-	public Object getMarkerDisabledColor();
+	abstract Object getMarkerDisabledColor();
 
-	public void setMarkerDisabledColor(String markerDisabledColor)
+	abstract void setMarkerDisabledColor(String markerDisabledColor)
 			throws ColorException;
 
-	public Object getMarkerLabelGap();
+	abstract Object getMarkerLabelGap();
 
-	public void setMarkerLabelGap(Number markerLabelGap)
+	abstract void setMarkerLabelGap(Number markerLabelGap)
 			throws OutOfRangeException;
 
-	public Object getMarkerSize();
+	abstract Object getMarkerSize();
 
-	public void setMarkerSize(Number markerSize) throws OutOfRangeException;
+	abstract void setMarkerSize(Number markerSize) throws OutOfRangeException;
 
-	public Object getMarkerType();
+	abstract Object getMarkerType();
 
-	public void setMarkerType(MarkerType markerType);
+	abstract void setMarkerType(MarkerType markerType);
 
-	public Object getMaxColumns();
+	abstract Object getMaxColumns();
 
-	public void setMaxColumns(Number maxColumns) throws OutOfRangeException;
+	abstract void setMaxColumns(Number maxColumns) throws OutOfRangeException;
 
-	public Object getPeriodValueText();
+	abstract Object getPeriodValueText();
 
-	public void setPeriodValueText(String periodValueText);
+	abstract void setPeriodValueText(String periodValueText);
 
-	public Object getPosition();
+	abstract Object getPosition();
 
-	public void setPosition(LegendPosition position);
+	abstract void setPosition(LegendPosition position);
 
-	public Object isReversedOrder();
+	abstract Object isReversedOrder();
 
-	public void setReversedOrder(Boolean reversedOrder);
+	abstract void setReversedOrder(Boolean reversedOrder);
 
-	public Object getRight();
+	abstract Object getRight();
 
-	public void setRight(Number right) throws IntegerException;
+	abstract void setRight(Number right) throws IntegerException;
 
-	public Object getRollOverColor();
+	abstract Object getRollOverColor();
 
-	public void setRollOverColor(String rollOverColor) throws ColorException;
+	abstract void setRollOverColor(String rollOverColor) throws ColorException;
 
-	public Object getRollOverGraphAlpha();
+	abstract Object getRollOverGraphAlpha();
 
-	public void setRollOverGraphAlpha(Number rollOverGraphAlpha)
+	abstract void setRollOverGraphAlpha(Number rollOverGraphAlpha)
 			throws OutOfRangeException;
 
-	public Object isShowEntries();
+	abstract Object isShowEntries();
 
-	public void setShowEntries(Boolean showEntries);
+	abstract void setShowEntries(Boolean showEntries);
 
-	public Object getSpacing();
+	abstract Object getSpacing();
 
-	public void setSpacing(Number spacing) throws OutOfRangeException;
+	abstract void setSpacing(Number spacing) throws OutOfRangeException;
 
-	public Object isSwitchable();
+	abstract Object isSwitchable();
 
-	public void setSwitchable(Boolean switchable);
+	abstract void setSwitchable(Boolean switchable);
 
-	public Object getSwitchColor();
+	abstract Object getSwitchColor();
 
-	public void setSwitchColor(String switchcolor) throws ColorException;
+	abstract void setSwitchColor(String switchcolor) throws ColorException;
 
-	public Object getSwitchType();
+	abstract Object getSwitchType();
 
-	public void setSwitchType(SwitchType switchType);
+	abstract void setSwitchType(SwitchType switchType);
 
-	public Object isTextClickEnabled();
+	abstract Object isTextClickEnabled();
 
-	public void setTextClickEnabled(Boolean textClickEnabled);
+	abstract void setTextClickEnabled(Boolean textClickEnabled);
 
-	public Object getTop();
+	abstract Object getTop();
 
-	public void setTop(Number top) throws IntegerException;
+	abstract void setTop(Number top) throws IntegerException;
 
-	public Object isUseGraphSettings();
+	abstract Object isUseGraphSettings();
 
-	public void setUseGraphSettings(Boolean useGraphSettings);
+	abstract void setUseGraphSettings(Boolean useGraphSettings);
 
-	public Object isUseMarkerColorForLabels();
+	abstract Object isUseMarkerColorForLabels();
 
-	public void setUseMarkerColorForLabels(Boolean useMarkerColorForLabels);
+	abstract void setUseMarkerColorForLabels(Boolean useMarkerColorForLabels);
 
-	public Object isUseMarkerColorForValues();
+	abstract Object isUseMarkerColorForValues();
 
-	public void setUseMarkerColorForValues(Boolean useMarkerColorForValues);
+	abstract void setUseMarkerColorForValues(Boolean useMarkerColorForValues);
 
-	public Object getValueAlign();
+	abstract Object getValueAlign();
 
-	public void setValueAlign(ValueAlign valueAlign);
+	abstract void setValueAlign(ValueAlign valueAlign);
 
-	public Object getValueFunction();
+	abstract Object getValueFunction();
 
-	public void setValueFunction(String valueFunction);
+	abstract void setValueFunction(String valueFunction);
 
-	public Object getValueText();
+	abstract Object getValueText();
 
 	//cualquier texto pero tiene más sentido dejarlo en blanco, usa el valueField
-	public void setValueText(String valueText);
+	abstract void setValueText(String valueText);
 
-	public Object getValueWidth();
+	abstract Object getValueWidth();
 
-	public void setValueWidth(Number valueWidth) throws OutOfRangeException;
+	abstract void setValueWidth(Number valueWidth) throws OutOfRangeException;
 
-	public Object getVerticalGap();
+	abstract Object getVerticalGap();
 
-	public void setVerticalGap(Number verticalGap) throws OutOfRangeException;
+	abstract void setVerticalGap(Number verticalGap) throws OutOfRangeException;
 
-	public Object getWidth();
+	abstract Object getWidth();
 
-	public void setWidth(Number width) throws IntegerException;
+	abstract void setWidth(Number width) throws IntegerException;
 
 }

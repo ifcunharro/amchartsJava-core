@@ -7,6 +7,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
@@ -24,20 +25,20 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
+
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AmChartController<S extends AmChart> implements Serializable, IAmchartController<AmChart>{
+public abstract class AmChartController<E extends AmChart> implements Serializable, IAmchartController<AmChart>, IJsonDeserializeAmChartController{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7092242905740908767L;
-	protected S amchart;
+	protected E amchart;
 	
 
 	
-	protected AmChartController(S chart) {
+	protected AmChartController(E chart) {
 		amchart = chart;
 		this.setPath(AmchartsJavaPaths.AMCHARTS_PATH);
 		this.setPathToImages(AmchartsJavaPaths.IMAGES_PATH);
@@ -46,6 +47,8 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	
 
 	//properties
+	
+	
 	
 	@JsonProperty(value = "addClassNames")
 	public Object IsAddClassNames(){
@@ -288,9 +291,7 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	
 	//debe existir file theme
 	public void setTheme(String theme){
-		if(PathValidator.themeExist(theme)){
-			amchart.setFeature("theme", theme);
-		}
+		amchart.setFeature("theme", theme);
 	}
 	
 	public Object getThousandsSeparator(){
@@ -329,7 +330,6 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		return amchart.getTitles();
 	}
 	
-	
 	//propio
 	public Object getExport(){
 		return amchart.getExport();
@@ -365,6 +365,7 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		amchart.addLabel(labelController);
 	}
 	//method amcharts
+	@JsonSetter(value="legend")
 	public void addLegend(AmLegendController amLegendController){
 		amchart.addLegend(amLegendController);
 	}
@@ -374,10 +375,11 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 	}
 	
 	//propio
-		public void addBalloon(AmBalloonController amBalloon){
-			amchart.addBalloon(amBalloon);
-		}
-	
+	@JsonSetter(value="balloon")
+	public void addBalloon(AmBalloonController amBalloon){
+		amchart.addBalloon(amBalloon);
+	}
+
 	//method amcharts
 	public void clearLabels(){
 		amchart.clearLabels();
@@ -387,5 +389,14 @@ public abstract class AmChartController<S extends AmChart> implements Serializab
 		amchart.removeLegend();
 	}
 	
+	//usado solo para deserializar json
+	public void setAllLabels(List<LabelController> allLabels){
+		amchart.setAllLabels(allLabels);
+	}
+	
+	//usada solo para deserializar json
+	public void setTitles(List<TitleController> titles){
+		amchart.setTitles(titles);
+	}
 	
 }

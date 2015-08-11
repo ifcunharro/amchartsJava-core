@@ -4,28 +4,28 @@ package es.uvigo.esei.amchartsJava.core.api;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface ITitleController {
+public abstract interface ITitleController {
 
-	public Object getAlpha();
+	abstract Object getAlpha();
 
-	public void setAlpha(Number alpha) throws OutOfRangeException;
+	abstract void setAlpha(Number alpha) throws OutOfRangeException;
 
-	public Object isBold();
+	abstract Object isBold();
 
-	public void setBold(Boolean bold);
+	abstract void setBold(Boolean bold);
 
-	public Object getColor();
+	abstract Object getColor();
 
-	public void setColor(String color) throws ColorException;
+	abstract void setColor(String color) throws ColorException;
 
-	public Object getId();
+	abstract Object getId();
 
-	public Object getSize();
+	abstract Object getSize();
 
-	public void setSize(Number size) throws OutOfRangeException;
+	abstract void setSize(Number size) throws OutOfRangeException;
 
-	public Object getText();
+	abstract Object getText();
 
-	public void setText(String text);
+	abstract void setText(String text);
 
 }

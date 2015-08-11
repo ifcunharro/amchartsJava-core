@@ -1,8 +1,9 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
+import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface IAmXyChartController extends IAmRectangularChartController {
+public interface IAmXyChartController extends IAmRectangularChartController<AmRectangularChart> {
 
 	public Object isHideXScrollbar();
 

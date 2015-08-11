@@ -9,8 +9,9 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
+import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface IAmRectangularChartController extends IAmCoordinateChartController<AmCoordinateChart> {
+public interface IAmRectangularChartController<G extends AmRectangularChart> extends IAmCoordinateChartController<AmCoordinateChart> {
 
 	abstract Object getAngle();
 
@@ -116,5 +117,9 @@ public interface IAmRectangularChartController extends IAmCoordinateChartControl
 			P trendLineController);
 	
 	abstract void removeChartCursor();
+	
+	abstract void removeChartScrollBar();
+	
+	abstract void removeTrendLine(String trendLine);
 
 }

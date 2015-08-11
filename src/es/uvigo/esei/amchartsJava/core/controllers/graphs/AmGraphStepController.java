@@ -10,6 +10,8 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 public class AmGraphStepController extends AmGraphSerialChartController implements IAmGraphStepController {
 	
+	
+
 	/**
 	 * 
 	 */

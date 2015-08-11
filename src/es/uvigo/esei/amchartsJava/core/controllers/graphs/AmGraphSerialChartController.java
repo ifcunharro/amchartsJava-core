@@ -1,7 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphSerialChartController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.PointPositionGraphConstant.PointPositionGraph;
@@ -13,8 +12,12 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
+
+
 public abstract class AmGraphSerialChartController extends AmGraphController implements IAmGraphSerialChartController{
 
+	
+	
 	
 
 	/**
