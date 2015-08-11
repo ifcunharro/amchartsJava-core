@@ -12,13 +12,12 @@ import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
 import es.uvigo.esei.amchartsJava.core.model.generics.ValueAxis;
 
-public abstract class AmCoordinateChart extends AmChart{
-	protected String deserializeType;
+public abstract class AmCoordinateChart extends AmChart implements IJsonDeserializerAmCoordinateChart{
+	private String deserializeType;
 	private List<String> colors;
 	private List<AmGraphController> graphs;
 	private List<GuideController> guides;
-	//private List<ValueAxisController> valueAxes;
-	protected ValueAxis valueAxes;
+	private ValueAxis valueAxes;
 	private List<String> idGraphs;
 	private List<String> idValueAxes;
 	private List<String> idGuides;
@@ -85,17 +84,14 @@ public abstract class AmCoordinateChart extends AmChart{
 			valueAxes = new ValueAxis();
 			valueAxes.initValueAxis();
 			valueAxes.setValueAxis((List<ValueAxisController>)(List<?>)axes);
-			
-
+			idValueAxes = valueAxes.getValueAxisIds();
 		}else{
 			valueAxes = new ValueAxis();
 			valueAxes.initValueAxisRadar();
 			valueAxes.setValueAxisRadar(axes);
-			
+			idValueAxes = valueAxes.getValueAxisRadarIds();
 		}
-		/*for(ValueAxisRadarChartController valueAxis: axes){
-			idValueAxes.add(valueAxis.getId().toString());
-		}*/
+		
 	}
 	
 	public void changeColorsDefault(String... newColors){
@@ -246,6 +242,7 @@ public abstract class AmCoordinateChart extends AmChart{
 		return idGuides.contains(idGuide);
 	}
 	
+	//usado solo para deserializar json
 	public void deserializeType(String amchartType){
 		deserializeType = amchartType;
 	}

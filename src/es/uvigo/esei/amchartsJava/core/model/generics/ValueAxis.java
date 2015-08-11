@@ -68,4 +68,20 @@ public class ValueAxis{
 		valueAxis.put("valueAxisRadarChart", valueAxisRadarChartsControllers);
 	}
 	
+	public List<String> getValueAxisIds(){
+		List<String> ids = new ArrayList<String>();
+		for(ValueAxisController valueAxis: getValueAxis()){
+			ids.add(valueAxis.getId().toString());
+		}
+		return ids;
+	}
+	
+	public List<String> getValueAxisRadarIds(){
+		List<String> ids = new ArrayList<String>();
+		for(ValueAxisRadarChartController valueAxis: getValueAxisRadar()){
+			ids.add(valueAxis.getId().toString());
+		}
+		return ids;
+	}
+	
 }

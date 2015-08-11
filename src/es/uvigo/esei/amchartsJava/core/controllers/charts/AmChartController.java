@@ -28,7 +28,7 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AmChartController<E extends AmChart> implements Serializable, IAmchartController<AmChart>, IJsonDeserializeAmChartController{
+public abstract class AmChartController<E extends AmChart> implements Serializable, IAmchartController<AmChart>, IJsonDeserializerAmChartController{
 	
 	/**
 	 * 
