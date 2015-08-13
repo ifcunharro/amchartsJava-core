@@ -16,7 +16,7 @@ public final class GraphTypesConstant {
 	}
 	
 	public enum GraphType{
-		line, column, step, smoothedLine, candleStick, ohlc;	
+		line, column, step, smoothedLine, candlestick, ohlc;	
 	}
 	
 	public GraphType getLine(){
@@ -36,7 +36,7 @@ public final class GraphTypesConstant {
 	}
 	
 	public GraphType getCandleStick(){
-		return GraphType.candleStick;
+		return GraphType.candlestick;
 	}
 	
 	public GraphType getOhlc(){

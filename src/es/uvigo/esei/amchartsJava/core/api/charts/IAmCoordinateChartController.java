@@ -4,7 +4,7 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
-import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
+import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
@@ -54,17 +54,19 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	//valueAxes
 	abstract Object getValueAxes();
 	
-	abstract <T extends AmGraphSerialController> void addGraph(T amGraphController);
+	abstract  <T extends AmGraphController> void addGraph(T amGraphController);
 	
 	abstract void addGuide(GuideController guideController);
 
-	abstract void addValueAxis(ValueAxisController valueAxisController);
+	abstract <T extends ValueAxisController> void addValueAxis(T valueAxisController);
 	
 	//remove by id
-	abstract void removeGraph(String idGraph);
+	//abstract void removeGraph(String idGraph);
 
 	abstract void removeGuide(String idGuide);
 
 	abstract void removeValueAxis(String idValueAxis);
+	
+	abstract void removeValueAxisRadar(String idValueAxis);
 
 }

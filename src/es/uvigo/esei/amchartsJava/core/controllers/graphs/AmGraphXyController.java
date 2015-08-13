@@ -15,9 +15,12 @@ public class AmGraphXyController extends AmGraphSerialChartController implements
 	 */
 	private static final long serialVersionUID = -1740784739849045134L;
 
+
 	{
 		setType(AmchartsConstants.GRAPH_TYPES.getLine());
+		
 	}
+	
 	
 	public Object getBulletAxis(){
 		return amGraph.getFeature("bulletAxis");

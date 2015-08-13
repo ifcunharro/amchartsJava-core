@@ -17,9 +17,12 @@ public class AmGraphStepController extends AmGraphSerialChartController implemen
 	 */
 	private static final long serialVersionUID = 6400252053765498795L;
 
+
 	{
 		setType(AmchartsConstants.GRAPH_TYPES.getStep());
+		
 	}
+	
 	
 	
 	@JsonProperty(value="noStepRisers")

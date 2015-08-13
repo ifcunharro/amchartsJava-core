@@ -2,7 +2,9 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmCoordinateChartController;
 import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
@@ -16,7 +18,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-
+@JsonInclude(Include.NON_NULL)
 public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 			extends AmChartController<F> implements IAmCoordinateChartController<AmCoordinateChart>, IJsonDeserializerAmCoordinateChartController{
 
@@ -111,7 +113,7 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		return amchart.getValueAxes();
 	}
 		
-	public <T extends AmGraphSerialController> void addGraph(T amGraphController){
+	public <T extends AmGraphController> void addGraph(T amGraphController){
 		amchart.addGraph(amGraphController);
 	}
 	
@@ -119,16 +121,16 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		amchart.addGuide(guideController);
 	}
 	
-	public void addValueAxis(ValueAxisController va){
+	public <T extends ValueAxisController> void addValueAxis(T va){
 		amchart.addValueAxis(va);
 	}
 	
 	//remove by id
-	public void removeGraph(String idGraph){
+	/*public void removeGraph(String idGraph){
 		if(amchart.existGraph(idGraph)){
 			amchart.removeGraph(idGraph);
 		}
-	}
+	}*/
 	
 	public void removeGuide(String idGuide){
 		if(amchart.existGuide(idGuide)){
@@ -137,8 +139,14 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	public void removeValueAxis(String idValueAxis){
-		if(amchart.existGuide(idValueAxis)){
-			amchart.removeGuide(idValueAxis);
+		if(amchart.existValueAxis(idValueAxis)){
+			amchart.removeValueAxis(idValueAxis);
+		}
+	}
+	
+	public void removeValueAxisRadar(String idValueAxis){
+		if(amchart.existValueAxis(idValueAxis)){
+			amchart.removeValueAxisRadar(idValueAxis);
 		}
 	}
 	
@@ -148,8 +156,8 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	//usado solo para deserializar json
-	public void setGraphs(List<AmGraphController> graphs){
-		amchart.setGraphs(graphs);
+	public void setGraphs(List<AmGraphSerialController> graphs){
+		//amchart.setGraphs(graphs);
 	}
 	
 	//para deserializar json

@@ -5,9 +5,11 @@ import java.util.Observable;
 import java.util.Observer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
@@ -31,7 +33,8 @@ import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 
 @JsonInclude(Include.NON_NULL)
-public  class AmGraphController implements Observer, Serializable, IAmGraphController {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public abstract class AmGraphController implements Observer, Serializable, IAmGraphController {
 	
 	/**
 	 * 
@@ -44,6 +47,11 @@ public  class AmGraphController implements Observer, Serializable, IAmGraphContr
 	
 	{
 		amGraph = new AmGraph();
+	}
+	
+	
+	protected AmGraphController() {
+		
 	}
 	
 	@Override

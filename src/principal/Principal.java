@@ -4,10 +4,13 @@ package principal;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map.Entry;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -20,12 +23,16 @@ import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
+import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphStepController;
+import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
+import es.uvigo.esei.amchartsJava.core.model.generics.ValueAxis;
 import es.uvigo.esei.amchartsJava.core.parser.ParserJson;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
@@ -39,6 +46,23 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
+		//DISASTER MAIN, TESTING DESERIALIZE VALUEAXIS AND AMGRAPHS
+		
+		AmGraphXyController ams = new AmGraphXyController();
+		AmGraphStepController ams2 = new AmGraphStepController();
+		
+	
+		try {
+			ams2.setPeriodSpan(0);
+		} catch (OutOfRangeException e9) {
+			// TODO Auto-generated catch block
+			e9.printStackTrace();
+		}
+		ams.setAlphaField("ValueAxis-1");
+		ams.setAnimationPlayed(false);
+		
+		
+		
 		System.out.println(PathValidator.dragIconExist("lens.png"));
 		AmSerialChartController asc = new AmSerialChartController();
 		AmGraphSerialController ags = new AmGraphSerialController();
@@ -48,6 +72,13 @@ public class Principal {
 		va.enabledTotalText();
 		ags.setAlphaField("laaaa");
 		asc.setCategoryField("lola");
+		
+		asc.addGraph(ams);
+		asc.addGraph(ams2);
+		
+		
+		
+		
 	
 		try {
 			asc.setAngle(90);
@@ -172,10 +203,17 @@ public class Principal {
 		asc.addTitle(tc2);
 		asc.addLegend(lc);
 		asc.addValueAxis(va);
-		//asc.addValueAxis(var);
+		
+		
+	
+		asc.addValueAxis(var);
+		
+		//asc.removeValueAxis(va.getId().toString());
+		
+		//asc.removeValueAxisRadar(var.getId().toString());
 		//falta conseguir deserializar any graph
 		//asc.addGraph(ags);
-		
+		//System.out.println(((List<AmGraphController>)asc.getGraphs()).size());
 		ObjectMapper mapper = ParserJson.getParserJson();
 		/////
 		
@@ -185,10 +223,10 @@ public class Principal {
 			//escribe a fichero 
 			mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, true);
 			mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
-	
+
 			mapper.writeValue(new File("I:/prueba.json"), asc);
-			
-			//mapper.writeValue(System.out, asc);
+			mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET,false);
+			mapper.writeValue(System.out, asc);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -196,10 +234,20 @@ public class Principal {
 		//lee de fichero json a java
 		
 		AmSerialChartController employee = null;
+		AmGraphStepController step = new AmGraphStepController();
+		AmGraphXyController xy = new AmGraphXyController();
 		try {
+			Iterator<Entry<String, JsonNode>> a = null;
+				JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+				int last = node.path("graphs").size();
 				
-				
+					xy =mapper.treeToValue(node.path("graphs").path(0), AmGraphXyController.class);
+
+					step =mapper.treeToValue(node.path("graphs").path(1), AmGraphStepController.class);
+					
 				employee =  mapper.readValue(new File("I:/prueba.json"), AmSerialChartController.class);
+				employee.addGraph(xy);
+				employee.addGraph(step);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -211,12 +259,10 @@ public class Principal {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally{
-			
-			@SuppressWarnings("unchecked")
-			List<ValueAxisController> vv = (List<ValueAxisController>)employee.getValueAxes();
-			System.out.println(vv.get(0).getTotalText());
 		}
+		//System.out.println(((List<AmGraphController>)employee.getGraphs()).size());
+		
+		
 		
 	}
 

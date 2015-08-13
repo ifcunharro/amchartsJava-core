@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 
@@ -12,6 +13,9 @@ public class AmGraphSerialController extends AmGraphSerialChartController implem
 	 * 
 	 */
 	private static final long serialVersionUID = 3990193025590250473L;
+	
+	
+	
 	
 
 	
