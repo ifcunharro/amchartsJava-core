@@ -15,11 +15,11 @@ import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphStepController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
-import es.uvigo.esei.amchartsJava.core.model.generics.AmGraphs;
-import es.uvigo.esei.amchartsJava.core.model.generics.ValueAxis;
+import es.uvigo.esei.amchartsJava.core.model.collections.AmGraphs;
+import es.uvigo.esei.amchartsJava.core.model.collections.ValueAxis;
 
 public abstract class AmCoordinateChart extends AmChart implements IJsonDeserializerAmCoordinateChart{
-	private String deserializeType;
+	protected String deserializeType;
 	private List<String> colors;
 	//private List<AmGraphController> graphs;
 	private AmGraphs graphs;

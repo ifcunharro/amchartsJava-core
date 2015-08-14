@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.model.generics;
+package es.uvigo.esei.amchartsJava.core.model.collections;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -92,8 +92,8 @@ public class ValueAxis{
 		
 	}
 
-	public void setValueAxis(List<ValueAxisController> axes){
-		valueAxis.put("valueAxis", axes);
+	public void setValueAxis(List<ValueAxisController> valueAxes){
+		valueAxis.put("valueAxis", valueAxes);
 	}
 	
 	public void setValueAxisRadar(List<ValueAxisRadarChartController> valueAxisRadarChartsControllers){
@@ -101,18 +101,10 @@ public class ValueAxis{
 	}
 	
 	public List<String> getValueAxisIds(){
-		/*List<String> ids = new ArrayList<String>();
-		for(ValueAxisController valueAxis: getValueAxis()){
-			ids.add(valueAxis.getId().toString());
-		}*/
 		return idValueAxes;
 	}
 	
 	public List<String> getValueAxisRadarIds(){
-		/*List<String> ids = new ArrayList<String>();
-		for(ValueAxisRadarChartController valueAxis: getValueAxisRadar()){
-			ids.add(valueAxis.getId().toString());
-		}*/
 		return idValueAxesRadar;
 	}
 	

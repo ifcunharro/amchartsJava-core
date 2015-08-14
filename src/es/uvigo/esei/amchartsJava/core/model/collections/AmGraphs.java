@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.model.generics;
+package es.uvigo.esei.amchartsJava.core.model.collections;
 
 import java.util.ArrayList;
 import java.util.HashMap;

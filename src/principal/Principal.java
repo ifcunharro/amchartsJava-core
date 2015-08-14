@@ -4,10 +4,6 @@ package principal;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map.Entry;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -23,16 +19,16 @@ import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
-import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphStepController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
+import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
-import es.uvigo.esei.amchartsJava.core.model.generics.ValueAxis;
 import es.uvigo.esei.amchartsJava.core.parser.ParserJson;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
@@ -46,10 +42,19 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		//DISASTER MAIN, TESTING DESERIALIZE VALUEAXIS AND AMGRAPHS
+		//DISASTER MAIN TESTING DESERIALIZATION AMGRAPHS
 		
 		AmGraphXyController ams = new AmGraphXyController();
 		AmGraphStepController ams2 = new AmGraphStepController();
+		TrendLineSerialChartController ts = new TrendLineSerialChartController();
+		TrendLineXyChartController tx = new TrendLineXyChartController();
+		try {
+			ts.setDashLength(0);
+		} catch (OutOfRangeException e10) {
+			// TODO Auto-generated catch block
+			e10.printStackTrace();
+		}
+		tx.setInitialXValue(9);
 		
 	
 		try {
@@ -75,7 +80,8 @@ public class Principal {
 		
 		asc.addGraph(ams);
 		asc.addGraph(ams2);
-		
+		asc.addTrendLine(ts);
+		asc.addTrendLine(tx);
 		
 		
 		
@@ -237,9 +243,9 @@ public class Principal {
 		AmGraphStepController step = new AmGraphStepController();
 		AmGraphXyController xy = new AmGraphXyController();
 		try {
-			Iterator<Entry<String, JsonNode>> a = null;
+
 				JsonNode node = mapper.readTree(new File("I:/prueba.json"));
-				int last = node.path("graphs").size();
+				//int last = node.path("graphs").size();
 				
 					xy =mapper.treeToValue(node.path("graphs").path(0), AmGraphXyController.class);
 

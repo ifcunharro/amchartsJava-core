@@ -8,21 +8,27 @@ import java.util.List;
 
 
 
+
+
+
+
+
+
+
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
+import es.uvigo.esei.amchartsJava.core.model.collections.TrendLines;
 
-public class AmRectangularChart extends AmCoordinateChart {
+public class AmRectangularChart extends AmCoordinateChart implements IJsonDeserializerAmRectangularChart {
 	private List<String> plotAreaFillColors;
 	private ChartCursorController chartCursor;
 	private ChartScrollBarController scrollBar;
-	private List<TrendLineSerialChartController> trendLines;
-	private List<String> idTrendLines;
-	private int deleteTrendLines;
+	private TrendLines trendLines;
 	
 	{
 		plotAreaFillColors = new ArrayList<String>();
-		deleteTrendLines = 0;
 	}
 	
 	public void addPlotAreaFillColors(String... colors){
@@ -38,8 +44,22 @@ public class AmRectangularChart extends AmCoordinateChart {
 		return scrollBar;
 	}
 	
-	public List<TrendLineSerialChartController> getTrendLines(){
-		return trendLines;
+	public Object getTrendLines(){
+		List<Object> list = new ArrayList<Object>();
+		if(trendLines!=null){
+			if(trendLines.getTrendLinesSerial()!=null){
+				list.addAll(trendLines.getTrendLinesSerial());
+			}
+			if(trendLines.getTrendLinesXy()!=null){
+				list.addAll(trendLines.getTrendLinesXy());
+			}
+		}
+		if(list.size()==0){
+			return null;
+		}else{
+			return list;
+		}
+
 	}
 	
 	public void addChartCursor(ChartCursorController chartCursorController){
@@ -51,18 +71,25 @@ public class AmRectangularChart extends AmCoordinateChart {
 		scrollBar = chartScrollBarController;
 	}
 	
-	public void addTrendLine(TrendLineSerialChartController trendLineController){
+	public <T extends TrendLineSerialChartController> void addTrendLine(T trendLineController){
 		if(trendLines==null){
-			trendLines = new ArrayList<TrendLineSerialChartController>();
-			idTrendLines = new ArrayList<String>();
+			trendLines = new TrendLines();
 		}
+		trendLineController.setChart(this);
 		addObserver(trendLineController);
 		setChanged();
-		notifyObservers(trendLines.size()+1+deleteTrendLines);
-		trendLineController.setChart(this);
-		trendLines.add(trendLineController);
+		if(trendLineController instanceof TrendLineXyChartController){
+			trendLines.initTrendLinesXy();
+			notifyObservers(trendLines.sizeTrendLineXy()+1+trendLines.getDeleteTrendLines());
+			trendLines.addTrendLineXy((TrendLineXyChartController)trendLineController);
+		}else{
+			trendLines.initTrendLineSerial();
+			notifyObservers(trendLines.sizeTrendLineSerial()+1+trendLines.getDeleteTrendLines());
+			trendLines.addTrendLineSerial((TrendLineSerialChartController)trendLineController);
+		}
+		
 		deleteObservers();
-		idTrendLines.add("TrendLine-"+trendLines.size()+deleteTrendLines);
+
 	}
 	
 	public void removeChartCursor(){
@@ -75,21 +102,46 @@ public class AmRectangularChart extends AmCoordinateChart {
 		System.gc();
 	}
 	
-	public void removeTrendLine(String idTrendLine){
-		if(trendLines!=null){
-			trendLines.remove(Integer.valueOf(idTrendLine.substring(idTrendLine.length() - 1))-1);
-			idTrendLines.remove(idTrendLine);
-			deleteTrendLines++;
+	public void removeTrendLineSerial(String idTrendLine){
+		if(trendLines.getTrendLinesSerial()!=null){
+			trendLines.removeTrendLineSerial(
+					Integer.valueOf(idTrendLine.substring(idTrendLine.length() - 1))-1);
 		}
-		if(trendLines.size()==0){
+		
+		if(trendLines.sizeTrendLineSerial()==0 && trendLines.sizeTrendLineXy()==0){
 			trendLines=null;
-			idTrendLines=null;
-			deleteTrendLines=0;
+			System.gc();
+		}
+	}
+	
+	public void removeTrendLineXy(String idTrendLine){
+		if(trendLines.getTrendLinesXy()!=null){
+			trendLines.removeTrendLineXy(
+					Integer.valueOf(idTrendLine.substring(idTrendLine.length() - 1))-1);
+		}
+		
+		if(trendLines.sizeTrendLineXy()==0 && trendLines.sizeTrendLineSerial()==0){
+			trendLines=null;
+			System.gc();
 		}
 	}
 	
 	public boolean existTrendLine(String idTrendLine){
-		return idTrendLines.contains(idTrendLine);
+		return trendLines.getTrendLineSerialIds().contains(idTrendLine) ||
+				trendLines.getTrendLineXyIds().contains(idTrendLine);
+	}
+
+	
+	@SuppressWarnings("unchecked")
+	public void setTrendLines(List<TrendLineXyChartController> trendLineControllers) {
+		trendLines = new TrendLines();
+		if(deserializeType.equals("serial")){
+			trendLines.initTrendLineSerial();
+			trendLines.setTrendLinesSerial((List<TrendLineSerialChartController>)(List<?>)trendLineControllers);
+		}else{
+			trendLines.initTrendLinesXy();
+			trendLines.setTrendLinesXy(trendLineControllers);
+		}
 	}
 
 }

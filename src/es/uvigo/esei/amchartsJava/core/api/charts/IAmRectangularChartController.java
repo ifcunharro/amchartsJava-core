@@ -120,6 +120,8 @@ public interface IAmRectangularChartController<G extends AmRectangularChart> ext
 	
 	abstract void removeChartScrollBar();
 	
-	abstract void removeTrendLine(String trendLine);
+	abstract void removeTrendLineSerial(String trendLine);
+	
+	abstract void removeTrendLineXy(String trendLine);
 
 }
