@@ -4,6 +4,7 @@ package principal;
 
 import java.io.File;
 import java.io.IOException;
+
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -19,6 +20,8 @@ import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphCandleController;
+import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphOhlcController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphStepController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
@@ -46,6 +49,11 @@ public class Principal {
 		
 		AmGraphXyController ams = new AmGraphXyController();
 		AmGraphStepController ams2 = new AmGraphStepController();
+		AmGraphSerialController ams3 = new AmGraphSerialController();
+		AmGraphCandleController ams4 = new AmGraphCandleController();
+		AmGraphOhlcController ams5 = new AmGraphOhlcController();
+		
+		ams3.setConnect(true);
 		TrendLineSerialChartController ts = new TrendLineSerialChartController();
 		TrendLineXyChartController tx = new TrendLineXyChartController();
 		try {
@@ -80,6 +88,9 @@ public class Principal {
 		
 		asc.addGraph(ams);
 		asc.addGraph(ams2);
+		asc.addGraph(ams3);
+		asc.addGraph(ams4);
+		asc.addGraph(ams5);
 		asc.addTrendLine(ts);
 		asc.addTrendLine(tx);
 		
@@ -240,20 +251,48 @@ public class Principal {
 		//lee de fichero json a java
 		
 		AmSerialChartController employee = null;
+		AmGraphSerialController serial = new AmGraphSerialController();
 		AmGraphStepController step = new AmGraphStepController();
+		AmGraphCandleController candle = new AmGraphCandleController();
+		AmGraphOhlcController ohlc = new AmGraphOhlcController();
+		Object temp = null;
 		AmGraphXyController xy = new AmGraphXyController();
 		try {
 
 				JsonNode node = mapper.readTree(new File("I:/prueba.json"));
 				//int last = node.path("graphs").size();
-				
-					xy =mapper.treeToValue(node.path("graphs").path(0), AmGraphXyController.class);
+					for(int i = 0; i<node.path("graphs").size();i++){
+						
+						temp = mapper.treeToValue(node.path("graphs").path(i), Object.class);
+						System.out.println(temp.toString());
+						if(temp.toString().contains("maxBulletSize")){
+							xy = mapper.treeToValue(node.path("graphs").path(i), AmGraphXyController.class);
+						}else if(temp.toString().contains("step")){
+							step =mapper.treeToValue(node.path("graphs").path(i), AmGraphStepController.class);
+							
+						}else if(temp.toString().contains("candlestick")){
+							candle = mapper.treeToValue(node.path("graphs").path(i), AmGraphCandleController.class);
+						}else if(temp.toString().contains("ohlc")){
+							ohlc = mapper.treeToValue(node.path("graphs").path(i), AmGraphOhlcController.class);
+						}
+						else{
+							serial =mapper.treeToValue(node.path("graphs").path(i), AmGraphSerialController.class);
 
-					step =mapper.treeToValue(node.path("graphs").path(1), AmGraphStepController.class);
+						}
+						
+					}
+					System.out.println(xy.getAlphaField());
+					System.out.println(step.getPeriodSpan());
+					System.out.println(serial.isConnect());
+					System.out.println(ohlc.getType());
+					
 					
 				employee =  mapper.readValue(new File("I:/prueba.json"), AmSerialChartController.class);
-				employee.addGraph(xy);
+				//employee.addGraph(xy);
 				employee.addGraph(step);
+				employee.addGraph(xy);
+				employee.addGraph(serial);
+				employee.addGraph(candle);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -266,7 +305,8 @@ public class Principal {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//System.out.println(((List<AmGraphController>)employee.getGraphs()).size());
+		
+		//List<AmGraphController> S = ((List<AmGraphController>)employee.getGraphs());
 		
 		
 		

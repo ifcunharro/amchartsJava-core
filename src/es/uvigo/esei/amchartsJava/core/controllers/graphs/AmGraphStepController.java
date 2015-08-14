@@ -19,8 +19,7 @@ public class AmGraphStepController extends AmGraphSerialChartController implemen
 
 
 	{
-		setType(AmchartsConstants.GRAPH_TYPES.getStep());
-		
+		setType(AmchartsConstants.GRAPH_TYPES.getStep());	
 	}
 	
 	

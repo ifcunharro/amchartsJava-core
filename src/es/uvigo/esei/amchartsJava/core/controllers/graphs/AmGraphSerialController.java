@@ -15,10 +15,6 @@ public class AmGraphSerialController extends AmGraphSerialChartController implem
 	private static final long serialVersionUID = 3990193025590250473L;
 	
 	
-	
-	
-
-	
 	@JsonProperty(value="connect")
 	public Object isConnect(){
 		return amGraph.getFeature("connect");

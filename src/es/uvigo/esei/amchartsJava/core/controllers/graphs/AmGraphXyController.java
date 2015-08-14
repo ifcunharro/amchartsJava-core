@@ -18,6 +18,12 @@ public class AmGraphXyController extends AmGraphSerialChartController implements
 
 	{
 		setType(AmchartsConstants.GRAPH_TYPES.getLine());
+		try {
+			setMaxBulletSize(50);
+		} catch (OutOfRangeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
