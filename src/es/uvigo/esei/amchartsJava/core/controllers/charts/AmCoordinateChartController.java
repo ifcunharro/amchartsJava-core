@@ -126,11 +126,11 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	//remove by id
-	/*public void removeGraph(String idGraph){
+	public void removeGraph(String idGraph){
 		if(amchart.existGraph(idGraph)){
 			amchart.removeGraph(idGraph);
 		}
-	}*/
+	}
 	
 	public void removeGuide(String idGuide){
 		if(amchart.existGuide(idGuide)){
@@ -157,7 +157,7 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	
 	//usado solo para deserializar json
 	public void setGraphs(List<AmGraphSerialController> graphs){
-		//amchart.setGraphs(graphs);
+		
 	}
 	
 	//para deserializar json

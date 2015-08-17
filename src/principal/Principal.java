@@ -7,7 +7,6 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -93,7 +92,12 @@ public class Principal {
 		asc.addGraph(ams5);
 		asc.addTrendLine(ts);
 		asc.addTrendLine(tx);
-		
+		/*asc.removeGraph(ams.getId().toString());
+		asc.removeGraph(ams2.getId().toString());
+		asc.removeGraph(ams3.getId().toString());
+		asc.removeGraph(ams4.getId().toString());
+		asc.removeGraph(ams5.getId().toString());*/
+		asc.removeGraph("ola");
 		
 		
 	
@@ -250,57 +254,21 @@ public class Principal {
 		}
 		//lee de fichero json a java
 		
-		AmSerialChartController employee = null;
-		AmGraphSerialController serial = new AmGraphSerialController();
-		AmGraphStepController step = new AmGraphStepController();
-		AmGraphCandleController candle = new AmGraphCandleController();
-		AmGraphOhlcController ohlc = new AmGraphOhlcController();
-		Object temp = null;
-		AmGraphXyController xy = new AmGraphXyController();
+		AmSerialChartController serialController = null;
+		
 		try {
 
-				JsonNode node = mapper.readTree(new File("I:/prueba.json"));
-				//int last = node.path("graphs").size();
-					for(int i = 0; i<node.path("graphs").size();i++){
-						
-						temp = mapper.treeToValue(node.path("graphs").path(i), Object.class);
-						System.out.println(temp.toString());
-						if(temp.toString().contains("maxBulletSize")){
-							xy = mapper.treeToValue(node.path("graphs").path(i), AmGraphXyController.class);
-						}else if(temp.toString().contains("step")){
-							step =mapper.treeToValue(node.path("graphs").path(i), AmGraphStepController.class);
-							
-						}else if(temp.toString().contains("candlestick")){
-							candle = mapper.treeToValue(node.path("graphs").path(i), AmGraphCandleController.class);
-						}else if(temp.toString().contains("ohlc")){
-							ohlc = mapper.treeToValue(node.path("graphs").path(i), AmGraphOhlcController.class);
-						}
-						else{
-							serial =mapper.treeToValue(node.path("graphs").path(i), AmGraphSerialController.class);
-
-						}
-						
-					}
-					System.out.println(xy.getAlphaField());
-					System.out.println(step.getPeriodSpan());
-					System.out.println(serial.isConnect());
-					System.out.println(ohlc.getType());
-					
-					
-				employee =  mapper.readValue(new File("I:/prueba.json"), AmSerialChartController.class);
-				//employee.addGraph(xy);
-				employee.addGraph(step);
-				employee.addGraph(xy);
-				employee.addGraph(serial);
-				employee.addGraph(candle);
+				
+				serialController =  mapper.readValue(new File("I:/prueba.json"), AmSerialChartController.class);
+			
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
+		ParserJson.addGraphsFromJsonToAmSerialChart(serialController);
 		try {
 			mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET,false);
-			mapper.writeValue(System.out,employee);
+			mapper.writeValue(System.out,serialController);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

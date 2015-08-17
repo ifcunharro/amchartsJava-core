@@ -34,7 +34,7 @@ import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class AmGraphController implements Observer, Serializable, IAmGraphController {
+public abstract class AmGraphController implements Observer, Serializable, IAmGraphController{
 	
 	/**
 	 * 
