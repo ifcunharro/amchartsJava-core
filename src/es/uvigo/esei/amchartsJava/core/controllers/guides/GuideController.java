@@ -120,7 +120,7 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setFillAlpha(Number fillAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(fillAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(fillAlpha, 0, 1)){
 			guide.setFeature("fillAlpha", fillAlpha);
 		}
 	}
@@ -181,7 +181,7 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setLineAlpha(Number lineAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(lineAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(lineAlpha, 0, 1)){
 			guide.setFeature("lineAlpha", lineAlpha);
 		}
 	}

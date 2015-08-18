@@ -1,7 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.validators;
 
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
-import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
+import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
@@ -11,9 +11,9 @@ public class NumberValidator {
 		
 	}
 	
-	public static boolean rangeFloatValidator(Number number,int lo, int hi) throws OutOfRangeException{
-		if(number.floatValue()<lo || number.floatValue()>hi){
-			throw new OutOfRangeException(I18n.get("RangeFloatException"));
+	public static boolean rangeDoubleValidator(Number number,int lo, int hi) throws OutOfRangeException{
+		if(number.doubleValue()<lo || number.doubleValue()>hi){
+			throw new OutOfRangeException(I18n.get("RangeDoubleException"));
 		}
 		return true;
 	}
@@ -32,11 +32,11 @@ public class NumberValidator {
 		throw new IntegerException(I18n.get("IntegerException"));
 	}
 
-	public static boolean floatValidator(Number number) throws FloatException {
-		if(number instanceof Float || number instanceof Integer){
+	public static boolean doubleValidator(Number number) throws DoubleException {
+		if(number instanceof Double || number instanceof Integer){
 			return true;
 		}
-		throw new FloatException(I18n.get("FloatException"));
+		throw new DoubleException(I18n.get("DoubleException"));
 	}
 
 }

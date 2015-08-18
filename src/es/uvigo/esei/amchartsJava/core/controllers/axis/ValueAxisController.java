@@ -12,7 +12,7 @@ import es.uvigo.esei.amchartsJava.core.constants.DurationConstant.Duration;
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.constants.StackTypeConstant.StackType;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
-import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
+import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
@@ -111,8 +111,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		return axes.getFeature("maximum");
 	}
 	
-	public void setMaximum(Number maximum) throws FloatException{
-		if(NumberValidator.floatValidator(maximum)){
+	public void setMaximum(Number maximum) throws DoubleException{
+		if(NumberValidator.doubleValidator(maximum)){
 			axes.setFeature("maximum", maximum);
 		}
 	}
@@ -129,8 +129,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		return axes.getFeature("minimum");
 	}
 	
-	public void setMinimum(Number minimum) throws FloatException{
-		if(NumberValidator.floatValidator(minimum)){
+	public void setMinimum(Number minimum) throws DoubleException{
+		if(NumberValidator.doubleValidator(minimum)){
 			axes.setFeature("minimum", minimum);
 		}
 	}
@@ -147,8 +147,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		return axes.getFeature("minMaxMultiplier");
 	}
 	
-	public void setMinMaxMultiplier(Number minMaxMultiplier) throws FloatException{
-		if(NumberValidator.floatValidator(minMaxMultiplier)){
+	public void setMinMaxMultiplier(Number minMaxMultiplier) throws DoubleException{
+		if(NumberValidator.doubleValidator(minMaxMultiplier)){
 			axes.setFeature("minMaxMultiplier", minMaxMultiplier);
 		}
 	}
@@ -202,8 +202,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		return axes.getFeature("synchronizationMultiplier");
 	}
 	
-	public void setSynchronizationMultiplier(Number synchronizationMultiplier) throws FloatException{
-		if(NumberValidator.floatValidator(synchronizationMultiplier)){
+	public void setSynchronizationMultiplier(Number synchronizationMultiplier) throws DoubleException{
+		if(NumberValidator.doubleValidator(synchronizationMultiplier)){
 			axes.setFeature("synchronizationMultiplier", synchronizationMultiplier);
 		}
 	}

@@ -21,7 +21,7 @@ import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueTextConstant.L
 import es.uvigo.esei.amchartsJava.core.constants.MarkerTypeConstant.MarkerType;
 import es.uvigo.esei.amchartsJava.core.constants.TagsTextConstant.TagsText;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
-import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
+import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AmGraph;
@@ -119,7 +119,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setBulletAlpha(Number bulletAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(bulletAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(bulletAlpha, 0, 1)){
 			amGraph.setFeature("bulletAlpha", bulletAlpha);
 		}
 	}
@@ -129,7 +129,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setBulletBorderAlpha(Number bulletBorderAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(bulletBorderAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(bulletBorderAlpha, 0, 1)){
 			amGraph.setFeature("bulletBorderAlpha", bulletBorderAlpha);
 		}
 	}
@@ -225,7 +225,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setCursorBulletAlpha(Number cursorBulletAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(cursorBulletAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(cursorBulletAlpha, 0, 1)){
 			amGraph.setFeature("cursorBulletAlpha", cursorBulletAlpha);
 		}
 	}
@@ -287,7 +287,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setFillAlphas(Number fillAlphas) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(fillAlphas, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(fillAlphas, 0, 1)){
 			amGraph.setFeature("fillAlphas",fillAlphas);
 		}
 	}
@@ -317,8 +317,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return amGraph.getFeature("gapPeriod");
 	}
 	
-	public void setGapPeriod(Number gapPeriod) throws FloatException{
-		if(NumberValidator.floatValidator(gapPeriod)){
+	public void setGapPeriod(Number gapPeriod) throws DoubleException{
+		if(NumberValidator.doubleValidator(gapPeriod)){
 			amGraph.setFeature("gapPeriod", gapPeriod);
 		}
 	}
@@ -424,7 +424,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setLegendAlpha(Number legendAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(legendAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(legendAlpha, 0, 1)){
 			amGraph.setFeature("legendAlpha", legendAlpha);
 		}
 	}
@@ -458,7 +458,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setLineAlpha(Number lineAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(lineAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(lineAlpha, 0, 1)){
 			amGraph.setFeature("lineAlpha", lineAlpha);
 		}
 	}
@@ -496,7 +496,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setNegativeFillAlphas(Number negativeFillAlhas) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(negativeFillAlhas, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(negativeFillAlhas, 0, 1)){
 			amGraph.setFeature("negativeFillAlhas", negativeFillAlhas);
 		}
 	}

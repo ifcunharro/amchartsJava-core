@@ -120,7 +120,7 @@ public abstract class AmGraphSerialChartController extends AmGraphController imp
 	}
 	
 	public void setNegativeLineAlpha(Number negativeLineAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(negativeLineAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(negativeLineAlpha, 0, 1)){
 			amGraph.setFeature("negativeLineAlpha", negativeLineAlpha);
 		}
 	}
@@ -171,7 +171,7 @@ public abstract class AmGraphSerialChartController extends AmGraphController imp
 	}
 	
 	public void setTopRadius(Number topRadius) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(topRadius, 0, 2)){
+		if(NumberValidator.rangeDoubleValidator(topRadius, 0, 2)){
 			amGraph.setFeature("topRadius", topRadius);
 		}
 	}

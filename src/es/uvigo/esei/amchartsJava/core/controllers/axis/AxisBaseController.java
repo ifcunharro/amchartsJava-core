@@ -45,7 +45,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setAxisAlpha(Number axisAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(axisAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(axisAlpha, 0, 1)){
 			axes.setFeature("axisAlpha", axisAlpha);
 		}
 	}
@@ -116,7 +116,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setFillAlpha(Number fillAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(fillAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(fillAlpha, 0, 1)){
 			axes.setFeature("fillAlpha", fillAlpha);
 		}
 	}
@@ -146,7 +146,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setGridAlpha(Number gridAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(gridAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(gridAlpha, 0, 1)){
 			axes.setFeature("gridAlpha", gridAlpha);
 		}
 	}
@@ -253,7 +253,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setMinorGridAlpha(Number minorGridAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(minorGridAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(minorGridAlpha, 0, 1)){
 			axes.setFeature("minorGridAlpha", minorGridAlpha);
 		}
 	}

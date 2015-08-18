@@ -66,7 +66,7 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setBackgroundAlpha(Number backgroundAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(backgroundAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(backgroundAlpha, 0, 1)){
 			legend.setFeature("backgroundAlpha", backgroundAlpha);
 		}
 	}
@@ -86,7 +86,7 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(borderAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(borderAlpha, 0, 1)){
 			legend.setFeature("borderAlpha", borderAlpha);
 		}
 	}
@@ -250,7 +250,7 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setMarkerBorderAlpha(Number markerBorderAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(markerBorderAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(markerBorderAlpha, 0, 1)){
 			legend.setFeature("markerBorderAlpha", markerBorderAlpha);
 		}
 	}
@@ -373,7 +373,7 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setRollOverGraphAlpha(Number rollOverGraphAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(rollOverGraphAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(rollOverGraphAlpha, 0, 1)){
 			legend.setFeature("rollOverGraphAlpha", rollOverGraphAlpha);
 		}
 	}

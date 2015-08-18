@@ -52,7 +52,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setBackgroundAlpha(Number backgroundAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(backgroundAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(backgroundAlpha, 0, 1)){
 			scrollBar.setFeature("backgroundAlpha", backgroundAlpha);
 		}
 	}
@@ -132,7 +132,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setGraphFillAlpha(Number graphFillAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(graphFillAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(graphFillAlpha, 0, 1)){
 			scrollBar.setFeature("graphFillAlpha", graphFillAlpha);
 		}
 	}
@@ -152,7 +152,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setGraphLineAlpha(Number graphLineAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(graphLineAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(graphLineAlpha, 0, 1)){
 			scrollBar.setFeature("graphLineAlpha", graphLineAlpha);
 		}
 	}
@@ -180,7 +180,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setGridAlpha(Number gridAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(gridAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(gridAlpha, 0, 1)){
 			scrollBar.setFeature("gridAlpha", gridAlpha);
 		}
 	}
@@ -296,7 +296,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setSelectedBackgroundAlpha(Number selectedBackgroundAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(selectedBackgroundAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(selectedBackgroundAlpha, 0, 1)){
 			scrollBar.setFeature("selectedBackgroundAlpha", selectedBackgroundAlpha);
 		}
 	}
@@ -316,7 +316,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setSelectedGraphFillAlpha(Number selectedGraphFillAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(selectedGraphFillAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(selectedGraphFillAlpha, 0, 1)){
 			scrollBar.setFeature("selectedGraphFillAlpha", selectedGraphFillAlpha);
 		}
 	}
@@ -336,7 +336,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setSelectedGraphLineAlpha(Number selectedGraphLineAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(selectedGraphLineAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(selectedGraphLineAlpha, 0, 1)){
 			scrollBar.setFeature("selectedGraphLineAlpha", selectedGraphLineAlpha);
 		}
 	}

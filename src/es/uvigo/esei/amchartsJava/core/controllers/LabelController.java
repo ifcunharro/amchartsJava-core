@@ -60,7 +60,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setAlpha(Number alpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(alpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(alpha, 0, 1)){
 			label.setFeature("alpha", alpha);
 		}
 	}

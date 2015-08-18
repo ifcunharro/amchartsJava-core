@@ -10,7 +10,7 @@ import es.uvigo.esei.amchartsJava.core.constants.DurationConstant.Duration;
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.constants.StackTypeConstant.StackType;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
-import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
+import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
@@ -49,7 +49,7 @@ public interface IValueAxisController extends IAxisBaseController {
 
 	public Object getMaximum();
 
-	public void setMaximum(Number maximum) throws FloatException;
+	public void setMaximum(Number maximum) throws DoubleException;
 
 	public Object getMaximumDate();
 
@@ -57,7 +57,7 @@ public interface IValueAxisController extends IAxisBaseController {
 
 	public Object getMinimum();
 
-	public void setMinimum(Number minimum) throws FloatException;
+	public void setMinimum(Number minimum) throws DoubleException;
 
 	public Object getMinimumDate();
 
@@ -66,7 +66,7 @@ public interface IValueAxisController extends IAxisBaseController {
 	public Object getMinMaxMultiplier();
 
 	public void setMinMaxMultiplier(Number minMaxMultiplier)
-			throws FloatException;
+			throws DoubleException;
 
 	public Object getPrecision();
 
@@ -91,7 +91,7 @@ public interface IValueAxisController extends IAxisBaseController {
 	public Object getSynchronizationMultiplier();
 
 	public void setSynchronizationMultiplier(Number synchronizationMultiplier)
-			throws FloatException;
+			throws DoubleException;
 
 	public Object getSynchronizeWith();
 

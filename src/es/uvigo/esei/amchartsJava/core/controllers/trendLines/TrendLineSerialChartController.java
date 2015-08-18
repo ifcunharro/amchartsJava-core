@@ -115,7 +115,7 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	}
 	
 	public void setLineAlpha(Number lineAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(lineAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(lineAlpha, 0, 1)){
 			trendLine.setFeature("lineAlpha", lineAlpha);
 		}
 	}

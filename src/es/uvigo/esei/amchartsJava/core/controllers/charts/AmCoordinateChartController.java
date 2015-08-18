@@ -13,7 +13,9 @@ import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideCategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
+import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
@@ -53,7 +55,7 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	public void setStartAlpha(Number startAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(startAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(startAlpha, 0, 1)){
 			amchart.setFeature("startAlpha", startAlpha);
 		}
 	}
@@ -108,16 +110,20 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		return amchart.getGuides();
 	}
 	
+	public void setGuides(List<GuideCategoryAxisController> guideControllers){
+		
+	}
+	
 	//valueAxes
 	public Object getValueAxes(){
 		return amchart.getValueAxes();
 	}
 		
-	public <T extends AmGraphController> void addGraph(T amGraphController){
+	public <T extends AmGraphController> void addGraph(T amGraphController) throws NotSupportedException{
 		amchart.addGraph(amGraphController);
 	}
 	
-	public void addGuide(GuideController guideController){
+	public <T extends GuideController> void addGuide(T guideController){
 		amchart.addGuide(guideController);
 	}
 	

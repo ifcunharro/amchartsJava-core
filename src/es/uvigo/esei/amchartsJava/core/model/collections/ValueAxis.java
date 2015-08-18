@@ -94,6 +94,9 @@ public class ValueAxis{
 	}
 	
 	public void addValueAxisRadar(ValueAxisRadarChartController valueAxisRadarChartController){
+		if(getValueAxisRadar()==null){
+			initValueAxisRadar();
+		}
 		getValueAxisRadar().add(valueAxisRadarChartController);
 		idValueAxesRadar.add(valueAxisRadarChartController.getId().toString());
 	}
@@ -101,16 +104,13 @@ public class ValueAxis{
 	public void removeValueAxis(int position) {
 		idValueAxes.remove(getValueAxis().get(position).getId().toString());
 		this.getValueAxis().remove(position);
-		
 		deleteValueAxis++;
 	}
 	
 	public void removeValueAxisRadar(int position) {
 		idValueAxesRadar.remove(getValueAxisRadar().get(position).getId().toString());
-
 		this.getValueAxisRadar().remove(position);
 		deleteValueAxis++;
-		
 	}
 
 	public void setValueAxis(List<ValueAxisController> valueAxes){

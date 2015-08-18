@@ -41,7 +41,7 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setAnimationDuration(Number animationDuration) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(animationDuration, 0, 2)){
+		if(NumberValidator.rangeDoubleValidator(animationDuration, 0, 2)){
 			balloon.setFeature("animationDuration", animationDuration);
 		}
 	}
@@ -51,7 +51,7 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(borderAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(borderAlpha, 0, 1)){
 			balloon.setFeature("borderAlpha", borderAlpha);
 		}
 	}
@@ -111,7 +111,7 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setFadeOutDuration(Number fadeOutDuration) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(fadeOutDuration, 0, 2)){
+		if(NumberValidator.rangeDoubleValidator(fadeOutDuration, 0, 2)){
 			balloon.setFeature("fadeOutDuration", fadeOutDuration);
 		}
 	}
@@ -121,7 +121,7 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setFillAlpha(Number fillAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(fillAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(fillAlpha, 0, 1)){
 			balloon.setFeature("fillAlpha", fillAlpha);
 		}
 	}
@@ -210,7 +210,7 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setShadowAlpha(Number shadowAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(shadowAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(shadowAlpha, 0, 1)){
 			balloon.setFeature("shadowAlpha", shadowAlpha);
 		}
 	}

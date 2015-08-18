@@ -15,13 +15,14 @@ import java.util.List;
 
 
 
+
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.model.collections.TrendLines;
 
-public class AmRectangularChart extends AmCoordinateChart implements IJsonDeserializerAmRectangularChart {
+public abstract class AmRectangularChart extends AmCoordinateChart implements IJsonDeserializerAmRectangularChart {
 	private List<String> plotAreaFillColors;
 	private ChartCursorController chartCursor;
 	private ChartScrollBarController scrollBar;
@@ -143,5 +144,7 @@ public class AmRectangularChart extends AmCoordinateChart implements IJsonDeseri
 			trendLines.setTrendLinesXy(trendLineControllers);
 		}
 	}
+
+	
 
 }

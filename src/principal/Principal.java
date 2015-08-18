@@ -19,17 +19,22 @@ import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmXyChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphCandleController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphOhlcController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphStepController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideCategoryAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideRadarChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
-import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
+import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.parser.ParserJson;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
@@ -51,6 +56,36 @@ public class Principal {
 		AmGraphSerialController ams3 = new AmGraphSerialController();
 		AmGraphCandleController ams4 = new AmGraphCandleController();
 		AmGraphOhlcController ams5 = new AmGraphOhlcController();
+		
+		
+		GuideCategoryAxisController gc = new GuideCategoryAxisController();
+		gc.setExpand(true);
+		
+		GuideRadarChartController gr = new GuideRadarChartController();
+		try {
+			gr.setAngle(90);
+		} catch (OutOfRangeException e11) {
+			// TODO Auto-generated catch block
+			e11.printStackTrace();
+		}
+		GuideValueAxisController gv = new GuideValueAxisController();
+		try {
+			gv.setToValue(9e90);
+		} catch (DoubleException e11) {
+			// TODO Auto-generated catch block
+			e11.printStackTrace();
+		}
+		
+		AmXyChartController axy = new AmXyChartController();
+		try {
+			axy.addGraph(ams);
+			axy.addGraph(ams2);
+		} catch (NotSupportedException e11) {
+			// TODO Auto-generated catch block
+			e11.printStackTrace();
+		}
+		
+		
 		
 		ams3.setConnect(true);
 		TrendLineSerialChartController ts = new TrendLineSerialChartController();
@@ -84,14 +119,21 @@ public class Principal {
 		va.enabledTotalText();
 		ags.setAlphaField("laaaa");
 		asc.setCategoryField("lola");
-		
-		asc.addGraph(ams);
-		asc.addGraph(ams2);
-		asc.addGraph(ams3);
-		asc.addGraph(ams4);
-		asc.addGraph(ams5);
+		try{
+			asc.addGraph(ams);
+			asc.addGraph(ams2);
+			asc.addGraph(ams3);
+			asc.addGraph(ams4);
+			asc.addGraph(ams5);
+		}
+			catch (Exception e) {
+				e.printStackTrace();
+		}
 		asc.addTrendLine(ts);
 		asc.addTrendLine(tx);
+		asc.addGuide(gc);
+		//asc.addGuide(gr);
+		//asc.addGuide(gv);
 		/*asc.removeGraph(ams.getId().toString());
 		asc.removeGraph(ams2.getId().toString());
 		asc.removeGraph(ams3.getId().toString());
@@ -126,8 +168,8 @@ public class Principal {
 		
 		
 		try {
-			NumberValidator.floatValidator(5);
-		} catch (FloatException e7) {
+			NumberValidator.doubleValidator(5);
+		} catch (DoubleException e7) {
 			// TODO Auto-generated catch block
 			e7.printStackTrace();
 		}

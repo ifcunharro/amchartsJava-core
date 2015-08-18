@@ -130,7 +130,7 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public void setPlotAreaBorderAlpha(Number plotAreaBorderAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(plotAreaBorderAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(plotAreaBorderAlpha, 0, 1)){
 			amchart.setFeature("plotAreaBorderAlpha", plotAreaBorderAlpha);
 		}
 	}
@@ -170,7 +170,7 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public void setZoomOutButtonAlpha(Number zoomOutButtonAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(zoomOutButtonAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(zoomOutButtonAlpha, 0, 1)){
 			amchart.setFeature("zoomOutButtonAlpha", zoomOutButtonAlpha);
 		}
 	}
@@ -222,7 +222,7 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public void setZoomOutButtonRollOverAlpha(Number zoomOutButtonRollOverAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(zoomOutButtonRollOverAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(zoomOutButtonRollOverAlpha, 0, 1)){
 			amchart.setFeature("zoomOutButtonRollOverAlpha", zoomOutButtonRollOverAlpha);
 		}
 	}

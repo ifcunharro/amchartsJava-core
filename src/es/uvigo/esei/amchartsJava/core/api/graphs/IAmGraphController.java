@@ -12,7 +12,7 @@ import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueTextConstant.L
 import es.uvigo.esei.amchartsJava.core.constants.MarkerTypeConstant.MarkerType;
 import es.uvigo.esei.amchartsJava.core.constants.TagsTextConstant.TagsText;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
-import es.uvigo.esei.amchartsJava.core.exceptions.FloatException;
+import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
@@ -138,7 +138,7 @@ public interface IAmGraphController  {
 
 	abstract Object getGapPeriod();
 
-	abstract void setGapPeriod(Number gapPeriod) throws FloatException;
+	abstract void setGapPeriod(Number gapPeriod) throws DoubleException;
 
 	abstract Object getGradientOrientation();
 

@@ -57,7 +57,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setAnimationDuration(Number animationDuration) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(animationDuration, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(animationDuration, 0, 1)){
 			chartCursor.setFeature("animationDuration", animationDuration);
 		}
 	}
@@ -103,7 +103,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setCategoryBalloonAlpha(Number categoryBalloonAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(categoryBalloonAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(categoryBalloonAlpha, 0, 1)){
 			chartCursor.setFeature("categoryBalloonAlpha", categoryBalloonAlpha);
 		}
 	}
@@ -168,7 +168,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setCursorAlpha(Number cursorAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(cursorAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(cursorAlpha, 0, 1)){
 			chartCursor.setFeature("cursorAlpha", cursorAlpha);
 		}
 	}
@@ -214,7 +214,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setGraphBulletAlpha(Number graphBulletAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(graphBulletAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(graphBulletAlpha, 0, 1)){
 			chartCursor.setFeature("graphBulletAlpha", graphBulletAlpha);
 		}
 	}
@@ -224,7 +224,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setGraphBulletSize(Number graphBulletSize) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(graphBulletSize, 1, 20)){
+		if(NumberValidator.rangeDoubleValidator(graphBulletSize, 1, 20)){
 			chartCursor.setFeature("graphBulletSize", graphBulletSize);
 		}
 	}
@@ -261,7 +261,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setSelectionAlpha(Number selectionAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(selectionAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(selectionAlpha, 0, 1)){
 			chartCursor.setFeature("selectionAlpha", selectionAlpha);
 		}
 	}
@@ -298,7 +298,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setValueLineAlpha(Number valueLineAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(valueLineAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(valueLineAlpha, 0, 1)){
 			chartCursor.setFeature("valueLineAlpha", valueLineAlpha);
 		}
 	}

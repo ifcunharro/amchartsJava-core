@@ -70,7 +70,7 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 	
 	public void setColumnWidth(Number columnWidth) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(columnWidth, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(columnWidth, 0, 1)){
 			amchart.setFeature("columnWidth", columnWidth);
 		}
 	}

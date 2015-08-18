@@ -13,9 +13,14 @@ import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphOhlcController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphStepController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideCategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideRadarChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisController;
+import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
 import es.uvigo.esei.amchartsJava.core.model.collections.AmGraphs;
+import es.uvigo.esei.amchartsJava.core.model.collections.Guides;
 import es.uvigo.esei.amchartsJava.core.model.collections.ValueAxis;
 
 public abstract class AmCoordinateChart extends AmChart implements IJsonDeserializerAmCoordinateChart{
@@ -23,11 +28,8 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 	protected String deserializeType;
 	private List<String> colors;
 	private AmGraphs graphs;
-	private List<GuideController> guides;
+	private Guides guides;
 	private ValueAxis valueAxes;
-	//private List<String> idGraphs;
-	private List<String> idGuides;
-	private int deleteGuides;
 	
 
 	{
@@ -35,7 +37,6 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		for(ColorsAmCharts color: ColorsAmCharts.values()){
 			colors.add(color.toString());
 		}
-		deleteGuides = 0;
 	}
 	
 	public List<String> getColors(){
@@ -58,7 +59,11 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 	}
 	
 	public List<GuideController> getGuides(){
-		return guides;
+		if(guides==null){
+			return null;
+		}else{
+			return guides.getGuides();
+		}
 	}
 	
 	public Object getValueAxes(){
@@ -92,19 +97,8 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		colors.add(color);
 	}
 	
-	public <T extends AmGraphController> void addGraph(T amGraphController){
-		if(amGraphController instanceof AmGraphStepController){
-			addGraphStep((AmGraphStepController)amGraphController);
-		}else if(amGraphController instanceof AmGraphXyController){
-			addGraphXy((AmGraphXyController)amGraphController);
-		}else if(amGraphController instanceof AmGraphCandleController){
-			addGraphCandle((AmGraphCandleController)amGraphController);
-		}else if (amGraphController instanceof AmGraphOhlcController){
-			addGraphOhlc((AmGraphOhlcController)amGraphController);
-		}else if(amGraphController instanceof AmGraphSerialController){
-			addGraphSerial((AmGraphSerialController)amGraphController);
-		}
-	}
+	public abstract <T extends AmGraphController> void addGraph(T amGraphController) throws NotSupportedException;
+	
 	
 	public void removeGraph(String idGraph){
 		if(graphs.getAmGraphSerialIds().contains(idGraph)){
@@ -120,7 +114,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		}
 	}
 
-	private void addGraphSerial(AmGraphSerialController amGraphSerialController) {
+	protected void addGraphSerial(AmGraphSerialController amGraphSerialController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
@@ -133,7 +127,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		
 	}
 	
-	private void addGraphStep(AmGraphStepController amGraphStepController) {
+	protected void addGraphStep(AmGraphStepController amGraphStepController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
@@ -146,7 +140,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		deleteObservers();
 	}
 	
-	private void addGraphXy(AmGraphXyController amGraphXyController) {
+	protected void addGraphXy(AmGraphXyController amGraphXyController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
@@ -159,7 +153,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		deleteObservers();
 	}
 	
-	private void addGraphCandle(AmGraphCandleController amGraphCandleController) {
+	protected void addGraphCandle(AmGraphCandleController amGraphCandleController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
@@ -172,7 +166,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		deleteObservers();
 	}
 	
-	private void addGraphOhlc(AmGraphOhlcController amGraphOhlcController) {
+	protected void addGraphOhlc(AmGraphOhlcController amGraphOhlcController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
@@ -184,20 +178,50 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		deleteObservers();
 	}
 	
-	public void addGuide(GuideController guideController) {
-		if(guides==null){
-			guides = new ArrayList<GuideController>();
-			idGuides = new ArrayList<String>();
+	public <T extends GuideController> void addGuide(T guideController) {
+		if(guideController instanceof GuideCategoryAxisController){
+			addGuideCategoryAxis((GuideCategoryAxisController)guideController);
+		}else if(guideController instanceof GuideRadarChartController){
+			addGuideRadarChart((GuideRadarChartController)guideController);
+		}else if(guideController instanceof GuideValueAxisController){
+			addGuideValueAxis((GuideValueAxisController)guideController);
 		}
-		
-		addObserver(guideController);
+	}
+	
+	private void addGuideCategoryAxis(GuideCategoryAxisController guideCategoryAxisController){
+		if(guides==null){
+			guides = new Guides();
+		}
+		addObserver(guideCategoryAxisController);
 		setChanged();
-		//notifyObservers(graphs.size()+1+deleteGuides);
-		guideController.setChart(this);
-		guides.add(guideController);
+		notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+		guideCategoryAxisController.setChart(this);
+		guides.addGuideCategoryAxis(guideCategoryAxisController);
 		deleteObservers();
-		idGuides.add("Guide-"+guides.size()+deleteGuides);
-		
+	}
+	
+	private void addGuideRadarChart(GuideRadarChartController guideRadarChartController){
+		if(guides==null){
+			guides = new Guides();
+		}
+		addObserver(guideRadarChartController);
+		setChanged();
+		notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+		guideRadarChartController.setChart(this);
+		guides.addGuideRadarChart(guideRadarChartController);
+		deleteObservers();
+	}
+	
+	private void addGuideValueAxis(GuideValueAxisController guideValueAxisController){
+		if(guides==null){
+			guides = new Guides();
+		}
+		addObserver(guideValueAxisController);
+		setChanged();
+		notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+		guideValueAxisController.setChart(this);
+		guides.addGuideValueAxis(guideValueAxisController);
+		deleteObservers();
 	}
 	
 	public <T extends ValueAxisController> void addValueAxis(T valueAxisController) {
@@ -217,8 +241,6 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		
 	}
 	
-	
-	
 	private void addValueAxisController(ValueAxisController valueAxisController){
 		valueAxes.initValueAxis();
 		notifyObservers(valueAxes.sizeValueAxis()+1+valueAxes.getDeleteValueAxis());
@@ -233,7 +255,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 	
 	
 	
-	public void removeGraphSerial(String idGraphSerial) {
+	private void removeGraphSerial(String idGraphSerial) {
 		if(graphs.isNotEmptyAmGraphSerial()){
 			graphs.removeAmGraphSerial(idGraphSerial);
 		}
@@ -243,7 +265,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		}
 	}
 	
-	public void removeGraphStep(String idGraphStep) {
+	private void removeGraphStep(String idGraphStep) {
 		if(graphs.isNotEmptyAmGraphStep()){
 			graphs.removeAmGraphStep(idGraphStep);
 		}
@@ -254,7 +276,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 
 	}
 	
-	public void removeGraphXy(String idGraphXy) {
+	private void removeGraphXy(String idGraphXy) {
 		if(graphs.isNotEmptyAmGraphXy()){
 			graphs.removeAmGraphXy(idGraphXy);
 		}
@@ -265,7 +287,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		
 	}
 	
-	public void removeGraphCandle(String idGraphCandle) {
+	private void removeGraphCandle(String idGraphCandle) {
 		if(graphs.isNotEmptyAmGraphCandle()){
 			graphs.removeAmGraphCandle(idGraphCandle);
 		}
@@ -275,7 +297,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		}
 	}
 	
-	public void removeGraphOhlc(String idGraphOhlc) {
+	private void removeGraphOhlc(String idGraphOhlc) {
 		if(graphs.isNotEmptyAmGraphOhlc()){
 			graphs.removeAmGraphOhlc(idGraphOhlc);
 		}
@@ -287,19 +309,46 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 	}
 	
 	public void removeGuide(String idGuide) {
-		if(guides!=null){
-			guides.remove(Integer.valueOf(idGuide.substring(idGuide.length() - 1))-1);
-			idGuides.remove(idGuide);
-			deleteGuides++;
+		if(guides.getGuideCategoryAxisIds().contains(idGuide)){
+			removeGuideCategoryAxis(idGuide);
+		}else if(guides.getGuideRadarChartIds().contains(idGuide)){
+			removeGuideRadarChart(idGuide);
+		}else if(guides.getGuideValueAxisIds().contains(idGuide)){
+			removeGuideValueAxis(idGuide);
 		}
-		if(guides.size()==0){
+	}
+	
+	private void removeGuideCategoryAxis(String idGuideCategoryAxis){
+		if(guides.isNotEmptyGuideCategoryAxis()){
+			guides.removeGuideCategoryAxis(idGuideCategoryAxis);
+		}
+		if(guides.sizeGuides()==0){
 			guides=null;
-			idGuides=null;
-			deleteGuides=0;
 			System.gc();
 		}
-		
 	}
+	
+	private void removeGuideRadarChart(String idGuideRadarChart){
+		if(guides.isNotEmptyGuideRadarChart()){
+			guides.removeGuideRadarChart(idGuideRadarChart);
+		}
+		if(guides.sizeGuides()==0){
+			guides=null;
+			System.gc();
+		}
+	}
+	
+	private void removeGuideValueAxis(String idGuideValueAxis){
+		if(guides.isNotEmptyGuideValueAxis()){
+			guides.removeGuideValueAxis(idGuideValueAxis);
+		}
+		if(guides.sizeGuides()==0){
+			guides=null;
+			System.gc();
+		}
+	}
+		
+	
 	
 	public void removeValueAxis(String idValueAxis) {
 		if(valueAxes.isNotEmptyValueAxis()){
@@ -342,7 +391,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 	}
 
 	public boolean existGuide(String idGuide) {
-		return idGuides.contains(idGuide);
+		return guides.existGuide(idGuide);
 	}
 	
 	//usado solo para deserializar json

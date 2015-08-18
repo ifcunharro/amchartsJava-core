@@ -38,7 +38,7 @@ public class TitleController implements Observer, ITitleController, Serializable
 	}
 	
 	public void setAlpha(Number alpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(alpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(alpha, 0, 1)){
 			title.setFeature("alpha", alpha);
 		}
 	}

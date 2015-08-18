@@ -73,7 +73,7 @@ public abstract class AmChartController<E extends AmChart> implements Serializab
 	}
 	
 	public void setBackGroundAlpha(Number backGroundAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(backGroundAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(backGroundAlpha, 0, 1)){
 			amchart.setFeature("backGroundAlpha", backGroundAlpha);
 		}
 	}
@@ -93,7 +93,7 @@ public abstract class AmChartController<E extends AmChart> implements Serializab
 	}
 	
 	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeFloatValidator(borderAlpha, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(borderAlpha, 0, 1)){
 			amchart.setFeature("borderAlpha", borderAlpha);
 		}
 	}
