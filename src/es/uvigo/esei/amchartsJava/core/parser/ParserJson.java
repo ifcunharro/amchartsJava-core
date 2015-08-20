@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmXyChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphCandleController;
@@ -15,6 +16,11 @@ import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphOhlcController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphStepController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideCategoryAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideRadarChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 
 public class ParserJson {
@@ -27,7 +33,7 @@ public class ParserJson {
   	   	 return mapper;
 	}
 	
-	public static AmSerialChartController addGraphsFromJsonToAmSerialChart(AmSerialChartController serialChartController){
+	public static void addGraphsFromJsonToAmSerialChart(AmSerialChartController serialChartController){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
@@ -78,10 +84,10 @@ public class ParserJson {
 		}catch(IOException e1){
 					e1.printStackTrace();
 		}
-		return serialChartController;
+		
 	}
 	
-	public static AmXyChartController addGraphsFromJsonToAmXyChart(AmXyChartController xyChartController){
+	public static void addGraphsFromJsonToAmXyChart(AmXyChartController xyChartController){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
@@ -103,8 +109,142 @@ public class ParserJson {
 		}catch(IOException e1){
 					e1.printStackTrace();
 		}
-		return xyChartController;
+		
 	}
+	
+	public static void addGuidesFromJsonToAmSerialChart(AmSerialChartController serialChartController){
+		ObjectMapper mapper = getParserJson();
+		Object temp = null;
+		
+		try{
+			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			for(int i = 0; i<node.path("guides").size();i++){
+				temp = mapper.treeToValue(node.path("guides").path(i), Object.class);
+				
+				if(temp.toString().contains("expand")){
+					GuideCategoryAxisController guideCategory = null;
+					guideCategory = mapper.treeToValue(node.path("guides").path(i), GuideCategoryAxisController.class);
+					try {
+						serialChartController.addGuide(guideCategory);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}else if(!temp.toString().contains("angle")){
+					GuideValueAxisController guideValueAxis = null;
+					guideValueAxis = mapper.treeToValue(node.path("guides").path(i), GuideValueAxisController.class);
+					try {
+						serialChartController.addGuide(guideValueAxis);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}catch(IOException e1){
+				e1.printStackTrace();
+		}
+	
+	}
+	
+	public static void addGuidesFromJsonToAmXyChart(AmXyChartController xyChartController){
+		ObjectMapper mapper = getParserJson();
+		Object temp = null;
+		
+		try{
+			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			for(int i = 0; i<node.path("guides").size();i++){
+				temp = mapper.treeToValue(node.path("guides").path(i), Object.class);
+				
+				if(!temp.toString().contains("angle") && !temp.toString().contains("expand")){
+					GuideValueAxisController guideValueAxis = null;
+					guideValueAxis = mapper.treeToValue(node.path("guides").path(i), GuideValueAxisController.class);
+					try {
+						xyChartController.addGuide(guideValueAxis);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}catch(IOException e1){
+				e1.printStackTrace();
+		}
+		
+	}
+	
+	public static void addGuidesFromJsonToAmRadarChart(AmRadarChartController radarChartController){
+		ObjectMapper mapper = getParserJson();
+		Object temp = null;
+		
+		try{
+			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			for(int i = 0; i<node.path("guides").size();i++){
+				temp = mapper.treeToValue(node.path("guides").path(i), Object.class);
+				
+				if(temp.toString().contains("angle")){
+					GuideRadarChartController guideRadar = null;
+					guideRadar = mapper.treeToValue(node.path("guides").path(i), GuideRadarChartController.class);
+					try {
+						radarChartController.addGuide(guideRadar);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}catch(IOException e1){
+				e1.printStackTrace();
+		}
+		
+	}
+	
+	public static void addTrendLinesFromJsonToAmSerialChart(AmSerialChartController serialChartController){
+		ObjectMapper mapper = getParserJson();
+		Object temp = null;
+		
+		try{
+			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			for(int i = 0; i<node.path("guides").size();i++){
+				temp = mapper.treeToValue(node.path("trendLines").path(i), Object.class);
+				
+				if(!temp.toString().contains("initialXValue")){
+					TrendLineSerialChartController trendLineSerial = null;
+					trendLineSerial = mapper.treeToValue(node.path("trendLines").path(i), TrendLineSerialChartController.class);
+					try {
+						serialChartController.addTrendLine(trendLineSerial);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}catch(IOException e1){
+				e1.printStackTrace();
+		}
+		
+	}
+	
+	public static void addTrendLinesFromJsonToAmXyChart(AmXyChartController xyChartController){
+		ObjectMapper mapper = getParserJson();
+		Object temp = null;
+		
+		try{
+			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			for(int i = 0; i<node.path("guides").size();i++){
+				temp = mapper.treeToValue(node.path("trendLines").path(i), Object.class);
+				
+				if(temp.toString().contains("initialXValue")){
+					TrendLineXyChartController trendLineXy = null;
+					trendLineXy = mapper.treeToValue(node.path("trendLines").path(i), TrendLineXyChartController.class);
+					try {
+						xyChartController.addTrendLine(trendLineXy);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}catch(IOException e1){
+				e1.printStackTrace();
+		}
+		
+	}
+	
 	 
 	 
 }

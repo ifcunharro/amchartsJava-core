@@ -58,9 +58,11 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	abstract  <T extends AmGraphController> void addGraph(T amGraphController) 
 			throws NotSupportedException;
 	
-	abstract <T extends GuideController> void addGuide(T guideController);
+	abstract <T extends GuideController> void addGuide(T guideController) 
+			throws NotSupportedException;
 
-	abstract <T extends ValueAxisController> void addValueAxis(T valueAxisController);
+	abstract <T extends ValueAxisController> void addValueAxis(T valueAxisController) 
+			throws NotSupportedException;
 	
 	//remove by id
 	abstract void removeGraph(String idGraph);
@@ -68,7 +70,5 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	abstract void removeGuide(String idGuide);
 
 	abstract void removeValueAxis(String idValueAxis);
-	
-	abstract void removeValueAxisRadar(String idValueAxis);
 
 }

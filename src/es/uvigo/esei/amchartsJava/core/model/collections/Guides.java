@@ -55,6 +55,10 @@ public class Guides {
 		return deleteGuides;
 	}
 	
+	public boolean existGuide(String idGuide) {
+		return getAllGuidesIds().contains(idGuide);
+	}
+	
 	public boolean isNotEmptyGuideCategoryAxis(){
 		return getGuideCategoryAxis()!=null;
 	}
@@ -235,10 +239,5 @@ public class Guides {
 	private List<GuideValueAxisController> getGuideValueAxis(){
 		return (List<GuideValueAxisController>) guides.get("GuideValueAxisController");
 	}
-	
-	
-	public boolean existGuide(String idGuide) {
-		return getAllGuidesIds().contains(idGuide);
-	}
-	
+
 }

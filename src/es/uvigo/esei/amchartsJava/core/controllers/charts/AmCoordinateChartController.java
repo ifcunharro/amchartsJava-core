@@ -2,6 +2,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -10,10 +11,7 @@ import es.uvigo.esei.amchartsJava.core.api.charts.IAmCoordinateChartController;
 import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
-import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
-import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
-import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideCategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -21,6 +19,7 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown=true)
 public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 			extends AmChartController<F> implements IAmCoordinateChartController<AmCoordinateChart>, IJsonDeserializerAmCoordinateChartController{
 
@@ -110,10 +109,6 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		return amchart.getGuides();
 	}
 	
-	public void setGuides(List<GuideCategoryAxisController> guideControllers){
-		
-	}
-	
 	//valueAxes
 	public Object getValueAxes(){
 		return amchart.getValueAxes();
@@ -123,11 +118,11 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		amchart.addGraph(amGraphController);
 	}
 	
-	public <T extends GuideController> void addGuide(T guideController){
+	public <T extends GuideController> void addGuide(T guideController) throws NotSupportedException{
 		amchart.addGuide(guideController);
 	}
 	
-	public <T extends ValueAxisController> void addValueAxis(T va){
+	public <T extends ValueAxisController> void addValueAxis(T va) throws NotSupportedException{
 		amchart.addValueAxis(va);
 	}
 	
@@ -150,32 +145,10 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		}
 	}
 	
-	public void removeValueAxisRadar(String idValueAxis){
-		if(amchart.existValueAxis(idValueAxis)){
-			amchart.removeValueAxisRadar(idValueAxis);
-		}
-	}
-	
 	//usado solo para deserializar json
 	public void setColors(List<String> colors){
 		amchart.setColors(colors);
 	}
 	
-	//usado solo para deserializar json
-	public void setGraphs(List<AmGraphSerialController> graphs){
-		
-	}
-	
-	//para deserializar json
-	public void setValueAxes(List<ValueAxisRadarChartController> axes){
-		if(getType().toString().equals("serial")){
-			amchart.deserializeType("serial");
-			amchart.setValueAxes(axes);
-		}
-		else{
-			amchart.deserializeType("radar");
-			amchart.setValueAxes(axes);
-		}
-	}
-	
+
 }

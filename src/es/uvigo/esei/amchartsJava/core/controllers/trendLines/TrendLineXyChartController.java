@@ -10,6 +10,10 @@ public class TrendLineXyChartController extends TrendLineSerialChartController i
 	 */
 	private static final long serialVersionUID = -9162444480552470659L;
 	
+	{
+		setInitialXValue(0);
+	}
+	
 	public Object getFinalXValue(){
 		return trendLine.getFeature("finalXValue");
 	}

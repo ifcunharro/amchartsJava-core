@@ -1,17 +1,12 @@
 package es.uvigo.esei.amchartsJava.core.api.guides;
 
 import java.sql.Date;
-import java.util.Observable;
-
-
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
 public abstract interface IGuideController {
-
-	abstract void update(Observable o, Object arg);
 
 	abstract void setChart(AmCoordinateChart c);
 
@@ -31,10 +26,6 @@ public abstract interface IGuideController {
 
 	abstract void setBoldLabel(Boolean boldLabel);
 
-	abstract Object getCategory();
-
-	abstract void setCategory(String category);
-
 	abstract Object getColor();
 
 	abstract void setColor(String color) throws ColorException;
@@ -43,9 +34,7 @@ public abstract interface IGuideController {
 
 	abstract void setDashLength(Number dashLength) throws OutOfRangeException;
 
-	abstract Object getDate();
-
-	abstract void setDate(Date date);
+	
 
 	abstract Object getFillAlpha();
 

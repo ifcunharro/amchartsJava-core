@@ -10,6 +10,15 @@ public class GuideRadarChartController extends GuideController implements IGuide
 	 * 
 	 */
 	private static final long serialVersionUID = 6291196097671275409L;
+	
+	{
+		try{
+			setAngle(0);
+			setToAngle(0);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public Object getAngle(){
 		return guide.getFeature("angle");

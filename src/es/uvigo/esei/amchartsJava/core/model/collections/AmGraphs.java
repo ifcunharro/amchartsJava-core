@@ -71,6 +71,10 @@ public class AmGraphs {
 		return deleteAmGraphs;
 	}
 	
+	public boolean existGraph(String idGraph) {
+		return getAllGraphsIds().contains(idGraph);
+	}
+	
 	public boolean isNotEmptyAmGraphSerial(){
 		return getAmGraphSerial()!=null;
 	}
@@ -363,8 +367,4 @@ public class AmGraphs {
 		return (List<AmGraphOhlcController>) amgraphs.get("AmGraphOhlcController");
 	}
 
-	public boolean existGraph(String idGraph) {
-		return getAllGraphsIds().contains(idGraph);
-	}
-	
 }

@@ -49,7 +49,6 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		//DISASTER MAIN TESTING DESERIALIZATION AMGRAPHS
 		
 		AmGraphXyController ams = new AmGraphXyController();
 		AmGraphStepController ams2 = new AmGraphStepController();
@@ -120,7 +119,7 @@ public class Principal {
 		ags.setAlphaField("laaaa");
 		asc.setCategoryField("lola");
 		try{
-			asc.addGraph(ams);
+			//asc.addGraph(ams);
 			asc.addGraph(ams2);
 			asc.addGraph(ams3);
 			asc.addGraph(ams4);
@@ -129,9 +128,25 @@ public class Principal {
 			catch (Exception e) {
 				e.printStackTrace();
 		}
-		asc.addTrendLine(ts);
-		asc.addTrendLine(tx);
-		asc.addGuide(gc);
+		try {
+			asc.addTrendLine(ts);
+		} catch (NotSupportedException e10) {
+			// TODO Auto-generated catch block
+			e10.printStackTrace();
+		}
+		try {
+			asc.addTrendLine(tx);
+		} catch (NotSupportedException e10) {
+			// TODO Auto-generated catch block
+			e10.printStackTrace();
+		}
+		try {
+			asc.addGuide(gc);
+			asc.addGuide(gv);
+		} catch (NotSupportedException e9) {
+			// TODO Auto-generated catch block
+			e9.printStackTrace();
+		}
 		//asc.addGuide(gr);
 		//asc.addGuide(gv);
 		/*asc.removeGraph(ams.getId().toString());
@@ -139,7 +154,7 @@ public class Principal {
 		asc.removeGraph(ams3.getId().toString());
 		asc.removeGraph(ams4.getId().toString());
 		asc.removeGraph(ams5.getId().toString());*/
-		asc.removeGraph("ola");
+		//asc.removeGraph("ola");
 		
 		
 	
@@ -265,11 +280,21 @@ public class Principal {
 		asc.addTitle(tc);
 		asc.addTitle(tc2);
 		asc.addLegend(lc);
-		asc.addValueAxis(va);
+		try {
+			asc.addValueAxis(va);
+		} catch (NotSupportedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		
 	
-		asc.addValueAxis(var);
+		try {
+			asc.addValueAxis(var);
+		} catch (NotSupportedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		//asc.removeValueAxis(va.getId().toString());
 		
@@ -308,6 +333,8 @@ public class Principal {
 				e.printStackTrace();
 			}
 		ParserJson.addGraphsFromJsonToAmSerialChart(serialController);
+		ParserJson.addGuidesFromJsonToAmSerialChart(serialController);
+		ParserJson.addTrendLinesFromJsonToAmSerialChart(serialController);
 		try {
 			mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET,false);
 			mapper.writeValue(System.out,serialController);

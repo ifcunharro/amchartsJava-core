@@ -1,7 +1,5 @@
 package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
@@ -12,9 +10,9 @@ import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientA
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
-import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
@@ -23,8 +21,7 @@ import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmRectangularChartController<G extends AmRectangularChart> 
-				extends AmCoordinateChartController<G> implements IAmRectangularChartController<AmRectangularChart>,
-				IJsonDeserializerRectangularChartController{
+				extends AmCoordinateChartController<G> implements IAmRectangularChartController<AmRectangularChart>{
 
 	
 	
@@ -259,7 +256,7 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		amchart.addChartScrollBar(chartScrollBarController);
 	}
 	
-	public <P extends TrendLineSerialChartController> void addTrendLine(P trendLineController){
+	public <P extends TrendLineSerialChartController> void addTrendLine(P trendLineController) throws NotSupportedException{
 		amchart.addTrendLine(trendLineController);
 	}
 	
@@ -271,28 +268,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		amchart.removeChartScrollBar();
 	}
 	
-	public void removeTrendLineSerial(String trendLine){
+	public void removeTrendLine(String trendLine){
 		if(amchart.existTrendLine(trendLine)){
-			amchart.removeTrendLineSerial(trendLine);
+			amchart.removeTrendLine(trendLine);
 		}
 	}
 	
-	public void removeTrendLineXy(String trendLine){
-		if(amchart.existTrendLine(trendLine)){
-			amchart.removeTrendLineXy(trendLine);
-		}
-	}
-	
-	//para deserializar json
-	public void setTrendLines(List<TrendLineXyChartController> trendLineControllers){
-		if(getType().toString().equals("serial")){
-			amchart.deserializeType("serial");
-			amchart.setTrendLines(trendLineControllers);
-		}else{
-			amchart.deserializeType("xy");
-			amchart.setTrendLines(trendLineControllers);
-		}
-		
-	}
-
 }

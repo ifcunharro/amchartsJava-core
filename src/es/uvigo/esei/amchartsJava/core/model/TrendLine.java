@@ -1,11 +1,11 @@
 package es.uvigo.esei.amchartsJava.core.model;
 
-import es.uvigo.esei.amchartsJava.core.api.IImageController;
+import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
 
 public class TrendLine extends IModel{
 	
-	private IImageController finalImage;
-	private IImageController initialImage;
+	private ImageController finalImage;
+	private ImageController initialImage;
 
 	public Object getFinalImage() {
 		return finalImage;
@@ -15,11 +15,11 @@ public class TrendLine extends IModel{
 		return initialImage;
 	}
 	
-	public void addFinalImage(IImageController imageController){
+	public void addFinalImage(ImageController imageController){
 		finalImage = imageController;
 	}
 	
-	public void addInitialImage(IImageController imageController){
+	public void addInitialImage(ImageController imageController){
 		initialImage = imageController;
 	}
 

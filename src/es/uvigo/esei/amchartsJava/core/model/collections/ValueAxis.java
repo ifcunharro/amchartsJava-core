@@ -11,38 +11,32 @@ import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartContr
 public class ValueAxis{
 	
 	private Map<String,Object> valueAxis;
+	private Map<String,Integer> positionsAxis;
 	private List<String> idValueAxes;
-	private List<String> idValueAxesRadar;
-	private int deleteValueAxis;
+	private int sizeAxis;
+	private int deleteAxis;
 
 	{
 		valueAxis = new HashMap<String,Object>();
-		deleteValueAxis = 0;
+		positionsAxis = new HashMap<String,Integer>();
+		idValueAxes = new ArrayList<String>();
+		sizeAxis = 0;
+		deleteAxis = 0;
 	}
 	
-	public void initValueAxis(){
-		if(valueAxis.get("valueAxis")==null){
-			valueAxis.put("valueAxis", new ArrayList<ValueAxisController>());
-			idValueAxes = new ArrayList<String>();
-		}
-	}
-	
-	public void initValueAxisRadar(){
-		if(valueAxis.get("valueAxisRadarChart")==null){
-			valueAxis.put("valueAxisRadarChart", new ArrayList<ValueAxisRadarChartController>());
-			idValueAxesRadar = new ArrayList<String>();
-		}
+	public int sizeAxis(){
+		return sizeAxis;
 	}
 	
 	public int sizeValueAxis(){
-		if(getValueAxis()!=null){
+		if(isNotEmptyValueAxis()){
 			return this.getValueAxis().size();
 		}
 		return 0;
 	}
 	
 	public int sizeValueAxisRadar(){
-		if(getValueAxisRadar()!=null){
+		if(isNotEmptyValueAxisRadarChart()){
 			return this.getValueAxisRadar().size();
 		}
 		return 0;
@@ -50,15 +44,43 @@ public class ValueAxis{
 	
 
 	public int getDeleteValueAxis(){
-		return deleteValueAxis;
+		return deleteAxis;
 	}
 	
-	public List<String> getValueAxisIds(){
+	public boolean existValueAxis(String idValueAxis) {
+		return getAllAxisIds().contains(idValueAxis);
+	}
+	
+	public boolean isNotEmptyValueAxisRadarChart() {
+		return getValueAxisRadar()!=null;
+	}
+
+	public boolean isNotEmptyValueAxis() {
+		return getValueAxis()!=null;
+	}
+	
+	public List<String> getAllAxisIds(){
 		return idValueAxes;
 	}
 	
+	public List<String> getValueAxisIds(){
+		List<String> ids = new ArrayList<String>();
+		if(isNotEmptyValueAxis()){
+			for(ValueAxisController valueAxis: getValueAxis()){
+				ids.add(valueAxis.getId().toString());
+			}
+		}
+		return ids;
+	}
+	
 	public List<String> getValueAxisRadarIds(){
-		return idValueAxesRadar;
+		List<String> ids = new ArrayList<String>();
+		if(isNotEmptyValueAxisRadarChart()){
+			for(ValueAxisRadarChartController valueAxisRadar: getValueAxisRadar()){
+				ids.add(valueAxisRadar.getId().toString());
+			}
+		}
+		return ids;
 	}
 	
 	public List<ValueAxisController> getValueAxes(){
@@ -77,20 +99,16 @@ public class ValueAxis{
 		return valueAxisControllers;
 	}
 	
-	public boolean isNotEmptyValueAxisRadarChart() {
-		return getValueAxisRadar()!=null;
-	}
-
-	public boolean isNotEmptyValueAxis() {
-		return getValueAxis()!=null;
-	}
-
 	public void addValueAxis(ValueAxisController valueAxisController){
 		if(getValueAxis()==null){
 			initValueAxis();
 		}
 		getValueAxis().add(valueAxisController);
-		idValueAxes.add(valueAxisController.getId().toString());
+		String idValueAxis = valueAxisController.getId().toString();
+		idValueAxes.add(idValueAxis);
+		positionsAxis.put(idValueAxis, sizeValueAxis()-1);
+		sizeAxis++;
+	
 	}
 	
 	public void addValueAxisRadar(ValueAxisRadarChartController valueAxisRadarChartController){
@@ -98,49 +116,62 @@ public class ValueAxis{
 			initValueAxisRadar();
 		}
 		getValueAxisRadar().add(valueAxisRadarChartController);
-		idValueAxesRadar.add(valueAxisRadarChartController.getId().toString());
+		String idValueAxisRadar = valueAxisRadarChartController.getId().toString();
+		idValueAxes.add(idValueAxisRadar);
+		positionsAxis.put(idValueAxisRadar, sizeValueAxisRadar()-1);
+		sizeAxis++;
 	}
 	
-	public void removeValueAxis(int position) {
-		idValueAxes.remove(getValueAxis().get(position).getId().toString());
-		this.getValueAxis().remove(position);
-		deleteValueAxis++;
+	public void removeValueAxis(String idValueAxis) {
+		int position = positionsAxis.get(idValueAxis);
+		getValueAxis().remove(position);
+		if(sizeValueAxis()==0){
+			deleteValueAxis();
+		}
+		sizeAxis--;
+		deleteAxis++;
+		idValueAxes.remove(idValueAxis);
+		positionsAxis.remove(idValueAxis);
+		
 	}
 	
-	public void removeValueAxisRadar(int position) {
-		idValueAxesRadar.remove(getValueAxisRadar().get(position).getId().toString());
-		this.getValueAxisRadar().remove(position);
-		deleteValueAxis++;
+	public void removeValueAxisRadar(String idValueAxisRadar) {
+		int position = positionsAxis.get(idValueAxisRadar);
+		getValueAxisRadar().remove(position);
+		if(sizeValueAxisRadar()==0){
+			deleteValueAxisRadar();
+		}
+		sizeAxis--;
+		deleteAxis++;
+		idValueAxes.remove(idValueAxisRadar);
+		positionsAxis.remove(idValueAxisRadar);
 	}
 
-	public void setValueAxis(List<ValueAxisController> valueAxes){
-		valueAxis.put("valueAxis", valueAxes);
+	private void initValueAxis(){
+		valueAxis.put("ValueAxisController", new ArrayList<ValueAxisController>());	
 	}
 	
-	public void setValueAxisRadar(List<ValueAxisRadarChartController> valueAxisRadarChartsControllers){
-		valueAxis.put("valueAxisRadarChart", valueAxisRadarChartsControllers);
+	private void initValueAxisRadar(){
+		valueAxis.put("ValueAxisRadarChartController", new ArrayList<ValueAxisRadarChartController>());
+	}
+	
+	private void deleteValueAxis() {
+		valueAxis.remove("ValueAxisController");
+	}
+	
+	private void deleteValueAxisRadar() {
+		valueAxis.remove("ValueAxisRadarChartController");
 	}
 	
 	@SuppressWarnings("unchecked")
 	private List<ValueAxisController> getValueAxis(){
-		if(valueAxis.get("valueAxis")!=null){
-			return (List<ValueAxisController>)(List<?>) valueAxis.get("valueAxis");
-		}
-		return null;
-		
+		return (List<ValueAxisController>)(List<?>) valueAxis.get("ValueAxisController");
 	}
 	
 	@SuppressWarnings("unchecked")
 	private List<ValueAxisRadarChartController> getValueAxisRadar(){
-		if(valueAxis.get("valueAxisRadarChart")!=null){
-			return (List<ValueAxisRadarChartController>)(List<?>)valueAxis.get("valueAxisRadarChart");
-		}
-		return null;
+		return (List<ValueAxisRadarChartController>)(List<?>)valueAxis.get("ValueAxisRadarChartController");
 	}
 
-	public boolean existValueAxis(String idValueAxis) {
-		return getValueAxisIds().contains(idValueAxis) ||
-				getValueAxisRadarIds().contains(idValueAxis);
-	}
-	
+
 }

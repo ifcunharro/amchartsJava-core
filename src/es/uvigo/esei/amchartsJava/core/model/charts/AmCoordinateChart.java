@@ -25,7 +25,6 @@ import es.uvigo.esei.amchartsJava.core.model.collections.ValueAxis;
 
 public abstract class AmCoordinateChart extends AmChart implements IJsonDeserializerAmCoordinateChart{
 	
-	protected String deserializeType;
 	private List<String> colors;
 	private AmGraphs graphs;
 	private Guides guides;
@@ -72,20 +71,6 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		}else{
 			return valueAxes.getValueAxes();
 		}
-	}
-	
-	//usado para deserializar json
-	@SuppressWarnings("unchecked")
-	public void setValueAxes(List<ValueAxisRadarChartController> axes){
-		valueAxes = new ValueAxis();
-		if(deserializeType.equals("serial")){
-			valueAxes.initValueAxis();
-			valueAxes.setValueAxis((List<ValueAxisController>)(List<?>)axes);
-		}else{
-			valueAxes.initValueAxisRadar();
-			valueAxes.setValueAxisRadar(axes);
-		}
-		
 	}
 	
 	public void changeColorsDefault(String... newColors){
@@ -178,17 +163,10 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		deleteObservers();
 	}
 	
-	public <T extends GuideController> void addGuide(T guideController) {
-		if(guideController instanceof GuideCategoryAxisController){
-			addGuideCategoryAxis((GuideCategoryAxisController)guideController);
-		}else if(guideController instanceof GuideRadarChartController){
-			addGuideRadarChart((GuideRadarChartController)guideController);
-		}else if(guideController instanceof GuideValueAxisController){
-			addGuideValueAxis((GuideValueAxisController)guideController);
-		}
-	}
+	public abstract <T extends GuideController> void addGuide(T guideController) throws NotSupportedException;
 	
-	private void addGuideCategoryAxis(GuideCategoryAxisController guideCategoryAxisController){
+	
+	protected void addGuideCategoryAxis(GuideCategoryAxisController guideCategoryAxisController){
 		if(guides==null){
 			guides = new Guides();
 		}
@@ -200,7 +178,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		deleteObservers();
 	}
 	
-	private void addGuideRadarChart(GuideRadarChartController guideRadarChartController){
+	protected void addGuideRadarChart(GuideRadarChartController guideRadarChartController){
 		if(guides==null){
 			guides = new Guides();
 		}
@@ -212,7 +190,7 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		deleteObservers();
 	}
 	
-	private void addGuideValueAxis(GuideValueAxisController guideValueAxisController){
+	protected void addGuideValueAxis(GuideValueAxisController guideValueAxisController){
 		if(guides==null){
 			guides = new Guides();
 		}
@@ -224,33 +202,32 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		deleteObservers();
 	}
 	
-	public <T extends ValueAxisController> void addValueAxis(T valueAxisController) {
+	
+	public abstract <T extends ValueAxisController> void addValueAxis(T valueAxisController) throws NotSupportedException;
+	
+	
+	protected void addValueAxisController(ValueAxisController valueAxisController){
 		if(valueAxes==null){
 			valueAxes = new ValueAxis();
 		}
-		valueAxisController.setChart(this);
 		addObserver(valueAxisController);
 		setChanged();
-		if(valueAxisController instanceof ValueAxisRadarChartController){
-			addValueAxisRadarController((ValueAxisRadarChartController)valueAxisController);
-		}else{
-			addValueAxisController(valueAxisController);
-		}
-		
-		deleteObservers();
-		
-	}
-	
-	private void addValueAxisController(ValueAxisController valueAxisController){
-		valueAxes.initValueAxis();
 		notifyObservers(valueAxes.sizeValueAxis()+1+valueAxes.getDeleteValueAxis());
+		valueAxisController.setChart(this);
 		valueAxes.addValueAxis(valueAxisController);
+		deleteObservers();
 	}
 	
-	private void addValueAxisRadarController(ValueAxisRadarChartController valueAxisRadarChartController){
-		valueAxes.initValueAxisRadar();
+	protected void addValueAxisRadarController(ValueAxisRadarChartController valueAxisRadarChartController){
+		if(valueAxes==null){
+			valueAxes = new ValueAxis();
+		}
+		addObserver(valueAxisRadarChartController);
+		setChanged();
 		notifyObservers(valueAxes.sizeValueAxisRadar()+1+valueAxes.getDeleteValueAxis());
-		valueAxes.addValueAxisRadar(valueAxisRadarChartController);
+		valueAxisRadarChartController.setChart(this);
+		valueAxes.addValueAxis(valueAxisRadarChartController);
+		deleteObservers();
 	}
 	
 	
@@ -349,32 +326,34 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 	}
 		
 	
-	
-	public void removeValueAxis(String idValueAxis) {
-		if(valueAxes.isNotEmptyValueAxis()){
-			valueAxes.removeValueAxis(
-						Integer.valueOf(idValueAxis.substring(idValueAxis.length() - 1))-1);
-			
+	public void removeValueAxis(String idValueAxis){
+		if(valueAxes.getValueAxisIds().contains(idValueAxis)){
+			removeValueAxisController(idValueAxis);
+		}else if(valueAxes.getValueAxisRadarIds().contains(idValueAxis)){
+			removeValueAxisRadarController(idValueAxis);
 		}
-		if(valueAxes.sizeValueAxis()==0 && valueAxes.sizeValueAxisRadar()==0){
+	}
+	
+	
+	private void removeValueAxisController(String idValueAxis) {
+		if(valueAxes.isNotEmptyValueAxis()){
+			valueAxes.removeValueAxis(idValueAxis);	
+		}
+		if(valueAxes.sizeAxis()==0){
 			valueAxes=null;
 			System.gc();
 		}
 		
 	}
 	
-	public void removeValueAxisRadar(String idValueAxisRadar) {
+	private void removeValueAxisRadarController(String idValueAxisRadar) {
 		if(valueAxes.isNotEmptyValueAxisRadarChart()){
-			valueAxes.removeValueAxisRadar(
-					Integer.valueOf(idValueAxisRadar.substring(idValueAxisRadar.length() - 1))-1);
-		
+			valueAxes.removeValueAxisRadar(idValueAxisRadar);
 		}
-		
-		if(valueAxes.sizeValueAxisRadar()==0 && valueAxes.sizeValueAxis()==0){
+		if(valueAxes.sizeAxis()==0){
 			valueAxes=null;
 			System.gc();
 		}
-		
 	}
 
 	
@@ -387,18 +366,19 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 	}
 	
 	public boolean existValueAxis(String idValueAxis){
-		return valueAxes.existValueAxis(idValueAxis);
+		if(valueAxes != null){
+			return valueAxes.existValueAxis(idValueAxis);
+		}else{
+			return false;
+		}
 	}
 
 	public boolean existGuide(String idGuide) {
-		return guides.existGuide(idGuide);
+		if(guides != null){
+			return guides.existGuide(idGuide);
+		}else{
+			return false;
+		}
 	}
 	
-	//usado solo para deserializar json
-	public void deserializeType(String amchartType){
-		deserializeType = amchartType;
-	}
-	
-
-
 }

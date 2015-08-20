@@ -11,75 +11,22 @@ import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartCo
 public class TrendLines {
 	
 	private Map<String,Object> trendLines;
+	private Map<String,Integer> positionsTrendLines;
+	private List<String> idTrendLines;
+	private int sizeTrendLines;
 	private int deleteTrendLines;
-	private List<String> idTrendLineSerial;
-	private List<String> idTrendLineXy;
+	
 	
 	{
 		trendLines = new HashMap<String,Object>();
-		idTrendLineSerial = new ArrayList<String>();
-		idTrendLineXy = new ArrayList<String>();
+		positionsTrendLines = new HashMap<String, Integer>();
+		idTrendLines = new ArrayList<String>();
+		sizeTrendLines = 0;
 		deleteTrendLines = 0;
 	}
-
-	public void initTrendLineSerial() {
-		if(trendLines.get("trendLineSerial")==null){
-			trendLines.put("trendLineSerial", new ArrayList<TrendLineSerialChartController>());
-		}
-	}
 	
-	public void initTrendLinesXy() {
-		if(trendLines.get("trendLineXy")==null){
-			trendLines.put("trendLineXy", new ArrayList<TrendLineXyChartController>());
-		}
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<TrendLineSerialChartController> getTrendLinesSerial(){
-		if(trendLines.get("trendLineSerial")!=null){
-			return (List<TrendLineSerialChartController>)(List<?>) trendLines.get("trendLineSerial");
-		}
-		return null;
-	}
-	
-	public void removeTrendLineSerial(int position) {
-		idTrendLineSerial.remove(getTrendLinesSerial().get(position).getId().toString());
-		this.getTrendLinesSerial().remove(position);
-		
-		deleteTrendLines++;
-	}
-	
-	public void removeTrendLineXy(int position) {
-		idTrendLineXy.remove(getTrendLinesXy().get(position).getId().toString());
-		this.getTrendLinesXy().remove(position);
-		
-		deleteTrendLines++;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<TrendLineXyChartController> getTrendLinesXy(){
-		if(trendLines.get("trendLineXy")!=null){
-			return (List<TrendLineXyChartController>)(List<?>) trendLines.get("trendLineXy");
-		}
-		return null;
-	}
-
-	public void setTrendLinesSerial(List<TrendLineSerialChartController> trendLinesSerial) {
-		trendLines.put("trendLineSerial", trendLinesSerial);
-	}
-
-	
-
-	public void setTrendLinesXy(List<TrendLineXyChartController> trendLinesXy) {
-		trendLines.put("trendLineXy", trendLinesXy);
-	}
-	
-	public List<String> getTrendLineSerialIds(){
-		return idTrendLineSerial;
-	}
-	
-	public List<String> getTrendLineXyIds(){
-		return idTrendLineXy;
+	public int getSizeTrendLines(){
+		return sizeTrendLines;
 	}
 	
 	public int sizeTrendLineSerial(){
@@ -99,15 +46,133 @@ public class TrendLines {
 	public int getDeleteTrendLines(){
 		return deleteTrendLines;
 	}
+	
+	public boolean existTrendLine(String idTrendLine){
+		return getAllIdsTrendLines().contains(idTrendLine);
+	}
+	
 
-	public void addTrendLineXy(TrendLineXyChartController trendLineController) {
-		getTrendLinesXy().add(trendLineController);
-		idTrendLineXy.add(trendLineController.getId().toString());
+	public boolean isNotEmptyTrendLineXy() {
+		return getTrendLinesXy() != null;
 	}
 
-	public void addTrendLineSerial(TrendLineSerialChartController trendLineController) {
-		getTrendLinesSerial().add(trendLineController);
-		idTrendLineSerial.add(trendLineController.getId().toString());
+	public boolean isNotEmptyTrendLineSerial() {
+		return getTrendLinesSerial() != null;
+	}
+
+	public List<String> getAllIdsTrendLines() {
+		return idTrendLines;
+	}
+
+	public List<String> getTrendLineSerialIds(){
+		List<String> ids = new ArrayList<String>();
+		if(isNotEmptyTrendLineSerial()){
+			for(TrendLineSerialChartController trendLineSerial: getTrendLinesSerial()){
+				ids.add(trendLineSerial.getId().toString());
+			}
+		}
+		return ids;
+	}
+	
+	public List<String> getTrendLineXyIds(){
+		List<String> ids = new ArrayList<String>();
+		if(isNotEmptyTrendLineXy()){
+			for(TrendLineSerialChartController trendLineSerial: getTrendLinesSerial()){
+				ids.add(trendLineSerial.getId().toString());
+			}
+		}
+		return ids;
+	}
+	
+	public List<TrendLineSerialChartController> getTrendLines(){
+		List<TrendLineSerialChartController> trendLineControllers = new ArrayList<TrendLineSerialChartController>();
+		if(isNotEmptyTrendLineSerial()){
+			for(TrendLineSerialChartController guide: getTrendLinesSerial()){
+				trendLineControllers.add(guide);
+			}
+		}
+		if(isNotEmptyTrendLineXy()){
+			for(TrendLineXyChartController guide: getTrendLinesXy()){
+				trendLineControllers.add(guide);
+			}
+		}
+		
+		
+		return trendLineControllers;
+	}
+	
+	
+	public void addTrendLineXy(TrendLineXyChartController trendLineXyChartController) {
+		if(getTrendLinesXy()==null){
+			initTrendLinesXy();
+		}
+		getTrendLinesXy().add(trendLineXyChartController);
+		String idTrendLine = trendLineXyChartController.getId().toString();
+		idTrendLines.add(idTrendLine);
+		positionsTrendLines.put(idTrendLine, sizeTrendLineXy()-1);
+		sizeTrendLines++;
+	}
+
+	public void addTrendLineSerial(TrendLineSerialChartController trendLineSerialChartController) {
+		if(getTrendLinesSerial()==null){
+			initTrendLineSerial();
+		}
+		getTrendLinesSerial().add(trendLineSerialChartController);
+		String idTrendLine = trendLineSerialChartController.getId().toString();
+		idTrendLines.add(idTrendLine);
+		positionsTrendLines.put(idTrendLine, sizeTrendLineSerial()-1);
+		sizeTrendLines++;
+	}
+	
+	public void removeTrendLineSerial(String idTrendLineSerial) {
+		int position = positionsTrendLines.get(idTrendLineSerial);
+		getTrendLinesSerial().remove(position);
+		if(sizeTrendLineSerial()==0){
+			deleteTrendLineSerial();
+		}
+		sizeTrendLines--;
+		deleteTrendLines++;
+		idTrendLines.remove(idTrendLineSerial);
+		positionsTrendLines.remove(idTrendLineSerial);
+	}
+	
+	
+	public void removeTrendLineXy(String idTrendLineXy) {
+		int position = positionsTrendLines.get(idTrendLineXy);
+		getTrendLinesXy().remove(position);
+		if(sizeTrendLineXy()==0){
+			deleteTrendLineXy();
+		}
+		sizeTrendLines--;
+		deleteTrendLines++;
+		idTrendLines.remove(idTrendLineXy);
+		positionsTrendLines.remove(idTrendLineXy);
+	}
+	
+	private void initTrendLineSerial() {
+		trendLines.put("TrendLineSerialChartController", new ArrayList<TrendLineSerialChartController>());
+	}
+	
+	private void initTrendLinesXy() {
+		trendLines.put("TrendLineXyChartController", new ArrayList<TrendLineXyChartController>());
+	}
+	
+	private void deleteTrendLineSerial() {
+		trendLines.remove("TrendLineSerialChartController");
+	}
+	
+	private void deleteTrendLineXy() {
+		trendLines.remove("TrendLineXyChartController");
+	}
+
+	@SuppressWarnings("unchecked")
+	private List<TrendLineSerialChartController> getTrendLinesSerial(){
+			return (List<TrendLineSerialChartController>)(List<?>) trendLines.get("TrendLineSerialChartController");
+	}
+	
+	@SuppressWarnings("unchecked")
+	private List<TrendLineXyChartController> getTrendLinesXy(){
+		return (List<TrendLineXyChartController>)(List<?>) trendLines.get("TrendLineXyChartController");
 	}
 
 }

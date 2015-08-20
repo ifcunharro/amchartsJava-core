@@ -79,14 +79,6 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		guide.setFeature("boldLabel", boldLabel);
 	}
 	
-	public Object getCategory(){
-		return guide.getFeature("category");
-	}
-	
-	public void setCategory(String category){
-		guide.setFeature("category", category);
-	}
-	
 	public Object getColor(){
 		return guide.getFeature("color");
 	}
@@ -107,14 +99,6 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getDate(){
-		return guide.getFeature("date");
-	}
-	
-	public void setDate(Date date){
-		guide.setFeature("date", date.toString());
-	}
-
 	public Object getFillAlpha(){
 		return guide.getFeature("fillAlpha");
 	}
