@@ -92,7 +92,7 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	public Object getForceShowField(){
-		return axes.getFeature("forceShow");
+		return axes.getFeature("forceShowField");
 	}
 	
 	public void setForceShowField(String forceShowField){

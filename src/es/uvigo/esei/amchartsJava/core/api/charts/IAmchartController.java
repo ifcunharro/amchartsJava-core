@@ -36,12 +36,12 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	abstract Object getBackgroundAlpha();
 
-	abstract void setBackGroundAlpha(Number backGroundAlpha)
+	abstract void setBackgroundAlpha(Number backgroundAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getBackGroundColor();
+	abstract Object getBackgroundColor();
 
-	abstract void setBackGroundColor(String backGrouncColor)
+	abstract void setBackgroundColor(String backgroundColor)
 			throws ColorException;
 
 	abstract Object getBorderAlpha();

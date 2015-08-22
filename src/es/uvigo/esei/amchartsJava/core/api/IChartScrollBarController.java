@@ -121,7 +121,7 @@ public abstract interface IChartScrollBarController {
 
 	abstract Object getScrollDuration();
 
-	abstract void setScrollbarDuration(Number scrollbarDuration)
+	abstract void setScrollDuration(Number scrollDuration)
 			throws IntegerException;
 
 	abstract Object getSelectedBackgroundAlpha();

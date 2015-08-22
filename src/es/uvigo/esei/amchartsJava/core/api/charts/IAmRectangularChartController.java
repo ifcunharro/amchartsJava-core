@@ -20,7 +20,7 @@ public interface IAmRectangularChartController<G extends AmRectangularChart> ext
 
 	abstract Object getAutoMarginOffset();
 
-	abstract void setAutoMarginsOffset(Number autoMarginsOffset)
+	abstract void setAutoMarginOffset(Number autoMarginOffset)
 			throws OutOfRangeException;
 
 	abstract Object isAutoMargins();
@@ -114,8 +114,8 @@ public interface IAmRectangularChartController<G extends AmRectangularChart> ext
 
 	abstract void addChartScrollBar(ChartScrollBarController chartScrollBarController);
 	
-	abstract <P extends TrendLineSerialChartController> void addTrendLine(
-			P trendLineController) throws NotSupportedException;
+	abstract <T extends TrendLineSerialChartController> void addTrendLine(
+			T trendLineController) throws NotSupportedException;
 	
 	abstract void removeChartCursor();
 	

@@ -8,6 +8,8 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmXyChartController;
@@ -201,7 +203,7 @@ public class ParserJson {
 		
 		try{
 			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
-			for(int i = 0; i<node.path("guides").size();i++){
+			for(int i = 0; i<node.path("trendLines").size();i++){
 				temp = mapper.treeToValue(node.path("trendLines").path(i), Object.class);
 				
 				if(!temp.toString().contains("initialXValue")){
@@ -226,7 +228,7 @@ public class ParserJson {
 		
 		try{
 			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
-			for(int i = 0; i<node.path("guides").size();i++){
+			for(int i = 0; i<node.path("trendLines").size();i++){
 				temp = mapper.treeToValue(node.path("trendLines").path(i), Object.class);
 				
 				if(temp.toString().contains("initialXValue")){
@@ -244,6 +246,82 @@ public class ParserJson {
 		}
 		
 	}
+	
+	public static void addValueAxisFromJsonToAmSerialChart(AmSerialChartController serialChartController){
+		ObjectMapper mapper = getParserJson();
+		Object temp = null;
+		
+		try{
+			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			for(int i = 0; i<node.path("valueAxes").size();i++){
+				temp = mapper.treeToValue(node.path("valueAxes").path(i), Object.class);
+				
+				if(!temp.toString().contains("radarCategoriesEnabled")){
+					ValueAxisController valueAxis = null;
+					valueAxis = mapper.treeToValue(node.path("valueAxes").path(i), ValueAxisController.class);
+					try {
+						serialChartController.addValueAxis(valueAxis);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}catch(IOException e1){
+				e1.printStackTrace();
+		}
+		
+	}
+	
+	public static void addValueAxisFromJsonToAmXyChart(AmXyChartController xyChartController){
+		ObjectMapper mapper = getParserJson();
+		Object temp = null;
+		
+		try{
+			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			for(int i = 0; i<node.path("valueAxes").size();i++){
+				temp = mapper.treeToValue(node.path("valueAxes").path(i), Object.class);
+				
+				if(!temp.toString().contains("radarCategoriesEnabled")){
+					ValueAxisController valueAxis = null;
+					valueAxis = mapper.treeToValue(node.path("valueAxes").path(i), ValueAxisController.class);
+					try {
+						xyChartController.addValueAxis(valueAxis);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}catch(IOException e1){
+				e1.printStackTrace();
+		}
+		
+	}
+	
+	public static void addValueAxisFromJsonToAmRadarChart(AmRadarChartController radarChartController){
+		ObjectMapper mapper = getParserJson();
+		Object temp = null;
+		
+		try{
+			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			for(int i = 0; i<node.path("valueAxes").size();i++){
+				temp = mapper.treeToValue(node.path("valueAxes").path(i), Object.class);
+				
+				if(temp.toString().contains("radarCategoriesEnabled")){
+					ValueAxisController valueAxis = null;
+					valueAxis = mapper.treeToValue(node.path("valueAxes").path(i), ValueAxisRadarChartController.class);
+					try {
+						radarChartController.addValueAxis(valueAxis);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}catch(IOException e1){
+				e1.printStackTrace();
+		}
+		
+	}
+	
 	
 	 
 	 

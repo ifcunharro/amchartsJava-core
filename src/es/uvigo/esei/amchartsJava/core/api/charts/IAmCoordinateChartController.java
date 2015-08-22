@@ -3,7 +3,7 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 
 import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
-import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
@@ -61,7 +61,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	abstract <T extends GuideController> void addGuide(T guideController) 
 			throws NotSupportedException;
 
-	abstract <T extends ValueAxisController> void addValueAxis(T valueAxisController) 
+	abstract <T extends AxisBaseController> void addValueAxis(T valueAxisController) 
 			throws NotSupportedException;
 	
 	//remove by id

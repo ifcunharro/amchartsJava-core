@@ -49,14 +49,14 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		
+		//graphs
 		AmGraphXyController ams = new AmGraphXyController();
 		AmGraphStepController ams2 = new AmGraphStepController();
 		AmGraphSerialController ams3 = new AmGraphSerialController();
 		AmGraphCandleController ams4 = new AmGraphCandleController();
 		AmGraphOhlcController ams5 = new AmGraphOhlcController();
 		
-		
+		//guides
 		GuideCategoryAxisController gc = new GuideCategoryAxisController();
 		gc.setExpand(true);
 		
@@ -87,6 +87,7 @@ public class Principal {
 		
 		
 		ams3.setConnect(true);
+		//trendLines
 		TrendLineSerialChartController ts = new TrendLineSerialChartController();
 		TrendLineXyChartController tx = new TrendLineXyChartController();
 		try {
@@ -112,12 +113,24 @@ public class Principal {
 		System.out.println(PathValidator.dragIconExist("lens.png"));
 		AmSerialChartController asc = new AmSerialChartController();
 		AmGraphSerialController ags = new AmGraphSerialController();
+		//valueAxis
 		ValueAxisController va = new ValueAxisController();
 		ValueAxisRadarChartController var = new ValueAxisRadarChartController();
 		var.setGridType(AmchartsConstants.GRID_TYPES.getCircles());
 		va.enabledTotalText();
 		ags.setAlphaField("laaaa");
 		asc.setCategoryField("lola");
+		
+		//add ValueAxis
+		try {
+			asc.addValueAxis(va);
+			asc.addValueAxis(var);
+		} catch (NotSupportedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		//add Graphs
 		try{
 			//asc.addGraph(ams);
 			asc.addGraph(ams2);
@@ -128,6 +141,8 @@ public class Principal {
 			catch (Exception e) {
 				e.printStackTrace();
 		}
+		
+		//add trendLines
 		try {
 			asc.addTrendLine(ts);
 		} catch (NotSupportedException e10) {
@@ -137,12 +152,15 @@ public class Principal {
 		try {
 			asc.addTrendLine(tx);
 		} catch (NotSupportedException e10) {
-			// TODO Auto-generated catch block
+			
 			e10.printStackTrace();
 		}
+		
+		//add Guides
 		try {
 			asc.addGuide(gc);
 			asc.addGuide(gv);
+			asc.addGuide(gr);
 		} catch (NotSupportedException e9) {
 			// TODO Auto-generated catch block
 			e9.printStackTrace();
@@ -280,21 +298,11 @@ public class Principal {
 		asc.addTitle(tc);
 		asc.addTitle(tc2);
 		asc.addLegend(lc);
-		try {
-			asc.addValueAxis(va);
-		} catch (NotSupportedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		
 		
 		
 	
-		try {
-			asc.addValueAxis(var);
-		} catch (NotSupportedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+	
 		
 		//asc.removeValueAxis(va.getId().toString());
 		
@@ -332,6 +340,7 @@ public class Principal {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		ParserJson.addValueAxisFromJsonToAmSerialChart(serialController);
 		ParserJson.addGraphsFromJsonToAmSerialChart(serialController);
 		ParserJson.addGuidesFromJsonToAmSerialChart(serialController);
 		ParserJson.addTrendLinesFromJsonToAmSerialChart(serialController);

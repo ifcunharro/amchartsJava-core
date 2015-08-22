@@ -34,6 +34,8 @@ public interface IValueAxisController extends IAxisBaseController {
 	public void setIncludeGuidesInMinMax(Boolean includeGuidesInMinMax);
 
 	public Object isIncludeHidden();
+	
+	public void setIncludeHidden(Boolean includeHidden);
 
 	public Object isIntegersOnly();
 
@@ -95,7 +97,7 @@ public interface IValueAxisController extends IAxisBaseController {
 
 	public Object getSynchronizeWith();
 
-	public void setSynchronizedWith(String synchronizedWith);
+	public void setSynchronizeWith(String synchronizeWith);
 
 	public Object getTotalText();
 

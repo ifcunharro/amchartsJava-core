@@ -112,7 +112,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public Object getFillAlpha(){
-		return axes.getFeature("fillAlphas");
+		return axes.getFeature("fillAlpha");
 	}
 	
 	public void setFillAlpha(Number fillAlpha) throws OutOfRangeException{
@@ -260,7 +260,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	
 	@JsonProperty(value="minorGridEnabled")
 	public Object isMinorGridEnabled(){
-		return axes.getFeature("minorGridAlpha");
+		return axes.getFeature("minorGridEnabled");
 	}
 	
 	public void setMinorGridEnabled(Boolean minorGridEnabled){

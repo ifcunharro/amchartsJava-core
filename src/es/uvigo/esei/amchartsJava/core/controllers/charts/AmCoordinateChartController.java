@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmCoordinateChartController;
 import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
-import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
@@ -122,7 +122,7 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		amchart.addGuide(guideController);
 	}
 	
-	public <T extends ValueAxisController> void addValueAxis(T va) throws NotSupportedException{
+	public <T extends AxisBaseController> void addValueAxis(T va) throws NotSupportedException{
 		amchart.addValueAxis(va);
 	}
 	

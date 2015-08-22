@@ -45,12 +45,12 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public Object getAutoMarginOffset(){
-		return amchart.getFeature("autoMarginsOffset");
+		return amchart.getFeature("autoMarginOffset");
 	}
 	
-	public void setAutoMarginsOffset(Number autoMarginsOffset) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(autoMarginsOffset, 0, 10)){
-			amchart.setFeature("autoMarginsOffset", autoMarginsOffset);
+	public void setAutoMarginOffset(Number autoMarginOffset) throws OutOfRangeException{
+		if(NumberValidator.rangeIntegerValidator(autoMarginOffset, 0, 10)){
+			amchart.setFeature("autoMarginOffset", autoMarginOffset);
 		}
 	}
 	
@@ -256,7 +256,7 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		amchart.addChartScrollBar(chartScrollBarController);
 	}
 	
-	public <P extends TrendLineSerialChartController> void addTrendLine(P trendLineController) throws NotSupportedException{
+	public <T extends TrendLineSerialChartController> void addTrendLine(T trendLineController) throws NotSupportedException{
 		amchart.addTrendLine(trendLineController);
 	}
 	

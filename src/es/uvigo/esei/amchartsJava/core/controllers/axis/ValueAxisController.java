@@ -81,6 +81,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		return axes.getFeature("includeHidden");
 	}
 	
+	public void setIncludeHidden(Boolean includeHidden){
+		axes.setFeature("includeHidden", includeHidden);
+	}
+	
 	@JsonProperty(value="integersOnly")
 	public Object isIntegersOnly(){
 		return axes.getFeature("integersOnly");
@@ -212,9 +216,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		return axes.getFeature("synchronizeWith");
 	}
 	
-	public void setSynchronizedWith(String synchronizedWith){
-		if(chart.existValueAxis(synchronizedWith)){
-			axes.setFeature("synchronizedWith", synchronizedWith);
+	public void setSynchronizeWith(String synchronizeWith){
+		if(chart.existValueAxis(synchronizeWith)){
+			axes.setFeature("synchronizeWith", synchronizeWith);
 		}
 	}
 	

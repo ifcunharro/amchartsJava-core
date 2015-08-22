@@ -25,6 +25,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 
 @JsonInclude(Include.NON_NULL)
@@ -69,22 +70,22 @@ public abstract class AmChartController<E extends AmChart> implements Serializab
 	}
 	
 	public Object getBackgroundAlpha(){
-		return amchart.getFeature("backGroundAlpha");
+		return amchart.getFeature("backgroundAlpha");
 	}
 	
-	public void setBackGroundAlpha(Number backGroundAlpha) throws OutOfRangeException{
-		if(NumberValidator.rangeDoubleValidator(backGroundAlpha, 0, 1)){
-			amchart.setFeature("backGroundAlpha", backGroundAlpha);
+	public void setBackgroundAlpha(Number backgroundAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeDoubleValidator(backgroundAlpha, 0, 1)){
+			amchart.setFeature("backgroundAlpha", backgroundAlpha);
 		}
 	}
 	
-	public Object getBackGroundColor(){
-		return amchart.getFeature("backGroundColor");
+	public Object getBackgroundColor(){
+		return amchart.getFeature("backgroundColor");
 	}
 	
-	public void setBackGroundColor(String backGrouncColor) throws ColorException{
-		if(ColorValidator.checkFormatColor(backGrouncColor)){
-			amchart.setFeature("backGroundColor", backGrouncColor);
+	public void setBackgroundColor(String backgroundColor) throws ColorException{
+		if(ColorValidator.checkFormatColor(backgroundColor)){
+			amchart.setFeature("backgroundColor", backgroundColor);
 		}
 	}
 	
@@ -291,7 +292,9 @@ public abstract class AmChartController<E extends AmChart> implements Serializab
 	
 	//debe existir file theme
 	public void setTheme(String theme){
-		amchart.setFeature("theme", theme);
+		if(PathValidator.themeExist(theme)){
+			amchart.setFeature("theme", theme);
+		}
 	}
 	
 	public Object getThousandsSeparator(){

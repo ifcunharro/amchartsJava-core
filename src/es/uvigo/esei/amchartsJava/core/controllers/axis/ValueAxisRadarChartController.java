@@ -14,6 +14,10 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 	 * 
 	 */
 	private static final long serialVersionUID = 1235487736091161719L;
+	
+	{
+		setRadarCategoriesEnabled(true);
+	}
 
 	public Object getAxisTitleOffset(){
 		return axes.getFeature("axisTitleOffset");

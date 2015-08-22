@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.model.charts;
 
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.CategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphCandleController;
@@ -58,8 +59,8 @@ public class AmSerialChart extends AmRectangularChart {
 		}
 	}
 
-	public <T extends ValueAxisController> void addValueAxis(T valueAxisController) throws NotSupportedException {
-		if(valueAxisController instanceof ValueAxisController){
+	public <T extends AxisBaseController> void addValueAxis(T valueAxisController) throws NotSupportedException {
+		if(valueAxisController.getClass().getSimpleName().equals("ValueAxisController")){
 			addValueAxisController((ValueAxisController)valueAxisController);
 		}else{
 			throw new NotSupportedException(
@@ -71,7 +72,7 @@ public class AmSerialChart extends AmRectangularChart {
 	}
 	
 	public <T extends TrendLineSerialChartController> void addTrendLine(T trendLineController) throws NotSupportedException{
-		if(trendLineController instanceof TrendLineSerialChartController){
+		if(trendLineController.getClass().getSimpleName().equals("TrendLineSerialChartController")){
 			addTrendLineSerial((TrendLineSerialChartController) trendLineController);
 		}else{
 			throw new NotSupportedException(

@@ -104,7 +104,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	
 	public void setDragIconWidth(Number dragIconWidth) throws OutOfRangeException{
 		if(NumberValidator.rangeIntegerValidator(dragIconWidth, 16, 35)){
-			scrollBar.setFeature("dragIconHeight", dragIconWidth);
+			scrollBar.setFeature("dragIconWidth", dragIconWidth);
 		}
 	}
 	
@@ -158,7 +158,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public Object getGraphLineColor(){
-		return scrollBar.getFeature("graphLineCOlor");
+		return scrollBar.getFeature("graphLineColor");
 	}
 	
 	public void setGraphLineColor(String graphLineColor) throws ColorException{
@@ -282,17 +282,17 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public Object getScrollDuration(){
-		return scrollBar.getFeature("scrollbarDuration");
+		return scrollBar.getFeature("scrollDuration");
 	}
 	
-	public void setScrollbarDuration(Number scrollbarDuration) throws IntegerException{
-		if(NumberValidator.integerValidator(scrollbarDuration) && scrollbarDuration.intValue()>=0){
-			scrollBar.setFeature("scrollbarDuration", scrollbarDuration);
+	public void setScrollDuration(Number scrollDuration) throws IntegerException{
+		if(NumberValidator.integerValidator(scrollDuration) && scrollDuration.intValue()>=0){
+			scrollBar.setFeature("scrollDuration", scrollDuration);
 		}
 	}
 	
 	public Object getSelectedBackgroundAlpha(){
-		return scrollBar.getFeature("selectedBackGroundAlpha");
+		return scrollBar.getFeature("selectedBackgroundAlpha");
 	}
 	
 	public void setSelectedBackgroundAlpha(Number selectedBackgroundAlpha) throws OutOfRangeException{

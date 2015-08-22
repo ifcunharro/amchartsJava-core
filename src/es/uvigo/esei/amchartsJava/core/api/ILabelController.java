@@ -29,8 +29,7 @@ public abstract interface ILabelController  {
 
 	abstract Object getRotation();
 
-	abstract void setRotation(Number rotation) throws OutOfRangeException,
-			IntegerException;
+	abstract void setRotation(Number rotation) throws OutOfRangeException, IntegerException;
 
 	abstract Object getSize();
 

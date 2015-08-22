@@ -72,12 +72,12 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public Object getBackgroundColor(){
-		return legend.getFeature("color");
+		return legend.getFeature("backgroundColor");
 	}
 	
 	public void setBackgroundColor(String backGroundColor) throws ColorException{
 		if(ColorValidator.checkFormatColor(backGroundColor)){
-			legend.setFeature("backGroundColor", backGroundColor);
+			legend.setFeature("backgroundColor", backGroundColor);
 		}
 	}
 	
@@ -138,7 +138,7 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("enabled", enabled);
 	}
 	
-	@JsonProperty(value="equualWidths")
+	@JsonProperty(value="equalWidths")
 	public Object isEqualWidths(){
 		return legend.getFeature("equalWidths");
 	}
@@ -276,7 +276,7 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public Object getMarkerDisabledColor(){
-		return legend.getFeature("markenDisabledColor");
+		return legend.getFeature("markerDisabledColor");
 	}
 	
 	public void setMarkerDisabledColor(String markerDisabledColor) throws ColorException{
@@ -407,12 +407,12 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public Object getSwitchColor(){
-		return legend.getFeature("switchable");
+		return legend.getFeature("switchColor");
 	}
 	
 	public void setSwitchColor(String switchcolor) throws ColorException{
 		if(ColorValidator.checkFormatColor(switchcolor)){
-			legend.setFeature("switchcolor", switchcolor);
+			legend.setFeature("switchColor", switchcolor);
 		}
 	}
 	

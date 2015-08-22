@@ -73,9 +73,12 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		if(trendLines==null){
 			trendLines = new TrendLines();
 		}
-		addObserver(trendLineSerialChartController);
-		setChanged();
-		notifyObservers(trendLines.sizeTrendLineSerial()+1+trendLines.getDeleteTrendLines());
+		if(trendLineSerialChartController.getId()==null){
+			addObserver(trendLineSerialChartController);
+			setChanged();
+			notifyObservers(trendLines.sizeTrendLineSerial()+1+trendLines.getDeleteTrendLines());
+		}
+		
 		trendLineSerialChartController.setChart(this);
 		trendLines.addTrendLineSerial(trendLineSerialChartController);
 		deleteObservers();
@@ -86,9 +89,12 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		if(trendLines==null){
 			trendLines = new TrendLines();
 		}
-		addObserver(trendLineXyChartController);
-		setChanged();
-		notifyObservers(trendLines.sizeTrendLineXy()+1+trendLines.getDeleteTrendLines());
+		if(trendLineXyChartController.getId()==null){
+			addObserver(trendLineXyChartController);
+			setChanged();
+			notifyObservers(trendLines.sizeTrendLineXy()+1+trendLines.getDeleteTrendLines());
+		}
+		
 		trendLineXyChartController.setChart(this);
 		trendLines.addTrendLineXy(trendLineXyChartController);
 		deleteObservers();

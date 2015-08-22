@@ -1,7 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.model.charts;
 
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
-import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialController;
@@ -38,7 +38,7 @@ public class AmRadarChart extends AmCoordinateChart {
 
 	}
 	
-	public <T extends ValueAxisController> void addValueAxis(T valueAxisController) throws NotSupportedException {
+	public <T extends AxisBaseController> void addValueAxis(T valueAxisController) throws NotSupportedException {
 		if(valueAxisController instanceof ValueAxisRadarChartController){
 			addValueAxisRadarController((ValueAxisRadarChartController)valueAxisController);
 		}else{

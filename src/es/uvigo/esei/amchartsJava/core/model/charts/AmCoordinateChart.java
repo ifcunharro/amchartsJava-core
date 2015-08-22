@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
+import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphCandleController;
@@ -103,9 +104,11 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
-		addObserver(amGraphSerialController);
-		setChanged();
-		notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		if(amGraphSerialController.getId()==null){
+			addObserver(amGraphSerialController);
+			setChanged();
+			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		}
 		amGraphSerialController.setChart(this);
 		graphs.addAmGraphSerial(amGraphSerialController);
 		deleteObservers();
@@ -116,10 +119,11 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
-		
-		addObserver(amGraphStepController);
-		setChanged();
-		notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		if(amGraphStepController.getId()==null){
+			addObserver(amGraphStepController);
+			setChanged();
+			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		}
 		amGraphStepController.setChart(this);
 		graphs.addAmGraphStep(amGraphStepController);
 		deleteObservers();
@@ -129,10 +133,11 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
-		
-		addObserver(amGraphXyController);
-		setChanged();
-		notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		if(amGraphXyController.getId()==null){
+			addObserver(amGraphXyController);
+			setChanged();
+			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		}
 		amGraphXyController.setChart(this);
 		graphs.addAmGraphXy(amGraphXyController);
 		deleteObservers();
@@ -142,10 +147,11 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
-		
-		addObserver(amGraphCandleController);
-		setChanged();
-		notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		if(amGraphCandleController.getId()==null){
+			addObserver(amGraphCandleController);
+			setChanged();
+			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		}
 		amGraphCandleController.setChart(this);
 		graphs.addAmGraphCandle(amGraphCandleController);
 		deleteObservers();
@@ -155,9 +161,11 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		if(graphs==null){
 			graphs = new AmGraphs();
 		}
-		addObserver(amGraphOhlcController);
-		setChanged();
-		notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		if(amGraphOhlcController.getId()==null){
+			addObserver(amGraphOhlcController);
+			setChanged();
+			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+		}
 		amGraphOhlcController.setChart(this);
 		graphs.addAmGraphOhlc(amGraphOhlcController);
 		deleteObservers();
@@ -170,9 +178,11 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		if(guides==null){
 			guides = new Guides();
 		}
-		addObserver(guideCategoryAxisController);
-		setChanged();
-		notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+		if(guideCategoryAxisController.getId()==null){
+			addObserver(guideCategoryAxisController);
+			setChanged();
+			notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+		}
 		guideCategoryAxisController.setChart(this);
 		guides.addGuideCategoryAxis(guideCategoryAxisController);
 		deleteObservers();
@@ -182,9 +192,11 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		if(guides==null){
 			guides = new Guides();
 		}
-		addObserver(guideRadarChartController);
-		setChanged();
-		notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+		if(guideRadarChartController.getId()==null){
+			addObserver(guideRadarChartController);
+			setChanged();
+			notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+		}
 		guideRadarChartController.setChart(this);
 		guides.addGuideRadarChart(guideRadarChartController);
 		deleteObservers();
@@ -194,25 +206,30 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		if(guides==null){
 			guides = new Guides();
 		}
-		addObserver(guideValueAxisController);
-		setChanged();
-		notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+		if(guideValueAxisController.getId()==null){
+			addObserver(guideValueAxisController);
+			setChanged();
+			notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+		}
 		guideValueAxisController.setChart(this);
 		guides.addGuideValueAxis(guideValueAxisController);
 		deleteObservers();
 	}
 	
 	
-	public abstract <T extends ValueAxisController> void addValueAxis(T valueAxisController) throws NotSupportedException;
+	public abstract <T extends AxisBaseController> void addValueAxis(T valueAxisController) throws NotSupportedException;
 	
 	
 	protected void addValueAxisController(ValueAxisController valueAxisController){
 		if(valueAxes==null){
 			valueAxes = new ValueAxis();
 		}
-		addObserver(valueAxisController);
-		setChanged();
-		notifyObservers(valueAxes.sizeValueAxis()+1+valueAxes.getDeleteValueAxis());
+		if(valueAxisController.getId()==null){
+			addObserver(valueAxisController);
+			setChanged();
+			notifyObservers(valueAxes.sizeValueAxis()+1+valueAxes.getDeleteValueAxis());
+		}
+		
 		valueAxisController.setChart(this);
 		valueAxes.addValueAxis(valueAxisController);
 		deleteObservers();
@@ -222,9 +239,12 @@ public abstract class AmCoordinateChart extends AmChart implements IJsonDeserial
 		if(valueAxes==null){
 			valueAxes = new ValueAxis();
 		}
-		addObserver(valueAxisRadarChartController);
-		setChanged();
-		notifyObservers(valueAxes.sizeValueAxisRadar()+1+valueAxes.getDeleteValueAxis());
+		if(valueAxisRadarChartController.getId()==null){
+			addObserver(valueAxisRadarChartController);
+			setChanged();
+			notifyObservers(valueAxes.sizeValueAxisRadar()+1+valueAxes.getDeleteValueAxis());
+		}
+		
 		valueAxisRadarChartController.setChart(this);
 		valueAxes.addValueAxis(valueAxisRadarChartController);
 		deleteObservers();
