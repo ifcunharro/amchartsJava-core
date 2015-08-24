@@ -91,5 +91,33 @@ public class PathValidator {
 		
 		return new File(resourcesPath.getFile()).exists();
 	}
+	
+	public static String patternExist(String directoryPattern, String pattern){
+		
+		URL resourcesPath = null;
+		
+		resourcesPath = StringValidator.class.getProtectionDomain()
+									   .getCodeSource()
+									   .getLocation();
+
+		try {
+			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern);
+			//se ha pasado icon con extension
+			if(new File(resourcesPath.getFile()).exists()){
+				return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern;
+			}else if(pattern.lastIndexOf(".") != pattern.length()-4){
+				
+				resourcesPath = new URL(resourcesPath,pattern+".png");
+				if(new File(resourcesPath.getFile()).exists()){
+					return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern+".png";
+				}
+				
+			}
+		} catch (MalformedURLException e) {
+			return "";
+		}
+		
+		return "";
+	}
 
 }

@@ -12,11 +12,15 @@ import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueTextConstant.L
 import es.uvigo.esei.amchartsJava.core.constants.MarkerTypeConstant.MarkerType;
 import es.uvigo.esei.amchartsJava.core.constants.TagsTextConstant.TagsText;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
+import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
+import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
 public interface IAmGraphController  {
+	
+	abstract void setChart(AmCoordinateChart chart);
 	
 	abstract Object getId();
 
@@ -227,6 +231,14 @@ public interface IAmGraphController  {
 	abstract Object getNegativeFillColors();
 
 	abstract void setNegativeFillColors(ColorsAmCharts negativeFillColors);
+	
+	abstract Object getPattern();
+	
+	abstract void addPattern(PatternController pattern);
+	
+	abstract Object getPatternField();
+	
+	abstract void setPatternField(String patternField);
 
 	abstract Object getPrecision();
 
@@ -287,5 +299,8 @@ public interface IAmGraphController  {
 	abstract Object isVisibleInLegend();
 
 	abstract void setVisibleInLegend(Boolean visibleInLegend);
+
+	
+
 
 }

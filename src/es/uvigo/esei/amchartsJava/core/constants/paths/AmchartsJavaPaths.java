@@ -7,6 +7,7 @@ public final class AmchartsJavaPaths {
 	//se conserva para validar imagen en carpeta images
 	public static final String IMAGES_PATH = "../amcharts/amcharts/images/";
 	public static final String THEMES_PATH = "../amcharts/amcharts/themes/";
+	public static final String URL_PATTERNS = "../amcharts/amcharts/patterns/";
 	
 	
 	

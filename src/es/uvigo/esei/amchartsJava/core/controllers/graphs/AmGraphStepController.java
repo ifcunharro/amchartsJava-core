@@ -8,7 +8,8 @@ import es.uvigo.esei.amchartsJava.core.constants.StepDirectionConstant.StepDirec
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-public class AmGraphStepController extends AmGraphSerialChartController implements IAmGraphStepController {
+public class AmGraphStepController extends AmGraphSerialChartController 
+	implements IAmGraphStepController {
 	
 	
 

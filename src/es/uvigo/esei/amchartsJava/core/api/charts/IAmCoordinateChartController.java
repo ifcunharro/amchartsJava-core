@@ -1,7 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
 
-import es.uvigo.esei.amchartsJava.core.constants.StartEffectConstant.StartEffect;
+import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
@@ -32,7 +32,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 
 	abstract Object getStartEffect();
 
-	abstract void setStartEffect(StartEffect startEffect);
+	abstract void setStartEffect(Effect startEffect);
 
 	abstract Object getUrlTarget();
 

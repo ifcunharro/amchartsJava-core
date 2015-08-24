@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.controllers.charts;
+package es.uvigo.esei.amchartsJava.core.api.deserializers;
 
 import java.util.List;
 

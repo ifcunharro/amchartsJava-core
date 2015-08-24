@@ -6,7 +6,8 @@ import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 
 
-public class AmGraphSerialController extends AmGraphSerialChartController implements IAmGraphSerialController {
+public class AmGraphSerialController extends AmGraphSerialChartController 
+	implements IAmGraphSerialController {
 
 	
 	/**

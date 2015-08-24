@@ -6,7 +6,8 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-public class AmGraphXyController extends AmGraphSerialChartController implements IAmGraphXyController {
+public class AmGraphXyController extends AmGraphSerialChartController 
+	implements IAmGraphXyController {
 
 	
 

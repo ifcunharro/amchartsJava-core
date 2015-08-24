@@ -4,7 +4,8 @@ import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphCandleOhlcController;
 import es.uvigo.esei.amchartsJava.core.constants.ShowAtConstant.ShowAt;
 
 
-public abstract class AmGraphCandleOhlcController extends AmGraphSerialController implements IAmGraphCandleOhlcController {
+public abstract class AmGraphCandleOhlcController extends AmGraphSerialController 
+	implements IAmGraphCandleOhlcController {
 
 	/**
 	 * 

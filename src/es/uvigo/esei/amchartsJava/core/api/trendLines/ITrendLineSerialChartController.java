@@ -7,7 +7,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface ITrendLineController {
+public interface ITrendLineSerialChartController {
 
 	public void setChart(AmRectangularChart chart);
 

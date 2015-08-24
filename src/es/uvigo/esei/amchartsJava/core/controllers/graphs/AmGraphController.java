@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
@@ -21,6 +22,7 @@ import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueTextConstant.L
 import es.uvigo.esei.amchartsJava.core.constants.MarkerTypeConstant.MarkerType;
 import es.uvigo.esei.amchartsJava.core.constants.TagsTextConstant.TagsText;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
+import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -509,9 +511,22 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("negativeFillColors", negativeFillColors.toString());
 	}
 	
-	//pattern
+	public Object getPattern(){
+		return amGraph.getPattern();
+	}
 	
-	//patternField
+	@JsonSetter
+	public void addPattern(PatternController pattern){
+		amGraph.addPattern(pattern);
+	}
+	
+	public Object getPatternField(){
+		return amGraph.getFeature("patternField");
+	}
+	
+	public void setPatternField(String patternField){
+		amGraph.setFeature("patternField", patternField);
+	}
 	
 	public Object getPrecision(){
 		return amGraph.getFeature("precision");

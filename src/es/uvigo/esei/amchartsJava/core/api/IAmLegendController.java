@@ -11,8 +11,11 @@ import es.uvigo.esei.amchartsJava.core.constants.ValueAlignConstant.ValueAlign;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
+import es.uvigo.esei.amchartsJava.core.model.AmLegend;
 
 public abstract interface IAmLegendController  {
+	
+	abstract AmLegend getLegend();
 
 	abstract Object getAlign();
 
@@ -84,7 +87,7 @@ public abstract interface IAmLegendController  {
 	abstract Object getLeft();
 
 	abstract void setLeft(Number left) throws IntegerException;
-
+	
 	abstract Object getMarginBottom();
 
 	abstract void setMarginBottom(Number marginBottom) throws IntegerException;
@@ -227,5 +230,7 @@ public abstract interface IAmLegendController  {
 	abstract Object getWidth();
 
 	abstract void setWidth(Number width) throws IntegerException;
+
+	
 
 }

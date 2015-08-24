@@ -7,7 +7,8 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmXyChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-public class AmXyChartController extends AmRectangularChartController<AmXyChart> implements IAmXyChartController {
+public class AmXyChartController extends AmRectangularChartController<AmXyChart> 
+	implements IAmXyChartController {
 	
 	/**
 	 * 

@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
+import es.uvigo.esei.amchartsJava.core.api.deserializers.IJsonDeserializerAmChartController;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
@@ -29,7 +30,8 @@ import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 
 @JsonInclude(Include.NON_NULL)
-public abstract class AmChartController<E extends AmChart> implements Serializable, IAmchartController<AmChart>, IJsonDeserializerAmChartController{
+public abstract class AmChartController<E extends AmChart> 
+	implements Serializable, IAmchartController<AmChart>, IJsonDeserializerAmChartController{
 	
 	/**
 	 * 

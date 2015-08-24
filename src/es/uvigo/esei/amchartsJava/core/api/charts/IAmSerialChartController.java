@@ -1,5 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
+import es.uvigo.esei.amchartsJava.core.controllers.axis.CategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
@@ -61,5 +62,7 @@ public interface IAmSerialChartController extends IAmRectangularChartController<
 	public Object isZoomOutOnDataUpdated();
 
 	public void setZoomOutOnDataUpdated(Boolean zoomOutOnDataUpdated);
+
+	public void addCategoryAxis(CategoryAxisController categoryAxisController);
 
 }

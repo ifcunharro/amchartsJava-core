@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineController;
+import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -19,7 +19,7 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
-public class TrendLineSerialChartController implements Observer, Serializable, ITrendLineController {
+public class TrendLineSerialChartController implements Observer, Serializable, ITrendLineSerialChartController {
 	
 	/**
 	 * 

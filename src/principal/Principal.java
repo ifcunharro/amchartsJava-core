@@ -49,6 +49,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
+		
 		//graphs
 		AmGraphXyController ams = new AmGraphXyController();
 		AmGraphStepController ams2 = new AmGraphStepController();

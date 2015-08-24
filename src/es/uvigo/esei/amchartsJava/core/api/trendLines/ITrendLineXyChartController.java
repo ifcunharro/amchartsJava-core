@@ -1,6 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.api.trendLines;
 
-public interface ITrendLineXyChartController extends ITrendLineController {
+public interface ITrendLineXyChartController extends ITrendLineSerialChartController {
 
 	public Object getFinalXValue();
 

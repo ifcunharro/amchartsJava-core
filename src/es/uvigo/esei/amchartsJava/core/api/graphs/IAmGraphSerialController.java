@@ -11,11 +11,15 @@ public interface IAmGraphSerialController extends IAmGraphSerialChartController 
 	
 	abstract Object getFillColors();
 
-	abstract void setFillColors(ColorsAmCharts fillColors);
+	public void setFillColors(ColorsAmCharts fillColors);
 
-	abstract Object getFillColorsField();
+	public Object getFillColorsField();
 
-	abstract void setFillColorsField(String fillColorsField);
+	public void setFillColorsField(String fillColorsField);
+
+	public void setGapField(String gapField);
+
+	public Object getGapField(String gapField);
 
 
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import es.uvigo.esei.amchartsJava.core.api.deserializers.IJsonDeserializerColorCharts;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
@@ -24,7 +25,7 @@ import es.uvigo.esei.amchartsJava.core.model.collections.AmGraphs;
 import es.uvigo.esei.amchartsJava.core.model.collections.Guides;
 import es.uvigo.esei.amchartsJava.core.model.collections.ValueAxis;
 
-public abstract class AmCoordinateChart extends AmChart implements IJsonDeserializerAmCoordinateChart{
+public abstract class AmCoordinateChart extends AmChart implements IJsonDeserializerColorCharts{
 	
 	private List<String> colors;
 	private AmGraphs graphs;

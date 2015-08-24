@@ -14,7 +14,8 @@ import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
 
 
 
-public abstract class AmGraphSerialChartController extends AmGraphController implements IAmGraphSerialChartController{
+public abstract class AmGraphSerialChartController extends AmGraphController 
+	implements IAmGraphSerialChartController{
 
 	
 	

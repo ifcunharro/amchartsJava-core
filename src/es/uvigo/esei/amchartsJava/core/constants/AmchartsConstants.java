@@ -22,7 +22,7 @@ public class AmchartsConstants {
 	public static final TextAlignConstant TEXT_ALIGN = TextAlignConstant.getInstance();
 	public static final SeparatorConstant SEPARATOR = SeparatorConstant.getInstance();
 	public static final LegendPositionConstant LEGEND_POSITIONS = LegendPositionConstant.getInstance();
-	public static final StartEffectConstant START_EFFECTS = StartEffectConstant.getInstance();
+	public static final EffectConstant START_EFFECTS = EffectConstant.getInstance();
 	public static final UrlTargetConstant URL_TARGET = UrlTargetConstant.getInstance();
 	public static final BulletConstant BULLET = BulletConstant.getInstance();
 	public static final String[] DATE_FORMAT = DateFormatConstant.getDateFormat();
