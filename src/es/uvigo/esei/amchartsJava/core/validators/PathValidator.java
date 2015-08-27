@@ -119,5 +119,54 @@ public class PathValidator {
 		
 		return "";
 	}
+	
+	public static String tempFileExist(String jsonFile){
+		
+		URL resourcesPath = null;
+		
+		resourcesPath = TypeValidator.class.getProtectionDomain()
+									   .getCodeSource()
+									   .getLocation();
+
+		try {
+			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY+jsonFile);
+			
+			//se ha pasado icon con extension
+			if(new File(resourcesPath.getFile()).exists()){
+				//se elimina protocolo file:/ al devolver la ruta completa
+				return resourcesPath.toString().substring(6, resourcesPath.toString().length());
+			}else if(jsonFile.lastIndexOf(".") != jsonFile.length()-5){
+				
+				resourcesPath = new URL(resourcesPath,jsonFile+".json");
+				
+				if(new File(resourcesPath.getFile()).exists()){
+					return resourcesPath.toString().
+							substring(6, resourcesPath.toString().length());
+				}
+				
+			}
+		} catch (MalformedURLException e) {
+			return "";
+		}
+		
+		return "";
+	}
+	
+	public static String getJsonDirectoryToSave(){
+		URL resourcesPath = null;
+		
+		resourcesPath = TypeValidator.class.getProtectionDomain()
+									   .getCodeSource()
+									   .getLocation();
+
+		try {
+				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY);
+		} catch (MalformedURLException e) {
+				e.printStackTrace();
+		}
+			
+		return resourcesPath.toString().substring(6, resourcesPath.toString().length());
+		
+	}
 
 }

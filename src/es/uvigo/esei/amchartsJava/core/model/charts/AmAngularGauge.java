@@ -67,10 +67,11 @@ public class AmAngularGauge extends AmChart {
 	public void setAxes(List<GaugeAxisController> gaugeAxisControllers) {
 		if(axes == null){
 			axes = new ArrayList<GaugeAxisController>();
+			positionAxes = new HashMap<String, Integer>();
 		}
 		axes = gaugeAxisControllers;
 		for(GaugeAxisController axe: axes){
-			positionArrows.put(axe.getId().toString(), axes.indexOf(axe));
+			positionAxes.put(axe.getId().toString(), axes.indexOf(axe));
 		}
 	}
 
@@ -85,13 +86,14 @@ public class AmAngularGauge extends AmChart {
 	public void addArrow(GaugeArrowController gaugeArrowController) {
 		if(arrows == null){
 			arrows = new ArrayList<GaugeArrowController>();
+			idArrows = new ArrayList<String>();
 			positionArrows = new HashMap<String,Integer>();
 		}
 		addObserver(gaugeArrowController);
 		setChanged();
 		notifyObservers(arrows.size()+1+deleteArrows);
 		deleteObservers();
-		
+		gaugeArrowController.setChart(this);
 		arrows.add(gaugeArrowController);
 		idArrows.add(gaugeArrowController.getId().toString());
 		positionArrows.put(gaugeArrowController.getId().toString(),arrows.size()-1);
@@ -100,6 +102,7 @@ public class AmAngularGauge extends AmChart {
 	public void addAxis(GaugeAxisController gaugeAxisController){
 		if(axes == null){
 			axes = new ArrayList<GaugeAxisController>();
+			idAxes = new ArrayList<String>();
 			positionAxes = new HashMap<String, Integer>();
 		}
 		addObserver(gaugeAxisController);
@@ -119,6 +122,9 @@ public class AmAngularGauge extends AmChart {
 	
 	@SuppressWarnings("unchecked")
 	private void asignIdToBands(GaugeAxisController gaugeAxisController){
+		if(idGaugeBands == null){
+			idGaugeBands = new ArrayList<String>();
+		}
 		List<GaugeBandController> bands = (List<GaugeBandController>)(List<?>)gaugeAxisController.getBands();
 		for(GaugeBandController band: bands){
 			sizeBands++;

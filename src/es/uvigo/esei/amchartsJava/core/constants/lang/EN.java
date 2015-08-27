@@ -20,6 +20,7 @@ public class EN implements Idiom {
 		textsEN.put("NotSupportedException", " isn't supported by ");
 		textsEN.put("ChartException", " needs to be added to a chart to can be used that property");
 		textsEN.put("PatternException", "Pattern must have values to height, width and url");
+		textsEN.put("JsonFileNotFoundException", "Json file not found in temp directory");
 
 
 	}

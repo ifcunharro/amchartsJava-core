@@ -2,11 +2,7 @@ package principal;
 
 
 
-import java.io.File;
 import java.io.IOException;
-
-import com.fasterxml.jackson.core.JsonGenerator;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -14,11 +10,16 @@ import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
+import es.uvigo.esei.amchartsJava.core.controllers.GaugeArrowController;
+import es.uvigo.esei.amchartsJava.core.controllers.GaugeAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.GaugeBandController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmAngularGaugeController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmFunnelChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmXyChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphCandleController;
@@ -31,6 +32,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideRadarChartControl
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
@@ -50,6 +52,33 @@ import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 public class Principal {
 
 	public static void main(String[] args) {
+		
+		
+		AmFunnelChartController funnel = new AmFunnelChartController();
+		funnel.setGradientRatio(9,4,5,6);
+		
+		AmAngularGaugeController gaugec = new AmAngularGaugeController();
+		GaugeAxisController axisc = new GaugeAxisController();
+		GaugeBandController band = new GaugeBandController();
+		try {
+			band.setColor("#000000");
+		} catch (ColorException e13) {
+			// TODO Auto-generated catch block
+			e13.printStackTrace();
+		}
+		axisc.addBand(band);
+		
+		GaugeArrowController arrowc = new GaugeArrowController();
+		
+		gaugec.addAxis(axisc);
+		
+		gaugec.addArrow(arrowc);
+		try {
+			arrowc.addAxis("GaugeAxis-1");
+		} catch (ChartException e13) {
+			// TODO Auto-generated catch block
+			e13.printStackTrace();
+		}
 		
 		PatternController pc = new PatternController();
 		pc.addUrl("black", "pattern1");
@@ -72,7 +101,7 @@ public class Principal {
 		AmGraphSerialController ams3 = new AmGraphSerialController();
 		AmGraphCandleController ams4 = new AmGraphCandleController();
 		AmGraphOhlcController ams5 = new AmGraphOhlcController();
-		System.out.println(pc.getWidth());
+		
 		try {
 			ams5.setPattern(pc);
 		} catch (MalFormedPatternException e12) {
@@ -337,44 +366,45 @@ public class Principal {
 		//asc.addGraph(ags);
 		//System.out.println(((List<AmGraphController>)asc.getGraphs()).size());
 		ObjectMapper mapper = ParserJson.getParserJson();
-		/////
 		
-		//////
 
 		try {
 			//escribe a fichero 
-			mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, true);
-			mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
-
-			mapper.writeValue(new File("I:/prueba.json"), asc);
-			mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET,false);
+			ParserJson.saveJsonToTemp("pruebaJson.json", asc);
+			ParserJson.saveJsonToTemp("pruebaFunnel", funnel);
+			ParserJson.saveJsonToTemp("pruebaGauge", gaugec);
+			//escribe por consola
 			mapper.writeValue(System.out, asc);
+			ParserJson.saveJsonToConsole(funnel);
+			ParserJson.saveJsonToConsole(gaugec);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		//lee de fichero json a java
 		
 		AmSerialChartController serialController = null;
+		AmFunnelChartController rec = null;
+		AmAngularGaugeController regauge = null;
 		
 		try {
 
+				serialController = ParserJson.loadAmSerialChart("pruebaJson");
+				rec = ParserJson.loadAmFunnelChart("pruebaFunnel");
+				regauge = ParserJson.loadAmAngularGauge("pruebaGauge.json");
 				
-				serialController =  mapper.readValue(new File("I:/prueba.json"), AmSerialChartController.class);
 			
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
-		ParserJson.addValueAxisFromJsonToAmSerialChart(serialController);
-		ParserJson.addGraphsFromJsonToAmSerialChart(serialController);
-		ParserJson.addGuidesFromJsonToAmSerialChart(serialController);
-		ParserJson.addTrendLinesFromJsonToAmSerialChart(serialController);
+		
 		try {
-			mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET,false);
+			//comprueba que se ha leido bien el controller de carpeta temp
 			mapper.writeValue(System.out,serialController);
+			mapper.writeValue(System.out,rec);
+			mapper.writeValue(System.out, regauge);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -17,7 +17,7 @@ public interface IGaugeArrowController {
 
 	public Object getAxis();
 
-	public void setAxis(String axis) throws ChartException;
+	public void addAxis(String axis) throws ChartException;
 
 	public Object getBorderAlpha();
 

@@ -18,6 +18,7 @@ public class AmSlicedChart extends AmChart implements IJsonDeserializerColorChar
 		for(ColorsSlicedCharts color: ColorsSlicedCharts.values()){
 			slicedColors.add(color.toString());
 		}
+		gradientRatio = new ArrayList<Number>();
 	}
 	
 	public List<String> getColors(){

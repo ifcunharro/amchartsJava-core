@@ -9,6 +9,8 @@ public final class AmchartsJavaPaths {
 	public static final String THEMES_PATH = "../amcharts/amcharts/themes/";
 	public static final String URL_PATTERNS = "../amcharts/amcharts/patterns/";
 	
+	public static final String TEMP_DIRECTORY = "../amcharts/temp/";
+	
 	
 	
 	

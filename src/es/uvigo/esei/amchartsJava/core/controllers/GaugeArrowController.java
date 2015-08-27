@@ -66,7 +66,7 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		return gaugeArrow.getFeature("axis");
 	}
 	
-	public void setAxis(String axis) throws ChartException{
+	public void addAxis(String axis) throws ChartException{
 		if(amchart != null){
 			if(amchart.existAxis(axis)){
 				gaugeArrow.setFeature("axis", axis);
@@ -74,6 +74,11 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}else{
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
+	}
+	
+	//this method only use to deserialize json
+	public void setAxis(String axis){
+		gaugeArrow.setFeature("axis", axis);	
 	}
 	
 	public Object getBorderAlpha(){

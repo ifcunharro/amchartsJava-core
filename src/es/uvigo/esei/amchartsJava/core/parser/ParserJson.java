@@ -3,13 +3,22 @@ package es.uvigo.esei.amchartsJava.core.parser;
 import java.io.File;
 import java.io.IOException;
 
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmAngularGaugeController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmFunnelChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmPieChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmXyChartController;
@@ -24,6 +33,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisControll
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
+import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 public class ParserJson {
 	
@@ -32,8 +42,145 @@ public class ParserJson {
 		 mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		 mapper.configure(MapperFeature.AUTO_DETECT_IS_GETTERS,true);
   	   	 mapper.configure(SerializationFeature.WRITE_NULL_MAP_VALUES,false);
+  	   	 mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, true);
+  	   	 mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
+  	   	 mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET,false);
   	   	 return mapper;
 	}
+	
+	//evitar sobreescribir existente se hace antes de llamar a este método
+	public static void saveJsonToTemp(String nameFileJson,Object chartController) throws JsonGenerationException, JsonMappingException, IOException{
+		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		if(!nameFileJson.contains(".json")){
+			nameFileJson = nameFileJson+".json";
+		}
+			ObjectMapper mapper = getParserJson();
+			mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+	}
+	
+	public static void saveJsonToConsole(Object chartController) throws JsonGenerationException, JsonMappingException, IOException{
+		ObjectMapper mapper = getParserJson();
+		mapper.writeValue(System.out, chartController);
+	}
+	
+	public static AmSerialChartController loadAmSerialChart(String nameFileJson) throws JsonParseException, JsonMappingException, IOException{
+		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		if(!tempFile.isEmpty()){
+			ObjectMapper mapper = getParserJson();
+			AmSerialChartController serialController = null;
+			
+			
+			serialController = mapper.readValue(new File(tempFile), AmSerialChartController.class);
+			
+			addValueAxisFromJsonToAmSerialChart(serialController);
+			addGraphsFromJsonToAmSerialChart(serialController);
+			addGuidesFromJsonToAmSerialChart(serialController);
+			addTrendLinesFromJsonToAmSerialChart(serialController);
+			
+			return serialController;
+		}else{
+			throw new IOException(I18n.get("JsonFileNotFoundException"));
+		}
+		
+	}
+	
+	public static AmXyChartController loadAmXyChart(String nameFileJson) throws JsonParseException, JsonMappingException, IOException{
+		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		if(!tempFile.isEmpty()){
+			ObjectMapper mapper = getParserJson();
+			AmXyChartController xyController = null;
+			
+			
+			xyController = mapper.readValue(new File(tempFile), AmXyChartController.class);
+			
+			addValueAxisFromJsonToAmXyChart(xyController);
+			addGraphsFromJsonToAmXyChart(xyController);
+			addGuidesFromJsonToAmXyChart(xyController);
+			addTrendLinesFromJsonToAmXyChart(xyController);
+			
+			return xyController;
+		}else{
+			throw new IOException(I18n.get("JsonFileNotFoundException"));
+		}
+		
+	}
+	
+	public static AmRadarChartController loadAmRadarChart(String nameFileJson) throws JsonParseException, JsonMappingException, IOException{
+		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		if(!tempFile.isEmpty()){
+			ObjectMapper mapper = getParserJson();
+			AmRadarChartController radarController = null;
+			
+			
+			radarController = mapper.readValue(new File(tempFile), AmRadarChartController.class);
+			
+			addValueAxisFromJsonToAmRadarChart(radarController);
+			addGraphsFromJsonToAmRadarChart(radarController);
+			addGuidesFromJsonToAmRadarChart(radarController);
+			
+			
+			return radarController;
+		}else{
+			throw new IOException(I18n.get("JsonFileNotFoundException"));
+		}
+		
+	}
+	
+	public static AmFunnelChartController loadAmFunnelChart(String nameFileJson) throws JsonParseException, JsonMappingException, IOException{
+		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		if(!tempFile.isEmpty()){
+			ObjectMapper mapper = getParserJson();
+			AmFunnelChartController funnelController = null;
+			
+			
+			funnelController = mapper.readValue(new File(tempFile), AmFunnelChartController.class);
+			
+			
+			
+			return funnelController;
+		}else{
+			throw new IOException(I18n.get("JsonFileNotFoundException"));
+		}
+		
+	}
+	
+	public static AmPieChartController loadAmPieChart(String nameFileJson) throws JsonParseException, JsonMappingException, IOException{
+		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		if(!tempFile.isEmpty()){
+			ObjectMapper mapper = getParserJson();
+			AmPieChartController pieController = null;
+			
+			
+			pieController = mapper.readValue(new File(tempFile), AmPieChartController.class);
+			
+			
+			
+			return pieController;
+		}else{
+			throw new IOException(I18n.get("JsonFileNotFoundException"));
+		}
+		
+	}
+	
+	public static AmAngularGaugeController loadAmAngularGauge(String nameFileJson) throws JsonParseException, JsonMappingException, IOException{
+		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		if(!tempFile.isEmpty()){
+			ObjectMapper mapper = getParserJson();
+			AmAngularGaugeController gaugeController = null;
+			
+			
+			gaugeController = mapper.readValue(new File(tempFile), AmAngularGaugeController.class);
+			
+			
+			
+			return gaugeController;
+		}else{
+			throw new IOException(I18n.get("JsonFileNotFoundException"));
+		}
+		
+	}
+	
+	
 	
 	public static void addGraphsFromJsonToAmSerialChart(AmSerialChartController serialChartController){
 		ObjectMapper mapper = getParserJson();
@@ -103,6 +250,39 @@ public class ParserJson {
 					xy = mapper.treeToValue(node.path("graphs").path(i), AmGraphXyController.class);
 					try {
 						xyChartController.addGraph(xy);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}catch(IOException e1){
+					e1.printStackTrace();
+		}
+		
+	}
+	
+	public static void addGraphsFromJsonToAmRadarChart(AmRadarChartController radarChartController){
+		ObjectMapper mapper = getParserJson();
+		Object temp = null;
+		
+		try{
+			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			for(int i = 0; i<node.path("graphs").size();i++){
+				temp = mapper.treeToValue(node.path("graphs").path(i), Object.class);
+				
+				if(temp.toString().contains("maxBulletSize")){
+					AmGraphXyController xy = null;
+					xy = mapper.treeToValue(node.path("graphs").path(i), AmGraphXyController.class);
+					try {
+						radarChartController.addGraph(xy);
+					} catch (NotSupportedException e) {
+						e.printStackTrace();
+					}
+				}else{
+					AmGraphSerialController serial = null;
+					serial = mapper.treeToValue(node.path("graphs").path(i), AmGraphSerialController.class);
+					try {
+						radarChartController.addGraph(serial);
 					} catch (NotSupportedException e) {
 						e.printStackTrace();
 					}
