@@ -48,7 +48,7 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("align");
 	}
 	
-	public void setALign(Align align){
+	public void setAlign(Align align){
 		legend.setFeature("align", align.toString());
 	}
 	
@@ -75,9 +75,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend.getFeature("backgroundColor");
 	}
 	
-	public void setBackgroundColor(String backGroundColor) throws ColorException{
-		if(ColorValidator.checkFormatColor(backGroundColor)){
-			legend.setFeature("backgroundColor", backGroundColor);
+	public void setBackgroundColor(String backgroundColor) throws ColorException{
+		if(ColorValidator.checkFormatColor(backgroundColor)){
+			legend.setFeature("backgroundColor", backgroundColor);
 		}
 	}
 	

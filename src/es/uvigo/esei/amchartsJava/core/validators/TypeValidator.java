@@ -5,11 +5,12 @@ import java.util.regex.Pattern;
 
 import es.uvigo.esei.amchartsJava.core.constants.DateFormatConstant;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 
-public class StringValidator {
+public class TypeValidator {
 	
-	private StringValidator(){
+	private TypeValidator(){
 		
 	}
 	
@@ -23,6 +24,10 @@ public class StringValidator {
 	
 	public static boolean checkDateFormat(String dateFormat){
 		return Arrays.asList(DateFormatConstant.getDateFormat()).contains(dateFormat);
+	}
+	
+	public static boolean checkPattern(PatternController pattern){
+		return pattern.getUrl() != null && pattern.getHeight() != null && pattern.getWidth() != null;
 	}
 	
 	

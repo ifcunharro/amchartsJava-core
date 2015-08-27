@@ -19,7 +19,7 @@ public abstract interface IAmLegendController  {
 
 	abstract Object getAlign();
 
-	abstract void setALign(Align align);
+	abstract void setAlign(Align align);
 
 	abstract Object isAutoMargins();
 
@@ -32,7 +32,7 @@ public abstract interface IAmLegendController  {
 
 	abstract Object getBackgroundColor();
 
-	abstract void setBackgroundColor(String backGroundColor)
+	abstract void setBackgroundColor(String backgroundColor)
 			throws ColorException;
 
 	abstract Object getBorderAlpha();

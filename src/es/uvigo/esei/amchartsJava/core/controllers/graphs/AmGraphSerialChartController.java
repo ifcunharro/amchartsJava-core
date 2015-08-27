@@ -10,7 +10,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 
 
@@ -59,7 +59,7 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	}
 	
 	public void setCornerRadiusTop(String cornerRadiusTop) throws CoordException{
-		if(StringValidator.pixelOrPercent(cornerRadiusTop)){
+		if(TypeValidator.pixelOrPercent(cornerRadiusTop)){
 			amGraph.setFeature("cornerRadiusTop", cornerRadiusTop);
 		}
 	}

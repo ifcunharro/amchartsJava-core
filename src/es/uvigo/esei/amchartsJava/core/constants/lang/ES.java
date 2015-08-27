@@ -18,6 +18,9 @@ public class ES implements Idiom {
 		textsES.put("and"," y ");
 		textsES.put("CoordException","Las coordenadas deben ser un entero o porcentaje");
 		textsES.put("NotSupportedException", " no es soportado por ");
+		textsES.put("ChartException", " necesita añadirse a un chart para poder usar esta propiedad");
+		textsES.put("PatternException", "Pattern debe tener valores para height, width y una url");
+
 	}
 	
 	private ES(){

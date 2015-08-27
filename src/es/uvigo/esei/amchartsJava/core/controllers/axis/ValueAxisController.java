@@ -6,11 +6,14 @@ import java.util.Observer;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import es.uvigo.esei.amchartsJava.core.api.axis.IValueAxisController;
 import es.uvigo.esei.amchartsJava.core.constants.AxisTypeConstant.AxisType;
 import es.uvigo.esei.amchartsJava.core.constants.DurationConstant.Duration;
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.constants.StackTypeConstant.StackType;
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -216,9 +219,13 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		return axes.getFeature("synchronizeWith");
 	}
 	
-	public void setSynchronizeWith(String synchronizeWith){
-		if(chart.existValueAxis(synchronizeWith)){
-			axes.setFeature("synchronizeWith", synchronizeWith);
+	public void setSynchronizeWith(String synchronizeWith) throws ChartException{
+		if(chart != null){
+			if(chart.existValueAxis(synchronizeWith)){
+				axes.setFeature("synchronizeWith", synchronizeWith);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	

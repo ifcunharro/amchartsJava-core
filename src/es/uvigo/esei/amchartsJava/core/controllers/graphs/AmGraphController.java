@@ -9,8 +9,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSetter;
-
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
@@ -22,14 +20,17 @@ import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueTextConstant.L
 import es.uvigo.esei.amchartsJava.core.constants.MarkerTypeConstant.MarkerType;
 import es.uvigo.esei.amchartsJava.core.constants.TagsTextConstant.TagsText;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.MalFormedPatternException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AmGraph;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 
 
@@ -263,7 +264,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	//escogido de DateFormatConstant, filtrar a nivel interfaz, 
 	// si se usa sin interfaz propia o sin ninguna interfaz no se realiza ningún cambio
 	public void setDateFormat(String dateFormat){
-		if(StringValidator.checkDateFormat(dateFormat)){
+		if(TypeValidator.checkDateFormat(dateFormat)){
 			amGraph.setFeature("dateFormat", dateFormat);
 		}
 	}
@@ -299,9 +300,13 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	//debe ser el id de otro graph
-	public void setFillToGraph(String fillToGraph){
-		if(amchart.existGraph(fillToGraph)){
-			amGraph.setFeature("fillToGraph", fillToGraph);
+	public void setFillToGraph(String fillToGraph) throws ChartException{
+		if(amchart != null){
+			if(amchart.existGraph(fillToGraph)){
+				amGraph.setFeature("fillToGraph", fillToGraph);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	
@@ -515,9 +520,12 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return amGraph.getPattern();
 	}
 	
-	@JsonSetter
-	public void addPattern(PatternController pattern){
-		amGraph.addPattern(pattern);
+	public void setPattern(PatternController pattern) throws MalFormedPatternException{
+		if(TypeValidator.checkPattern(pattern)){
+			amGraph.addPattern(pattern);
+		}else{
+			throw new MalFormedPatternException(I18n.get("PatternException"));
+		}
 	}
 	
 	public Object getPatternField(){
@@ -637,9 +645,13 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return amGraph.getFeature("valueAxis");
 	}
 	
-	public void setValueAxis(String valueAxis){
-		if(amchart.existValueAxis(valueAxis)){
-			amGraph.setFeature("valueAxis", valueAxis);
+	public void setValueAxis(String valueAxis) throws ChartException{
+		if(amchart != null){
+			if(amchart.existValueAxis(valueAxis)){
+				amGraph.setFeature("valueAxis", valueAxis);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	

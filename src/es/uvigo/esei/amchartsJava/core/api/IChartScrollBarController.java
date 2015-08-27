@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api;
 
 import es.uvigo.esei.amchartsJava.core.constants.GraphTypesConstant.GraphType;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -48,7 +49,7 @@ public abstract interface IChartScrollBarController {
 
 	abstract Object getGraph();
 
-	abstract void setGraph(String graph);
+	abstract void setGraph(String graph) throws ChartException;
 
 	abstract Object getGraphFillAlpha();
 

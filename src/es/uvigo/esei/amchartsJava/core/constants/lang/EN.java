@@ -18,6 +18,10 @@ public class EN implements Idiom {
 		textsEN.put("and"," and ");
 		textsEN.put("CoordException","Format coords must be an integer number or a percent");
 		textsEN.put("NotSupportedException", " isn't supported by ");
+		textsEN.put("ChartException", " needs to be added to a chart to can be used that property");
+		textsEN.put("PatternException", "Pattern must have values to height, width and url");
+
+
 	}
 	
 	

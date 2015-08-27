@@ -11,6 +11,8 @@ import es.uvigo.esei.amchartsJava.core.api.IChartCursorController;
 import es.uvigo.esei.amchartsJava.core.constants.CategoryBalloonTextConstant.CategoryBalloonText;
 import es.uvigo.esei.amchartsJava.core.constants.CursorPositionConstant.CursorPosition;
 import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -18,7 +20,7 @@ import es.uvigo.esei.amchartsJava.core.model.ChartCursor;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 @JsonInclude(Include.NON_NULL)
 public class ChartCursorController implements Serializable, IChartCursorController {
@@ -123,14 +125,14 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setCategoryBalloonDateFormat(String categoryBalloonDateFormat){
-		if(StringValidator.checkDateFormat(categoryBalloonDateFormat)){
+		if(TypeValidator.checkDateFormat(categoryBalloonDateFormat)){
 			chartCursor.setFeature("categoryBalloonDateFormat", categoryBalloonDateFormat);
 		}
 	}
 	
 	@JsonProperty(value="categoryBalloonEnabled")
 	public Object isCategoryBalloonEnabled(){
-		return chartCursor.getFeature("categoryBalloobEnabled");
+		return chartCursor.getFeature("categoryBalloonEnabled");
 	}
 	
 	public void setCategoryBalloonEnaled(Boolean categoryBalloonEnabled){
@@ -307,9 +309,13 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		return chartCursor.getFeature("valueLineAxis");
 	}
 	
-	public void setValueLineAxis(String valueLineAxis){
-		if(chart.existValueAxis(valueLineAxis)){
-			chartCursor.setFeature("valueLineAxis", valueLineAxis);
+	public void setValueLineAxis(String valueLineAxis) throws ChartException{
+		if(chart != null){
+			if(chart.existValueAxis(valueLineAxis)){
+				chartCursor.setFeature("valueLineAxis", valueLineAxis);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	

@@ -16,7 +16,7 @@ public class PathValidator {
 		
 		URL resourcesPath = null;
 		
-		resourcesPath = StringValidator.class.getProtectionDomain()
+		resourcesPath = TypeValidator.class.getProtectionDomain()
 									   .getCodeSource()
 									   .getLocation();
 
@@ -47,7 +47,7 @@ public class PathValidator {
 		
 		URL resourcesPath = null;
 		
-		resourcesPath = StringValidator.class.getProtectionDomain()
+		resourcesPath = TypeValidator.class.getProtectionDomain()
 									   .getCodeSource()
 									   .getLocation();
 
@@ -79,7 +79,7 @@ public class PathValidator {
 		
 		URL resourcesPath = null;
 		
-		resourcesPath = StringValidator.class.getProtectionDomain()
+		resourcesPath = TypeValidator.class.getProtectionDomain()
 									   .getCodeSource()
 									   .getLocation();
 		
@@ -96,7 +96,7 @@ public class PathValidator {
 		
 		URL resourcesPath = null;
 		
-		resourcesPath = StringValidator.class.getProtectionDomain()
+		resourcesPath = TypeValidator.class.getProtectionDomain()
 									   .getCodeSource()
 									   .getLocation();
 

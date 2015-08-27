@@ -19,7 +19,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.Label;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 @JsonInclude(Include.NON_NULL)
 public class LabelController implements Observer, ILabelController, Serializable {
@@ -134,7 +134,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setX(String xCoord) throws CoordException{
-		if(StringValidator.pixelOrPercent(xCoord)){
+		if(TypeValidator.pixelOrPercent(xCoord)){
 			label.setFeature("x", xCoord);
 		}
 	}
@@ -144,7 +144,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setY(String yCoord) throws CoordException{
-		if(StringValidator.pixelOrPercent(yCoord)){
+		if(TypeValidator.pixelOrPercent(yCoord)){
 			label.setFeature("y", yCoord);
 		}
 	}

@@ -10,7 +10,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineSerialChartController;
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.TrendLine;
@@ -144,9 +146,13 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		return trendLine.getFeature("valueAxis");
 	}
 	
-	public void setValueAxis(String valueAxis){
-		if(amchart.existValueAxis(valueAxis)){
-			trendLine.setFeature("valueAxis", valueAxis);
+	public void setValueAxis(String valueAxis) throws ChartException{
+		if(amchart != null){
+			if(amchart.existValueAxis(valueAxis)){
+				trendLine.setFeature("valueAxis", valueAxis);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	

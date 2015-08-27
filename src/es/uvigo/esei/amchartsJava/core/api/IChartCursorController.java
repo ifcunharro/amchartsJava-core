@@ -3,6 +3,7 @@ package es.uvigo.esei.amchartsJava.core.api;
 import es.uvigo.esei.amchartsJava.core.constants.CategoryBalloonTextConstant.CategoryBalloonText;
 import es.uvigo.esei.amchartsJava.core.constants.CursorPositionConstant.CursorPosition;
 import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -136,7 +137,7 @@ public abstract interface IChartCursorController {
 
 	abstract Object getValueLineAxis();
 
-	abstract void setValueLineAxis(String valueLineAxis);
+	abstract void setValueLineAxis(String valueLineAxis) throws ChartException;
 
 	abstract Object isValueLineBalloonEnabled();
 

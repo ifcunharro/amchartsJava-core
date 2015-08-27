@@ -1,5 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.api.graphs;
 
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
@@ -7,11 +8,11 @@ public interface IAmGraphXyController extends IAmGraphSerialChartController {
 
 	public Object getBulletAxis();
 	
-	public void setBulletAxis(String bulletAxis);
+	public void setBulletAxis(String bulletAxis) throws ChartException;
 	
 	public Object getFillToAxis();
 	
-	public void setFillToAxis(String fillToAxis);
+	public void setFillToAxis(String fillToAxis) throws ChartException;
 	
 	public Object getMaxBulletSize();
 
@@ -23,7 +24,7 @@ public interface IAmGraphXyController extends IAmGraphSerialChartController {
 	
 	public Object getXAxis();
 	
-	public void setXAxis(String xAxis);
+	public void setXAxis(String xAxis) throws ChartException;
 	
 	public Object getXField();
 
@@ -31,7 +32,7 @@ public interface IAmGraphXyController extends IAmGraphSerialChartController {
 	
 	public Object getYAxis();
 	
-	public void setYAxis(String yAxis);
+	public void setYAxis(String yAxis) throws ChartException;
 
 	public Object getYField();
 

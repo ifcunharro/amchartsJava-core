@@ -42,7 +42,7 @@ public final class StepDirectionConstant {
 	}
 	
 	public StepDirection[] getStepDirections(){
-		return StepDirection.class.getEnumConstants();
+		return StepDirection.values();
 	}
 	
 

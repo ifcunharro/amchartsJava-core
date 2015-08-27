@@ -74,9 +74,9 @@ public class PatternController implements IPatternController, Serializable {
 	}
 
 	
-	public void setWidth(Number height) throws OutOfRangeException {
-		if(NumberValidator.rangeDoubleValidator(height, 2, 6)){
-			pattern.setFeature("height", height);
+	public void setWidth(Number width) throws OutOfRangeException {
+		if(NumberValidator.rangeDoubleValidator(width, 2, 6)){
+			pattern.setFeature("width", width);
 		}
 	}
 

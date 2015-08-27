@@ -15,6 +15,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
+import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
@@ -34,13 +35,14 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.MalFormedPatternException;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.parser.ParserJson;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
-import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 
 
@@ -49,6 +51,20 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
+		PatternController pc = new PatternController();
+		pc.addUrl("black", "pattern1");
+		try {
+			pc.setHeight(3);
+		} catch (OutOfRangeException e12) {
+			// TODO Auto-generated catch block
+			e12.printStackTrace();
+		}
+		try {
+			pc.setWidth(3);
+		} catch (OutOfRangeException e12) {
+			// TODO Auto-generated catch block
+			e12.printStackTrace();
+		}
 		
 		//graphs
 		AmGraphXyController ams = new AmGraphXyController();
@@ -56,6 +72,14 @@ public class Principal {
 		AmGraphSerialController ams3 = new AmGraphSerialController();
 		AmGraphCandleController ams4 = new AmGraphCandleController();
 		AmGraphOhlcController ams5 = new AmGraphOhlcController();
+		System.out.println(pc.getWidth());
+		try {
+			ams5.setPattern(pc);
+		} catch (MalFormedPatternException e12) {
+			// TODO Auto-generated catch block
+			e12.printStackTrace();
+		}
+		
 		
 		//guides
 		GuideCategoryAxisController gc = new GuideCategoryAxisController();
@@ -116,6 +140,7 @@ public class Principal {
 		AmGraphSerialController ags = new AmGraphSerialController();
 		//valueAxis
 		ValueAxisController va = new ValueAxisController();
+		
 		ValueAxisRadarChartController var = new ValueAxisRadarChartController();
 		var.setGridType(AmchartsConstants.GRID_TYPES.getCircles());
 		va.enabledTotalText();
@@ -219,7 +244,7 @@ public class Principal {
 		
 		
 		try {
-			StringValidator.pixelOrPercent("12");
+			TypeValidator.pixelOrPercent("12");
 		} catch (CoordException e5) {
 			// TODO Auto-generated catch block
 			e5.printStackTrace();
@@ -270,7 +295,7 @@ public class Principal {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-		lc.setALign(AmchartsConstants.ALIGN.getCenter());
+		lc.setAlign(AmchartsConstants.ALIGN.getCenter());
 		
 	
 		

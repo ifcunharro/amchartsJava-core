@@ -13,8 +13,10 @@ import es.uvigo.esei.amchartsJava.core.constants.MarkerTypeConstant.MarkerType;
 import es.uvigo.esei.amchartsJava.core.constants.TagsTextConstant.TagsText;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
+import es.uvigo.esei.amchartsJava.core.exceptions.MalFormedPatternException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
@@ -134,7 +136,7 @@ public interface IAmGraphController  {
 	abstract Object getFillToGraph();
 
 	//debe ser el id de otro graph
-	abstract void setFillToGraph(String fillToGraph);
+	abstract void setFillToGraph(String fillToGraph) throws ChartException;
 
 	abstract Object getFontSize();
 
@@ -234,7 +236,7 @@ public interface IAmGraphController  {
 	
 	abstract Object getPattern();
 	
-	abstract void addPattern(PatternController pattern);
+	abstract void setPattern(PatternController pattern) throws MalFormedPatternException;
 	
 	abstract Object getPatternField();
 	
@@ -290,7 +292,7 @@ public interface IAmGraphController  {
 
 	abstract Object getValueAxis();
 
-	abstract void setValueAxis(String valueAxis);
+	abstract void setValueAxis(String valueAxis) throws ChartException;
 
 	abstract Object getValueField();
 

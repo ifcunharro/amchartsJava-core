@@ -1,13 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.constants;
 
 
-/**
- * 
- * This class provides values to properties Align, ValueAlign and TextAlign  
- * 
- * @author iago
- *
- */
+
 public final class TextAlignConstant {
 	
 	

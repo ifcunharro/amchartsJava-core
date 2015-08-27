@@ -1,5 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -417,6 +419,11 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setVisibleInLegendField(String visibleInLegendField){
 		amchart.setFeature("visibleInLegendField", visibleInLegendField);
+	}
+	
+	//usado solo para deserializar json
+	public void setColors(List<String> colors){
+		amchart.setColors(colors);
 	}
 
 }

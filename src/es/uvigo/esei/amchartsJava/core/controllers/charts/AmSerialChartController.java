@@ -9,7 +9,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmSerialChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.StringValidator;
+import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 
 
@@ -33,7 +33,7 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 
 	public void setBalloonDateFormat(String balloonDateFormat){
-		if(StringValidator.checkDateFormat(balloonDateFormat)){
+		if(TypeValidator.checkDateFormat(balloonDateFormat)){
 			amchart.setFeature("balloonDateFormat", balloonDateFormat);
 		}
 	}
@@ -81,7 +81,7 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 	
 	public void setDataDateFormat(String dataDateFormat){
-		if(StringValidator.checkDateFormat(dataDateFormat)){
+		if(TypeValidator.checkDateFormat(dataDateFormat)){
 			amchart.setFeature("dataDateFormat", dataDateFormat);
 		}
 	}

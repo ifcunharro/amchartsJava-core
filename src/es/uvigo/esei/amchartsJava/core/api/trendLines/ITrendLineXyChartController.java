@@ -1,5 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api.trendLines;
 
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
+
 public interface ITrendLineXyChartController extends ITrendLineSerialChartController {
 
 	public Object getFinalXValue();
@@ -12,6 +14,6 @@ public interface ITrendLineXyChartController extends ITrendLineSerialChartContro
 
 	public Object getValueAxisX();
 
-	public void setValueAxisX(String valueAxisX);
+	public void setValueAxisX(String valueAxisX) throws ChartException;
 
 }

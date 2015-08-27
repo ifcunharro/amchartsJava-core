@@ -1,7 +1,9 @@
 package es.uvigo.esei.amchartsJava.core.api.guides;
 
 import java.sql.Date;
+
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
@@ -88,6 +90,6 @@ public abstract interface IGuideController {
 
 	abstract Object getValueAxis();
 
-	abstract void setValueAxis(String valueAxis);
+	abstract void setValueAxis(String valueAxis) throws ChartException;
 
 }

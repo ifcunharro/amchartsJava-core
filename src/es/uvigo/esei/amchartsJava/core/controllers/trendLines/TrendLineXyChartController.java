@@ -1,6 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.controllers.trendLines;
 
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineXyChartController;
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 
 
 public class TrendLineXyChartController extends TrendLineSerialChartController implements ITrendLineXyChartController {
@@ -34,9 +36,13 @@ public class TrendLineXyChartController extends TrendLineSerialChartController i
 		return trendLine.getFeature("valueAxisX");
 	}
 	
-	public void setValueAxisX(String valueAxisX){
-		if(amchart.existValueAxis(valueAxisX)){
-			trendLine.setFeature("valueAxisX", valueAxisX);
+	public void setValueAxisX(String valueAxisX) throws ChartException{
+		if(amchart != null){
+			if(amchart.existValueAxis(valueAxisX)){
+				trendLine.setFeature("valueAxisX", valueAxisX);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 

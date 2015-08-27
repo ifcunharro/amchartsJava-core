@@ -2,6 +2,8 @@ package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphXyController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
@@ -33,9 +35,13 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		return amGraph.getFeature("bulletAxis");
 	}
 	
-	public void setBulletAxis(String bulletAxis){
-		if(amchart.existValueAxis(bulletAxis)){
-			amGraph.setFeature("bulletAxis", bulletAxis);
+	public void setBulletAxis(String bulletAxis) throws ChartException{
+		if(amchart != null){
+			if(amchart.existValueAxis(bulletAxis)){
+				amGraph.setFeature("bulletAxis", bulletAxis);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	
@@ -43,9 +49,13 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		return amGraph.getFeature("fillToAxis");
 	}
 	
-	public void setFillToAxis(String fillToAxis){
-		if(amchart.existValueAxis(fillToAxis)){
-			amGraph.setFeature("fillToAxis", fillToAxis);
+	public void setFillToAxis(String fillToAxis) throws ChartException{
+		if(amchart != null){
+			if(amchart.existValueAxis(fillToAxis)){
+				amGraph.setFeature("fillToAxis", fillToAxis);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	
@@ -73,9 +83,13 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		return amGraph.getFeature("xAxis");
 	}
 	
-	public void setXAxis(String xAxis){
-		if(amchart.existValueAxis(xAxis)){
-			amGraph.setFeature("xAxis", xAxis);
+	public void setXAxis(String xAxis) throws ChartException{
+		if(amchart != null){
+			if(amchart.existValueAxis(xAxis)){
+				amGraph.setFeature("xAxis", xAxis);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	
@@ -91,9 +105,13 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		return amGraph.getFeature("yAxis");
 	}
 	
-	public void setYAxis(String yAxis){
-		if(amchart.existValueAxis(yAxis)){
-			amGraph.setFeature("yAxis", yAxis);
+	public void setYAxis(String yAxis) throws ChartException{
+		if(amchart != null){
+			if(amchart.existValueAxis(yAxis)){
+				amGraph.setFeature("yAxis", yAxis);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	

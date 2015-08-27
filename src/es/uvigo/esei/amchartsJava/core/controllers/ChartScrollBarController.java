@@ -9,6 +9,8 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.IChartScrollBarController;
 import es.uvigo.esei.amchartsJava.core.constants.GraphTypesConstant.GraphType;
+import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -48,7 +50,7 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public Object getBackgroundAlpha(){
-		return scrollBar.getFeature("backgroundColor");
+		return scrollBar.getFeature("backgroundAlpha");
 	}
 	
 	public void setBackgroundAlpha(Number backgroundAlpha) throws OutOfRangeException{
@@ -121,9 +123,13 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		return scrollBar.getFeature("graph");
 	}
 	
-	public void setGraph(String graph){
-		if(amchart.existGraph(graph)){
-			scrollBar.setFeature("graph", graph);
+	public void setGraph(String graph) throws ChartException{
+		if(amchart != null){
+			if(amchart.existGraph(graph)){
+				scrollBar.setFeature("graph", graph);
+			}
+		}else{
+			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
 	
@@ -141,9 +147,9 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		return scrollBar.getFeature("graphFillColor");
 	}
 	
-	public void setGraphFillColor(String graphFillCOlor) throws ColorException{
-		if(ColorValidator.checkFormatColor(graphFillCOlor)){
-			scrollBar.setFeature("graphFillCOlor", graphFillCOlor);
+	public void setGraphFillColor(String graphFillColor) throws ColorException{
+		if(ColorValidator.checkFormatColor(graphFillColor)){
+			scrollBar.setFeature("graphFillColor", graphFillColor);
 		}
 	}
 	

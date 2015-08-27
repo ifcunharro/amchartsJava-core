@@ -3,6 +3,7 @@ package es.uvigo.esei.amchartsJava.core.api.trendLines;
 import java.sql.Date;
 
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
+import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
@@ -56,7 +57,7 @@ public interface ITrendLineSerialChartController {
 
 	public Object getValueAxis();
 
-	public void setValueAxis(String valueAxis);
+	public void setValueAxis(String valueAxis) throws ChartException;
 
 	public Object getFinalImage();
 
