@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
-import es.uvigo.esei.amchartsJava.core.api.deserializers.IJsonDeserializerAmChartController;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
@@ -31,7 +30,7 @@ import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmChartController<E extends AmChart> 
-	implements Serializable, IAmchartController<AmChart>, IJsonDeserializerAmChartController{
+	implements Serializable, IAmchartController<AmChart>{
 	
 	/**
 	 * 
@@ -395,12 +394,14 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	//usado solo para deserializar json
-	public void setAllLabels(List<LabelController> allLabels){
+	@SuppressWarnings("unused")
+	private void setAllLabels(List<LabelController> allLabels){
 		amchart.setAllLabels(allLabels);
 	}
 	
 	//usada solo para deserializar json
-	public void setTitles(List<TitleController> titles){
+	@SuppressWarnings("unused")
+	private void setTitles(List<TitleController> titles){
 		amchart.setTitles(titles);
 	}
 	

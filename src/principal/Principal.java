@@ -3,8 +3,6 @@ package principal;
 
 
 import java.io.IOException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
@@ -365,7 +363,7 @@ public class Principal {
 		//falta conseguir deserializar any graph
 		//asc.addGraph(ags);
 		//System.out.println(((List<AmGraphController>)asc.getGraphs()).size());
-		ObjectMapper mapper = ParserJson.getParserJson();
+		
 		
 
 		try {
@@ -374,7 +372,8 @@ public class Principal {
 			ParserJson.saveJsonToTemp("pruebaFunnel", funnel);
 			ParserJson.saveJsonToTemp("pruebaGauge", gaugec);
 			//escribe por consola
-			mapper.writeValue(System.out, asc);
+			ParserJson.saveJsonToConsole(asc);
+			
 			ParserJson.saveJsonToConsole(funnel);
 			ParserJson.saveJsonToConsole(gaugec);
 		} catch (IOException e) {
@@ -401,14 +400,15 @@ public class Principal {
 		
 		try {
 			//comprueba que se ha leido bien el controller de carpeta temp
-			mapper.writeValue(System.out,serialController);
-			mapper.writeValue(System.out,rec);
-			mapper.writeValue(System.out, regauge);
+			ParserJson.saveJsonToConsole(serialController);
+			ParserJson.saveJsonToConsole(rec);
+			ParserJson.saveJsonToConsole(regauge);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		//List<AmGraphController> S = ((List<AmGraphController>)employee.getGraphs());
+	
 		
 		
 		

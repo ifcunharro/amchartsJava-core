@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import es.uvigo.esei.amchartsJava.core.api.deserializers.IJsonDeserializerColorCharts;
+
 import es.uvigo.esei.amchartsJava.core.constants.ColorsSlicedCharts;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
 
-public class AmSlicedChart extends AmChart implements IJsonDeserializerColorCharts {
+public class AmSlicedChart extends AmChart {
 	
 	private List<String> slicedColors;
 	private List<Number> gradientRatio;

@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmCoordinateChartController;
-import es.uvigo.esei.amchartsJava.core.api.deserializers.IJsonDeserializerColorCharts;
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
@@ -22,8 +21,7 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown=true)
 public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
-			extends AmChartController<F> implements IAmCoordinateChartController<AmCoordinateChart>, 
-				IJsonDeserializerColorCharts{
+			extends AmChartController<F> implements IAmCoordinateChartController<AmCoordinateChart>{
 
 	
 	private static final long serialVersionUID = -4021796361267991139L;
@@ -148,7 +146,8 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	//usado solo para deserializar json
-	public void setColors(List<String> colors){
+	@SuppressWarnings("unused")
+	private void setColors(List<String> colors){
 		amchart.setColors(colors);
 	}
 	

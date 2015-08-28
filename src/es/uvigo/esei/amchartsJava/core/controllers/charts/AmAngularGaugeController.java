@@ -3,9 +3,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmAngularGaugeController;
-import es.uvigo.esei.amchartsJava.core.api.deserializers.IJsonDeserializerAmAngularGaugeController;
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeArrowController;
@@ -21,7 +19,7 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 public class AmAngularGaugeController extends AmChartController<AmAngularGauge> 
-		implements IJsonDeserializerAmAngularGaugeController, IAmAngularGaugeController {
+		implements IAmAngularGaugeController {
 
 	/**
 	 * 
@@ -45,7 +43,8 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		return amchart.getArrows();
 	}
 	
-	public void setArrows(List<GaugeArrowController> arrows){
+	@SuppressWarnings("unused")
+	private void setArrows(List<GaugeArrowController> arrows){
 		amchart.setArrows(arrows);
 	}
 	
@@ -53,7 +52,8 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		return amchart.getAxes();
 	}
 	
-	public void setAxes(List<GaugeAxisController> axes){
+	@SuppressWarnings("unused")
+	private void setAxes(List<GaugeAxisController> axes){
 		amchart.setAxes(axes);
 	}
 	

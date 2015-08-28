@@ -3,6 +3,8 @@ package es.uvigo.esei.amchartsJava.core.parser;
 import java.io.File;
 import java.io.IOException;
 
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParseException;
@@ -37,7 +39,7 @@ import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 public class ParserJson {
 	
-	public static ObjectMapper getParserJson(){
+	private static ObjectMapper getParserJson(){
 		 ObjectMapper mapper = new ObjectMapper();
 		 mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		 mapper.configure(MapperFeature.AUTO_DETECT_IS_GETTERS,true);
@@ -45,6 +47,7 @@ public class ParserJson {
   	   	 mapper.configure(JsonGenerator.Feature.QUOTE_FIELD_NAMES, true);
   	   	 mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
   	   	 mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET,false);
+  	   	 mapper.setVisibility(PropertyAccessor.SETTER,Visibility.ANY);
   	   	 return mapper;
 	}
 	
@@ -72,10 +75,10 @@ public class ParserJson {
 			
 			serialController = mapper.readValue(new File(tempFile), AmSerialChartController.class);
 			
-			addValueAxisFromJsonToAmSerialChart(serialController);
-			addGraphsFromJsonToAmSerialChart(serialController);
-			addGuidesFromJsonToAmSerialChart(serialController);
-			addTrendLinesFromJsonToAmSerialChart(serialController);
+			addValueAxisFromJsonToAmSerialChart(serialController,tempFile);
+			addGraphsFromJsonToAmSerialChart(serialController,tempFile);
+			addGuidesFromJsonToAmSerialChart(serialController,tempFile);
+			addTrendLinesFromJsonToAmSerialChart(serialController,tempFile);
 			
 			return serialController;
 		}else{
@@ -93,10 +96,10 @@ public class ParserJson {
 			
 			xyController = mapper.readValue(new File(tempFile), AmXyChartController.class);
 			
-			addValueAxisFromJsonToAmXyChart(xyController);
-			addGraphsFromJsonToAmXyChart(xyController);
-			addGuidesFromJsonToAmXyChart(xyController);
-			addTrendLinesFromJsonToAmXyChart(xyController);
+			addValueAxisFromJsonToAmXyChart(xyController,tempFile);
+			addGraphsFromJsonToAmXyChart(xyController,tempFile);
+			addGuidesFromJsonToAmXyChart(xyController,tempFile);
+			addTrendLinesFromJsonToAmXyChart(xyController,tempFile);
 			
 			return xyController;
 		}else{
@@ -114,9 +117,9 @@ public class ParserJson {
 			
 			radarController = mapper.readValue(new File(tempFile), AmRadarChartController.class);
 			
-			addValueAxisFromJsonToAmRadarChart(radarController);
-			addGraphsFromJsonToAmRadarChart(radarController);
-			addGuidesFromJsonToAmRadarChart(radarController);
+			addValueAxisFromJsonToAmRadarChart(radarController,tempFile);
+			addGraphsFromJsonToAmRadarChart(radarController,tempFile);
+			addGuidesFromJsonToAmRadarChart(radarController,tempFile);
 			
 			
 			return radarController;
@@ -135,8 +138,6 @@ public class ParserJson {
 			
 			funnelController = mapper.readValue(new File(tempFile), AmFunnelChartController.class);
 			
-			
-			
 			return funnelController;
 		}else{
 			throw new IOException(I18n.get("JsonFileNotFoundException"));
@@ -152,8 +153,6 @@ public class ParserJson {
 			
 			
 			pieController = mapper.readValue(new File(tempFile), AmPieChartController.class);
-			
-			
 			
 			return pieController;
 		}else{
@@ -171,8 +170,6 @@ public class ParserJson {
 			
 			gaugeController = mapper.readValue(new File(tempFile), AmAngularGaugeController.class);
 			
-			
-			
 			return gaugeController;
 		}else{
 			throw new IOException(I18n.get("JsonFileNotFoundException"));
@@ -182,12 +179,12 @@ public class ParserJson {
 	
 	
 	
-	public static void addGraphsFromJsonToAmSerialChart(AmSerialChartController serialChartController){
+	private static void addGraphsFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("graphs").size();i++){
 				temp = mapper.treeToValue(node.path("graphs").path(i), Object.class);
 				
@@ -197,7 +194,6 @@ public class ParserJson {
 					try {
 						serialChartController.addGraph(step);
 					} catch (NotSupportedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}else if(temp.toString().contains("candlestick")){
@@ -206,7 +202,6 @@ public class ParserJson {
 					try {
 						serialChartController.addGraph(candle);
 					} catch (NotSupportedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}else if(temp.toString().contains("ohlc")){
@@ -215,7 +210,6 @@ public class ParserJson {
 					try {
 						serialChartController.addGraph(ohlc);
 					} catch (NotSupportedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -225,7 +219,6 @@ public class ParserJson {
 					try {
 						serialChartController.addGraph(serial);
 					} catch (NotSupportedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -236,12 +229,12 @@ public class ParserJson {
 		
 	}
 	
-	public static void addGraphsFromJsonToAmXyChart(AmXyChartController xyChartController){
+	private static void addGraphsFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("graphs").size();i++){
 				temp = mapper.treeToValue(node.path("graphs").path(i), Object.class);
 				
@@ -261,12 +254,12 @@ public class ParserJson {
 		
 	}
 	
-	public static void addGraphsFromJsonToAmRadarChart(AmRadarChartController radarChartController){
+	private static void addGraphsFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("graphs").size();i++){
 				temp = mapper.treeToValue(node.path("graphs").path(i), Object.class);
 				
@@ -294,12 +287,12 @@ public class ParserJson {
 		
 	}
 	
-	public static void addGuidesFromJsonToAmSerialChart(AmSerialChartController serialChartController){
+	private static void addGuidesFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("guides").size();i++){
 				temp = mapper.treeToValue(node.path("guides").path(i), Object.class);
 				
@@ -327,12 +320,12 @@ public class ParserJson {
 	
 	}
 	
-	public static void addGuidesFromJsonToAmXyChart(AmXyChartController xyChartController){
+	private static void addGuidesFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("guides").size();i++){
 				temp = mapper.treeToValue(node.path("guides").path(i), Object.class);
 				
@@ -352,12 +345,12 @@ public class ParserJson {
 		
 	}
 	
-	public static void addGuidesFromJsonToAmRadarChart(AmRadarChartController radarChartController){
+	private static void addGuidesFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("guides").size();i++){
 				temp = mapper.treeToValue(node.path("guides").path(i), Object.class);
 				
@@ -377,12 +370,12 @@ public class ParserJson {
 		
 	}
 	
-	public static void addTrendLinesFromJsonToAmSerialChart(AmSerialChartController serialChartController){
+	private static void addTrendLinesFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("trendLines").size();i++){
 				temp = mapper.treeToValue(node.path("trendLines").path(i), Object.class);
 				
@@ -402,12 +395,12 @@ public class ParserJson {
 		
 	}
 	
-	public static void addTrendLinesFromJsonToAmXyChart(AmXyChartController xyChartController){
+	private static void addTrendLinesFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("trendLines").size();i++){
 				temp = mapper.treeToValue(node.path("trendLines").path(i), Object.class);
 				
@@ -427,12 +420,12 @@ public class ParserJson {
 		
 	}
 	
-	public static void addValueAxisFromJsonToAmSerialChart(AmSerialChartController serialChartController){
+	private static void addValueAxisFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("valueAxes").size();i++){
 				temp = mapper.treeToValue(node.path("valueAxes").path(i), Object.class);
 				
@@ -452,12 +445,12 @@ public class ParserJson {
 		
 	}
 	
-	public static void addValueAxisFromJsonToAmXyChart(AmXyChartController xyChartController){
+	private static void addValueAxisFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("valueAxes").size();i++){
 				temp = mapper.treeToValue(node.path("valueAxes").path(i), Object.class);
 				
@@ -477,12 +470,12 @@ public class ParserJson {
 		
 	}
 	
-	public static void addValueAxisFromJsonToAmRadarChart(AmRadarChartController radarChartController){
+	private static void addValueAxisFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File("I:/prueba.json"));
+			JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("valueAxes").size();i++){
 				temp = mapper.treeToValue(node.path("valueAxes").path(i), Object.class);
 				

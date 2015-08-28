@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.IGaugeAxisController;
-import es.uvigo.esei.amchartsJava.core.api.deserializers.IJsonDeserializerGaugeAxisController;
 import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
@@ -23,7 +22,7 @@ import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 @JsonInclude(Include.NON_NULL)
 public class GaugeAxisController 
-		implements Serializable, Observer, IGaugeAxisController, IJsonDeserializerGaugeAxisController {
+		implements Serializable, Observer, IGaugeAxisController{
 
 	/**
 	 * 
@@ -119,7 +118,8 @@ public class GaugeAxisController
 		return gaugeAxis.getBands();
 	}
 	
-	public void setBands(List<GaugeBandController> gaugeBands){
+	@SuppressWarnings("unused")
+	private void setBands(List<GaugeBandController> gaugeBands){
 		gaugeAxis.setBands(gaugeBands);
 	}
 	

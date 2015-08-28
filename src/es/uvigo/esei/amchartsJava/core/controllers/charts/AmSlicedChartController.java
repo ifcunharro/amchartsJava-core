@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmSlicedChartController;
-import es.uvigo.esei.amchartsJava.core.api.deserializers.IJsonDeserializerColorCharts;
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -19,7 +18,7 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
 public abstract class AmSlicedChartController<F extends AmSlicedChart> extends AmChartController<F> 
-	implements IJsonDeserializerColorCharts, IAmSlicedChartController<F> {
+	implements IAmSlicedChartController<F> {
 
 	/**
 	 * 
@@ -422,7 +421,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	//usado solo para deserializar json
-	public void setColors(List<String> colors){
+	@SuppressWarnings("unused")
+	private void setColors(List<String> colors){
 		amchart.setColors(colors);
 	}
 

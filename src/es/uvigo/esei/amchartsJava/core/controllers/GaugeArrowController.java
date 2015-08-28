@@ -77,7 +77,8 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	}
 	
 	//this method only use to deserialize json
-	public void setAxis(String axis){
+	@SuppressWarnings("unused")
+	private void setAxis(String axis){
 		gaugeArrow.setFeature("axis", axis);	
 	}
 	
