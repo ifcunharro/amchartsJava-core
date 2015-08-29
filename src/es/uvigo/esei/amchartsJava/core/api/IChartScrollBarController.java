@@ -11,7 +11,7 @@ public abstract interface IChartScrollBarController {
 
 	abstract void setChart(AmRectangularChart chart);
 
-	abstract Object isAutoGridCount();
+	abstract Boolean isAutoGridCount();
 
 	abstract void setAutoGridCount(Boolean autoGridCount);
 
@@ -20,16 +20,16 @@ public abstract interface IChartScrollBarController {
 	abstract void setBackgroundAlpha(Number backgroundAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getBackgroundColor();
+	abstract String getBackgroundColor();
 
 	abstract void setBackgroundColor(String backgroundColor)
 			throws ColorException;
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(String color) throws ColorException;
 
-	abstract Object getDragIcon();
+	abstract String getDragIcon();
 
 	abstract void setDragIcon(String dragIcon);
 
@@ -43,11 +43,11 @@ public abstract interface IChartScrollBarController {
 	abstract void setDragIconWidth(Number dragIconWidth)
 			throws OutOfRangeException;
 
-	abstract Object isEnabled();
+	abstract Boolean isEnabled();
 
 	abstract void setEnabled(Boolean enabled);
 
-	abstract Object getGraph();
+	abstract String getGraph();
 
 	abstract void setGraph(String graph) throws ChartException;
 
@@ -56,9 +56,9 @@ public abstract interface IChartScrollBarController {
 	abstract void setGraphFillAlpha(Number graphFillAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getGraphFillColor();
+	abstract String getGraphFillColor();
 
-	abstract void setGraphFillColor(String graphFillCOlor)
+	abstract void setGraphFillColor(String graphFillColor)
 			throws ColorException;
 
 	abstract Object getGraphLineAlpha();
@@ -66,12 +66,12 @@ public abstract interface IChartScrollBarController {
 	abstract void setGraphLineAlpha(Number graphLineAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getGraphLineColor();
+	abstract String getGraphLineColor();
 
 	abstract void setGraphLineColor(String graphLineColor)
 			throws ColorException;
 
-	abstract Object getGraphType();
+	abstract String getGraphType();
 
 	abstract void setGraphType(GraphType graphType);
 
@@ -79,7 +79,7 @@ public abstract interface IChartScrollBarController {
 
 	abstract void setGridAlpha(Number gridAlpha) throws OutOfRangeException;
 
-	abstract Object getGridColor();
+	abstract String getGridColor();
 
 	abstract void setGridColor(String gridColor) throws ColorException;
 
@@ -87,11 +87,11 @@ public abstract interface IChartScrollBarController {
 
 	abstract void setGridCount(Number gridCount) throws OutOfRangeException;
 
-	abstract Object isHideResizeGrips();
+	abstract Boolean isHideResizeGrips();
 
 	abstract void setHideResizeGrips(Boolean hideResizeGrips);
 
-	abstract Object isIgnoreCustomColors();
+	abstract Boolean isIgnoreCustomColors();
 
 	abstract void setIgnoreCustomColors(Boolean ignoreCustomColors);
 
@@ -107,11 +107,11 @@ public abstract interface IChartScrollBarController {
 
 	abstract void setOffset(Number offset) throws OutOfRangeException;
 
-	abstract Object isOppositeAxis();
+	abstract Boolean isOppositeAxis();
 
 	abstract void setOppositeAxis(Boolean oppositeAxis);
 
-	abstract Object isResizeEnabled();
+	abstract Boolean isResizeEnabled();
 
 	abstract void setResizeEnabled(Boolean resizeEnabled);
 
@@ -130,7 +130,7 @@ public abstract interface IChartScrollBarController {
 	abstract void setSelectedBackgroundAlpha(Number selectedBackgroundAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getSelectedBackgroundColor();
+	abstract String getSelectedBackgroundColor();
 
 	abstract void setSelectedBackgroundColor(String selectedBackgroundColor)
 			throws ColorException;
@@ -140,7 +140,7 @@ public abstract interface IChartScrollBarController {
 	abstract void setSelectedGraphFillAlpha(Number selectedGraphFillAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getSelectedGraphFillColor();
+	abstract String getSelectedGraphFillColor();
 
 	abstract void setSelectedGraphFillColor(String selectedGraphFillColor)
 			throws ColorException;
@@ -150,12 +150,12 @@ public abstract interface IChartScrollBarController {
 	abstract void setSelectedGraphLineAlpha(Number selectedGraphLineAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getSelectedGraphLineColor();
+	abstract String getSelectedGraphLineColor();
 
 	abstract void setSelectedGraphLineColor(String selectedGraphLineColor)
 			throws ColorException;
 
-	abstract Object isUpdateOnReleaseOnly();
+	abstract Boolean isUpdateOnReleaseOnly();
 
 	abstract void setUpdateOnReleaseOnly(Boolean updateOnReleaseOnly);
 

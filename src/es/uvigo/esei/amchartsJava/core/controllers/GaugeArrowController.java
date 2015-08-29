@@ -62,8 +62,8 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}
 	}
 	
-	public Object getAxis(){
-		return gaugeArrow.getFeature("axis");
+	public String getAxis(){
+		return (String) gaugeArrow.getFeature("axis");
 	}
 	
 	public void addAxis(String axis) throws ChartException{
@@ -93,16 +93,16 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	}
 	
 	@JsonProperty(value="clockWiseOnly")
-	public Object isClockWiseOnly(){
-		return gaugeArrow.getFeature("clockWiseOnly");
+	public Boolean isClockWiseOnly(){
+		return (Boolean) gaugeArrow.getFeature("clockWiseOnly");
 	}
 	
 	public void setClockWiseOnly(Boolean clockWiseOnly){
 		gaugeArrow.setFeature("clockWiseOnly", clockWiseOnly);
 	}
 	
-	public Object getColor(){
-		return gaugeArrow.getFeature("color");
+	public String getColor(){
+		return (String) gaugeArrow.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -111,12 +111,12 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}
 	}
 	
-	public Object getId(){
-		return gaugeArrow.getFeature("id");
+	public String getId(){
+		return (String) gaugeArrow.getFeature("id");
 	}
 	
-	public Object getInnerRadius(){
-		return gaugeArrow.getFeature("innerRadius");
+	public String getInnerRadius(){
+		return (String) gaugeArrow.getFeature("innerRadius");
 	}
 	
 	public void setInnerRadius(String innerRadius) throws CoordException{
@@ -165,8 +165,8 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}
 	}
 	
-	public Object getRadius(){
-		return gaugeArrow.getFeature("radius");
+	public String getRadius(){
+		return (String) gaugeArrow.getFeature("radius");
 	}
 	
 	public void setRadius(String radius) throws CoordException{

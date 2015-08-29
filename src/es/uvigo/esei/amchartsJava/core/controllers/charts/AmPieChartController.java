@@ -24,8 +24,8 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	@JsonProperty(value="adjustPrecision")
-	public Object isAdjustPrecision(){
-		return amchart.getFeature("adjustPrecision");
+	public Boolean isAdjustPrecision(){
+		return (Boolean) amchart.getFeature("adjustPrecision");
 	}
 	
 	public void setAdjustPrecision(Boolean adjustPrecision){
@@ -42,8 +42,8 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getBalloonText(){
-		return amchart.getFeature("balloonText");
+	public String getBalloonText(){
+		return (String) amchart.getFeature("balloonText");
 	}
 	
 	//formarlo con [[]] y htmltags
@@ -61,8 +61,8 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getInnerRadius(){
-		return amchart.getFeature("innerRadius");
+	public String getInnerRadius(){
+		return (String) amchart.getFeature("innerRadius");
 	}
 	
 	public void setInnerRadius(String innerRadius) throws CoordException{
@@ -81,16 +81,16 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getLabelRadiusField(){
-		return amchart.getFeature("labelRadiusField");
+	public String getLabelRadiusField(){
+		return (String) amchart.getFeature("labelRadiusField");
 	}
 	
 	public void setLabelRadiusField(String labelRadiusField){
 		amchart.setFeature("labelRadiusField", labelRadiusField);
 	}
 	
-	public Object getLabelText(){
-		return amchart.getFeature("labelText");
+	public String getLabelText(){
+		return (String) amchart.getFeature("labelText");
 	}
 	
 	public void setLabelText(String labelText){
@@ -117,8 +117,8 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getPieX(){
-		return amchart.getFeature("pieX");
+	public String getPieX(){
+		return (String) amchart.getFeature("pieX");
 	}
 	
 	public void setPieX(String pieX) throws CoordException{
@@ -127,8 +127,8 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getPieY(){
-		return amchart.getFeature("pieY");
+	public String getPieY(){
+		return (String) amchart.getFeature("pieY");
 	}
 	
 	public void setPieY(String pieY) throws CoordException{
@@ -137,8 +137,8 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getPullOutRadius(){
-		return amchart.getFeature("pullOutRadius");
+	public String getPullOutRadius(){
+		return (String) amchart.getFeature("pullOutRadius");
 	}
 	
 	public void setPullOutRadius(String pullOutRadius) throws CoordException{
@@ -147,8 +147,8 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getRadius(){
-		return amchart.getFeature("radius");
+	public String getRadius(){
+		return (String) amchart.getFeature("radius");
 	}
 	
 	public void setRadius(String radius) throws CoordException{
@@ -167,8 +167,8 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getStartRadius(){
-		return amchart.getFeature("startRadius");
+	public String getStartRadius(){
+		return (String) amchart.getFeature("startRadius");
 	}
 	
 	public void setStartRadius(String startRadius) throws CoordException{

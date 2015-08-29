@@ -24,15 +24,14 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		try {
 			setMaxBulletSize(50);
 		} catch (OutOfRangeException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
 	
 	
-	public Object getBulletAxis(){
-		return amGraph.getFeature("bulletAxis");
+	public String getBulletAxis(){
+		return (String) amGraph.getFeature("bulletAxis");
 	}
 	
 	public void setBulletAxis(String bulletAxis) throws ChartException{
@@ -45,8 +44,8 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
-	public Object getFillToAxis(){
-		return amGraph.getFeature("fillToAxis");
+	public String getFillToAxis(){
+		return (String) amGraph.getFeature("fillToAxis");
 	}
 	
 	public void setFillToAxis(String fillToAxis) throws ChartException{
@@ -79,8 +78,8 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
-	public Object getXAxis(){
-		return amGraph.getFeature("xAxis");
+	public String getXAxis(){
+		return (String) amGraph.getFeature("xAxis");
 	}
 	
 	public void setXAxis(String xAxis) throws ChartException{
@@ -93,16 +92,16 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
-	public Object getXField(){
-		return amGraph.getFeature("xField");
+	public String getXField(){
+		return (String) amGraph.getFeature("xField");
 	}
 	
 	public void setXField(String xField){
 		amGraph.setFeature("xField", xField);
 	}
 	
-	public Object getYAxis(){
-		return amGraph.getFeature("yAxis");
+	public String getYAxis(){
+		return (String) amGraph.getFeature("yAxis");
 	}
 	
 	public void setYAxis(String yAxis) throws ChartException{
@@ -115,8 +114,8 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
-	public Object getYField(){
-		return amGraph.getFeature("yField");
+	public String getYField(){
+		return (String) amGraph.getFeature("yField");
 	}
 	
 	public void setYField(String yField){

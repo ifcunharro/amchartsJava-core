@@ -32,8 +32,8 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 
 	
 	@JsonProperty(value="gridAboveGraphs")
-	public Object isGridAboveGraphs(){
-		return amchart.getFeature("gridAboveGraphs");
+	public Boolean isGridAboveGraphs(){
+		return (Boolean) amchart.getFeature("gridAboveGraphs");
 	}
 	
 	public void setGridAboveGraphs(Boolean gridAboveGraphs){
@@ -41,8 +41,8 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	@JsonProperty(value="sequencedAnimation")
-	public Object isSequencedAnimation(){
-		return amchart.getFeature("sequencedAnimation");
+	public Boolean isSequencedAnimation(){
+		return (Boolean) amchart.getFeature("sequencedAnimation");
 	}
 	
 	public void setSequencedAnimation(Boolean sequencedAnimation){
@@ -69,16 +69,16 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		}
 	}
 	
-	public Object getStartEffect(){
-		return amchart.getFeature("startEffect");
+	public String getStartEffect(){
+		return (String) amchart.getFeature("startEffect");
 	}
 	
 	public void setStartEffect(Effect startEffect){
 		amchart.setFeature("startEffect", startEffect.toString());
 	}
 	
-	public Object getUrlTarget(){
-		return amchart.getFeature("urlTarget");
+	public String getUrlTarget(){
+		return (String) amchart.getFeature("urlTarget");
 	}
 	
 	public void setUrlTarget(UrlTarget urlTarget){
@@ -87,7 +87,7 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	
 	//methods
 	//colors problema tipo prefixes
-	public Object getColors(){
+	public List<String> getColors(){
 		return amchart.getColors();
 	}
 	

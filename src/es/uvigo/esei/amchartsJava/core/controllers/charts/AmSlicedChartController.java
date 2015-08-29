@@ -39,16 +39,16 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getAlphaField(){
-		return amchart.getFeature("alphaField");
+	public String getAlphaField(){
+		return (String) amchart.getFeature("alphaField");
 	}
 	
 	public void setAlphaField(String alphaField){
 		amchart.setFeature("alphaField", alphaField);
 	}
 	
-	public Object getBaseColor(){
-		return amchart.getFeature("baseColor");
+	public String getBaseColor(){
+		return (String) amchart.getFeature("baseColor");
 	}
 	
 	public void setBaseColor(String baseColor) throws ColorException{
@@ -57,23 +57,23 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getClassNameField(){
-		return amchart.getFeature("classNameField");
+	public String getClassNameField(){
+		return (String) amchart.getFeature("classNameField");
 	}
 	
 	public void setClassNameField(String classNameField){
 		amchart.setFeature("classNameField", classNameField);
 	}
 	
-	public Object getColorField(){
-		return amchart.getFeature("colorField");
+	public String getColorField(){
+		return (String) amchart.getFeature("colorField");
 	}
 	
 	public void setColorField(String colorField){
 		amchart.setFeature("colorField", colorField);
 	}
 	
-	public Object getColors(){
+	public List<String> getColors(){
 		return amchart.getColors();
 	}
 	
@@ -85,15 +85,15 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		amchart.changeColorsDefault(newColors);
 	}
 	
-	public Object getDescriptionField(){
-		return amchart.getFeature("descriptionField");
+	public String getDescriptionField(){
+		return (String) amchart.getFeature("descriptionField");
 	}
 	
 	public void setDescriptionField(String descriptionField){
 		amchart.setFeature("descriptionField", descriptionField);
 	}
 	
-	public Object getGradientRatio(){
+	public List<Number> getGradientRatio(){
 		return amchart.getGradientRatio();
 	}
 	
@@ -111,8 +111,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getGroupedColor(){
-		return amchart.getFeature("groupedColor");
+	public String getGroupedColor(){
+		return (String) amchart.getFeature("groupedColor");
 	}
 	
 	public void setGroupedColor(String groupedColor) throws ColorException{
@@ -121,8 +121,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getGroupedDescription(){
-		return amchart.getFeature("groupedDescription");
+	public String getGroupedDescription(){
+		return (String) amchart.getFeature("groupedDescription");
 	}
 	
 	public void setGroupedDescription(String groupedDescription){
@@ -130,16 +130,16 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	@JsonProperty(value="groupedPulled")
-	public Object isGroupedPulled(){
-		return amchart.getFeature("groupedPulled");
+	public Boolean isGroupedPulled(){
+		return (Boolean) amchart.getFeature("groupedPulled");
 	}
 	
 	public void setGroupedPulled(Boolean groupedPulled){
 		amchart.setFeature("groupedPulled", groupedPulled);
 	}
 	
-	public Object getGroupedTitle(){
-		return amchart.getFeature("groupedTitle");
+	public String getGroupedTitle(){
+		return (String) amchart.getFeature("groupedTitle");
 	}
 	
 	public void setGroupedTitle(String groupedTitle){
@@ -176,8 +176,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getLabelFunction(){
-		return amchart.getFeature("labelFunction");
+	public String getLabelFunction(){
+		return (String) amchart.getFeature("labelFunction");
 	}
 	
 	public void setLabelFunction(String labelFunction){
@@ -185,8 +185,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	@JsonProperty(value="labelsEnabled")
-	public Object getLabelsEnabled(){
-		return amchart.getFeature("labelsEnabled");
+	public Boolean isLabelsEnabled(){
+		return (Boolean) amchart.getFeature("labelsEnabled");
 	}
 	
 	public void setLabelsEnabled(Boolean labelsEnabled){
@@ -197,12 +197,14 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		return amchart.getFeature("labelTickAlpha");
 	}
 	
-	public void setLabelTickAlpha(String labelTickAlpha){
-		amchart.setFeature("labelTickAlpha", labelTickAlpha);
+	public void setLabelTickAlpha(Number labelTickAlpha) throws OutOfRangeException{
+		if(NumberValidator.rangeDoubleValidator(labelTickAlpha, 0, 1)){
+			amchart.setFeature("labelTickAlpha", labelTickAlpha);
+		}
 	}
 	
-	public Object labelTickColor(){
-		return amchart.getFeature("labelTickColor");
+	public String labelTickColor(){
+		return (String) amchart.getFeature("labelTickColor");
 	}
 	
 	public void setLabelTickColor(String labelTickColor) throws ColorException{
@@ -271,8 +273,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getOutlineColor(){
-		return amchart.getFeature("outlineColor");
+	public String getOutlineColor(){
+		return (String) amchart.getFeature("outlineColor");
 	}
 	
 	public void setOutlineColor(String outlineColor) throws ColorException{
@@ -281,7 +283,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getOutlineThickness(Number outlineThickness){
+	public Object getOutlineThickness(){
 		return amchart.getFeature("outlineThickness");
 	}
 	
@@ -291,16 +293,16 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getPatternField(){
-		return amchart.getFeature("patternField");
+	public String getPatternField(){
+		return (String) amchart.getFeature("patternField");
 	}
 	
 	public void setPatternField(String patternField){
 		amchart.setFeature("patternField", patternField);
 	}
 	
-	public Object getPulledField(){
-		return amchart.getFeature("pulledField");
+	public String getPulledField(){
+		return (String) amchart.getFeature("pulledField");
 	}
 	
 	public void setPulledField(String pulledField){
@@ -317,8 +319,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getPullOutEffect(){
-		return amchart.getFeature("pullOutEffect");
+	public String getPullOutEffect(){
+		return (String) amchart.getFeature("pullOutEffect");
 	}
 	
 	public void setPullOutEffect(Effect pullOutEffect){
@@ -326,8 +328,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	@JsonProperty(value="pullOutOnlyOne")
-	public Object isPullOutOnlyOne(){
-		return amchart.getFeature("pullOutOnlyOne");
+	public Boolean isPullOutOnlyOne(){
+		return (Boolean) amchart.getFeature("pullOutOnlyOne");
 	}
 	
 	public void setPullOutOnlyOne(Boolean pullOutOnlyOne){
@@ -335,8 +337,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	@JsonProperty(value="sequencedAnimation")
-	public Object isSequencedAnimation(){
-		return amchart.getFeature("sequencedAnimation");
+	public Boolean isSequencedAnimation(){
+		return (Boolean) amchart.getFeature("sequencedAnimation");
 	}
 	
 	public void setSequencedAnimation(Boolean sequencedAnimation){
@@ -344,8 +346,8 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	@JsonProperty(value="showZeroSlices")
-	public Object isShowZeroSlices(){
-		return amchart.getFeature("showZeroSlices");
+	public Boolean isShowZeroSlices(){
+		return (Boolean) amchart.getFeature("showZeroSlices");
 	}
 	
 	public void setShowZeroSlices(Boolean showZeroSlices){
@@ -372,48 +374,48 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getStartEffect(){
-		return amchart.getFeature("startEffect");
+	public String getStartEffect(){
+		return (String) amchart.getFeature("startEffect");
 	}
 	
 	public void setStartEffect(Effect startEffect){
 		amchart.setFeature("startEffect", startEffect.toString());
 	}
 	
-	public Object getTitleField(){
-		return amchart.getFeature("titleField");
+	public String getTitleField(){
+		return (String) amchart.getFeature("titleField");
 	}
 	
 	public void setTitleField(String titleField){
 		amchart.setFeature("titleField", titleField);
 	}
 	
-	public Object getUrlField(){
-		return amchart.getFeature("urlField");
+	public String getUrlField(){
+		return (String) amchart.getFeature("urlField");
 	}
 	
 	public void setUrlField(String urlField){
 		amchart.setFeature("urlField", urlField);
 	}
 	
-	public Object getUrlTarget(){
-		return amchart.getFeature("urlTarget");
+	public String getUrlTarget(){
+		return (String) amchart.getFeature("urlTarget");
 	}
 	
 	public void setUrlTarget(UrlTarget urlTarget){
 		amchart.setFeature("urlTarget", urlTarget.toString());
 	}
 	
-	public Object getValueField(){
-		return amchart.getFeature("valueField");
+	public String getValueField(){
+		return (String) amchart.getFeature("valueField");
 	}
 	
 	public void setValueField(String valueField){
 		amchart.setFeature("valueField", valueField);
 	}
 	
-	public Object getVisibleInLegendField(){
-		return amchart.getFeature("visibleInLegendField");
+	public String getVisibleInLegendField(){
+		return (String) amchart.getFeature("visibleInLegendField");
 	}
 	
 	public void setVisibleInLegendField(String visibleInLegendField){

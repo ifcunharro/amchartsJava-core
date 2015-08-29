@@ -29,16 +29,16 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 		}
 	}
 	
-	public Object getGridType(){
-		return axes.getFeature("gridType");
+	public String getGridType(){
+		return (String) axes.getFeature("gridType");
 	}
 	
 	public void setGridType(GridType gridType){
 		axes.setFeature("gridType", gridType.toString());
 	}
 	
-	public Object getPointPosition(){
-		return axes.getFeature("pointPosition");
+	public String getPointPosition(){
+		return (String) axes.getFeature("pointPosition");
 	}
 	
 	public void setPointPosition(PointPositionAxisRadar pointPosition){
@@ -46,8 +46,8 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 	}
 	
 	@JsonProperty(value="radarCategoriesEnabled")
-	public Object isRadarCategoriesEnabled(){
-		return axes.getFeature("radarCategoriesEnabled");
+	public Boolean isRadarCategoriesEnabled(){
+		return (Boolean) axes.getFeature("radarCategoriesEnabled");
 	}
 	
 	public void setRadarCategoriesEnabled(Boolean radarCategoriesEnabled){

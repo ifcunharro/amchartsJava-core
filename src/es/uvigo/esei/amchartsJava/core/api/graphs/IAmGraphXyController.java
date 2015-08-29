@@ -4,38 +4,38 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IAmGraphXyController extends IAmGraphSerialChartController {
+public abstract interface IAmGraphXyController extends IAmGraphSerialChartController {
 
-	public Object getBulletAxis();
+	abstract String getBulletAxis();
 	
-	public void setBulletAxis(String bulletAxis) throws ChartException;
+	abstract void setBulletAxis(String bulletAxis) throws ChartException;
 	
-	public Object getFillToAxis();
+	abstract String getFillToAxis();
 	
-	public void setFillToAxis(String fillToAxis) throws ChartException;
+	abstract void setFillToAxis(String fillToAxis) throws ChartException;
 	
-	public Object getMaxBulletSize();
+	abstract Object getMaxBulletSize();
 
-	public void setMaxBulletSize(Number maxBulletSize) throws OutOfRangeException;
+	abstract void setMaxBulletSize(Number maxBulletSize) throws OutOfRangeException;
 
-	public Object getMinBulletSize();
+	abstract Object getMinBulletSize();
 
-	public void setMinBulletSize(Number minBulletSize) throws IntegerException;
+	abstract void setMinBulletSize(Number minBulletSize) throws IntegerException;
 	
-	public Object getXAxis();
+	abstract String getXAxis();
 	
-	public void setXAxis(String xAxis) throws ChartException;
+	abstract void setXAxis(String xAxis) throws ChartException;
 	
-	public Object getXField();
+	abstract String getXField();
 
-	public void setXField(String xField);
+	abstract void setXField(String xField);
 	
-	public Object getYAxis();
+	abstract String getYAxis();
 	
-	public void setYAxis(String yAxis) throws ChartException;
+	abstract void setYAxis(String yAxis) throws ChartException;
 
-	public Object getYField();
+	abstract String getYField();
 
-	public void setYField(String yField);
+	abstract void setYField(String yField);
 
 }

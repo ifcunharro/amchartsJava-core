@@ -8,15 +8,17 @@ import java.util.List;
 
 
 
+
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
+import es.uvigo.esei.amchartsJava.core.controllers.ExportController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 
 
 public abstract class AmChart extends IModel {
 	protected List<LabelController> labels;
-	protected Export export;
+	protected ExportController export;
 	protected AmBalloonController balloon;
 	protected List<Prefix> bigPrefixes;
 	protected List<Prefix> smallPrefixes;
@@ -52,12 +54,12 @@ public abstract class AmChart extends IModel {
 		
 	}
 
-	public Export getExport() {
+	public ExportController getExport() {
 		return export;
 	}
 
-	public void createExport() {
-		export = new Export();
+	public void addExport(ExportController exportController) {
+		export = exportController;
 		
 	}
 

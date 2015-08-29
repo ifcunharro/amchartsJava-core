@@ -68,7 +68,7 @@ public class TrendLines {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyTrendLineSerial()){
 			for(TrendLineSerialChartController trendLineSerial: getTrendLinesSerial()){
-				ids.add(trendLineSerial.getId().toString());
+				ids.add(trendLineSerial.getId());
 			}
 		}
 		return ids;
@@ -78,7 +78,7 @@ public class TrendLines {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyTrendLineXy()){
 			for(TrendLineSerialChartController trendLineSerial: getTrendLinesSerial()){
-				ids.add(trendLineSerial.getId().toString());
+				ids.add(trendLineSerial.getId());
 			}
 		}
 		return ids;
@@ -107,7 +107,7 @@ public class TrendLines {
 			initTrendLinesXy();
 		}
 		getTrendLinesXy().add(trendLineXyChartController);
-		String idTrendLine = trendLineXyChartController.getId().toString();
+		String idTrendLine = trendLineXyChartController.getId();
 		idTrendLines.add(idTrendLine);
 		positionsTrendLines.put(idTrendLine, sizeTrendLineXy()-1);
 		sizeTrendLines++;
@@ -118,7 +118,7 @@ public class TrendLines {
 			initTrendLineSerial();
 		}
 		getTrendLinesSerial().add(trendLineSerialChartController);
-		String idTrendLine = trendLineSerialChartController.getId().toString();
+		String idTrendLine = trendLineSerialChartController.getId();
 		idTrendLines.add(idTrendLine);
 		positionsTrendLines.put(idTrendLine, sizeTrendLineSerial()-1);
 		sizeTrendLines++;

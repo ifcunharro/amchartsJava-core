@@ -47,8 +47,8 @@ public class LabelController implements Observer, ILabelController, Serializable
 		
 	}
 	
-	public Object getAlign(){
-		return label.getFeature("align");
+	public String getAlign(){
+		return (String) label.getFeature("align");
 	}
 	
 	public void setAlign(Align labelAlign){
@@ -66,16 +66,16 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	@JsonProperty(value = "bold")
-	public Object isBold(){
-		return label.getFeature("bold");
+	public Boolean isBold(){
+		return (Boolean) label.getFeature("bold");
 	}
 	
 	public void setBold(Boolean bold){
 		label.setFeature("bold", bold);
 	}
 	
-	public Object getColor(){
-		return label.getFeature("color");
+	public String getColor(){
+		return (String) label.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -84,8 +84,8 @@ public class LabelController implements Observer, ILabelController, Serializable
 		}
 	}
 	
-	public Object getId(){
-		return label.getFeature("id");
+	public String getId(){
+		return (String) label.getFeature("id");
 	}
 	
 	private void setId(String id){
@@ -113,24 +113,24 @@ public class LabelController implements Observer, ILabelController, Serializable
 		}
 	}
 	
-	public Object getText(){
-		return label.getFeature("text");
+	public String getText(){
+		return (String) label.getFeature("text");
 	}
 	
 	public void setText(String text){
 		label.setFeature("text", text);
 	}
 	
-	public Object getUrl(){
-		return label.getFeature("url");
+	public String getUrl(){
+		return (String) label.getFeature("url");
 	}
 	
 	public void setUrl(String url){
 		label.setFeature("url", url);
 	}
 
-	public Object getX(){
-		return label.getFeature("xCoord");
+	public String getX(){
+		return (String) label.getFeature("xCoord");
 	}
 	
 	public void setX(String xCoord) throws CoordException{
@@ -139,8 +139,8 @@ public class LabelController implements Observer, ILabelController, Serializable
 		}
 	}
 	
-	public Object getY(){
-		return label.getFeature("yCoord");
+	public String getY(){
+		return (String) label.getFeature("yCoord");
 	}
 	
 	public void setY(String yCoord) throws CoordException{

@@ -67,7 +67,7 @@ public class ValueAxis{
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyValueAxis()){
 			for(ValueAxisController valueAxis: getValueAxis()){
-				ids.add(valueAxis.getId().toString());
+				ids.add(valueAxis.getId());
 			}
 		}
 		return ids;
@@ -77,7 +77,7 @@ public class ValueAxis{
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyValueAxisRadarChart()){
 			for(ValueAxisRadarChartController valueAxisRadar: getValueAxisRadar()){
-				ids.add(valueAxisRadar.getId().toString());
+				ids.add(valueAxisRadar.getId());
 			}
 		}
 		return ids;
@@ -104,7 +104,7 @@ public class ValueAxis{
 			initValueAxis();
 		}
 		getValueAxis().add(valueAxisController);
-		String idValueAxis = valueAxisController.getId().toString();
+		String idValueAxis = valueAxisController.getId();
 		idValueAxes.add(idValueAxis);
 		positionsAxis.put(idValueAxis, sizeValueAxis()-1);
 		sizeAxis++;
@@ -116,7 +116,7 @@ public class ValueAxis{
 			initValueAxisRadar();
 		}
 		getValueAxisRadar().add(valueAxisRadarChartController);
-		String idValueAxisRadar = valueAxisRadarChartController.getId().toString();
+		String idValueAxisRadar = valueAxisRadarChartController.getId();
 		idValueAxes.add(idValueAxisRadar);
 		positionsAxis.put(idValueAxisRadar, sizeValueAxisRadar()-1);
 		sizeAxis++;

@@ -65,16 +65,16 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="avoidBalloonOverlapping")
-	public Object isAvoidBalloonOverlapping(){
-		return chartCursor.getFeature("avoidBalloonOverlapping");
+	public Boolean isAvoidBalloonOverlapping(){
+		return (Boolean) chartCursor.getFeature("avoidBalloonOverlapping");
 	}
 	
 	public void setAvoidBalloonOverlapping(Boolean avoidBalloonOverlapping){
 		chartCursor.setFeature("avoidBalloonOverlapping", avoidBalloonOverlapping);
 	}
 	
-	public Object getBalloonPointerOrientation(){
-		return chartCursor.getFeature("balloonPointerOrientation");
+	public String getBalloonPointerOrientation(){
+		return (String) chartCursor.getFeature("balloonPointerOrientation");
 	}
 	
 	public void setBalloonPointerOrientation(Orientation balloonPointerOrientation){
@@ -82,8 +82,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="bulletsEnabled")
-	public Object isBulletsEnabled(){
-		return chartCursor.getFeature("bulletsEnabled");
+	public Boolean isBulletsEnabled(){
+		return (Boolean) chartCursor.getFeature("bulletsEnabled");
 	}
 	
 	public void setBulletsEnabled(Boolean bulletsEnabled){
@@ -110,8 +110,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getCategoryBalloonColor(){
-		return chartCursor.getFeature("categoryBalloonColor");
+	public String getCategoryBalloonColor(){
+		return (String) chartCursor.getFeature("categoryBalloonColor");
 	}
 	
 	public void setCategoryBallonColor(String categoryBalloonColor) throws ColorException{
@@ -120,8 +120,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getCategoryBalloonDateFormat(){
-		return chartCursor.getFeature("categoryBalloonDateFormat");
+	public String getCategoryBalloonDateFormat(){
+		return (String) chartCursor.getFeature("categoryBalloonDateFormat");
 	}
 	
 	public void setCategoryBalloonDateFormat(String categoryBalloonDateFormat){
@@ -131,32 +131,32 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="categoryBalloonEnabled")
-	public Object isCategoryBalloonEnabled(){
-		return chartCursor.getFeature("categoryBalloonEnabled");
+	public Boolean isCategoryBalloonEnabled(){
+		return (Boolean) chartCursor.getFeature("categoryBalloonEnabled");
 	}
 	
 	public void setCategoryBalloonEnaled(Boolean categoryBalloonEnabled){
 		chartCursor.setFeature("categoryBalloonEnabled", categoryBalloonEnabled);
 	}
 	
-	public Object getCategoryBalloonFunction(){
-		return chartCursor.getFeature("categoryBalloonFunction");
+	public String getCategoryBalloonFunction(){
+		return (String) chartCursor.getFeature("categoryBalloonFunction");
 	}
 	
 	public void setCategoryBalloonFunction(String categoryBalloonFunction){
 		chartCursor.setFeature("categoryBalloonFunction", categoryBalloonFunction);
 	}
 	
-	public Object getCategoryBalloonText(){
-		return chartCursor.getFeature("categoryBalloonText");
+	public String getCategoryBalloonText(){
+		return (String) chartCursor.getFeature("categoryBalloonText");
 	}
 	
 	public void setCategoryBalloonText(CategoryBalloonText categoryBalloonText){
 		chartCursor.setFeature("categoryBalloonText", categoryBalloonText.toString());
 	}
 	
-	public Object getColor(){
-		return chartCursor.getFeature("color");
+	public String getColor(){
+		return (String) chartCursor.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -175,8 +175,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getCursorColor(){
-		return chartCursor.getFeature("cursorColor");
+	public String getCursorColor(){
+		return (String) chartCursor.getFeature("cursorColor");
 	}
 	
 	public void setCursorColor(String cursorColor) throws ColorException{
@@ -185,8 +185,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getCursorPosition(){
-		return chartCursor.getFeature("cursorPosition");
+	public String getCursorPosition(){
+		return (String) chartCursor.getFeature("cursorPosition");
 	}
 	
 	public void setCursorPosition(CursorPosition cursorPosition){
@@ -194,8 +194,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="enabled")
-	public Object isEnabled(){
-		return chartCursor.getFeature("enabled");
+	public Boolean isEnabled(){
+		return (Boolean) chartCursor.getFeature("enabled");
 	}
 	
 	public void setEnabled(Boolean enabled){
@@ -203,8 +203,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="fullWidth")
-	public Object isFullWidth(){
-		return chartCursor.getFeature("fullWidth");
+	public Boolean isFullWidth(){
+		return (Boolean) chartCursor.getFeature("fullWidth");
 	}
 	
 	public void setFullWidth(Boolean fullWidth){
@@ -232,8 +232,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="leaveCursor")
-	public Object isLeaveCursor(){
-		return chartCursor.getFeature("leaveCursor");
+	public Boolean isLeaveCursor(){
+		return (Boolean) chartCursor.getFeature("leaveCursor");
 	}
 	
 	public void setLeaveCursor(Boolean leaveCursor){
@@ -241,8 +241,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="oneBalloonOnly")
-	public Object isOneBalloonOnly(){
-		return chartCursor.getFeature("oneBalloonOnly");
+	public Boolean isOneBalloonOnly(){
+		return (Boolean) chartCursor.getFeature("oneBalloonOnly");
 	}
 	
 	public void setOneBalloonOnly(Boolean oneBalloonOnly){
@@ -250,8 +250,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="pan")
-	public Object isPan(){
-		return chartCursor.getFeature("pan");
+	public Boolean isPan(){
+		return (Boolean) chartCursor.getFeature("pan");
 	}
 	
 	public void setPan(Boolean pan){
@@ -269,8 +269,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="selectWithoutZooming")
-	public Object isSelectWithoutZooming(){
-		return chartCursor.getFeature("selectWithoutZooming");
+	public Boolean isSelectWithoutZooming(){
+		return (Boolean) chartCursor.getFeature("selectWithoutZooming");
 	}
 	
 	public void setSelectWithoutZooming(Boolean selectWithoutZooming){
@@ -278,8 +278,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="showNextAvailable")
-	public Object isShowNextAvailable(){
-		return chartCursor.getFeature("showNextAvailable");
+	public Boolean isShowNextAvailable(){
+		return (Boolean) chartCursor.getFeature("showNextAvailable");
 	}
 	
 	public void setShowNextAvailable(Boolean showNextAvailable){
@@ -287,8 +287,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="valueBalloonsEnabled")
-	public Object isValueBalloonsEnabled(){
-		return chartCursor.getFeature("valueBalloonsEnabled");
+	public Boolean isValueBalloonsEnabled(){
+		return (Boolean) chartCursor.getFeature("valueBalloonsEnabled");
 	}
 	
 	public void setValueBalloonsEnabled(Boolean valueBalloonsEnabled){
@@ -305,8 +305,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getValueLineAxis(){
-		return chartCursor.getFeature("valueLineAxis");
+	public String getValueLineAxis(){
+		return (String) chartCursor.getFeature("valueLineAxis");
 	}
 	
 	public void setValueLineAxis(String valueLineAxis) throws ChartException{
@@ -320,8 +320,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="valueLineBalloonEnabled")
-	public Object isValueLineBalloonEnabled(){
-		return chartCursor.getFeature("valueLineBalloonEnabled");
+	public Boolean isValueLineBalloonEnabled(){
+		return (Boolean) chartCursor.getFeature("valueLineBalloonEnabled");
 	}
 	
 	public void setValueLineBalloonEnabled(Boolean valueLineBalloonEnabled){
@@ -329,8 +329,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="valueLineEnabled")
-	public Object isValueLineEnabled(){
-		return chartCursor.getFeature("valueLineEnabled");
+	public Boolean isValueLineEnabled(){
+		return (Boolean) chartCursor.getFeature("valueLineEnabled");
 	}
 	
 	public void setValueLineEnabled(Boolean valueLineEnabled){
@@ -338,8 +338,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	@JsonProperty(value="zoomable")
-	public Object isZoomable(){
-		return chartCursor.getFeature("zoomable");
+	public Boolean isZoomable(){
+		return (Boolean) chartCursor.getFeature("zoomable");
 	}
 	
 	public void setZommable(Boolean zoomable){

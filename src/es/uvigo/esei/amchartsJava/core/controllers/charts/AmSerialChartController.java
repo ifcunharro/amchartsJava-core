@@ -28,8 +28,8 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		setType(AmchartsConstants.CHART_TYPES.getSerial());
 	}
 	
-	public Object getBalloonDateFormat(){
-		return amchart.getFeature("balloonDateFormat");
+	public String getBalloonDateFormat(){
+		return (String) amchart.getFeature("balloonDateFormat");
 	}
 
 	public void setBalloonDateFormat(String balloonDateFormat){
@@ -38,8 +38,8 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		}
 	}
 	
-	public Object getCategoryField(){
-		return amchart.getFeature("categoryField");
+	public String getCategoryField(){
+		return (String) amchart.getFeature("categoryField");
 	}
 	
 	public void setCategoryField(String categoryField){
@@ -76,8 +76,8 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		}
 	}
 	
-	public Object getDataDateFormat(){
-		return amchart.getFeature("dataDateFormat");
+	public String getDataDateFormat(){
+		return (String) amchart.getFeature("dataDateFormat");
 	}
 	
 	public void setDataDateFormat(String dataDateFormat){
@@ -117,8 +117,8 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 	
 	@JsonProperty(value="mouseWheelScrollEnabled")
-	public Object isMouseWheelScrollEnabled(){
-		return amchart.getFeature("mouseWheelScrollEnabled");
+	public Boolean isMouseWheelScrollEnabled(){
+		return (Boolean) amchart.getFeature("mouseWheelScrollEnabled");
 	}
 	
 	public void setMouseWheelScrollEnabled(Boolean mouseWheelScrollEnabled){
@@ -126,8 +126,8 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 	
 	@JsonProperty(value="mouseWheelZoomEnabled")
-	public Object isMouseWheelZoomEnabled(){
-		return amchart.getFeature("mouseWheelZoomEnabled");
+	public Boolean isMouseWheelZoomEnabled(){
+		return (Boolean) amchart.getFeature("mouseWheelZoomEnabled");
 	}
 	
 	public void setMouseWheelZoomEnabled(Boolean mouseWheelZoomEnabled){
@@ -135,8 +135,8 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 
 	@JsonProperty(value="rotate")
-	public Object isRotate(){
-		return amchart.getFeature("rotate");
+	public Boolean isRotate(){
+		return (Boolean) amchart.getFeature("rotate");
 	}
 	
 	public void setRotate(Boolean rotate){
@@ -144,8 +144,8 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 	
 	@JsonProperty(value="zoomOutOnDataUpdated")
-	public Object isZoomOutOnDataUpdated(){
-		return amchart.getFeature("zoomOutOnDataUpdated");
+	public Boolean isZoomOutOnDataUpdated(){
+		return (Boolean) amchart.getFeature("zoomOutOnDataUpdated");
 	}
 	
 	public void setZoomOutOnDataUpdated(Boolean zoomOutOnDataUpdated){

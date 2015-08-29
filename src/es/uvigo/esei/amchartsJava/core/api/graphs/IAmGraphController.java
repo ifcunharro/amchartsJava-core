@@ -24,25 +24,25 @@ public interface IAmGraphController  {
 	
 	abstract void setChart(AmCoordinateChart chart);
 	
-	abstract Object getId();
+	abstract String getId();
 
-	abstract Object getAlphaField();
+	abstract String getAlphaField();
 
 	abstract void setAlphaField(String alphaField);
 
-	abstract Object isAnimationPlayed();
+	abstract Boolean isAnimationPlayed();
 
 	abstract void setAnimationPlayed(Boolean animationPlayed);
 
-	abstract Object getBalloonColor();
+	abstract String getBalloonColor();
 
 	abstract void setBalloonColor(ColorsAmCharts balloonColor);
 
-	abstract Object getBalloonFunction();
+	abstract String getBalloonFunction();
 
 	abstract void setBalloonFunction(String balloonFunction);
 
-	abstract Object getBullet();
+	abstract String getBullet();
 
 	abstract void setBullet(Bullet bullet);
 
@@ -55,7 +55,7 @@ public interface IAmGraphController  {
 	abstract void setBulletBorderAlpha(Number bulletBorderAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getBulletBordeColor();
+	abstract String getBulletBordeColor();
 
 	abstract void setBulletBorderColor(ColorsAmCharts bulletBorderColor);
 
@@ -64,11 +64,11 @@ public interface IAmGraphController  {
 	abstract void setBulletBorderThickness(Number bulletBorderThickness)
 			throws OutOfRangeException;
 
-	abstract Object getBulletColor();
+	abstract String getBulletColor();
 
 	abstract void setBulletColor(ColorsAmCharts bulletColor);
 
-	abstract Object getBulletField();
+	abstract String getBulletField();
 
 	abstract void setBulletField(String bulletField);
 
@@ -80,19 +80,19 @@ public interface IAmGraphController  {
 
 	abstract void setBulletSize(Number bulletSize) throws OutOfRangeException;
 
-	abstract Object getBulletSizeField();
+	abstract String getBulletSizeField();
 
 	abstract void setBulletSizeField(String bulletSizeField);
 
-	abstract Object getCloseField();
+	abstract String getCloseField();
 
 	abstract void setCloseField(String closeField);
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(ColorsAmCharts color);
 
-	abstract Object getColorField();
+	abstract String getColorField();
 
 	abstract void setColorField(String colorField);
 
@@ -102,30 +102,30 @@ public interface IAmGraphController  {
 			throws OutOfRangeException;
 
 	//path to image custom bullet
-	abstract Object getCustomBullet();
+	abstract String getCustomBullet();
 
 	//FALTA VALIDAR PATH
 	abstract void setCustomBullet(String customBullet);
 
-	abstract Object getCustomBulletField();
+	abstract String getCustomBulletField();
 
 	abstract void setCustomBulletField(String customBulletField);
 
-	abstract Object getCustomMarker();
+	abstract String getCustomMarker();
 
 	abstract void setCustomMarker(String customMarker);
 
-	abstract Object getDateFormat();
+	abstract String getDateFormat();
 
 	//escogido de DateFormatConstant, filtrar a nivel interfaz, 
 	// si se usa sin interfaz propia o sin ninguna interfaz no se realiza ningún cambio
 	abstract void setDateFormat(String dateFormat);
 
-	abstract Object getDescriptionField();
+	abstract String getDescriptionField();
 
 	abstract void setDescriptionField(String descriptionField);
 
-	abstract Object getErrorField();
+	abstract String getErrorField();
 
 	abstract void setErrorField(String errorField);
 
@@ -133,7 +133,7 @@ public interface IAmGraphController  {
 
 	abstract void setFillAlphas(Number fillAlphas) throws OutOfRangeException;
 
-	abstract Object getFillToGraph();
+	abstract String getFillToGraph();
 
 	//debe ser el id de otro graph
 	abstract void setFillToGraph(String fillToGraph) throws ChartException;
@@ -146,11 +146,11 @@ public interface IAmGraphController  {
 
 	abstract void setGapPeriod(Number gapPeriod) throws DoubleException;
 
-	abstract Object getGradientOrientation();
+	abstract String getGradientOrientation();
 
 	abstract void setGradientOrientation(Orientation gradientOrientation);
 
-	abstract Object isHidden();
+	abstract Boolean isHidden();
 
 	abstract void setHidden(Boolean hidden);
 
@@ -159,19 +159,19 @@ public interface IAmGraphController  {
 	abstract void setHideBulletsCount(Number hideBulletsCount)
 			throws IntegerException;
 
-	abstract Object isIncludeInMinMax();
+	abstract Boolean isIncludeInMinMax();
 
 	abstract void setIncludeInMinMax(Boolean includeInMinMax);
 
-	abstract Object getLabelAnchor();
+	abstract String getLabelAnchor();
 
 	abstract void setLabelAnchor(LabelAnchor labelAnchor);
 
-	abstract Object getLabelColorField();
+	abstract String getLabelColorField();
 
 	abstract void setLabelColorField(String labelColorField);
 
-	abstract Object getLabelFunction();
+	abstract String getLabelFunction();
 
 	abstract void setLabelFunction(String labelFunction);
 
@@ -179,7 +179,7 @@ public interface IAmGraphController  {
 
 	abstract void setLabelOffset(Number labelOffset) throws OutOfRangeException;
 
-	abstract Object getLabelPosition();
+	abstract String getLabelPosition();
 
 	abstract void setLabelPosition(LabelPosition labelPosition);
 
@@ -188,7 +188,7 @@ public interface IAmGraphController  {
 	abstract void setLabelRotation(Number labelRotation)
 			throws OutOfRangeException;
 
-	abstract Object getLabelText();
+	abstract String getLabelText();
 
 	abstract void setLabelText(TagsText labelText);
 
@@ -196,16 +196,16 @@ public interface IAmGraphController  {
 
 	abstract void setLegendAlpha(Number legendAlpha) throws OutOfRangeException;
 
-	abstract Object getLegendColor();
+	abstract String getLegendColor();
 
 	abstract void setLegendColor(ColorsAmCharts legendColor);
 
-	abstract Object getLegendPeriodValueText();
+	abstract String getLegendPeriodValueText();
 
 	abstract void setLegendPeriodValueText(
 			LegendPeriodValueText legendPeriodValueText);
 
-	abstract Object getLegendValueText();
+	abstract String getLegendValueText();
 
 	abstract void setLegendValueText(TagsText legendValueText);
 
@@ -213,7 +213,7 @@ public interface IAmGraphController  {
 
 	abstract void setLineAlpha(Number lineAlpha) throws OutOfRangeException;
 
-	abstract Object getMakerType();
+	abstract String getMakerType();
 
 	abstract void setMarkerType(MarkerType markerType);
 
@@ -230,15 +230,15 @@ public interface IAmGraphController  {
 	abstract void setNegativeFillAlphas(Number negativeFillAlhas)
 			throws OutOfRangeException;
 
-	abstract Object getNegativeFillColors();
+	abstract String getNegativeFillColors();
 
 	abstract void setNegativeFillColors(ColorsAmCharts negativeFillColors);
 	
-	abstract Object getPattern();
+	abstract PatternController getPattern();
 	
 	abstract void setPattern(PatternController pattern) throws MalFormedPatternException;
 	
-	abstract Object getPatternField();
+	abstract String getPatternField();
 	
 	abstract void setPatternField(String patternField);
 
@@ -246,63 +246,60 @@ public interface IAmGraphController  {
 
 	abstract void setPrecision(Number precision) throws OutOfRangeException;
 
-	abstract Object isProCandleSticks();
+	abstract Boolean isProCandleSticks();
 
 	abstract void setProCandleSticks(Boolean proCandleSticks);
 
-	abstract Object isSwowAllValueLabels();
+	abstract Boolean isShowAllValueLabels();
 
 	abstract void setShowAllValueLabels(Boolean showAllValueLabels);
 
-	abstract Object isShowBalloon();
+	abstract Boolean isShowBalloon();
 
 	abstract void setShowBalloon(Boolean showBalloon);
 
-	abstract Object isShowHandOnHover();
+	abstract Boolean isShowHandOnHover();
 
 	abstract void setShowHandOnHover(Boolean showHandOnHover);
 
-	abstract Object isShowOnAxis();
+	abstract Boolean isShowOnAxis();
 
 	abstract void setShowOnAxis(Boolean showOnAxis);
 
-	abstract Object isStackable();
+	abstract Boolean isStackable();
 
 	abstract void setStackable(Boolean stackable);
 
-	abstract Object isSwitchable();
+	abstract Boolean isSwitchable();
 
 	abstract void setSwitchable(Boolean switchable);
 
-	abstract Object getTitle();
+	abstract String getTitle();
 
 	abstract void setTitle(String title);
 
-	abstract Object getType();
+	abstract String getType();
 
 	abstract void setType(GraphType type);
 
-	abstract Object getUrlField();
+	abstract String getUrlField();
 
 	abstract void setUrlField(String urlField);
 
-	abstract Object getUrlTarget();
+	abstract String getUrlTarget();
 
 	abstract void setUrlTarget(UrlTarget urlTarget);
 
-	abstract Object getValueAxis();
+	abstract String getValueAxis();
 
 	abstract void setValueAxis(String valueAxis) throws ChartException;
 
-	abstract Object getValueField();
+	abstract String getValueField();
 
 	abstract void setValueField(String valueField);
 
-	abstract Object isVisibleInLegend();
+	abstract Boolean isVisibleInLegend();
 
 	abstract void setVisibleInLegend(Boolean visibleInLegend);
-
-	
-
 
 }

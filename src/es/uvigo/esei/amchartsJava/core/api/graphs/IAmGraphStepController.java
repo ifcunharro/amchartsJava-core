@@ -4,18 +4,18 @@ package es.uvigo.esei.amchartsJava.core.api.graphs;
 import es.uvigo.esei.amchartsJava.core.constants.StepDirectionConstant.StepDirection;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IAmGraphStepController extends IAmGraphSerialChartController {
+public abstract interface IAmGraphStepController extends IAmGraphSerialChartController {
 
-	public Object isNoStepRisers();
+	abstract Boolean isNoStepRisers();
 
-	public void setNoStepRisers(Boolean noStepRisers);
+	abstract void setNoStepRisers(Boolean noStepRisers);
 
-	public Object getPeriodSpan();
+	abstract Object getPeriodSpan();
 
-	public void setPeriodSpan(Number periodSpan) throws OutOfRangeException;
+	abstract void setPeriodSpan(Number periodSpan) throws OutOfRangeException;
 
-	public Object getStepDirection();
+	abstract String getStepDirection();
 
-	public void setStepDirection(StepDirection stepDirection);
+	abstract void setStepDirection(StepDirection stepDirection);
 
 }

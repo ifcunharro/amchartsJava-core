@@ -4,30 +4,30 @@ import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
-public interface IAmRadarChartController extends IAmCoordinateChartController<AmCoordinateChart> {
+public abstract interface IAmRadarChartController extends IAmCoordinateChartController<AmCoordinateChart> {
 
-	public Object getCategoryField();
+	abstract String getCategoryField();
 
-	public void setCategoryField(String categoryField);
+	abstract void setCategoryField(String categoryField);
 
-	public Object getMarginBottom();
+	abstract Object getMarginBottom();
 
-	public void setMarginBottom(Number marginBottom) throws IntegerException;
+	abstract void setMarginBottom(Number marginBottom) throws IntegerException;
 
-	public Object getMarginLeft();
+	abstract Object getMarginLeft();
 
-	public void setMarginLeft(Number marginLeft) throws IntegerException;
+	abstract void setMarginLeft(Number marginLeft) throws IntegerException;
 
-	public Object getMarginRight();
+	abstract Object getMarginRight();
 
-	public void setMarginRight(Number marginRight) throws IntegerException;
+	abstract void setMarginRight(Number marginRight) throws IntegerException;
 
-	public Object getMarginTop();
+	abstract Object getMarginTop();
 
-	public void setMarginTop(Number marginTop) throws IntegerException;
+	abstract void setMarginTop(Number marginTop) throws IntegerException;
 
-	public Object getRadius();
+	abstract String getRadius();
 
-	public void setRadius(String radius) throws CoordException;
+	abstract void setRadius(String radius) throws CoordException;
 
 }

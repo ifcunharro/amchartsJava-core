@@ -59,16 +59,16 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		}
 	}
 	
-	public Object getFinalCategory(){
-		return trendLine.getFeature("finalCategory");
+	public String getFinalCategory(){
+		return (String) trendLine.getFeature("finalCategory");
 	}
 	
 	public void setFinalCategory(String finalCategory){
 		trendLine.setFeature("finalCategory", finalCategory);
 	}
 	
-	public Object getFinalDate(){
-		return trendLine.getFeature("finalDate");
+	public String getFinalDate(){
+		return (String) trendLine.getFeature("finalDate");
 	}
 	
 	public void setFinalDate(Date finalDate){
@@ -83,20 +83,20 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		trendLine.setFeature("finalValue", finalValue);
 	}
 	
-	public Object getId(){
-		return trendLine.getFeature("id");
+	public String getId(){
+		return (String) trendLine.getFeature("id");
 	}
 	
-	public Object getInitialCategory(){
-		return trendLine.getFeature("initialCategory");
+	public String getInitialCategory(){
+		return (String) trendLine.getFeature("initialCategory");
 	}
 	
 	public void setInitialCategory(String initialCategory){
 		trendLine.setFeature("initialCategory", initialCategory);
 	}
 	
-	public Object getInitialDate(){
-		return trendLine.getFeature("initialDate");
+	public String getInitialDate(){
+		return (String) trendLine.getFeature("initialDate");
 	}
 	
 	public void setInitialDate(Date initialDate){
@@ -122,8 +122,8 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		}
 	}
 	
-	public Object getLineColor(){
-		return trendLine.getFeature("lineColor");
+	public String getLineColor(){
+		return (String) trendLine.getFeature("lineColor");
 	}
 	
 	public void setLineColor(String lineColor) throws ColorException{
@@ -142,8 +142,8 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		}
 	}
 	
-	public Object getValueAxis(){
-		return trendLine.getFeature("valueAxis");
+	public String getValueAxis(){
+		return (String) trendLine.getFeature("valueAxis");
 	}
 	
 	public void setValueAxis(String valueAxis) throws ChartException{
@@ -156,11 +156,11 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		}
 	}
 	
-	public Object getFinalImage(){
+	public ImageController getFinalImage(){
 		return trendLine.getFinalImage();
 	}
 	
-	public Object getInitialImage(){
+	public ImageController getInitialImage(){
 		return trendLine.getInitialImage();
 	}
 	

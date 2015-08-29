@@ -10,12 +10,14 @@ import java.util.List;
 
 
 
+
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
 import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
+import es.uvigo.esei.amchartsJava.core.controllers.ExportController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -26,11 +28,11 @@ import es.uvigo.esei.amchartsJava.core.model.AmChart;
 public abstract interface IAmchartController<E extends AmChart> {
 
 	//properties
-	abstract Object IsAddClassNames();
+	abstract Boolean IsAddClassNames();
 
 	abstract void setAddClassNames(Boolean addClassNames);
 	
-	abstract Object isAutoResize();
+	abstract Boolean isAutoResize();
 	
 	abstract void setAutoResize(Boolean autoResize);
 
@@ -39,7 +41,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	abstract void setBackgroundAlpha(Number backgroundAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getBackgroundColor();
+	abstract String getBackgroundColor();
 
 	abstract void setBackgroundColor(String backgroundColor)
 			throws ColorException;
@@ -48,28 +50,28 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	abstract void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
 
-	abstract Object getBorderColor();
+	abstract String getBorderColor();
 
 	abstract void setBorderColor(String borderColor) throws ColorException;
 
-	abstract Object getClassNamePrefix();
+	abstract String getClassNamePrefix();
 
 	abstract void setClassNamePrefix(String classNamePrefix);
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(String color) throws ColorException;
 
-	abstract Object getCreditsPosition();
+	abstract String getCreditsPosition();
 
 	abstract void setCreditsPosition(CreditsPosition creditsPosition);
 
-	abstract Object getDecimalSepartator();
+	abstract String getDecimalSepartator();
 
 	//punto o coma, ningun otro para evitar conflictos
 	abstract void setDecimalSeparator(Separator decimalSeparator);
 
-	abstract Object getFontFamily();
+	abstract String getFontFamily();
 
 	abstract void setFontFamily(String fontFamily);
 
@@ -77,7 +79,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	abstract void setFontSize(Number fontSize) throws OutOfRangeException;
 
-	abstract Object isHandDrawn();
+	abstract Boolean isHandDrawn();
 
 	abstract void setHandDrawn(Boolean handDrawn);
 
@@ -97,19 +99,19 @@ public abstract interface IAmchartController<E extends AmChart> {
 			throws IntegerException;
 
 	//necesario un archivo js de idioma escogido
-	abstract Object getLanguage();
+	abstract String getLanguage();
 
 	abstract void setLanguage(Idioms language);
 
-	abstract Object isPanEventsEnabled();
+	abstract Boolean isPanEventsEnabled();
 
 	abstract void setPanEventsEnabled(Boolean panEventsEnabled);
 	
-	abstract Object getPath();
+	abstract String getPath();
 	
 	abstract void setPath(String path);
 
-	abstract Object getPathToImages();
+	abstract String getPathToImages();
 
 	//FALTA VALIDAR PATH, SE DA UNO POR DEFECTO ../amcharts/images
 	abstract void setPathToImages(String pathToImages);
@@ -125,40 +127,40 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	//nombre file js in folder themes sin extension,
 	//se puede crear el tuyo propio
-	abstract Object getTheme();
+	abstract String getTheme();
 
 	//debe existir file theme
 	abstract void setTheme(String theme);
 
-	abstract Object getThousandsSeparator();
+	abstract String getThousandsSeparator();
 
 	abstract void setThousandsSeparator(Separator thousandsSeparator);
 
-	abstract Object getType();
+	abstract String getType();
 
 	abstract void setType(ChartType type);
 
-	abstract Object isUsePrefixes();
+	abstract Boolean isUsePrefixes();
 
 	abstract void setUsePrefixes(Boolean usePrefixes);
 
 	//methods 
-	abstract Object getTitles();
+	abstract List<TitleController> getTitles();
 
 	//propio
 	abstract List<LabelController> getAllLabels();
 
 	//propio
-	abstract Object getExport();
+	abstract ExportController getExport();
 
 	//propio
-	abstract void createExport();
+	abstract void addExport(ExportController exportController);
 
 	//propio
-	abstract Object getBalloon();
+	abstract AmBalloonController getBalloon();
 
 	//propio
-	abstract Object getLegend();
+	abstract AmLegendController getLegend();
 
 	//method amcharts
 	abstract void addLabel(LabelController labelController);

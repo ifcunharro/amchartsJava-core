@@ -44,8 +44,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return legend;
 	}
 	
-	public Object getAlign(){
-		return legend.getFeature("align");
+	public String getAlign(){
+		return (String) legend.getFeature("align");
 	}
 	
 	public void setAlign(Align align){
@@ -53,8 +53,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="autoMargins")
-	public Object isAutoMargins(){
-		return legend.getFeature("autoMargins");
+	public Boolean isAutoMargins(){
+		return (Boolean) legend.getFeature("autoMargins");
 	}
 	
 	public void setAutoMargins(Boolean autoMargins){
@@ -71,8 +71,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getBackgroundColor(){
-		return legend.getFeature("backgroundColor");
+	public String getBackgroundColor(){
+		return (String) legend.getFeature("backgroundColor");
 	}
 	
 	public void setBackgroundColor(String backgroundColor) throws ColorException{
@@ -91,8 +91,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getBorderColor(){
-		return legend.getFeature("borderColor");
+	public String getBorderColor(){
+		return (String) legend.getFeature("borderColor");
 	}
 	
 	public void setBorderColor(String borderColor) throws ColorException{
@@ -111,8 +111,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getColor(){
-		return legend.getFeature("color");
+	public String getColor(){
+		return (String) legend.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -121,8 +121,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getDivId(){
-		return legend.getFeature("divId");
+	public String getDivId(){
+		return (String) legend.getFeature("divId");
 	}
 	
 	public void setDivId(String divId){
@@ -130,8 +130,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="enabled")
-	public Object isEnabled(){
-		return legend.getFeature("enabled");
+	public Boolean isEnabled(){
+		return (Boolean) legend.getFeature("enabled");
 	}
 	
 	public void setEnabled(Boolean enabled){
@@ -139,8 +139,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="equalWidths")
-	public Object isEqualWidths(){
-		return legend.getFeature("equalWidths");
+	public Boolean isEqualWidths(){
+		return (Boolean) legend.getFeature("equalWidths");
 	}
 	
 	public void setEqualWidths(Boolean equalWidths){
@@ -158,8 +158,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="forceWidth")
-	public Object isForceWidth(){
-		return legend.getFeature("forceWidth");
+	public Boolean isForceWidth(){
+		return (Boolean) legend.getFeature("forceWidth");
 	}
 	
 	public void setForceWidth(Boolean forceWidth){
@@ -176,8 +176,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getLabelText(){
-		return legend.getFeature("labelText");
+	public String getLabelText(){
+		return (String) legend.getFeature("labelText");
 	}
 	
 	//cualquier texto pero si es [[title]] muestra como texto el title del graph
@@ -255,8 +255,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarkerBorderColor(){
-		return legend.getFeature("markerBorderColor");
+	public String getMarkerBorderColor(){
+		return (String) legend.getFeature("markerBorderColor");
 	}
 	
 	public void setMarkerBorderColor(String markerBorderColor) throws ColorException{
@@ -275,8 +275,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarkerDisabledColor(){
-		return legend.getFeature("markerDisabledColor");
+	public String getMarkerDisabledColor(){
+		return (String) legend.getFeature("markerDisabledColor");
 	}
 	
 	public void setMarkerDisabledColor(String markerDisabledColor) throws ColorException{
@@ -305,8 +305,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarkerType(){
-		return legend.getFeature("markerType");
+	public String getMarkerType(){
+		return (String) legend.getFeature("markerType");
 	}
 	
 	public void setMarkerType(MarkerType markerType){
@@ -323,16 +323,16 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getPeriodValueText(){
-		return legend.getFeature("periodValueText");
+	public String getPeriodValueText(){
+		return (String) legend.getFeature("periodValueText");
 	}
 	
 	public void setPeriodValueText(String periodValueText){
 		legend.setFeature("periodValueText", periodValueText);
 	}
 	
-	public Object getPosition(){
-		return legend.getFeature("position");
+	public String getPosition(){
+		return (String) legend.getFeature("position");
 	}
 	
 	public void setPosition(LegendPosition position){
@@ -340,8 +340,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="reversedOrder")
-	public Object isReversedOrder(){
-		return legend.getFeature("reversedOrder");
+	public Boolean isReversedOrder(){
+		return (Boolean) legend.getFeature("reversedOrder");
 	}
 	
 	public void setReversedOrder(Boolean reversedOrder){
@@ -358,8 +358,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getRollOverColor(){
-		return legend.getFeature("rollOverColor");
+	public String getRollOverColor(){
+		return (String) legend.getFeature("rollOverColor");
 	}
 	
 	public void setRollOverColor(String rollOverColor) throws ColorException{
@@ -379,8 +379,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="showEntries")
-	public Object isShowEntries(){
-		return legend.getFeature("showEntries");
+	public Boolean isShowEntries(){
+		return (Boolean) legend.getFeature("showEntries");
 	}
 	
 	public void setShowEntries(Boolean showEntries){
@@ -398,16 +398,16 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="switchable")
-	public Object isSwitchable(){
-		return legend.getFeature("switchable");
+	public Boolean isSwitchable(){
+		return (Boolean) legend.getFeature("switchable");
 	}
 	
 	public void setSwitchable(Boolean switchable){
 		legend.setFeature("switchable", switchable);
 	}
 	
-	public Object getSwitchColor(){
-		return legend.getFeature("switchColor");
+	public String getSwitchColor(){
+		return (String) legend.getFeature("switchColor");
 	}
 	
 	public void setSwitchColor(String switchcolor) throws ColorException{
@@ -416,8 +416,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getSwitchType(){
-		return legend.getFeature("switchType");
+	public String getSwitchType(){
+		return (String) legend.getFeature("switchType");
 	}
 	
 	public void setSwitchType(SwitchType switchType){
@@ -425,8 +425,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="textClickEnabled")
-	public Object isTextClickEnabled(){
-		return legend.getFeature("textClickEnabled");
+	public Boolean isTextClickEnabled(){
+		return (Boolean) legend.getFeature("textClickEnabled");
 	}
 	
 	public void setTextClickEnabled(Boolean textClickEnabled){
@@ -444,8 +444,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="useGraphSettings")
-	public Object isUseGraphSettings(){
-		return legend.getFeature("useGraphSettings");
+	public Boolean isUseGraphSettings(){
+		return (Boolean) legend.getFeature("useGraphSettings");
 	}
 	
 	public void setUseGraphSettings(Boolean useGraphSettings){
@@ -453,8 +453,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="useMarkerColorForLabels")
-	public Object isUseMarkerColorForLabels(){
-		return legend.getFeature("useMarkerColorForLabels");
+	public Boolean isUseMarkerColorForLabels(){
+		return (Boolean) legend.getFeature("useMarkerColorForLabels");
 	}
 	
 	public void setUseMarkerColorForLabels(Boolean useMarkerColorForLabels){
@@ -462,32 +462,32 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	@JsonProperty(value="useMarkerColorForValues")
-	public Object isUseMarkerColorForValues(){
-		return legend.getFeature("useMarkerColorForValues");
+	public Boolean isUseMarkerColorForValues(){
+		return (Boolean) legend.getFeature("useMarkerColorForValues");
 	}
 	
 	public void setUseMarkerColorForValues(Boolean useMarkerColorForValues){
 		legend.setFeature("useMarkerColorForValues", useMarkerColorForValues);
 	}
 	
-	public Object getValueAlign(){
-		return legend.getFeature("valueAlign");
+	public String getValueAlign(){
+		return (String) legend.getFeature("valueAlign");
 	}
 	
 	public void setValueAlign(ValueAlign valueAlign){
 		legend.setFeature("valueAlign", valueAlign.toString());
 	}
 	
-	public Object getValueFunction(){
-		return legend.getFeature("valueFunction");
+	public String getValueFunction(){
+		return (String) legend.getFeature("valueFunction");
 	}
 	
 	public void setValueFunction(String valueFunction){
 		legend.setFeature("valueFunction", valueFunction);
 	}
 	
-	public Object getValueText(){
-		return legend.getFeature("valueText");
+	public String getValueText(){
+		return (String) legend.getFeature("valueText");
 	}
 	
 	//cualquier texto pero tiene más sentido dejarlo en blanco, usa el valueField

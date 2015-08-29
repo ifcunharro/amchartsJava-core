@@ -18,16 +18,16 @@ public class GuideCategoryAxisController extends GuideController
 		setExpand(false);
 	}
 
-	public Object getCategory(){
-		return guide.getFeature("category");
+	public String getCategory(){
+		return (String) guide.getFeature("category");
 	}
 	
 	public void setCategory(String category){
 		guide.setFeature("category", category);
 	}
 	
-	public Object getDate(){
-		return guide.getFeature("date");
+	public String getDate(){
+		return (String) guide.getFeature("date");
 	}
 	
 	public void setDate(Date date){
@@ -35,16 +35,16 @@ public class GuideCategoryAxisController extends GuideController
 	}
 	
 	@JsonProperty(value="expand")
-	public Object isExpand(){
-		return guide.getFeature("expand");
+	public Boolean isExpand(){
+		return (Boolean) guide.getFeature("expand");
 	}
 	
 	public void setExpand(Boolean expand){
 		guide.setFeature("expand", expand);
 	}
 	
-	public Object getToCategory(){
-		return guide.getFeature("toCategory");
+	public String getToCategory(){
+		return (String) guide.getFeature("toCategory");
 	}
 	
 	//falta comprobar categoria existente dataProvider

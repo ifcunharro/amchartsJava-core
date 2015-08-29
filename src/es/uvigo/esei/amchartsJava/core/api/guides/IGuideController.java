@@ -12,23 +12,23 @@ public abstract interface IGuideController {
 
 	abstract void setChart(AmCoordinateChart c);
 
-	abstract Object isAbove();
+	abstract Boolean isAbove();
 
 	abstract void setAbove(Boolean above);
 
-	abstract Object getBalloonColor();
+	abstract String getBalloonColor();
 
 	abstract void setBalloonColor(String balloonColor) throws ColorException;
 
-	abstract Object getBalloonText();
+	abstract String getBalloonText();
 
 	abstract void setBalloonText(String balloonText);
 
-	abstract Object isBoldLabel();
+	abstract Boolean isBoldLabel();
 
 	abstract void setBoldLabel(Boolean boldLabel);
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(String color) throws ColorException;
 
@@ -36,13 +36,11 @@ public abstract interface IGuideController {
 
 	abstract void setDashLength(Number dashLength) throws OutOfRangeException;
 
-	
-
 	abstract Object getFillAlpha();
 
 	abstract void setFillAlpha(Number fillAlpha) throws OutOfRangeException;
 
-	abstract Object getFillColor();
+	abstract String getFillColor();
 
 	abstract void setFillColor(String fillColor) throws ColorException;
 
@@ -50,11 +48,11 @@ public abstract interface IGuideController {
 
 	abstract void setFontSize(Number fontSize) throws OutOfRangeException;
 
-	abstract Object getId();
+	abstract String getId();
 
-	abstract Object isInside();
+	abstract Boolean isInside();
 
-	abstract Object getLabel();
+	abstract String getLabel();
 
 	abstract void setLabel(String label);
 
@@ -67,7 +65,7 @@ public abstract interface IGuideController {
 
 	abstract void setLineAlpha(Number lineAlpha) throws OutOfRangeException;
 
-	abstract Object getLineColor();
+	abstract String getLineColor();
 
 	abstract void setLineColor(String lineColor) throws ColorException;
 
@@ -76,7 +74,7 @@ public abstract interface IGuideController {
 	abstract void setLineThickness(Number lineThickness)
 			throws OutOfRangeException;
 
-	abstract Object getPosition();
+	abstract String getPosition();
 
 	abstract void setPosition(Position position);
 
@@ -84,11 +82,11 @@ public abstract interface IGuideController {
 
 	abstract void setTickLength(Number tickLength) throws OutOfRangeException;
 
-	abstract Object getToDate();
+	abstract String getToDate();
 
 	abstract void setToDate(Date toDate);
 
-	abstract Object getValueAxis();
+	abstract String getValueAxis();
 
 	abstract void setValueAxis(String valueAxis) throws ChartException;
 

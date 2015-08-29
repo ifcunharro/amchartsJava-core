@@ -20,8 +20,8 @@ public class AmXyChartController extends AmRectangularChartController<AmXyChart>
 	}
 	
 	@JsonProperty(value="hideXScrollbar")
-	public Object isHideXScrollbar(){
-		return amchart.getFeature("hideXScrollbar");
+	public Boolean isHideXScrollbar(){
+		return (Boolean) amchart.getFeature("hideXScrollbar");
 	}
 	
 	public void setHideXScrollbar(Boolean hideXScrollbar){
@@ -29,8 +29,8 @@ public class AmXyChartController extends AmRectangularChartController<AmXyChart>
 	}
 	
 	@JsonProperty(value="hideYScrollbar")
-	public Object isHideYScrollbar(){
-		return amchart.getFeature("hideYScrollbar");
+	public Boolean isHideYScrollbar(){
+		return (Boolean) amchart.getFeature("hideYScrollbar");
 	}
 	
 	public void setHideYScrollbar(Boolean hideYScrollbar){

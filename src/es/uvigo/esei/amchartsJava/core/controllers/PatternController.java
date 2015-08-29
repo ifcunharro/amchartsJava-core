@@ -28,8 +28,8 @@ public class PatternController implements IPatternController, Serializable {
 	}
 
 
-	public Object getColor() {
-		return pattern.getFeature("color");
+	public String getColor() {
+		return (String) pattern.getFeature("color");
 	}
 
 	
@@ -52,13 +52,14 @@ public class PatternController implements IPatternController, Serializable {
 	}
 
 	
-	public Object getUrl() {
-		return pattern.getFeature("url");
+	public String getUrl() {
+		return (String) pattern.getFeature("url");
 	}
 
 	
 	//para deserializar json, usar addUrl para asignar una url
-	public void setUrl(String url) {
+	@SuppressWarnings("unused")
+	private void setUrl(String url) {
 		pattern.setFeature("url", url);
 	}
 	

@@ -36,6 +36,10 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		plotAreaFillColors = new ArrayList<String>();
 	}
 	
+	public List<String> getPlotAreaFillColors(){
+		return plotAreaFillColors;
+	}
+	
 	public void addPlotAreaFillColors(String... colors){
 		plotAreaFillColors.clear();
 		plotAreaFillColors.addAll(Arrays.asList(colors));

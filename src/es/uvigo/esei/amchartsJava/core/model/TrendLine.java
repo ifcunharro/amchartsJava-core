@@ -7,11 +7,11 @@ public class TrendLine extends IModel{
 	private ImageController finalImage;
 	private ImageController initialImage;
 
-	public Object getFinalImage() {
+	public ImageController getFinalImage() {
 		return finalImage;
 	}
 	
-	public Object getInitialImage(){
+	public ImageController getInitialImage(){
 		return initialImage;
 	}
 	

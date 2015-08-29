@@ -3,23 +3,23 @@ package es.uvigo.esei.amchartsJava.core.api.graphs;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 
 
-public interface IAmGraphSerialController extends IAmGraphSerialChartController {
+public abstract interface IAmGraphSerialController extends IAmGraphSerialChartController {
 
-	public Object isConnect();
+	abstract Boolean isConnect();
 
-	public void setConnect(Boolean connect);
+	abstract void setConnect(Boolean connect);
 	
-	abstract Object getFillColors();
+	abstract String getFillColors();
 
-	public void setFillColors(ColorsAmCharts fillColors);
+	abstract void setFillColors(ColorsAmCharts fillColors);
 
-	public Object getFillColorsField();
+	abstract String getFillColorsField();
 
-	public void setFillColorsField(String fillColorsField);
+	abstract void setFillColorsField(String fillColorsField);
 
-	public void setGapField(String gapField);
+	abstract void setGapField(String gapField);
 
-	public Object getGapField(String gapField);
+	abstract String getGapField(String gapField);
 
 
 }

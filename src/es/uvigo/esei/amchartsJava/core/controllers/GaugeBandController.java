@@ -50,16 +50,16 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 		}
 	}
 	
-	public Object getBalloonText(){
-		return gaugeBand.getFeature("balloonText");
+	public String getBalloonText(){
+		return (String) gaugeBand.getFeature("balloonText");
 	}
 	
 	public void setBalloonText(String balloonText){
 		gaugeBand.setFeature("balloonText", balloonText);
 	}
 	
-	public Object getColor(){
-		return gaugeBand.getFeature("color");
+	public String getColor(){
+		return (String) gaugeBand.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -78,12 +78,12 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 		}
 	}
 	
-	public Object getId(){
-		return gaugeBand.getFeature("id");
+	public String getId(){
+		return (String) gaugeBand.getFeature("id");
 	}
 	
-	public Object getInnerRadius(){
-		return gaugeBand.getFeature("innerRadius");
+	public String getInnerRadius(){
+		return (String) gaugeBand.getFeature("innerRadius");
 	}
 	
 	public void setInnerRadius(String innerRadius) throws CoordException{
@@ -92,8 +92,8 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 		}
 	}
 	
-	public Object getRadius(){
-		return gaugeBand.getFeature("radius");
+	public String getRadius(){
+		return (String) gaugeBand.getFeature("radius");
 	}
 	
 	public void setRadius(String radius) throws CoordException{

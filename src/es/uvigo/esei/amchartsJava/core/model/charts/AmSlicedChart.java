@@ -39,7 +39,7 @@ public class AmSlicedChart extends AmChart {
 		slicedColors.add(color);
 	}
 	
-	public Object getGradientRatio(){
+	public List<Number> getGradientRatio(){
 		return gradientRatio;
 	}
 	

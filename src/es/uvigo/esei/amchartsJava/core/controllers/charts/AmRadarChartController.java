@@ -20,8 +20,8 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 		super(new AmRadarChart());
 	}
 	
-	public Object getCategoryField(){
-		return amchart.getFeature("categoryField");
+	public String getCategoryField(){
+		return (String) amchart.getFeature("categoryField");
 	}
 	
 	public void setCategoryField(String categoryField){
@@ -68,8 +68,8 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 		}
 	}
 	
-	public Object getRadius(){
-		return amchart.getFeature("radius");
+	public String getRadius(){
+		return (String) amchart.getFeature("radius");
 	}
 	
 	public void setRadius(String radius) throws CoordException{

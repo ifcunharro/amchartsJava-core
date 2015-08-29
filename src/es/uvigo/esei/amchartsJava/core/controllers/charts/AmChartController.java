@@ -17,6 +17,7 @@ import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
+import es.uvigo.esei.amchartsJava.core.controllers.ExportController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -53,8 +54,8 @@ public abstract class AmChartController<E extends AmChart>
 	
 	
 	@JsonProperty(value = "addClassNames")
-	public Object IsAddClassNames(){
-		return amchart.getFeature("addClassNames");
+	public Boolean IsAddClassNames(){
+		return (Boolean) amchart.getFeature("addClassNames");
 	}
 	
 	public void setAddClassNames(Boolean addClassNames){
@@ -62,8 +63,8 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	@JsonProperty(value="autoResize")
-	public Object isAutoResize(){
-		return amchart.getFeature("autoResize");
+	public Boolean isAutoResize(){
+		return (Boolean) amchart.getFeature("autoResize");
 	}
 	
 	public void setAutoResize(Boolean autoResize){
@@ -80,8 +81,8 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	public Object getBackgroundColor(){
-		return amchart.getFeature("backgroundColor");
+	public String getBackgroundColor(){
+		return (String) amchart.getFeature("backgroundColor");
 	}
 	
 	public void setBackgroundColor(String backgroundColor) throws ColorException{
@@ -100,8 +101,8 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	public Object getBorderColor(){
-		return amchart.getFeature("borderColor");
+	public String getBorderColor(){
+		return (String) amchart.getFeature("borderColor");
 	}
 	
 	public void setBorderColor(String borderColor) throws ColorException{
@@ -110,16 +111,16 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	public Object getClassNamePrefix(){
-		return amchart.getFeature("classNamePrefix");
+	public String getClassNamePrefix(){
+		return (String) amchart.getFeature("classNamePrefix");
 	}
 	
 	public void setClassNamePrefix(String classNamePrefix){
 		amchart.setFeature("classNamePrefix",classNamePrefix);
 	}
 	
-	public Object getColor(){
-		return amchart.getFeature("color");
+	public String getColor(){
+		return (String) amchart.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -128,8 +129,8 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	public Object getCreditsPosition(){
-		return amchart.getFeature("creditsPosition");
+	public String getCreditsPosition(){
+		return (String) amchart.getFeature("creditsPosition");
 	}
 	
 	public void setCreditsPosition(CreditsPosition creditsPosition){
@@ -138,8 +139,8 @@ public abstract class AmChartController<E extends AmChart>
 	
 	//dataProvider
 	
-	public Object getDecimalSepartator(){
-		return amchart.getFeature("decimalSeparator");
+	public String getDecimalSepartator(){
+		return (String) amchart.getFeature("decimalSeparator");
 	}
 	//punto o coma, ningun otro para evitar conflictos
 	public void setDecimalSeparator(Separator decimalSeparator){
@@ -150,8 +151,8 @@ public abstract class AmChartController<E extends AmChart>
 	
 	//export
 	
-	public Object getFontFamily(){
-		return amchart.getFeature("fontFamily");
+	public String getFontFamily(){
+		return (String) amchart.getFeature("fontFamily");
 	}
 	
 	public void setFontFamily(String fontFamily){
@@ -169,8 +170,8 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	@JsonProperty(value = "handDrawn")
-	public Object isHandDrawn(){
-		return amchart.getFeature("handDrawn");
+	public Boolean isHandDrawn(){
+		return (Boolean) amchart.getFeature("handDrawn");
 	}
 	
 	public void setHandDrawn(Boolean handDrawn){
@@ -208,8 +209,8 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	//necesario un archivo js de idioma escogido
-	public Object getLanguage(){
-		return amchart.getFeature("language");
+	public String getLanguage(){
+		return (String) amchart.getFeature("language");
 	}
 	
 	public void setLanguage(Idioms language){
@@ -219,24 +220,24 @@ public abstract class AmChartController<E extends AmChart>
 	//listeners
 	
 	@JsonProperty(value = "panEventsEnabled")
-	public Object isPanEventsEnabled(){
-		return amchart.getFeature("panEventsEnabled");
+	public Boolean isPanEventsEnabled(){
+		return (Boolean) amchart.getFeature("panEventsEnabled");
 	}
 	
 	public void setPanEventsEnabled(Boolean panEventsEnabled){
 		amchart.setFeature("panEventsEnabled", panEventsEnabled);
 	}
 	
-	public Object getPath(){
-		return amchart.getFeature("path");
+	public String getPath(){
+		return (String) amchart.getFeature("path");
 	}
 	
 	public void setPath(String path){
 		amchart.setFeature("path", path);
 	}
 	
-	public Object getPathToImages(){
-		return amchart.getFeature("pathToImages");
+	public String getPathToImages(){
+		return (String) amchart.getFeature("pathToImages");
 	}
 	
 	//FALTA VALIDAR PATH, SE DA UNO POR DEFECTO ../amcharts/images
@@ -287,8 +288,8 @@ public abstract class AmChartController<E extends AmChart>
 	
 	//nombre file js in folder themes sin extension,
 	//se puede crear el tuyo propio
-	public Object getTheme(){
-		return amchart.getFeature("theme");
+	public String getTheme(){
+		return (String) amchart.getFeature("theme");
 	}
 	
 	//debe existir file theme
@@ -298,16 +299,16 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	public Object getThousandsSeparator(){
-		return amchart.getFeature("thousandsFeature");
+	public String getThousandsSeparator(){
+		return (String) amchart.getFeature("thousandsFeature");
 	}
 	
 	public void setThousandsSeparator(Separator thousandsSeparator){
 		amchart.setFeature("thousandsSeparator", thousandsSeparator.toString());
 	}
 	
-	public Object getType(){
-		return amchart.getFeature("type");
+	public String getType(){
+		return (String) amchart.getFeature("type");
 	}
 	
 	public void setType(ChartType type){
@@ -315,8 +316,8 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	@JsonProperty(value = "usePrefixes")
-	public Object isUsePrefixes(){
-		return amchart.getFeature("usePrefixes");
+	public Boolean isUsePrefixes(){
+		return (Boolean) amchart.getFeature("usePrefixes");
 	}
 	
 	public void setUsePrefixes(Boolean usePrefixes){
@@ -330,26 +331,30 @@ public abstract class AmChartController<E extends AmChart>
 		return amchart.getLabels();
 	}
 	
-	public Object getTitles(){
+	public List<TitleController> getTitles(){
 		return amchart.getTitles();
 	}
 	
 	//propio
-	public Object getExport(){
+	public ExportController getExport(){
 		return amchart.getExport();
 	}
+	
+	void setExport(ExportController export){
+		amchart.addExport(export);
+	}
 	//propio
-	public void createExport(){
-		amchart.createExport();
+	public void addExport(ExportController export){
+		amchart.addExport(export);
 	}
 	
 	//propio
-	public Object getBalloon(){
+	public AmBalloonController getBalloon(){
 		return amchart.getBalloon();
 	}
 	
 	//propio
-	public Object getLegend(){
+	public AmLegendController getLegend(){
 		return amchart.getLegend();
 	}
 	

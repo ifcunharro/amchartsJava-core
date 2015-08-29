@@ -80,7 +80,7 @@ public class Guides {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyGuideCategoryAxis()){
 			for(GuideCategoryAxisController categoryAxisGuide: getGuideCategoryAxis()){
-				ids.add(categoryAxisGuide.getId().toString());
+				ids.add(categoryAxisGuide.getId());
 			}
 		}
 		return ids;
@@ -90,7 +90,7 @@ public class Guides {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyGuideRadarChart()){
 			for(GuideRadarChartController radarChartGuide: getGuideRadarChart()){
-				ids.add(radarChartGuide.getId().toString());
+				ids.add(radarChartGuide.getId());
 			}
 		}
 		return ids;
@@ -100,7 +100,7 @@ public class Guides {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyGuideValueAxis()){
 			for(GuideValueAxisController valueAxisGuide: getGuideValueAxis()){
-				ids.add(valueAxisGuide.getId().toString());
+				ids.add(valueAxisGuide.getId());
 			}
 		}
 		return ids;
@@ -133,7 +133,7 @@ public class Guides {
 			initGuideCategoryAxis();
 		}
 		this.getGuideCategoryAxis().add(guideCategoryAxisController);
-		String idGuide = guideCategoryAxisController.getId().toString();
+		String idGuide = guideCategoryAxisController.getId();
 		idGuides.add(idGuide);
 		positionsGuides.put(idGuide, sizeGuidesCategoryAxis()-1);
 		sizeGuides++;
@@ -144,7 +144,7 @@ public class Guides {
 			initGuideRadarChart();
 		}
 		this.getGuideRadarChart().add(guideRadarChartController);
-		String idGuide = guideRadarChartController.getId().toString();
+		String idGuide = guideRadarChartController.getId();
 		idGuides.add(idGuide);
 		positionsGuides.put(idGuide, sizeGuidesRadarChart()-1);
 		sizeGuides++;
@@ -156,7 +156,7 @@ public class Guides {
 			initGuideValueAxis();
 		}
 		this.getGuideValueAxis().add(guideValueAxisController);
-		String idGuide = guideValueAxisController.getId().toString();
+		String idGuide = guideValueAxisController.getId();
 		idGuides.add(idGuide);
 		positionsGuides.put(idGuide, sizeGuidesValueAxis()-1);
 		sizeGuides++;

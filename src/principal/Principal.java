@@ -52,6 +52,9 @@ public class Principal {
 	public static void main(String[] args) {
 		
 		
+		
+		
+		
 		AmFunnelChartController funnel = new AmFunnelChartController();
 		funnel.setGradientRatio(9,4,5,6);
 		
@@ -220,11 +223,11 @@ public class Principal {
 		}
 		//asc.addGuide(gr);
 		//asc.addGuide(gv);
-		/*asc.removeGraph(ams.getId().toString());
-		asc.removeGraph(ams2.getId().toString());
-		asc.removeGraph(ams3.getId().toString());
-		asc.removeGraph(ams4.getId().toString());
-		asc.removeGraph(ams5.getId().toString());*/
+		/*asc.removeGraph(ams.getId());
+		asc.removeGraph(ams2.getId());
+		asc.removeGraph(ams3.getId());
+		asc.removeGraph(ams4.getId());
+		asc.removeGraph(ams5.getId());*/
 		//asc.removeGraph("ola");
 		
 		
@@ -352,14 +355,21 @@ public class Principal {
 		asc.addTitle(tc2);
 		asc.addLegend(lc);
 		
+		try {
+			asc.setPlotAreaFillColors("#000000","#AAAAAA","#ffffff");
+		} catch (ColorException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		
 		
 	
 	
 		
-		//asc.removeValueAxis(va.getId().toString());
+		//asc.removeValueAxis(va.getId());
 		
-		//asc.removeValueAxisRadar(var.getId().toString());
+		//asc.removeValueAxisRadar(var.getId());
 		//falta conseguir deserializar any graph
 		//asc.addGraph(ags);
 		//System.out.println(((List<AmGraphController>)asc.getGraphs()).size());

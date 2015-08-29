@@ -6,7 +6,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 public class AmGraph extends IModel  {
 	private PatternController pattern;
 
-	public Object getPattern() {
+	public PatternController getPattern() {
 		return pattern;
 	}
 	

@@ -2,18 +2,18 @@ package es.uvigo.esei.amchartsJava.core.api.trendLines;
 
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 
-public interface ITrendLineXyChartController extends ITrendLineSerialChartController {
+public abstract interface ITrendLineXyChartController extends ITrendLineSerialChartController {
 
-	public Object getFinalXValue();
+	abstract Object getFinalXValue();
 
-	public void setFinalXValue(Number finalXValue);
+	abstract void setFinalXValue(Number finalXValue);
 
-	public Object getInitialXValue();
+	abstract Object getInitialXValue();
 
-	public void setInitialXValue(Number initialXValue);
+	abstract void setInitialXValue(Number initialXValue);
 
-	public Object getValueAxisX();
+	abstract String getValueAxisX();
 
-	public void setValueAxisX(String valueAxisX) throws ChartException;
+	abstract void setValueAxisX(String valueAxisX) throws ChartException;
 
 }

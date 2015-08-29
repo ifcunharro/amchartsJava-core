@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphSerialChartController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.PointPositionGraphConstant.PointPositionGraph;
@@ -27,8 +28,8 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	private static final long serialVersionUID = 9098330065218597495L;
 	
 	@JsonProperty(value="behindColumns")
-	public Object isBehindColumns(){
-		return amGraph.getFeature("behindColumns");
+	public Boolean isBehindColumns(){
+		return (Boolean) amGraph.getFeature("behindColumns");
 	}
 	
 	public void setBehindColumns(Boolean behindColumns){
@@ -36,8 +37,8 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	}
 	
 	@JsonProperty(value="clustered")
-	public Object isClustered(){
-		return amGraph.getFeature("clustered");
+	public Boolean isClustered(){
+		return (Boolean) amGraph.getFeature("clustered");
 	}
 	
 	public void setClustered(Boolean clustered){
@@ -54,8 +55,8 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		}
 	}
 	
-	public Object getCornerRadiusTop(){
-		return amGraph.getFeature("cornerRadiusTop");
+	public String getCornerRadiusTop(){
+		return (String) amGraph.getFeature("cornerRadiusTop");
 	}
 	
 	public void setCornerRadiusTop(String cornerRadiusTop) throws CoordException{
@@ -72,8 +73,8 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		amGraph.setFeature("dashLength", dashLength);
 	}
 	
-	public Object getDashLengthField(){
-		return amGraph.getFeature("dashLengthField");
+	public String getDashLengthField(){
+		return (String) amGraph.getFeature("dashLengthField");
 	}
 	
 	public void setDashLengthField(String dashLengthField){
@@ -90,16 +91,16 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		}
 	}
 	
-	public Object getLineColor(){
-		return amGraph.getFeature("lineColor");
+	public String getLineColor(){
+		return (String) amGraph.getFeature("lineColor");
 	}
 	
 	public void setLineColor(ColorsAmCharts lineColor){
 		amGraph.setFeature("lineColor", lineColor.toString());
 	}
 	
-	public Object getLineColorField(){
-		return amGraph.getFeature("lineColorField");
+	public String getLineColorField(){
+		return (String) amGraph.getFeature("lineColorField");
 	}
 	
 	public void setLineColorField(String lineColorField){
@@ -126,8 +127,8 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		}
 	}
 	
-	public Object getNegativeLineColor(){
-		return amGraph.getFeature("negativeLineColor");
+	public String getNegativeLineColor(){
+		return (String) amGraph.getFeature("negativeLineColor");
 	}
 	
 	public void setNegativeLineColor(ColorsAmCharts negativeLineColor){
@@ -135,32 +136,32 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	}
 	
 	@JsonProperty(value="newStack")
-	public Object isNewStack(){
-		return amGraph.getFeature("newStack");
+	public Boolean isNewStack(){
+		return (Boolean) amGraph.getFeature("newStack");
 	}
 	
 	public void setNewStack(Boolean newStack){
 		amGraph.setFeature("newStack", newStack);
 	}
 	
-	public Object getOpenField(){
-		return amGraph.getFeature("openField");
+	public String getOpenField(){
+		return (String) amGraph.getFeature("openField");
 	}
 	
 	public void setOpenField(String openField){
 		amGraph.setFeature("openField", openField);
 	}
 	
-	public Object getPointPosition(){
-		return amGraph.getFeature("pointPosition");
+	public String getPointPosition(){
+		return (String) amGraph.getFeature("pointPosition");
 	}
 	
 	public void setPointPosition(PointPositionGraph pointPosition){
 		amGraph.setFeature("pointPosition", pointPosition.toString());
 	}
 	
-	public Object getShowBalloonAt(){
-		return amGraph.getFeature("showBalloonAt");
+	public String getShowBalloonAt(){
+		return (String) amGraph.getFeature("showBalloonAt");
 	}
 	
 	public void setShowBalloonAt(ShowAt showBalloonAt){
@@ -178,8 +179,8 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	}
 	
 	@JsonProperty(value="useNegativeColorIfDown")
-	public Object isUseNegativeColorIfDown(){
-		return amGraph.getFeature("useNegativeColorIfDown");
+	public Boolean isUseNegativeColorIfDown(){
+		return (Boolean) amGraph.getFeature("useNegativeColorIfDown");
 	}
 	
 	public void setUseNegativeColorIfDown(Boolean useNegativeColorIfDown){

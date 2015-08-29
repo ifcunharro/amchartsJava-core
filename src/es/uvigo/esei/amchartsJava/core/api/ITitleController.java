@@ -10,21 +10,21 @@ public abstract interface ITitleController {
 
 	abstract void setAlpha(Number alpha) throws OutOfRangeException;
 
-	abstract Object isBold();
+	abstract Boolean isBold();
 
 	abstract void setBold(Boolean bold);
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(String color) throws ColorException;
 
-	abstract Object getId();
+	abstract String getId();
 
 	abstract Object getSize();
 
 	abstract void setSize(Number size) throws OutOfRangeException;
 
-	abstract Object getText();
+	abstract String getText();
 
 	abstract void setText(String text);
 

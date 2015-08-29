@@ -1,5 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
+import java.util.List;
+
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -14,33 +16,33 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	abstract void setAlpha(Number alpha) throws OutOfRangeException;
 
-	abstract Object getAlphaField();
+	abstract String getAlphaField();
 
 	abstract void setAlphaField(String alphaField);
 
-	abstract Object getBaseColor();
+	abstract String getBaseColor();
 
 	abstract void setBaseColor(String baseColor) throws ColorException;
 
-	abstract Object getClassNameField();
+	abstract String getClassNameField();
 
 	abstract void setClassNameField(String classNameField);
 
-	abstract Object getColorField();
+	abstract String getColorField();
 
 	abstract void setColorField(String colorField);
 
-	abstract Object getColors();
+	abstract List<String> getColors();
 
 	abstract void addColor(String color);
 
 	abstract void changeColorsDefault(String... newColors);
 
-	abstract Object getDescriptionField();
+	abstract String getDescriptionField();
 
 	abstract void setDescriptionField(String descriptionField);
 
-	abstract Object getGradientRatio();
+	abstract List<Number> getGradientRatio();
 
 	abstract void setGradientRatio(Number... gradientRatio);
 
@@ -49,19 +51,19 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	abstract void setGroupedAlpha(Number groupedAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getGroupedColor();
+	abstract String getGroupedColor();
 
 	abstract void setGroupedColor(String groupedColor) throws ColorException;
 
-	abstract Object getGroupedDescription();
+	abstract String getGroupedDescription();
 
 	abstract void setGroupedDescription(String groupedDescription);
 
-	abstract Object isGroupedPulled();
+	abstract Boolean isGroupedPulled();
 
 	abstract void setGroupedPulled(Boolean groupedPulled);
 
-	abstract Object getGroupedTitle();
+	abstract String getGroupedTitle();
 
 	abstract void setGroupedTitle(String groupedTitle);
 
@@ -78,19 +80,19 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	abstract void setHoverAlpha(Number hoverAlpha) throws OutOfRangeException;
 
-	abstract Object getLabelFunction();
+	abstract String getLabelFunction();
 
 	abstract void setLabelFunction(String labelFunction);
 
-	abstract Object getLabelsEnabled();
+	abstract Boolean isLabelsEnabled();
 
 	abstract void setLabelsEnabled(Boolean labelsEnabled);
 
 	abstract Object getLabelTickAlpha();
 
-	abstract void setLabelTickAlpha(String labelTickAlpha);
+	abstract void setLabelTickAlpha(Number labelTickAlpha) throws OutOfRangeException;
 
-	abstract Object labelTickColor();
+	abstract String labelTickColor();
 
 	abstract void setLabelTickColor(String labelTickColor)
 			throws ColorException;
@@ -121,20 +123,20 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	abstract void setOutlineAlpha(Number outlineAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getOutlineColor();
+	abstract String getOutlineColor();
 
 	abstract void setOutlineColor(String outlineColor) throws ColorException;
 
-	abstract Object getOutlineThickness(Number outlineThickness);
+	abstract Object getOutlineThickness();
 
 	abstract void setOutlineThickness(Number outlineThickness)
 			throws OutOfRangeException;
 
-	abstract Object getPatternField();
+	abstract String getPatternField();
 
 	abstract void setPatternField(String patternField);
 
-	abstract Object getPulledField();
+	abstract String getPulledField();
 
 	abstract void setPulledField(String pulledField);
 
@@ -143,19 +145,19 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	abstract void setPullOutDuration(Number pullOutDuration)
 			throws OutOfRangeException;
 
-	abstract Object getPullOutEffect();
+	abstract String getPullOutEffect();
 
 	abstract void setPullOutEffect(Effect pullOutEffect);
 
-	abstract Object isPullOutOnlyOne();
+	abstract Boolean isPullOutOnlyOne();
 
 	abstract void setPullOutOnlyOne(Boolean pullOutOnlyOne);
 
-	abstract Object isSequencedAnimation();
+	abstract Boolean isSequencedAnimation();
 
 	abstract void setSequencedAnimation(Boolean sequencedAnimation);
 
-	abstract Object isShowZeroSlices();
+	abstract Boolean isShowZeroSlices();
 
 	abstract void setShowZeroSlices(Boolean showZeroSlices);
 
@@ -168,27 +170,27 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	abstract void setStartDuration(Number startDuration)
 			throws OutOfRangeException;
 
-	abstract Object getStartEffect();
+	abstract String getStartEffect();
 
 	abstract void setStartEffect(Effect startEffect);
 
-	abstract Object getTitleField();
+	abstract String getTitleField();
 
 	abstract void setTitleField(String titleField);
 
-	abstract Object getUrlField();
+	abstract String getUrlField();
 
 	abstract void setUrlField(String urlField);
 
-	abstract Object getUrlTarget();
+	abstract String getUrlTarget();
 
 	abstract void setUrlTarget(UrlTarget urlTarget);
 
-	abstract Object getValueField();
+	abstract String getValueField();
 
 	abstract void setValueField(String valueField);
 
-	abstract Object getVisibleInLegendField();
+	abstract String getVisibleInLegendField();
 
 	abstract void setVisibleInLegendField(String visibleInLegendField);
 

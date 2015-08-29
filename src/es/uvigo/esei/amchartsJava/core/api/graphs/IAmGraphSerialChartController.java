@@ -11,11 +11,11 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public abstract interface IAmGraphSerialChartController extends IAmGraphController {
 
-	abstract Object isBehindColumns();
+	abstract Boolean isBehindColumns();
 
 	abstract void setBehindColumns(Boolean behindColumns);
 
-	abstract Object isClustered();
+	abstract Boolean isClustered();
 
 	abstract void setClustered(Boolean clustered);
 
@@ -23,7 +23,7 @@ public abstract interface IAmGraphSerialChartController extends IAmGraphControll
 
 	abstract void setColumnWidth(Number columnWidth) throws OutOfRangeException;
 
-	abstract Object getCornerRadiusTop();
+	abstract String getCornerRadiusTop();
 
 	abstract void setCornerRadiusTop(String cornerRadiusTop)
 			throws CoordException;
@@ -32,7 +32,7 @@ public abstract interface IAmGraphSerialChartController extends IAmGraphControll
 
 	abstract void setDashLength(Number dashLength);
 
-	abstract Object getDashLengthField();
+	abstract String getDashLengthField();
 
 	abstract void setDashLengthField(String dashLengthField);
 
@@ -41,11 +41,11 @@ public abstract interface IAmGraphSerialChartController extends IAmGraphControll
 	abstract void setFixedColumnWidth(Number fixedColumnWidth)
 			throws IntegerException;
 
-	abstract Object getLineColor();
+	abstract String getLineColor();
 
 	abstract void setLineColor(ColorsAmCharts lineColor);
 
-	abstract Object getLineColorField();
+	abstract String getLineColorField();
 
 	abstract void setLineColorField(String lineColorField);
 
@@ -58,23 +58,23 @@ public abstract interface IAmGraphSerialChartController extends IAmGraphControll
 	abstract void setNegativeLineAlpha(Number negativeLineAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getNegativeLineColor();
+	abstract String getNegativeLineColor();
 
 	abstract void setNegativeLineColor(ColorsAmCharts negativeLineColor);
 
-	abstract Object isNewStack();
+	abstract Boolean isNewStack();
 
 	abstract void setNewStack(Boolean newStack);
 
-	abstract Object getOpenField();
+	abstract String getOpenField();
 
 	abstract void setOpenField(String openField);
 
-	abstract Object getPointPosition();
+	abstract String getPointPosition();
 
 	abstract void setPointPosition(PointPositionGraph pointPosition);
 
-	abstract Object getShowBalloonAt();
+	abstract String getShowBalloonAt();
 
 	abstract void setShowBalloonAt(ShowAt showBalloonAt);
 
@@ -82,7 +82,7 @@ public abstract interface IAmGraphSerialChartController extends IAmGraphControll
 
 	abstract void setTopRadius(Number topRadius) throws OutOfRangeException;
 
-	abstract Object isUseNegativeColorIfDown();
+	abstract Boolean isUseNegativeColorIfDown();
 
 	abstract void setUseNegativeColorIfDown(Boolean useNegativeColorIfDown);
 

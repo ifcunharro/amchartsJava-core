@@ -3,23 +3,23 @@ package es.uvigo.esei.amchartsJava.core.api.guides;
 import java.sql.Date;
 
 
-public interface IGuideCategoryAxisController extends IGuideController {
+public abstract interface IGuideCategoryAxisController extends IGuideController {
 
-	public Object getCategory();
+	abstract String getCategory();
 
-	public void setCategory(String category);
+	abstract void setCategory(String category);
 	
-	public Object getDate();
+	abstract String getDate();
 
-	public void setDate(Date date);
+	abstract void setDate(Date date);
 	
-	public Object isExpand();
+	abstract Boolean isExpand();
 
-	public void setExpand(Boolean expand);
+	abstract void setExpand(Boolean expand);
 
-	public Object getToCategory();
+	abstract String getToCategory();
 
 	//falta comprobar categoria existente dataProvider
-	public void setToCategory(String toCategory);
+	abstract void setToCategory(String toCategory);
 
 }

@@ -3,22 +3,22 @@ package es.uvigo.esei.amchartsJava.core.api;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IPatternController {
+public abstract interface IPatternController {
 	
-	public Object getColor();
+	abstract String getColor();
 	
-	public void setColor(String color) throws ColorException;
+	abstract void setColor(String color) throws ColorException;
 	
-	public Object getHeight();
+	abstract Object getHeight();
 	
-	public void setHeight(Number height) throws OutOfRangeException;
+	abstract void setHeight(Number height) throws OutOfRangeException;
 	
-	public Object getUrl();
+	abstract String getUrl();
 	
-	public void setUrl(String url);
+	abstract void addUrl(String directoryPattern, String namePattern);
 	
-	public Object getWidth();
+	abstract Object getWidth();
 	
-	public void setWidth(Number height) throws OutOfRangeException;
+	abstract void setWidth(Number height) throws OutOfRangeException;
 	
 }

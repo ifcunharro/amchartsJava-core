@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
@@ -68,16 +69,16 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amchart = chart;
 	}
 	
-	public Object getId(){
-		return amGraph.getFeature("id");
+	public String getId(){
+		return (String) amGraph.getFeature("id");
 	}
 	
 	private void setId(String id) {
 		amGraph.setFeature("id", id);	
 	}
 	
-	public Object getAlphaField(){
-		return amGraph.getFeature("alphaField");
+	public String getAlphaField(){
+		return (String) amGraph.getFeature("alphaField");
 	}
 	
 	public void setAlphaField(String alphaField){
@@ -85,32 +86,32 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="animationPlayed")
-	public Object isAnimationPlayed(){
-		return amGraph.getFeature("animationPlayed");
+	public Boolean isAnimationPlayed(){
+		return (Boolean) amGraph.getFeature("animationPlayed");
 	}
 	
 	public void setAnimationPlayed(Boolean animationPlayed){
 		amGraph.setFeature("animationPlayed", animationPlayed);
 	}
 	
-	public Object getBalloonColor(){
-		return amGraph.getFeature("balloonColor");
+	public String getBalloonColor(){
+		return (String) amGraph.getFeature("balloonColor");
 	}
 	
 	public void setBalloonColor(ColorsAmCharts balloonColor){
 		amGraph.setFeature("balloonColor", balloonColor.toString());
 	}
 	
-	public Object getBalloonFunction(){
-		return amGraph.getFeature("balloonFunction");
+	public String getBalloonFunction(){
+		return (String) amGraph.getFeature("balloonFunction");
 	}
 	
 	public void setBalloonFunction(String balloonFunction){
 		amGraph.setFeature("balloonFunction", balloonFunction);
 	}
 	
-	public Object getBullet(){
-		return amGraph.getFeature("bullet");
+	public String getBullet(){
+		return (String) amGraph.getFeature("bullet");
 	}
 	
 	public void setBullet(Bullet bullet){
@@ -137,8 +138,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getBulletBordeColor(){
-		return amGraph.getFeature("bulletBorderColor");
+	public String getBulletBordeColor(){
+		return (String) amGraph.getFeature("bulletBorderColor");
 	}
 	
 	public void setBulletBorderColor(ColorsAmCharts bulletBorderColor){
@@ -155,16 +156,16 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getBulletColor(){
-		return amGraph.getFeature("bulletColor");
+	public String getBulletColor(){
+		return (String) amGraph.getFeature("bulletColor");
 	}
 	
 	public void setBulletColor(ColorsAmCharts bulletColor){
 		amGraph.setFeature("bulletColor", bulletColor.toString());
 	}
 	
-	public Object getBulletField(){
-		return amGraph.getFeature("bulletField");
+	public String getBulletField(){
+		return (String) amGraph.getFeature("bulletField");
 	}
 	
 	public void setBulletField(String bulletField){
@@ -191,32 +192,32 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getBulletSizeField(){
-		return amGraph.getFeature("bulletSizeField");
+	public String getBulletSizeField(){
+		return (String) amGraph.getFeature("bulletSizeField");
 	}
 	
 	public void setBulletSizeField(String bulletSizeField){
 		amGraph.setFeature("bulletSizeField", bulletSizeField);
 	}
 	
-	public Object getCloseField(){
-		return amGraph.getFeature("closeField");
+	public String getCloseField(){
+		return (String) amGraph.getFeature("closeField");
 	}
 	
 	public void setCloseField(String closeField){
 		amGraph.setFeature("closeField", closeField);
 	}
 	
-	public Object getColor(){
-		return amGraph.getFeature("color");
+	public String getColor(){
+		return (String) amGraph.getFeature("color");
 	}
 	
 	public void setColor(ColorsAmCharts color){
 		amGraph.setFeature("color", color.toString());
 	}
 	
-	public Object getColorField(){
-		return amGraph.getFeature("colorField");
+	public String getColorField(){
+		return (String) amGraph.getFeature("colorField");
 	}
 	
 	public void setColorField(String colorField){
@@ -233,32 +234,32 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	//path to image custom bullet
-	public Object getCustomBullet(){
-		return amGraph.getFeature("customBullet");
+	public String getCustomBullet(){
+		return (String) amGraph.getFeature("customBullet");
 	}
 	//FALTA VALIDAR PATH
 	public void setCustomBullet(String customBullet){
 		amGraph.setFeature("customBullet", customBullet);
 	}
 	
-	public Object getCustomBulletField(){
-		return amGraph.getFeature("customBulletField");
+	public String getCustomBulletField(){
+		return (String) amGraph.getFeature("customBulletField");
 	}
 	
 	public void setCustomBulletField(String customBulletField){
 		amGraph.setFeature("customBulletField", customBulletField);
 	}
 	
-	public Object getCustomMarker(){
-		return amGraph.getFeature("customMarker");
+	public String getCustomMarker(){
+		return (String) amGraph.getFeature("customMarker");
 	}
 	
 	public void setCustomMarker(String customMarker){
 		amGraph.setFeature("customMarker", customMarker);
 	}
 	
-	public Object getDateFormat(){
-		return amGraph.getFeature("dateFormat");
+	public String getDateFormat(){
+		return (String) amGraph.getFeature("dateFormat");
 	}
 	
 	//escogido de DateFormatConstant, filtrar a nivel interfaz, 
@@ -269,16 +270,16 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getDescriptionField(){
-		return amGraph.getFeature("descriptionField");
+	public String getDescriptionField(){
+		return (String) amGraph.getFeature("descriptionField");
 	}
 	
 	public void setDescriptionField(String descriptionField){
 		amGraph.setFeature("descriptionField", descriptionField);
 	}
 	
-	public Object getErrorField(){
-		return amGraph.getFeature("errorField");
+	public String getErrorField(){
+		return (String) amGraph.getFeature("errorField");
 	}
 	
 	public void setErrorField(String errorField){
@@ -295,8 +296,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getFillToGraph(){
-		return amGraph.getFeature("fillToGraph");
+	public String getFillToGraph(){
+		return (String) amGraph.getFeature("fillToGraph");
 	}
 	
 	//debe ser el id de otro graph
@@ -330,8 +331,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getGradientOrientation(){
-		return amGraph.getFeature("gradientOrientation");
+	public String getGradientOrientation(){
+		return (String) amGraph.getFeature("gradientOrientation");
 	}
 	
 	public void setGradientOrientation(Orientation gradientOrientation){
@@ -339,8 +340,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="hidden")
-	public Object isHidden(){
-		return amGraph.getFeature("hidden");
+	public Boolean isHidden(){
+		return (Boolean) amGraph.getFeature("hidden");
 	}
 	
 	public void setHidden(Boolean hidden){
@@ -358,32 +359,32 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="includeInMinMax")
-	public Object isIncludeInMinMax(){
-		return amGraph.getFeature("includeInMinMax");
+	public Boolean isIncludeInMinMax(){
+		return (Boolean) amGraph.getFeature("includeInMinMax");
 	}
 	
 	public void setIncludeInMinMax(Boolean includeInMinMax){
 		amGraph.setFeature("includeInMinMax", includeInMinMax);
 	}
 	
-	public Object getLabelAnchor(){
-		return amGraph.getFeature("labelAnchor");
+	public String getLabelAnchor(){
+		return (String) amGraph.getFeature("labelAnchor");
 	}
 	
 	public void setLabelAnchor(LabelAnchor labelAnchor){
 		amGraph.setFeature("labelAnchor", labelAnchor.toString());
 	}
 	
-	public Object getLabelColorField(){
-		return amGraph.getFeature("labelColorField");
+	public String getLabelColorField(){
+		return (String) amGraph.getFeature("labelColorField");
 	}
 	
 	public void setLabelColorField(String labelColorField){
 		amGraph.setFeature("labelColorField", labelColorField);
 	}
 	
-	public Object getLabelFunction(){
-		return amGraph.getFeature("labelFunction");
+	public String getLabelFunction(){
+		return (String) amGraph.getFeature("labelFunction");
 	}
 	
 	public void setLabelFunction(String labelFunction){
@@ -400,8 +401,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getLabelPosition(){
-		return amGraph.getFeature("labelPosition");
+	public String getLabelPosition(){
+		return (String) amGraph.getFeature("labelPosition");
 	}
 	
 	public void setLabelPosition(LabelPosition labelPosition){
@@ -418,8 +419,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getLabelText(){
-		return amGraph.getFeature("labelText");
+	public String getLabelText(){
+		return (String) amGraph.getFeature("labelText");
 	}
 	
 	public void setLabelText(TagsText labelText){
@@ -436,24 +437,24 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getLegendColor(){
-		return amGraph.getFeature("legendColor");
+	public String getLegendColor(){
+		return (String) amGraph.getFeature("legendColor");
 	}
 	
 	public void setLegendColor(ColorsAmCharts legendColor){
 		amGraph.setFeature("legendColor", legendColor.toString());
 	}
 	
-	public Object getLegendPeriodValueText(){
-		return amGraph.getFeature("legendPeriodValueText");
+	public String getLegendPeriodValueText(){
+		return (String) amGraph.getFeature("legendPeriodValueText");
 	}
 	
 	public void setLegendPeriodValueText(LegendPeriodValueText legendPeriodValueText){
 		amGraph.setFeature("legendPeriodValueText", legendPeriodValueText.toString());
 	}
 	
-	public Object getLegendValueText(){
-		return amGraph.getFeature("legendValueText");
+	public String getLegendValueText(){
+		return (String) amGraph.getFeature("legendValueText");
 	}
 	
 	public void setLegendValueText(TagsText legendValueText){
@@ -470,8 +471,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getMakerType(){
-		return amGraph.getFeature("markerType");
+	public String getMakerType(){
+		return (String) amGraph.getFeature("markerType");
 	}
 	
 	public void setMarkerType(MarkerType markerType){
@@ -508,15 +509,15 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getNegativeFillColors(){
-		return amGraph.getFeature("negativeFillColors");
+	public String getNegativeFillColors(){
+		return (String) amGraph.getFeature("negativeFillColors");
 	}
 	
 	public void setNegativeFillColors(ColorsAmCharts negativeFillColors){
 		amGraph.setFeature("negativeFillColors", negativeFillColors.toString());
 	}
 	
-	public Object getPattern(){
+	public PatternController getPattern(){
 		return amGraph.getPattern();
 	}
 	
@@ -528,8 +529,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getPatternField(){
-		return amGraph.getFeature("patternField");
+	public String getPatternField(){
+		return (String) amGraph.getFeature("patternField");
 	}
 	
 	public void setPatternField(String patternField){
@@ -547,8 +548,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="proCandleSticks")
-	public Object isProCandleSticks(){
-		return amGraph.getFeature("proCandleSticks");
+	public Boolean isProCandleSticks(){
+		return (Boolean) amGraph.getFeature("proCandleSticks");
 	}
 	
 	public void setProCandleSticks(Boolean proCandleSticks){
@@ -556,8 +557,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="showAllValueLabels")
-	public Object isSwowAllValueLabels(){
-		return amGraph.getFeature("showAllValueLabels");
+	public Boolean isShowAllValueLabels(){
+		return (Boolean) amGraph.getFeature("showAllValueLabels");
 	}
 	
 	public void setShowAllValueLabels(Boolean showAllValueLabels){
@@ -565,8 +566,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="showBalloon")
-	public Object isShowBalloon(){
-		return amGraph.getFeature("showBalloon");
+	public Boolean isShowBalloon(){
+		return (Boolean) amGraph.getFeature("showBalloon");
 	}
 	
 	public void setShowBalloon(Boolean showBalloon){
@@ -574,8 +575,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="showHandOnHover")
-	public Object isShowHandOnHover(){
-		return amGraph.getFeature("showHandOnHover");
+	public Boolean isShowHandOnHover(){
+		return (Boolean) amGraph.getFeature("showHandOnHover");
 	}
 	
 	public void setShowHandOnHover(Boolean showHandOnHover){
@@ -583,8 +584,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="showOnAxis")
-	public Object isShowOnAxis(){
-		return amGraph.getFeature("showOnAxis");
+	public Boolean isShowOnAxis(){
+		return (Boolean) amGraph.getFeature("showOnAxis");
 	}
 	
 	public void setShowOnAxis(Boolean showOnAxis){
@@ -592,8 +593,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="stackable")
-	public Object isStackable(){
-		return amGraph.getFeature("stackable");
+	public Boolean isStackable(){
+		return (Boolean) amGraph.getFeature("stackable");
 	}
 	
 	public void setStackable(Boolean stackable){
@@ -601,48 +602,48 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="switchable")
-	public Object isSwitchable(){
-		return amGraph.getFeature("switchable");
+	public Boolean isSwitchable(){
+		return (Boolean) amGraph.getFeature("switchable");
 	}
 	
 	public void setSwitchable(Boolean switchable){
 		amGraph.setFeature("switchable", switchable);
 	}
 	
-	public Object getTitle(){
-		return amGraph.getFeature("title");
+	public String getTitle(){
+		return (String) amGraph.getFeature("title");
 	}
 	
 	public void setTitle(String title) {
 		amGraph.setFeature("title", title);
 	}
 	
-	public Object getType(){
-		return amGraph.getFeature("type");
+	public String getType(){
+		return (String) amGraph.getFeature("type");
 	}
 	
 	public void setType(GraphType type){
 		amGraph.setFeature("type", type.toString());
 	}
 	
-	public Object getUrlField(){
-		return amGraph.getFeature("urlField");
+	public String getUrlField(){
+		return (String) amGraph.getFeature("urlField");
 	}
 	
 	public void setUrlField(String urlField){
 		amGraph.setFeature("urlField", urlField);
 	}
 	
-	public Object getUrlTarget(){
-		return amGraph.getFeature("urlTarget");
+	public String getUrlTarget(){
+		return (String) amGraph.getFeature("urlTarget");
 	}
 	
 	public void setUrlTarget(UrlTarget urlTarget){
 		amGraph.setFeature("urlTarget", urlTarget.toString());
 	}
 	
-	public Object getValueAxis(){
-		return amGraph.getFeature("valueAxis");
+	public String getValueAxis(){
+		return (String) amGraph.getFeature("valueAxis");
 	}
 	
 	public void setValueAxis(String valueAxis) throws ChartException{
@@ -655,8 +656,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getValueField(){
-		return amGraph.getFeature("valueField");
+	public String getValueField(){
+		return (String) amGraph.getFeature("valueField");
 	}
 	
 	public void setValueField(String valueField){
@@ -664,8 +665,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	@JsonProperty(value="visibleInLegend")
-	public Object isVisibleInLegend(){
-		return amGraph.getFeature("visibleInLegend");
+	public Boolean isVisibleInLegend(){
+		return (Boolean) amGraph.getFeature("visibleInLegend");
 	}
 	
 	public void setVisibleInLegend(Boolean visibleInLegend){

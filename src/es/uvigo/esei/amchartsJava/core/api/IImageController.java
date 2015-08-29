@@ -6,15 +6,15 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public abstract interface IImageController {
 
-	abstract Object getBalloonColor();
+	abstract String getBalloonColor();
 
 	abstract void setBalloonColor(String balloonColor) throws ColorException;
 
-	abstract Object getBalloonText();
+	abstract String getBalloonText();
 
 	abstract void setBalloonText(String balloonText);
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(String color) throws ColorException;
 
@@ -30,7 +30,7 @@ public abstract interface IImageController {
 
 	abstract void setOffsetY(Number offsetY) throws IntegerException;
 
-	abstract Object getOutlineColor();
+	abstract String getOutlineColor();
 
 	abstract void setOutlineColor(String outlineColor) throws ColorException;
 
@@ -38,7 +38,7 @@ public abstract interface IImageController {
 
 	abstract void setRotation(Number rotation) throws OutOfRangeException;
 
-	abstract Object getUrl();
+	abstract String getUrl();
 
 	//en vez de url, introduce solo nombre imagen con su extensión, la url se completa con
 	//IMAGES_PATH definido en AmchartsJavaPaths

@@ -4,36 +4,36 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IGaugeBandController {
+public abstract interface IGaugeBandController {
 
-	public Object getAlpha();
+	abstract Object getAlpha();
 
-	public void setAlpha(Number alpha) throws OutOfRangeException;
+	abstract void setAlpha(Number alpha) throws OutOfRangeException;
 
-	public Object getBalloonText();
+	abstract String getBalloonText();
 
-	public void setBalloonText(String balloonText);
+	abstract void setBalloonText(String balloonText);
 
-	public Object getColor();
+	abstract String getColor();
 
-	public void setColor(String color) throws ColorException;
+	abstract void setColor(String color) throws ColorException;
 
-	public Object getEndValue();
+	abstract Object getEndValue();
 
-	public void setEndValue(Number endValue);
+	abstract void setEndValue(Number endValue);
 
-	public Object getId();
+	abstract String getId();
 
-	public Object getInnerRadius();
+	abstract String getInnerRadius();
 
-	public void setInnerRadius(String innerRadius) throws CoordException;
+	abstract void setInnerRadius(String innerRadius) throws CoordException;
 
-	public Object getRadius();
+	abstract String getRadius();
 
-	public void setRadius(String radius) throws CoordException;
+	abstract void setRadius(String radius) throws CoordException;
 
-	public Object getStartValue();
+	abstract Object getStartValue();
 
-	public void setStartValue(Number startValue);
+	abstract void setStartValue(Number startValue);
 
 }

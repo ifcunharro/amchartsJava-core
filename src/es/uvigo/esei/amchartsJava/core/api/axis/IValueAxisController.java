@@ -17,125 +17,125 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
-public interface IValueAxisController extends IAxisBaseController {
+public abstract interface IValueAxisController extends IAxisBaseController {
 
-	public void setChart(AmCoordinateChart c);
+	abstract void setChart(AmCoordinateChart c);
 
-	public Object getBaseValue();
+	abstract Object getBaseValue();
 
-	public void setBaseValue(Number baseValue) throws IntegerException;
+	abstract void setBaseValue(Number baseValue) throws IntegerException;
 
-	public Object getDuration();
+	abstract String getDuration();
 
-	public void setDuration(Duration duration);
+	abstract void setDuration(Duration duration);
 
-	public Object getId();
+	abstract String getId();
 
-	public Object isIncludeGuidesInMinMax();
+	abstract Boolean isIncludeGuidesInMinMax();
 
-	public void setIncludeGuidesInMinMax(Boolean includeGuidesInMinMax);
+	abstract void setIncludeGuidesInMinMax(Boolean includeGuidesInMinMax);
 
-	public Object isIncludeHidden();
+	abstract Boolean isIncludeHidden();
 	
-	public void setIncludeHidden(Boolean includeHidden);
+	abstract void setIncludeHidden(Boolean includeHidden);
 
-	public Object isIntegersOnly();
+	abstract Boolean isIntegersOnly();
 
-	public void setIntegersOnly(Boolean integersOnly);
+	abstract void setIntegersOnly(Boolean integersOnly);
 
-	public Object getLabelFunction();
+	abstract String getLabelFunction();
 
-	public void setLabelFunction(String labelFunction);
+	abstract void setLabelFunction(String labelFunction);
 
-	public Object isLogarithmic();
+	abstract Boolean isLogarithmic();
 
-	public void setLogarithmic(Boolean logarithmic);
+	abstract void setLogarithmic(Boolean logarithmic);
 
-	public Object getMaximum();
+	abstract Object getMaximum();
 
-	public void setMaximum(Number maximum) throws DoubleException;
+	abstract void setMaximum(Number maximum) throws DoubleException;
 
-	public Object getMaximumDate();
+	abstract String getMaximumDate();
 
-	public void setMaximunDate(Date maximumDate);
+	abstract void setMaximunDate(Date maximumDate);
 
-	public Object getMinimum();
+	abstract Object getMinimum();
 
-	public void setMinimum(Number minimum) throws DoubleException;
+	abstract void setMinimum(Number minimum) throws DoubleException;
 
-	public Object getMinimumDate();
+	abstract String getMinimumDate();
 
-	public void setMinimumDate(Date minimumDate);
+	abstract void setMinimumDate(Date minimumDate);
 
-	public Object getMinMaxMultiplier();
+	abstract Object getMinMaxMultiplier();
 
-	public void setMinMaxMultiplier(Number minMaxMultiplier)
+	abstract void setMinMaxMultiplier(Number minMaxMultiplier)
 			throws DoubleException;
 
-	public Object getPrecision();
+	abstract Object getPrecision();
 
-	public void setPrecision(Number precision) throws OutOfRangeException;
+	abstract void setPrecision(Number precision) throws OutOfRangeException;
 
-	public Object isRecalculateToPercents();
+	abstract Boolean isRecalculateToPercents();
 
-	public void setRecalculateToPercents(Boolean recalculateToPercents);
+	abstract void setRecalculateToPercents(Boolean recalculateToPercents);
 
-	public Object isReversed();
+	abstract Boolean isReversed();
 
-	public void setReversed(Boolean reversed);
+	abstract void setReversed(Boolean reversed);
 
-	public Object getStackType();
+	abstract String getStackType();
 
-	public void setStackType(StackType stackType);
+	abstract void setStackType(StackType stackType);
 
-	public Object isStrictMinMax();
+	abstract Boolean isStrictMinMax();
 
-	public void setStrictMinMax(Boolean strictMinMax);
+	abstract void setStrictMinMax(Boolean strictMinMax);
 
-	public Object getSynchronizationMultiplier();
+	abstract Object getSynchronizationMultiplier();
 
-	public void setSynchronizationMultiplier(Number synchronizationMultiplier)
+	abstract void setSynchronizationMultiplier(Number synchronizationMultiplier)
 			throws DoubleException;
 
-	public Object getSynchronizeWith();
+	abstract String getSynchronizeWith();
 
-	public void setSynchronizeWith(String synchronizeWith) throws ChartException;
+	abstract void setSynchronizeWith(String synchronizeWith) throws ChartException;
 
-	public Object getTotalText();
+	abstract String getTotalText();
 
-	public void enabledTotalText();
+	abstract void enabledTotalText();
 
-	public Object getTotalTextColor();
+	abstract String getTotalTextColor();
 
-	public void setTotalTextColor(String totalTextColor) throws ColorException;
+	abstract void setTotalTextColor(String totalTextColor) throws ColorException;
 
-	public Object getTotalTextOffset();
+	abstract Object getTotalTextOffset();
 
-	public void setTotalTextOffset(Number totalTextOffset)
+	abstract void setTotalTextOffset(Number totalTextOffset)
 			throws OutOfRangeException;
 
-	public Object getTreatZeroAs();
+	abstract Object getTreatZeroAs();
 
-	public void setTreatZeroAs(Number treatZeroAs) throws IntegerException;
+	abstract void setTreatZeroAs(Number treatZeroAs) throws IntegerException;
 
-	public Object getType();
+	abstract String getType();
 
-	public void setType(AxisType type);
+	abstract void setType(AxisType type);
 
-	public Object getUnit();
+	abstract String getUnit();
 
-	public void setUnit(String unit);
+	abstract void setUnit(String unit);
 
-	public Object getUnitPosition();
+	abstract String getUnitPosition();
 
-	public void setUnitPosition(Position unitPosition);
+	abstract void setUnitPosition(Position unitPosition);
 
-	public Object isUsePrefixes();
+	abstract Boolean isUsePrefixes();
 
-	public void setUsePrefixes(Boolean usePrefixes);
+	abstract void setUsePrefixes(Boolean usePrefixes);
 
-	public Object isUseScientificNotation();
+	abstract Boolean isUseScientificNotation();
 
-	public void setUseScientificNotation(Boolean useScientificNotation);
+	abstract void setUseScientificNotation(Boolean useScientificNotation);
 	
 }

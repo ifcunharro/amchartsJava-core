@@ -5,15 +5,15 @@ import es.uvigo.esei.amchartsJava.core.constants.ShowAtConstant.ShowAt;
 
 public abstract interface IAmGraphCandleOhlcController extends IAmGraphSerialController {
 
-	abstract Object getHighField();
+	abstract String getHighField();
 
 	abstract void setHighField(String highField);
 
-	abstract Object getLowField();
+	abstract String getLowField();
 
 	abstract void setLowField(String lowField);
 	
-	abstract Object getShowBulletsAt();
+	abstract String getShowBulletsAt();
 	
 	abstract void setShowBulletsAt(ShowAt showBulletsAt);
 

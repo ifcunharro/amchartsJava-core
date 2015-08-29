@@ -3,6 +3,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmAngularGaugeController;
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
@@ -31,15 +32,15 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 	}
 	
 	@JsonProperty(value="adjustSize")
-	public Object isAdjustSize(){
-		return amchart.getFeature("adjustSize");
+	public Boolean isAdjustSize(){
+		return (Boolean) amchart.getFeature("adjustSize");
 	}
 	
 	public void setAdjustSize(Boolean adjustSize){
 		amchart.setFeature("adjustSize", adjustSize);
 	}
 	
-	public Object getArrows(){
+	public List<GaugeArrowController> getArrows(){
 		return amchart.getArrows();
 	}
 	
@@ -48,7 +49,7 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		amchart.setArrows(arrows);
 	}
 	
-	public Object getAxes(){
+	public List<GaugeAxisController> getAxes(){
 		return amchart.getAxes();
 	}
 	
@@ -58,8 +59,8 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 	}
 	
 	@JsonProperty(value="clockWiseOnly")
-	public Object isClockWiseOnly(){
-		return amchart.getFeature("clockWiseOnly");
+	public Boolean isClockWiseOnly(){
+		return (Boolean) amchart.getFeature("clockWiseOnly");
 	}
 	
 	public void setClockWiseOnly(Boolean clockWiseOnly){
@@ -86,8 +87,8 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getFaceBorderColor(){
-		return amchart.getFeature("faceBorderColor");
+	public String getFaceBorderColor(){
+		return (String) amchart.getFeature("faceBorderColor");
 	}
 	
 	public void setFaceBorderColor(String faceBorderColor) throws ColorException{
@@ -106,8 +107,8 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getFaceColor(){
-		return amchart.getFeature("faceColor");
+	public String getFaceColor(){
+		return (String) amchart.getFeature("faceColor");
 	}
 	
 	public void setFaceColor(String faceColor) throws ColorException{
@@ -116,7 +117,7 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getFacePattern(){
+	public PatternController getFacePattern(){
 		return amchart.getFacePattern();
 	}
 	
@@ -208,8 +209,8 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getStartEffect(){
-		return amchart.getFeature("startEffect");
+	public String getStartEffect(){
+		return (String) amchart.getFeature("startEffect");
 	}
 	
 	public void setStartEffect(Effect startEffect){
@@ -227,6 +228,12 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 	public void removeArrow(String idArrow){
 		if(amchart.existArrow(idArrow)){
 			amchart.removeArrow(idArrow);
+		}
+	}
+	
+	public void removeAxis(String idAxis){
+		if(amchart.existAxis(idAxis)){
+			amchart.removeAxis(idAxis);
 		}
 	}
 }

@@ -52,8 +52,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
-	public Object getDuration(){
-		return axes.getFeature("duration");
+	public String getDuration(){
+		return (String) axes.getFeature("duration");
 	}
 	
 	public void setDuration(Duration duration){
@@ -62,8 +62,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	
 	//durationUnits por defecto
 	
-	public Object getId() {
-		return axes.getFeature("id");
+	public String getId() {
+		return (String) axes.getFeature("id");
 	}
 	
 	private void setId(String id){
@@ -71,8 +71,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	@JsonProperty(value="includeGuidesInMinMax")
-	public Object isIncludeGuidesInMinMax(){
-		return axes.getFeature("includeGuidesInMinMax");
+	public Boolean isIncludeGuidesInMinMax(){
+		return (Boolean) axes.getFeature("includeGuidesInMinMax");
 	}
 	
 	public void setIncludeGuidesInMinMax(Boolean includeGuidesInMinMax){
@@ -80,8 +80,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	@JsonProperty(value="includeHidden")
-	public Object isIncludeHidden(){
-		return axes.getFeature("includeHidden");
+	public Boolean isIncludeHidden(){
+		return (Boolean) axes.getFeature("includeHidden");
 	}
 	
 	public void setIncludeHidden(Boolean includeHidden){
@@ -89,16 +89,16 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	@JsonProperty(value="integersOnly")
-	public Object isIntegersOnly(){
-		return axes.getFeature("integersOnly");
+	public Boolean isIntegersOnly(){
+		return (Boolean) axes.getFeature("integersOnly");
 	}
 	
 	public void setIntegersOnly(Boolean integersOnly){
 		axes.setFeature("integersOnly", integersOnly);
 	}
 	
-	public Object getLabelFunction(){
-		return axes.getFeature("labelFunction");
+	public String getLabelFunction(){
+		return (String) axes.getFeature("labelFunction");
 	}
 	
 	public void setLabelFunction(String labelFunction){
@@ -106,8 +106,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	@JsonProperty(value="logarithmic")
-	public Object isLogarithmic(){
-		return axes.getFeature("logarithmic");
+	public Boolean isLogarithmic(){
+		return (Boolean) axes.getFeature("logarithmic");
 	}
 	
 	public void setLogarithmic(Boolean logarithmic){
@@ -124,8 +124,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
-	public Object getMaximumDate(){
-		return axes.getFeature("maximumDate");
+	public String getMaximumDate(){
+		return (String) axes.getFeature("maximumDate");
 	}
 	
 	public void setMaximunDate(Date maximumDate){
@@ -142,8 +142,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
-	public Object getMinimumDate(){
-		return axes.getFeature("minimunDate");
+	public String getMinimumDate(){
+		return (String) axes.getFeature("minimunDate");
 	}
 	
 	public void setMinimumDate(Date minimumDate){
@@ -171,8 +171,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	@JsonProperty(value="recalculateToPercents")
-	public Object isRecalculateToPercents(){
-		return axes.getFeature("recalculateToPercents");
+	public Boolean isRecalculateToPercents(){
+		return (Boolean) axes.getFeature("recalculateToPercents");
 	}
 	
 	public void setRecalculateToPercents(Boolean recalculateToPercents){
@@ -180,16 +180,16 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	@JsonProperty(value="reversed")
-	public Object isReversed(){
-		return axes.getFeature("reversed");
+	public Boolean isReversed(){
+		return (Boolean) axes.getFeature("reversed");
 	}
 	
 	public void setReversed(Boolean reversed){
 		axes.setFeature("reversed", reversed);
 	}
 	
-	public Object getStackType(){
-		return axes.getFeature("stackType");
+	public String getStackType(){
+		return (String) axes.getFeature("stackType");
 	}
 	
 	public void setStackType(StackType stackType){
@@ -197,8 +197,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	@JsonProperty(value="strictMinMax")
-	public Object isStrictMinMax(){
-		return axes.getFeature("strictMinMax");
+	public Boolean isStrictMinMax(){
+		return (Boolean) axes.getFeature("strictMinMax");
 	}
 	
 	public void setStrictMinMax(Boolean strictMinMax){
@@ -215,8 +215,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
-	public Object getSynchronizeWith(){
-		return axes.getFeature("synchronizeWith");
+	public String getSynchronizeWith(){
+		return (String) axes.getFeature("synchronizeWith");
 	}
 	
 	public void setSynchronizeWith(String synchronizeWith) throws ChartException{
@@ -229,8 +229,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
-	public Object getTotalText(){
-		return axes.getFeature("totalText");
+	public String getTotalText(){
+		return (String) axes.getFeature("totalText");
 	}
 	
 	
@@ -238,8 +238,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		axes.setFeature("totalText", "[[total]]");
 	}
 	
-	public Object getTotalTextColor(){
-		return axes.getFeature("totalTextColor");
+	public String getTotalTextColor(){
+		return (String) axes.getFeature("totalTextColor");
 	}
 	
 	public void setTotalTextColor(String totalTextColor) throws ColorException{
@@ -268,24 +268,24 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
-	public Object getType(){
-		return axes.getFeature("type");
+	public String getType(){
+		return (String) axes.getFeature("type");
 	}
 	
 	public void setType(AxisType type){
 		axes.setFeature("type", type.toString());
 	}
 	
-	public Object getUnit(){
-		return axes.getFeature("unit");
+	public String getUnit(){
+		return (String) axes.getFeature("unit");
 	}
 	
 	public void setUnit(String unit){
 		axes.setFeature("unit", unit);
 	}
 	
-	public Object getUnitPosition(){
-		return axes.getFeature("unitPosition");
+	public String getUnitPosition(){
+		return (String) axes.getFeature("unitPosition");
 	}
 	
 	public void setUnitPosition(Position unitPosition){
@@ -293,8 +293,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	@JsonProperty(value="usePrefixes")
-	public Object isUsePrefixes(){
-		return axes.getFeature("usePrefixes");
+	public Boolean isUsePrefixes(){
+		return (Boolean) axes.getFeature("usePrefixes");
 	}
 	
 	public void setUsePrefixes(Boolean usePrefixes){
@@ -302,8 +302,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	@JsonProperty(value="useScientificNotation")
-	public Object isUseScientificNotation(){
-		return axes.getFeature("useScientificNotation");
+	public Boolean isUseScientificNotation(){
+		return (Boolean) axes.getFeature("useScientificNotation");
 	}
 	
 	public void setUseScientificNotation(Boolean useScientificNotation){
@@ -311,7 +311,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	//para deserializar json
-	protected void setTotalText(String total){
+	@SuppressWarnings("unused")
+	private void setTotalText(String total){
 		axes.setFeature("totalText", total);
 	}
 }

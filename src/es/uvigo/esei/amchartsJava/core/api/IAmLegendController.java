@@ -17,11 +17,11 @@ public abstract interface IAmLegendController  {
 	
 	abstract AmLegend getLegend();
 
-	abstract Object getAlign();
+	abstract String getAlign();
 
 	abstract void setAlign(Align align);
 
-	abstract Object isAutoMargins();
+	abstract Boolean isAutoMargins();
 
 	abstract void setAutoMargins(Boolean autoMargins);
 
@@ -30,7 +30,7 @@ public abstract interface IAmLegendController  {
 	abstract void setBackgroundAlpha(Number backgroundAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getBackgroundColor();
+	abstract String getBackgroundColor();
 
 	abstract void setBackgroundColor(String backgroundColor)
 			throws ColorException;
@@ -39,7 +39,7 @@ public abstract interface IAmLegendController  {
 
 	abstract void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
 
-	abstract Object getBorderColor();
+	abstract String getBorderColor();
 
 	abstract void setBorderColor(String borderColor) throws ColorException;
 
@@ -47,19 +47,19 @@ public abstract interface IAmLegendController  {
 
 	abstract void setBottom(Number bottom) throws IntegerException;
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(String color) throws ColorException;
 
-	abstract Object getDivId();
+	abstract String getDivId();
 
 	abstract void setDivId(String divId);
 
-	abstract Object isEnabled();
+	abstract Boolean isEnabled();
 
 	abstract void setEnabled(Boolean enabled);
 
-	abstract Object isEqualWidths();
+	abstract Boolean isEqualWidths();
 
 	abstract void setEqualWidths(Boolean equalWidths);
 
@@ -67,7 +67,7 @@ public abstract interface IAmLegendController  {
 
 	abstract void setFontSize(Number fontSize) throws OutOfRangeException;
 
-	abstract Object isForceWidth();
+	abstract Boolean isForceWidth();
 
 	abstract void setForceWidth(Boolean forceWidth);
 
@@ -75,7 +75,7 @@ public abstract interface IAmLegendController  {
 
 	abstract void setHorizontalGap(Number horizontalGap) throws IntegerException;
 
-	abstract Object getLabelText();
+	abstract String getLabelText();
 
 	//cualquier texto pero si es [[title]] muestra como texto el title del graph
 	abstract void setLabelText(String labelText);
@@ -109,7 +109,7 @@ public abstract interface IAmLegendController  {
 	abstract void setMarkerBorderAlpha(Number markerBorderAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getMarkerBorderColor();
+	abstract String getMarkerBorderColor();
 
 	abstract void setMarkerBorderColor(String markerBorderColor)
 			throws ColorException;
@@ -119,7 +119,7 @@ public abstract interface IAmLegendController  {
 	abstract void setMarkerBorderThickness(Number markerBorderThickness)
 			throws OutOfRangeException;
 
-	abstract Object getMarkerDisabledColor();
+	abstract String getMarkerDisabledColor();
 
 	abstract void setMarkerDisabledColor(String markerDisabledColor)
 			throws ColorException;
@@ -133,7 +133,7 @@ public abstract interface IAmLegendController  {
 
 	abstract void setMarkerSize(Number markerSize) throws OutOfRangeException;
 
-	abstract Object getMarkerType();
+	abstract String getMarkerType();
 
 	abstract void setMarkerType(MarkerType markerType);
 
@@ -141,15 +141,15 @@ public abstract interface IAmLegendController  {
 
 	abstract void setMaxColumns(Number maxColumns) throws OutOfRangeException;
 
-	abstract Object getPeriodValueText();
+	abstract String getPeriodValueText();
 
 	abstract void setPeriodValueText(String periodValueText);
 
-	abstract Object getPosition();
+	abstract String getPosition();
 
 	abstract void setPosition(LegendPosition position);
 
-	abstract Object isReversedOrder();
+	abstract Boolean isReversedOrder();
 
 	abstract void setReversedOrder(Boolean reversedOrder);
 
@@ -157,7 +157,7 @@ public abstract interface IAmLegendController  {
 
 	abstract void setRight(Number right) throws IntegerException;
 
-	abstract Object getRollOverColor();
+	abstract String getRollOverColor();
 
 	abstract void setRollOverColor(String rollOverColor) throws ColorException;
 
@@ -166,7 +166,7 @@ public abstract interface IAmLegendController  {
 	abstract void setRollOverGraphAlpha(Number rollOverGraphAlpha)
 			throws OutOfRangeException;
 
-	abstract Object isShowEntries();
+	abstract Boolean isShowEntries();
 
 	abstract void setShowEntries(Boolean showEntries);
 
@@ -174,19 +174,19 @@ public abstract interface IAmLegendController  {
 
 	abstract void setSpacing(Number spacing) throws OutOfRangeException;
 
-	abstract Object isSwitchable();
+	abstract Boolean isSwitchable();
 
 	abstract void setSwitchable(Boolean switchable);
 
-	abstract Object getSwitchColor();
+	abstract String getSwitchColor();
 
 	abstract void setSwitchColor(String switchcolor) throws ColorException;
 
-	abstract Object getSwitchType();
+	abstract String getSwitchType();
 
 	abstract void setSwitchType(SwitchType switchType);
 
-	abstract Object isTextClickEnabled();
+	abstract Boolean isTextClickEnabled();
 
 	abstract void setTextClickEnabled(Boolean textClickEnabled);
 
@@ -194,27 +194,27 @@ public abstract interface IAmLegendController  {
 
 	abstract void setTop(Number top) throws IntegerException;
 
-	abstract Object isUseGraphSettings();
+	abstract Boolean isUseGraphSettings();
 
 	abstract void setUseGraphSettings(Boolean useGraphSettings);
 
-	abstract Object isUseMarkerColorForLabels();
+	abstract Boolean isUseMarkerColorForLabels();
 
 	abstract void setUseMarkerColorForLabels(Boolean useMarkerColorForLabels);
 
-	abstract Object isUseMarkerColorForValues();
+	abstract Boolean isUseMarkerColorForValues();
 
 	abstract void setUseMarkerColorForValues(Boolean useMarkerColorForValues);
 
-	abstract Object getValueAlign();
+	abstract String getValueAlign();
 
 	abstract void setValueAlign(ValueAlign valueAlign);
 
-	abstract Object getValueFunction();
+	abstract String getValueFunction();
 
 	abstract void setValueFunction(String valueFunction);
 
-	abstract Object getValueText();
+	abstract String getValueText();
 
 	//cualquier texto pero tiene más sentido dejarlo en blanco, usa el valueField
 	abstract void setValueText(String valueText);
@@ -230,7 +230,5 @@ public abstract interface IAmLegendController  {
 	abstract Object getWidth();
 
 	abstract void setWidth(Number width) throws IntegerException;
-
-	
 
 }

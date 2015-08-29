@@ -46,16 +46,16 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	@JsonProperty(value="above")
-	public Object isAbove(){
-		return guide.getFeature("above");
+	public Boolean isAbove(){
+		return (Boolean) guide.getFeature("above");
 	}
 	
 	public void setAbove(Boolean above){
 		guide.setFeature("above", above);
 	}
 	
-	public Object getBalloonColor(){
-		return guide.getFeature("balloonColor");
+	public String getBalloonColor(){
+		return (String) guide.getFeature("balloonColor");
 	}
 	
 	public void setBalloonColor(String balloonColor) throws ColorException{
@@ -64,8 +64,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getBalloonText(){
-		return guide.getFeature("balloonText");
+	public String getBalloonText(){
+		return (String) guide.getFeature("balloonText");
 	}
 	
 	public void setBalloonText(String balloonText){
@@ -73,16 +73,16 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	@JsonProperty(value="boldLabel")
-	public Object isBoldLabel(){
-		return guide.getFeature("boldLabel");
+	public Boolean isBoldLabel(){
+		return (Boolean) guide.getFeature("boldLabel");
 	}
 	
 	public void setBoldLabel(Boolean boldLabel){
 		guide.setFeature("boldLabel", boldLabel);
 	}
 	
-	public Object getColor(){
-		return guide.getFeature("color");
+	public String getColor(){
+		return (String) guide.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -111,8 +111,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getFillColor(){
-		return guide.getFeature("fillColor");
+	public String getFillColor(){
+		return (String) guide.getFeature("fillColor");
 	}
 	
 	public void setFillColor(String fillColor) throws ColorException{
@@ -131,8 +131,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getId(){
-		return guide.getFeature("id");
+	public String getId(){
+		return (String) guide.getFeature("id");
 	}
 	
 	private void setId(String id) {
@@ -140,12 +140,12 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	@JsonProperty(value="inside")
-	public Object isInside(){
-		return guide.getFeature("inside");
+	public Boolean isInside(){
+		return (Boolean) guide.getFeature("inside");
 	}
 	
-	public Object getLabel(){
-		return guide.getFeature("label");
+	public String getLabel(){
+		return (String) guide.getFeature("label");
 	}
 	
 	public void setLabel(String label){
@@ -172,8 +172,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getLineColor(){
-		return guide.getFeature("lineColor");
+	public String getLineColor(){
+		return (String) guide.getFeature("lineColor");
 	}
 	
 	public void setLineColor(String lineColor) throws ColorException{
@@ -192,8 +192,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getPosition(){
-		return guide.getFeature("position");
+	public String getPosition(){
+		return (String) guide.getFeature("position");
 	}
 	
 	public void setPosition(Position position){
@@ -210,16 +210,16 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getToDate(){
-		return guide.getFeature("toDate");
+	public String getToDate(){
+		return (String) guide.getFeature("toDate");
 	}
 	
 	public void setToDate(Date toDate){
 		guide.setFeature("toDate", toDate.toString());
 	}
 	
-	public Object getValueAxis(){
-		return guide.getFeature("valueAxis");
+	public String getValueAxis(){
+		return (String) guide.getFeature("valueAxis");
 	}
 	
 	public void setValueAxis(String valueAxis) throws ChartException{

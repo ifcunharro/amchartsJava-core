@@ -1,6 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
 
+import java.util.List;
+
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
@@ -13,11 +15,11 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
 public abstract interface IAmCoordinateChartController<F extends AmCoordinateChart> extends IAmchartController<AmChart> {
 
-	abstract Object isGridAboveGraphs();
+	abstract Boolean isGridAboveGraphs();
 
 	abstract void setGridAboveGraphs(Boolean gridAboveGraphs);
 
-	abstract Object isSequencedAnimation();
+	abstract Boolean isSequencedAnimation();
 
 	abstract void setSequencedAnimation(Boolean sequencedAnimation);
 
@@ -30,17 +32,17 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	abstract void setStartDuration(Number startDuration)
 			throws OutOfRangeException;
 
-	abstract Object getStartEffect();
+	abstract String getStartEffect();
 
 	abstract void setStartEffect(Effect startEffect);
 
-	abstract Object getUrlTarget();
+	abstract String getUrlTarget();
 
 	abstract void setUrlTarget(UrlTarget urlTarget);
 
 	//methods
 	//colors problema tipo prefixes
-	abstract Object getColors();
+	abstract List<String> getColors();
 
 	abstract void addColor(String color);
 

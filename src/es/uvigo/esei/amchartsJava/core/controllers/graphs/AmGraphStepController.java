@@ -26,8 +26,8 @@ public class AmGraphStepController extends AmGraphSerialChartController
 	
 	
 	@JsonProperty(value="noStepRisers")
-	public Object isNoStepRisers(){
-		return amGraph.getFeature("noStepRisers");
+	public Boolean isNoStepRisers(){
+		return (Boolean) amGraph.getFeature("noStepRisers");
 	}
 	
 	public void setNoStepRisers(Boolean noStepRisers){
@@ -44,8 +44,8 @@ public class AmGraphStepController extends AmGraphSerialChartController
 		}
 	}
 	
-	public Object getStepDirection(){
-		return amGraph.getFeature("stepDirection");
+	public String getStepDirection(){
+		return (String) amGraph.getFeature("stepDirection");
 	}
 	
 	public void setStepDirection(StepDirection stepDirection){

@@ -41,8 +41,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	
 	
 	@JsonProperty(value="autoGridCount")
-	public Object isAutoGridCount(){
-		return scrollBar.getFeature("autoGridCount");
+	public Boolean isAutoGridCount(){
+		return (Boolean) scrollBar.getFeature("autoGridCount");
 	}
 	
 	public void setAutoGridCount(Boolean autoGridCount){
@@ -59,8 +59,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getBackgroundColor(){
-		return scrollBar.getFeature("backgroundColor");
+	public String getBackgroundColor(){
+		return (String) scrollBar.getFeature("backgroundColor");
 	}
 	
 	public void setBackgroundColor(String backgroundColor) throws ColorException{
@@ -69,8 +69,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getColor(){
-		return scrollBar.getFeature("color");
+	public String getColor(){
+		return (String) scrollBar.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -79,8 +79,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getDragIcon(){
-		return scrollBar.getFeature("dragIcon");
+	public String getDragIcon(){
+		return (String) scrollBar.getFeature("dragIcon");
 	}
 	
 	public void setDragIcon(String dragIcon){
@@ -111,16 +111,16 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	@JsonProperty(value="enabled")
-	public Object isEnabled(){
-		return scrollBar.getFeature("enabled");
+	public Boolean isEnabled(){
+		return (Boolean) scrollBar.getFeature("enabled");
 	}
 	
 	public void setEnabled(Boolean enabled){
 		scrollBar.setFeature("enabled", enabled);
 	}
 	
-	public Object getGraph(){
-		return scrollBar.getFeature("graph");
+	public String getGraph(){
+		return (String) scrollBar.getFeature("graph");
 	}
 	
 	public void setGraph(String graph) throws ChartException{
@@ -143,8 +143,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getGraphFillColor(){
-		return scrollBar.getFeature("graphFillColor");
+	public String getGraphFillColor(){
+		return (String) scrollBar.getFeature("graphFillColor");
 	}
 	
 	public void setGraphFillColor(String graphFillColor) throws ColorException{
@@ -163,8 +163,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getGraphLineColor(){
-		return scrollBar.getFeature("graphLineColor");
+	public String getGraphLineColor(){
+		return (String) scrollBar.getFeature("graphLineColor");
 	}
 	
 	public void setGraphLineColor(String graphLineColor) throws ColorException{
@@ -173,8 +173,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getGraphType(){
-		return scrollBar.getFeature("graphType");
+	public String getGraphType(){
+		return (String) scrollBar.getFeature("graphType");
 	}
 	
 	public void setGraphType(GraphType graphType){
@@ -191,8 +191,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getGridColor(){
-		return scrollBar.getFeature("gridColor");
+	public String getGridColor(){
+		return (String) scrollBar.getFeature("gridColor");
 	}
 	
 	public void setGridColor(String gridColor) throws ColorException{
@@ -212,8 +212,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	@JsonProperty(value="hideResizeGrips")
-	public Object isHideResizeGrips(){
-		return scrollBar.getFeature("hideResizeGrips");
+	public Boolean isHideResizeGrips(){
+		return (Boolean) scrollBar.getFeature("hideResizeGrips");
 	}
 	
 	public void setHideResizeGrips(Boolean hideResizeGrips){
@@ -221,8 +221,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	@JsonProperty(value="ignoreCustomColors")
-	public Object isIgnoreCustomColors(){
-		return scrollBar.getFeature("ignoreCustomColors");
+	public Boolean isIgnoreCustomColors(){
+		return (Boolean) scrollBar.getFeature("ignoreCustomColors");
 	}
 	
 	public void setIgnoreCustomColors(Boolean ignoreCustomColors){
@@ -260,8 +260,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	@JsonProperty(value="oppositeAxis")
-	public Object isOppositeAxis(){
-		return scrollBar.getFeature("oppositeAxis");
+	public Boolean isOppositeAxis(){
+		return (Boolean) scrollBar.getFeature("oppositeAxis");
 	}
 	
 	public void setOppositeAxis(Boolean oppositeAxis){
@@ -269,8 +269,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	@JsonProperty(value="resizeEnabled")
-	public Object isResizeEnabled(){
-		return scrollBar.getFeature("resizeEnabled");
+	public Boolean isResizeEnabled(){
+		return (Boolean) scrollBar.getFeature("resizeEnabled");
 	}
 	
 	public void setResizeEnabled(Boolean resizeEnabled){
@@ -307,8 +307,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getSelectedBackgroundColor(){
-		return scrollBar.getFeature("selectedBackgroundColor");
+	public String getSelectedBackgroundColor(){
+		return (String) scrollBar.getFeature("selectedBackgroundColor");
 	}
 	
 	public void setSelectedBackgroundColor(String selectedBackgroundColor) throws ColorException{
@@ -327,8 +327,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getSelectedGraphFillColor(){
-		return scrollBar.getFeature("selectedGraphFillColor");
+	public String getSelectedGraphFillColor(){
+		return (String) scrollBar.getFeature("selectedGraphFillColor");
 	}
 	
 	public void setSelectedGraphFillColor(String selectedGraphFillColor) throws ColorException{
@@ -347,8 +347,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 		}
 	}
 	
-	public Object getSelectedGraphLineColor(){
-		return scrollBar.getFeature("selectedGraphLineColor");
+	public String getSelectedGraphLineColor(){
+		return (String) scrollBar.getFeature("selectedGraphLineColor");
 	}
 	
 	public void setSelectedGraphLineColor(String selectedGraphLineColor) throws ColorException{
@@ -358,8 +358,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	@JsonProperty(value="updateOnReleaseOnly")
-	public Object isUpdateOnReleaseOnly(){
-		return scrollBar.getFeature("updateOnReleaseOnly");
+	public Boolean isUpdateOnReleaseOnly(){
+		return (Boolean) scrollBar.getFeature("updateOnReleaseOnly");
 	}
 	
 	public void setUpdateOnReleaseOnly(Boolean updateOnReleaseOnly){

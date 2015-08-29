@@ -32,8 +32,8 @@ public class TrendLineXyChartController extends TrendLineSerialChartController i
 		trendLine.setFeature("initialXValue", initialXValue);
 	}
 	
-	public Object getValueAxisX(){
-		return trendLine.getFeature("valueAxisX");
+	public String getValueAxisX(){
+		return (String) trendLine.getFeature("valueAxisX");
 	}
 	
 	public void setValueAxisX(String valueAxisX) throws ChartException{

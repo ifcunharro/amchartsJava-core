@@ -54,8 +54,8 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getAxisColor(){
-		return gaugeAxis.getFeature("axisColor");
+	public String getAxisColor(){
+		return (String) gaugeAxis.getFeature("axisColor");
 	}
 	
 	public void setAxisColor(String axisColor) throws ColorException{
@@ -94,8 +94,8 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getBandOutlineColor(){
-		return gaugeAxis.getFeature("bandOutlineColor");
+	public String getBandOutlineColor(){
+		return (String) gaugeAxis.getFeature("bandOutlineColor");
 	}
 	
 	public void setBandOutlineColor(String bandOutlineColor) throws ColorException{
@@ -114,7 +114,7 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getBands(){
+	public List<GaugeBandController> getBands(){
 		return gaugeAxis.getBands();
 	}
 	
@@ -123,8 +123,8 @@ public class GaugeAxisController
 		gaugeAxis.setBands(gaugeBands);
 	}
 	
-	public Object getBottomText(){
-		return gaugeAxis.getFeature("bottomText");
+	public String getBottomText(){
+		return (String) gaugeAxis.getFeature("bottomText");
 	}
 	
 	public void setBottomText(String bottomText){
@@ -132,16 +132,16 @@ public class GaugeAxisController
 	}
 	
 	@JsonProperty(value="bottomTextBold")
-	public Object isBottomTextBold(){
-		return gaugeAxis.getFeature("bottomTextBold");
+	public Boolean isBottomTextBold(){
+		return (Boolean) gaugeAxis.getFeature("bottomTextBold");
 	}
 	
 	public void setBottomTextBold(Boolean bottomTextBold){
 		gaugeAxis.setFeature("bottomTextBold", bottomTextBold);
 	}
 	
-	public Object getBottomTextColor(){
-		return gaugeAxis.getFeature("bottomTextColor");
+	public String getBottomTextColor(){
+		return (String) gaugeAxis.getFeature("bottomTextColor");
 	}
 	
 	public void setBottomTextColor(String bottomTextColor) throws ColorException{
@@ -170,8 +170,8 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getCenterX(){
-		return gaugeAxis.getFeature("centerX");
+	public String getCenterX(){
+		return (String) gaugeAxis.getFeature("centerX");
 	}
 	
 	public void setCenterX(String centerX) throws CoordException{
@@ -180,8 +180,8 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getCenterY(){
-		return gaugeAxis.getFeature("centerY");
+	public String getCenterY(){
+		return (String) gaugeAxis.getFeature("centerY");
 	}
 	
 	public void setCenterY(String centerY) throws CoordException{
@@ -221,21 +221,21 @@ public class GaugeAxisController
 	}
 	
 	@JsonProperty(value="gridInside")
-	public Object isGridInside(){
-		return gaugeAxis.getFeature("gridInside");
+	public Boolean isGridInside(){
+		return (Boolean) gaugeAxis.getFeature("gridInside");
 	}
 	
 	public void setGridInside(Boolean gridInside){
 		gaugeAxis.setFeature("gridInside", gridInside);
 	}
 	
-	public Object getId() {
-		return gaugeAxis.getFeature("id");
+	public String getId() {
+		return (String) gaugeAxis.getFeature("id");
 	}
 	
 	@JsonProperty(value="inside")
-	public Object isInside(){
-		return gaugeAxis.getFeature("inside");
+	public Boolean isInside(){
+		return (Boolean) gaugeAxis.getFeature("inside");
 	}
 	
 	public void setInside(Boolean inside){
@@ -252,8 +252,8 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getLabelFunction(){
-		return gaugeAxis.getFeature("labelFunction");
+	public String getLabelFunction(){
+		return (String) gaugeAxis.getFeature("labelFunction");
 	}
 	
 	public void setLabelFunction(String labelFunction){
@@ -271,8 +271,8 @@ public class GaugeAxisController
 	}
 	
 	@JsonProperty(value="labelsEnabled")
-	public Object isLabelsEnabled(){
-		return gaugeAxis.getFeature("labelsEnabled");
+	public Boolean isLabelsEnabled(){
+		return (Boolean) gaugeAxis.getFeature("labelsEnabled");
 	}
 	
 	public void setLabelsEnabled(Boolean labelsEnabled){
@@ -301,8 +301,8 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getRadius(){
-		return gaugeAxis.getFeature("radius");
+	public String getRadius(){
+		return (String) gaugeAxis.getFeature("radius");
 	}
 	
 	public void setRadius(String radius) throws CoordException{
@@ -317,16 +317,16 @@ public class GaugeAxisController
 	}
 	
 	@JsonProperty(value="showFirstLabel")
-	public Object isShowFirstLabel(){
-		return gaugeAxis.getFeature("showFirstLabel");
+	public Boolean isShowFirstLabel(){
+		return (Boolean) gaugeAxis.getFeature("showFirstLabel");
 	}
 	
 	public void setShowFirstLabel(Boolean showFirstLabel){
 		gaugeAxis.setFeature("showFirstLabel", showFirstLabel);
 	}
 	
-	public Object isShowLastLabel(){
-		return gaugeAxis.getFeature("showLastLabel");
+	public Boolean isShowLastLabel(){
+		return (Boolean) gaugeAxis.getFeature("showLastLabel");
 	}
 	
 	public void setShowLastLabel(Boolean showLastLabel){
@@ -363,8 +363,8 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getTickColor(){
-		return gaugeAxis.getFeature("tickColor");
+	public String getTickColor(){
+		return (String) gaugeAxis.getFeature("tickColor");
 	}
 	
 	public void setTickColor(String tickColor) throws ColorException{
@@ -393,8 +393,8 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getTopText(){
-		return gaugeAxis.getFeature("topText");
+	public String getTopText(){
+		return (String) gaugeAxis.getFeature("topText");
 	}
 	
 	public void setTopText(String topText){
@@ -402,16 +402,16 @@ public class GaugeAxisController
 	}
 	
 	@JsonProperty(value="topTextBold")
-	public Object isTopTextBold(){
-		return gaugeAxis.getFeature("topTextBold");
+	public Boolean isTopTextBold(){
+		return (Boolean) gaugeAxis.getFeature("topTextBold");
 	}
 	
 	public void setTopTextBold(Boolean topTextBold){
 		gaugeAxis.setFeature("topTextBold", topTextBold);
 	}
 	
-	public Object getTopTextColor(){
-		return gaugeAxis.getFeature("topTextColor");
+	public String getTopTextColor(){
+		return (String) gaugeAxis.getFeature("topTextColor");
 	}
 	
 	public void setTopTextColor(String topTextColor) throws ColorException{
@@ -440,16 +440,16 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getUnit(){
-		return gaugeAxis.getFeature("unit");
+	public String getUnit(){
+		return (String) gaugeAxis.getFeature("unit");
 	}
 	
 	public void setUnit(String unit){
 		gaugeAxis.setFeature("unit", unit);
 	}
 	
-	public Object getUnitPosition(){
-		return gaugeAxis.getFeature("unitPosition");
+	public String getUnitPosition(){
+		return (String) gaugeAxis.getFeature("unitPosition");
 	}
 	
 	public void setUnitPosition(Position unitPosition){
@@ -457,8 +457,8 @@ public class GaugeAxisController
 	}
 	
 	@JsonProperty(value="usePrefixes")
-	public Object isUsePrefixes(){
-		return gaugeAxis.getFeature("usePrefixes");
+	public Boolean isUsePrefixes(){
+		return (Boolean) gaugeAxis.getFeature("usePrefixes");
 	}
 	
 	public void setUsePrefixes(Boolean usePrefixes){

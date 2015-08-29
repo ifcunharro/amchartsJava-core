@@ -8,63 +8,63 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface ITrendLineSerialChartController {
+public abstract interface ITrendLineSerialChartController {
 
-	public void setChart(AmRectangularChart chart);
+	abstract void setChart(AmRectangularChart chart);
 
-	public Object getDashLength();
+	abstract Object getDashLength();
 
-	public void setDashLength(Number dashLength) throws OutOfRangeException;
+	abstract void setDashLength(Number dashLength) throws OutOfRangeException;
 
-	public Object getFinalCategory();
+	abstract String getFinalCategory();
 
-	public void setFinalCategory(String finalCategory);
+	abstract void setFinalCategory(String finalCategory);
 
-	public Object getFinalDate();
+	abstract String getFinalDate();
 
-	public void setFinalDate(Date finalDate);
+	abstract void setFinalDate(Date finalDate);
 
-	public Object getFinalValue();
+	abstract Object getFinalValue();
 
-	public void setFinalValue(Number finalValue);
+	abstract void setFinalValue(Number finalValue);
 
-	public Object getId();
+	abstract String getId();
 
-	public Object getInitialCategory();
+	abstract String getInitialCategory();
 
-	public void setInitialCategory(String initialCategory);
+	abstract void setInitialCategory(String initialCategory);
 
-	public Object getInitialDate();
+	abstract String getInitialDate();
 
-	public void setInitialDate(Date initialDate);
+	abstract void setInitialDate(Date initialDate);
 
-	public Object getInitialValue();
+	abstract Object getInitialValue();
 
-	public void setInitialValue(Number initialValue);
+	abstract void setInitialValue(Number initialValue);
 
-	public Object getLineAlpha();
+	abstract Object getLineAlpha();
 
-	public void setLineAlpha(Number lineAlpha) throws OutOfRangeException;
+	abstract void setLineAlpha(Number lineAlpha) throws OutOfRangeException;
 
-	public Object getLineColor();
+	abstract String getLineColor();
 
-	public void setLineColor(String lineColor) throws ColorException;
+	abstract void setLineColor(String lineColor) throws ColorException;
 
-	public Object getLineThickness();
+	abstract Object getLineThickness();
 
-	public void setLineThickness(Number lineThickness)
+	abstract void setLineThickness(Number lineThickness)
 			throws OutOfRangeException;
 
-	public Object getValueAxis();
+	abstract String getValueAxis();
 
-	public void setValueAxis(String valueAxis) throws ChartException;
+	abstract void setValueAxis(String valueAxis) throws ChartException;
 
-	public Object getFinalImage();
+	abstract ImageController getFinalImage();
 
-	public Object getInitialImage();
+	abstract ImageController getInitialImage();
 
-	public void addFinalImage(ImageController finalImage);
+	abstract void addFinalImage(ImageController finalImage);
 
-	public void addInitialImage(ImageController initialImage);
+	abstract void addInitialImage(ImageController initialImage);
 
 }

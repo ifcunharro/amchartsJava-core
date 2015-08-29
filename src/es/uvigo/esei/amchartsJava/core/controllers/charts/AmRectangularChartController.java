@@ -1,5 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
@@ -55,8 +57,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	@JsonProperty(value="autoMargins")
-	public Object isAutoMargins(){
-		return amchart.getFeature("autoMargins");
+	public Boolean isAutoMargins(){
+		return (Boolean) amchart.getFeature("autoMargins");
 	}
 	
 	public void setAutoMargins(Boolean autoMargins){
@@ -104,8 +106,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	@JsonProperty(value="marginsUpdated")
-	public Object isMarginsUpdated(){
-		return amchart.getFeature("marginsUpdated");
+	public Boolean isMarginsUpdated(){
+		return (Boolean) amchart.getFeature("marginsUpdated");
 	}
 	
 	public void setMarginsUpdated(Boolean marginsUpdated){
@@ -132,8 +134,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getPlotAreaBorderColor(){
-		return amchart.getFeature("plotAreaBorderColor");
+	public String getPlotAreaBorderColor(){
+		return (String) amchart.getFeature("plotAreaBorderColor");
 	}
 	
 	public void setPlotAreaBorderColor(String plotAreaBorderColor) throws ColorException{
@@ -142,8 +144,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getPlotAreaFillColors(){
-		return amchart.getFeature("plotAreaFillColors");
+	public List<String> getPlotAreaFillColors(){
+		return amchart.getPlotAreaFillColors();
 	}
 	
 	public void setPlotAreaFillColors(String... plotAreaFillColors) throws ColorException{
@@ -152,8 +154,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getPlotAreaGradientAngle(){
-		return amchart.getFeature("plotAreaGradientAngle");
+	public String getPlotAreaGradientAngle(){
+		return (String) amchart.getFeature("plotAreaGradientAngle");
 	}
 	
 	public void setPlotAreaGradientAngle(GradientAngle plotAreaGradientAngle){
@@ -172,8 +174,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getZoomOutButtonColor(){
-		return amchart.getFeature("zoomOutButtonColor");
+	public String getZoomOutButtonColor(){
+		return (String) amchart.getFeature("zoomOutButtonColor");
 	}
 	
 	public void setZoomOutButtonColor(String zoomOutButtonColor) throws ColorException{
@@ -182,8 +184,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getZoomOutButtonImage(){
-		return amchart.getFeature("zoomOutButtonImage");
+	public String getZoomOutButtonImage(){
+		return (String) amchart.getFeature("zoomOutButtonImage");
 	}
 	
 	//debe existir en /amcharts/images
@@ -224,8 +226,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getZoomOutText(){
-		return amchart.getFeature("zoomOutText");
+	public String getZoomOutText(){
+		return (String) amchart.getFeature("zoomOutText");
 	}
 	
 	public void setZoomOutText(String zoomOutText){
@@ -234,11 +236,11 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	
 	//methods
 	
-	public Object getChartCursor(){
+	public ChartCursorController getChartCursor(){
 		return amchart.getChartCursor();
 	}
 	
-	public Object getChartScrollBar(){
+	public ChartScrollBarController getChartScrollBar(){
 		return amchart.getChartScrollBar();
 	}
 	

@@ -1,6 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
 
+import java.util.List;
+
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
@@ -12,7 +14,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface IAmRectangularChartController<G extends AmRectangularChart> extends IAmCoordinateChartController<AmCoordinateChart> {
+public abstract interface IAmRectangularChartController<G extends AmRectangularChart> extends IAmCoordinateChartController<AmCoordinateChart> {
 
 	abstract Object getAngle();
 
@@ -23,7 +25,7 @@ public interface IAmRectangularChartController<G extends AmRectangularChart> ext
 	abstract void setAutoMarginOffset(Number autoMarginOffset)
 			throws OutOfRangeException;
 
-	abstract Object isAutoMargins();
+	abstract Boolean isAutoMargins();
 
 	abstract void setAutoMargins(Boolean autoMargins);
 
@@ -43,7 +45,7 @@ public interface IAmRectangularChartController<G extends AmRectangularChart> ext
 
 	abstract void setMarginRight(Number marginRight) throws IntegerException;
 
-	abstract Object isMarginsUpdated();
+	abstract Boolean isMarginsUpdated();
 
 	abstract void setMarginsUpdated(Boolean marginsUpdated);
 
@@ -56,17 +58,17 @@ public interface IAmRectangularChartController<G extends AmRectangularChart> ext
 	abstract void setPlotAreaBorderAlpha(Number plotAreaBorderAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getPlotAreaBorderColor();
+	abstract String getPlotAreaBorderColor();
 
 	abstract void setPlotAreaBorderColor(String plotAreaBorderColor)
 			throws ColorException;
 
-	abstract Object getPlotAreaFillColors();
+	abstract List<String> getPlotAreaFillColors();
 
 	abstract void setPlotAreaFillColors(String... plotAreaFillColors)
 			throws ColorException;
 
-	abstract Object getPlotAreaGradientAngle();
+	abstract String getPlotAreaGradientAngle();
 
 	abstract void setPlotAreaGradientAngle(GradientAngle plotAreaGradientAngle);
 
@@ -75,12 +77,12 @@ public interface IAmRectangularChartController<G extends AmRectangularChart> ext
 	abstract void setZoomOutButtonAlpha(Number zoomOutButtonAlpha)
 			throws OutOfRangeException;
 
-	abstract Object getZoomOutButtonColor();
+	abstract String getZoomOutButtonColor();
 
 	abstract void setZoomOutButtonColor(String zoomOutButtonColor)
 			throws ColorException;
 
-	abstract Object getZoomOutButtonImage();
+	abstract String getZoomOutButtonImage();
 
 	//debe existir en /amcharts/images
 	abstract void setZoomOutButtonImage(String zoomOutButtonImage);
@@ -100,13 +102,13 @@ public interface IAmRectangularChartController<G extends AmRectangularChart> ext
 	abstract void setZoomOutButtonRollOverAlpha(
 			Number zoomOutButtonRollOverAlpha) throws OutOfRangeException;
 
-	abstract Object getZoomOutText();
+	abstract String getZoomOutText();
 
 	abstract void setZoomOutText(String zoomOutText);
 
-	abstract Object getChartCursor();
+	abstract ChartCursorController getChartCursor();
 	
-	abstract Object getChartScrollBar();
+	abstract ChartScrollBarController getChartScrollBar();
 	
 	abstract Object getTrendLines();
 	

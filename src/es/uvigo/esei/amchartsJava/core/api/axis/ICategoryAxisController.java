@@ -6,81 +6,81 @@ import es.uvigo.esei.amchartsJava.core.constants.PeriodConstant.Period;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface ICategoryAxisController extends IAxisBaseController {
+public abstract interface ICategoryAxisController extends IAxisBaseController {
 
-	public Object getAutoRotateAngle();
+	abstract Object getAutoRotateAngle();
 
-	public void setAutoRotateAngle(Number autoRotateAngle)
+	abstract void setAutoRotateAngle(Number autoRotateAngle)
 			throws OutOfRangeException;
 
-	public Object getAutoRotateCount();
+	abstract Object getAutoRotateCount();
 
-	public void setAutoRotateCount(Number autoRotateCount)
+	abstract void setAutoRotateCount(Number autoRotateCount)
 			throws IntegerException;
 
-	public Object isAutoWrap();
+	abstract Boolean isAutoWrap();
 
-	public void setAutoWrap(Boolean autoWrap);
+	abstract void setAutoWrap(Boolean autoWrap);
 
-	public Object isBoldPeriodBeginning();
+	abstract Boolean isBoldPeriodBeginning();
 
-	public void setBoldPeriodBeginning(Boolean boldPeriodBeginning);
+	abstract void setBoldPeriodBeginning(Boolean boldPeriodBeginning);
 
-	public Object getCategoryFunction();
+	abstract String getCategoryFunction();
 
-	public void setCategoryFunction(String categoryFunction);
+	abstract void setCategoryFunction(String categoryFunction);
 
-	public Object isCenterLabelOnFullPeriod();
+	abstract Boolean isCenterLabelOnFullPeriod();
 
-	public void setCenterLabelOnFullPeriod(Boolean centerLabelOnFullPeriod);
+	abstract void setCenterLabelOnFullPeriod(Boolean centerLabelOnFullPeriod);
 
-	public Object isEqualSpacing();
+	abstract Boolean isEqualSpacing();
 
-	public void setEqualSpacing(Boolean equalSpacing);
+	abstract void setEqualSpacing(Boolean equalSpacing);
 
-	public Object getFirstDayOfWeek();
+	abstract Object getFirstDayOfWeek();
 
-	public void setFirstDayOfWeek(Number firstDayOfWeek)
+	abstract void setFirstDayOfWeek(Number firstDayOfWeek)
 			throws OutOfRangeException;
 
-	public Object getForceShowField();
+	abstract String getForceShowField();
 
-	public void setForceShowField(String forceShowField);
+	abstract void setForceShowField(String forceShowField);
 
-	public Object getGridPosition();
+	abstract String getGridPosition();
 
-	public void setGridPosition(CategoryPosition gridPosition);
+	abstract void setGridPosition(CategoryPosition gridPosition);
 
-	public Object getLabelColorField();
+	abstract String getLabelColorField();
 
-	public void setLabelColorField(String labelColorField);
+	abstract void setLabelColorField(String labelColorField);
 
-	public Object getLabelFunction();
+	abstract String getLabelFunction();
 
-	public void setLabelFunction(String labelFunction);
+	abstract void setLabelFunction(String labelFunction);
 
-	public Object isMarkPeriodChange();
+	abstract Boolean isMarkPeriodChange();
 
-	public void setMarkPeriodChange(Boolean markPeriodChange);
+	abstract void setMarkPeriodChange(Boolean markPeriodChange);
 
-	public Object getMinPeriod();
+	abstract String getMinPeriod();
 
-	public void setMinPeriod(Period minPeriod);
+	abstract void setMinPeriod(Period minPeriod);
 
-	public Object isParseDates();
+	abstract Boolean isParseDates();
 
-	public void setParseDates(Boolean parseDates);
+	abstract void setParseDates(Boolean parseDates);
 
-	public Object isStartOnAxis();
+	abstract Boolean isStartOnAxis();
 
-	public void setStartOnAxis(Boolean startOnAxis);
+	abstract void setStartOnAxis(Boolean startOnAxis);
 
-	public Object getTickPosition();
+	abstract String getTickPosition();
 
-	public void setTickPosition(CategoryPosition tickPosition);
+	abstract void setTickPosition(CategoryPosition tickPosition);
 
-	public Object isTwoLineMode();
+	abstract Boolean isTwoLineMode();
 
-	public void setTwoLineMode(Boolean twoLineMode);
+	abstract void setTwoLineMode(Boolean twoLineMode);
 
 }

@@ -28,8 +28,8 @@ public class ImageController implements Serializable, IImageController {
 		image = new Image();
 	}
 	
-	public Object getBalloonColor(){
-		return image.getFeature("balloonColor");
+	public String getBalloonColor(){
+		return (String) image.getFeature("balloonColor");
 	}
 	
 	public void setBalloonColor(String balloonColor) throws ColorException{
@@ -38,16 +38,16 @@ public class ImageController implements Serializable, IImageController {
 		}
 	}
 	
-	public Object getBalloonText(){
-		return image.getFeature("balloonText");
+	public String getBalloonText(){
+		return (String) image.getFeature("balloonText");
 	}
 	
 	public void setBalloonText(String balloonText){
 		image.setFeature("balloonText", balloonText);
 	}
 	
-	public Object getColor(){
-		return image.getFeature("color");
+	public String getColor(){
+		return (String) image.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -86,8 +86,8 @@ public class ImageController implements Serializable, IImageController {
 		}
 	}
 	
-	public Object getOutlineColor(){
-		return image.getFeature("outlineColor");
+	public String getOutlineColor(){
+		return (String) image.getFeature("outlineColor");
 	}
 	
 	public void setOutlineColor(String outlineColor) throws ColorException{
@@ -108,8 +108,8 @@ public class ImageController implements Serializable, IImageController {
 	
 	//svgPath
 	
-	public Object getUrl(){
-		return image.getFeature("url");
+	public String getUrl(){
+		return (String) image.getFeature("url");
 	}
 	
 	//en vez de url, introduce solo nombre imagen con su extensión o sin ella, la url se completa con

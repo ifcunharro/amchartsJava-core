@@ -5,23 +5,23 @@ import es.uvigo.esei.amchartsJava.core.constants.GridTypesConstant.GridType;
 import es.uvigo.esei.amchartsJava.core.constants.PointPositionAxisRadarConstant.PointPositionAxisRadar;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IValueAxisRadarChartController extends IValueAxisController {
+public abstract interface IValueAxisRadarChartController extends IValueAxisController {
 
-	public Object getAxisTitleOffset();
+	abstract Object getAxisTitleOffset();
 
-	public void setAxixTitleOffset(Number axisTitleOffset)
+	abstract void setAxixTitleOffset(Number axisTitleOffset)
 			throws OutOfRangeException;
 
-	public Object getGridType();
+	abstract String getGridType();
 
-	public void setGridType(GridType gridType);
+	abstract void setGridType(GridType gridType);
 	
-	public Object getPointPosition();
+	abstract String getPointPosition();
 	
-	public void setPointPosition(PointPositionAxisRadar pointPosition);
+	abstract void setPointPosition(PointPositionAxisRadar pointPosition);
 
-	public Object isRadarCategoriesEnabled();
+	abstract Boolean isRadarCategoriesEnabled();
 
-	public void setRadarCategoriesEnabled(Boolean radarCategoriesEnabled);
+	abstract void setRadarCategoriesEnabled(Boolean radarCategoriesEnabled);
 
 }

@@ -28,8 +28,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	@JsonProperty(value="adjustColor")
-	public Object isAdjustColor(){
-		return balloon.getFeature("adjustColor");
+	public Boolean isAdjustColor(){
+		return (Boolean)balloon.getFeature("adjustColor");
 	}
 	
 	public void setAdjustColor(Boolean adjustColor){
@@ -56,8 +56,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getBorderColor(){
-		return balloon.getFeature("borderColor");
+	public String getBorderColor(){
+		return (String)balloon.getFeature("borderColor");
 	}
 	
 	public void setBorderColor(String borderColor) throws ColorException{
@@ -76,8 +76,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getColor(){
-		return balloon.getFeature("color");
+	public String getColor(){
+		return (String)balloon.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -98,8 +98,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	
 	
 	@JsonProperty(value="disableMouseEvents")
-	public Object isDisableMouseEvents(){
-		return balloon.getFeature("disableMouseEvents");
+	public Boolean isDisableMouseEvents(){
+		return (Boolean)balloon.getFeature("disableMouseEvents");
 	}
 	
 	public void setDisableMouseEvents(Boolean disableMouseEvents){
@@ -126,8 +126,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getFillColor(){
-		return balloon.getFeature("fillColor");
+	public String getFillColor(){
+		return (String)balloon.getFeature("fillColor");
 	}
 	
 	public void setFillColor(String fillColor) throws ColorException{
@@ -137,8 +137,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	@JsonProperty(value="fixedPosition")
-	public Object isFixedPosition(){
-		return balloon.getFeature("fixedPosition");
+	public Boolean isFixedPosition(){
+		return (Boolean)balloon.getFeature("fixedPosition");
 	}
 	
 	public void setFixedPosition(Boolean fixedPosition){
@@ -215,8 +215,8 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getShadowColor(){
-		return balloon.getFeature("shadowColor");
+	public String getShadowColor(){
+		return (String)balloon.getFeature("shadowColor");
 	}
 	
 	public void setShadowColor(String shadowColor) throws ColorException{
@@ -226,16 +226,16 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	@JsonProperty(value="showBullet")
-	public Object isShowBullet(){
-		return balloon.getFeature("showBullet");
+	public Boolean isShowBullet(){
+		return (Boolean)balloon.getFeature("showBullet");
 	}
 	
 	public void setShowBullet(Boolean showBullet){
 		balloon.setFeature("showBullet", showBullet);
 	}
 	
-	public Object getTextAlign(){
-		return balloon.getFeature("textAlign");
+	public String getTextAlign(){
+		return (String)balloon.getFeature("textAlign");
 	}
 	
 	public void setTextAlign(TextAlign textAlign){

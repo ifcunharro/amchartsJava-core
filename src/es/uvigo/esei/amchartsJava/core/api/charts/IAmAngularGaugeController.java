@@ -1,5 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
+import java.util.List;
+
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeArrowController;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeAxisController;
@@ -9,89 +11,91 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.MalFormedPatternException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IAmAngularGaugeController {
+public abstract interface IAmAngularGaugeController {
 
-	public Object isAdjustSize();
+	abstract Boolean isAdjustSize();
 
-	public void setAdjustSize(Boolean adjustSize);
+	abstract void setAdjustSize(Boolean adjustSize);
 
-	public Object getArrows();
+	abstract List<GaugeArrowController> getArrows();
 
-	public Object getAxes();
+	abstract List<GaugeAxisController> getAxes();
 
-	public Object isClockWiseOnly();
+	abstract Boolean isClockWiseOnly();
 
-	public void setClockWiseOnly(Boolean clockWiseOnly);
+	abstract void setClockWiseOnly(Boolean clockWiseOnly);
 
-	public Object getFaceAlpha();
+	abstract Object getFaceAlpha();
 
-	public void setFaceAlpha(Number faceAlpha) throws OutOfRangeException;
+	abstract void setFaceAlpha(Number faceAlpha) throws OutOfRangeException;
 
-	public Object getFaceBorderAlpha();
+	abstract Object getFaceBorderAlpha();
 
-	public void setFaceBorderAlpha(Number faceBorderAlpha)
+	abstract void setFaceBorderAlpha(Number faceBorderAlpha)
 			throws OutOfRangeException;
 
-	public Object getFaceBorderColor();
+	abstract String getFaceBorderColor();
 
-	public void setFaceBorderColor(String faceBorderColor)
+	abstract void setFaceBorderColor(String faceBorderColor)
 			throws ColorException;
 
-	public Object getFaceBorderWidth();
+	abstract Object getFaceBorderWidth();
 
-	public void setFaceBorderWidth(Number faceBorderWidth)
+	abstract void setFaceBorderWidth(Number faceBorderWidth)
 			throws OutOfRangeException;
 
-	public Object getFaceColor();
+	abstract String getFaceColor();
 
-	public void setFaceColor(String faceColor) throws ColorException;
+	abstract void setFaceColor(String faceColor) throws ColorException;
 
-	public Object getFacePattern();
+	abstract PatternController getFacePattern();
 
-	public void setFacePattern(PatternController facePattern)
+	abstract void setFacePattern(PatternController facePattern)
 			throws MalFormedPatternException;
 
-	public Object getGaugeX();
+	abstract Object getGaugeX();
 
-	public void setGaugeX(Number gaugeX) throws IntegerException;
+	abstract void setGaugeX(Number gaugeX) throws IntegerException;
 
-	public Object getGaugeY();
+	abstract Object getGaugeY();
 
-	public void setGaugeY(Number gaugeY) throws IntegerException;
+	abstract void setGaugeY(Number gaugeY) throws IntegerException;
 
-	public Object getMarginBottom();
+	abstract Object getMarginBottom();
 
-	public void setMarginBottom(Number marginBottom) throws IntegerException;
+	abstract void setMarginBottom(Number marginBottom) throws IntegerException;
 
-	public Object getMarginLeft();
+	abstract Object getMarginLeft();
 
-	public void setMarginLeft(Number marginLeft) throws IntegerException;
+	abstract void setMarginLeft(Number marginLeft) throws IntegerException;
 
-	public Object getMarginRight();
+	abstract Object getMarginRight();
 
-	public void setMarginRight(Number marginRight) throws IntegerException;
+	abstract void setMarginRight(Number marginRight) throws IntegerException;
 
-	public Object getMarginTop();
+	abstract Object getMarginTop();
 
-	public void setMarginTop(Number marginTop) throws IntegerException;
+	abstract void setMarginTop(Number marginTop) throws IntegerException;
 
-	public Object getMinRadius();
+	abstract Object getMinRadius();
 
-	public void setMinRadius(Number minRadius);
+	abstract void setMinRadius(Number minRadius);
 
-	public Object getStartDuration();
+	abstract Object getStartDuration();
 
-	public void setStartDuration(Number startDuration)
+	abstract void setStartDuration(Number startDuration)
 			throws OutOfRangeException;
 
-	public Object getStartEffect();
+	abstract String getStartEffect();
 
-	public void setStartEffect(Effect startEffect);
+	abstract void setStartEffect(Effect startEffect);
 
-	public void addArrow(GaugeArrowController arrow);
+	abstract void addArrow(GaugeArrowController arrow);
 
-	public void addAxis(GaugeAxisController axis);
+	abstract void addAxis(GaugeAxisController axis);
 
-	public void removeArrow(String idArrow);
+	abstract void removeArrow(String idArrow);
+	
+	abstract void removeAxis(String idAxis);
 
 }

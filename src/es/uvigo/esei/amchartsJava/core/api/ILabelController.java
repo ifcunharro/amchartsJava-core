@@ -9,7 +9,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public abstract interface ILabelController  {
 
-	abstract Object getAlign();
+	abstract String getAlign();
 
 	abstract void setAlign(Align labelAlign);
 
@@ -17,15 +17,15 @@ public abstract interface ILabelController  {
 
 	abstract void setAlpha(Number alpha) throws OutOfRangeException;
 
-	abstract Object isBold();
+	abstract Boolean isBold();
 
 	abstract void setBold(Boolean bold);
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(String color) throws ColorException;
 
-	abstract Object getId();
+	abstract String getId();
 
 	abstract Object getRotation();
 
@@ -35,19 +35,19 @@ public abstract interface ILabelController  {
 
 	abstract void setSize(Number size) throws OutOfRangeException;
 
-	abstract Object getText();
+	abstract String getText();
 
 	abstract void setText(String text);
 
-	abstract Object getUrl();
+	abstract String getUrl();
 
 	abstract void setUrl(String url);
 
-	abstract Object getX();
+	abstract String getX();
 
 	abstract void setX(String xCoord) throws CoordException;
 
-	abstract Object getY();
+	abstract String getY();
 
 	abstract void setY(String yCoord) throws CoordException;
 

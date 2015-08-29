@@ -1,5 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api;
 
+import java.util.List;
+
 import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeBandController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -7,197 +9,197 @@ import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
-public interface IGaugeAxisController {
+public abstract interface IGaugeAxisController {
 
-	public Object getAxisAlpha();
+	abstract Object getAxisAlpha();
 
-	public void setAxisAlpha(Number axisAlpha) throws OutOfRangeException;
+	abstract void setAxisAlpha(Number axisAlpha) throws OutOfRangeException;
 
-	public Object getAxisColor();
+	abstract String getAxisColor();
 
-	public void setAxisColor(String axisColor) throws ColorException;
+	abstract void setAxisColor(String axisColor) throws ColorException;
 
-	public Object getAxisThickness();
+	abstract Object getAxisThickness();
 
-	public void setAxisThickness(Number axisThickness)
+	abstract void setAxisThickness(Number axisThickness)
 			throws OutOfRangeException;
 
-	public Object getBandAlpha();
+	abstract Object getBandAlpha();
 
-	public void setBandAlpha(Number bandAlpha) throws OutOfRangeException;
+	abstract void setBandAlpha(Number bandAlpha) throws OutOfRangeException;
 
-	public Object getBandOutlineAlpha();
+	abstract Object getBandOutlineAlpha();
 
-	public void setBandOutlineAlpha(Number bandOutlineAlpha)
+	abstract void setBandOutlineAlpha(Number bandOutlineAlpha)
 			throws OutOfRangeException;
 
-	public Object getBandOutlineColor();
+	abstract String getBandOutlineColor();
 
-	public void setBandOutlineColor(String bandOutlineColor)
+	abstract void setBandOutlineColor(String bandOutlineColor)
 			throws ColorException;
 
-	public Object getBandOutlineThickness();
+	abstract Object getBandOutlineThickness();
 
-	public void setBandOutlineThickness(Number bandOutlineThickness)
+	abstract void setBandOutlineThickness(Number bandOutlineThickness)
 			throws OutOfRangeException;
 
-	public Object getBands();
+	abstract List<GaugeBandController> getBands();
 
-	public Object getBottomText();
+	abstract String getBottomText();
 
-	public void setBottomText(String bottomText);
+	abstract void setBottomText(String bottomText);
 
-	public Object isBottomTextBold();
+	abstract Boolean isBottomTextBold();
 
-	public void setBottomTextBold(Boolean bottomTextBold);
+	abstract void setBottomTextBold(Boolean bottomTextBold);
 
-	public Object getBottomTextColor();
+	abstract String getBottomTextColor();
 
-	public void setBottomTextColor(String bottomTextColor)
+	abstract void setBottomTextColor(String bottomTextColor)
 			throws ColorException;
 
-	public Object getBottomTextFontSize();
+	abstract Object getBottomTextFontSize();
 
-	public void setBottomTextFontSize(Number bottomTextFontSize)
+	abstract void setBottomTextFontSize(Number bottomTextFontSize)
 			throws OutOfRangeException;
 
-	public Object getBottomTextYOffset();
+	abstract Object getBottomTextYOffset();
 
-	public void setBottomTextYOffset(Number bottomTextYOffset)
+	abstract void setBottomTextYOffset(Number bottomTextYOffset)
 			throws IntegerException;
 
-	public Object getCenterX();
+	abstract String getCenterX();
 
-	public void setCenterX(String centerX) throws CoordException;
+	abstract void setCenterX(String centerX) throws CoordException;
 
-	public Object getCenterY();
+	abstract String getCenterY();
 
-	public void setCenterY(String centerY) throws CoordException;
+	abstract void setCenterY(String centerY) throws CoordException;
 
-	public Object getEndAngle();
+	abstract Object getEndAngle();
 
-	public void setEndAngle(Number endAngle) throws OutOfRangeException;
+	abstract void setEndAngle(Number endAngle) throws OutOfRangeException;
 
-	public Object getEndValue();
+	abstract Object getEndValue();
 
-	public void setEndValue(Number endValue) throws IntegerException;
+	abstract void setEndValue(Number endValue) throws IntegerException;
 
-	public Object getGridCount();
+	abstract Object getGridCount();
 
-	public void setGridCount(Number gridCount) throws OutOfRangeException;
+	abstract void setGridCount(Number gridCount) throws OutOfRangeException;
 
-	public Object isGridInside();
+	abstract Boolean isGridInside();
 
-	public void setGridInside(Boolean gridInside);
+	abstract void setGridInside(Boolean gridInside);
 
-	public Object getId();
+	abstract String getId();
 
-	public Object isInside();
+	abstract Boolean isInside();
 
-	public void setInside(Boolean inside);
+	abstract void setInside(Boolean inside);
 
-	public Object getLabelFrequncy();
+	abstract Object getLabelFrequncy();
 
-	public void setLabelFrequency(Number labelFrequency)
+	abstract void setLabelFrequency(Number labelFrequency)
 			throws OutOfRangeException;
 
-	public Object getLabelFunction();
+	abstract String getLabelFunction();
 
-	public void setLabelFunction(String labelFunction);
+	abstract void setLabelFunction(String labelFunction);
 
-	public Object getLabelOffset();
+	abstract Object getLabelOffset();
 
-	public void setLabelOffset(Number labelOffset) throws IntegerException;
+	abstract void setLabelOffset(Number labelOffset) throws IntegerException;
 
-	public Object isLabelsEnabled();
+	abstract Boolean isLabelsEnabled();
 
-	public void setLabelsEnabled(Boolean labelsEnabled);
+	abstract void setLabelsEnabled(Boolean labelsEnabled);
 
-	public Object getMinorTickInterval();
+	abstract Object getMinorTickInterval();
 
-	public void setMinorTickInterval(Number minorTickInterval)
+	abstract void setMinorTickInterval(Number minorTickInterval)
 			throws OutOfRangeException;
 
-	public Object getMinorTickLength();
+	abstract Object getMinorTickLength();
 
-	public void setMinorTickLength(Number minorTickLength)
+	abstract void setMinorTickLength(Number minorTickLength)
 			throws OutOfRangeException;
 
-	public Object getRadius();
+	abstract String getRadius();
 
-	public void setRadius(String radius) throws CoordException;
+	abstract void setRadius(String radius) throws CoordException;
 
-	public Object isShowFirstLabel();
+	abstract Boolean isShowFirstLabel();
 
-	public void setShowFirstLabel(Boolean showFirstLabel);
+	abstract void setShowFirstLabel(Boolean showFirstLabel);
 
-	public Object isShowLastLabel();
+	abstract Boolean isShowLastLabel();
 
-	public void setShowLastLabel(Boolean showLastLabel);
+	abstract void setShowLastLabel(Boolean showLastLabel);
 
-	public Object getStartAngle();
+	abstract Object getStartAngle();
 
-	public void setStartAngle(Number startAngle) throws OutOfRangeException;
+	abstract void setStartAngle(Number startAngle) throws OutOfRangeException;
 
-	public Object getStartValue();
+	abstract Object getStartValue();
 
-	public void setStartValue(Number startValue) throws IntegerException;
+	abstract void setStartValue(Number startValue) throws IntegerException;
 
-	public Object getTickAlpha();
+	abstract Object getTickAlpha();
 
-	public void setTickAlpha(Number tickAlpha) throws OutOfRangeException;
+	abstract void setTickAlpha(Number tickAlpha) throws OutOfRangeException;
 
-	public Object getTickColor();
+	abstract String getTickColor();
 
-	public void setTickColor(String tickColor) throws ColorException;
+	abstract void setTickColor(String tickColor) throws ColorException;
 
-	public Object getTickLength();
+	abstract Object getTickLength();
 
-	public void setTickLength(Number tickLength) throws OutOfRangeException;
+	abstract void setTickLength(Number tickLength) throws OutOfRangeException;
 
-	public Object getTickThickness();
+	abstract Object getTickThickness();
 
-	public void setTickThickness(Number tickThickness)
+	abstract void setTickThickness(Number tickThickness)
 			throws OutOfRangeException;
 
-	public Object getTopText();
+	abstract String getTopText();
 
-	public void setTopText(String topText);
+	abstract void setTopText(String topText);
 
-	public Object isTopTextBold();
+	abstract Boolean isTopTextBold();
 
-	public void setTopTextBold(Boolean topTextBold);
+	abstract void setTopTextBold(Boolean topTextBold);
 
-	public Object getTopTextColor();
+	abstract String getTopTextColor();
 
-	public void setTopTextColor(String topTextColor) throws ColorException;
+	abstract void setTopTextColor(String topTextColor) throws ColorException;
 
-	public Object getTopTextFontSize();
+	abstract Object getTopTextFontSize();
 
-	public void setTopTextFontSize(Number topTextFontSize)
+	abstract void setTopTextFontSize(Number topTextFontSize)
 			throws OutOfRangeException;
 
-	public Object getTopTextYOffset();
+	abstract Object getTopTextYOffset();
 
-	public void setTopTextYOffset(Number topTextYOffset)
+	abstract void setTopTextYOffset(Number topTextYOffset)
 			throws IntegerException;
 
-	public Object getUnit();
+	abstract String getUnit();
 
-	public void setUnit(String unit);
+	abstract void setUnit(String unit);
 
-	public Object getUnitPosition();
+	abstract String getUnitPosition();
 
-	public void setUnitPosition(Position unitPosition);
+	abstract void setUnitPosition(Position unitPosition);
 
-	public Object isUsePrefixes();
+	abstract Boolean isUsePrefixes();
 
-	public void setUsePrefixes(Boolean usePrefixes);
+	abstract void setUsePrefixes(Boolean usePrefixes);
 
-	public Object getValueInterval();
+	abstract Object getValueInterval();
 
-	public void setValueInterval(Number valueInterval);
+	abstract void setValueInterval(Number valueInterval);
 
-	public void addBand(GaugeBandController gaugeBandController);
+	abstract void addBand(GaugeBandController gaugeBandController);
 
 }

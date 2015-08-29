@@ -7,64 +7,64 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmAngularGauge;
 
-public interface IGaugeArrowController {
+public abstract interface IGaugeArrowController {
 
-	public void setChart(AmAngularGauge chart);
+	abstract void setChart(AmAngularGauge chart);
 
-	public Object getAlpha();
+	abstract Object getAlpha();
 
-	public void setAlpha(Number alpha) throws OutOfRangeException;
+	abstract void setAlpha(Number alpha) throws OutOfRangeException;
 
-	public Object getAxis();
+	abstract String getAxis();
 
-	public void addAxis(String axis) throws ChartException;
+	abstract void addAxis(String axis) throws ChartException;
 
-	public Object getBorderAlpha();
+	abstract Object getBorderAlpha();
 
-	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
+	abstract void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
 
-	public Object isClockWiseOnly();
+	abstract Boolean isClockWiseOnly();
 
-	public void setClockWiseOnly(Boolean clockWiseOnly);
+	abstract void setClockWiseOnly(Boolean clockWiseOnly);
 
-	public Object getColor();
+	abstract String getColor();
 
-	public void setColor(String color) throws ColorException;
+	abstract void setColor(String color) throws ColorException;
 
-	public Object getId();
+	abstract String getId();
 
-	public Object getInnerRadius();
+	abstract String getInnerRadius();
 
-	public void setInnerRadius(String innerRadius) throws CoordException;
+	abstract void setInnerRadius(String innerRadius) throws CoordException;
 
-	public Object getNailAlpha();
+	abstract Object getNailAlpha();
 
-	public void setNailAlpha(Number nailAlpha) throws OutOfRangeException;
+	abstract void setNailAlpha(Number nailAlpha) throws OutOfRangeException;
 
-	public Object getNailBorderAlpha();
+	abstract Object getNailBorderAlpha();
 
-	public void setNailBorderAlpha(Number nailBorderAlpha)
+	abstract void setNailBorderAlpha(Number nailBorderAlpha)
 			throws OutOfRangeException;
 
-	public Object getNailBorderThickness();
+	abstract Object getNailBorderThickness();
 
-	public void setNailBorderThickness(Number nailBorderThickness)
+	abstract void setNailBorderThickness(Number nailBorderThickness)
 			throws OutOfRangeException;
 
-	public Object getNailRadius();
+	abstract Object getNailRadius();
 
-	public void setNailRadius(Number nailRadius) throws OutOfRangeException;
+	abstract void setNailRadius(Number nailRadius) throws OutOfRangeException;
 
-	public Object getRadius();
+	abstract String getRadius();
 
-	public void setRadius(String radius) throws CoordException;
+	abstract void setRadius(String radius) throws CoordException;
 
-	public Object getStartWidth();
+	abstract Object getStartWidth();
 
-	public void setStartWidth(Number startWidth);
+	abstract void setStartWidth(Number startWidth);
 
-	public Object getValue();
+	abstract Object getValue();
 
-	public void setValue(Number value) throws IntegerException;
+	abstract void setValue(Number value) throws IntegerException;
 
 }

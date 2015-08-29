@@ -104,7 +104,7 @@ public class AmGraphs {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphSerial()){
 			for(AmGraphSerialController serial: getAmGraphSerial()){
-				ids.add(serial.getId().toString());
+				ids.add(serial.getId());
 			}
 		}
 		return ids;
@@ -114,7 +114,7 @@ public class AmGraphs {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphStep()){
 			for(AmGraphStepController step: getAmGraphStep()){
-				ids.add(step.getId().toString());
+				ids.add(step.getId());
 			}
 		}
 		return ids;
@@ -124,7 +124,7 @@ public class AmGraphs {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphXy()){
 			for(AmGraphXyController xy: getAmGraphXy()){
-				ids.add(xy.getId().toString());
+				ids.add(xy.getId());
 			}
 		}
 		return ids;
@@ -134,7 +134,7 @@ public class AmGraphs {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphCandle()){
 			for(AmGraphCandleController candle: getAmGraphCandle()){
-				ids.add(candle.getId().toString());
+				ids.add(candle.getId());
 			}
 		}
 		return ids;
@@ -144,7 +144,7 @@ public class AmGraphs {
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphOhlc()){
 			for(AmGraphOhlcController ohlc: getAmGraphOhlc()){
-				ids.add(ohlc.getId().toString());
+				ids.add(ohlc.getId());
 			}
 		}
 		return ids;
@@ -186,7 +186,7 @@ public class AmGraphs {
 			initAmGraphSerial();
 		}
 		this.getAmGraphSerial().add(amGraphSerialController);
-		String idGraph = amGraphSerialController.getId().toString();
+		String idGraph = amGraphSerialController.getId();
 		idGraphs.add(idGraph);
 		positionsAmGraphs.put(idGraph, sizeAmGraphsSerial()-1);
 		sizeAmGraphs++;
@@ -197,7 +197,7 @@ public class AmGraphs {
 			initAmGraphStep();
 		}
 		this.getAmGraphStep().add(amGraphStepController);
-		String idGraph = amGraphStepController.getId().toString();
+		String idGraph = amGraphStepController.getId();
 		idGraphs.add(idGraph);
 		positionsAmGraphs.put(idGraph, sizeAmGraphsStep()-1);
 		sizeAmGraphs++;
@@ -209,7 +209,7 @@ public class AmGraphs {
 			initAmGraphXy();
 		}
 		this.getAmGraphXy().add(amGraphXyController);
-		String idGraph = amGraphXyController.getId().toString();
+		String idGraph = amGraphXyController.getId();
 		idGraphs.add(idGraph);
 		positionsAmGraphs.put(idGraph, sizeAmGraphsXy()-1);
 		sizeAmGraphs++;
@@ -221,7 +221,7 @@ public class AmGraphs {
 			initAmGraphCandle();
 		}
 		this.getAmGraphCandle().add(amGraphCandleController);
-		String idGraph = amGraphCandleController.getId().toString();
+		String idGraph = amGraphCandleController.getId();
 		idGraphs.add(idGraph);
 		positionsAmGraphs.put(idGraph, sizeAmGraphsCandle()-1);
 		sizeAmGraphs++;
@@ -233,7 +233,7 @@ public class AmGraphs {
 			initAmGraphOhlc();
 		}
 		this.getAmGraphOhlc().add(amGraphOhlcController);
-		String idGraph = amGraphOhlcController.getId().toString();
+		String idGraph = amGraphOhlcController.getId();
 		idGraphs.add(idGraph);
 		positionsAmGraphs.put(idGraph, sizeAmGraphsOhlc()-1);
 		sizeAmGraphs++;

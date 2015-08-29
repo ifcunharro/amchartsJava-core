@@ -38,8 +38,8 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	@JsonProperty(value="autoWrap")
-	public Object isAutoWrap(){
-		return axes.getFeature("autoWrap");
+	public Boolean isAutoWrap(){
+		return (Boolean) axes.getFeature("autoWrap");
 	}
 	
 	public void setAutoWrap(Boolean autoWrap){
@@ -47,16 +47,16 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	@JsonProperty(value="boldPeriodBeginning")
-	public Object isBoldPeriodBeginning(){
-		return axes.getFeature("boldPeriodBeginning");
+	public Boolean isBoldPeriodBeginning(){
+		return (Boolean) axes.getFeature("boldPeriodBeginning");
 	}
 	
 	public void setBoldPeriodBeginning(Boolean boldPeriodBeginning){
 		axes.setFeature("boldPeriodBeginning", boldPeriodBeginning);
 	}
 	
-	public Object getCategoryFunction(){
-		return axes.getFeature("categoryFunction");
+	public String getCategoryFunction(){
+		return (String) axes.getFeature("categoryFunction");
 	}
 	
 	public void setCategoryFunction(String categoryFunction){
@@ -64,8 +64,8 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	@JsonProperty(value="centerLabelOnFullPeriod")
-	public Object isCenterLabelOnFullPeriod(){
-		return axes.getFeature("centerLabelOnFullPeriod");
+	public Boolean isCenterLabelOnFullPeriod(){
+		return (Boolean) axes.getFeature("centerLabelOnFullPeriod");
 	}
 	
 	public void setCenterLabelOnFullPeriod(Boolean centerLabelOnFullPeriod){
@@ -73,8 +73,8 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	@JsonProperty(value="equalSpacing")
-	public Object isEqualSpacing(){
-		return axes.getFeature("equalSpacing");
+	public Boolean isEqualSpacing(){
+		return (Boolean) axes.getFeature("equalSpacing");
 	}
 	
 	public void setEqualSpacing(Boolean equalSpacing){
@@ -91,32 +91,32 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 		}
 	}
 	
-	public Object getForceShowField(){
-		return axes.getFeature("forceShowField");
+	public String getForceShowField(){
+		return (String) axes.getFeature("forceShowField");
 	}
 	
 	public void setForceShowField(String forceShowField){
 		axes.setFeature("forceShowField", forceShowField);
 	}
 	
-	public Object getGridPosition(){
-		return axes.getFeature("gridPosition");
+	public String getGridPosition(){
+		return (String) axes.getFeature("gridPosition");
 	}
 	
 	public void setGridPosition(CategoryPosition gridPosition){
 		axes.setFeature("gridPosition", gridPosition.toString());
 	}
 	
-	public Object getLabelColorField(){
-		return axes.getFeature("labelColorField");
+	public String getLabelColorField(){
+		return (String) axes.getFeature("labelColorField");
 	}
 	
 	public void setLabelColorField(String labelColorField){
 		axes.setFeature("labelColorField", labelColorField);
 	}
 	
-	public Object getLabelFunction(){
-		return axes.getFeature("labelFunction");
+	public String getLabelFunction(){
+		return (String) axes.getFeature("labelFunction");
 	}
 	
 	public void setLabelFunction(String labelFunction){
@@ -124,16 +124,16 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	@JsonProperty(value="markPeriodChange")
-	public Object isMarkPeriodChange(){
-		return axes.getFeature("markPeriodChange");
+	public Boolean isMarkPeriodChange(){
+		return (Boolean) axes.getFeature("markPeriodChange");
 	}
 	
 	public void setMarkPeriodChange(Boolean markPeriodChange){
 		axes.setFeature("markPeriodChange", markPeriodChange);
 	}
 	
-	public Object getMinPeriod(){
-		return axes.getFeature("minPeriod");
+	public String getMinPeriod(){
+		return (String) axes.getFeature("minPeriod");
 	}
 	
 	public void setMinPeriod(Period minPeriod){
@@ -141,8 +141,8 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	@JsonProperty(value="parseDates")
-	public Object isParseDates(){
-		return axes.getFeature("parseDates");
+	public Boolean isParseDates(){
+		return (Boolean) axes.getFeature("parseDates");
 	}
 	
 	public void setParseDates(Boolean parseDates){
@@ -150,16 +150,16 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	@JsonProperty(value="startOnAxis")
-	public Object isStartOnAxis(){
-		return axes.getFeature("startOnAxis");
+	public Boolean isStartOnAxis(){
+		return (Boolean) axes.getFeature("startOnAxis");
 	}
 	
 	public void setStartOnAxis(Boolean startOnAxis){
 		axes.setFeature("startOnAxis", startOnAxis);
 	}
 	
-	public Object getTickPosition(){
-		return axes.getFeature("tickPosition");
+	public String getTickPosition(){
+		return (String) axes.getFeature("tickPosition");
 	}
 	
 	public void setTickPosition(CategoryPosition tickPosition){
@@ -167,8 +167,8 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	@JsonProperty(value="twoLineMode")
-	public Object isTwoLineMode(){
-		return axes.getFeature("twoLineMode");
+	public Boolean isTwoLineMode(){
+		return (Boolean) axes.getFeature("twoLineMode");
 	}
 	
 	public void setTwoLineMode(Boolean twoLineMode){

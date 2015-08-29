@@ -8,7 +8,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public abstract interface IAmBalloonController {
 
-	abstract Object isAdjustColor();
+	abstract Boolean isAdjustColor();
 
 	abstract void setAdjustColor(Boolean adjustColor);
 
@@ -21,7 +21,7 @@ public abstract interface IAmBalloonController {
 
 	abstract void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
 
-	abstract Object getBorderColor();
+	abstract String getBorderColor();
 
 	abstract void setBorderColor(String borderColor) throws ColorException;
 
@@ -30,7 +30,7 @@ public abstract interface IAmBalloonController {
 	abstract void setBorderThickness(Number borderThickness)
 			throws OutOfRangeException;
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(String color) throws ColorException;
 
@@ -38,7 +38,7 @@ public abstract interface IAmBalloonController {
 
 	abstract void setCornerRadius(Number cornerRadius) throws OutOfRangeException;
 	
-	abstract Object isDisableMouseEvents();
+	abstract Boolean isDisableMouseEvents();
 	
 	abstract void setDisableMouseEvents(Boolean disableMouseEvents);
 
@@ -51,11 +51,11 @@ public abstract interface IAmBalloonController {
 
 	abstract void setFillAlpha(Number fillAlpha) throws OutOfRangeException;
 
-	abstract Object getFillColor();
+	abstract String getFillColor();
 
 	abstract void setFillColor(String fillColor) throws ColorException;
 
-	abstract Object isFixedPosition();
+	abstract Boolean isFixedPosition();
 
 	abstract void setFixedPosition(Boolean fixedPosition);
 
@@ -88,15 +88,15 @@ public abstract interface IAmBalloonController {
 
 	abstract void setShadowAlpha(Number shadowAlpha) throws OutOfRangeException;
 
-	abstract Object getShadowColor();
+	abstract String getShadowColor();
 
 	abstract void setShadowColor(String shadowColor) throws ColorException;
 
-	abstract Object isShowBullet();
+	abstract Boolean isShowBullet();
 
 	abstract void setShowBullet(Boolean showBullet);
 
-	abstract Object getTextAlign();
+	abstract String getTextAlign();
 
 	abstract void setTextAlign(TextAlign textAlign);
 

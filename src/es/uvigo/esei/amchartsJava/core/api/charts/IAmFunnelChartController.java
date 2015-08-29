@@ -7,58 +7,58 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmSlicedChart;
 
-public interface IAmFunnelChartController extends IAmSlicedChartController<AmSlicedChart> {
+public abstract interface IAmFunnelChartController extends IAmSlicedChartController<AmSlicedChart> {
 
-	public Object getAngle();
+	abstract Object getAngle();
 
-	public void setAngle(Number angle) throws OutOfRangeException;
+	abstract void setAngle(Number angle) throws OutOfRangeException;
 
-	public Object getBalloonText();
+	abstract String getBalloonText();
 
-	public void setBalloonText(String balloonText);
+	abstract void setBalloonText(String balloonText);
 
-	public Object getBaseWidth();
+	abstract String getBaseWidth();
 
-	public void setBaseWidth(String baseWidth) throws CoordException;
+	abstract void setBaseWidth(String baseWidth) throws CoordException;
 
-	public Object getDepth3D();
+	abstract Object getDepth3D();
 
-	public void setDepth3D(Number depth3D) throws OutOfRangeException;
+	abstract void setDepth3D(Number depth3D) throws OutOfRangeException;
 
-	public Object getLabelPosition();
+	abstract String getLabelPosition();
 
-	public void setLabelPosition(Align labelPosition);
+	abstract void setLabelPosition(Align labelPosition);
 
-	public Object getLabelText();
+	abstract String getLabelText();
 
-	public void setLabelText(String labelText);
+	abstract void setLabelText(String labelText);
 
-	public Object getNeckHeight();
+	abstract String getNeckHeight();
 
-	public void setNeckHeight(String neckHeight) throws CoordException;
+	abstract void setNeckHeight(String neckHeight) throws CoordException;
 
-	public Object getNeckWidth();
+	abstract String getNeckWidth();
 
-	public void setNeckWidth(String neckWidth) throws CoordException;
+	abstract void setNeckWidth(String neckWidth) throws CoordException;
 
-	public Object getPullDistance();
+	abstract String getPullDistance();
 
-	public void setPullDistance(String pullDistance) throws CoordException;
+	abstract void setPullDistance(String pullDistance) throws CoordException;
 
-	public Object isRotate();
+	abstract Boolean isRotate();
 
-	public void setRotate(Boolean rotate);
+	abstract void setRotate(Boolean rotate);
 
-	public Object getStartX();
+	abstract Object getStartX();
 
-	public void setStartX(Number startX) throws IntegerException;
+	abstract void setStartX(Number startX) throws IntegerException;
 
-	public Object getStartY();
+	abstract Object getStartY();
 
-	public void setStartY(Number startY) throws IntegerException;
+	abstract void setStartY(Number startY) throws IntegerException;
 
-	public Object getValueRepresents();
+	abstract String getValueRepresents();
 
-	public void setValueRepresents(ValueRepresents valueRepresents);
+	abstract void setValueRepresents(ValueRepresents valueRepresents);
 
 }

@@ -32,8 +32,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty(value="autoGridCount")
-	public Object isAutoGridCount(){
-		return axes.getFeature("autoGridCount");
+	public Boolean isAutoGridCount(){
+		return (Boolean) axes.getFeature("autoGridCount");
 	}
 	
 	public void setAutoGridCount(Boolean autoGridCount){
@@ -50,8 +50,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getAxisColor(){
-		return axes.getFeature("axisColor");
+	public String getAxisColor(){
+		return (String) axes.getFeature("axisColor");
 	}
 	
 	public void setAxisColor(String axisColor) throws ColorException{
@@ -71,8 +71,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty(value="boldLabels")
-	public Object isBoldLabels(){
-		return axes.getFeature("boldLabels");
+	public Boolean isBoldLabels(){
+		return (Boolean) axes.getFeature("boldLabels");
 	}
 	
 	public void setBoldLabels(Boolean boldLabels){
@@ -80,16 +80,16 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty(value="centerLabels")
-	public Object isCenterLabels(){
-		return axes.getFeature("centerLabels");
+	public Boolean isCenterLabels(){
+		return (Boolean) axes.getFeature("centerLabels");
 	}
 	
 	public void setCenterLabels(Boolean centerLabels){
 		axes.setFeature("centerLabels", centerLabels);
 	}
 	
-	public Object getColor(){
-		return axes.getFeature("color");
+	public String getColor(){
+		return (String) axes.getFeature("color");
 	}
 	
 	public void setColor(ColorsAmCharts color){
@@ -107,7 +107,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonIgnore
-	public Object getDateFormats(){
+	public String[] getDateFormats(){
 		return AmchartsConstants.DATE_FORMAT;
 	}
 	
@@ -121,8 +121,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getFillColor(){
-		return axes.getFeature("fillColor");
+	public String getFillColor(){
+		return (String) axes.getFeature("fillColor");
 	}
 	
 	public void setFillColor(String fillColor) throws ColorException{
@@ -151,8 +151,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getGridColor(){
-		return axes.getFeature("gridColor");
+	public String getGridColor(){
+		return (String) axes.getFeature("gridColor");
 	}
 	
 	public void setGridColor(String gridColor) throws ColorException{
@@ -182,8 +182,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty(value="ignoreAxisWidth")
-	public Object isIgnoreAxisWidth(){
-		return axes.getFeature("ignoreAxisWidth");
+	public Boolean isIgnoreAxisWidth(){
+		return (Boolean) axes.getFeature("ignoreAxisWidth");
 	}
 	
 	public void setIgnoreAxisWidth(Boolean ignoreAxisWidth){
@@ -191,8 +191,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty(value="inside")
-	public Object isInside(){
-		return axes.getFeature("inside");
+	public Boolean isInside(){
+		return (Boolean) axes.getFeature("inside");
 	}
 	
 	public void setInside(Boolean inside){
@@ -230,8 +230,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty("labelsEnabled")
-	public Object isLabelsEnabled(){
-		return axes.getFeature("labelsEnabled");
+	public Boolean isLabelsEnabled(){
+		return (Boolean) axes.getFeature("labelsEnabled");
 	}
 	
 	public void setLabelsEnabled(Boolean labelsEnabled){
@@ -259,8 +259,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty(value="minorGridEnabled")
-	public Object isMinorGridEnabled(){
-		return axes.getFeature("minorGridEnabled");
+	public Boolean isMinorGridEnabled(){
+		return (Boolean) axes.getFeature("minorGridEnabled");
 	}
 	
 	public void setMinorGridEnabled(Boolean minorGridEnabled){
@@ -296,8 +296,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getPosition(){
-		return axes.getFeature("position");
+	public String getPosition(){
+		return (String) axes.getFeature("position");
 	}
 	
 	public void setPosition(Position position){
@@ -305,8 +305,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty(value="showFirstLabel")
-	public Object isShowFirstLabel(){
-		return axes.getFeature("showFirstLabel");
+	public Boolean isShowFirstLabel(){
+		return (Boolean) axes.getFeature("showFirstLabel");
 	}
 	
 	public void setShowFirstLabel(Boolean showFirstLabel){
@@ -314,8 +314,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty(value="showLastLabel")
-	public Object isShowLastLabel(){
-		return axes.getFeature("showLastLabel");
+	public Boolean isShowLastLabel(){
+		return (Boolean) axes.getFeature("showLastLabel");
 	}
 	
 	public void setShowLastLabel(Boolean showLastLabel){
@@ -332,8 +332,8 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getTitle(){
-		return axes.getFeature("title");
+	public String getTitle(){
+		return (String) axes.getFeature("title");
 	}
 	
 	public void setTitle(String title){
@@ -341,16 +341,16 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	@JsonProperty(value="titleBold")
-	public Object isTitleBold(){
-		return axes.getFeature("titleBold");
+	public Boolean isTitleBold(){
+		return (Boolean) axes.getFeature("titleBold");
 	}
 	
 	public void setTitleBold(Boolean titleBold){
 		axes.setFeature("titleBold", titleBold);
 	}
 	
-	public Object getTitleColor(){
-		return axes.getFeature("titleColor");
+	public String getTitleColor(){
+		return (String) axes.getFeature("titleColor");
 	}
 	
 	public void setTitleColor(String titleColor) throws ColorException{

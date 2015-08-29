@@ -17,8 +17,8 @@ public class AmGraphSerialController extends AmGraphSerialChartController
 	
 	
 	@JsonProperty(value="connect")
-	public Object isConnect(){
-		return amGraph.getFeature("connect");
+	public Boolean isConnect(){
+		return (Boolean) amGraph.getFeature("connect");
 	}
 	
 	public void setConnect(Boolean connect){
@@ -26,24 +26,24 @@ public class AmGraphSerialController extends AmGraphSerialChartController
 		
 	}
 	
-	public Object getFillColors(){
-		return amGraph.getFeature("fillColors");
+	public String getFillColors(){
+		return (String) amGraph.getFeature("fillColors");
 	}
 	
 	public void setFillColors(ColorsAmCharts fillColors){
 		amGraph.setFeature("fillColors", fillColors.toString());
 	}
 	
-	public Object getFillColorsField(){
-		return amGraph.getFeature("fillColorsField");
+	public String getFillColorsField(){
+		return (String) amGraph.getFeature("fillColorsField");
 	}
 	
 	public void setFillColorsField(String fillColorsField){
 		amGraph.setFeature("fillColorsField", fillColorsField);
 	}
 	
-	public Object getGapField(String gapField){
-		return amGraph.getFeature("gapField");
+	public String getGapField(String gapField){
+		return (String) amGraph.getFeature("gapField");
 	}
 	
 	public void setGapField(String gapField){

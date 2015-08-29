@@ -3,19 +3,19 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface IAmXyChartController extends IAmRectangularChartController<AmRectangularChart> {
+public abstract interface IAmXyChartController extends IAmRectangularChartController<AmRectangularChart> {
 
-	public Object isHideXScrollbar();
+	abstract Boolean isHideXScrollbar();
 
-	public void setHideXScrollbar(Boolean hideXScrollbar);
+	abstract void setHideXScrollbar(Boolean hideXScrollbar);
 
-	public Object isHideYScrollbar();
+	abstract Boolean isHideYScrollbar();
 
-	public void setHideYScrollbar(Boolean hideYScrollbar);
+	abstract void setHideYScrollbar(Boolean hideYScrollbar);
 
-	public Object getMaxZoomFactor();
+	abstract Object getMaxZoomFactor();
 
-	public void setMaxZoomFactor(Number maxZoomFactor)
+	abstract void setMaxZoomFactor(Number maxZoomFactor)
 			throws OutOfRangeException;
 
 }

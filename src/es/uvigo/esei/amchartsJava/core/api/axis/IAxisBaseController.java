@@ -9,7 +9,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public abstract interface IAxisBaseController {
 
-	abstract Object isAutoGridCount();
+	abstract Boolean isAutoGridCount();
 
 	abstract void setAutoGridCount(Boolean autoGridCount);
 
@@ -17,7 +17,7 @@ public abstract interface IAxisBaseController {
 
 	abstract void setAxisAlpha(Number axisAlpha) throws OutOfRangeException;
 
-	abstract Object getAxisColor();
+	abstract String getAxisColor();
 
 	abstract void setAxisColor(String axisColor) throws ColorException;
 
@@ -26,15 +26,15 @@ public abstract interface IAxisBaseController {
 	abstract void setAxisThickness(Number axisThickness)
 			throws OutOfRangeException;
 
-	abstract Object isBoldLabels();
+	abstract Boolean isBoldLabels();
 
 	abstract void setBoldLabels(Boolean boldLabels);
 	
-	abstract Object isCenterLabels();
+	abstract Boolean isCenterLabels();
 	
 	abstract void setCenterLabels(Boolean centerLabels);
 
-	abstract Object getColor();
+	abstract String getColor();
 
 	abstract void setColor(ColorsAmCharts color);
 
@@ -42,13 +42,13 @@ public abstract interface IAxisBaseController {
 
 	abstract void setDashLength(Number dashLength) throws OutOfRangeException;
 
-	abstract Object getDateFormats();
+	abstract String[] getDateFormats();
 
 	abstract Object getFillAlpha();
 
 	abstract void setFillAlpha(Number fillAlpha) throws OutOfRangeException;
 
-	abstract Object getFillColor();
+	abstract String getFillColor();
 
 	abstract void setFillColor(String fillColor) throws ColorException;
 
@@ -60,7 +60,7 @@ public abstract interface IAxisBaseController {
 
 	abstract void setGridAlpha(Number gridAlpha) throws OutOfRangeException;
 
-	abstract Object getGridColor();
+	abstract String getGridColor();
 
 	abstract void setGridColor(String gridColor) throws ColorException;
 
@@ -72,11 +72,11 @@ public abstract interface IAxisBaseController {
 
 	abstract void setGridThikness(Number gridThickness) throws OutOfRangeException;
 
-	abstract Object isIgnoreAxisWidth();
+	abstract Boolean isIgnoreAxisWidth();
 
 	abstract void setIgnoreAxisWidth(Boolean ignoreAxisWidth);
 
-	abstract Object isInside();
+	abstract Boolean isInside();
 
 	abstract void setInside(Boolean inside);
 
@@ -94,7 +94,7 @@ public abstract interface IAxisBaseController {
 	abstract void setLabelRotation(Number labelRotation)
 			throws OutOfRangeException;
 
-	abstract Object isLabelsEnabled();
+	abstract Boolean isLabelsEnabled();
 
 	abstract void setLabelsEnabled(Boolean labelsEnabled);
 
@@ -108,7 +108,7 @@ public abstract interface IAxisBaseController {
 	abstract void setMinorGridAlpha(Number minorGridAlpha)
 			throws OutOfRangeException;
 
-	abstract Object isMinorGridEnabled();
+	abstract Boolean isMinorGridEnabled();
 
 	abstract void setMinorGridEnabled(Boolean minorGridEnabled);
 	
@@ -125,15 +125,15 @@ public abstract interface IAxisBaseController {
 
 	abstract void setOffset(Number offset) throws OutOfRangeException;
 
-	abstract Object getPosition();
+	abstract String getPosition();
 
 	abstract void setPosition(Position position);
 
-	abstract Object isShowFirstLabel();
+	abstract Boolean isShowFirstLabel();
 
 	abstract void setShowFirstLabel(Boolean showFirstLabel);
 
-	abstract Object isShowLastLabel();
+	abstract Boolean isShowLastLabel();
 
 	abstract void setShowLastLabel(Boolean showLastLabel);
 
@@ -141,15 +141,15 @@ public abstract interface IAxisBaseController {
 
 	abstract void setTickLength(Number tickLength) throws OutOfRangeException;
 
-	abstract Object getTitle();
+	abstract String getTitle();
 
 	abstract void setTitle(String title);
 
-	abstract Object isTitleBold();
+	abstract Boolean isTitleBold();
 
 	abstract void setTitleBold(Boolean titleBold);
 
-	abstract Object getTitleColor();
+	abstract String getTitleColor();
 
 	abstract void setTitleColor(String titleColor) throws ColorException;
 

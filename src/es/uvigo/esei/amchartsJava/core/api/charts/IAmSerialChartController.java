@@ -5,64 +5,64 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
-public interface IAmSerialChartController extends IAmRectangularChartController<AmRectangularChart> {
+public abstract interface IAmSerialChartController extends IAmRectangularChartController<AmRectangularChart> {
 
-	public Object getBalloonDateFormat();
+	abstract String getBalloonDateFormat();
 
-	public void setBalloonDateFormat(String balloonDateFormat);
+	abstract void setBalloonDateFormat(String balloonDateFormat);
 
-	public Object getCategoryField();
+	abstract String getCategoryField();
 
-	public void setCategoryField(String categoryField);
+	abstract void setCategoryField(String categoryField);
 
-	public Object getColumnSpacing();
+	abstract Object getColumnSpacing();
 
-	public void setColumnSpacing(Number columnSpacing) throws IntegerException;
+	abstract void setColumnSpacing(Number columnSpacing) throws IntegerException;
 
-	public Object getColumnSpacing3D();
+	abstract Object getColumnSpacing3D();
 
-	public void setColumnSpacing3D(Number columnSpacing3D)
+	abstract void setColumnSpacing3D(Number columnSpacing3D)
 			throws IntegerException;
 
-	public Object getColumnWidth();
+	abstract Object getColumnWidth();
 
-	public void setColumnWidth(Number columnWidth) throws OutOfRangeException;
+	abstract void setColumnWidth(Number columnWidth) throws OutOfRangeException;
 
-	public Object getDataDateFormat();
+	abstract String getDataDateFormat();
 
-	public void setDataDateFormat(String dataDateFormat);
+	abstract void setDataDateFormat(String dataDateFormat);
 
-	public Object getMaxSelectedSeries();
+	abstract Object getMaxSelectedSeries();
 
-	public void setMaxSelectedSeries(Number maxSelectedSeries)
+	abstract void setMaxSelectedSeries(Number maxSelectedSeries)
 			throws IntegerException;
 
-	public Object getMaxSelectedTime();
+	abstract Object getMaxSelectedTime();
 
-	public void setMaxSelectedTime(Number maxSelectedTime)
+	abstract void setMaxSelectedTime(Number maxSelectedTime)
 			throws OutOfRangeException;
 
-	public Object getMinSelectedTime();
+	abstract Object getMinSelectedTime();
 
-	public void setMinSelectedTime(Number minSelectedTime)
+	abstract void setMinSelectedTime(Number minSelectedTime)
 			throws OutOfRangeException;
 
-	public Object isMouseWheelScrollEnabled();
+	abstract Boolean isMouseWheelScrollEnabled();
 
-	public void setMouseWheelScrollEnabled(Boolean mouseWheelScrollEnabled);
+	abstract void setMouseWheelScrollEnabled(Boolean mouseWheelScrollEnabled);
 
-	public Object isMouseWheelZoomEnabled();
+	abstract Boolean isMouseWheelZoomEnabled();
 
-	public void setMouseWheelZoomEnabled(Boolean mouseWheelZoomEnabled);
+	abstract void setMouseWheelZoomEnabled(Boolean mouseWheelZoomEnabled);
 
-	public Object isRotate();
+	abstract Boolean isRotate();
 
-	public void setRotate(Boolean rotate);
+	abstract void setRotate(Boolean rotate);
 
-	public Object isZoomOutOnDataUpdated();
+	abstract Boolean isZoomOutOnDataUpdated();
 
-	public void setZoomOutOnDataUpdated(Boolean zoomOutOnDataUpdated);
+	abstract void setZoomOutOnDataUpdated(Boolean zoomOutOnDataUpdated);
 
-	public void addCategoryAxis(CategoryAxisController categoryAxisController);
+	abstract void addCategoryAxis(CategoryAxisController categoryAxisController);
 
 }

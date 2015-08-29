@@ -35,16 +35,16 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 		}
 	}
 	
-	public Object getBalloonText(){
-		return amchart.getFeature("balloonText");
+	public String getBalloonText(){
+		return (String) amchart.getFeature("balloonText");
 	}
 	
 	public void setBalloonText(String balloonText){
 		amchart.setFeature("balloonText", balloonText);
 	}
 	
-	public Object getBaseWidth(){
-		return amchart.getFeature("baseWidth");
+	public String getBaseWidth(){
+		return (String) amchart.getFeature("baseWidth");
 	}
 	
 	public void setBaseWidth(String baseWidth) throws CoordException{
@@ -68,24 +68,24 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 		}
 	}
 	
-	public Object getLabelPosition(){
-		return amchart.getFeature("labelPosition");
+	public String getLabelPosition(){
+		return (String) amchart.getFeature("labelPosition");
 	}
 	
 	public void setLabelPosition(Align labelPosition){
 		amchart.setFeature("labelPosition", labelPosition.toString());
 	}
 	
-	public Object getLabelText(){
-		return amchart.getFeature("labelText");
+	public String getLabelText(){
+		return (String) amchart.getFeature("labelText");
 	}
 	
 	public void setLabelText(String labelText){
 		amchart.setFeature("labelText", labelText);
 	}
 	
-	public Object getNeckHeight(){
-		return amchart.getFeature("neckHeight");
+	public String getNeckHeight(){
+		return (String) amchart.getFeature("neckHeight");
 	}
 	
 	public void setNeckHeight(String neckHeight) throws CoordException{
@@ -99,8 +99,8 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 		}
 	}
 	
-	public Object getNeckWidth(){
-		return amchart.getFeature("neckWidth");
+	public String getNeckWidth(){
+		return (String) amchart.getFeature("neckWidth");
 	}
 	
 	public void setNeckWidth(String neckWidth) throws CoordException{
@@ -114,8 +114,8 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 		}
 	}
 	
-	public Object getPullDistance(){
-		return amchart.getFeature("pullDistance");
+	public String getPullDistance(){
+		return (String) amchart.getFeature("pullDistance");
 	}
 	
 	public void setPullDistance(String pullDistance) throws CoordException{
@@ -135,8 +135,8 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	@JsonProperty(value="rotate")
-	public Object isRotate(){
-		return amchart.getFeature("rotate");
+	public Boolean isRotate(){
+		return (Boolean) amchart.getFeature("rotate");
 	}
 	
 	public void setRotate(Boolean rotate){
@@ -163,8 +163,8 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 		}
 	}
 	
-	public Object getValueRepresents(){
-		return amchart.getFeature("valueRepresents");
+	public String getValueRepresents(){
+		return (String) amchart.getFeature("valueRepresents");
 	}
 	
 	public void setValueRepresents(ValueRepresents valueRepresents){

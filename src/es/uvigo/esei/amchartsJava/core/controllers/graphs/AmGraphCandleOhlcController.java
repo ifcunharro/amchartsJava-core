@@ -12,24 +12,24 @@ public abstract class AmGraphCandleOhlcController extends AmGraphSerialControlle
 	 */
 	private static final long serialVersionUID = -6119951844854863121L;
 
-	public Object getHighField(){
-		return amGraph.getFeature("highField");
+	public String getHighField(){
+		return (String) amGraph.getFeature("highField");
 	}
 	
 	public void setHighField(String highField){
 		amGraph.setFeature("highField", highField);
 	}
 	
-	public Object getLowField(){
-		return amGraph.getFeature("lowField");
+	public String getLowField(){
+		return (String) amGraph.getFeature("lowField");
 	}
 	
 	public void setLowField(String lowField){
 		amGraph.setFeature("lowField", lowField);
 	}
 	
-	public Object getShowBulletsAt(){
-		return amGraph.getFeature("showBulletsAt");
+	public String getShowBulletsAt(){
+		return (String) amGraph.getFeature("showBulletsAt");
 	}
 	
 	public void setShowBulletsAt(ShowAt showBulletsAt){

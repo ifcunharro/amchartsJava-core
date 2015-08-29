@@ -44,16 +44,16 @@ public class TitleController implements Observer, ITitleController, Serializable
 	}
 	
 	@JsonProperty
-	public Object isBold(){
-		return title.getFeature("bold");
+	public Boolean isBold(){
+		return (Boolean) title.getFeature("bold");
 	}
 	
 	public void setBold(Boolean bold){
 		title.setFeature("bold", bold);
 	}
 	
-	public Object getColor(){
-		return title.getFeature("color");
+	public String getColor(){
+		return (String) title.getFeature("color");
 	}
 	
 	public void setColor(String color) throws ColorException{
@@ -62,8 +62,8 @@ public class TitleController implements Observer, ITitleController, Serializable
 		}
 	}
 	
-	public Object getId(){
-		return title.getFeature("id"); 
+	public String getId(){
+		return (String)title.getFeature("id"); 
 	}
 	
 	private void setId(String id){
@@ -80,8 +80,8 @@ public class TitleController implements Observer, ITitleController, Serializable
 		}
 	}
 	
-	public Object getText(){
-		return title.getFeature("text");
+	public String getText(){
+		return (String) title.getFeature("text");
 	}
 	
 	public void setText(String text){
