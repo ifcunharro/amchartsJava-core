@@ -1,4 +1,4 @@
-package principal;
+package es.uvigo.esei.amchartsJava.core.principal;
 
 
 

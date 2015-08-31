@@ -134,13 +134,13 @@ public class PathValidator {
 			//se ha pasado icon con extension
 			if(new File(resourcesPath.getFile()).exists()){
 				//se elimina protocolo file:/ al devolver la ruta completa
-				return resourcesPath.toString().substring(6, resourcesPath.toString().length());
+				return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
 			}else if(jsonFile.lastIndexOf(".") != jsonFile.length()-5){
 				
 				resourcesPath = new URL(resourcesPath,jsonFile+".json");
 				
 				if(new File(resourcesPath.getFile()).exists()){
-					return resourcesPath.toString().
+					return "/"+resourcesPath.toString().
 							substring(6, resourcesPath.toString().length());
 				}
 				
@@ -165,7 +165,7 @@ public class PathValidator {
 				e.printStackTrace();
 		}
 			
-		return resourcesPath.toString().substring(6, resourcesPath.toString().length());
+		return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
 		
 	}
 
