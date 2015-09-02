@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmCoordinateChartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
@@ -64,7 +65,11 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	public void setStartDuration(Number startDuration) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(startDuration, 1, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(startDuration, 1, 10)){
+				amchart.setFeature("startDuration", startDuration);
+			}
+		}else{
 			amchart.setFeature("startDuration", startDuration);
 		}
 	}

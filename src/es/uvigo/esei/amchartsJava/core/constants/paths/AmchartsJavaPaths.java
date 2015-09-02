@@ -11,6 +11,9 @@ public final class AmchartsJavaPaths {
 	
 	public static final String TEMP_DIRECTORY = "../amcharts/temp/";
 	
+	public static final String CONFIG_FILE_PATH = "../resources/configuration.properties";
+	public static final String LOG_PATH = "./logs/";
+	
 	
 	
 	

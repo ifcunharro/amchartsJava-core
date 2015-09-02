@@ -1,5 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.validators;
 
+import org.apache.log4j.Logger;
+
+import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -7,19 +10,29 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public class NumberValidator {
 
+	private static final Logger logger = Logger.getLogger(NumberValidator.class.getName());
+
+	
 	private NumberValidator(){
 		
 	}
 	
 	public static boolean rangeDoubleValidator(Number number,int lo, int hi) throws OutOfRangeException{
 		if(number.doubleValue()<lo || number.doubleValue()>hi){
-			throw new OutOfRangeException(I18n.get("RangeDoubleException"));
+			if(Config.getString("log").equals("file")){
+				logger.info(I18n.get("RangeIntegerException")+lo+I18n.get("and")+hi);
+			}
+			throw new OutOfRangeException(I18n.get("RangeDoubleException")+lo+I18n.get("and")+hi);
+
 		}
 		return true;
 	}
 	
 	public static boolean rangeIntegerValidator(Number number,int lo, int hi) throws OutOfRangeException{
 		if(number.intValue()<lo || number.intValue()>hi){
+			if(Config.getString("log").equals("file")){
+				logger.info(I18n.get("RangeIntegerException")+lo+I18n.get("and")+hi);
+			}
 			throw new OutOfRangeException(I18n.get("RangeIntegerException")+lo+I18n.get("and")+hi);
 		}
 		return true;
@@ -29,6 +42,9 @@ public class NumberValidator {
 		if(number instanceof Integer){
 			return true;
 		}
+		if(Config.getString("log").equals("file")){
+			logger.info(I18n.get("IntegerException"));
+		}
 		throw new IntegerException(I18n.get("IntegerException"));
 	}
 
@@ -36,7 +52,11 @@ public class NumberValidator {
 		if(number instanceof Double || number instanceof Integer){
 			return true;
 		}
+
+		if(Config.getString("log").equals("file")){
+			logger.info(I18n.get("DoubleException"));
+		}
 		throw new DoubleException(I18n.get("DoubleException"));
 	}
-
+	
 }

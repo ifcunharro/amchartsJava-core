@@ -3,6 +3,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphSerialChartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.PointPositionGraphConstant.PointPositionGraph;
 import es.uvigo.esei.amchartsJava.core.constants.ShowAtConstant.ShowAt;
@@ -112,7 +113,11 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	}
 	
 	public void setLineThickness(Number lineThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(lineThickness, 0, 12)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(lineThickness, 0, 12)){
+				amGraph.setFeature("lineThickness", lineThickness);
+			}
+		}else{
 			amGraph.setFeature("lineThickness", lineThickness);
 		}
 	}
@@ -173,7 +178,11 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	}
 	
 	public void setTopRadius(Number topRadius) throws OutOfRangeException{
-		if(NumberValidator.rangeDoubleValidator(topRadius, 0, 2)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeDoubleValidator(topRadius, 0, 2)){
+				amGraph.setFeature("topRadius", topRadius);
+			}
+		}else{
 			amGraph.setFeature("topRadius", topRadius);
 		}
 	}

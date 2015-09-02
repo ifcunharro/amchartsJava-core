@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.IPatternController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.Pattern;
@@ -46,7 +47,11 @@ public class PatternController implements IPatternController, Serializable {
 
 	
 	public void setHeight(Number height) throws OutOfRangeException {
-		if(NumberValidator.rangeIntegerValidator(height, 2, 6)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(height, 2, 6)){
+				pattern.setFeature("height", height);
+			}
+		}else{
 			pattern.setFeature("height", height);
 		}
 	}
@@ -76,7 +81,11 @@ public class PatternController implements IPatternController, Serializable {
 
 	
 	public void setWidth(Number width) throws OutOfRangeException {
-		if(NumberValidator.rangeDoubleValidator(width, 2, 6)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeDoubleValidator(width, 2, 6)){
+				pattern.setFeature("width", width);
+			}
+		}else{
 			pattern.setFeature("width", width);
 		}
 	}

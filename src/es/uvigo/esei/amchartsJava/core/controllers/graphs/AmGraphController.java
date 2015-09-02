@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Observable;
 import java.util.Observer;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -11,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
+import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
 import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
 import es.uvigo.esei.amchartsJava.core.constants.GraphTypesConstant.GraphType;
@@ -47,6 +51,8 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	protected AmGraph amGraph;
 	//chart que usa el graph
 	protected AmCoordinateChart amchart;
+	protected static final Logger logger = Logger.getLogger(AmGraph.class.getName());
+
 	
 	
 	{
@@ -151,7 +157,11 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setBulletBorderThickness(Number bulletBorderThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(bulletBorderThickness, 0, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(bulletBorderThickness, 0, 5)){
+				amGraph.setFeature("bulletBorderThickness", bulletBorderThickness);
+			}
+		}else{
 			amGraph.setFeature("bulletBorderThickness", bulletBorderThickness);
 		}
 	}
@@ -177,7 +187,11 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setBulletOffset(Number bulletOffset) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(bulletOffset, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(bulletOffset, 0, 10)){
+				amGraph.setFeature("bulletOffset", bulletOffset);
+			}
+		}else{
 			amGraph.setFeature("bulletOffset", bulletOffset);
 		}
 	}
@@ -187,7 +201,11 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setBulletSize(Number bulletSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(bulletSize, 5, 36)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(bulletSize, 5, 36)){
+				amGraph.setFeature("bulletSize", bulletSize);
+			}
+		}else{
 			amGraph.setFeature("bulletSize", bulletSize);
 		}
 	}
@@ -307,6 +325,9 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 				amGraph.setFeature("fillToGraph", fillToGraph);
 			}
 		}else{
+			if(Config.getString("log").equals("file")){
+				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
+			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
@@ -316,7 +337,11 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 36)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(fontSize, 10, 36)){
+				amGraph.setFeature("fontSize", fontSize);
+			}
+		}else{
 			amGraph.setFeature("fontSize", fontSize);
 		}
 	}
@@ -396,7 +421,11 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setLabelOffset(Number labelOffset) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(labelOffset, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(labelOffset, 0, 10)){
+				amGraph.setFeature("labelOffset", labelOffset);
+			}
+		}else{
 			amGraph.setFeature("labelOffset", labelOffset);
 		}
 	}
@@ -484,7 +513,11 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setMinDistance(Number minDistance) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(minDistance, 0, 100)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(minDistance, 0, 100)){
+				amGraph.setFeature("minDistance", minDistance);
+			}
+		}else{
 			amGraph.setFeature("minDistance", minDistance);
 		}
 	}
@@ -525,6 +558,9 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		if(TypeValidator.checkPattern(pattern)){
 			amGraph.addPattern(pattern);
 		}else{
+			if(Config.getString("log").equals("file")){
+				logger.info(I18n.get("PatternException"));
+			}
 			throw new MalFormedPatternException(I18n.get("PatternException"));
 		}
 	}
@@ -652,6 +688,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 				amGraph.setFeature("valueAxis", valueAxis);
 			}
 		}else{
+			if(Config.getString("log").equals("file")){
+				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
+			
+			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

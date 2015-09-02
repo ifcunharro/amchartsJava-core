@@ -39,7 +39,11 @@ public class AmGraphStepController extends AmGraphSerialChartController
 	}
 	
 	public void setPeriodSpan(Number periodSpan) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(periodSpan, -2, 2)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(periodSpan, -2, 2)){
+				amGraph.setFeature("periodSpan", periodSpan);
+			}
+		}else{
 			amGraph.setFeature("periodSpan", periodSpan);
 		}
 	}

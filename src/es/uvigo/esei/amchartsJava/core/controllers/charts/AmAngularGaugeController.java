@@ -2,9 +2,13 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmAngularGaugeController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeArrowController;
@@ -26,6 +30,8 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 	 * 
 	 */
 	private static final long serialVersionUID = -7923112909942594021L;
+	private static final Logger logger = Logger.getLogger(AmAngularGaugeController.class.getName());
+
 
 	public AmAngularGaugeController() {
 		super(new AmAngularGauge());
@@ -102,7 +108,11 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 	}
 	
 	public void setFaceBorderWidth(Number faceBorderWidth) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(faceBorderWidth, 0, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(faceBorderWidth, 0, 5)){
+				amchart.setFeature("faceBorderWidth", faceBorderWidth);
+			}
+		}else{
 			amchart.setFeature("faceBorderWidth", faceBorderWidth);
 		}
 	}
@@ -125,6 +135,9 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		if(TypeValidator.checkPattern(facePattern)){
 			amchart.setFacePattern(facePattern);
 		}else{
+			if(Config.getString("log").equals("file")){
+				logger.info(I18n.get("PatternException"));
+			}
 			throw new MalFormedPatternException(I18n.get("PatternException"));
 		}
 	}
@@ -204,7 +217,11 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 	}
 	
 	public void setStartDuration(Number startDuration) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(startDuration, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(startDuration, 0, 10)){
+				amchart.setFeature("startDuration", startDuration);
+			}
+		}else{
 			amchart.setFeature("startDuration", startDuration);
 		}
 	}

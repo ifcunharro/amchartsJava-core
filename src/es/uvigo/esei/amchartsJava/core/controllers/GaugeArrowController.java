@@ -4,12 +4,16 @@ import java.io.Serializable;
 import java.util.Observable;
 import java.util.Observer;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.IGaugeArrowController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -33,6 +37,8 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	private static final long serialVersionUID = 963880554698117462L;
 	private AmAngularGauge amchart;
 	private GaugeArrow gaugeArrow;
+	private static final Logger logger = Logger.getLogger(GaugeArrowController.class.getName());
+
 	
 	{
 		gaugeArrow = new GaugeArrow();
@@ -72,6 +78,9 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 				gaugeArrow.setFeature("axis", axis);
 			}
 		}else{
+			if(Config.getString("log").equals("file")){
+				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
+			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
@@ -150,7 +159,11 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	}
 	
 	public void setNailBorderThickness(Number nailBorderThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(nailBorderThickness, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(nailBorderThickness, 0, 10)){
+				gaugeArrow.setFeature("nailBorderThickness", nailBorderThickness);
+			}
+		}else{
 			gaugeArrow.setFeature("nailBorderThickness", nailBorderThickness);
 		}
 	}
@@ -160,7 +173,11 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	}
 	
 	public void setNailRadius(Number nailRadius) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(nailRadius, 0, 15)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(nailRadius, 0, 15)){
+				gaugeArrow.setFeature("nailRadius", nailRadius);
+			}
+		}else{
 			gaugeArrow.setFeature("nailRadius", nailRadius);
 		}
 	}

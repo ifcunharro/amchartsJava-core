@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.IAmBalloonController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.TextAlignConstant.TextAlign;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -41,7 +42,11 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setAnimationDuration(Number animationDuration) throws OutOfRangeException{
-		if(NumberValidator.rangeDoubleValidator(animationDuration, 0, 2)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeDoubleValidator(animationDuration, 0, 2)){
+				balloon.setFeature("animationDuration", animationDuration);
+			}
+		}else{
 			balloon.setFeature("animationDuration", animationDuration);
 		}
 	}
@@ -71,7 +76,11 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setBorderThickness(Number borderThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(borderThickness, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(borderThickness, 0, 10)){
+				balloon.setFeature("borderThickness", borderThickness);
+			}
+		}else{
 			balloon.setFeature("borderThickness", borderThickness);
 		}
 	}
@@ -91,7 +100,11 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setCornerRadius(Number cornerRadius) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(cornerRadius, 0, 14)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(cornerRadius, 0, 14)){
+				balloon.setFeature("cornerRadius", cornerRadius);
+			}
+		}else{
 			balloon.setFeature("cornerRadius", cornerRadius);
 		}
 	}
@@ -111,7 +124,11 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setFadeOutDuration(Number fadeOutDuration) throws OutOfRangeException{
-		if(NumberValidator.rangeDoubleValidator(fadeOutDuration, 0, 2)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeDoubleValidator(fadeOutDuration, 0, 2)){
+				balloon.setFeature("fadeOutDuration", fadeOutDuration);
+			}
+		}else{
 			balloon.setFeature("fadeOutDuration", fadeOutDuration);
 		}
 	}
@@ -150,7 +167,11 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 16)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(fontSize, 10, 16)){
+				balloon.setFeature("fontSize", fontSize);
+			}
+		}else{
 			balloon.setFeature("fontSize", fontSize);
 		}
 	}
@@ -160,7 +181,11 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setHorizontalPadding(Number horizontalPadding) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(horizontalPadding, 8, 20)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(horizontalPadding, 8, 20)){
+				balloon.setFeature("horizontalPadding", horizontalPadding);
+			}
+		}else{
 			balloon.setFeature("horizontalPadding", horizontalPadding);
 		}
 	}
@@ -200,7 +225,11 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setPointerWidth(Number pointerWidth) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(pointerWidth, 0, 36)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(pointerWidth, 0, 36)){
+				balloon.setFeature("pointerWidth", pointerWidth);
+			}
+		}else{
 			balloon.setFeature("pointerWidth", pointerWidth);
 		}
 	}
@@ -247,7 +276,11 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setVerticalPadding(Number verticalPadding) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(verticalPadding, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(verticalPadding, 0, 10)){
+				balloon.setFeature("verticalPadding", verticalPadding);
+			}
+		}else{
 			balloon.setFeature("verticalPadding", verticalPadding);
 		}
 	}

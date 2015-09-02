@@ -21,6 +21,9 @@ public class EN implements Idiom {
 		textsEN.put("ChartException", " needs to be added to a chart to can be used that property");
 		textsEN.put("PatternException", "Pattern must have values to height, width and url");
 		textsEN.put("JsonFileNotFoundException", "Json file not found in temp directory");
+		textsEN.put("PropertiesException", "Not found configuration.properties into resources folder");
+		textsEN.put("ConfigKeyException", "not found in configuration file.");
+
 
 
 	}

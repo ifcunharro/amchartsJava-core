@@ -2,12 +2,16 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import java.io.Serializable;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.IChartScrollBarController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.GraphTypesConstant.GraphType;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
@@ -29,6 +33,8 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	private static final long serialVersionUID = 1262906027402512218L;
 	private ChartScrollBar scrollBar;
 	private AmRectangularChart amchart;
+	private static final Logger logger = Logger.getLogger(ChartScrollBarController.class.getName());
+
 	
 	{
 		scrollBar = new ChartScrollBar();
@@ -95,7 +101,11 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setDragIconHeight(Number dragIconHeight) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(dragIconHeight, 10, 35)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(dragIconHeight, 10, 35)){
+				scrollBar.setFeature("dragIconHeight", dragIconHeight);
+			}
+		}else{
 			scrollBar.setFeature("dragIconHeight", dragIconHeight);
 		}
 	}
@@ -105,7 +115,11 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setDragIconWidth(Number dragIconWidth) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(dragIconWidth, 16, 35)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(dragIconWidth, 16, 35)){
+				scrollBar.setFeature("dragIconWidth", dragIconWidth);
+			}
+		}else{
 			scrollBar.setFeature("dragIconWidth", dragIconWidth);
 		}
 	}
@@ -129,6 +143,9 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 				scrollBar.setFeature("graph", graph);
 			}
 		}else{
+			if(Config.getString("log").equals("file")){
+				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
+			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
@@ -206,7 +223,11 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setGridCount(Number gridCount) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(gridCount, 0, 15)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(gridCount, 0, 15)){
+				scrollBar.setFeature("gridCount", gridCount);
+			}
+		}else{
 			scrollBar.setFeature("gridCount", gridCount);
 		}
 	}
@@ -254,8 +275,10 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setOffset(Number offset) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(offset, 0, 80)){
-			scrollBar.setFeature("offset", offset);
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(offset, 0, 80)){
+				scrollBar.setFeature("offset", offset);
+			}
 		}
 	}
 	
@@ -282,7 +305,11 @@ public class ChartScrollBarController implements Serializable, IChartScrollBarCo
 	}
 	
 	public void setScrollbarHeight(Number scrollbarHeight) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(scrollbarHeight, 10, 30)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(scrollbarHeight, 10, 30)){
+				scrollBar.setFeature("scrollbarHeight", scrollbarHeight);
+			}
+		}else{
 			scrollBar.setFeature("scrollbarHeight", scrollbarHeight);
 		}
 	}

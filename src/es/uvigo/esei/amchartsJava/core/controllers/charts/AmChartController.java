@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
@@ -164,7 +165,11 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 16)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(fontSize, 10, 16)){
+				amchart.setFeature("fontSize", fontSize);
+			}
+		}else{
 			amchart.setFeature("fontSize", fontSize);
 		}
 	}
@@ -183,7 +188,11 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setHandDrawScatter(Number handDrawScatter) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(handDrawScatter, 2, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(handDrawScatter, 2, 10)){
+				amchart.setFeature("handDrawScatter", handDrawScatter);
+			}
+		}else{
 			amchart.setFeature("handDrawScatter", handDrawScatter);
 		}
 	}
@@ -193,7 +202,11 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setHandDrasThickness(Number handDrawThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(handDrawThickness, 0, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(handDrawThickness, 0, 5)){
+				amchart.setFeature("handDrawThickness", handDrawThickness);
+			}
+		}else{
 			amchart.setFeature("handDrawThickness", handDrawThickness);
 		}
 	}

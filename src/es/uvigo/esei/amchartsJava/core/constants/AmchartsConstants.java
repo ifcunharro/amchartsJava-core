@@ -4,8 +4,17 @@ package es.uvigo.esei.amchartsJava.core.constants;
 
 public class AmchartsConstants {
 	
+	//not delete these two variables, if change name variables, update references in code
+	public static final String LOGGING;
+	public static final String IMPROVED_VISIBILITY;
+
 	private AmchartsConstants(){
 		
+	}
+	
+	static{
+		IMPROVED_VISIBILITY = Config.getString("enabledImprovedVisibility");
+		LOGGING = Config.getString("log");
 	}
 
 	public static final DurationConstant DURATION_UNITS = DurationConstant.getInstance();

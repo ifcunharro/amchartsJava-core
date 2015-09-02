@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.IImageController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -61,7 +62,11 @@ public class ImageController implements Serializable, IImageController {
 	}
 	
 	public void setHeight(Number height) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(height, 20, 50)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(height, 20, 50)){
+				image.setFeature("height", height);
+			}
+		}else{
 			image.setFeature("height", height);
 		}
 	}
@@ -127,7 +132,11 @@ public class ImageController implements Serializable, IImageController {
 	}
 	
 	public void setWidth(Number width) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(width, 20, 50)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(width, 20, 50)){
+				image.setFeature("width", width);
+			}
+		}else{
 			image.setFeature("width", width);
 		}
 	}

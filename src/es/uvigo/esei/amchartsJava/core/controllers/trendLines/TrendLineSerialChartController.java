@@ -5,11 +5,15 @@ import java.sql.Date;
 import java.util.Observable;
 import java.util.Observer;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineSerialChartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
@@ -29,6 +33,8 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	private static final long serialVersionUID = -8070134263297552359L;
 	protected TrendLine trendLine;
 	protected AmRectangularChart amchart;
+	private static final Logger logger = Logger.getLogger(TrendLineSerialChartController.class.getName());
+
 	
 	{
 		trendLine = new TrendLine();
@@ -54,7 +60,11 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	}
 	
 	public void setDashLength(Number dashLength) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(dashLength, 0, 16)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(dashLength, 0, 16)){
+				trendLine.setFeature("dashLength", dashLength);
+			}
+		}else{
 			trendLine.setFeature("dashLength", dashLength);
 		}
 	}
@@ -137,7 +147,11 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	}
 	
 	public void setLineThickness(Number lineThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(lineThickness, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(lineThickness, 0, 10)){
+				trendLine.setFeature("lineThickness", lineThickness);
+			}
+		}else{
 			trendLine.setFeature("lineThickness", lineThickness);
 		}
 	}
@@ -152,6 +166,9 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 				trendLine.setFeature("valueAxis", valueAxis);
 			}
 		}else{
+			if(Config.getString("log").equals("file")){
+				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
+			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

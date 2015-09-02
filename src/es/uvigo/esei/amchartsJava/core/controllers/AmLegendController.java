@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.AlignConstant.Align;
 import es.uvigo.esei.amchartsJava.core.constants.ValueAlignConstant.ValueAlign;
 import es.uvigo.esei.amchartsJava.core.constants.LegendPositionConstant.LegendPosition;
@@ -152,7 +153,11 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 18)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(fontSize, 10, 18)){
+				legend.setFeature("fontSize", fontSize);
+			}
+		}else{
 			legend.setFeature("fontSize", fontSize);
 		}
 	}
@@ -270,7 +275,11 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setMarkerBorderThickness(Number markerBorderThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(markerBorderThickness, 1, 16)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(markerBorderThickness, 1, 16)){
+				legend.setFeature("markerBorderThickness", markerBorderThickness);
+			}
+		}else{
 			legend.setFeature("markerBorderThickness", markerBorderThickness);
 		}
 	}
@@ -290,7 +299,11 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setMarkerLabelGap(Number markerLabelGap) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(markerLabelGap, 5, 16)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(markerLabelGap, 5, 16)){
+				legend.setFeature("markerLabelGap", markerLabelGap);
+			}
+		}else{
 			legend.setFeature("markerLabelGap", markerLabelGap);
 		}
 	}
@@ -300,7 +313,11 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setMarkerSize(Number markerSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(markerSize, 1, 36)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(markerSize, 1, 36)){
+				legend.setFeature("markerSize", markerSize);
+			}
+		}else{
 			legend.setFeature("markerSize", markerSize);
 		}
 	}
@@ -318,7 +335,11 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setMaxColumns(Number maxColumns) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(maxColumns, 1, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(maxColumns, 1, 5)){
+				legend.setFeature("maxColumns", maxColumns);
+			}
+		}else{
 			legend.setFeature("maxColumns", maxColumns);
 		}
 	}
@@ -392,7 +413,11 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setSpacing(Number spacing) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(spacing, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(spacing, 0, 10)){
+				legend.setFeature("spacing", spacing);
+			}
+		}else{
 			legend.setFeature("spacing", spacing);
 		}
 	}
@@ -500,7 +525,11 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setValueWidth(Number valueWidth) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(valueWidth, 0, 50)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(valueWidth, 0, 50)){
+				legend.setFeature("valueWidth", valueWidth);
+			}
+		}else{
 			legend.setFeature("valueWidth", valueWidth);
 		}
 	}
@@ -510,7 +539,11 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setVerticalGap(Number verticalGap) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(verticalGap, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(verticalGap, 0, 10)){
+				legend.setFeature("verticalGap", verticalGap);
+			}
+		}else{
 			legend.setFeature("verticalGap", verticalGap);
 		}
 	}

@@ -4,10 +4,14 @@ import java.sql.Date;
 import java.util.Observable;
 import java.util.Observer;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.axis.IValueAxisController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.AxisTypeConstant.AxisType;
 import es.uvigo.esei.amchartsJava.core.constants.DurationConstant.Duration;
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
@@ -29,6 +33,8 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	 */
 	private static final long serialVersionUID = -2266935966284026139L;
 	private AmCoordinateChart chart;
+	private static final Logger logger = Logger.getLogger(ValueAxisController.class.getName());
+
 	
 	
 	
@@ -225,6 +231,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 				axes.setFeature("synchronizeWith", synchronizeWith);
 			}
 		}else{
+			if(Config.getString("log").equals("file")){
+				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
+			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
@@ -253,7 +262,11 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	public void setTotalTextOffset(Number totalTextOffset) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(totalTextOffset, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(totalTextOffset, 0, 10)){
+				axes.setFeature("totalTextOffset", totalTextOffset);
+			}
+		}else{
 			axes.setFeature("totalTextOffset", totalTextOffset);
 		}
 	}

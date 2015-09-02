@@ -5,12 +5,16 @@ import java.sql.Date;
 import java.util.Observable;
 import java.util.Observer;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
@@ -30,6 +34,8 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	private static final long serialVersionUID = 5144456903786410897L;
 	protected Guide guide;
 	private AmCoordinateChart chart;
+	private static final Logger logger = Logger.getLogger(GuideController.class.getName());
+
 
 	{
 		guide = new Guide();
@@ -96,7 +102,11 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setDashLength(Number dashLength) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(dashLength, 0, 36)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(dashLength, 0, 36)){
+				guide.setFeature("dashLength", dashLength);
+			}
+		}else{
 			guide.setFeature("dashLength", dashLength);
 		}
 	}
@@ -126,7 +136,11 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(fontSize, 8, 20)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(fontSize, 8, 20)){
+				guide.setFeature("fontSize", fontSize);
+			}
+		}else{
 			guide.setFeature("fontSize", fontSize);
 		}
 	}
@@ -187,7 +201,11 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setLineThickness(Number lineThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(lineThickness, 1, 20)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(lineThickness, 1, 20)){
+				guide.setFeature("lineThickness", lineThickness);
+			}
+		}else{
 			guide.setFeature("lineThickness", lineThickness);
 		}
 	}
@@ -205,7 +223,11 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setTickLength(Number tickLength) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(tickLength, 0, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(tickLength, 0, 5)){
+				guide.setFeature("tickLength", tickLength);
+			}
+		}else{
 			guide.setFeature("tickLength", tickLength);
 		}
 	}
@@ -228,6 +250,9 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 				guide.setFeature("valueAxis", valueAxis);
 			}
 		}else{
+			if(Config.getString("log").equals("file")){
+				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
+			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

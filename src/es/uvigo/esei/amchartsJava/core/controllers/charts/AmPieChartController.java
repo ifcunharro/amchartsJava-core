@@ -56,7 +56,11 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setDepth3D(Number depth3D) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(depth3D, 0, 50)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(depth3D, 0, 50)){
+				amchart.setFeature("depth3D", depth3D);
+			}
+		}else{
 			amchart.setFeature("depth3D", depth3D);
 		}
 	}
@@ -76,7 +80,11 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setLabelRadius(Number labelRadius) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(labelRadius, 0, 40)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(labelRadius, 0, 40)){
+				amchart.setFeature("labelRadius", labelRadius);
+			}
+		}else{
 			amchart.setFeature("labelRadius", labelRadius);
 		}
 	}

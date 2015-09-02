@@ -3,6 +3,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmXyChartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmXyChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
@@ -42,7 +43,11 @@ public class AmXyChartController extends AmRectangularChartController<AmXyChart>
 	}
 	
 	public void setMaxZoomFactor(Number maxZoomFactor) throws OutOfRangeException{
-		if(NumberValidator.rangeDoubleValidator(maxZoomFactor, 1, 20)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeDoubleValidator(maxZoomFactor, 1, 20)){
+				amchart.setFeature("maxZoomFactor", maxZoomFactor);
+			}
+		}else{
 			amchart.setFeature("maxZoomFactor", maxZoomFactor);
 		}
 	}

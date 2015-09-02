@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.IGaugeAxisController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
@@ -69,7 +70,11 @@ public class GaugeAxisController
 	}
 	
 	public void setAxisThickness(Number axisThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(axisThickness, 0, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(axisThickness, 0, 5)){
+				gaugeAxis.setFeature("axisThickness", axisThickness);
+			}
+		}else{
 			gaugeAxis.setFeature("axisThickness", axisThickness);
 		}
 	}
@@ -109,7 +114,11 @@ public class GaugeAxisController
 	}
 	
 	public void setBandOutlineThickness(Number bandOutlineThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(bandOutlineThickness, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(bandOutlineThickness, 0, 10)){
+				gaugeAxis.setFeature("bandOutlineThickness", bandOutlineThickness);
+			}
+		}else{
 			gaugeAxis.setFeature("bandOutlineThickness", bandOutlineThickness);
 		}
 	}
@@ -155,7 +164,11 @@ public class GaugeAxisController
 	}
 	
 	public void setBottomTextFontSize(Number bottomTextFontSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(bottomTextFontSize, 0, 36)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(bottomTextFontSize, 0, 36)){
+				gaugeAxis.setFeature("bottomTextFontSize", bottomTextFontSize);
+			}
+		}else{
 			gaugeAxis.setFeature("bottomTextFontSize", bottomTextFontSize);
 		}
 	}
@@ -215,7 +228,11 @@ public class GaugeAxisController
 	}
 	
 	public void setGridCount(Number gridCount) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(gridCount, 0, 100)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(gridCount, 0, 100)){
+				gaugeAxis.setFeature("gridCount", gridCount);
+			}
+		}else{
 			gaugeAxis.setFeature("gridCount", gridCount);
 		}
 	}
@@ -247,7 +264,11 @@ public class GaugeAxisController
 	}
 	
 	public void setLabelFrequency(Number labelFrequency) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(labelFrequency, 1, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(labelFrequency, 1, 5)){
+				gaugeAxis.setFeature("labelFrequency", labelFrequency);
+			}
+		}else{
 			gaugeAxis.setFeature("labelFrequency", labelFrequency);
 		}
 	}
@@ -286,7 +307,11 @@ public class GaugeAxisController
 	}
 	
 	public void setMinorTickInterval(Number minorTickInterval) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(minorTickInterval, 1, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(minorTickInterval, 1, 5)){
+				gaugeAxis.setFeature("minorTickInterval", minorTickInterval);
+			}
+		}else{
 			gaugeAxis.setFeature("minorTickInterval", minorTickInterval);
 		}
 	}
@@ -296,7 +321,11 @@ public class GaugeAxisController
 	}
 	
 	public void setMinorTickLength(Number minorTickLength) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(minorTickLength, 1, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(minorTickLength, 1, 10)){
+				gaugeAxis.setFeature("minorTickLength", minorTickLength);
+			}
+		}else{
 			gaugeAxis.setFeature("minorTickLength", minorTickLength);
 		}
 	}
@@ -378,7 +407,11 @@ public class GaugeAxisController
 	}
 	
 	public void setTickLength(Number tickLength) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(tickLength, 0, 15)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(tickLength, 0, 15)){
+				gaugeAxis.setFeature("tickLength", tickLength);
+			}
+		}else{
 			gaugeAxis.setFeature("tickLength", tickLength);
 		}
 	}
@@ -388,7 +421,11 @@ public class GaugeAxisController
 	}
 	
 	public void setTickThickness(Number tickThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(tickThickness, 0, 4)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(tickThickness, 0, 4)){
+				gaugeAxis.setFeature("tickThickness", tickThickness);
+			}
+		}else{
 			gaugeAxis.setFeature("tickThickness", tickThickness);
 		}
 	}
@@ -425,7 +462,11 @@ public class GaugeAxisController
 	}
 	
 	public void setTopTextFontSize(Number topTextFontSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(topTextFontSize, 0, 36)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(topTextFontSize, 0, 36)){
+				gaugeAxis.setFeature("topTextFontSize", topTextFontSize);
+			}
+		}else{
 			gaugeAxis.setFeature("topTextFontSize", topTextFontSize);
 		}
 	}

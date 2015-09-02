@@ -63,7 +63,11 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	public void setDepth3D(Number depth3D) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(depth3D, 0, 50)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(depth3D, 0, 50)){
+				amchart.setFeature("depth3D", depth3D);
+			}
+		}else{
 			amchart.setFeature("depth3D", depth3D);
 		}
 	}

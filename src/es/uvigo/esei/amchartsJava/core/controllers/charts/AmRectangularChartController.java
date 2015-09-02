@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmRectangularChartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
@@ -51,7 +52,11 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public void setAutoMarginOffset(Number autoMarginOffset) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(autoMarginOffset, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(autoMarginOffset, 0, 10)){
+				amchart.setFeature("autoMarginOffset", autoMarginOffset);
+			}
+		}else{
 			amchart.setFeature("autoMarginOffset", autoMarginOffset);
 		}
 	}
@@ -201,7 +206,11 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public void setZoomOutButtonImageSize(Number zoomOutButtonImageSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(zoomOutButtonImageSize, 10, 26)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(zoomOutButtonImageSize, 10, 26)){
+				amchart.setFeature("zoomOutButtonImageSize", zoomOutButtonImageSize);
+			}
+		}else{
 			amchart.setFeature("zoomOutButtonImageSize", zoomOutButtonImageSize);
 		}
 	}
@@ -211,7 +220,11 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public void setZoomOutButtonPadding(Number zoomOutButtonPadding) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(zoomOutButtonPadding, 5, 20)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(zoomOutButtonPadding, 5, 20)){
+				amchart.setFeature("zoomOutButtonPadding", zoomOutButtonPadding);
+			}
+		}else{
 			amchart.setFeature("zoomOutButtonPadding", zoomOutButtonPadding);
 		}
 	}

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmSlicedChartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -288,7 +289,11 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setOutlineThickness(Number outlineThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(outlineThickness, 0, 16)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(outlineThickness, 0, 16)){
+				amchart.setFeature("outlineThickness", outlineThickness);
+			}
+		}else{
 			amchart.setFeature("outlineThickness", outlineThickness);
 		}
 	}
@@ -314,7 +319,11 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setPullOutDuration(Number pullOutDuration) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(pullOutDuration, 0, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(pullOutDuration, 0, 5)){
+				amchart.setFeature("pullOutDuration", pullOutDuration);
+			}
+		}else{
 			amchart.setFeature("pullOutDuration", pullOutDuration);
 		}
 	}
@@ -369,7 +378,11 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setStartDuration(Number startDuration) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(startDuration, 1, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(startDuration, 1, 5)){
+				amchart.setFeature("startDuration", startDuration);
+			}
+		}else{
 			amchart.setFeature("startDuration", startDuration);
 		}
 	}

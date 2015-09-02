@@ -65,7 +65,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setAxisThickness(Number axisThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(axisThickness, 0, 2)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(axisThickness, 0, 2)){
+				axes.setFeature("axisThickness", axisThickness);
+			}
+		}else{
 			axes.setFeature("axisThickness", axisThickness);
 		}
 	}
@@ -101,7 +105,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setDashLength(Number dashLength) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(dashLength, 0, 100)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(dashLength, 0, 100)){
+				axes.setFeature("dashLength", dashLength);
+			}
+		}else{
 			axes.setFeature("dashLength", dashLength);
 		}
 	}
@@ -136,7 +144,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(fontSize, 10, 16)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(fontSize, 10, 16)){
+				axes.setFeature("fontSize", fontSize);
+			}
+		}else{
 			axes.setFeature("fontSize", fontSize);
 		}
 	}
@@ -166,7 +178,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setGridCount(Number gridCount) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(gridCount, 5, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(gridCount, 5, 10)){
+				axes.setFeature("gridCount", gridCount);
+			}
+		}else{
 			axes.setFeature("gridCount", gridCount);
 		}
 	}
@@ -176,7 +192,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setGridThikness(Number gridThickness) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(gridThickness, 0, 2)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(gridThickness, 0, 2)){
+				axes.setFeature("gridThickness", gridThickness);
+			}
+		}else{
 			axes.setFeature("gridThickness", gridThickness);
 		}
 	}
@@ -204,7 +224,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setLabelFrequency(Number labelFrequency) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(labelFrequency, 1, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(labelFrequency, 1, 10)){
+				axes.setFeature("labelFrequency", labelFrequency);
+			}
+		}else{
 			axes.setFeature("labelFrequency", labelFrequency);
 		}
 	}
@@ -214,7 +238,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setLabelOffset(Number labelOffset) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(labelOffset, 0, 5)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(labelOffset, 0, 5)){
+				axes.setFeature("labelOffset", labelOffset);
+			}
+		}else{
 			axes.setFeature("labelOffset", labelOffset);
 		}
 	}
@@ -272,7 +300,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setMinorTickLength(Number minorTickLength) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(minorTickLength, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(minorTickLength, 0, 10)){
+				axes.setFeature("minorTickLength",minorTickLength);
+			}
+		}else{
 			axes.setFeature("minorTickLength",minorTickLength);
 		}
 		
@@ -291,7 +323,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setOffset(Number offset) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(offset, 4, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(offset, 4, 10)){
+				axes.setFeature("offset", offset);
+			}
+		}else{
 			axes.setFeature("offset", offset);
 		}
 	}
@@ -327,7 +363,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setTickLength(Number tickLength) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(tickLength, 0, 10)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(tickLength, 0, 10)){
+				axes.setFeature("tickLength", tickLength);
+			}
+		}else{
 			axes.setFeature("tickLength", tickLength);
 		}
 	}
@@ -364,7 +404,11 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setTitleFontSize(Number titleFontSize) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(titleFontSize, 10, 18)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(titleFontSize, 10, 18)){
+				axes.setFeature("titleFontSize", titleFontSize);
+			}
+		}else{
 			axes.setFeature("titleFontSize", titleFontSize);
 		}
 	}

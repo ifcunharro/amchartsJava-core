@@ -3,6 +3,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.axis;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.axis.IValueAxisRadarChartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.GridTypesConstant.GridType;
 import es.uvigo.esei.amchartsJava.core.constants.PointPositionAxisRadarConstant.PointPositionAxisRadar;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -24,7 +25,11 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 	}
 	
 	public void setAxixTitleOffset(Number axisTitleOffset) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(axisTitleOffset, 5, 30)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(axisTitleOffset, 5, 30)){
+				axes.setFeature("axisTitleOffset", axisTitleOffset);
+			}
+		}else{
 			axes.setFeature("axisTitleOffset", axisTitleOffset);
 		}
 	}

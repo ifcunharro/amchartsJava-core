@@ -3,7 +3,9 @@ package es.uvigo.esei.amchartsJava.core.principal;
 
 
 import java.io.IOException;
+
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
@@ -51,9 +53,17 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
-		
-		
-		
+		if(Config.getString("log").equals("file")){
+			Config.defaultConfigureLog();
+		}
+		//ConfigureLog.defaultConfigure();
+		AmBalloonController bal = new AmBalloonController();
+		try {
+			bal.setVerticalPadding(90);
+		} catch (OutOfRangeException e14) {
+			// TODO Auto-generated catch block
+			e14.printStackTrace();
+		}
 		
 		AmFunnelChartController funnel = new AmFunnelChartController();
 		funnel.setGradientRatio(9,4,5,6);

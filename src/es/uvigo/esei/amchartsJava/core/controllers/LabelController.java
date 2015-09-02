@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.ILabelController;
 import es.uvigo.esei.amchartsJava.core.constants.AlignConstant.Align;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -108,7 +109,11 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setSize(Number size) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(size, 10, 24)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(size, 10, 24)){
+				label.setFeature("size", size);
+			}
+		}else{
 			label.setFeature("size", size);
 		}
 	}

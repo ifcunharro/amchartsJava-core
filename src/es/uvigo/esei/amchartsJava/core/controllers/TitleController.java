@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.ITitleController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.Title;
@@ -75,7 +76,11 @@ public class TitleController implements Observer, ITitleController, Serializable
 	}
 	
 	public void setSize(Number size) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(size, 8, 36)){
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			if(NumberValidator.rangeIntegerValidator(size, 8, 36)){
+				title.setFeature("size", size);
+			}
+		}else{
 			title.setFeature("size", size);
 		}
 	}
