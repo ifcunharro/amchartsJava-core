@@ -23,8 +23,10 @@ public final class Config {
 			URL localURL = Config.class.getProtectionDomain().getCodeSource()
 					.getLocation();
 			try {
-					//mini.jar es el nombre con el que debemos exportar el framework
+				//localURL = new URL(new URL(localURL.toString().replace("amchartsRunnable.jar", "")) + "resources/configuration.properties" );
+					
 					localURL = new URL(localURL,"../"+AmchartsJavaPaths.CONFIG_FILE_PATH );
+					
 				try {
 					CONFIG.load(localURL.openStream());
 				} catch (IOException e) {

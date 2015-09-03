@@ -1,8 +1,7 @@
 /bin
 /target
 /assembly
-/logs/*.*
-/src/amcharts_3.15.1.free
+/amcharts
 .project
 .classpath
 .settings
