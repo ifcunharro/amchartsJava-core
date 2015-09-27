@@ -3,8 +3,10 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 import java.io.Serializable;
 
 import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -332,6 +334,11 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
+	}
+	
+	@JsonSetter(value="valueLineAxis")
+	private void setJsonValueLineAxis(String valueLineAxis){
+		chartCursor.setFeature("valueLineAxis", valueLineAxis);	
 	}
 	
 	@JsonProperty(value="valueLineBalloonEnabled")

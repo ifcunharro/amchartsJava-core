@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -171,6 +172,11 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
+	}
+	
+	@JsonSetter(value="valueAxis")
+	private void setJsonValueAxis(String valueAxis){
+		trendLine.setFeature("valueAxis", valueAxis);
 	}
 	
 	public ImageController getFinalImage(){

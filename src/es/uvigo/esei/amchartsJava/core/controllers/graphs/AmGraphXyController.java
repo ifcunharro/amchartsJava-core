@@ -1,5 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphXyController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.Config;
@@ -48,6 +50,11 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
+	@JsonSetter(value="bulletAxis")
+	private void setJsonBulletAxis(String bulletAxis){
+		amGraph.setFeature("bulletAxis", bulletAxis);	
+	}
+	
 	public String getFillToAxis(){
 		return (String) amGraph.getFeature("fillToAxis");
 	}
@@ -63,6 +70,11 @@ public class AmGraphXyController extends AmGraphSerialChartController
 			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
+	}
+	
+	@JsonSetter(value="fillToAxis")
+	private void setJsonFillToAxis(String fillToAxis){
+		amGraph.setFeature("fillToAxis", fillToAxis);
 	}
 	
 	public Object getMaxBulletSize(){
@@ -106,6 +118,11 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
+	@JsonSetter(value="xAxis")
+	private void setJsonXAxis(String xAxis){
+		amGraph.setFeature("xAxis", xAxis);
+	}
+	
 	public String getXField(){
 		return (String) amGraph.getFeature("xField");
 	}
@@ -131,6 +148,11 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
+	@JsonSetter(value="yAxis")
+	private void setJsonYAxis(String yAxis){
+		amGraph.setFeature("yAxis", yAxis);
+	}
+	
 	public String getYField(){
 		return (String) amGraph.getFeature("yField");
 	}
@@ -138,6 +160,7 @@ public class AmGraphXyController extends AmGraphSerialChartController
 	public void setYField(String yField){
 		amGraph.setFeature("yField", yField);
 	}
+
 	
 	
 }

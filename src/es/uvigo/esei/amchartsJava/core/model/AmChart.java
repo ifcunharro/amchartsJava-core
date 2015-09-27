@@ -9,16 +9,17 @@ import java.util.List;
 
 
 
+
+import com.fasterxml.jackson.annotation.JsonRawValue;
+
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
-import es.uvigo.esei.amchartsJava.core.controllers.ExportController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 
 
 public abstract class AmChart extends IModel {
 	protected List<LabelController> labels;
-	protected ExportController export;
 	protected AmBalloonController balloon;
 	protected List<Prefix> bigPrefixes;
 	protected List<Prefix> smallPrefixes;
@@ -54,13 +55,9 @@ public abstract class AmChart extends IModel {
 		
 	}
 
-	public ExportController getExport() {
-		return export;
-	}
-
-	public void addExport(ExportController exportController) {
-		export = exportController;
-		
+	@JsonRawValue
+	public String getExport() {
+		return "AmCharts.exportCFG";
 	}
 
 	public AmBalloonController getBalloon() {

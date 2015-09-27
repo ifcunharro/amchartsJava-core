@@ -1,7 +1,11 @@
 package es.uvigo.esei.amchartsJava.core.parser;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import org.apache.commons.io.IOUtils;
 
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
@@ -9,6 +13,7 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.MapperFeature;
@@ -48,6 +53,7 @@ public class ParserJson {
   	   	 mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, false);
   	   	 mapper.configure(JsonGenerator.Feature.AUTO_CLOSE_TARGET,false);
   	   	 mapper.setVisibility(PropertyAccessor.SETTER,Visibility.ANY);
+  	   	 mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
   	   	 return mapper;
 	}
 	
@@ -72,6 +78,19 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmSerialChartController serialController = null;
 			
+			/* se espera valor incorrecto sin comillas para propiedad export en json se cambia por misma cadena pero
+			 * com comillas para evitar JsonParseException y recuperar el valor guardado, actualmente esto
+			 *  no importa mucho pues export siempre recibe el mismo valor AmCharts.exportCFG y es el valor
+			 *  correcto, sin las comillas
+			 */
+			FileInputStream fis = new FileInputStream(tempFile);
+		    String content = IOUtils.toString(fis, Charset.defaultCharset());
+		    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
+		    
+		    FileOutputStream fos = new FileOutputStream(tempFile);
+		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
+		    fis.close();
+		    fos.close();
 			
 			serialController = mapper.readValue(new File(tempFile), AmSerialChartController.class);
 			
@@ -93,6 +112,13 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmXyChartController xyController = null;
 			
+			FileInputStream fis = new FileInputStream(tempFile);
+		    String content = IOUtils.toString(fis, Charset.defaultCharset());
+		    content = content.replaceAll("AmCharts.exportCFG", "\"\"");
+		    FileOutputStream fos = new FileOutputStream(tempFile);
+		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
+		    fis.close();
+		    fos.close();
 			
 			xyController = mapper.readValue(new File(tempFile), AmXyChartController.class);
 			
@@ -114,6 +140,13 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmRadarChartController radarController = null;
 			
+			FileInputStream fis = new FileInputStream(tempFile);
+		    String content = IOUtils.toString(fis, Charset.defaultCharset());
+		    content = content.replaceAll("AmCharts.exportCFG", "\"\"");
+		    FileOutputStream fos = new FileOutputStream(tempFile);
+		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
+		    fis.close();
+		    fos.close();
 			
 			radarController = mapper.readValue(new File(tempFile), AmRadarChartController.class);
 			
@@ -135,6 +168,13 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmFunnelChartController funnelController = null;
 			
+			FileInputStream fis = new FileInputStream(tempFile);
+		    String content = IOUtils.toString(fis, Charset.defaultCharset());
+		    content = content.replaceAll("AmCharts.exportCFG", "\"\"");
+		    FileOutputStream fos = new FileOutputStream(tempFile);
+		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
+		    fis.close();
+		    fos.close();
 			
 			funnelController = mapper.readValue(new File(tempFile), AmFunnelChartController.class);
 			
@@ -151,6 +191,13 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmPieChartController pieController = null;
 			
+			FileInputStream fis = new FileInputStream(tempFile);
+		    String content = IOUtils.toString(fis, Charset.defaultCharset());
+		    content = content.replaceAll("AmCharts.exportCFG", "\"\"");
+		    FileOutputStream fos = new FileOutputStream(tempFile);
+		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
+		    fis.close();
+		    fos.close();
 			
 			pieController = mapper.readValue(new File(tempFile), AmPieChartController.class);
 			
@@ -167,6 +214,13 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmAngularGaugeController gaugeController = null;
 			
+			FileInputStream fis = new FileInputStream(tempFile);
+		    String content = IOUtils.toString(fis, Charset.defaultCharset());
+		    content = content.replaceAll("AmCharts.exportCFG", "\"\"");
+		    FileOutputStream fos = new FileOutputStream(tempFile);
+		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
+		    fis.close();
+		    fos.close();
 			
 			gaugeController = mapper.readValue(new File(tempFile), AmAngularGaugeController.class);
 			
@@ -240,6 +294,8 @@ public class ParserJson {
 				
 				if(temp.toString().contains("maxBulletSize")){
 					AmGraphXyController xy = null;
+					
+					
 					xy = mapper.treeToValue(node.path("graphs").path(i), AmGraphXyController.class);
 					try {
 						xyChartController.addGraph(xy);
@@ -331,6 +387,7 @@ public class ParserJson {
 				
 				if(!temp.toString().contains("angle") && !temp.toString().contains("expand")){
 					GuideValueAxisController guideValueAxis = null;
+					
 					guideValueAxis = mapper.treeToValue(node.path("guides").path(i), GuideValueAxisController.class);
 					try {
 						xyChartController.addGuide(guideValueAxis);

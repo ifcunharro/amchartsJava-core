@@ -59,7 +59,7 @@ public final class Config {
 					new PatternLayout(logPattern), 
 					AmchartsJavaPaths.LOG_PATH+fileLog));
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+			
 			e1.printStackTrace();
 		}
 	}
@@ -70,7 +70,7 @@ public final class Config {
 					new PatternLayout("[%d{HH:mm:ss,SSS}] [%t] %-5p %c %x - %m%n"), 
 					AmchartsJavaPaths.LOG_PATH+"AMCHARTS.log"));
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+			
 			e1.printStackTrace();
 		}
 	}

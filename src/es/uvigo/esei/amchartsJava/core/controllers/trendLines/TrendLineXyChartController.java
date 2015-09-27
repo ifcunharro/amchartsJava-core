@@ -2,6 +2,8 @@ package es.uvigo.esei.amchartsJava.core.controllers.trendLines;
 
 import org.apache.log4j.Logger;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
@@ -52,6 +54,11 @@ public class TrendLineXyChartController extends TrendLineSerialChartController i
 			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
+	}
+	
+	@JsonSetter(value="valueAxisX")
+	private void setJsonValueAxisX(String valueAxisX){
+		trendLine.setFeature("valueAxisX", valueAxisX);
 	}
 
 }

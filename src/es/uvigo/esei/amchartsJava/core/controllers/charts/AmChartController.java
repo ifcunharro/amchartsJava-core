@@ -6,9 +6,9 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRawValue;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonSetter;
-
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
@@ -18,7 +18,6 @@ import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
-import es.uvigo.esei.amchartsJava.core.controllers.ExportController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -51,8 +50,15 @@ public abstract class AmChartController<E extends AmChart>
 	
 
 	//properties
+	@JsonRawValue
+	public Object getExport(){
+		return amchart.getExport();
+	}
 	
-	
+	//se asigna valor por defecto, este metodo solo existe para deserializar export, no borrar
+	public void setExport(Object export){
+		
+	}
 	
 	@JsonProperty(value = "addClassNames")
 	public Boolean IsAddClassNames(){
@@ -346,19 +352,6 @@ public abstract class AmChartController<E extends AmChart>
 	
 	public List<TitleController> getTitles(){
 		return amchart.getTitles();
-	}
-	
-	//propio
-	public ExportController getExport(){
-		return amchart.getExport();
-	}
-	
-	void setExport(ExportController export){
-		amchart.addExport(export);
-	}
-	//propio
-	public void addExport(ExportController export){
-		amchart.addExport(export);
 	}
 	
 	//propio

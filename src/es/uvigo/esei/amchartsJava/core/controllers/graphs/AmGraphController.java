@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -330,6 +331,11 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
+	}
+	
+	@JsonSetter(value="fillToGraph")
+	private void setJsonFillToGraph(String fillToGraph){
+		amGraph.setFeature("fillToGraph", fillToGraph);
 	}
 	
 	public Object getFontSize(){
@@ -694,6 +700,11 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
+	}
+	
+	@JsonSetter(value="valueAxis")
+	private void setJsonValueAxis(String valueAxis){
+		amGraph.setFeature("valueAxis", valueAxis);
 	}
 	
 	public String getValueField(){

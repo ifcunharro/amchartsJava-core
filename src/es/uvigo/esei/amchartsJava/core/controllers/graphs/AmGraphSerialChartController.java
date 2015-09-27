@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphSerialChartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -96,9 +97,12 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		return (String) amGraph.getFeature("lineColor");
 	}
 	
+	@JsonSetter
 	public void setLineColor(ColorsAmCharts lineColor){
 		amGraph.setFeature("lineColor", lineColor.toString());
 	}
+	
+	
 	
 	public String getLineColorField(){
 		return (String) amGraph.getFeature("lineColorField");

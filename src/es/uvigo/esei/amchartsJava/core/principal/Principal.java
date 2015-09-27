@@ -405,12 +405,14 @@ public class Principal {
 		AmSerialChartController serialController = null;
 		AmFunnelChartController rec = null;
 		AmAngularGaugeController regauge = null;
+		AmXyChartController sample = null;
 		
 		try {
 
 				serialController = ParserJson.loadAmSerialChart("pruebaJson");
 				rec = ParserJson.loadAmFunnelChart("pruebaFunnel");
 				regauge = ParserJson.loadAmAngularGauge("pruebaGauge.json");
+				sample = ParserJson.loadAmXyChart("sample");
 				
 			
 			} catch (IOException e) {
@@ -423,6 +425,8 @@ public class Principal {
 			ParserJson.saveJsonToConsole(serialController);
 			ParserJson.saveJsonToConsole(rec);
 			ParserJson.saveJsonToConsole(regauge);
+			
+			ParserJson.saveJsonToConsole(sample);
 			
 		} catch (IOException e) {
 			e.printStackTrace();

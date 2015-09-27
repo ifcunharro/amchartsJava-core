@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.axis.IValueAxisController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -237,6 +238,13 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
+	
+	@JsonSetter(value="synchronizeWith")
+	private void setJsonSynchronizeWith(String synchronizeWith){
+		axes.setFeature("synchronizeWith", synchronizeWith);
+	}
+	
+	
 	
 	public String getTotalText(){
 		return (String) axes.getFeature("totalText");

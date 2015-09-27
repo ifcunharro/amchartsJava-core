@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -255,6 +256,11 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
+	}
+	
+	@JsonSetter(value="valueAxis")
+	private void setJsonValueAxis(String valueAxis){
+		guide.setFeature("valueAxis", valueAxis);
 	}
 
 }

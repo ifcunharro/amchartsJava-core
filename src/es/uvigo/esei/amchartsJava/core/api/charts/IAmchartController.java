@@ -17,7 +17,6 @@ import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
 import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
-import es.uvigo.esei.amchartsJava.core.controllers.ExportController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -149,12 +148,6 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	//propio
 	abstract List<LabelController> getAllLabels();
-
-	//propio
-	abstract ExportController getExport();
-
-	//propio
-	abstract void addExport(ExportController exportController);
 
 	//propio
 	abstract AmBalloonController getBalloon();
