@@ -3,6 +3,7 @@ package es.uvigo.esei.amchartsJava.core.principal;
 
 
 import java.io.IOException;
+import java.util.List;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.Config;
@@ -19,6 +20,8 @@ import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmAngularGaugeController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmChartController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmChartsController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmFunnelChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmXyChartController;
@@ -406,6 +409,9 @@ public class Principal {
 		AmFunnelChartController rec = null;
 		AmAngularGaugeController regauge = null;
 		AmXyChartController sample = null;
+		/* clase que contiene charts y configuracion base*/
+		AmChartsController amController = new AmChartsController();
+		
 		
 		try {
 
@@ -413,6 +419,12 @@ public class Principal {
 				rec = ParserJson.loadAmFunnelChart("pruebaFunnel");
 				regauge = ParserJson.loadAmAngularGauge("pruebaGauge.json");
 				sample = ParserJson.loadAmXyChart("sample");
+				
+				// se añaden todos los charts
+				amController.addChart(serialController);
+				amController.addChart(rec);
+				amController.addChart(regauge);
+				amController.addChart(sample);
 				
 			
 			} catch (IOException e) {
@@ -433,7 +445,22 @@ public class Principal {
 		}
 		
 	
-		
+		/* prueba de que se han guarda bien todos los charts y se pueden recuperar*/
+		 @SuppressWarnings("rawtypes")
+		List<AmChartController> ola = amController.getCharts();
+		 for(@SuppressWarnings("rawtypes") AmChartController co:ola){
+			 if(co instanceof AmSerialChartController){
+				 serialController = (AmSerialChartController) co;
+				
+				 try {
+					ParserJson.saveJsonToConsole(serialController);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			 }
+			 
+		 }
 		
 		
 	}
