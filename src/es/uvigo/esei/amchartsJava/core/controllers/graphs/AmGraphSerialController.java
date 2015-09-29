@@ -40,6 +40,7 @@ public class AmGraphSerialController extends AmGraphSerialChartController
 	
 	public void setFillColorsField(String fillColorsField){
 		amGraph.setFeature("fillColorsField", fillColorsField);
+		amGraph.addGraphField("fillColorsField", fillColorsField);
 	}
 	
 	public String getGapField(String gapField){
@@ -48,6 +49,7 @@ public class AmGraphSerialController extends AmGraphSerialChartController
 	
 	public void setGapField(String gapField){
 		amGraph.setFeature("gapField", gapField);
+		amGraph.addGraphField("gapField", gapField);
 	}
 
 }

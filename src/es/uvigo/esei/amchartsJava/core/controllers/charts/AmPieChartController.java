@@ -95,6 +95,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	
 	public void setLabelRadiusField(String labelRadiusField){
 		amchart.setFeature("labelRadiusField", labelRadiusField);
+		amchart.addField("labelRadiusField",labelRadiusField);
 	}
 	
 	public String getLabelText(){

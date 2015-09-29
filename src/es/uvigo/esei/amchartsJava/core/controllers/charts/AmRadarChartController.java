@@ -26,6 +26,7 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 	
 	public void setCategoryField(String categoryField){
 		amchart.setFeature("categoryField", categoryField);
+		amchart.addField("categoryField", categoryField);
 	}
 	
 	public Object getMarginBottom(){

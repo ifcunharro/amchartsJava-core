@@ -18,6 +18,7 @@ public abstract class AmGraphCandleOhlcController extends AmGraphSerialControlle
 	
 	public void setHighField(String highField){
 		amGraph.setFeature("highField", highField);
+		amGraph.addGraphField("highField", highField);
 	}
 	
 	public String getLowField(){
@@ -26,6 +27,7 @@ public abstract class AmGraphCandleOhlcController extends AmGraphSerialControlle
 	
 	public void setLowField(String lowField){
 		amGraph.setFeature("lowField", lowField);
+		amGraph.addGraphField("lowField", lowField);
 	}
 	
 	public String getShowBulletsAt(){

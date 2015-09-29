@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -9,6 +10,8 @@ import java.util.List;
 
 
 
+
+import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonRawValue;
 
@@ -20,6 +23,8 @@ import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 
 public abstract class AmChart extends IModel {
 	protected List<LabelController> labels;
+	//guarda todos los fields activados para charts y el nombre asociado
+	protected Map<String,String> chartFields;
 	protected AmBalloonController balloon;
 	protected List<Prefix> bigPrefixes;
 	protected List<Prefix> smallPrefixes;
@@ -33,6 +38,13 @@ public abstract class AmChart extends IModel {
 	
 	public List<LabelController> getLabels() {
 		return labels;
+	}
+	
+	public void addField(String nameField, String valueField){
+		if(chartFields == null){
+			chartFields = new HashMap<String, String>();
+		}
+		chartFields.put(nameField, valueField);
 	}
 	
 	public void setAllLabels(List<LabelController> allLabels){

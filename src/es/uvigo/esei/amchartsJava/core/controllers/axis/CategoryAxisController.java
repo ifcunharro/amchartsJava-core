@@ -97,6 +97,7 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	
 	public void setForceShowField(String forceShowField){
 		axes.setFeature("forceShowField", forceShowField);
+		axes.addAxesField("forceShowField",forceShowField);
 	}
 	
 	public String getGridPosition(){
@@ -113,6 +114,7 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	
 	public void setLabelColorField(String labelColorField){
 		axes.setFeature("labelColorField", labelColorField);
+		axes.addAxesField("labelColorField", labelColorField);
 	}
 	
 	public String getLabelFunction(){

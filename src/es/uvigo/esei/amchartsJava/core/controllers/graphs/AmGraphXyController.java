@@ -129,6 +129,7 @@ public class AmGraphXyController extends AmGraphSerialChartController
 	
 	public void setXField(String xField){
 		amGraph.setFeature("xField", xField);
+		amGraph.addGraphField("xField", xField);
 	}
 	
 	public String getYAxis(){
@@ -159,6 +160,7 @@ public class AmGraphXyController extends AmGraphSerialChartController
 	
 	public void setYField(String yField){
 		amGraph.setFeature("yField", yField);
+		amGraph.addGraphField("yField", yField);
 	}
 
 	

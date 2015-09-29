@@ -90,6 +90,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setAlphaField(String alphaField){
 		amGraph.setFeature("alphaField", alphaField);
+		amGraph.addGraphField("alphaField", alphaField);
 	}
 	
 	@JsonProperty(value="animationPlayed")
@@ -181,6 +182,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setBulletField(String bulletField){
 		amGraph.setFeature("bulletField", bulletField);
+		amGraph.addGraphField("bulletField", bulletField);
 	}
 	
 	public Object getBulletOffset(){
@@ -217,6 +219,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setBulletSizeField(String bulletSizeField){
 		amGraph.setFeature("bulletSizeField", bulletSizeField);
+		amGraph.addGraphField("bulletSizeField", bulletSizeField);
 	}
 	
 	public String getCloseField(){
@@ -225,6 +228,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setCloseField(String closeField){
 		amGraph.setFeature("closeField", closeField);
+		amGraph.addGraphField("closeField", closeField);
 	}
 	
 	public String getColor(){
@@ -241,6 +245,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setColorField(String colorField){
 		amGraph.setFeature("colorField", colorField);
+		amGraph.addGraphField("colorField", colorField);
 	}
 	
 	public Object getCursorBulletAlpha(){
@@ -267,6 +272,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setCustomBulletField(String customBulletField){
 		amGraph.setFeature("customBulletField", customBulletField);
+		amGraph.addGraphField("customBulletField", customBulletField);
 	}
 	
 	public String getCustomMarker(){
@@ -295,6 +301,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setDescriptionField(String descriptionField){
 		amGraph.setFeature("descriptionField", descriptionField);
+		amGraph.addGraphField("descriptionField", descriptionField);
 	}
 	
 	public String getErrorField(){
@@ -303,6 +310,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setErrorField(String errorField){
 		amGraph.setFeature("errorField", errorField);
+		amGraph.addGraphField("errorField", errorField);
 	}
 	
 	public Object getFillAlphas(){
@@ -412,6 +420,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setLabelColorField(String labelColorField){
 		amGraph.setFeature("labelColorField", labelColorField);
+		amGraph.addGraphField("labelColorField", labelColorField);
 	}
 	
 	public String getLabelFunction(){
@@ -577,6 +586,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setPatternField(String patternField){
 		amGraph.setFeature("patternField", patternField);
+		amGraph.addGraphField("patternField", patternField);
 	}
 	
 	public Object getPrecision(){
@@ -674,6 +684,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setUrlField(String urlField){
 		amGraph.setFeature("urlField", urlField);
+		amGraph.addGraphField("urlField", urlField);
 	}
 	
 	public String getUrlTarget(){
@@ -713,6 +724,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setValueField(String valueField){
 		amGraph.setFeature("valueField", valueField);
+		amGraph.addGraphField("valueField", valueField);
 	}
 	
 	@JsonProperty(value="visibleInLegend")

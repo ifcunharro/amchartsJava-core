@@ -24,10 +24,10 @@ public class EN implements Idiom {
 		textsEN.put("PropertiesException", "Not found configuration.properties into resources folder");
 		textsEN.put("ConfigKeyException", "not found in configuration file.");
 		
-		textsEN.put("dayNames", "['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']");
-		textsEN.put("shortDayNames", "['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']");
-		textsEN.put("monthNames", "['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']");
-		textsEN.put("shortMonthNames", "['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']");
+		textsEN.put("dayNames", "['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];");
+		textsEN.put("shortDayNames", "['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];");
+		textsEN.put("monthNames", "['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];");
+		textsEN.put("shortMonthNames", "['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];");
 
 	}
 	

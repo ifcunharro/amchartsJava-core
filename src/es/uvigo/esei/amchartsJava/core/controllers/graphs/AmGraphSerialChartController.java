@@ -81,6 +81,7 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	
 	public void setDashLengthField(String dashLengthField){
 		amGraph.setFeature("dashLengthField", dashLengthField);
+		amGraph.addGraphField("dashLengthField", dashLengthField);
 	}
 	
 	public Object getFixedColumnWidth(){
@@ -110,6 +111,7 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	
 	public void setLineColorField(String lineColorField){
 		amGraph.setFeature("lineColorField", lineColorField);
+		amGraph.addGraphField("lineColorField", lineColorField);
 	}
 	
 	public Object getLineThickness(){
@@ -159,6 +161,7 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 	
 	public void setOpenField(String openField){
 		amGraph.setFeature("openField", openField);
+		amGraph.addGraphField("openField", openField);
 	}
 	
 	public String getPointPosition(){

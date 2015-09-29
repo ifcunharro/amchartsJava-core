@@ -24,7 +24,7 @@ public class AmChartsController implements Serializable {
 	
 	
 	public String enabledBaseHref(Boolean enabled){
-		return "AmCharts.baseHref = "+enabled.toString();
+		return "AmCharts.baseHref = "+enabled.toString()+";";
 	}
 	
 	
@@ -34,7 +34,7 @@ public class AmChartsController implements Serializable {
 	
 	public void setBezierX(Number bezierX) throws IntegerException{
 		if(NumberValidator.integerValidator(bezierX)){
-			amcharts.setFeature("bezierX", "AmCharts.bezierX = "+bezierX.toString());
+			amcharts.setFeature("bezierX", "AmCharts.bezierX = "+bezierX.toString()+";");
 		}
 	}
 	
@@ -45,7 +45,7 @@ public class AmChartsController implements Serializable {
 	
 	public void setBezierY(Number bezierY) throws IntegerException{
 		if(NumberValidator.integerValidator(bezierY)){
-			amcharts.setFeature("bezierY", "AmCharts.bezierY = "+bezierY.toString());
+			amcharts.setFeature("bezierY", "AmCharts.bezierY = "+bezierY.toString()+";");
 		}
 	}
 	
@@ -73,7 +73,7 @@ public class AmChartsController implements Serializable {
 	
 	public void setProcessDelay(Number processDelay) throws IntegerException{
 		if(NumberValidator.integerValidator(processDelay)){
-			amcharts.setFeature("processDelay", "AmCharts.processDelay = "+processDelay.toString());
+			amcharts.setFeature("processDelay", "AmCharts.processDelay = "+processDelay.toString()+";");
 		}
 	}
 	

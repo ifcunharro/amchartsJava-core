@@ -46,6 +46,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setAlphaField(String alphaField){
 		amchart.setFeature("alphaField", alphaField);
+		amchart.addField("alphaField", alphaField);
 	}
 	
 	public String getBaseColor(){
@@ -64,6 +65,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setClassNameField(String classNameField){
 		amchart.setFeature("classNameField", classNameField);
+		amchart.addField("classNameField", classNameField);
 	}
 	
 	public String getColorField(){
@@ -72,6 +74,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setColorField(String colorField){
 		amchart.setFeature("colorField", colorField);
+		amchart.addField("colorField", colorField);
 	}
 	
 	public List<String> getColors(){
@@ -92,6 +95,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setDescriptionField(String descriptionField){
 		amchart.setFeature("descriptionField", descriptionField);
+		amchart.addField("descriptionField", descriptionField);
 	}
 	
 	public List<Number> getGradientRatio(){
@@ -304,6 +308,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setPatternField(String patternField){
 		amchart.setFeature("patternField", patternField);
+		amchart.addField("patternField", patternField);
 	}
 	
 	public String getPulledField(){
@@ -312,6 +317,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setPulledField(String pulledField){
 		amchart.setFeature("pulledField", pulledField);
+		amchart.addField("pulledField", pulledField);
 	}
 	
 	public Object getPullOutDuration(){
@@ -401,6 +407,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setTitleField(String titleField){
 		amchart.setFeature("titleField", titleField);
+		amchart.addField("titleField", titleField);
 	}
 	
 	public String getUrlField(){
@@ -409,6 +416,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setUrlField(String urlField){
 		amchart.setFeature("urlField", urlField);
+		amchart.addField("urlField", urlField);
 	}
 	
 	public String getUrlTarget(){
@@ -425,6 +433,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setValueField(String valueField){
 		amchart.setFeature("valueField", valueField);
+		amchart.addField("valueField", valueField);
 	}
 	
 	public String getVisibleInLegendField(){
@@ -433,6 +442,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	
 	public void setVisibleInLegendField(String visibleInLegendField){
 		amchart.setFeature("visibleInLegendField", visibleInLegendField);
+		amchart.addField("visibleInLegendField", visibleInLegendField);
 	}
 	
 	//usado solo para deserializar json

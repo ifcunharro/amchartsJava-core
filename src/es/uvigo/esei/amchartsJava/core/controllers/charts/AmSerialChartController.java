@@ -44,6 +44,7 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	
 	public void setCategoryField(String categoryField){
 		amchart.setFeature("categoryField", categoryField);
+		amchart.addField("categoryField", categoryField);
 	}
 	
 	public Object getColumnSpacing(){

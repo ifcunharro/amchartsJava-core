@@ -24,10 +24,10 @@ public class ES implements Idiom {
 		textsES.put("PropertiesException", "No encontrado configuration.properties en carpeta resources");
 		textsES.put("ConfigKeyException", "no encontrada en archivo de configuración");
 		
-		textsES.put("dayNames", "['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']");
-		textsES.put("shortDayNames","['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb']");
-		textsES.put("monthNames", "['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']");
-		textsES.put("shortMonthNames", "['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']");
+		textsES.put("dayNames", "['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];");
+		textsES.put("shortDayNames","['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];");
+		textsES.put("monthNames", "['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];");
+		textsES.put("shortMonthNames", "['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];");
 
 
 	}
