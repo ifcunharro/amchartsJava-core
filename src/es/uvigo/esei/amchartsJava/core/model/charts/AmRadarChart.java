@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.model.charts;
 
 import org.apache.log4j.Logger;
 
-import es.uvigo.esei.amchartsJava.core.constants.Config;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;

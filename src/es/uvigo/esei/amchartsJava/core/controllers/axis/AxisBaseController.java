@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.axis;
 
 import java.io.Serializable;
+import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -29,6 +30,15 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	
 	{
 		axes = new AxisBase();
+	}
+	
+	@JsonIgnore
+	public Map<String,String> getAxesFields(){
+		return axes.getAxesFields();
+	}
+	
+	public void setAxesFields(Map<String,String> axesFields){
+		axes.setAxesFields(axesFields);
 	}
 	
 	@JsonProperty(value="autoGridCount")

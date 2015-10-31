@@ -28,21 +28,34 @@ import es.uvigo.esei.amchartsJava.core.model.collections.TrendLines;
 
 public abstract class AmRectangularChart extends AmCoordinateChart {
 	private List<String> plotAreaFillColors;
+	private List<Number> plotAreaFillAlphas;
 	private ChartCursorController chartCursor;
 	private ChartScrollBarController scrollBar;
 	private TrendLines trendLines;
 	
-	{
-		plotAreaFillColors = new ArrayList<String>();
-	}
 	
 	public List<String> getPlotAreaFillColors(){
 		return plotAreaFillColors;
 	}
 	
 	public void addPlotAreaFillColors(String... colors){
+		if(plotAreaFillColors == null){
+			plotAreaFillColors = new ArrayList<String>();
+		}
 		plotAreaFillColors.clear();
 		plotAreaFillColors.addAll(Arrays.asList(colors));
+	}
+	
+	public List<Number> getPlotAreaFillAlphas(){
+		return plotAreaFillAlphas;
+	}
+	
+	public void addPlotAreaFillAlphas(Number... colors){
+		if(plotAreaFillAlphas == null){
+			plotAreaFillAlphas = new ArrayList<Number>();
+		}
+		plotAreaFillAlphas.clear();
+		plotAreaFillAlphas.addAll(Arrays.asList(colors));
 	}
 	
 	public ChartCursorController getChartCursor(){

@@ -65,4 +65,6 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 
 	abstract void addCategoryAxis(CategoryAxisController categoryAxisController);
 
+	abstract CategoryAxisController getCategoryAxis();
+
 }

@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
 import java.io.Serializable;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -16,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
-import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
 import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
 import es.uvigo.esei.amchartsJava.core.constants.GraphTypesConstant.GraphType;
@@ -26,6 +26,7 @@ import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueTextConstant.L
 import es.uvigo.esei.amchartsJava.core.constants.MarkerTypeConstant.MarkerType;
 import es.uvigo.esei.amchartsJava.core.constants.TagsTextConstant.TagsText;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
@@ -76,6 +77,15 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amchart = chart;
 	}
 	
+	@JsonIgnore
+	public Map<String,String> getGraphFields(){
+		return amGraph.getGraphFields();
+	}
+	
+	public void setGraphFields(Map<String,String> graphFields){
+		amGraph.setGraphFields(graphFields);
+	}
+	
 	public String getId(){
 		return (String) amGraph.getFeature("id");
 	}
@@ -116,6 +126,14 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	
 	public void setBalloonFunction(String balloonFunction){
 		amGraph.setFeature("balloonFunction", balloonFunction);
+	}
+	
+	public String getBalloonText(){
+		return (String)amGraph.getFeature("balloonText");
+	}
+	
+	public void setBalloonText(String balloonText){
+		amGraph.setFeature("balloonText", balloonText);
 	}
 	
 	public String getBullet(){

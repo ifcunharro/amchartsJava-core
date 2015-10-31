@@ -27,5 +27,9 @@ public abstract class IModel extends Observable {
 		config.put(nameFeature, feature);
 	}
 	
+	public void removeFeature(String nameFeature){
+		config.remove(nameFeature);
+	}
+	
 	
 }

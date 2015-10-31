@@ -2,13 +2,17 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRawValue;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonSetter;
+
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
@@ -20,6 +24,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
+import es.uvigo.esei.amchartsJava.core.controllers.provider.DataProviderController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -46,9 +51,25 @@ public abstract class AmChartController<E extends AmChart>
 		this.setPath(AmchartsJavaPaths.AMCHARTS_PATH);
 		this.setPathToImages(AmchartsJavaPaths.IMAGES_PATH);
 	}
-
 	
+	public String getDataProvider(){
+		return amchart.getDataProvider();
+	}
+	
+	@JsonIgnore
+	public void setDataProvider(DataProviderController provider){
+		amchart.setDataProvider(provider);
+	}
 
+	@JsonIgnore
+	public Map<String,String> getChartFields(){
+		return amchart.getChartFields();
+	}
+	
+	public void setChartFields(HashMap<String, String> map){
+		amchart.setChartFields(map);
+	}
+	
 	//properties
 	@JsonRawValue
 	public Object getExport(){
@@ -144,19 +165,13 @@ public abstract class AmChartController<E extends AmChart>
 		amchart.setFeature("creditsPosition", creditsPosition.toString());
 	}
 	
-	//dataProvider
-	
-	public String getDecimalSepartator(){
+	public String getDecimalSeparator(){
 		return (String) amchart.getFeature("decimalSeparator");
 	}
 	//punto o coma, ningun otro para evitar conflictos
 	public void setDecimalSeparator(Separator decimalSeparator){
 		amchart.setFeature("decimalSeparator",decimalSeparator.toString());
 	}
-	
-	//defs
-	
-	//export
 	
 	public String getFontFamily(){
 		return (String) amchart.getFeature("fontFamily");

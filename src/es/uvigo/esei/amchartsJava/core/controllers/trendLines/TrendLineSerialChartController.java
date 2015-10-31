@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.Config;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;

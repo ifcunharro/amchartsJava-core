@@ -1,6 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.api.axis;
 
 
+import java.util.Map;
+
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -161,5 +163,9 @@ public abstract interface IAxisBaseController {
 	abstract Object getTitleRotation();
 	
 	abstract void setTitleRotation(Number titleRotation) throws OutOfRangeException;
+
+	abstract void setAxesFields(Map<String,String> axesFields);
+
+	abstract Map<String,String> getAxesFields();
 
 }

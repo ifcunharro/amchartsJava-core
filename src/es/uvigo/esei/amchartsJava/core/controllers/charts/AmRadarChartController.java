@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmRadarChartController;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
@@ -18,6 +19,7 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 
 	public AmRadarChartController() {
 		super(new AmRadarChart());
+		setType(AmchartsConstants.CHART_TYPES.getRadar());
 	}
 	
 	public String getCategoryField(){

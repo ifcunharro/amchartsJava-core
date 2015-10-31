@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
-import es.uvigo.esei.amchartsJava.core.constants.Config;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 
@@ -33,6 +33,8 @@ public class ColorValidator {
 		}
 		return true;
 	}
+	
+	
 	
 	public static boolean canActivateNegativeColor(String graphType){
 		if("line".equals(graphType) || "column".equals(graphType) || "step".equals(graphType)){

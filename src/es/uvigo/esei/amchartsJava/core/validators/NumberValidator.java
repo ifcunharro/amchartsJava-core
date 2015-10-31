@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.validators;
 
 import org.apache.log4j.Logger;
 
-import es.uvigo.esei.amchartsJava.core.constants.Config;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -57,6 +57,13 @@ public class NumberValidator {
 			logger.info(I18n.get("DoubleException"));
 		}
 		throw new DoubleException(I18n.get("DoubleException"));
+	}
+	
+	public static boolean checkArrayDoubles(Number... array) throws DoubleException{
+		for(Number value: array){
+			NumberValidator.doubleValidator(value);
+		}
+		return true;
 	}
 	
 }

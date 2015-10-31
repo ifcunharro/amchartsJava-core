@@ -1,5 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.constants;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
+
 
 
 public class AmchartsConstants {

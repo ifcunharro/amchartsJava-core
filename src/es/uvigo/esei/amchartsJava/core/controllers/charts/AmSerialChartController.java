@@ -1,6 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -153,8 +154,13 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		amchart.setFeature("zoomOutOnDataUpdated", zoomOutOnDataUpdated);
 	}
 	
+	@JsonSetter(value="categoryAxis")
 	public void addCategoryAxis(CategoryAxisController categoryAxisController){
 		amchart.addCategoryAxis(categoryAxisController);
+	}
+	
+	public CategoryAxisController getCategoryAxis(){
+		return amchart.getCategoryAxis();
 	}
 
 }

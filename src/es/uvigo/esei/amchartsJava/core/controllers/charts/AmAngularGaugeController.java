@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmAngularGaugeController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.Config;
 import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeArrowController;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeAxisController;
@@ -35,6 +35,7 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 
 	public AmAngularGaugeController() {
 		super(new AmAngularGauge());
+		setType(AmchartsConstants.CHART_TYPES.getGauge());
 	}
 	
 	@JsonProperty(value="adjustSize")

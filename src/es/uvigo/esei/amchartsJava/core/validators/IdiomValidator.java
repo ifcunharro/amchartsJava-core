@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.validators;
 
 import org.apache.log4j.Logger;
 
-import es.uvigo.esei.amchartsJava.core.constants.Config;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.EN;
 import es.uvigo.esei.amchartsJava.core.constants.lang.ES;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;

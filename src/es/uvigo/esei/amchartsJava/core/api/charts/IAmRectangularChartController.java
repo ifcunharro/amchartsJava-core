@@ -8,6 +8,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
+import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -63,6 +64,11 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	abstract void setPlotAreaBorderColor(String plotAreaBorderColor)
 			throws ColorException;
 
+	abstract List<Number> getPlotAreaFillAlphas();
+
+	abstract void setPlotAreaFillAlphas(Number... plotAreaFillAlphas)
+			throws DoubleException;
+	
 	abstract List<String> getPlotAreaFillColors();
 
 	abstract void setPlotAreaFillColors(String... plotAreaFillColors)

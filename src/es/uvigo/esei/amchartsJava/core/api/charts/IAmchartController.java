@@ -1,5 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -10,6 +11,8 @@ import java.util.List;
 
 
 
+
+import java.util.Map;
 
 import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
@@ -27,6 +30,13 @@ import es.uvigo.esei.amchartsJava.core.model.AmChart;
 public abstract interface IAmchartController<E extends AmChart> {
 
 	//properties
+	
+	abstract Map<String,String> getChartFields();
+	
+	abstract void setChartFields(HashMap<String, String> map);
+	
+	abstract Object getExport();
+	
 	abstract Boolean IsAddClassNames();
 
 	abstract void setAddClassNames(Boolean addClassNames);
@@ -65,7 +75,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	abstract void setCreditsPosition(CreditsPosition creditsPosition);
 
-	abstract String getDecimalSepartator();
+	abstract String getDecimalSeparator();
 
 	//punto o coma, ningun otro para evitar conflictos
 	abstract void setDecimalSeparator(Separator decimalSeparator);
@@ -172,5 +182,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	//method amcharts
 	abstract void removeLegend();
+
+	
 
 }

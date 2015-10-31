@@ -2,6 +2,8 @@ package es.uvigo.esei.amchartsJava.core.api.graphs;
 
 
 
+import java.util.Map;
+
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
 import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
@@ -41,6 +43,10 @@ public interface IAmGraphController  {
 	abstract String getBalloonFunction();
 
 	abstract void setBalloonFunction(String balloonFunction);
+	
+	abstract String getBalloonText();
+	
+	abstract void setBalloonText(String balloonText);
 
 	abstract String getBullet();
 
@@ -301,5 +307,9 @@ public interface IAmGraphController  {
 	abstract Boolean isVisibleInLegend();
 
 	abstract void setVisibleInLegend(Boolean visibleInLegend);
+
+	abstract void setGraphFields(Map<String,String> graphFields);
+
+	abstract Map<String,String> getGraphFields();
 
 }

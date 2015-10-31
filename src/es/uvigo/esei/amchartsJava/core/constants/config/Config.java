@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.constants;
+package es.uvigo.esei.amchartsJava.core.constants.config;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

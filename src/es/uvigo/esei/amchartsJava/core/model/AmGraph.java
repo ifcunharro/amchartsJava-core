@@ -11,6 +11,17 @@ public class AmGraph extends IModel  {
 	//guarda todos los fields activados para graph y el nombre asociado
 	private Map<String,String> graphFields;
 
+	public Map<String,String> getGraphFields(){
+		return graphFields;
+	}
+	
+	public void setGraphFields(Map<String,String> nameFields){
+		if(graphFields == null){
+			graphFields = new HashMap<String, String>();
+		}
+		graphFields = nameFields;
+	}
+	
 	public void addGraphField(String nameField,String valueField){
 		if(graphFields == null){
 			graphFields = new HashMap<String, String>();

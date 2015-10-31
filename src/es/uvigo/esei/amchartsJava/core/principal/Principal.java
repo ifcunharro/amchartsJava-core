@@ -3,10 +3,9 @@ package es.uvigo.esei.amchartsJava.core.principal;
 
 
 import java.io.IOException;
-import java.util.List;
-
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.Config;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
+import es.uvigo.esei.amchartsJava.core.constants.config.DefaultConfigCharts;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
@@ -20,7 +19,6 @@ import es.uvigo.esei.amchartsJava.core.controllers.TitleController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmAngularGaugeController;
-import es.uvigo.esei.amchartsJava.core.controllers.charts.AmChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmChartsController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmFunnelChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
@@ -33,6 +31,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideCategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisController;
+import es.uvigo.esei.amchartsJava.core.controllers.provider.DataProviderController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
@@ -43,6 +42,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.MalFormedPatternException;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
+import es.uvigo.esei.amchartsJava.core.model.AmCharts;
 import es.uvigo.esei.amchartsJava.core.parser.ParserJson;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
@@ -56,9 +56,60 @@ public class Principal {
 
 	public static void main(String[] args) {
 		
+		
+		/*dataProvider will be serialize with their method
+		dataProvider es List<Map<String,Object>> se recupera una lista y luego
+		se obtienen los maps, luego se guardan las claves y los valores, posible 
+		forma de asociar nombre de claves a fields amcharts es guardar esos valores en
+		fichero json aparte del dataProvider con un nombre tipo prueba_keys_fields.json y
+		prueba.json el json con la informacion del amcharts, como se observa el nombre
+		solo difiere en el sufijo keys_fields*/
+		
 		if(Config.getString("log").equals("file")){
 			Config.defaultConfigureLog();
 		}
+		
+		//prueba de defualt charts to BEW, se prueba graph boxplot
+		AmSerialChartController chartsCandle = new AmSerialChartController();
+		DefaultConfigCharts.initDefaultCandleStickGraphToBEW(chartsCandle);
+		
+		
+		DataProviderController provider = new DataProviderController();
+		provider.setFields(chartsCandle.getChartFields());
+		
+		
+		
+		chartsCandle.setDataProvider(provider);
+		
+		
+		AmCharts amcharts = new AmCharts();
+		amcharts.addChart(chartsCandle);
+		
+		
+		try {
+			ParserJson.saveJsonToConsole(chartsCandle);
+		} catch (IOException e15) {
+			// TODO Auto-generated catch block
+			e15.printStackTrace();
+		}
+		//amcharts.clear();
+		AmXyChartController chartsXY = new AmXyChartController();
+		DefaultConfigCharts.initDefaultXYGraphToBew(chartsXY, 
+				"Theorical quantiles", "Sample quantiles", "Shapiro plot");
+		
+		amcharts.addChart(chartsXY);
+		
+		try {
+			ParserJson.saveJsonToConsole(chartsXY);
+		} catch (IOException e15) {
+			// TODO Auto-generated catch block
+			e15.printStackTrace();
+		}
+		
+		
+		
+		
+		//fin prueba charts BEW
 		//ConfigureLog.defaultConfigure();
 		AmBalloonController bal = new AmBalloonController();
 		try {
@@ -443,24 +494,6 @@ public class Principal {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-	
-		/* prueba de que se han guarda bien todos los charts y se pueden recuperar*/
-		 @SuppressWarnings("rawtypes")
-		List<AmChartController> ola = amController.getCharts();
-		 for(@SuppressWarnings("rawtypes") AmChartController co:ola){
-			 if(co instanceof AmSerialChartController){
-				 serialController = (AmSerialChartController) co;
-				
-				 try {
-					ParserJson.saveJsonToConsole(serialController);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			 }
-			 
-		 }
 		
 		
 	}

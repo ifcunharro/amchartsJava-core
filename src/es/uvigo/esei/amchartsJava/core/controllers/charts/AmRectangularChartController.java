@@ -14,6 +14,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
+import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -146,6 +147,16 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	public void setPlotAreaBorderColor(String plotAreaBorderColor) throws ColorException{
 		if(ColorValidator.checkFormatColor(plotAreaBorderColor)){
 			amchart.setFeature("plotAreaBorderColor", plotAreaBorderColor);
+		}
+	}
+	
+	public List<Number> getPlotAreaFillAlphas(){
+		return amchart.getPlotAreaFillAlphas();
+	}
+	
+	public void setPlotAreaFillAlphas(Number... plotAreaFillAlphas) throws DoubleException{
+		if(NumberValidator.checkArrayDoubles(plotAreaFillAlphas)){
+			amchart.addPlotAreaFillAlphas(plotAreaFillAlphas);
 		}
 	}
 	

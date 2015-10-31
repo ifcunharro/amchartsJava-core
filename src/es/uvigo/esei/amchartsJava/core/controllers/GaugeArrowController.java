@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.IGaugeArrowController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.Config;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
