@@ -80,64 +80,74 @@ public class ParserJson {
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
 		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		boolean match = false;
 		if(!nameFileJson.contains(".json")){
 			nameFileJson = nameFileJson+".json";
 		}
+		
 		
 		ObjectMapper mapper = getParserJson();
 		try{
 			if((AmSerialChartController) chartController instanceof AmSerialChartController){
 				mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
 				saveFieldsFromAmSerialChartToTemp(nameFileJson, (AmSerialChartController)chartController);
+				match = true;
 			}
 		}catch(ClassCastException e1){
 			e1.printStackTrace();
 		}
-		try{
-			if((AmXyChartController) chartController instanceof AmXyChartController){
-				mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-				saveFieldsFromAmXyChartToTemp(nameFileJson, (AmXyChartController)chartController);
+		if(match == false){
+			try{
+				if((AmXyChartController) chartController instanceof AmXyChartController){
+					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+					saveFieldsFromAmXyChartToTemp(nameFileJson, (AmXyChartController)chartController);
+					match = true;
+				}
+			}catch(ClassCastException e1){
+				e1.printStackTrace();
 			}
-		}catch(ClassCastException e1){
-			e1.printStackTrace();
-		}
-		
-		try{
-			if((AmRadarChartController) chartController instanceof AmRadarChartController){
-				mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-				saveFieldsFromAmRadarChartToTemp(nameFileJson, (AmRadarChartController)chartController);
-			}
-		}catch(ClassCastException e1){
-			e1.printStackTrace();
 		}
 		
-		try{
-			if((AmFunnelChartController) chartController instanceof AmFunnelChartController){
-				mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-				saveFieldsFromAmFunnelChartToTemp(nameFileJson, (AmFunnelChartController)chartController);
+		if(match == false){
+			try{
+				if((AmRadarChartController) chartController instanceof AmRadarChartController){
+					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+					saveFieldsFromAmRadarChartToTemp(nameFileJson, (AmRadarChartController)chartController);
+					match = true;
+				}
+			}catch(ClassCastException e1){
+				e1.printStackTrace();
 			}
-		}catch(ClassCastException e1){
-			e1.printStackTrace();
 		}
-		
-		try{
-			if((AmPieChartController) chartController instanceof AmPieChartController){
-				mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-				saveFieldsFromAmPieChartToTemp(nameFileJson, (AmPieChartController)chartController);
+		if(match == false){
+			try{
+				if((AmFunnelChartController) chartController instanceof AmFunnelChartController){
+					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+					saveFieldsFromAmFunnelChartToTemp(nameFileJson, (AmFunnelChartController)chartController);
+					match = true;
+				}
+			}catch(ClassCastException e1){
+				e1.printStackTrace();
 			}
-		}catch(ClassCastException e1){
-			e1.printStackTrace();
 		}
-		
-		try{
-			if((AmAngularGaugeController) chartController instanceof AmAngularGaugeController){
-				mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+		if(match == false){
+			try{
+				if((AmPieChartController) chartController instanceof AmPieChartController){
+					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+					saveFieldsFromAmPieChartToTemp(nameFileJson, (AmPieChartController)chartController);
+				}
+			}catch(ClassCastException e1){
+				e1.printStackTrace();
 			}
-			else{
-				mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+		}
+		if(match == false){
+			try{
+				if((AmAngularGaugeController) chartController instanceof AmAngularGaugeController){
+					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+				}
+			}catch(ClassCastException e1){
+				e1.printStackTrace();
 			}
-		}catch(ClassCastException e1){
-			e1.printStackTrace();
 		}
 		
 			
@@ -490,25 +500,31 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		try{
-			listGraphFields = mapper.treeToValue(nodeFields.path("graphFields"), List.class);
-			if(!listGraphFields.isEmpty()){
-				List<AmGraphController> graphs = (List<AmGraphController>)serialChartController.getGraphs();
-				TypeFactory typeFactory = mapper.getTypeFactory();
-				MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
-				for(int i = 0;i < nodeFields.path("graphFields").size();i++){
-					graphFields = mapper.readValue(mapper.writeValueAsString(listGraphFields.get(i)), mapType);
-					graphs.get(i).setGraphFields(graphFields);
+			JsonNode graphFieldsNode = nodeFields.path("graphFields");
+			if(!graphFieldsNode.isMissingNode()){
+				listGraphFields = mapper.treeToValue(nodeFields.path("graphFields"), List.class);
+				if(!listGraphFields.isEmpty()){
+					List<AmGraphController> graphs = (List<AmGraphController>)serialChartController.getGraphs();
+					TypeFactory typeFactory = mapper.getTypeFactory();
+					MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
+					for(int i = 0;i < nodeFields.path("graphFields").size();i++){
+						graphFields = mapper.readValue(mapper.writeValueAsString(listGraphFields.get(i)), mapType);
+						graphs.get(i).setGraphFields(graphFields);
+					}
 				}
 			}
 		}catch(IOException e1){
 			e1.printStackTrace();
 		}
 		try{
-			axesFields = mapper.treeToValue(nodeFields.path("categoryAxisFields"), HashMap.class);
-			if(!axesFields.isEmpty()){
-				
-				if(serialChartController.getCategoryAxis()!=null){
-					serialChartController.getCategoryAxis().setAxesFields(axesFields);
+			JsonNode categoryAxisFieldsNode = nodeFields.path("categoryAxisFields");
+			if(!categoryAxisFieldsNode.isMissingNode()){
+				axesFields = mapper.treeToValue(nodeFields.path("categoryAxisFields"), HashMap.class);
+				if(!axesFields.isEmpty()){
+					
+					if(serialChartController.getCategoryAxis()!=null){
+						serialChartController.getCategoryAxis().setAxesFields(axesFields);
+					}
 				}
 			}
 		}catch(IOException e1){
@@ -553,14 +569,17 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		try{
-			listGraphFields = mapper.treeToValue(nodeFields.path("graphFields"), List.class);
-			if(!listGraphFields.isEmpty()){
-				List<AmGraphController> graphs = (List<AmGraphController>)xyChartController.getGraphs();
-				TypeFactory typeFactory = mapper.getTypeFactory();
-				MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
-				for(int i = 0;i < nodeFields.path("graphFields").size();i++){
-					graphFields = mapper.readValue(mapper.writeValueAsString(listGraphFields.get(i)), mapType);
-					graphs.get(i).setGraphFields(graphFields);
+			JsonNode graphFieldsNode = nodeFields.path("graphFields");
+			if(!graphFieldsNode.isMissingNode()){
+				listGraphFields = mapper.treeToValue(nodeFields.path("graphFields"), List.class);
+				if(!listGraphFields.isEmpty()){
+					List<AmGraphController> graphs = (List<AmGraphController>)xyChartController.getGraphs();
+					TypeFactory typeFactory = mapper.getTypeFactory();
+					MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
+					for(int i = 0;i < nodeFields.path("graphFields").size();i++){
+						graphFields = mapper.readValue(mapper.writeValueAsString(listGraphFields.get(i)), mapType);
+						graphs.get(i).setGraphFields(graphFields);
+					}
 				}
 			}
 		}catch(IOException e1){
@@ -604,14 +623,17 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		try{
-			listGraphFields = mapper.treeToValue(nodeFields.path("graphFields"), List.class);
-			if(!listGraphFields.isEmpty()){
-				List<AmGraphController> graphs = (List<AmGraphController>)radarChartController.getGraphs();
-				TypeFactory typeFactory = mapper.getTypeFactory();
-				MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
-				for(int i = 0;i < nodeFields.path("graphFields").size();i++){
-					graphFields = mapper.readValue(mapper.writeValueAsString(listGraphFields.get(i)), mapType);
-					graphs.get(i).setGraphFields(graphFields);
+			JsonNode graphFieldsNode = nodeFields.path("graphFields");
+			if(!graphFieldsNode.isMissingNode()){
+				listGraphFields = mapper.treeToValue(nodeFields.path("graphFields"), List.class);
+				if(!listGraphFields.isEmpty()){
+					List<AmGraphController> graphs = (List<AmGraphController>)radarChartController.getGraphs();
+					TypeFactory typeFactory = mapper.getTypeFactory();
+					MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
+					for(int i = 0;i < nodeFields.path("graphFields").size();i++){
+						graphFields = mapper.readValue(mapper.writeValueAsString(listGraphFields.get(i)), mapType);
+						graphs.get(i).setGraphFields(graphFields);
+					}
 				}
 			}
 		}catch(IOException e1){

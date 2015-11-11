@@ -303,7 +303,7 @@ public class Principal {
 			e8.printStackTrace();
 		}
 		AmBalloonController abc = new AmBalloonController();
-		abc.setAdjustColor(true);
+		abc.setAdjustBorderColor(true);
 		abc.setTextAlign(AmchartsConstants.TEXT_ALIGN.getTextAlignLeft());
 		asc.addBalloon(abc);
 		ChartCursorController ccc = new ChartCursorController();
@@ -443,13 +443,13 @@ public class Principal {
 		try {
 			//escribe a fichero 
 			ParserJson.saveJsonToTemp("pruebaJson.json", asc);
-			ParserJson.saveJsonToTemp("pruebaFunnel", funnel);
-			ParserJson.saveJsonToTemp("pruebaGauge", gaugec);
+			//ParserJson.saveJsonToTemp("pruebaFunnel", funnel);
+			//ParserJson.saveJsonToTemp("pruebaGauge", gaugec);
 			//escribe por consola
 			ParserJson.saveJsonToConsole(asc);
 			
-			ParserJson.saveJsonToConsole(funnel);
-			ParserJson.saveJsonToConsole(gaugec);
+			//ParserJson.saveJsonToConsole(funnel);
+			//ParserJson.saveJsonToConsole(gaugec);
 		} catch (IOException e) {
 			
 			e.printStackTrace();
@@ -467,15 +467,15 @@ public class Principal {
 		try {
 
 				serialController = ParserJson.loadAmSerialChart("pruebaJson");
-				rec = ParserJson.loadAmFunnelChart("pruebaFunnel");
-				regauge = ParserJson.loadAmAngularGauge("pruebaGauge.json");
-				sample = ParserJson.loadAmXyChart("sample");
+				//rec = ParserJson.loadAmFunnelChart("pruebaFunnel");
+				//regauge = ParserJson.loadAmAngularGauge("pruebaGauge.json");
+				//sample = ParserJson.loadAmXyChart("sample");
 				
 				// se añaden todos los charts
 				amController.addChart(serialController);
-				amController.addChart(rec);
-				amController.addChart(regauge);
-				amController.addChart(sample);
+				//amController.addChart(rec);
+				//amController.addChart(regauge);
+				//amController.addChart(sample);
 				
 			
 			} catch (IOException e) {
@@ -486,10 +486,10 @@ public class Principal {
 		try {
 			//comprueba que se ha leido bien el controller de carpeta temp
 			ParserJson.saveJsonToConsole(serialController);
-			ParserJson.saveJsonToConsole(rec);
-			ParserJson.saveJsonToConsole(regauge);
+			//ParserJson.saveJsonToConsole(rec);
+			//ParserJson.saveJsonToConsole(regauge);
 			
-			ParserJson.saveJsonToConsole(sample);
+			//ParserJson.saveJsonToConsole(sample);
 			
 		} catch (IOException e) {
 			e.printStackTrace();

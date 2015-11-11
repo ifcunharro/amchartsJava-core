@@ -3,7 +3,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -38,11 +37,6 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	
 	public AmLegendController(){
 		
-	}
-
-	@JsonIgnore
-	public AmLegend getLegend() {
-		return legend;
 	}
 	
 	public String getAlign(){

@@ -1,7 +1,11 @@
 package es.uvigo.esei.amchartsJava.core.constants;
 
 
-
+/**
+ *
+ * @author iago
+ *
+ */
 public final class TextAlignConstant {
 	
 	
@@ -25,7 +29,11 @@ public final class TextAlignConstant {
 		return InitSingleton.INSTANCE;
 	}
 	
-	
+	/**
+	 * 
+	 *
+	 *
+	 */
 	public enum TextAlign{
 		left, middle, right;
 	}

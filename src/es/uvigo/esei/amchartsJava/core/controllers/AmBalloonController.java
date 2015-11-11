@@ -28,13 +28,13 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		balloon = new AmBalloon();
 	}
 	
-	@JsonProperty(value="adjustColor")
-	public Boolean isAdjustColor(){
-		return (Boolean)balloon.getFeature("adjustColor");
+	@JsonProperty(value="adjustBorderColor")
+	public Boolean isAdjustBorderColor(){
+		return (Boolean)balloon.getFeature("adjustBorderColor");
 	}
 	
-	public void setAdjustColor(Boolean adjustColor){
-		balloon.setFeature("adjustColor", adjustColor);
+	public void setAdjustBorderColor(Boolean adjustBorderColor){
+		balloon.setFeature("adjustBorderColor", adjustBorderColor);
 	}
 	
 	public Object getAnimationDuration(){

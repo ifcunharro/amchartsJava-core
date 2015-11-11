@@ -1,11 +1,21 @@
 package es.uvigo.esei.amchartsJava.core.constants.lang;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.exceptions.LangException;
 import es.uvigo.esei.amchartsJava.core.validators.IdiomValidator;
 
 public final class I18n {
 	
 	private static Idiom lang = ES.getInstance();
+	
+	static{
+		try {
+			lang = IdiomValidator.checkIdiom(Config.getString("lang"));
+		} catch (LangException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	public static Idiom getLanguage() {
 		return lang;
