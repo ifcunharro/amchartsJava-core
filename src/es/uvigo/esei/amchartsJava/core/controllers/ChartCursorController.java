@@ -110,8 +110,8 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getCategoryBallonAlpha(){
-		return chartCursor.getFeature("categoryBallonAlpha");
+	public Object getCategoryBalloonAlpha(){
+		return chartCursor.getFeature("categoryBalloonAlpha");
 	}
 	
 	public void setCategoryBalloonAlpha(Number categoryBalloonAlpha) throws OutOfRangeException{
@@ -124,7 +124,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		return (String) chartCursor.getFeature("categoryBalloonColor");
 	}
 	
-	public void setCategoryBallonColor(String categoryBalloonColor) throws ColorException{
+	public void setCategoryBalloonColor(String categoryBalloonColor) throws ColorException{
 		if(ColorValidator.checkFormatColor(categoryBalloonColor)){
 			chartCursor.setFeature("categoryBalloonColor", categoryBalloonColor);
 		}

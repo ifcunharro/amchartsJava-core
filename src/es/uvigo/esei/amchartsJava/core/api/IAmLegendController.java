@@ -73,7 +73,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set backgroundColor property.
 	 * @param backgroundColor Value for backgroundColor.
-	 * @throws ColorException Format of color not admitted, format color admitted:#000000
+	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
 	 */
 	abstract void setBackgroundColor(String backgroundColor)
 			throws ColorException;
@@ -102,7 +102,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set borderColor property.
 	 * @param borderColor Value for borderColor.
-	 * @throws ColorException Color format not admitted, format color admitted:#000000
+	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
 	 */
 	abstract void setBorderColor(String borderColor) throws ColorException;
 
@@ -115,7 +115,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set bottom property.
 	 * @param bottom Value for bottom.
-	 * @throws IntegerException Value for bottom is not a integer number
+	 * @throws IntegerException Value for bottom is not an integer number
 	 */
 	abstract void setBottom(Number bottom) throws IntegerException;
 
@@ -129,7 +129,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set color property.
 	 * @param color Value for color.
-	 * @throws ColorException Color format not admitted, color format admitted:#000000
+	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
 	 */
 	abstract void setColor(String color) throws ColorException;
 
@@ -154,7 +154,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Set enabled property.
-	 * @param enabled Show or not show legend.
+	 * @param enabled Show or don't show legend.
 	 */
 	abstract void setEnabled(Boolean enabled);
 
@@ -332,7 +332,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set markerBorderColor property.
 	 * @param markerBorderColor Value for markerBorderColor.
-	 * @throws ColorException Color format not admitted, format color admitted:#000000
+	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
 	 */
 	abstract void setMarkerBorderColor(String markerBorderColor)
 			throws ColorException;
@@ -362,7 +362,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set markerDisabledColor property.
 	 * @param markerDisabledColor Value for markerDisabledColor.
-	 * @throws ColorException Color format not admitted, color format admitted: #000000
+	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
 	 */
 	abstract void setMarkerDisabledColor(String markerDisabledColor)
 			throws ColorException;
@@ -428,92 +428,273 @@ public abstract interface IAmLegendController  {
 	 */
 	abstract String getPeriodValueText();
 
+	/**
+	 * Set periodValueText property.
+	 * @param periodValueText Value for periodValueText.
+	 */
 	abstract void setPeriodValueText(String periodValueText);
 
+	/**
+	 * Get position property.
+	 * @return String Value for position.
+	 */
 	abstract String getPosition();
-
+	
+	/**
+	 * Set position property.
+	 * @param position Value for position. 
+	 */
 	abstract void setPosition(LegendPosition position);
 
+	/**
+	 * Get reversedOrder property.
+	 * @return Boolean Value for reversedOrder.
+	 */
 	abstract Boolean isReversedOrder();
 
+	/**
+	 * Set reversed
+	 * @param reversedOrder Enable or disable reversedOrder.
+	 */
 	abstract void setReversedOrder(Boolean reversedOrder);
 
+	/**
+	 * Get right property.
+	 * @return Value for right is an integer number.
+	 */
 	abstract Object getRight();
-
+	
+	/**
+	 * Set right property.
+	 * @param right Value for right.
+	 * @throws IntegerException Value for right is not an integer number.
+	 */
 	abstract void setRight(Number right) throws IntegerException;
 
+	/**
+	 * Get rollOverColor property.
+	 * @return String Valiue for rollOverColor.
+	 */
 	abstract String getRollOverColor();
 
+	/**
+	 * Set rollOverColor property.
+	 * @param rollOverColor Value for rollOverColor.
+	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
+	 */
 	abstract void setRollOverColor(String rollOverColor) throws ColorException;
 
+	/**
+	 * Get rollOverGraphAlpha property.
+	 * @return Object Value for rollOverGraphAlpha is a double number.
+	 */
 	abstract Object getRollOverGraphAlpha();
 
+	/**
+	 * Set rollOverGraphAlpha property.
+	 * @param rollOverGraphAlpha Value for rollOverGraphAlpha.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
+	 */
 	abstract void setRollOverGraphAlpha(Number rollOverGraphAlpha)
 			throws OutOfRangeException;
 
+	/**
+	 * Get showEntries property.
+	 * @return Boolean Value for showEntries.
+	 */
 	abstract Boolean isShowEntries();
 
+	/**
+	 * Set showEntries property.
+	 * @param showEntries Show or don't show entries.
+	 */
 	abstract void setShowEntries(Boolean showEntries);
 
+	/**
+	 * Get spacint property.
+	 * @return Object Value for spacing is an integer number.
+	 */
 	abstract Object getSpacing();
-
+	
+	/**
+	 * Set spacing property.With improvedVisibility enabled range activated.
+	 * @param spacing Value for spacing.
+	 * @throws OutOfRangeException Value out of range admitted: 0-10.
+	 */
 	abstract void setSpacing(Number spacing) throws OutOfRangeException;
 
+	/**
+	 * Get switchable property.
+	 * @return Boolean Value for switchable.
+	 */
 	abstract Boolean isSwitchable();
 
+	/**
+	 * Set switchable property.
+	 * @param switchable Enable or disable switch.
+	 */
 	abstract void setSwitchable(Boolean switchable);
 
+	/**
+	 * Get switchColor property.
+	 * @return String Value for switchColor.
+	 */
 	abstract String getSwitchColor();
 
+	/**
+	 * Set switchColor property.
+	 * @param switchColor Value for switchColor.
+	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
+	 */
 	abstract void setSwitchColor(String switchcolor) throws ColorException;
 
+	/**
+	 * Get switchType property.
+	 * @return String Value for switchType.
+	 */
 	abstract String getSwitchType();
 
+	/**
+	 * Set switchType property.
+	 * @param switchType Value for switchType.
+	 */
 	abstract void setSwitchType(SwitchType switchType);
 
+	/**
+	 * Get textClickEnabled property.
+	 * @return Boolean Value for textClickEnabled.
+	 */
 	abstract Boolean isTextClickEnabled();
 
+	/**
+	 * Set textClickEnabled property.
+	 * @param textClickEnabled Enable or disable textClick.
+	 */
 	abstract void setTextClickEnabled(Boolean textClickEnabled);
 
+	/**
+	 * Get top property.
+	 * @return Object Value for top is an integer number.
+	 */
 	abstract Object getTop();
 
+	/**
+	 * Set top property.
+	 * @param top Value for top.
+	 * @throws IntegerException Value for top is not an integer number.
+	 */
 	abstract void setTop(Number top) throws IntegerException;
 
+	/**
+	 * Get useGraphSettings property.
+	 * @return Boolean Value for useGraphSettings.
+	 */
 	abstract Boolean isUseGraphSettings();
 
+	/**
+	 * Set useGraphSettings property.
+	 * @param useGraphSettings Enable or disable use of graphSettings.
+	 */
 	abstract void setUseGraphSettings(Boolean useGraphSettings);
 
+	/**
+	 * Get useMarkerColorForLabels property.
+	 * @return Boolean Value for useMarkerColorForLabels.
+	 */
 	abstract Boolean isUseMarkerColorForLabels();
 
+	/**
+	 * Set useMarkerColorForLabels property.
+	 * @param useMarkerColorForLabels Use or not use markerColor for labels.
+	 */
 	abstract void setUseMarkerColorForLabels(Boolean useMarkerColorForLabels);
 
+	/**
+	 * Get useMarkerColorForValues property.
+	 * @return Boolean Value for useMarkerColorForValues.
+	 */
 	abstract Boolean isUseMarkerColorForValues();
 
+	/**
+	 * Set useMarkerColorForValues property.
+	 * @param useMarkerColorForValues Use or not use markerColor for values.
+	 */
 	abstract void setUseMarkerColorForValues(Boolean useMarkerColorForValues);
 
+	/**
+	 * Get valueAlign property.
+	 * @return String Value for valueAlign.
+	 */
 	abstract String getValueAlign();
 
+	/**
+	 * Set valueAlign property.
+	 * @param valueAlign Value for valueAlign.
+	 */
 	abstract void setValueAlign(ValueAlign valueAlign);
 
+	/**
+	 * Get valueFunction property.
+	 * @return String Value for valueFunction.
+	 */
 	abstract String getValueFunction();
 
+	/**
+	 * Set valueFunction property.
+	 * @param valueFunction Value for valueFunction.
+	 */
 	abstract void setValueFunction(String valueFunction);
 
+	/**
+	 * Get valueText property.<br>
+	 * Default: valueField
+	 * @return String Value for valueText.
+	 */
 	abstract String getValueText();
 
-	//cualquier texto pero tiene más sentido dejarlo en blanco, usa el valueField
+	/**
+	 * Set valueText property.
+	 * @param valueText Value for valueText.
+	 */
 	abstract void setValueText(String valueText);
 
+	/**
+	 * Get valueWidth property.
+	 * @return Object Value for valueWidth is an integer number.
+	 */
 	abstract Object getValueWidth();
 
+	/**
+	 * Set valueWidth property.With improvedVisibility enabled range activated.
+	 * @param valueWidth Value for valueWidth.
+	 * @throws OutOfRangeException Value out or range admitted: 0-50.
+	 */
 	abstract void setValueWidth(Number valueWidth) throws OutOfRangeException;
 
+	/**
+	 * Get verticalGap property.
+	 * @return Object Value for verticalGap is an integer number.
+	 */
 	abstract Object getVerticalGap();
 
+	/**
+	 * Set verticalGap property.With improvedVisibility enabled range activated.
+	 * @param verticalGap Value for verticalGap.
+	 * @throws OutOfRangeException Value out of range admitted: 0-10.
+	 */
 	abstract void setVerticalGap(Number verticalGap) throws OutOfRangeException;
 
+	/**
+	 * Get width property.
+	 * @return Object Value for width is an integer number.
+	 */
 	abstract Object getWidth();
 
+	/**
+	 * Set width property.
+	 * @param width Value for width.
+	 * @throws IntegerException Value for width is not an integer number.
+	 */
 	abstract void setWidth(Number width) throws IntegerException;
 
 }

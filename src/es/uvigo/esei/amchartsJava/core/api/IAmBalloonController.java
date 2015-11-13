@@ -68,7 +68,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Set borderColor property.
 	 * @param borderColor Value for borderColor.
-	 * @throws ColorException Format of color not admitted, format color admitted: #000000.
+	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff.
 	 */
 	abstract void setBorderColor(String borderColor) throws ColorException;
 
@@ -97,7 +97,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Set color property.
 	 * @param color Value for color.
-	 * @throws ColorException Format of color not admitted, format color admitted: #000000.
+	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff.
 	 */
 	abstract void setColor(String color) throws ColorException;
 
@@ -138,7 +138,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Set fadeOutDuration property.With improvedVisibility enabled range activated.
 	 * @param fadeOutDuration Value for fadeOutDuration in seconds.
-	 * @throws OutOfRangeException Value out or range admitted: 0.0-2.0.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-2.0.
 	 */
 	abstract void setFadeOutDuration(Number fadeOutDuration)
 			throws OutOfRangeException;
@@ -167,7 +167,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Set fillColor property. 
 	 * @param fillColor Value for fillColor.
-	 * @throws ColorException Format of color not admitted, format color admitted: #000000.
+	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff.
 	 */
 	abstract void setFillColor(String fillColor) throws ColorException;
 
@@ -292,7 +292,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Set shadowColor property. 
 	 * @param shadowColor Value for shadowColor.
-	 * @throws ColorException Format of color not admitted, format color admitted: #000000.
+	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff.
 	 */
 	abstract void setShadowColor(String shadowColor) throws ColorException;
 
@@ -305,7 +305,7 @@ public abstract interface IAmBalloonController {
 
 	/**
 	 * Set showBullet property.
-	 * @param showBullet Show or not show bullet.
+	 * @param showBullet Show or don't show bullet.
 	 */
 	abstract void setShowBullet(Boolean showBullet);
 
