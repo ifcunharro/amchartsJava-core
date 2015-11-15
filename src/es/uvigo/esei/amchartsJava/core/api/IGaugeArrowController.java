@@ -7,6 +7,12 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmAngularGauge;
 
+/**
+ * Interface for controller of GaugeArrow. Details of GaugeArrow and 
+ *  their properties in AmCharts API
+ *  
+ * @author Iago Fernández Cuñarro
+ */
 public abstract interface IGaugeArrowController {
 
 	abstract void setChart(AmAngularGauge chart);

@@ -435,7 +435,8 @@ public abstract interface IAmLegendController  {
 	abstract void setPeriodValueText(String periodValueText);
 
 	/**
-	 * Get position property.
+	 * Get position property.<br>
+	 * Default: bottom.
 	 * @return String Value for position.
 	 */
 	abstract String getPosition();
@@ -447,7 +448,8 @@ public abstract interface IAmLegendController  {
 	abstract void setPosition(LegendPosition position);
 
 	/**
-	 * Get reversedOrder property.
+	 * Get reversedOrder property.<br>
+	 * Default: false.
 	 * @return Boolean Value for reversedOrder.
 	 */
 	abstract Boolean isReversedOrder();
@@ -472,7 +474,8 @@ public abstract interface IAmLegendController  {
 	abstract void setRight(Number right) throws IntegerException;
 
 	/**
-	 * Get rollOverColor property.
+	 * Get rollOverColor property.<br>
+	 * Default: #cc0000
 	 * @return String Valiue for rollOverColor.
 	 */
 	abstract String getRollOverColor();
@@ -485,7 +488,8 @@ public abstract interface IAmLegendController  {
 	abstract void setRollOverColor(String rollOverColor) throws ColorException;
 
 	/**
-	 * Get rollOverGraphAlpha property.
+	 * Get rollOverGraphAlpha property.<br>
+	 * Default: 1.
 	 * @return Object Value for rollOverGraphAlpha is a double number.
 	 */
 	abstract Object getRollOverGraphAlpha();
@@ -499,7 +503,8 @@ public abstract interface IAmLegendController  {
 			throws OutOfRangeException;
 
 	/**
-	 * Get showEntries property.
+	 * Get showEntries property.<br>
+	 * Default: true.
 	 * @return Boolean Value for showEntries.
 	 */
 	abstract Boolean isShowEntries();
@@ -511,7 +516,8 @@ public abstract interface IAmLegendController  {
 	abstract void setShowEntries(Boolean showEntries);
 
 	/**
-	 * Get spacint property.
+	 * Get spacing property.<br>
+	 * Default: 10
 	 * @return Object Value for spacing is an integer number.
 	 */
 	abstract Object getSpacing();
@@ -524,7 +530,8 @@ public abstract interface IAmLegendController  {
 	abstract void setSpacing(Number spacing) throws OutOfRangeException;
 
 	/**
-	 * Get switchable property.
+	 * Get switchable property.<br>
+	 * Default: true.
 	 * @return Boolean Value for switchable.
 	 */
 	abstract Boolean isSwitchable();
@@ -536,7 +543,8 @@ public abstract interface IAmLegendController  {
 	abstract void setSwitchable(Boolean switchable);
 
 	/**
-	 * Get switchColor property.
+	 * Get switchColor property.<br>
+	 * Default: #ffffff
 	 * @return String Value for switchColor.
 	 */
 	abstract String getSwitchColor();
@@ -546,10 +554,11 @@ public abstract interface IAmLegendController  {
 	 * @param switchColor Value for switchColor.
 	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
 	 */
-	abstract void setSwitchColor(String switchcolor) throws ColorException;
+	abstract void setSwitchColor(String switchColor) throws ColorException;
 
 	/**
-	 * Get switchType property.
+	 * Get switchType property.<br>
+	 * Default: x.
 	 * @return String Value for switchType.
 	 */
 	abstract String getSwitchType();
@@ -561,7 +570,8 @@ public abstract interface IAmLegendController  {
 	abstract void setSwitchType(SwitchType switchType);
 
 	/**
-	 * Get textClickEnabled property.
+	 * Get textClickEnabled property.<br>
+	 * Default: false.
 	 * @return Boolean Value for textClickEnabled.
 	 */
 	abstract Boolean isTextClickEnabled();
@@ -586,7 +596,8 @@ public abstract interface IAmLegendController  {
 	abstract void setTop(Number top) throws IntegerException;
 
 	/**
-	 * Get useGraphSettings property.
+	 * Get useGraphSettings property.<br>
+	 * Default: false.
 	 * @return Boolean Value for useGraphSettings.
 	 */
 	abstract Boolean isUseGraphSettings();
@@ -598,7 +609,8 @@ public abstract interface IAmLegendController  {
 	abstract void setUseGraphSettings(Boolean useGraphSettings);
 
 	/**
-	 * Get useMarkerColorForLabels property.
+	 * Get useMarkerColorForLabels property.<br>
+	 * Default: false.
 	 * @return Boolean Value for useMarkerColorForLabels.
 	 */
 	abstract Boolean isUseMarkerColorForLabels();
@@ -610,7 +622,8 @@ public abstract interface IAmLegendController  {
 	abstract void setUseMarkerColorForLabels(Boolean useMarkerColorForLabels);
 
 	/**
-	 * Get useMarkerColorForValues property.
+	 * Get useMarkerColorForValues property.<br>
+	 * Default: false.
 	 * @return Boolean Value for useMarkerColorForValues.
 	 */
 	abstract Boolean isUseMarkerColorForValues();
@@ -622,7 +635,8 @@ public abstract interface IAmLegendController  {
 	abstract void setUseMarkerColorForValues(Boolean useMarkerColorForValues);
 
 	/**
-	 * Get valueAlign property.
+	 * Get valueAlign property.<br>
+	 * Default: right.
 	 * @return String Value for valueAlign.
 	 */
 	abstract String getValueAlign();
@@ -647,7 +661,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get valueText property.<br>
-	 * Default: valueField
+	 * Default: [[value]]
 	 * @return String Value for valueText.
 	 */
 	abstract String getValueText();
@@ -659,7 +673,8 @@ public abstract interface IAmLegendController  {
 	abstract void setValueText(String valueText);
 
 	/**
-	 * Get valueWidth property.
+	 * Get valueWidth property.<br>
+	 * Default: 50.
 	 * @return Object Value for valueWidth is an integer number.
 	 */
 	abstract Object getValueWidth();
@@ -672,7 +687,8 @@ public abstract interface IAmLegendController  {
 	abstract void setValueWidth(Number valueWidth) throws OutOfRangeException;
 
 	/**
-	 * Get verticalGap property.
+	 * Get verticalGap property.<br>
+	 * Default: 10
 	 * @return Object Value for verticalGap is an integer number.
 	 */
 	abstract Object getVerticalGap();

@@ -11,7 +11,7 @@ import es.uvigo.esei.amchartsJava.core.api.charts.IAmRectangularChartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
-import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
+import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollbarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
@@ -264,8 +264,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		return amchart.getChartCursor();
 	}
 	
-	public ChartScrollBarController getChartScrollBar(){
-		return amchart.getChartScrollBar();
+	public ChartScrollbarController getChartScrollbar(){
+		return amchart.getChartScrollbar();
 	}
 	
 	public Object getTrendLines(){
@@ -278,8 +278,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	@JsonSetter(value="chartScrollbar")
-	public void addChartScrollBar(ChartScrollBarController chartScrollBarController){
-		amchart.addChartScrollBar(chartScrollBarController);
+	public void addChartScrollbar(ChartScrollbarController chartScrollbarController){
+		amchart.addChartScrollbar(chartScrollbarController);
 	}
 	
 	public <T extends TrendLineSerialChartController> void addTrendLine(T trendLineController) throws NotSupportedException{
@@ -290,8 +290,8 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		amchart.removeChartCursor();
 	}
 	
-	public void removeChartScrollBar(){
-		amchart.removeChartScrollBar();
+	public void removeChartScrollbar(){
+		amchart.removeChartScrollbar();
 	}
 	
 	public void removeTrendLine(String trendLine){

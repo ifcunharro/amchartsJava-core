@@ -20,6 +20,7 @@ public class AmchartsConstants {
 	}
 
 	public static final DurationConstant DURATION_UNITS = DurationConstant.getInstance();
+	public static final DragIconConstant DRAG_ICONS = DragIconConstant.getInstance();
 	//usada para ser escogida por interfaz
 	public static final CreditsPositionConstant CREDITS_POSITION = CreditsPositionConstant.getInstance();
 	public static final PointPositionGraphConstant POINT_POSITION_GRAPH = PointPositionGraphConstant.getInstance();

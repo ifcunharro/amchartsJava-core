@@ -5,7 +5,7 @@ import java.util.List;
 
 import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
-import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
+import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollbarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
@@ -114,20 +114,20 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 
 	abstract ChartCursorController getChartCursor();
 	
-	abstract ChartScrollBarController getChartScrollBar();
+	abstract ChartScrollbarController getChartScrollbar();
 	
 	abstract Object getTrendLines();
 	
 	abstract void addChartCursor(ChartCursorController chartCursorController);
 
-	abstract void addChartScrollBar(ChartScrollBarController chartScrollBarController);
+	abstract void addChartScrollbar(ChartScrollbarController chartScrollbarController);
 	
 	abstract <T extends TrendLineSerialChartController> void addTrendLine(
 			T trendLineController) throws NotSupportedException;
 	
 	abstract void removeChartCursor();
 	
-	abstract void removeChartScrollBar();
+	abstract void removeChartScrollbar();
 	
 	abstract void removeTrendLine(String trendLine);
 	

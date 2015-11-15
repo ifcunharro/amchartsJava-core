@@ -25,7 +25,8 @@ public abstract interface IChartCursorController {
 	abstract void setChart(AmRectangularChart chart);
 
 	/**
-	 * Get adjustment property.
+	 * Get adjustment property.<br>
+	 * Default: 0.
 	 * @return Object Value for adjustment is an integer number.
 	 */
 	abstract Object getAdjustment();
@@ -40,7 +41,8 @@ public abstract interface IChartCursorController {
 	abstract void setAdjustment(Number adjustment) throws IntegerException;
 
 	/**
-	 * Get animationDuration property.
+	 * Get animationDuration property.<br>
+	 * Default: 0.3.
 	 * @return Object Value for animationDuration is a double number.
 	 */
 	abstract Object getAnimationDuration();
@@ -54,7 +56,8 @@ public abstract interface IChartCursorController {
 			throws OutOfRangeException;
 
 	/**
-	 * Get avoidBalloonOverlapping property.
+	 * Get avoidBalloonOverlapping property.<br>
+	 * Default: true.
 	 * @return Boolean Value for avoidBalloonOverlapping.
 	 */
 	abstract Boolean isAvoidBalloonOverlapping();
@@ -66,7 +69,8 @@ public abstract interface IChartCursorController {
 	abstract void setAvoidBalloonOverlapping(Boolean avoidBalloonOverlapping);
 
 	/**
-	 * Get balloonPointerOrientation property.
+	 * Get balloonPointerOrientation property.<br>
+	 * Default: horizontal.
 	 * @return String Value for balloonPointerOrientation.
 	 */
 	abstract String getBalloonPointerOrientation();
@@ -79,19 +83,21 @@ public abstract interface IChartCursorController {
 			Orientation balloonPointerOrientation);
 
 	/**
-	 * Get bulletsEnabled property.
+	 * Get bulletsEnabled property.<br>
+	 * Default: false.
 	 * @return Boolean Value for bulletsEnabled.
 	 */
 	abstract Boolean isBulletsEnabled();
 
 	/**
 	 * Set bulletsEnabled property.
-	 * @param bulletEnabled Show or don't show bullets.
+	 * @param bulletsEnabled Show or don't show bullets.
 	 */
 	abstract void setBulletsEnabled(Boolean bulletsEnabled);
 
 	/**
-	 * Get bulletSize property.
+	 * Get bulletSize property.<br>
+	 * Default: 8.
 	 * @return Object Value for bulletSize is an integer number.
 	 */
 	abstract Object getBulletSize();
@@ -104,7 +110,8 @@ public abstract interface IChartCursorController {
 	abstract void setBulletSize(Number bulletSize) throws OutOfRangeException;
 
 	/**
-	 * Get categoryBalloonAlpha property.
+	 * Get categoryBalloonAlpha property.<br>
+	 * Default: 1.
 	 * @return Object Value for categoryBalloonAlpha is a double number.
 	 */
 	abstract Object getCategoryBalloonAlpha();
@@ -112,13 +119,14 @@ public abstract interface IChartCursorController {
 	/**
 	 * Set categoryBalloonAlpha property.
 	 * @param categoryBalloonAlpha Value for categoryBalloonAlpha.
-	 * @throws OutOrRangeException Value out of range admitted: 0.0-1.0.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
 	 */
 	abstract void setCategoryBalloonAlpha(Number categoryBalloonAlpha)
 			throws OutOfRangeException;
 
 	/**
-	 * Get categoryBalloonColor property.
+	 * Get categoryBalloonColor property.<br>
+	 * Default: color of categoryBalloon
 	 * @return String Value for categoryBalloonColor.
 	 */
 	abstract String getCategoryBalloonColor();
@@ -132,7 +140,8 @@ public abstract interface IChartCursorController {
 			throws ColorException;
 
 	/**
-	 * Get categoryBalloonDateFormat property.
+	 * Get categoryBalloonDateFormat property.<br>
+	 * Default: MMM DD, YYYY
 	 * @return String Value for categoryBalloonDateFormat.
 	 */
 	abstract String getCategoryBalloonDateFormat();
@@ -140,12 +149,13 @@ public abstract interface IChartCursorController {
 	/**
 	 * Set categoryBalloonDateFormat property.
 	 * @param categoryBalloonDateFormat Value for categoryBalloonDateFormat.
-	 * @see DateFormatConstant
+	 * @see es.uvigo.esei.amchartsJava.core.constants.DateFormatConstant
 	 */
 	abstract void setCategoryBalloonDateFormat(String categoryBalloonDateFormat);
 
 	/**
-	 * Get categoryBalloonEnabled property.
+	 * Get categoryBalloonEnabled property.<br>
+	 * Default: true.
 	 * @return Boolean Value for categoryBalloonEnabled.
 	 */
 	abstract Boolean isCategoryBalloonEnabled();
@@ -169,7 +179,8 @@ public abstract interface IChartCursorController {
 	abstract void setCategoryBalloonFunction(String categoryBalloonFunction);
 	
 	/**
-	 * Get categoryBalloonText property.
+	 * Get categoryBalloonText property.<br>
+	 * Default: [[category]]
 	 * @return String Value for categoryBalloonText.
 	 */
 	abstract String getCategoryBalloonText();
@@ -181,7 +192,8 @@ public abstract interface IChartCursorController {
 	abstract void setCategoryBalloonText(CategoryBalloonText categoryBalloonText);
 
 	/**
-	 * Get color property.
+	 * Get color property.<br>
+	 * Default: #ffffff
 	 * @return Value for color.
 	 */
 	abstract String getColor();
@@ -194,7 +206,8 @@ public abstract interface IChartCursorController {
 	abstract void setColor(String color) throws ColorException;
 
 	/**
-	 * Get cursorAlpha property.
+	 * Get cursorAlpha property.<br>
+	 * Default: 1.
 	 * @return Object Value for cursorAlpha is a double number.
 	 */
 	abstract Object getCursorAlpha();
@@ -207,7 +220,8 @@ public abstract interface IChartCursorController {
 	abstract void setCursorAlpha(Number cursorAlpha) throws OutOfRangeException;
 
 	/**
-	 * Get cursorColor property.
+	 * Get cursorColor property.<br>
+	 * Default: #cc0000
 	 * @return String Value for cursorColor.
 	 */
 	abstract String getCursorColor();
@@ -220,7 +234,8 @@ public abstract interface IChartCursorController {
 	abstract void setCursorColor(String cursorColor) throws ColorException;
 
 	/**
-	 * Get cursorPosition property.
+	 * Get cursorPosition property.<br>
+	 * Default: middle.
 	 * @return String Value for cursorPosition.
 	 */
 	abstract String getCursorPosition();
@@ -232,7 +247,8 @@ public abstract interface IChartCursorController {
 	abstract void setCursorPosition(CursorPosition cursorPosition);
 
 	/**
-	 * Get enabled property.
+	 * Get enabled property.<br>
+	 * Default: true.
 	 * @return Boolean Value for enabled.
 	 */
 	abstract Boolean isEnabled();
@@ -244,7 +260,8 @@ public abstract interface IChartCursorController {
 	abstract void setEnabled(Boolean enabled);
 
 	/**
-	 * Get fullWidth property.
+	 * Get fullWidth property.<br>
+	 * Default: false.
 	 * @return Boolean Value for fullWidth.
 	 */
 	abstract Boolean isFullWidth();
@@ -270,7 +287,8 @@ public abstract interface IChartCursorController {
 			throws OutOfRangeException;
 
 	/**
-	 * Get graphBulletSize property.
+	 * Get graphBulletSize property.<br>
+	 * Default: 1.7(amcharts default, app only admitted integer number for this size)
 	 * @return Object Value for graphBulletSize is an integer number.
 	 */
 	abstract Object getGraphBulletSize();
@@ -284,7 +302,8 @@ public abstract interface IChartCursorController {
 			throws OutOfRangeException;
 
 	/**
-	 * Get leaveCursor property.
+	 * Get leaveCursor property.<br>
+	 * Default: false.
 	 * @return Boolean Value for leaveCursor.
 	 */
 	abstract Boolean isLeaveCursor();
@@ -296,7 +315,8 @@ public abstract interface IChartCursorController {
 	abstract void setLeaveCursor(Boolean leaveCursor);
 
 	/**
-	 * Get oneBalloonOnly property.
+	 * Get oneBalloonOnly property.<br>
+	 * Default: false.
 	 * @return Boolean Value for oneBalloonOnly.
 	 */
 	abstract Boolean isOneBalloonOnly();
@@ -308,7 +328,8 @@ public abstract interface IChartCursorController {
 	abstract void setOneBalloonOnly(Boolean oneBalloonOnly);
 
 	/**
-	 * Get pan property.
+	 * Get pan property.<br>
+	 * Default: false.
 	 * @return Boolean Value for pan.
 	 */
 	abstract Boolean isPan();
@@ -320,7 +341,8 @@ public abstract interface IChartCursorController {
 	abstract void setPan(Boolean pan);
 
 	/**
-	 * Get selectionAlpha property.
+	 * Get selectionAlpha property.<br>
+	 * Default: 0.2.
 	 * @return Object Value for selectionAlpha is a double number.
 	 */
 	abstract Object getSelectionAlpha();
@@ -334,7 +356,8 @@ public abstract interface IChartCursorController {
 			throws OutOfRangeException;
 
 	/**
-	 * Get selectWithoutZooming property.
+	 * Get selectWithoutZooming property.<br>
+	 * Default: false.
 	 * @return Boolean Value for selectWithoutZooming
 	 */
 	abstract Boolean isSelectWithoutZooming();
@@ -346,7 +369,8 @@ public abstract interface IChartCursorController {
 	abstract void setSelectWithoutZooming(Boolean selectWithoutZooming);
 
 	/**
-	 * Get showNextAvailable property.
+	 * Get showNextAvailable property.<br>
+	 * Default: false.
 	 * @return Boolean Value for showNextAvailable.
 	 */
 	abstract Boolean isShowNextAvailable();
@@ -358,7 +382,8 @@ public abstract interface IChartCursorController {
 	abstract void setShowNextAvailable(Boolean showNextAvailable);
 
 	/**
-	 * Get valueBalloonsEnabled property.
+	 * Get valueBalloonsEnabled property.<br>
+	 * Default: true.
 	 * @return Boolean Value for valueBalloonsEnabled.
 	 */
 	abstract Boolean isValueBalloonsEnabled();
@@ -370,7 +395,8 @@ public abstract interface IChartCursorController {
 	abstract void setValueBalloonsEnabled(Boolean valueBalloonsEnabled);
 
 	/**
-	 * Get valueLineAlpha property.
+	 * Get valueLineAlpha property.<br>
+	 * Default: cursorAlpha.
 	 * @return Object Value for valueLineAlpha is a double number.
 	 */
 	abstract Object getValueLineAlpha();
@@ -397,7 +423,8 @@ public abstract interface IChartCursorController {
 	abstract void setValueLineAxis(String valueLineAxis) throws ChartException;
 
 	/**
-	 * Get valueLineBalloonEnabled property.
+	 * Get valueLineBalloonEnabled property.<br>
+	 * Default: false.
 	 * @return Boolean Value for valueLineBalloonEnabled.
 	 */
 	abstract Boolean isValueLineBalloonEnabled();
@@ -409,7 +436,8 @@ public abstract interface IChartCursorController {
 	abstract void setValueLineBalloonEnabled(Boolean valueLineBalloonEnabled);
 
 	/**
-	 * Get valueLineEnabled property.
+	 * Get valueLineEnabled property.<br>
+	 * Default: false.
 	 * @return Boolean Value for valueLineEnabled.
 	 */
 	abstract Boolean isValueLineEnabled();
@@ -421,7 +449,8 @@ public abstract interface IChartCursorController {
 	abstract void setValueLineEnabled(Boolean valueLineEnabled);
 
 	/**
-	 * Get zoomable property.
+	 * Get zoomable property.<br>
+	 * Default: true.
 	 * @return Boolean Value for zoomable.
 	 */
 	abstract Boolean isZoomable();

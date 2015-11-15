@@ -20,7 +20,7 @@ import java.util.List;
 
 
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
-import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollBarController;
+import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollbarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
@@ -30,7 +30,7 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 	private List<String> plotAreaFillColors;
 	private List<Number> plotAreaFillAlphas;
 	private ChartCursorController chartCursor;
-	private ChartScrollBarController scrollBar;
+	private ChartScrollbarController scrollbar;
 	private TrendLines trendLines;
 	
 	
@@ -62,8 +62,8 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		return chartCursor;
 	}
 	
-	public ChartScrollBarController getChartScrollBar(){
-		return scrollBar;
+	public ChartScrollbarController getChartScrollbar(){
+		return scrollbar;
 	}
 	
 	public Object getTrendLines(){
@@ -79,9 +79,9 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		chartCursor = chartCursorController;
 	}
 	
-	public void addChartScrollBar(ChartScrollBarController chartScrollBarController){
-		chartScrollBarController.setChart(this);
-		scrollBar = chartScrollBarController;
+	public void addChartScrollbar(ChartScrollbarController chartScrollbarController){
+		chartScrollbarController.setChart(this);
+		scrollbar = chartScrollbarController;
 	}
 	
 	public abstract <T extends TrendLineSerialChartController> void addTrendLine(T trendLineController) throws NotSupportedException;
@@ -123,8 +123,8 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		System.gc();
 	}
 	
-	public void removeChartScrollBar(){
-		scrollBar = null;
+	public void removeChartScrollbar(){
+		scrollbar = null;
 		System.gc();
 	}
 	
