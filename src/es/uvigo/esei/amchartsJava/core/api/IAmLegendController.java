@@ -73,7 +73,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set backgroundColor property.
 	 * @param backgroundColor Value for backgroundColor.
-	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted:#ffffff
 	 */
 	abstract void setBackgroundColor(String backgroundColor)
 			throws ColorException;
@@ -102,7 +102,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set borderColor property.
 	 * @param borderColor Value for borderColor.
-	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted:#ffffff
 	 */
 	abstract void setBorderColor(String borderColor) throws ColorException;
 
@@ -129,7 +129,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set color property.
 	 * @param color Value for color.
-	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted:#ffffff
 	 */
 	abstract void setColor(String color) throws ColorException;
 
@@ -154,7 +154,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Set enabled property.
-	 * @param enabled Show or don't show legend.
+	 * @param enabled Show or hide legend.
 	 */
 	abstract void setEnabled(Boolean enabled);
 
@@ -221,7 +221,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Set labelText property.
-	 * @param labelText Value for labelText.[[title]] be replaced by graph's title.
+	 * @param labelText Value for labelText.[[title]] be replaced by graph title.
 	 */
 	abstract void setLabelText(String labelText);
 
@@ -332,7 +332,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set markerBorderColor property.
 	 * @param markerBorderColor Value for markerBorderColor.
-	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted:#ffffff
 	 */
 	abstract void setMarkerBorderColor(String markerBorderColor)
 			throws ColorException;
@@ -362,7 +362,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set markerDisabledColor property.
 	 * @param markerDisabledColor Value for markerDisabledColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setMarkerDisabledColor(String markerDisabledColor)
 			throws ColorException;
@@ -483,7 +483,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set rollOverColor property.
 	 * @param rollOverColor Value for rollOverColor.
-	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted:#ffffff
 	 */
 	abstract void setRollOverColor(String rollOverColor) throws ColorException;
 
@@ -511,7 +511,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Set showEntries property.
-	 * @param showEntries Show or don't show entries.
+	 * @param showEntries Show or hide entries.
 	 */
 	abstract void setShowEntries(Boolean showEntries);
 
@@ -552,7 +552,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set switchColor property.
 	 * @param switchColor Value for switchColor.
-	 * @throws ColorException Format of color don't admitted, format admitted:#ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted:#ffffff
 	 */
 	abstract void setSwitchColor(String switchColor) throws ColorException;
 
@@ -617,7 +617,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Set useMarkerColorForLabels property.
-	 * @param useMarkerColorForLabels Use or not use markerColor for labels.
+	 * @param useMarkerColorForLabels Use or don't use markerColor for labels.
 	 */
 	abstract void setUseMarkerColorForLabels(Boolean useMarkerColorForLabels);
 
@@ -630,7 +630,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Set useMarkerColorForValues property.
-	 * @param useMarkerColorForValues Use or not use markerColor for values.
+	 * @param useMarkerColorForValues Use or don't use markerColor for values.
 	 */
 	abstract void setUseMarkerColorForValues(Boolean useMarkerColorForValues);
 
@@ -682,7 +682,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Set valueWidth property.With improvedVisibility enabled range activated.
 	 * @param valueWidth Value for valueWidth.
-	 * @throws OutOfRangeException Value out or range admitted: 0-50.
+	 * @throws OutOfRangeException Value out of range admitted: 0-50.
 	 */
 	abstract void setValueWidth(Number valueWidth) throws OutOfRangeException;
 

@@ -47,7 +47,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get borderAlpha property.<br>
 	 * Default: 1
-	 * @return Object Value of borderAlpha is double number.
+	 * @return Object Value of borderAlpha is a double number.
 	 */
 	abstract Object getBorderAlpha();
 
@@ -68,7 +68,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Set borderColor property.
 	 * @param borderColor Value for borderColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff.
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff.
 	 */
 	abstract void setBorderColor(String borderColor) throws ColorException;
 
@@ -97,7 +97,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Set color property.
 	 * @param color Value for color.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff.
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff.
 	 */
 	abstract void setColor(String color) throws ColorException;
 
@@ -167,7 +167,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Set fillColor property. 
 	 * @param fillColor Value for fillColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff.
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff.
 	 */
 	abstract void setFillColor(String fillColor) throws ColorException;
 
@@ -292,7 +292,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Set shadowColor property. 
 	 * @param shadowColor Value for shadowColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff.
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff.
 	 */
 	abstract void setShadowColor(String shadowColor) throws ColorException;
 
@@ -305,7 +305,7 @@ public abstract interface IAmBalloonController {
 
 	/**
 	 * Set showBullet property.
-	 * @param showBullet Show or don't show bullet.
+	 * @param showBullet Show or hide bullet.
 	 */
 	abstract void setShowBullet(Boolean showBullet);
 

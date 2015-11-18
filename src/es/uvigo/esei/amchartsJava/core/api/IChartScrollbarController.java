@@ -59,7 +59,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Set backgroundColor property.
 	 * @param backgroundColor Value for backgroundColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setBackgroundColor(String backgroundColor)
 			throws ColorException;
@@ -74,7 +74,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Set color property.
 	 * @param color Value for color.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setColor(String color) throws ColorException;
 
@@ -86,8 +86,8 @@ public abstract interface IChartScrollbarController {
 	abstract String getDragIcon();
 
 	/**
-	 * Set dragIcon property.If dragIcon don't exist in images folder, amcharts try load dragIconRoundBig icon,
-	 * if that icon don't exist, no icon be show.
+	 * Set dragIcon property.If dragIcon doesn't exist in images folder, amcharts try load dragIconRoundBig icon,
+	 * if that icon doesn't exist, no icon be show.
 	 * @param dragIcon Value for dragIcon. 
 	 * @see es.uvigo.esei.amchartsJava.core.constants.DragIconConstant
 	 */
@@ -145,7 +145,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Set graph property.
 	 * @param graph Value for graph.
-	 * @throws ChartException Chart don't contains a graph with id equals to graph.
+	 * @throws ChartException Chart doesn't contains a graph with id equals to graph.
 	 */
 	abstract void setGraph(String graph) throws ChartException;
 
@@ -174,7 +174,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Set graphFillColor property.
 	 * @param graphFillColor Value for graphFillColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setGraphFillColor(String graphFillColor)
 			throws ColorException;
@@ -204,7 +204,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Set graphLineColor property.
 	 * @param graphLineColor Value for graphLineColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setGraphLineColor(String graphLineColor)
 			throws ColorException;
@@ -246,7 +246,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Set gridColor property.
 	 * @param gridColor Value for gridColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setGridColor(String gridColor) throws ColorException;
 
@@ -273,7 +273,7 @@ public abstract interface IChartScrollbarController {
 
 	/**
 	 * Set hideResizeGrips property.
-	 * @param hideResizeGrips Show or don't show resizeGrips.
+	 * @param hideResizeGrips Show or hide resizeGrips.
 	 */
 	abstract void setHideResizeGrips(Boolean hideResizeGrips);
 
@@ -411,7 +411,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Set selectedBackgroundColor property.
 	 * @param selectedBackgroundColor Value for selectedBackgroundColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setSelectedBackgroundColor(String selectedBackgroundColor)
 			throws ColorException;
@@ -441,7 +441,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Set selectedGraphFillColor property.
 	 * @param selectedGraphFillColor Value for selectedGraphFillColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setSelectedGraphFillColor(String selectedGraphFillColor)
 			throws ColorException;
@@ -471,7 +471,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Set selectedGraphLineColor property.
 	 * @param selectedGraphLineColor Value for selectedGraphLineColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setSelectedGraphLineColor(String selectedGraphLineColor)
 			throws ColorException;

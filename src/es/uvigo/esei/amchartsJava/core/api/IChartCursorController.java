@@ -91,7 +91,7 @@ public abstract interface IChartCursorController {
 
 	/**
 	 * Set bulletsEnabled property.
-	 * @param bulletsEnabled Show or don't show bullets.
+	 * @param bulletsEnabled Show or hide bullets.
 	 */
 	abstract void setBulletsEnabled(Boolean bulletsEnabled);
 
@@ -134,7 +134,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Set categoryBalloon property.
 	 * @param categoryBalloonColor Value for categoryBalloonColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setCategoryBalloonColor(String categoryBalloonColor)
 			throws ColorException;
@@ -201,7 +201,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Set color property.
 	 * @param color Value for color.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setColor(String color) throws ColorException;
 
@@ -229,7 +229,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Set cursorColor property.
 	 * @param cursorColor Value for cursorColor.
-	 * @throws ColorException Format of color don't admitted, format admitted: #ffffff
+	 * @throws ColorException Format of color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setCursorColor(String cursorColor) throws ColorException;
 
@@ -377,7 +377,7 @@ public abstract interface IChartCursorController {
 
 	/**
 	 * Set showNextAvailable property.
-	 * @param showNextAvailable Show or don't show next available.
+	 * @param showNextAvailable Show or hide next available.
 	 */
 	abstract void setShowNextAvailable(Boolean showNextAvailable);
 
@@ -417,8 +417,8 @@ public abstract interface IChartCursorController {
 
 	/**
 	 * Set valueLineAxis property.
-	 * @param valueLineAxis Id of valueAxis that contains values of valueLine used by chartCursor.
-	 * @throws ChartException Chart that use chartCursor not contains a valueAxis with id equal to valueLineAxis.
+	 * @param valueLineAxis ValueAxis id that contains values of valueLine used by chartCursor.
+	 * @throws ChartException Chart that use chartCursor doesn't contains a valueAxis with id equals to valueLineAxis.
 	 */
 	abstract void setValueLineAxis(String valueLineAxis) throws ChartException;
 
