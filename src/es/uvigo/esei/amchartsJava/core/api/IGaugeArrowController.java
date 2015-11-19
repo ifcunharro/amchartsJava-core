@@ -22,7 +22,8 @@ public abstract interface IGaugeArrowController {
 	abstract void setChart(AmAngularGauge chart);
 
 	/**
-	 * Get alpha property.
+	 * Get alpha property.<br>
+	 * Default: 1.
 	 * @return Object Value for alpha is a double number.
 	 */
 	abstract Object getAlpha();
@@ -48,7 +49,8 @@ public abstract interface IGaugeArrowController {
 	abstract void addAxis(String axis) throws ChartException;
 
 	/**
-	 * Get borderAlpha property.
+	 * Get borderAlpha property.<br>
+	 * Default: 1.
 	 * @return Object Value for borderAlpha is a double number.
 	 */
 	abstract Object getBorderAlpha();
@@ -61,7 +63,8 @@ public abstract interface IGaugeArrowController {
 	abstract void setBorderAlpha(Number borderAlpha) throws OutOfRangeException;
 
 	/**
-	 * Get clockWiseOnly property.
+	 * Get clockWiseOnly property.<br>
+	 * Default: false.
 	 * @return Boolean Value for clockWiseOnly.
 	 */
 	abstract Boolean isClockWiseOnly();
@@ -73,7 +76,8 @@ public abstract interface IGaugeArrowController {
 	abstract void setClockWiseOnly(Boolean clockWiseOnly);
 
 	/**
-	 * Get color property.
+	 * Get color property.<br>
+	 * Default: #000000
 	 * @return String Value for color.
 	 */
 	abstract String getColor();
@@ -92,7 +96,8 @@ public abstract interface IGaugeArrowController {
 	abstract String getId();
 
 	/**
-	 * Get innerRadius property.
+	 * Get innerRadius property.<br>
+	 * Default: 0.
 	 * @return String Value for innerRadius.
 	 */
 	abstract String getInnerRadius();
@@ -105,7 +110,8 @@ public abstract interface IGaugeArrowController {
 	abstract void setInnerRadius(String innerRadius) throws CoordException;
 
 	/**
-	 * Get nailAlpha property.
+	 * Get nailAlpha property.<br>
+	 * Default: 1.
 	 * @return Object Value for nailAlpha is a double number.
 	 */
 	abstract Object getNailAlpha();
@@ -118,7 +124,8 @@ public abstract interface IGaugeArrowController {
 	abstract void setNailAlpha(Number nailAlpha) throws OutOfRangeException;
 
 	/**
-	 * Get nailBorderAlpha property.
+	 * Get nailBorderAlpha property.<br>
+	 * Default: 0.
 	 * @return Object Value for nailBorderAlpha is a double number.
 	 */
 	abstract Object getNailBorderAlpha();
@@ -132,7 +139,8 @@ public abstract interface IGaugeArrowController {
 			throws OutOfRangeException;
 
 	/**
-	 * Get nailBorderThickness property.
+	 * Get nailBorderThickness property.<br>
+	 * Default: 1.
 	 * @return Object Value for nailBorderThickness is an integer number.
 	 */
 	abstract Object getNailBorderThickness();
@@ -146,7 +154,8 @@ public abstract interface IGaugeArrowController {
 			throws OutOfRangeException;
 
 	/**
-	 * Get nailRadius property.
+	 * Get nailRadius property.<br>
+	 * Default: 8.
 	 * @return Object Value for nailRadius is an integer number.
 	 */
 	abstract Object getNailRadius();
@@ -159,7 +168,8 @@ public abstract interface IGaugeArrowController {
 	abstract void setNailRadius(Number nailRadius) throws OutOfRangeException;
 
 	/**
-	 * Get radius property.
+	 * Get radius property.<br>
+	 * Default: 90%.
 	 * @return String Value for radius.
 	 */
 	abstract String getRadius();
@@ -172,7 +182,8 @@ public abstract interface IGaugeArrowController {
 	abstract void setRadius(String radius) throws CoordException;
 
 	/**
-	 * Get startWidth property.
+	 * Get startWidth property.<br>
+	 * Default: 8.
 	 * @return Object Value for startWidth.
 	 */
 	abstract Object getStartWidth();

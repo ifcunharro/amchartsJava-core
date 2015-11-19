@@ -259,7 +259,7 @@ public class GaugeAxisController
 		gaugeAxis.setFeature("inside", inside);
 	}
 	
-	public Object getLabelFrequncy(){
+	public Object getLabelFrequency(){
 		return gaugeAxis.getFeature("labelFrequency");
 	}
 	

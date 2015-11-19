@@ -97,9 +97,8 @@ public class LabelController implements Observer, ILabelController, Serializable
 		return label.getFeature("rotation");
 	}
 	
-	public void setRotation(Number rotation) throws OutOfRangeException,IntegerException{
-		if(NumberValidator.integerValidator(rotation) && 
-				NumberValidator.rangeIntegerValidator(rotation, -90, 90)){
+	public void setRotation(Number rotation) throws OutOfRangeException{
+		if( NumberValidator.rangeIntegerValidator(rotation, -90, 90)){
 					label.setFeature("rotation", rotation);
 		}
 	}

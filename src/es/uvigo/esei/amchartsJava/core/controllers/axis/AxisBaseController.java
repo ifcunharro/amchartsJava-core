@@ -201,7 +201,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return axes.getFeature("gridThickness");
 	}
 	
-	public void setGridThikness(Number gridThickness) throws OutOfRangeException{
+	public void setGridThickness(Number gridThickness) throws OutOfRangeException{
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			if(NumberValidator.rangeIntegerValidator(gridThickness, 0, 2)){
 				axes.setFeature("gridThickness", gridThickness);
