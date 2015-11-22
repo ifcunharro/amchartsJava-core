@@ -12,7 +12,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 /**
  * 
  * Interface for controller of GaugeAxis. Details of GaugeAxis and 
- *  their properties in AmCharts API
+ *  its properties in AmCharts API
  * 
  * @author Iago Fernández Cuñarro
  *

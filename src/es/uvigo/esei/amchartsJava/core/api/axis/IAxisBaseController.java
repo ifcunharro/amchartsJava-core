@@ -12,7 +12,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 /**
  * 
  * Interface for controller of AxisBase. Details of AxisBase and 
- *  their properties in AmCharts API
+ *  its properties in AmCharts API
  * 
  * @author Iago Fernández Cuñarro
  *
@@ -525,7 +525,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get user axesFields.
-	 * @return Map<String,String> 
+	 * @return Map<String,String> Nameof axesFields used by user.
 	 */
 	abstract Map<String,String> getAxesFields();
 

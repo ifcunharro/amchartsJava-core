@@ -222,7 +222,7 @@ public abstract class AmChartController<E extends AmChart>
 		return amchart.getFeature("handDrawThickness");
 	}
 	
-	public void setHandDrasThickness(Number handDrawThickness) throws OutOfRangeException{
+	public void setHandDrawThickness(Number handDrawThickness) throws OutOfRangeException{
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			if(NumberValidator.rangeIntegerValidator(handDrawThickness, 0, 5)){
 				amchart.setFeature("handDrawThickness", handDrawThickness);

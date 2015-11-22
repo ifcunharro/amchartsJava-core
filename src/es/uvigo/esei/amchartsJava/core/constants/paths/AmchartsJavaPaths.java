@@ -1,5 +1,10 @@
 package es.uvigo.esei.amchartsJava.core.constants.paths;
 
+/**
+ * 
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public final class AmchartsJavaPaths {
 	
 	 //paths desde eclipse

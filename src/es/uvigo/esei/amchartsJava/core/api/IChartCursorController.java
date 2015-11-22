@@ -11,7 +11,7 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
 /**
  * Interface for controller of ChartCursor. Details of ChartCursor and 
- *  their properties in AmCharts API
+ *  its properties in AmCharts API
  *  
  * @author Iago Fernández Cuñarro
  *

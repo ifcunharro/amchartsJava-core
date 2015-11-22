@@ -5,6 +5,14 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmSlicedChart;
 
+/**
+ * 
+ * Interface for controller of AmPieChart. Details of AmPieChart and 
+ *  its properties in AmCharts API
+ * 
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public abstract interface IAmPieChartController extends IAmSlicedChartController<AmSlicedChart> {
 
 	abstract Boolean isAdjustPrecision();

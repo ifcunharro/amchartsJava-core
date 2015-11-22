@@ -15,7 +15,6 @@ import es.uvigo.esei.amchartsJava.core.constants.AlignConstant.Align;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
-import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.Label;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;

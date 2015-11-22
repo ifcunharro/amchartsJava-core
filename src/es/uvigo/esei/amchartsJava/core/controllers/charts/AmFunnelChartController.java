@@ -15,9 +15,7 @@ import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 public class AmFunnelChartController extends AmSlicedChartController<AmSlicedChart> implements IAmFunnelChartController {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 8507677441406620348L;
 
 	public AmFunnelChartController() {

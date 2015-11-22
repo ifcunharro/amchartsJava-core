@@ -14,9 +14,11 @@ import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
+import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
+import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 @JsonInclude(Include.NON_NULL)
@@ -66,7 +68,7 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	
 	public void setStartDuration(Number startDuration) throws OutOfRangeException{
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
-			if(NumberValidator.rangeIntegerValidator(startDuration, 1, 10)){
+			if(NumberValidator.rangeIntegerValidator(startDuration, 0, 10)){
 				amchart.setFeature("startDuration", startDuration);
 			}
 		}else{
@@ -96,12 +98,16 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		return amchart.getColors();
 	}
 	
-	public void addColor(String color){
-		amchart.addColor(color);
+	public void addColor(String color) throws ColorException{
+		if(ColorValidator.checkFormatColor(color)){
+			amchart.addColor(color);
+		}
 	}
 	
-	public void changeColorsDefault(String... newColors){
-		amchart.changeColorsDefault(newColors);
+	public void changeColorsDefault(String... newColors) throws ColorException{
+		if(ColorValidator.checkFormatColors(newColors)){
+			amchart.changeColorsDefault(newColors);
+		}
 	}
 	
 	//graphs

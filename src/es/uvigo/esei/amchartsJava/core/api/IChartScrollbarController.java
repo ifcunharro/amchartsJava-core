@@ -9,7 +9,7 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
 /**
  * Interface for controller of ChartScrollbar. Details of ChartScrollbar and 
- *  their properties in AmCharts API
+ *  its properties in AmCharts API
  *  
  * @author Iago Fernández Cuñarro
  */

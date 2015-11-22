@@ -49,7 +49,7 @@ public class NumberValidator {
 	}
 
 	public static boolean doubleValidator(Number number) throws DoubleException {
-		if(number instanceof Double || number instanceof Integer){
+		if(number instanceof Double){
 			return true;
 		}
 

@@ -9,7 +9,7 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmAngularGauge;
 
 /**
  * Interface for controller of GaugeArrow. Details of GaugeArrow and 
- *  their properties in AmCharts API
+ *  its properties in AmCharts API
  *  
  * @author Iago Fernández Cuñarro
  */

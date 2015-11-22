@@ -4,13 +4,12 @@ package es.uvigo.esei.amchartsJava.core.api;
 import es.uvigo.esei.amchartsJava.core.constants.AlignConstant.Align;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
-import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 /**
  * 
  * Interface for controller of Label. Details of Label and 
- *  their properties in AmCharts API
+ *  its properties in AmCharts API
  * 
  * @author Iago Fernández Cuñarro
  *

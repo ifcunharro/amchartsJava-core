@@ -357,10 +357,7 @@ public class Principal {
 		} catch (OutOfRangeException e4) {
 			// TODO Auto-generated catch block
 			e4.printStackTrace();
-		} catch (IntegerException e4) {
-			// TODO Auto-generated catch block
-			e4.printStackTrace();
-		}
+		} 
 		lab.setAlign(AmchartsConstants.ALIGN.getRight());
 		try {
 			lab.setAlpha(0.3);
@@ -442,11 +439,11 @@ public class Principal {
 
 		try {
 			//escribe a fichero 
-			ParserJson.saveJsonToTemp("pruebaJson.json", asc);
+			//ParserJson.saveJsonToTemp("pruebaJson.json", asc);
 			//ParserJson.saveJsonToTemp("pruebaFunnel", funnel);
-			//ParserJson.saveJsonToTemp("pruebaGauge", gaugec);
+			ParserJson.saveJsonToTemp("pruebaGauge", gaugec);
 			//escribe por consola
-			ParserJson.saveJsonToConsole(asc);
+			//ParserJson.saveJsonToConsole(asc);
 			
 			//ParserJson.saveJsonToConsole(funnel);
 			//ParserJson.saveJsonToConsole(gaugec);
@@ -466,15 +463,15 @@ public class Principal {
 		
 		try {
 
-				serialController = ParserJson.loadAmSerialChart("pruebaJson");
+				//serialController = ParserJson.loadAmSerialChart("pruebaJson");
 				//rec = ParserJson.loadAmFunnelChart("pruebaFunnel");
-				//regauge = ParserJson.loadAmAngularGauge("pruebaGauge.json");
+				regauge = ParserJson.loadAmAngularGauge("pruebaGauge.json");
 				//sample = ParserJson.loadAmXyChart("sample");
 				
 				// se añaden todos los charts
-				amController.addChart(serialController);
+				//amController.addChart(serialController);
 				//amController.addChart(rec);
-				//amController.addChart(regauge);
+				amController.addChart(regauge);
 				//amController.addChart(sample);
 				
 			
@@ -485,7 +482,7 @@ public class Principal {
 		
 		try {
 			//comprueba que se ha leido bien el controller de carpeta temp
-			ParserJson.saveJsonToConsole(serialController);
+			ParserJson.saveJsonToConsole(regauge);
 			//ParserJson.saveJsonToConsole(rec);
 			//ParserJson.saveJsonToConsole(regauge);
 			
