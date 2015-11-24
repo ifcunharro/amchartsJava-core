@@ -15,120 +15,368 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 
+/**
+ * 
+ * Interface for controller of AmRectangularChart. Details of AmRectangularChart and 
+ *  its properties in AmCharts API
+ * 
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public abstract interface IAmRectangularChartController<G extends AmRectangularChart> extends IAmCoordinateChartController<AmCoordinateChart> {
 
+	/**
+	 * Get angle property.<br>
+	 * Default: 0.
+	 * @return Object Value for angle is an integer number.
+	 */
 	abstract Object getAngle();
 
+	/**
+	 * Set angle property.
+	 * @param angle Value for angle.
+	 * @throws OutOfRangeException Value out of range admitted: 0-360.
+	 */
 	abstract void setAngle(Number angle) throws OutOfRangeException;
 
+	/**
+	 * Get autoMarginOffset property.<br>
+	 * Default: 10.
+	 * @return Object Value for autoMarginOffset is an integer number.
+	 */
 	abstract Object getAutoMarginOffset();
 
+	/**
+	 * Set autoMarginOffset property.With improvedVisibility enabled range activated.
+	 * @param autoMarginOffset Value for autoMarginOffset.
+	 * @throws OutOfRangeException Value out of range admitted: 0-10.
+	 */
 	abstract void setAutoMarginOffset(Number autoMarginOffset)
 			throws OutOfRangeException;
 
+	/**
+	 * Get autoMargins property.<br>
+	 * Default: true.
+	 * @return Boolean Value for autoMargins.
+	 */
 	abstract Boolean isAutoMargins();
 
+	/**
+	 * Set autoMargins property.
+	 * @param autoMargins Enable or disable autoMargins.
+	 */
 	abstract void setAutoMargins(Boolean autoMargins);
 
+	/**
+	 * Get depth3D property.<br>
+	 * Default: 0.
+	 * @return Object Value for depth3D is an integer number.
+	 */
 	abstract Object getDepth3D();
 
+	/**
+	 * Set depth3D property.
+	 * @param depth3D Value for depth3D.
+	 * @throws IntegerException Value for depth3D is not an integer number.
+	 */
 	abstract void setDepth3D(Number depth3D) throws IntegerException;
 
+	/**
+	 * Get marginBottom property.<br>
+	 * Default: 20.
+	 * @return Object Value for marginBottom is an integer number.
+	 */
 	abstract Object getMarginBottom();
 
+	/**
+	 * Set marginBottom property.
+	 * @param marginBottom Value for marginBottom.
+	 * @throws IntegerException Value for marginBottom is not an integer number.
+	 */
 	abstract void setMarginBottom(Number marginBottom) throws IntegerException;
 
+	/**
+	 * Get marginLeft property.<br>
+	 * Default: 20.
+	 * @return Object Value for marginLeft is an integer number.
+	 */
 	abstract Object getMarginLeft();
 
+	/**
+	 * Set marginLeft property.
+	 * @param marginLeft Value for marginLeft.
+	 * @throws IntegerException Value for marginLeft is not an integer number.
+	 */
 	abstract void setMarginLeft(Number marginLeft) throws IntegerException;
 
+	/**
+	 * Get marginRight property.<br>
+	 * Default: 20.
+	 * @return Object Value for marginRight is an integer number.
+	 */
 	abstract Object getMarginRight();
 
+	/**
+	 * Set marginRight property.
+	 * @param marginRight Value for marginRight.
+	 * @throws IntegerException Value for marginRight is not an integer number.
+	 */
 	abstract void setMarginRight(Number marginRight) throws IntegerException;
 
+	/**
+	 * Get marginsUpdated property.<br>
+	 * Default: false.
+	 * @return Boolean Value for marginsUpdated.
+	 */
 	abstract Boolean isMarginsUpdated();
 
+	/**
+	 * Set marginsUpdated property.
+	 * @param marginsUpdated Enable or disable marginsUpdated.
+	 */
 	abstract void setMarginsUpdated(Boolean marginsUpdated);
 
+	/**
+	 * Get marginTop property.<br>
+	 * Default: 20.
+	 * @return Object Value for marginTop is an integer number.
+	 */
 	abstract Object getMarginTop();
 
+	/**
+	 * Set marginTop property.
+	 * @param marginTop Value for marginTop.
+	 * @throws IntegerException Value for marginTop is no an integer number.
+	 */
 	abstract void setMarginTop(Number marginTop) throws IntegerException;
 
+	/**
+	 * Get plotAreaBorderAlpha property.<br>
+	 * Default: 0.
+	 * @return Object Value for plotAreaBorderAlpha is a double number.
+	 */
 	abstract Object getPlotAreaBorderAlpha();
 
+	/**
+	 * Set plotAreaBorderAlpha property.
+	 * @param plotAreaBorderAlpha Value for plotAreaBorderAlpha.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
+	 */
 	abstract void setPlotAreaBorderAlpha(Number plotAreaBorderAlpha)
 			throws OutOfRangeException;
 
+	/**
+	 * Get plotAreaBorderColor property.<br>
+	 * Default: #000000
+	 * @return String Value for plotAreaBorderColor.
+	 */
 	abstract String getPlotAreaBorderColor();
 
+	/**
+	 * Set plotAreaBorderColor property.
+	 * @param plotAreaBorderColor Value for plotAreaBorderColor.
+	 * @throws ColorException Format color doesn't admitted, format admitted: #ffffff
+	 */
 	abstract void setPlotAreaBorderColor(String plotAreaBorderColor)
 			throws ColorException;
 
+	/**
+	 * Get plotAreaFillAlphas property.<br>
+	 * Default: 0.
+	 * @return List<Number> List of alphas to generate gradients.
+	 */
 	abstract List<Number> getPlotAreaFillAlphas();
 
+	/**
+	 * Set plotAreaFillAlphas property.
+	 * @param plotAreaFillAlphas Values for alphas.
+	 * @throws DoubleException Any value of alpha is not a double number.
+	 */
 	abstract void setPlotAreaFillAlphas(Number... plotAreaFillAlphas)
 			throws DoubleException;
 	
+	/**
+	 * Get plotAreaFillColors property.<br>
+	 * Default: #ffffff
+	 * @return List<String> List of colors to generate gradients.
+	 */
 	abstract List<String> getPlotAreaFillColors();
 
+	/**
+	 * Set plotAreaFillColors property.
+	 * @param plotAreaFillColors Values for colors.
+	 * @throws ColorException Format color doesn't admitted, format admitted: #ffffff
+	 */
 	abstract void setPlotAreaFillColors(String... plotAreaFillColors)
 			throws ColorException;
 
+	/**
+	 * Get plotAreaGradientAngle property.<br>
+	 * Default: 0.
+	 * @return String Value for plotAreaGradientAngle.
+	 */
 	abstract String getPlotAreaGradientAngle();
 
+	/**
+	 * Set plotAreaGradientAngle property.
+	 * @param Value for plotAreaGradientAngle.
+	 */
 	abstract void setPlotAreaGradientAngle(GradientAngle plotAreaGradientAngle);
 
+	/**
+	 * Get zoomOutButtomAlpha property.<br>
+	 * Default: 0.
+	 * @return Object Value for zoomOutButtomAlpha is a double number.
+	 */
 	abstract Object getZoomOutButtomAlpha();
 
+	/**
+	 * Set zoomOutButtonAlpha property.
+	 * @param zoomOutButtonAlpha property.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
+	 */
 	abstract void setZoomOutButtonAlpha(Number zoomOutButtonAlpha)
 			throws OutOfRangeException;
 
+	/**
+	 * Get zoomOutButtonColor property.<br>
+	 * Default: #e5e5e5.
+	 * @return String Value for zoomOutButtonColor.
+	 */
 	abstract String getZoomOutButtonColor();
 
+	/**
+	 * Set zoomOutButtonColor property.
+	 * @param Value for zoomOutButtonColor.
+	 * @throws ColorException Format color doesn't admitted, format admitted: #ffffff
+	 */
 	abstract void setZoomOutButtonColor(String zoomOutButtonColor)
 			throws ColorException;
 
+	/**
+	 * Get zoomOutButtonImage property.<br>
+	 * Default: lens.png.
+	 * @return String Value for zoomOutButtonImage.
+	 */
 	abstract String getZoomOutButtonImage();
 
-	//debe existir en /amcharts/images
+	/**
+	 * Set zoomOutButtonImage property.
+	 * @param zoomOutButtonImage Value for zoom image, must be in image folder.
+	 * @see es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths
+	 */
 	abstract void setZoomOutButtonImage(String zoomOutButtonImage);
 
+	/**
+	 * Get zoomOutButtonImageSize property.<br>
+	 * Default: 17.
+	 * @return Object Value for zoomOutButtonImageSize is an integer number.
+	 */
 	abstract Object getZoomOutButtonImageSize();
 
+	/**
+	 * Set zoomOutButtonImageSize property.With improvedVisibility enabled range activated.
+	 * @param zoomOutButtonImageSize Value for zoomOutButtonImageSize.
+	 * @throws OutOfRangeException Value out of range admitted: 10-26.
+	 */
 	abstract void setZoomOutButtonImageSize(Number zoomOutButtonImageSize)
 			throws OutOfRangeException;
 
+	/**
+	 * Get zoomOutButtonPadding property.<br>
+	 * Default: 8.
+	 * @return Object Value for zoomOutButtonPadding is an integer number.
+	 */
 	abstract Object getZoomOutButtonPadding();
 
+	/**
+	 * Set zoomOutButtonPadding property.With improvedVisibility enabled range activated.
+	 * @param zoomOutButtonPadding Value for zoomOutButtonPadding.
+	 * @throws OutOfRangeException Value out of range admitted: 5-20.
+	 */
 	abstract void setZoomOutButtonPadding(Number zoomOutButtonPadding)
 			throws OutOfRangeException;
 
+	/**
+	 * Get zoomOutButtonRollOverAlpha property.<br>
+	 * Default: 1.
+	 * @return Object Value for zoomOutButtonRollOverAlpha is a double number.
+	 */
 	abstract Object getZoomOutButtonRollOverAlpha();
 
+	/**
+	 * Set zoomOutButtonRollOverAlpha property.
+	 * @param zoomOutButtonRollOverAlpha Value for zoomOutButtonRollOverAlpha.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
+	 */
 	abstract void setZoomOutButtonRollOverAlpha(
 			Number zoomOutButtonRollOverAlpha) throws OutOfRangeException;
 
+	/**
+	 * Get zoomOutText property.<br>
+	 * Default: Show all.
+	 * @return String Value for zoomOutText.
+	 */
 	abstract String getZoomOutText();
 
+	/**
+	 * Set zoomOutText property.
+	 * @param zoomOutText Value for zoomOutText.
+	 */
 	abstract void setZoomOutText(String zoomOutText);
 
+	/**
+	 * Get chartCursor property.
+	 * @return ChartCursorController Controller for ChartCursor.
+	 */
 	abstract ChartCursorController getChartCursor();
 	
+	/**
+	 * Get chartScrollbar property.
+	 * @return ChartScrollbarController Controller for ChartScrollbar.
+	 */
 	abstract ChartScrollbarController getChartScrollbar();
 	
+	/**
+	 * Get trendLines property.
+	 * @return Object List of Trendlines.
+	 */
 	abstract Object getTrendLines();
 	
+	/**
+	 * Add a chartCursor to chart.
+	 * @param chartCursorController Controller for ChartCursor.
+	 */
 	abstract void addChartCursor(ChartCursorController chartCursorController);
 
+	/**
+	 * Add a chartScrollbar to chart.
+	 * @parar chartScrollbarController Controller for ChartScrollbar. 
+	 */
 	abstract void addChartScrollbar(ChartScrollbarController chartScrollbarController);
 	
+	/**
+	 * Add a trendline to chart.
+	 * @param trendLineController Controller of some type of trendline.
+	 * @throws NotSupportedException Trendline not supported by that chart.
+	 */
 	abstract <T extends TrendLineSerialChartController> void addTrendLine(
 			T trendLineController) throws NotSupportedException;
 	
+	/**
+	 * Remove ChartCursor from chart.
+	 */
 	abstract void removeChartCursor();
 	
+	/**
+	 * Remove ChartScrollbar from chart.
+	 */
 	abstract void removeChartScrollbar();
 	
+	/**
+	 * Remove trendLine from chart.
+	 * @param trendLine Trendline id.
+	 */
 	abstract void removeTrendLine(String trendLine);
 	
 }

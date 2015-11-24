@@ -34,7 +34,7 @@ public abstract interface IPatternController {
 	abstract Object getHeight();
 	
 	/**
-	 * Set height property.
+	 * Set height property.With improvedVisibility enabled range activated.
 	 * @param height Value for height.
 	 * @throws OutOfRangeException Value out of range admitted: 2-6.
 	 */
@@ -60,7 +60,7 @@ public abstract interface IPatternController {
 	abstract Object getWidth();
 	
 	/**
-	 * Set width property.
+	 * Set width property.With improvedVisibility enabled range activated.
 	 * @param height Value for width
 	 * @throws OutOfRangeException Value out of range admitted: 2-6.
 	 */

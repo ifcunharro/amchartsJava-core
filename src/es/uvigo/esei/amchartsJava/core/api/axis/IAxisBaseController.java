@@ -68,7 +68,7 @@ public abstract interface IAxisBaseController {
 	abstract Object getAxisThickness();
 
 	/**
-	 * Set axisThickness property.
+	 * Set axisThickness property.With improvedVisibility enabled range activated.
 	 * @param Value for axisThickness.
 	 * @throws OutOfRangeException Value out of range admitted: 0-2.
 	 */

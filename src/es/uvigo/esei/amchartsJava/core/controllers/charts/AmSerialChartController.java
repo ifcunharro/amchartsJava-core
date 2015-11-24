@@ -113,7 +113,7 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 	
 	public void setMinSelectedTime(Number minSelectedTime) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(minSelectedTime, 1000, 10000)){
+		if(NumberValidator.rangeIntegerValidator(minSelectedTime, 0, 10000)){
 			amchart.setFeature("minSelectedTime", minSelectedTime);
 		}
 	}

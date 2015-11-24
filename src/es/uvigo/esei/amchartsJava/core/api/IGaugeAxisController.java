@@ -549,7 +549,7 @@ public abstract interface IGaugeAxisController {
 	abstract Object getTopTextFontSize();
 
 	/**
-	 * Set topTextFontSize property.
+	 * Set topTextFontSize property.With improvedVisibility enabled range activated.
 	 * @param topTextFontSize Value for topTextFontSize.
 	 * @throws OutOfRangeException Value out of range admitted: 0-36.
 	 */

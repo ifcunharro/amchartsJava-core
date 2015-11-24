@@ -294,7 +294,7 @@ public abstract interface IChartCursorController {
 	abstract Object getGraphBulletSize();
 
 	/**
-	 * Set graphBulletSize property.
+	 * Set graphBulletSize property.With improvedVisibility enabled range activated.
 	 * @param graphBulletSize Value for graphBulletSize.
 	 * @throws OutOfRangeException Value out of range admitted: 1-20.
 	 */

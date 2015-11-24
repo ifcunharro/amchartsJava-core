@@ -28,7 +28,6 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
-	 * /**
 	 * Set chart that use ValueAxis.
 	 * @param chart own of ValueAxis
 	 */

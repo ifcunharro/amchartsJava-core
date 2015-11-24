@@ -81,12 +81,16 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		return amchart.getColors();
 	}
 	
-	public void addColor(String color){
-		amchart.addColor(color);
+	public void addColor(String color) throws ColorException{
+		if(ColorValidator.checkFormatColor(color){	
+			amchart.addColor(color);
+		}
 	}
 	
-	public void changeColorsDefault(String... newColors){
-		amchart.changeColorsDefault(newColors);
+	public void changeColorsDefault(String... newColors) throws ColorException{
+		if(ColorValidator.checkFormatColors(newColors)){
+			amchart.changeColorsDefault(newColors);
+		}
 	}
 	
 	public String getDescriptionField(){
@@ -208,7 +212,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public String labelTickColor(){
+	public String getLabelTickColor(){
 		return (String) amchart.getFeature("labelTickColor");
 	}
 	

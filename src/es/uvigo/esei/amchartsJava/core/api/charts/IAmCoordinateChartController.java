@@ -72,7 +72,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	abstract Object getStartDuration();
 
 	/**
-	 * Set startDuration property.
+	 * Set startDuration property.With improvedVisibility enabled range activated.
 	 * @param startDuration Value for startDuration.
 	 * @throws OutOfRangeException Value out of range admitted: 0-10.
 	 */

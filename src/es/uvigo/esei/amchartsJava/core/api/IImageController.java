@@ -117,7 +117,7 @@ public abstract interface IImageController {
 	abstract Object getRotation();
 
 	/**
-	 * Set rotation property.With improvedVisibility enabled range activated.
+	 * Set rotation property.
 	 * @param rotation Value for rotation.
 	 * @throws OutOfRangeException Value out of range admitted: 0-360.
 	 */

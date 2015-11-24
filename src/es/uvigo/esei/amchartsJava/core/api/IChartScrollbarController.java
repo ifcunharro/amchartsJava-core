@@ -116,7 +116,7 @@ public abstract interface IChartScrollbarController {
 	abstract Object getDragIconWidth();
 
 	/**
-	 * Set dragIconHeight property.
+	 * Set dragIconHeight property.With improvedVisibility enabled range activated.
 	 * @param dragIconWidth Value for dragIconWidth.
 	 * @throws OutOfRangeException Value out of range admitted: 16-35.
 	 */
@@ -258,7 +258,7 @@ public abstract interface IChartScrollbarController {
 	abstract Object getGridCount();
 
 	/**
-	 * Set gridCount property.
+	 * Set gridCount property.With improvedVisibility enabled range activated.
 	 * @param gridCount Value for gridCount.
 	 * @throws OutOfRangeException Value out of range admitted: 0-15.
 	 */
@@ -324,7 +324,7 @@ public abstract interface IChartScrollbarController {
 	abstract Object getOffset();
 
 	/**
-	 * Set offset property.
+	 * Set offset property.With improvedVisibility enabled range activated.
 	 * @param offset Value for offset.
 	 * @throws OutOfRangeException Value out of range admitted: 0-80.
 	 */
@@ -364,7 +364,7 @@ public abstract interface IChartScrollbarController {
 	abstract Object getScrollbarHeight();
 
 	/**
-	 * Set scrollbarHeight property.
+	 * Set scrollbarHeight property.With improvedVisibility enabled range activated.
 	 * @param scrollbarHeight Value for scrollbarHeight.
 	 * @throws OutOfRangeException Value out of range admitted: 10-30.
 	 */
