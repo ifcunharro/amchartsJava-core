@@ -24,9 +24,9 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get alpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for alpha is a double number.
+	 * @return Double Value for alpha.
 	 */
-	abstract Object getAlpha();
+	abstract Double getAlpha();
 
 	/**
 	 * Set alpha property.
@@ -51,9 +51,9 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get borderAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for borderAlpha is a double number.
+	 * @return Double Value for borderAlpha.
 	 */
-	abstract Object getBorderAlpha();
+	abstract Double getBorderAlpha();
 
 	/**
 	 * Set borderAlpha property.
@@ -112,9 +112,9 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get nailAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for nailAlpha is a double number.
+	 * @return Double Value for nailAlpha.
 	 */
-	abstract Object getNailAlpha();
+	abstract Double getNailAlpha();
 
 	/**
 	 * Set nailAlpha property.
@@ -126,9 +126,9 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get nailBorderAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for nailBorderAlpha is a double number.
+	 * @return Double Value for nailBorderAlpha.
 	 */
-	abstract Object getNailBorderAlpha();
+	abstract Double getNailBorderAlpha();
 
 	/**
 	 * Set nailBorderAlpha property.
@@ -141,9 +141,9 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get nailBorderThickness property.<br>
 	 * Default: 1.
-	 * @return Object Value for nailBorderThickness is an integer number.
+	 * @return Integer Value for nailBorderThickness.
 	 */
-	abstract Object getNailBorderThickness();
+	abstract Integer getNailBorderThickness();
 
 	/**
 	 * Set nailBorderThickness property.With improvedVisibility enabled range activated.
@@ -156,9 +156,9 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get nailRadius property.<br>
 	 * Default: 8.
-	 * @return Object Value for nailRadius is an integer number.
+	 * @return Integer Value for nailRadius.
 	 */
-	abstract Object getNailRadius();
+	abstract Integer getNailRadius();
 
 	/**
 	 * Set nailRadius property.With improvedVisibility enabled range activated.
@@ -184,9 +184,9 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get startWidth property.<br>
 	 * Default: 8.
-	 * @return Object Value for startWidth.
+	 * @return Double Value for startWidth.
 	 */
-	abstract Object getStartWidth();
+	abstract Double getStartWidth();
 
 	/**
 	 * Set startWidth property.
@@ -196,9 +196,9 @@ public abstract interface IGaugeArrowController {
 
 	/**
 	 * Get value property.
-	 * @return Object Value for value is an integer number.
+	 * @return Integer Value for value.
 	 */
-	abstract Object getValue();
+	abstract Integer getValue();
 
 	/**
 	 * Set value property.

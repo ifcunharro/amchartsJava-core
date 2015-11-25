@@ -58,8 +58,10 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		gaugeArrow.setFeature("id", id);
 	}
 	
-	public Object getAlpha(){
-		return gaugeArrow.getFeature("alpha");
+	public Double getAlpha(){
+		Object alpha = gaugeArrow.getFeature("alpha");
+		
+		return alpha != null ? ((Number)alpha).doubleValue() : null;
 	}
 	
 	public void setAlpha(Number alpha) throws OutOfRangeException{
@@ -91,8 +93,10 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		gaugeArrow.setFeature("axis", axis);	
 	}
 	
-	public Object getBorderAlpha(){
-		return gaugeArrow.getFeature("borderAlpha");
+	public Double getBorderAlpha(){
+		Object borderAlpha = gaugeArrow.getFeature("borderAlpha");
+		
+		return borderAlpha != null ? ((Number)borderAlpha).doubleValue() : null;
 	}
 	
 	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException{
@@ -134,8 +138,10 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}
 	}
 	
-	public Object getNailAlpha(){
-		return gaugeArrow.getFeature("nailAlpha");
+	public Double getNailAlpha(){
+		Object nailAlpha = gaugeArrow.getFeature("nailAlpha");
+		
+		return nailAlpha != null ? ((Number)nailAlpha).doubleValue() : null;
 	}
 	
 	public void setNailAlpha(Number nailAlpha) throws OutOfRangeException{
@@ -144,8 +150,10 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}
 	}
 	
-	public Object getNailBorderAlpha(){
-		return gaugeArrow.getFeature("nailBorderAlpha");
+	public Double getNailBorderAlpha(){
+		Object nailBorderAlpha = gaugeArrow.getFeature("nailBorderAlpha");
+		
+		return nailBorderAlpha != null ? ((Number)nailBorderAlpha).doubleValue() : null;
 	}
 	
 	public void setNailBorderAlpha(Number nailBorderAlpha) throws OutOfRangeException{
@@ -154,8 +162,10 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}
 	}
 	
-	public Object getNailBorderThickness(){
-		return gaugeArrow.getFeature("nailBorderThickness");
+	public Integer getNailBorderThickness(){
+		Object nailBorderThickness = gaugeArrow.getFeature("nailBorderThickness");
+		
+		return nailBorderThickness != null ? ((Number)nailBorderThickness).intValue() : null;
 	}
 	
 	public void setNailBorderThickness(Number nailBorderThickness) throws OutOfRangeException{
@@ -168,8 +178,10 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}
 	}
 	
-	public Object getNailRadius(){
-		return gaugeArrow.getFeature("nailRadius");
+	public Integer getNailRadius(){
+		Object nailRadius = gaugeArrow.getFeature("nailRadius");
+		
+		return nailRadius != null ? ((Number)nailRadius).intValue() : null;
 	}
 	
 	public void setNailRadius(Number nailRadius) throws OutOfRangeException{
@@ -197,8 +209,10 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}
 	}
 	
-	public Object getStartWidth(){
-		return gaugeArrow.getFeature("startWidth");
+	public Double getStartWidth(){
+		Object startWidth = gaugeArrow.getFeature("startWidth");
+		
+		return startWidth != null ? ((Number)startWidth).doubleValue() : null;
 	}
 	
 	public void setStartWidth(Number startWidth){
@@ -207,8 +221,10 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		}
 	}
 	
-	public Object getValue(){
-		return gaugeArrow.getFeature("value");
+	public Integer getValue(){
+		Object value = gaugeArrow.getFeature("value");
+		
+		return value != null ? ((Number)value).intValue() : null;
 	}
 	
 	public void setValue(Number value) throws IntegerException{

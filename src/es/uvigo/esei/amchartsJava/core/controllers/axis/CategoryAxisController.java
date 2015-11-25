@@ -17,8 +17,10 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	 */
 	private static final long serialVersionUID = 2203487257864745560L;
 
-	public Object getAutoRotateAngle(){
-		return axes.getFeature("autoRotateAngle");
+	public Integer getAutoRotateAngle(){
+		Object autoRotateAngle = axes.getFeature("autoRotateAngle");
+		
+		return autoRotateAngle != null ? ((Number)autoRotateAngle).intValue() : null;
 	}
 	
 	public void setAutoRotateAngle(Number autoRotateAngle) throws OutOfRangeException{
@@ -27,8 +29,10 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 		}
 	}
 	
-	public Object getAutoRotateCount(){
-		return axes.getFeature("autoRotateCount");
+	public Integer getAutoRotateCount(){
+		Object autoRotateCount = axes.getFeature("autoRotateCount");
+		
+		return autoRotateCount != null ? ((Number)autoRotateCount).intValue() : null;
 	}
 	
 	public void setAutoRotateCount(Number autoRotateCount) throws IntegerException{
@@ -81,8 +85,10 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 		axes.setFeature("equalSpacing", equalSpacing);
 	}
 	
-	public Object getFirstDayOfWeek(){
-		return axes.getFeature("firstDayOfWeek");
+	public Integer getFirstDayOfWeek(){
+		Object firstDayOfWeek = axes.getFeature("firstDayOfWeek");
+		
+		return firstDayOfWeek != null ? ((Number)firstDayOfWeek).intValue() : null;
 	}
 	
 	public void setFirstDayOfWeek(Number firstDayOfWeek) throws OutOfRangeException{

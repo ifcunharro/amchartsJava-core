@@ -50,8 +50,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		axes.setFeature("autoGridCount", autoGridCount);
 	}
 	
-	public Object getAxisAlpha(){
-		return axes.getFeature("axisAlpha");
+	public Double getAxisAlpha(){
+		Object axisAlpha = axes.getFeature("axisAlpha");
+		
+		return axisAlpha != null ? ((Number)axisAlpha).doubleValue() : null;
 	}
 	
 	public void setAxisAlpha(Number axisAlpha) throws OutOfRangeException{
@@ -70,8 +72,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getAxisThickness(){
-		return axes.getFeature("axisThickness");
+	public Integer getAxisThickness(){
+		Object axisThickness = axes.getFeature("axisThickness");
+		
+		return axisThickness != null ? ((Number)axisThickness).intValue() : null;
 	}
 	
 	public void setAxisThickness(Number axisThickness) throws OutOfRangeException{
@@ -110,8 +114,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		axes.setFeature("color", color.toString());
 	}
 	
-	public Object getDashLength(){
-		return axes.getFeature("dashLength");
+	public Integer getDashLength(){
+		Object dashLength = axes.getFeature("dashLength");
+		
+		return dashLength != null ? ((Number)dashLength).intValue() : null;
 	}
 	
 	public void setDashLength(Number dashLength) throws OutOfRangeException{
@@ -129,8 +135,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return AmchartsConstants.DATE_FORMAT;
 	}
 	
-	public Object getFillAlpha(){
-		return axes.getFeature("fillAlpha");
+	public Double getFillAlpha(){
+		Object fillAlpha = axes.getFeature("fillAlpha");
+		
+		return fillAlpha != null ? ((Number)fillAlpha).doubleValue() : null;
 	}
 	
 	public void setFillAlpha(Number fillAlpha) throws OutOfRangeException{
@@ -149,8 +157,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getFontSize(){
-		return axes.getFeature("fontSize");
+	public Integer getFontSize(){
+		Object fontSize = axes.getFeature("fontSize");
+		
+		return fontSize != null ? ((Number)fontSize).intValue() : null;
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
@@ -163,8 +173,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getGridAlpha(){
-		return axes.getFeature("gridAlpha");
+	public Double getGridAlpha(){
+		Object gridAlpha = axes.getFeature("gridAlpha");
+		
+		return gridAlpha != null ? ((Number)gridAlpha).doubleValue() : null;
 	}
 	
 	public void setGridAlpha(Number gridAlpha) throws OutOfRangeException{
@@ -183,8 +195,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getGridCount(){
-		return axes.getFeature("gridCount");
+	public Integer getGridCount(){
+		Object gridCount = axes.getFeature("gridCount");
+		
+		return gridCount != null ? ((Number)gridCount).intValue() : null;
 	}
 	
 	public void setGridCount(Number gridCount) throws OutOfRangeException{
@@ -197,8 +211,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getGridThickness(){
-		return axes.getFeature("gridThickness");
+	public Integer getGridThickness(){
+		Object gridThickness = axes.getFeature("gridThickness");
+		
+		return gridThickness != null ? ((Number)gridThickness).intValue() : null;
 	}
 	
 	public void setGridThickness(Number gridThickness) throws OutOfRangeException{
@@ -229,8 +245,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		axes.setFeature("inside", inside);
 	}
 	
-	public Object getLabelFrequency(){
-		return axes.getFeature("labelFrequency");
+	public Integer getLabelFrequency(){
+		Object labelFrequency = axes.getFeature("labelFrequency");
+		
+		return labelFrequency != null ? ((Number)labelFrequency).intValue() : null;
 	}
 	
 	public void setLabelFrequency(Number labelFrequency) throws OutOfRangeException{
@@ -243,8 +261,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getLabelOffset(){
-		return axes.getFeature("labelOffset");
+	public Integer getLabelOffset(){
+		Object labelOffset = axes.getFeature("labelOffset");
+		
+		return labelOffset != null ? ((Number)labelOffset).intValue() : null;
 	}
 	
 	public void setLabelOffset(Number labelOffset) throws OutOfRangeException{
@@ -257,8 +277,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getLabelRotation(){
-		return axes.getFeature("labelRotation");
+	public Integer getLabelRotation(){
+		Object labelRotation = axes.getFeature("labelRotation");
+		
+		return labelRotation != null ? ((Number)labelRotation).intValue() : null;
 	}
 	
 	public void setLabelRotation(Number labelRotation) throws OutOfRangeException{
@@ -276,8 +298,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		axes.setFeature("labelsEnabled", labelsEnabled);
 	}
 	
-	public Object getMinHorizontalGap(){
-		return axes.getFeature("minHorizontalGap");
+	public Integer getMinHorizontalGap(){
+		Object minHorizontalGap = axes.getFeature("minHorizontalGap");
+		
+		return minHorizontalGap != null ? ((Number)minHorizontalGap).intValue() : null;
 	}
 	
 	public void setMinHorizontalGap(Number minHorizontalGap) throws IntegerException{
@@ -286,8 +310,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getMinorGridAlpha(){
-		return axes.getFeature("minorGridAlpha");
+	public Double getMinorGridAlpha(){
+		Object minorGridAlpha = axes.getFeature("minorGridAlpha");
+		
+		return minorGridAlpha != null ? ((Number)minorGridAlpha).doubleValue() : null;
 	}
 	
 	public void setMinorGridAlpha(Number minorGridAlpha) throws OutOfRangeException{
@@ -305,8 +331,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		axes.setFeature("minorGridEnabled", minorGridEnabled);
 	}
 	
-	public Object getMinorTickLength(){
-		return axes.getFeature("minorTickLength");
+	public Integer getMinorTickLength(){
+		Object minorTickLength = axes.getFeature("minorTickLength");
+		
+		return minorTickLength != null ? ((Number)minorTickLength).intValue() : null;
 	}
 	
 	public void setMinorTickLength(Number minorTickLength) throws OutOfRangeException{
@@ -320,16 +348,22 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		
 	}
 	
-	public Object getMinVerticalGap(){
-		return axes.getFeature("minVerticalGap");
+	public Integer getMinVerticalGap(){
+		Object minVerticalGap = axes.getFeature("minVerticalGap");
+		
+		return minVerticalGap != null ? ((Number)minVerticalGap).intValue() : null;
 	}
 	
-	public void setMinVerticalGap(Number minVerticalGap){
-		axes.setFeature("minVerticalGap", minVerticalGap);
+	public void setMinVerticalGap(Number minVerticalGap) throws IntegerException{
+		if(NumberValidator.integerValidator(minVerticalGap)){
+			axes.setFeature("minVerticalGap", minVerticalGap);
+		}
 	}
 	
-	public Object getOffset(){
-		return axes.getFeature("offset");
+	public Integer getOffset(){
+		Object offset = axes.getFeature("offset");
+		
+		return offset != null ? ((Number)offset).intValue() : null;
 	}
 	
 	public void setOffset(Number offset) throws OutOfRangeException{
@@ -368,8 +402,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		axes.setFeature("showLastLabel", showLastLabel);
 	}
 	
-	public Object getTickLength(){
-		return axes.getFeature("tickLength");
+	public Integer getTickLength(){
+		Object tickLength = axes.getFeature("tickLength");
+		
+		return tickLength != null ? ((Number)tickLength).intValue() : null;
 	}
 	
 	public void setTickLength(Number tickLength) throws OutOfRangeException{
@@ -409,8 +445,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getTitleFontSize(){
-		return axes.getFeature("titleFontSize");
+	public Integer getTitleFontSize(){
+		Object titleFontSize = axes.getFeature("titleFontSize");
+		
+		return titleFontSize != null ? ((Number)titleFontSize).intValue() : null;
 	}
 	
 	public void setTitleFontSize(Number titleFontSize) throws OutOfRangeException{
@@ -423,8 +461,10 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		}
 	}
 	
-	public Object getTitleRotation(){
-		return axes.getFeature("titleRotation");
+	public Integer getTitleRotation(){
+		Object titleRotation = axes.getFeature("titleRotation");
+		
+		return titleRotation != null ? ((Number)titleRotation).intValue() : null;
 	}
 	
 	public void setTitleRotation(Number titleRotation) throws OutOfRangeException{

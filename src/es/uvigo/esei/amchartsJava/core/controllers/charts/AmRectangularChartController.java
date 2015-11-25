@@ -38,8 +38,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		super(chart);
 	}
 	
-	public Object getAngle(){
-		return amchart.getFeature("angle");
+	public Integer getAngle(){
+		Object angle = amchart.getFeature("angle");
+		
+		return angle != null ? ((Number)angle).intValue() : null;
 	}
 	
 	public void setAngle(Number angle) throws OutOfRangeException{
@@ -48,8 +50,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getAutoMarginOffset(){
-		return amchart.getFeature("autoMarginOffset");
+	public Integer getAutoMarginOffset(){
+		Object autoMarginOffset = amchart.getFeature("autoMarginOffset");
+		
+		return autoMarginOffset != null ? ((Number)autoMarginOffset).intValue() : null;
 	}
 	
 	public void setAutoMarginOffset(Number autoMarginOffset) throws OutOfRangeException{
@@ -71,8 +75,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		amchart.setFeature("autoMargins", autoMargins);
 	}
 	
-	public Object getDepth3D(){
-		return amchart.getFeature("depth3D");
+	public Integer getDepth3D(){
+		Object depth3D = amchart.getFeature("depth3D");
+		
+		return depth3D != null ? ((Number)depth3D).intValue() : null;
 	}
 	
 	public void setDepth3D(Number depth3D) throws IntegerException{
@@ -81,8 +87,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getMarginBottom(){
-		return amchart.getFeature("marginBottom");
+	public Integer getMarginBottom(){
+		Object marginBottom = amchart.getFeature("marginBottom");
+		
+		return marginBottom != null ? ((Number)marginBottom).intValue() : null;
 	}
 	
 	public void setMarginBottom(Number marginBottom) throws IntegerException{
@@ -91,8 +99,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getMarginLeft(){
-		return amchart.getFeature("marginLeft");
+	public Integer getMarginLeft(){
+		Object marginLeft = amchart.getFeature("marginLeft");
+		
+		return marginLeft != null ? ((Number)marginLeft).intValue() : null;
 	}
 	
 	public void setMarginLeft(Number marginLeft) throws IntegerException{
@@ -101,8 +111,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getMarginRight(){
-		return amchart.getFeature("marginRight");
+	public Integer getMarginRight(){
+		Object marginRight = amchart.getFeature("marginRight");
+		
+		return marginRight != null ? ((Number)marginRight).intValue() : null;
 	}
 	
 	public void setMarginRight(Number marginRight) throws IntegerException{
@@ -120,8 +132,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		amchart.setFeature("marginsUpdated", marginsUpdated);
 	}
 	
-	public Object getMarginTop(){
-		return amchart.getFeature("marginTop");
+	public Integer getMarginTop(){
+		Object marginTop = amchart.getFeature("marginTop");
+		
+		return marginTop != null ? ((Number)marginTop).intValue() : null;
 	}
 	
 	public void setMarginTop(Number marginTop) throws IntegerException{
@@ -130,8 +144,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getPlotAreaBorderAlpha(){
-		return amchart.getFeature("plotAreaBorderAlpha");
+	public Double getPlotAreaBorderAlpha(){
+		Object plotAreaBorderAlpha = amchart.getFeature("plotAreaBorderAlpha");
+		
+		return plotAreaBorderAlpha != null ? ((Number)plotAreaBorderAlpha).doubleValue() : null;
 	}
 	
 	public void setPlotAreaBorderAlpha(Number plotAreaBorderAlpha) throws OutOfRangeException{
@@ -180,8 +196,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	
 	//trendLines
 	
-	public Object getZoomOutButtomAlpha(){
-		return amchart.getFeature("zoomOutButtonAlpha");
+	public Double getZoomOutButtomAlpha(){
+		Object zoomOutButtonAlpha = amchart.getFeature("zoomOutButtonAlpha");
+		
+		return zoomOutButtonAlpha != null ? ((Number)zoomOutButtonAlpha).doubleValue() : null;
 	}
 	
 	public void setZoomOutButtonAlpha(Number zoomOutButtonAlpha) throws OutOfRangeException{
@@ -212,8 +230,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getZoomOutButtonImageSize(){
-		return amchart.getFeature("zoomOutButtonImageSize");
+	public Integer getZoomOutButtonImageSize(){
+		Object zoomOutButtonImageSize = amchart.getFeature("zoomOutButtonImageSize");
+		
+		return zoomOutButtonImageSize != null ? ((Number)zoomOutButtonImageSize).intValue() : null;
 	}
 	
 	public void setZoomOutButtonImageSize(Number zoomOutButtonImageSize) throws OutOfRangeException{
@@ -226,8 +246,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getZoomOutButtonPadding(){
-		return amchart.getFeature("zoomOutButtonPadding");
+	public Integer getZoomOutButtonPadding(){
+		Object zoomOutButtonPadding = amchart.getFeature("zoomOutButtonPadding");
+		
+		return zoomOutButtonPadding != null ? ((Number)zoomOutButtonPadding).intValue() : null;
 	}
 	
 	public void setZoomOutButtonPadding(Number zoomOutButtonPadding) throws OutOfRangeException{
@@ -240,8 +262,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	public Object getZoomOutButtonRollOverAlpha(){
-		return amchart.getFeature("zoomOutButtonRollOverAlpha");
+	public Double getZoomOutButtonRollOverAlpha(){
+		Object zoomOutButtonRollOverAlpha = amchart.getFeature("zoomOutButtonRollOverAlpha");
+		
+		return zoomOutButtonRollOverAlpha != null ? ((Number)zoomOutButtonRollOverAlpha).doubleValue() : null;
 	}
 	
 	public void setZoomOutButtonRollOverAlpha(Number zoomOutButtonRollOverAlpha) throws OutOfRangeException{

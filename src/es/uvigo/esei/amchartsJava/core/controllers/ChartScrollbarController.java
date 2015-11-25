@@ -55,8 +55,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		scrollbar.setFeature("autoGridCount", autoGridCount);
 	}
 	
-	public Object getBackgroundAlpha(){
-		return scrollbar.getFeature("backgroundAlpha");
+	public Double getBackgroundAlpha(){
+		Object backgroundAlpha = scrollbar.getFeature("backgroundAlpha");
+		
+		return backgroundAlpha != null ? ((Number)backgroundAlpha).doubleValue() : null;
 	}
 	
 	public void setBackgroundAlpha(Number backgroundAlpha) throws OutOfRangeException{
@@ -96,8 +98,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getDragIconHeight(){
-		return scrollbar.getFeature("dragIconHeight");
+	public Integer getDragIconHeight(){
+		Object dragIconHeight = scrollbar.getFeature("dragIconHeight");
+		
+		return dragIconHeight != null ? ((Number)dragIconHeight).intValue() : null;
 	}
 	
 	public void setDragIconHeight(Number dragIconHeight) throws OutOfRangeException{
@@ -110,8 +114,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getDragIconWidth(){
-		return scrollbar.getFeature("dragIconWidth");
+	public Integer getDragIconWidth(){
+		Object dragIconWidth = scrollbar.getFeature("dragIconWidth");
+		
+		return dragIconWidth != null ? ((Number)dragIconWidth).intValue() : null;
 	}
 	
 	public void setDragIconWidth(Number dragIconWidth) throws OutOfRangeException{
@@ -150,8 +156,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getGraphFillAlpha(){
-		return scrollbar.getFeature("graphFillAlpha");
+	public Double getGraphFillAlpha(){
+		Object graphFillAlpha = scrollbar.getFeature("graphFillAlpha");
+		
+		return graphFillAlpha != null ? ((Number)graphFillAlpha).doubleValue() : null;
 	}
 	
 	public void setGraphFillAlpha(Number graphFillAlpha) throws OutOfRangeException{
@@ -170,8 +178,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getGraphLineAlpha(){
-		return scrollbar.getFeature("graphLineAlpha");
+	public Double getGraphLineAlpha(){
+		Object graphLineAlpha = scrollbar.getFeature("graphLineAlpha");
+		
+		return graphLineAlpha != null ? ((Number)graphLineAlpha).doubleValue() : null;
 	}
 	
 	public void setGraphLineAlpha(Number graphLineAlpha) throws OutOfRangeException{
@@ -198,8 +208,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		scrollbar.setFeature("graphType", graphType.toString());
 	}
 	
-	public Object getGridAlpha(){
-		return scrollbar.getFeature("gridAlpha");
+	public Double getGridAlpha(){
+		Object gridAlpha = scrollbar.getFeature("gridAlpha");
+		
+		return gridAlpha != null ? ((Number)gridAlpha).doubleValue() : null;
 	}
 	
 	public void setGridAlpha(Number gridAlpha) throws OutOfRangeException{
@@ -218,8 +230,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getGridCount(){
-		return scrollbar.getFeature("gridCount");
+	public Integer getGridCount(){
+		Object gridCount = scrollbar.getFeature("gridCount");
+		
+		return gridCount != null ? ((Number)gridCount).intValue() : null;
 	}
 	
 	public void setGridCount(Number gridCount) throws OutOfRangeException{
@@ -250,8 +264,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		scrollbar.setFeature("ignoreCustomColors", ignoreCustomColors);
 	}
 	
-	public Object getMaximum(){
-		return scrollbar.getFeature("maximum");
+	public Integer getMaximum(){
+		Object maximum = scrollbar.getFeature("maximum");
+		
+		return maximum != null ? ((Number)maximum).intValue() : null;
 	}
 	
 	public void setMaximum(Number maximum) throws IntegerException{
@@ -260,8 +276,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getMinimum(){
-		return scrollbar.getFeature("minimum");
+	public Integer getMinimum(){
+		Object minimum = scrollbar.getFeature("minimum");
+		
+		return minimum != null ? ((Number)minimum).intValue() : null;
 	}
 	
 	public void setMinimum(Number minimum) throws IntegerException{
@@ -270,8 +288,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getOffset(){
-		return scrollbar.getFeature("offset");
+	public Integer getOffset(){
+		Object offset = scrollbar.getFeature("offset");
+		
+		return offset != null ? ((Number)offset).intValue() : null;
 	}
 	
 	public void setOffset(Number offset) throws OutOfRangeException{
@@ -300,8 +320,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		scrollbar.setFeature("resizeEnabled", resizeEnabled);
 	}
 	
-	public Object getScrollbarHeight(){
-		return scrollbar.getFeature("scrollbarHeight");
+	public Integer getScrollbarHeight(){
+		Object scrollbarHeight = scrollbar.getFeature("scrollbarHeight");
+		
+		return scrollbarHeight != null ? ((Number)scrollbarHeight).intValue() : null;
 	}
 	
 	public void setScrollbarHeight(Number scrollbarHeight) throws OutOfRangeException{
@@ -314,8 +336,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getScrollDuration(){
-		return scrollbar.getFeature("scrollDuration");
+	public Integer getScrollDuration(){
+		Object scrollDuration = scrollbar.getFeature("scrollDuration");
+		
+		return scrollDuration != null ? ((Number)scrollDuration).intValue() : null;
 	}
 	
 	public void setScrollDuration(Number scrollDuration) throws IntegerException{
@@ -324,8 +348,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getSelectedBackgroundAlpha(){
-		return scrollbar.getFeature("selectedBackgroundAlpha");
+	public Double getSelectedBackgroundAlpha(){
+		Object selectedBackgroundAlpha = scrollbar.getFeature("selectedBackgroundAlpha");
+		
+		return selectedBackgroundAlpha != null ? ((Number)selectedBackgroundAlpha).doubleValue() : null;
 	}
 	
 	public void setSelectedBackgroundAlpha(Number selectedBackgroundAlpha) throws OutOfRangeException{
@@ -344,8 +370,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getSelectedGraphFillAlpha(){
-		return scrollbar.getFeature("selectedGraphFillAlpha");
+	public Double getSelectedGraphFillAlpha(){
+		Object selectedGraphFillAlpha = scrollbar.getFeature("selectedGraphFillAlpha");
+		
+		return selectedGraphFillAlpha != null ? ((Number)selectedGraphFillAlpha).doubleValue() : null;
 	}
 	
 	public void setSelectedGraphFillAlpha(Number selectedGraphFillAlpha) throws OutOfRangeException{
@@ -364,8 +392,10 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 		}
 	}
 	
-	public Object getSelectedGraphLineAlpha(){
-		return scrollbar.getFeature("selectedGraphLineAlpha");
+	public Double getSelectedGraphLineAlpha(){
+		Object selectedGraphLineAlpha = scrollbar.getFeature("selectedGraphLineAlpha");
+		
+		return selectedGraphLineAlpha != null ? ((Number)selectedGraphLineAlpha).doubleValue() : null;
 	}
 	
 	public void setSelectedGraphLineAlpha(Number selectedGraphLineAlpha) throws OutOfRangeException{

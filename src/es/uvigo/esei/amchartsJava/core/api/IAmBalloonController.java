@@ -32,9 +32,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get animationDuration property.<br>
 	 * Default: 0.3
-	 * @return Object Value for animationDuration is a double number.
+	 * @return Double Value for animationDuration.
 	 */
-	abstract Object getAnimationDuration();
+	abstract Double getAnimationDuration();
 
 	/**
 	 * Set animationDuration property.With improvedVisibility enabled range activated.
@@ -47,9 +47,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get borderAlpha property.<br>
 	 * Default: 1
-	 * @return Object Value of borderAlpha is a double number.
+	 * @return Double Value for borderAlpha.
 	 */
-	abstract Object getBorderAlpha();
+	abstract Double getBorderAlpha();
 
 	/**
 	 * Set borderAlpha property.
@@ -75,9 +75,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get borderThickness property.<br>
 	 * Default: 2
-	 * @return Object Value for borderThickness is an integer number.
+	 * @return Integer Value for borderThickness.
 	 */
-	abstract Object getBorderThickness();
+	abstract Integer getBorderThickness();
 
 	/**
 	 * Set borderThickness property.With improvedVisibility enabled range activated.
@@ -104,9 +104,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get cornerRadius property.<br>
 	 * Default: 0
-	 * @return Object Value of corneRadius is an integer number.
+	 * @return Integer Value of corneRadius.
 	 */
-	abstract Object getCornerRadius();
+	abstract Integer getCornerRadius();
 
 	/**
 	 * Set cornerRadius property.With improvedVisibility enabled range activated.
@@ -131,9 +131,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get fadeOutDuration property.<br>
 	 * Default: 0.3
-	 * @return Object Value for fadeOutDuration is a double number.
+	 * @return Double Value for fadeOutDuration.
 	 */
-	abstract Object getFadeOutDuration();
+	abstract Double getFadeOutDuration();
 
 	/**
 	 * Set fadeOutDuration property.With improvedVisibility enabled range activated.
@@ -146,9 +146,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get fillAlpha property.<br>
 	 * Default: 0.8
-	 * @return Object Value of fillAlpha is a double number.
+	 * @return Double Value of fillAlpha.
 	 */
-	abstract Object getFillAlpha();
+	abstract Double getFillAlpha();
 
 	/**
 	 * Set fillAlpha property.
@@ -187,9 +187,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get fontSize property.<br>
 	 * Default: fontSize of chart
-	 * @return Object Value of fontSize is an integer number.
+	 * @return Integer Value of fontSize.
 	 */
-	abstract Object getFontSize();
+	abstract Integer getFontSize();
 
 	/**
 	 * Set fontSize property.With improvedVisibility enabled range activated.
@@ -201,9 +201,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get horizontalPadding property.<br>
 	 * Default: 8
-	 * @return Object Value of horizontalPadding is an integer number.
+	 * @return Integer Value of horizontalPadding.
 	 */
-	abstract Object getHorizontalPadding();
+	abstract Integer getHorizontalPadding();
 
 	/**
 	 * Set horizontalPadding property.With improvedVisibility enabled range activated.
@@ -215,9 +215,9 @@ public abstract interface IAmBalloonController {
 
 	/**
 	 * Get maxWidth property.
-	 * @return Object Value for maxWidth is an integer number.
+	 * @return Integer Value for maxWidth.
 	 */
-	abstract Object getMaxWidth();
+	abstract Integer getMaxWidth();
 
 	/**
 	 * Set maxWidth property.
@@ -229,9 +229,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get offsetX property.<br>
 	 * Default: 1
-	 * @return Object Value of offsetX is an integer number.
+	 * @return Integer Value of offsetX.
 	 */
-	abstract Object getOffsetX();
+	abstract Integer getOffsetX();
 
 	/**
 	 * Set offsetX property.
@@ -243,9 +243,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get offsetY property.<br>
 	 * Default: 6
-	 * @return Object Value for offsetY is an integer number.
+	 * @return Integer Value for offsetY.
 	 */
-	abstract Object getOffsetY();
+	abstract Integer getOffsetY();
 
 	/**
 	 * Set offsetY property.
@@ -257,9 +257,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get pointerWidth property.<br>
 	 * Default: 6
-	 * @return Object Value for pointerWidth is an integer number.
+	 * @return Integer Value for pointerWidth.
 	 */
-	abstract Object getPointerWidth();
+	abstract Integer getPointerWidth();
 
 	/**
 	 * Set pointerWidth property.With improvedVisibility enabled range activated.
@@ -271,9 +271,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get shadowAlpha property.<br>
 	 * Default: 0.4
-	 * @return Object Value for shadowAlpha is a double number.
+	 * @return Double Value for shadowAlpha.
 	 */
-	abstract Object getShadowAlpha();
+	abstract Double getShadowAlpha();
 
 	/**
 	 * Set shadowAlpha property.
@@ -325,9 +325,9 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get verticalPadding property.<br>
 	 * Default: 4
-	 * @return Object Value for verticalPadding is an integer number.
+	 * @return Integer Value for verticalPadding.
 	 */
-	abstract Object getVerticalPadding();
+	abstract Integer getVerticalPadding();
 
 	/**
 	 * Set verticalPadding property.With improvedVisibility enabled range activated.

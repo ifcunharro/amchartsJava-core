@@ -16,9 +16,9 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get alpha property.
-	 * @return Object Value for alpha is a double number.
+	 * @return Double Value for alpha.
 	 */
-	abstract Object getAlpha();
+	abstract Double getAlpha();
 
 	/**
 	 * Set alpha property.
@@ -54,9 +54,9 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get endValue property.
-	 * @return Object Value for endValue.
+	 * @return Double Value for endValue.
 	 */
-	abstract Object getEndValue();
+	abstract Double getEndValue();
 
 	/**
 	 * Set endValue property.
@@ -98,9 +98,9 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get startValue property.
-	 * @return Object Value for startValue.
+	 * @return Double Value for startValue.
 	 */
-	abstract Object getStartValue();
+	abstract Double getStartValue();
 
 	/**
 	 * Set startValue property.

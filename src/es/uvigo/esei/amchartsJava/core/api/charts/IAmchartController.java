@@ -52,7 +52,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	
 	/**
 	 * Get export property.
-	 * @return Object Config of export, always is AmCharts.exportCFG
+	 * @return Object Config of export as rawString, always is AmCharts.exportCFG
 	 */
 	abstract Object getExport();
 	
@@ -85,9 +85,9 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get backgroundAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for backgroundAlpha is a double number.
+	 * @return Double Value for backgroundAlpha.
 	 */
-	abstract Object getBackgroundAlpha();
+	abstract Double getBackgroundAlpha();
 
 	/**
 	 * Set backgroundAlpha property.
@@ -115,9 +115,9 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get borderAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for borderAlpha is a double number.
+	 * @return Double Value for borderAlpha.
 	 */
-	abstract Object getBorderAlpha();
+	abstract Double getBorderAlpha();
 
 	/**
 	 * Set borderAlpha property.
@@ -209,9 +209,9 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get fontSize property.<br>
 	 * Default: 11.
-	 * @return Object Value for fontSize is an integer number.
+	 * @return Integer Value for fontSize.
 	 */
-	abstract Object getFontSize();
+	abstract Integer getFontSize();
 
 	/**
 	 * Set fontSize property.With improvedVisibility enabled range activated.
@@ -236,9 +236,9 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get handDrawScatter property.<br>
 	 * Default: 2.
-	 * @return Object Value for handDrawScatter is an integer number.
+	 * @return Integer Value for handDrawScatter.
 	 */
-	abstract Object getHandDrawScatter();
+	abstract Integer getHandDrawScatter();
 
 	/**
 	 * Set handDrawScatter property.With improvedVisibility enabled range activated.
@@ -251,9 +251,9 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get handDrawThickness property.<br>
 	 * Default: 1.
-	 * @return Object Value for handDrawThickness is an integer number.
+	 * @return Value for handDrawThickness.
 	 */
-	abstract Object getHandDrawThickness();
+	abstract Integer getHandDrawThickness();
 
 	/**
 	 * Set handDrawThickness property.With improvedVisibility enabled range activated.
@@ -266,9 +266,9 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get hideBalloonTime property.<br>
 	 * Default: 150.
-	 * @return Object Value for hideBalloonTime is an integer number.
+	 * @return Integer Value for hideBalloonTime.
 	 */
-	abstract Object getHideBalloonTime();
+	abstract Integer getHideBalloonTime();
 
 	/**
 	 * Set hideBalloonTime property.
@@ -334,9 +334,9 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get percentPrecision property.<br>
 	 * Default: 2.
-	 * @return Object Value for percentPrecision is an integer number.
+	 * @return Integer Value for percentPrecision.
 	 */
-	abstract Object getPercentPrecision();
+	abstract Integer getPercentPrecision();
 
 	/**
 	 * Set percentPrecision property.
@@ -349,9 +349,9 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get precision property.<br>
 	 * Default: -1.
-	 * @return Object Value for precision is a integer number.
+	 * @return Integer Value for precision.
 	 */
-	abstract Object getPrecision();
+	abstract Integer getPrecision();
 
 	/**
 	 * Set precision property.

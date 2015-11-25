@@ -44,9 +44,9 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get columnSpacing property.<br>
 	 * Default: 5.
-	 * @return Object Value for columnSpacing is an integer number.
+	 * @return Integer Value for columnSpacing.
 	 */
-	abstract Object getColumnSpacing();
+	abstract Integer getColumnSpacing();
 
 	/**
 	 * Set columnSpacing property.
@@ -58,9 +58,9 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get columnSpacing3D property.<br>
 	 * Default: 0.
-	 * @return Object Value for columnSpacing3D is an integer number.
+	 * @return Integer Value for columnSpacing3D.
 	 */
-	abstract Object getColumnSpacing3D();
+	abstract Integer getColumnSpacing3D();
 
 	/**
 	 * Set columnSpacing3D property.
@@ -73,9 +73,9 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get columnWidth property.<br>
 	 * Default: 0.8.
-	 * @return Object Value for columnWidth is a double number.
+	 * @return Double Value for columnWidth.
 	 */
-	abstract Object getColumnWidth();
+	abstract Double getColumnWidth();
 
 	/**
 	 * Set columnWidth property.
@@ -98,9 +98,9 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 
 	/**
 	 * Get maxSelectedSeries property.
-	 * @return Object Value for maxSelectedSeries is an integer number.
+	 * @return Integer Value for maxSelectedSeries.
 	 */
-	abstract Object getMaxSelectedSeries();
+	abstract Integer getMaxSelectedSeries();
 
 	/**
 	 * Set maxSelectedSeries property.
@@ -112,9 +112,9 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 
 	/**
 	 * Get maxSelectedTime property.
-	 * @return Object Value for maxSelectedTime is an integer number.
+	 * @return Integer Value for maxSelectedTime.
 	 */
-	abstract Object getMaxSelectedTime();
+	abstract Integer getMaxSelectedTime();
 
 	/**
 	 * Set maxSelectedTime property.
@@ -127,9 +127,9 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get minSelectedTime property.
 	 * Default: 0.
-	 * @return Object Value for minSelectedTime is an integer number.
+	 * @return Integer Value for minSelectedTime.
 	 */
-	abstract Object getMinSelectedTime();
+	abstract Integer getMinSelectedTime();
 
 	/**
 	 * Set minSelectedTime property.

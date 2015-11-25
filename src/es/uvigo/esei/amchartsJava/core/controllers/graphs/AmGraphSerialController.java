@@ -43,7 +43,7 @@ public class AmGraphSerialController extends AmGraphSerialChartController
 		amGraph.addGraphField("fillColorsField", fillColorsField);
 	}
 	
-	public String getGapField(String gapField){
+	public String getGapField(){
 		return (String) amGraph.getFeature("gapField");
 	}
 	

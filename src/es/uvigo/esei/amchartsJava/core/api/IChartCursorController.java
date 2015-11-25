@@ -27,9 +27,9 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get adjustment property.<br>
 	 * Default: 0.
-	 * @return Object Value for adjustment is an integer number.
+	 * @return Integer Value for adjustment.
 	 */
-	abstract Object getAdjustment();
+	abstract Integer getAdjustment();
 
 	//no se recomienda cambiar esta propiedad, es la distancia entre el cursor y
 	//el mensaje del balloon que aparece
@@ -43,9 +43,9 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get animationDuration property.<br>
 	 * Default: 0.3.
-	 * @return Object Value for animationDuration is a double number.
+	 * @return Double Value for animationDuration.
 	 */
-	abstract Object getAnimationDuration();
+	abstract Double getAnimationDuration();
 
 	/**
 	 * Set animationDuration property.
@@ -98,9 +98,9 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get bulletSize property.<br>
 	 * Default: 8.
-	 * @return Object Value for bulletSize is an integer number.
+	 * @return Integer Value for bulletSize.
 	 */
-	abstract Object getBulletSize();
+	abstract Integer getBulletSize();
 
 	/**
 	 * Set bulletSize property.With improvedVisibility enabled range activated.
@@ -112,9 +112,9 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get categoryBalloonAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for categoryBalloonAlpha is a double number.
+	 * @return Double Value for categoryBalloonAlpha.
 	 */
-	abstract Object getCategoryBalloonAlpha();
+	abstract Double getCategoryBalloonAlpha();
 
 	/**
 	 * Set categoryBalloonAlpha property.
@@ -208,9 +208,9 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get cursorAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for cursorAlpha is a double number.
+	 * @return Double Value for cursorAlpha.
 	 */
-	abstract Object getCursorAlpha();
+	abstract Double getCursorAlpha();
 
 	/**
 	 * Set cursorAlpha property.
@@ -274,9 +274,9 @@ public abstract interface IChartCursorController {
 
 	/**
 	 * Get graphBulletAlpha property.
-	 * @return graphBulletAlpha Value for graphBulletAlpha is a double number.
+	 * @return Double Value for graphBulletAlpha.
 	 */
-	abstract Object getGraphBulletAlpha();
+	abstract Double getGraphBulletAlpha();
 
 	/**
 	 * Set graphBulletAlpha property.
@@ -289,9 +289,9 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get graphBulletSize property.<br>
 	 * Default: 1.7(amcharts default, app only admitted integer number for this size)
-	 * @return Object Value for graphBulletSize is an integer number.
+	 * @return Integer Value for graphBulletSize.
 	 */
-	abstract Object getGraphBulletSize();
+	abstract Integer getGraphBulletSize();
 
 	/**
 	 * Set graphBulletSize property.With improvedVisibility enabled range activated.
@@ -343,9 +343,9 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get selectionAlpha property.<br>
 	 * Default: 0.2.
-	 * @return Object Value for selectionAlpha is a double number.
+	 * @return Double Value for selectionAlpha.
 	 */
-	abstract Object getSelectionAlpha();
+	abstract Double getSelectionAlpha();
 
 	/**
 	 * Set selectionAlpha property.
@@ -397,9 +397,9 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get valueLineAlpha property.<br>
 	 * Default: cursorAlpha.
-	 * @return Object Value for valueLineAlpha is a double number.
+	 * @return Double Value for valueLineAlpha.
 	 */
-	abstract Object getValueLineAlpha();
+	abstract Double getValueLineAlpha();
 
 	/**
 	 * Set valueLineAlpha property.

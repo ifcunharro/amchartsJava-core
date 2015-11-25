@@ -77,8 +77,10 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		amGraph.setFeature("fillToAxis", fillToAxis);
 	}
 	
-	public Object getMaxBulletSize(){
-		return amGraph.getFeature("maxBulletSize");
+	public Integer getMaxBulletSize(){
+		Object maxBulletSize = amGraph.getFeature("maxBulletSize");
+		
+		return maxBulletSize != null ? ((Number)maxBulletSize).intValue() : null;
 	}
 	
 	public void setMaxBulletSize(Number maxBulletSize) throws OutOfRangeException{
@@ -91,8 +93,10 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
-	public Object getMinBulletSize(){
-		return amGraph.getFeature("minBulletSize");
+	public Integer getMinBulletSize(){
+		Object minBulletSize = amGraph.getFeature("minBulletSize");
+		
+		return minBulletSize != null ? ((Number)minBulletSize).intValue() : null;
 	}
 	
 	public void setMinBulletSize(Number minBulletSize) throws IntegerException{

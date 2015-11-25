@@ -48,8 +48,10 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		
 	}
 	
-	public Object getAdjustment(){
-		return chartCursor.getFeature("adjustment");
+	public Integer getAdjustment(){
+		Object adjustment = chartCursor.getFeature("adjustment");
+		
+		return adjustment != null ? ((Number)adjustment).intValue() : null;
 	}
 	
 	//no se recomienda cambiar esta propiedad, es la distancia entre el cursor y
@@ -60,8 +62,10 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getAnimationDuration(){
-		return chartCursor.getFeature("animationDuration");
+	public Double getAnimationDuration(){
+		Object animationDuration = chartCursor.getFeature("animationDuration");
+		
+		return animationDuration != null ? ((Number)animationDuration).doubleValue() : null;
 	}
 	
 	public void setAnimationDuration(Number animationDuration) throws OutOfRangeException{
@@ -96,8 +100,10 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		chartCursor.setFeature("bulletsEnabled", bulletsEnabled);
 	}
 	
-	public Object getBulletSize(){
-		return chartCursor.getFeature("bulletSize");
+	public Integer getBulletSize(){
+		Object bulletSize = chartCursor.getFeature("bulletSize");
+		
+		return bulletSize != null ? ((Number)bulletSize).intValue() : null;
 	}
 	
 	public void setBulletSize(Number bulletSize) throws OutOfRangeException{
@@ -110,8 +116,10 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getCategoryBalloonAlpha(){
-		return chartCursor.getFeature("categoryBalloonAlpha");
+	public Double getCategoryBalloonAlpha(){
+		Object categoryBalloonAlpha = chartCursor.getFeature("categoryBalloonAlpha");
+		
+		return categoryBalloonAlpha != null ? ((Number)categoryBalloonAlpha).doubleValue() : null;
 	}
 	
 	public void setCategoryBalloonAlpha(Number categoryBalloonAlpha) throws OutOfRangeException{
@@ -175,8 +183,10 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getCursorAlpha(){
-		return chartCursor.getFeature("cursorAlpha");
+	public Double getCursorAlpha(){
+		Object cursorAlpha = chartCursor.getFeature("cursorAlpha");
+		
+		return cursorAlpha != null ? ((Number)cursorAlpha).doubleValue() : null;
 	}
 	
 	public void setCursorAlpha(Number cursorAlpha) throws OutOfRangeException{
@@ -221,8 +231,10 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		chartCursor.setFeature("fullWidth", fullWidth);
 	}
 	
-	public Object getGraphBulletAlpha(){
-		return chartCursor.getFeature("graphBulletAlpha");
+	public Double getGraphBulletAlpha(){
+		Object graphBulletAlpha = chartCursor.getFeature("graphBulletAlpha");
+		
+		return graphBulletAlpha != null ? ((Number)graphBulletAlpha).doubleValue() : null;
 	}
 	
 	public void setGraphBulletAlpha(Number graphBulletAlpha) throws OutOfRangeException{
@@ -231,8 +243,10 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		}
 	}
 	
-	public Object getGraphBulletSize(){
-		return chartCursor.getFeature("graphBulletSize");
+	public Integer getGraphBulletSize(){
+		Object graphBulletSize = chartCursor.getFeature("graphBulletSize");
+		
+		return graphBulletSize != null ? ((Number)graphBulletSize).intValue() : null;
 	}
 	
 	public void setGraphBulletSize(Number graphBulletSize) throws OutOfRangeException{
@@ -272,8 +286,10 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		chartCursor.setFeature("pan", pan);
 	}
 	
-	public Object getSelectionAlpha(){
-		return chartCursor.getFeature("selectionAlpha");
+	public Double getSelectionAlpha(){
+		Object selectionAlpha = chartCursor.getFeature("selectionAlpha");
+		
+		return selectionAlpha != null ? ((Number)selectionAlpha).doubleValue() : null;
 	}
 	
 	public void setSelectionAlpha(Number selectionAlpha) throws OutOfRangeException{
@@ -309,8 +325,10 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		chartCursor.setFeature("valueBalloonsEnabled", valueBalloonsEnabled);
 	}
 	
-	public Object getValueLineAlpha(){
-		return chartCursor.getFeature("valueLineAlpha");
+	public Double getValueLineAlpha(){
+		Object valueLineAlpha = chartCursor.getFeature("valueLineAlpha");
+		
+		return valueLineAlpha != null ? ((Number)valueLineAlpha).doubleValue() : null;
 	}
 	
 	public void setValueLineAlpha(Number valueLineAlpha) throws OutOfRangeException{

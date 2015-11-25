@@ -31,9 +31,9 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get angle property.<br>
 	 * Default: 0.
-	 * @return Object Value for angle is an integer number.
+	 * @return Integer Value for angle.
 	 */
-	abstract Object getAngle();
+	abstract Integer getAngle();
 
 	/**
 	 * Set angle property.
@@ -58,9 +58,9 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get depth3D property.<br>
 	 * Default: 0.
-	 * @return Object Value for depth3D is an integer number.
+	 * @return Integer Value for depth3D.
 	 */
-	abstract Object getDepth3D();
+	abstract Integer getDepth3D();
 
 	/**
 	 * Set depth3D property.With improvedVisibility enabled range activated.
@@ -86,9 +86,9 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get labelRadius property.<br>
 	 * Default: 20.
-	 * @return Object Value for labelRadius is an integer number,
+	 * @return Integer Value for labelRadius.
 	 */
-	abstract Object getLabelRadius();
+	abstract Integer getLabelRadius();
 
 	/**
 	 * Set labelRadius property.With improvedVisibility enabled range activated.
@@ -125,9 +125,9 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get minRadius property.<br>
 	 * Default: 10.
-	 * @return Object Value for minRadius is an integer number.
+	 * @return Integer Value for minRadius.
 	 */
-	abstract Object getMinRadius();
+	abstract Integer getMinRadius();
 
 	/**
 	 * Set minRadius property.
@@ -139,9 +139,9 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get pieAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for pieAlpha is a double number.
+	 * @return Double Value for pieAlpha.
 	 */
-	abstract Object getPieAlpha();
+	abstract Double getPieAlpha();
 
 	/**
 	 * Set pieAlpha property.
@@ -206,9 +206,9 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get startAngle property.<br>
 	 * Default: 90.
-	 * @return Object Value for startAngle is an integer number.
+	 * @return Integer Value for startAngle.
 	 */
-	abstract Object getStartAngle();
+	abstract Integer getStartAngle();
 
 	/**
 	 * Set startAngle property.

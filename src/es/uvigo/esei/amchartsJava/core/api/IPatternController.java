@@ -29,9 +29,9 @@ public abstract interface IPatternController {
 	
 	/**
 	 * Get height property.
-	 * @return Object Value for height is an integer number.
+	 * @return Integer Value for height.
 	 */
-	abstract Object getHeight();
+	abstract Integer getHeight();
 	
 	/**
 	 * Set height property.With improvedVisibility enabled range activated.
@@ -55,9 +55,9 @@ public abstract interface IPatternController {
 	
 	/**
 	 * Get width property.
-	 * @return Object Value for width is an integer number.
+	 * @return Integer Value for width.
 	 */
-	abstract Object getWidth();
+	abstract Integer getWidth();
 	
 	/**
 	 * Set width property.With improvedVisibility enabled range activated.

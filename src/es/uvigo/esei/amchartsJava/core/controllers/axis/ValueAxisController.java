@@ -49,8 +49,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		chart = c;		
 	}
 	
-	public Object getBaseValue(){
-		return axes.getFeature("baseValue");
+	public Integer getBaseValue(){
+		Object baseValue = axes.getFeature("baseValue");
+		
+		return baseValue != null ? ((Number)baseValue).intValue() : null;
 	}
 	
 	public void setBaseValue(Number baseValue) throws IntegerException{
@@ -121,8 +123,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		axes.setFeature("logarithmic", logarithmic);
 	}
 	
-	public Object getMaximum(){
-		return axes.getFeature("maximum");
+	public Double getMaximum(){
+		Object maximum = axes.getFeature("maximum");
+		
+		return maximum != null ? ((Number)maximum).doubleValue() : null;
 	}
 	
 	public void setMaximum(Number maximum) throws DoubleException{
@@ -139,8 +143,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		axes.setFeature("maximumDate", maximumDate.toString());
 	}
 	
-	public Object getMinimum(){
-		return axes.getFeature("minimum");
+	public Double getMinimum(){
+		Object minimum = axes.getFeature("minimum");
+		
+		return minimum != null ? ((Number)minimum).doubleValue() : null;
 	}
 	
 	public void setMinimum(Number minimum) throws DoubleException{
@@ -157,8 +163,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		axes.setFeature("minimumDate", minimumDate.toString());
 	}
 	
-	public Object getMinMaxMultiplier(){
-		return axes.getFeature("minMaxMultiplier");
+	public Double getMinMaxMultiplier(){
+		Object minMaxMultiplier = axes.getFeature("minMaxMultiplier");
+		
+		return minMaxMultiplier != null ? ((Number)minMaxMultiplier).doubleValue() : null;
 	}
 	
 	public void setMinMaxMultiplier(Number minMaxMultiplier) throws DoubleException{
@@ -167,8 +175,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
-	public Object getPrecision(){
-		return axes.getFeature("precision");
+	public Integer getPrecision(){
+		Object precision = axes.getFeature("precision");
+		
+		return precision != null ? ((Number)precision).intValue() : null;
 	}
 	
 	public void setPrecision(Number precision) throws OutOfRangeException{
@@ -212,8 +222,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		axes.setFeature("strictMinMax", strictMinMax);
 	}
 	
-	public  Object getSynchronizationMultiplier(){
-		return axes.getFeature("synchronizationMultiplier");
+	public  Double getSynchronizationMultiplier(){
+		Object synchronizationMultiplier = axes.getFeature("synchronizationMultiplier");
+		
+		return synchronizationMultiplier != null ? ((Number)synchronizationMultiplier).doubleValue() : null;
 	}
 	
 	public void setSynchronizationMultiplier(Number synchronizationMultiplier) throws DoubleException{
@@ -265,8 +277,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
-	public Object getTotalTextOffset(){
-		return axes.getFeature("totalTextOffset");
+	public Integer getTotalTextOffset(){
+		Object totalTextOffset = axes.getFeature("totalTextOffset");
+		
+		return totalTextOffset != null ? ((Number)totalTextOffset).intValue() : null;
 	}
 	
 	public void setTotalTextOffset(Number totalTextOffset) throws OutOfRangeException{
@@ -279,8 +293,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
-	public Object getTreatZeroAs(){
-		return axes.getFeature("treatZeroAs");
+	public Integer getTreatZeroAs(){
+		Object treatZeroAs = axes.getFeature("treatZeroAs");
+		
+		return treatZeroAs != null ? ((Number)treatZeroAs).intValue() : null;
 	}
 	//donde va a comenzar el eje de coordenadas
 	public void setTreatZeroAs(Number treatZeroAs) throws IntegerException{

@@ -23,9 +23,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get alpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for alpha is a double number.
+	 * @return Double Value for alpha.
 	 */
-	abstract Object getAlpha();
+	abstract Double getAlpha();
 
 	/**
 	 * Set alpha property.
@@ -130,9 +130,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get groupedAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for groupedAlpha is a double number.
+	 * @return Double Value for groupedAlpha.
 	 */
-	abstract Object getGroupedAlpha();
+	abstract Double getGroupedAlpha();
 
 	/**
 	 * Set groupedAlpha property.
@@ -196,9 +196,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get groupPercent property.<br>
 	 * Default: 0.
-	 * @return Object Value for groupPercent is an integer number.
+	 * @return Integer Value for groupPercent.
 	 */
-	abstract Object getGroupPercent();
+	abstract Integer getGroupPercent();
 
 	/**
 	 * Set groupPercent property.
@@ -210,9 +210,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get hideLabelsPercent property.<br>
 	 * Default: 0.
-	 * @return Object Value for hideLabelsPercent is an integer number.
+	 * @return Integer Value for hideLabelsPercent.
 	 */
-	abstract Object getHideLabelsPercent();
+	abstract Integer getHideLabelsPercent();
 
 	/**
 	 * Set hideLabelsPercent property.
@@ -225,9 +225,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get hoverAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for hoverAlpha is a double number.
+	 * @return Double Value for hoverAlpha.
 	 */
-	abstract Object getHoverAlpha();
+	abstract Double getHoverAlpha();
 
 	/**
 	 * Set hoverAlpha property.
@@ -264,9 +264,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get labelTickAlpha property.<br>
 	 * Default: 0.2.
-	 * @return Object Value for labelTickAlpha is a double number.
+	 * @return Double Value for labelTickAlpha.
 	 */
-	abstract Object getLabelTickAlpha();
+	abstract Double getLabelTickAlpha();
 
 	/**
 	 * Set labelTickAlpha property.
@@ -293,9 +293,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 10.
-	 * @return Object Value for marginBottom is an integer number.
+	 * @return Integer Value for marginBottom.
 	 */
-	abstract Object getMarginBottom();
+	abstract Integer getMarginBottom();
 
 	/**
 	 * Set marginBottom property.
@@ -307,9 +307,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 0.
-	 * @return Object Value for marginLeft is an integer number.
+	 * @return Integer Value for marginLeft.
 	 */
-	abstract Object getMarginLeft();
+	abstract Integer getMarginLeft();
 
 	/**
 	 * Set marginLeft property.
@@ -321,9 +321,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 0.
-	 * @return Object Value for marginRight is an integer number.
+	 * @return Integer Value for marginRight.
 	 */
-	abstract Object getMarginRight();
+	abstract Integer getMarginRight();
 
 	/**
 	 * Set marginRight property.
@@ -335,9 +335,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 10.
-	 * @return Object Value for marginTop is an integer number.
+	 * @return Integer Value for marginTop.
 	 */
-	abstract Object getMarginTop();
+	abstract Integer getMarginTop();
 
 	/**
 	 * Set marginTop property.
@@ -349,9 +349,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get maxLabelWidth property.<br>
 	 * Default: 200.
-	 * @return Object Value for maxLabelWidth is an integer number.
+	 * @return Integer Value for maxLabelWidth.
 	 */
-	abstract Object getMaxLabelWidth();
+	abstract Integer getMaxLabelWidth();
 
 	/**
 	 * Set makLabelWidth property.
@@ -364,9 +364,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get outlineAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for outlineAlpha is a double number.
+	 * @return Double Value for outlineAlpha.
 	 */
-	abstract Object getOutlineAlpha();
+	abstract Double getOutlineAlpha();
 
 	/**
 	 * Set outlineAlpha property.
@@ -393,9 +393,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get outlineThickness property.<br>
 	 * Default: 1.
-	 * @return Object Value for outlineThickness is an integer number.
+	 * @return Integer Value for outlineThickness.
 	 */
-	abstract Object getOutlineThickness();
+	abstract Integer getOutlineThickness();
 
 	/**
 	 * Set outlineThickness property.With improvedVisibility enabled range activated.
@@ -432,9 +432,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get pullOutDuration property.<br>
 	 * Default: 1.
-	 * @return Object Value for pullOutDuration is an integer number.
+	 * @return Integer Value for pullOutDuration.
 	 */
-	abstract Object getPullOutDuration();
+	abstract Integer getPullOutDuration();
 
 	/**
 	 * Set pullOutDuration property.With improvedVisibility enabled range activated.
@@ -499,9 +499,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get startAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for startAlpha is a double number.
+	 * @return Double Value for startAlpha.
 	 */
-	abstract Object getStartAlpha();
+	abstract Double getStartAlpha();
 
 	/**
 	 * Set startAlpha property.
@@ -513,9 +513,9 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get startDuration property.<br>
 	 * Default: 1.
-	 * @return Object Value for startDuration is an integer number.
+	 * @return Integer Value for startDuration.
 	 */
-	abstract Object getStartDuration();
+	abstract Integer getStartDuration();
 
 	/**
 	 * Set startDuration property.With improvedVisibility enabled range activated.

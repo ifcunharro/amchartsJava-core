@@ -31,8 +31,10 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 		amchart.addField("categoryField", categoryField);
 	}
 	
-	public Object getMarginBottom(){
-		return amchart.getFeature("marginBottom");
+	public Integer getMarginBottom(){
+		Object marginBottom = amchart.getFeature("marginBottom");
+		
+		return marginBottom != null ? ((Number)marginBottom).intValue() : null;
 	}
 	
 	public void setMarginBottom(Number marginBottom) throws IntegerException{
@@ -41,8 +43,10 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 		}
 	}
 	
-	public Object getMarginLeft(){
-		return amchart.getFeature("marginLeft");
+	public Integer getMarginLeft(){
+		Object marginLeft = amchart.getFeature("marginLeft");
+		
+		return marginLeft != null ? ((Number)marginLeft).intValue() : null;
 	}
 	
 	public void setMarginLeft(Number marginLeft) throws IntegerException{
@@ -51,8 +55,10 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 		}
 	}
 	
-	public Object getMarginRight(){
-		return amchart.getFeature("marginRight");
+	public Integer getMarginRight(){
+		Object marginRight = amchart.getFeature("marginRight");
+		
+		return marginRight != null ? ((Number)marginRight).intValue() : null;
 	}
 	
 	public void setMarginRight(Number marginRight) throws IntegerException{
@@ -61,8 +67,10 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 		}
 	}
 	
-	public Object getMarginTop(){
-		return amchart.getFeature("marginTop");
+	public Integer getMarginTop(){
+		Object marginTop = amchart.getFeature("marginTop");
+		
+		return marginTop != null ? ((Number)marginTop).intValue() : null;
 	}
 	
 	public void setMarginTop(Number marginTop) throws IntegerException{

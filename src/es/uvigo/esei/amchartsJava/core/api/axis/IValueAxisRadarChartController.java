@@ -18,9 +18,9 @@ public abstract interface IValueAxisRadarChartController extends IValueAxisContr
 	/**
 	 * Get axisTitleOffset property.<br>
 	 * Default: 10.
-	 * @return Object Value for axisTitleOffset is an integer number.
+	 * @return Integer Value for axisTitleOffset.
 	 */
-	abstract Object getAxisTitleOffset();
+	abstract Integer getAxisTitleOffset();
 
 	/**
 	 * Set axisTitleOffset property.With improvedVisibility enabled range activated.

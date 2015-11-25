@@ -41,8 +41,10 @@ public class PatternController implements IPatternController, Serializable {
 	}
 
 
-	public Object getHeight() {
-		return pattern.getFeature("height");
+	public Integer getHeight() {
+		Object height = pattern.getFeature("height");
+		
+		return height != null ? ((Number)height).intValue() : null;
 	}
 
 	
@@ -75,8 +77,10 @@ public class PatternController implements IPatternController, Serializable {
 		}
 	}
 
-	public Object getWidth() {
-		return pattern.getFeature("width");
+	public Integer getWidth() {
+		Object width = pattern.getFeature("width");
+		
+		return width != null ? ((Number)width).intValue() : null;
 	}
 
 	

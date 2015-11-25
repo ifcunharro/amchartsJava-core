@@ -74,8 +74,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		amchart.setFeature("clockWiseOnly", clockWiseOnly);
 	}
 	
-	public Object getFaceAlpha(){
-		return amchart.getFeature("faceAlpha");
+	public Double getFaceAlpha(){
+		Object faceAlpha = amchart.getFeature("faceAlpha");
+		
+		return faceAlpha != null ? ((Number)faceAlpha).doubleValue() : null;
 	}
 	
 	public void setFaceAlpha(Number faceAlpha) throws OutOfRangeException{
@@ -84,8 +86,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getFaceBorderAlpha(){
-		return amchart.getFeature("faceBorderAlpha");
+	public Double getFaceBorderAlpha(){
+		Object faceBorderAlpha = amchart.getFeature("faceBorderAlpha");
+		
+		return faceBorderAlpha != null ? ((Number)faceBorderAlpha).doubleValue() : null;
 	}
 	
 	public void setFaceBorderAlpha(Number faceBorderAlpha) throws OutOfRangeException{
@@ -104,8 +108,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getFaceBorderWidth(){
-		return amchart.getFeature("faceBorderWidth");
+	public Integer getFaceBorderWidth(){
+		Object faceBorderWidth = amchart.getFeature("faceBorderWidth");
+		
+		return faceBorderWidth != null ? ((Number)faceBorderWidth).intValue() : null;
 	}
 	
 	public void setFaceBorderWidth(Number faceBorderWidth) throws OutOfRangeException{
@@ -143,8 +149,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getGaugeX(){
-		return amchart.getFeature("gaugeX");
+	public Integer getGaugeX(){
+		Object gaugeX = amchart.getFeature("gaugeX");
+		
+		return gaugeX != null ? ((Number)gaugeX).intValue() : null;
 	}
 	
 	public void setGaugeX(Number gaugeX) throws IntegerException{
@@ -153,8 +161,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getGaugeY(){
-		return amchart.getFeature("gaugeY");
+	public Integer getGaugeY(){
+		Object gaugeY = amchart.getFeature("gaugeY");
+		
+		return gaugeY != null ? ((Number)gaugeY).intValue() : null;
 	}
 	
 	public void setGaugeY(Number gaugeY) throws IntegerException{
@@ -163,8 +173,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getMarginBottom(){
-		return amchart.getFeature("marginBottom");
+	public Integer getMarginBottom(){
+		Object marginBottom = amchart.getFeature("marginBottom");
+		
+		return marginBottom != null ? ((Number)marginBottom).intValue() : null;
 	}
 	
 	public void setMarginBottom(Number marginBottom) throws IntegerException{
@@ -173,8 +185,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getMarginLeft(){
-		return amchart.getFeature("marginLeft");
+	public Integer getMarginLeft(){
+		Object marginLeft = amchart.getFeature("marginLeft");
+		
+		return marginLeft != null ? ((Number)marginLeft).intValue() : null;
 	}
 	
 	public void setMarginLeft(Number marginLeft) throws IntegerException{
@@ -183,8 +197,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getMarginRight(){
-		return amchart.getFeature("marginRight");
+	public Integer getMarginRight(){
+		Object marginRight = amchart.getFeature("marginRight");
+		
+		return marginRight != null ? ((Number)marginRight).intValue() : null;
 	}
 	
 	public void setMarginRight(Number marginRight) throws IntegerException{
@@ -193,8 +209,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getMarginTop(){
-		return amchart.getFeature("marginTop");
+	public Integer getMarginTop(){
+		Object marginTop = amchart.getFeature("marginTop");
+		
+		return marginTop != null ? ((Number)marginTop).intValue() : null;
 	}
 	
 	public void setMarginTop(Number marginTop) throws IntegerException{
@@ -203,8 +221,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getMinRadius(){
-		return amchart.getFeature("minRadius");
+	public Double getMinRadius(){
+		Object minRadius = amchart.getFeature("minRadius");
+		
+		return minRadius != null ? ((Number)minRadius).doubleValue() : null;
 	}
 	
 	public void setMinRadius(Number minRadius){
@@ -213,8 +233,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		}
 	}
 	
-	public Object getStartDuration(){
-		return amchart.getFeature("startDuration");
+	public Integer getStartDuration(){
+		Object startDuration = amchart.getFeature("startDuration");
+		
+		return startDuration != null ? ((Number)startDuration).intValue() : null;
 	}
 	
 	public void setStartDuration(Number startDuration) throws OutOfRangeException{

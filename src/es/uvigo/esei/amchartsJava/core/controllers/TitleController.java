@@ -34,8 +34,10 @@ public class TitleController implements Observer, ITitleController, Serializable
 		this.setId("Title-"+arg.toString());
 	}
 	
-	public Object getAlpha(){
-		return title.getFeature("alpha");
+	public Double getAlpha(){
+		Object alpha = title.getFeature("alpha");
+		
+		return alpha != null ? ((Number)alpha).doubleValue() : null;
 	}
 	
 	public void setAlpha(Number alpha) throws OutOfRangeException{
@@ -71,8 +73,10 @@ public class TitleController implements Observer, ITitleController, Serializable
 		title.setFeature("id", id);
 	}
 	
-	public Object getSize(){
-		return title.getFeature("size");
+	public Integer getSize(){
+		Object size = title.getFeature("size");
+		
+		return size != null ? ((Number)size).intValue() : null;
 	}
 	
 	public void setSize(Number size) throws OutOfRangeException{

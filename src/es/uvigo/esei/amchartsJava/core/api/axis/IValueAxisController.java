@@ -36,9 +36,9 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get baseValue property.<br>
 	 * Default: 0.
-	 * @return Object Value for baseValeu is an integer number.
+	 * @return Integer Value for baseValue.
 	 */
-	abstract Object getBaseValue();
+	abstract Integer getBaseValue();
 
 	/**
 	 * Set baseValue property.
@@ -131,9 +131,9 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get maximum property.
-	 * @return Object Value for maximum is a double number.
+	 * @return Double Value for maximum.
 	 */
-	abstract Object getMaximum();
+	abstract Double getMaximum();
 
 	/**
 	 * Set maximum property.
@@ -156,9 +156,9 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get minimum property.
-	 * @return Object Value for minimum is a double number.
+	 * @return Double Value for minimum.
 	 */
-	abstract Object getMinimum();
+	abstract Double getMinimum();
 
 	/**
 	 * Set minimum property.
@@ -182,9 +182,9 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get minMaxMultiplier property.<br>
 	 * Default: 1.
-	 * @return Object Value for minMaxMultiplier is a double number.
+	 * @return Double Value for minMaxMultiplier.
 	 */
-	abstract Object getMinMaxMultiplier();
+	abstract Double getMinMaxMultiplier();
 
 	/**
 	 * Set minMaxMultiplier property.
@@ -196,9 +196,9 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get precision property.
-	 * @return Object Value for precision is an integer number.
+	 * @return Integer Value for precision.
 	 */
-	abstract Object getPrecision();
+	abstract Integer getPrecision();
 
 	/**
 	 * Set precision property.
@@ -261,9 +261,9 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get synchronizationMultiplier property.
-	 * @return Object Value for synchronizationMultiplier is a double number.
+	 * @return Double Value for synchronizationMultiplier.
 	 */
-	abstract Object getSynchronizationMultiplier();
+	abstract Double getSynchronizationMultiplier();
 
 	/**
 	 * Set synchronizationMultiplier property.
@@ -314,9 +314,9 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get totalTextOffset property.<br>
 	 * Default: 0.
-	 * @return Object Value for totalTextOffset is an integer number.
+	 * @return Integer Value for totalTextOffset.
 	 */
-	abstract Object getTotalTextOffset();
+	abstract Integer getTotalTextOffset();
 
 	/**
 	 * Set totalTextOffset property.With improvedVisibility enabled range activated.
@@ -329,9 +329,9 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get treatZeroAs property.<br>
 	 * Default: 0.
-	 * @return Object Value for treaZeroAs is an integer number.
+	 * @return Integer Value for treaZeroAs.
 	 */
-	abstract Object getTreatZeroAs();
+	abstract Integer getTreatZeroAs();
 
 	/**
 	 * Set treatZeroAs property.

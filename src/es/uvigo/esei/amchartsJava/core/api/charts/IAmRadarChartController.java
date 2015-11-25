@@ -29,9 +29,9 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 0.
-	 * @return Object Value for marginBottom is an integer number.
+	 * @return Integer Value for marginBottom.
 	 */
-	abstract Object getMarginBottom();
+	abstract Integer getMarginBottom();
 
 	/**
 	 * Set marginBottom property.
@@ -43,9 +43,9 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 0.
-	 * @return Object Value for marginLeft is an integer number.
+	 * @return Integer Value for marginLeft.
 	 */
-	abstract Object getMarginLeft();
+	abstract Integer getMarginLeft();
 
 	/**
 	 * Set marginLeft property.
@@ -57,9 +57,9 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 0.
-	 * @return Object Value for marginRight is an integer number.
+	 * @return Integer Value for marginRight.
 	 */
-	abstract Object getMarginRight();
+	abstract Integer getMarginRight();
 
 	/**
 	 * Set marginRight property.
@@ -71,9 +71,9 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 0.
-	 * @return Object Value for marginTop is an integer number.
+	 * @return Integer Value for marginTop.
 	 */
-	abstract Object getMarginTop();
+	abstract Integer getMarginTop();
 
 	/**
 	 * Set marginTop property.

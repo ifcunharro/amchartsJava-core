@@ -56,8 +56,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("autoMargins", autoMargins);
 	}
 	
-	public Object getBackgroundAlpha(){
-		return legend.getFeature("backgroundAlpha");
+	public Double getBackgroundAlpha(){
+		Object bakgroundAlpha = legend.getFeature("backgroundAlpha");
+		
+		return bakgroundAlpha != null ? ((Number)bakgroundAlpha).doubleValue() : null;
 	}
 	
 	public void setBackgroundAlpha(Number backgroundAlpha) throws OutOfRangeException{
@@ -76,8 +78,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getBorderAlpha(){
-		return legend.getFeature("borderAlpha");
+	public Double getBorderAlpha(){
+		Object borderAlpha = legend.getFeature("borderAlpha");
+		
+		return borderAlpha != null ? ((Number)borderAlpha).doubleValue() : null;
 	}
 	
 	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException{
@@ -96,8 +100,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getBottom(){
-		return legend.getFeature("bottom");
+	public Integer getBottom(){
+		Object bottom = legend.getFeature("bottom");
+		
+		return bottom != null ? ((Number)bottom).intValue() : null;
 	}
 	
 	public void setBottom(Number bottom) throws IntegerException{
@@ -142,8 +148,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("equalWidths", equalWidths);
 	}
 	
-	public Object getFontSize(){
-		return legend.getFeature("fontSize");
+	public Integer getFontSize(){
+		Object fontSize = legend.getFeature("fontSize");
+		
+		return fontSize != null ? ((Number)fontSize).intValue() : null;
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
@@ -165,8 +173,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("forceWidth", forceWidth);
 	}
 	
-	public Object getHorizontalGap(){
-		return legend.getFeature("horizontalGap");
+	public Integer getHorizontalGap(){
+		Object horizontalGap = legend.getFeature("horizontalGap");
+		
+		return horizontalGap != null ? ((Number)horizontalGap).intValue() : null;
 	}
 	
 	public void setHorizontalGap(Number horizontalGap) throws IntegerException{
@@ -184,8 +194,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("labelText", labelText);
 	}
 	
-	public Object getLabelWidth(){
-		return legend.getFeature("labelWidth");
+	public Integer getLabelWidth(){
+		Object labelWidth = legend.getFeature("labelWidth");
+		
+		return labelWidth != null ? ((Number)labelWidth).intValue() : null;
 	}
 	
 	public void setLabelWidth(Number labelWidth) throws IntegerException{
@@ -194,8 +206,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getLeft(){
-		return legend.getFeature("left");
+	public Integer getLeft(){
+		Object left = legend.getFeature("left");
+		return left != null ? ((Number)left).intValue() : null;
 	}
 	
 	public void setLeft(Number left) throws IntegerException{
@@ -204,8 +217,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarginBottom(){
-		return legend.getFeature("marginBottom");
+	public Integer getMarginBottom(){
+		Object marginBottom = legend.getFeature("marginBottom");
+		
+		return marginBottom != null ? ((Number)marginBottom).intValue() : null;
 	}
 	
 	public void setMarginBottom(Number marginBottom) throws IntegerException{
@@ -214,8 +229,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarginLeft(){
-		return legend.getFeature("marginLeft");
+	public Integer getMarginLeft(){
+		Object marginLeft = legend.getFeature("marginLeft");
+		
+		return marginLeft != null ? ((Number)marginLeft).intValue() : null;
 	}
 	
 	public void setMarginLeft(Number marginLeft) throws IntegerException{
@@ -224,8 +241,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarginRight(){
-		return legend.getFeature("marginRight");
+	public Integer getMarginRight(){
+		Object marginRight = legend.getFeature("marginRight");
+		
+		return marginRight != null ? ((Number)marginRight).intValue() : null;
 	}
 	
 	public void setMarginRight(Number marginRight) throws IntegerException{
@@ -234,8 +253,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarginTop(){
-		return legend.getFeature("marginTop");
+	public Integer getMarginTop(){
+		Object marginTop = legend.getFeature("marginTop");
+		
+		return marginTop != null ? ((Number)marginTop).intValue() : null;
 	}
 	
 	public void setMarginTop(Number marginTop) throws IntegerException{
@@ -244,8 +265,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarkerBorderAlpha(){
-		return legend.getFeature("markerBorderAlpha");
+	public Double getMarkerBorderAlpha(){
+		Object markerBorderAlpha = legend.getFeature("markerBorderAlpha");
+		
+		return markerBorderAlpha != null ? ((Number)markerBorderAlpha).doubleValue() : null;
 	}
 	
 	public void setMarkerBorderAlpha(Number markerBorderAlpha) throws OutOfRangeException{
@@ -264,8 +287,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarkerBorderThickness(){
-		return legend.getFeature("markerBorderThickness");
+	public Integer getMarkerBorderThickness(){
+		Object markerBorderThickness = legend.getFeature("markerBorderThickness");
+		
+		return markerBorderThickness != null ? ((Number)markerBorderThickness).intValue() : null;
 	}
 	
 	public void setMarkerBorderThickness(Number markerBorderThickness) throws OutOfRangeException{
@@ -288,8 +313,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarkerLabelGap(){
-		return legend.getFeature("markerLabelGap");
+	public Integer getMarkerLabelGap(){
+		Object markerLabelGap = legend.getFeature("markerLabelGap");
+		
+		return markerLabelGap != null ? ((Number)markerLabelGap).intValue() : null;
 	}
 	
 	public void setMarkerLabelGap(Number markerLabelGap) throws OutOfRangeException{
@@ -302,8 +329,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getMarkerSize(){
-		return legend.getFeature("markerSize");
+	public Integer getMarkerSize(){
+		Object markerSize = legend.getFeature("markerSize");
+		
+		return markerSize != null ? ((Number)markerSize).intValue() : null;
 	}
 	
 	public void setMarkerSize(Number markerSize) throws OutOfRangeException{
@@ -324,8 +353,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("markerType", markerType.toString());
 	}
 	
-	public Object getMaxColumns(){
-		return legend.getFeature("maxColumns");
+	public Integer getMaxColumns(){
+		Object maxColumns = legend.getFeature("maxColumns");
+		
+		return maxColumns != null ? ((Number)maxColumns).intValue() : null;
 	}
 	
 	public void setMaxColumns(Number maxColumns) throws OutOfRangeException{
@@ -363,8 +394,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("reversedOrder", reversedOrder);
 	}
 	
-	public Object getRight(){
-		return legend.getFeature("right");
+	public Integer getRight(){
+		Object right = legend.getFeature("right");
+		
+		return right != null ? ((Number)right).intValue() : null;
 	}
 	
 	public void setRight(Number right) throws IntegerException{
@@ -383,8 +416,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getRollOverGraphAlpha(){
-		return legend.getFeature("rollOverGraphAlpha");
+	public Double getRollOverGraphAlpha(){
+		Object rollOverGraphAlpha = legend.getFeature("rollOverGraphAlpha");
+		
+		return rollOverGraphAlpha != null ? ((Number)rollOverGraphAlpha).doubleValue() : null;
 	}
 	
 	public void setRollOverGraphAlpha(Number rollOverGraphAlpha) throws OutOfRangeException{
@@ -402,8 +437,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("showEntries", showEntries);
 	}
 	
-	public Object getSpacing(){
-		return legend.getFeature("spacing");
+	public Integer getSpacing(){
+		Object spacing = legend.getFeature("spacing");
+		
+		return spacing != null ? ((Number)spacing).intValue() : null;
 	}
 	
 	public void setSpacing(Number spacing) throws OutOfRangeException{
@@ -452,8 +489,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("textClickEnabled", textClickEnabled);
 	}
 	
-	public Object getTop(){
-		return legend.getFeature("top");
+	public Integer getTop(){
+		Object top = legend.getFeature("top");
+		
+		return top != null ? ((Number)top).intValue() : null;
 	}
 	
 	public void setTop(Number top) throws IntegerException{
@@ -514,8 +553,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		legend.setFeature("valueText", valueText);
 	}
 	
-	public Object getValueWidth(){
-		return legend.getFeature("valueWidth");
+	public Integer getValueWidth(){
+		Object valueWidth = legend.getFeature("valueWidth");
+		
+		return valueWidth != null ? ((Number)valueWidth).intValue() : null;
 	}
 	
 	public void setValueWidth(Number valueWidth) throws OutOfRangeException{
@@ -528,8 +569,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getVerticalGap(){
-		return legend.getFeature("verticalGap");
+	public Integer getVerticalGap(){
+		Object verticalGap = legend.getFeature("verticalGap");
+		
+		return verticalGap != null ? ((Number)verticalGap).intValue() : null;
 	}
 	
 	public void setVerticalGap(Number verticalGap) throws OutOfRangeException{
@@ -542,8 +585,10 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		}
 	}
 	
-	public Object getWidth(){
-		return legend.getFeature("width");
+	public Integer getWidth(){
+		Object width = legend.getFeature("width");
+		
+		return width != null ? ((Number)width).intValue() : null;
 	}
 	
 	public void setWidth(Number width) throws IntegerException{

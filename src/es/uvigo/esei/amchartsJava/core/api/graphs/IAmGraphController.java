@@ -122,9 +122,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for bulletAlpha is a double number.
+	 * @return Double Value for bulletAlpha.
 	 */
-	abstract Object getBulletAlpha();
+	abstract Double getBulletAlpha();
 
 	/**
 	 * Set bulletAlpha property.
@@ -136,9 +136,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletBorderAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for bulletBorderAlpha is a double number.
+	 * @return Double Value for bulletBorderAlpha.
 	 */
-	abstract Object getBulletBorderAlpha();
+	abstract Double getBulletBorderAlpha();
 
 	/**
 	 * Set bulletBorderAlpha property.
@@ -163,9 +163,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletBorderThickness property.<br>
 	 * Default: 2.
-	 * @return Object Value for bulletBorderThickness is an integer number.
+	 * @return Integer Value for bulletBorderThickness.
 	 */
-	abstract Object getBulletBorderThickness();
+	abstract Integer getBulletBorderThickness();
 
 	/**
 	 * Set bulletBorderThickness property.With improvedVisibility enabled, range activated.
@@ -202,9 +202,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletOffset property.<br>
 	 * Default: 0.
-	 * @return Object Value for bulletOffset is an integer number.
+	 * @return Integer Value for bulletOffset.
 	 */
-	abstract Object getBulletOffset();
+	abstract Integer getBulletOffset();
 
 	/**
 	 * Set bulletOffset property.With improvedVisibility enabled range activated.
@@ -216,9 +216,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletSize property.<br>
 	 * Default: 8.
-	 * @return Object Value for bulletSize is an integer number.
+	 * @return Integer Value for bulletSize.
 	 */
-	abstract Object getBulletSize();
+	abstract Integer getBulletSize();
 
 	/**
 	 * Set bulletSize property.With improvedVisibility enabled range activated.
@@ -278,9 +278,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get cursorBulletAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for cursorBulletAlpha is a double number.
+	 * @return Double Value for cursorBulletAlpha.
 	 */
-	abstract Object getCursorBulletAlpha();
+	abstract Double getCursorBulletAlpha();
 
 	/**
 	 * Set cursorBulletAlpha property.
@@ -372,9 +372,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get fillAlphas property.<br>
 	 * Default: 0.
-	 * @return Object Value for fillAlphas is a double number.
+	 * @return Double Value for fillAlphas.
 	 */
-	abstract Object getFillAlphas();
+	abstract Double getFillAlphas();
 
 	/**
 	 * Set fillAlphas property.
@@ -399,9 +399,9 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get fontSize property.
-	 * @return Object Value for fontSize is an integer number.
+	 * @return Integer Value for fontSize.
 	 */
-	abstract Object getFontSize();
+	abstract Integer getFontSize();
 
 	/**
 	 * Set fontSize property.With improvedVisibility enabled, range activated.
@@ -413,9 +413,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get gapPeriod property.<br>
 	 * Default: 1.1.
-	 * @return Object Value for gapPeriod is a double number.
+	 * @return Double Value for gapPeriod.
 	 */
-	abstract Object getGapPeriod();
+	abstract Double getGapPeriod();
 
 	/**
 	 * Set gapPeriod property.
@@ -453,9 +453,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get hideBulletsCount property.<br>
 	 * Default: 0.
-	 * @return Object Value for hideBulletsCount property is an integer number.
+	 * @return Integer Value for hideBulletsCount property.
 	 */
-	abstract Object getHideBulletsCount();
+	abstract Integer getHideBulletsCount();
 
 	/**
 	 * Set hideBulletsCount property.
@@ -518,9 +518,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get labelOffset property.<br>
 	 * Default: 0.
-	 * @return Object Value for labelOffset is an integer number.
+	 * @return Integer Value for labelOffset.
 	 */
-	abstract Object getLabelOffset();
+	abstract Integer getLabelOffset();
 
 	/**
 	 * Set labelOffset property.With improvedVisibility enabled, range activated.
@@ -543,9 +543,9 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get labelRotation property.
-	 * @return Object Value for labelRotation is an integer number.
+	 * @return Integer Value for labelRotation.
 	 */
-	abstract Object getLabelRotation();
+	abstract Integer getLabelRotation();
 
 	/**
 	 * Set labelRotation property.
@@ -569,9 +569,9 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get legendAlpha property.
-	 * @return Object Value for legendAlpha is a double number.
+	 * @return Double Value for legendAlpha.
 	 */
-	abstract Object getLegendAlpha();
+	abstract Double getLegendAlpha();
 
 	/**
 	 * Set legendAlpha property.
@@ -620,9 +620,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get lineAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for lineAlpha is a double number.
+	 * @return Double Value for lineAlpha.
 	 */
-	abstract Object getLineAlpha();
+	abstract Double getLineAlpha();
 
 	/**
 	 * Set lineAlpha property.
@@ -646,9 +646,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get minDistance property.<br>
 	 * Default: 1.
-	 * @return Object Value for minDistance is an integer number.
+	 * @return Integer Value for minDistance.
 	 */
-	abstract Object getMinDistance();
+	abstract Integer getMinDistance();
 
 	/**
 	 * Set minDistance property.With improvedVisibility enabled, range activated.
@@ -660,9 +660,9 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get negativeBase property.<br>
 	 * Default: 0.
-	 * @return Object Value for negativeBase is an integer number.
+	 * @return Integer Value for negativeBase.
 	 */
-	abstract Object getNegativeBase();
+	abstract Integer getNegativeBase();
 
 	/**
 	 * Set negativeBase property.
@@ -673,9 +673,9 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get negativeFillAlphas property.
-	 * @return Object Value for negativeFillAlphas is a double number.
+	 * @return Double Value for negativeFillAlphas.
 	 */
-	abstract Object getNegativeFillAlphas();
+	abstract Double getNegativeFillAlphas();
 
 	/**
 	 * Set negativeFillAlphas property.
@@ -724,9 +724,9 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get precision property.
-	 * @return Object Value for precision is an integer number.
+	 * @return Integer Value for precision.
 	 */
-	abstract Object getPrecision();
+	abstract Integer getPrecision();
 
 	/**
 	 * Set precision property.

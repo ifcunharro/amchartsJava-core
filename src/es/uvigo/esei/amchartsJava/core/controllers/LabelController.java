@@ -55,8 +55,10 @@ public class LabelController implements Observer, ILabelController, Serializable
 		label.setFeature("align", labelAlign.toString());
 	}
 
-	public Object getAlpha(){
-		return label.getFeature("alpha");
+	public Double getAlpha(){
+		Object alpha = label.getFeature("alpha");
+		
+		return alpha != null ? ((Number)alpha).doubleValue() : null;
 	}
 	
 	public void setAlpha(Number alpha) throws OutOfRangeException{
@@ -92,8 +94,10 @@ public class LabelController implements Observer, ILabelController, Serializable
 		label.setFeature("id", id);
 	}
 	
-	public Object getRotation(){
-		return label.getFeature("rotation");
+	public Integer getRotation(){
+		Object rotation = label.getFeature("rotation");
+		
+		return rotation != null ? ((Number)rotation).intValue() : null;
 	}
 	
 	public void setRotation(Number rotation) throws OutOfRangeException{
@@ -102,8 +106,10 @@ public class LabelController implements Observer, ILabelController, Serializable
 		}
 	}
 	
-	public Object getSize(){
-		return label.getFeature("size");
+	public Integer getSize(){
+		Object size = label.getFeature("size");
+		
+		return size != null ? ((Number)size).intValue() : null;
 	}
 	
 	public void setSize(Number size) throws OutOfRangeException{
