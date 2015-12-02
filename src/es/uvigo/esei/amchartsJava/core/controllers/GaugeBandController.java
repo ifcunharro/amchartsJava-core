@@ -40,8 +40,10 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 		gaugeBand.setFeature("id", id);
 	}
 
-	public Object getAlpha(){
-		return gaugeBand.getFeature("alpha");
+	public Double getAlpha(){
+		Object alpha = gaugeBand.getFeature("alpha");
+		
+		return alpha != null ? ((Number)alpha).doubleValue() : null;
 	}
 	
 	public void setAlpha(Number alpha) throws OutOfRangeException{
@@ -68,8 +70,10 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 		}
 	}
 	
-	public Object getEndValue(){
-		return gaugeBand.getFeature("endValue");
+	public Double getEndValue(){
+		Object endValue =  gaugeBand.getFeature("endValue");
+		
+		return endValue != null ? ((Number)endValue).doubleValue() : null;
 	}
 	
 	public void setEndValue(Number endValue){
@@ -102,8 +106,10 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 		}
 	}
 	
-	public Object getStartValue(){
-		return gaugeBand.getFeature("startValue");
+	public Double getStartValue(){
+		Object startValue = gaugeBand.getFeature("startValue");
+		
+		return startValue != null ? ((Number)startValue).doubleValue() : null;
 	}
 	
 	public void setStartValue(Number startValue){

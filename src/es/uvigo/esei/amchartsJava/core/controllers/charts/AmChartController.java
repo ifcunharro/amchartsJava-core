@@ -97,8 +97,10 @@ public abstract class AmChartController<E extends AmChart>
 		amchart.setFeature("autoResize", autoResize);
 	}
 	
-	public Object getBackgroundAlpha(){
-		return amchart.getFeature("backgroundAlpha");
+	public Double getBackgroundAlpha(){
+		Object backgroundAlpha = amchart.getFeature("backgroundAlpha");
+		
+		return backgroundAlpha != null ? ((Number)backgroundAlpha).doubleValue() : null;
 	}
 	
 	public void setBackgroundAlpha(Number backgroundAlpha) throws OutOfRangeException{
@@ -117,8 +119,10 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	public Object getBorderAlpha(){
-		return amchart.getFeature("borderAlpha");
+	public Double getBorderAlpha(){
+		Object borderAlpha = amchart.getFeature("borderAlpha");
+		
+		return borderAlpha != null ? ((Number)borderAlpha).doubleValue() : null;
 	}
 	
 	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException{
@@ -179,8 +183,10 @@ public abstract class AmChartController<E extends AmChart>
 		amchart.setFeature("fontFamily", fontFamily);
 	}
 	
-	public Object getFontSize(){
-		return amchart.getFeature("fontSize");
+	public Integer getFontSize(){
+		Object fontSize = amchart.getFeature("fontSize");
+		
+		return fontSize != null ? ((Number)fontSize).intValue() : null;
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
@@ -202,8 +208,10 @@ public abstract class AmChartController<E extends AmChart>
 		amchart.setFeature("handDrawn", handDrawn);
 	}
 	
-	public Object getHandDrawScatter(){
-		return amchart.getFeature("handDrawScatter");
+	public Integer getHandDrawScatter(){
+		Object handDrawScatter = amchart.getFeature("handDrawScatter");
+		
+		return handDrawScatter != null ? ((Number)handDrawScatter).intValue() : null;
 	}
 	
 	public void setHandDrawScatter(Number handDrawScatter) throws OutOfRangeException{
@@ -216,8 +224,10 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	public Object getHandDrawThickness(){
-		return amchart.getFeature("handDrawThickness");
+	public Integer getHandDrawThickness(){
+		Object handDrawThickness = amchart.getFeature("handDrawThickness");
+		
+		return handDrawThickness != null ? ((Number)handDrawThickness).intValue() : null;
 	}
 	
 	public void setHandDrawThickness(Number handDrawThickness) throws OutOfRangeException{
@@ -230,8 +240,10 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	public Object getHideBalloonTime(){
-		return amchart.getFeature("hideBalloonTime");
+	public Integer getHideBalloonTime(){
+		Object hideBalloonTime = amchart.getFeature("hideBalloonTime");
+		
+		return hideBalloonTime != null ? ((Number)hideBalloonTime).intValue() : null;
 	}
 	
 	public void setHideBalloonTime(Number hideBalloonTime) throws IntegerException{
@@ -277,8 +289,10 @@ public abstract class AmChartController<E extends AmChart>
 		amchart.setFeature("pathToImages", pathToImages);
 	}
 	
-	public Object getPercentPrecision(){
-		return amchart.getFeature("percentPrecision");
+	public Integer getPercentPrecision(){
+		Object percentPrecision = amchart.getFeature("percentPrecision");
+		
+		return percentPrecision != null ? ((Number)percentPrecision).intValue() : null;
 	}
 	
 	public void setPercentPrecision(Number percentPrecision) throws OutOfRangeException{
@@ -287,8 +301,10 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	public Object getPrecision(){
-		return amchart.getFeature("precision");
+	public Integer getPrecision(){
+		Object precision = amchart.getFeature("precision");
+		
+		return precision != null ? ((Number)precision).intValue() : null;
 	}
 	
 	public void setPrecision(Number precision) throws OutOfRangeException{

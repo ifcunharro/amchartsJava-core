@@ -40,8 +40,10 @@ public class AmXyChartController extends AmRectangularChartController<AmXyChart>
 		amchart.setFeature("hideYScrollbar", hideYScrollbar);
 	}
 	
-	public Object getMaxZoomFactor(){
-		return amchart.getFeature("maxZoomFactor");
+	public Integer getMaxZoomFactor(){
+		Object maxZoomFactor = amchart.getFeature("maxZoomFactor");
+		
+		return maxZoomFactor != null ? ((Number)maxZoomFactor).intValue() : null;
 	}
 	
 	public void setMaxZoomFactor(Number maxZoomFactor) throws OutOfRangeException{

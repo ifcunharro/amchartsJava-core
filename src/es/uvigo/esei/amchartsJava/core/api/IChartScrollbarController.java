@@ -37,9 +37,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get backgroundAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for backgroundAlpha is a double number.
+	 * @return Double Value for backgroundAlpha.
 	 */
-	abstract Object getBackgroundAlpha();
+	abstract Double getBackgroundAlpha();
 
 	/**
 	 * Set backgroundAlpha property.
@@ -96,9 +96,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get dragIconHeight property.<br>
 	 * Default: 35.
-	 * @return Object Value for dragIconHeight is an integer number.
+	 * @return Integer Value for dragIconHeight.
 	 */
-	abstract Object getDragIconHeight();
+	abstract Integer getDragIconHeight();
 
 	/**
 	 * Set dragIconHeight property.
@@ -111,9 +111,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get dragIconWidth property.<br>
 	 * Default: 35.
-	 * @return Object Value for dragIconWidth is an integer number.
+	 * @return Integer Value for dragIconWidth.
 	 */
-	abstract Object getDragIconWidth();
+	abstract Integer getDragIconWidth();
 
 	/**
 	 * Set dragIconHeight property.With improvedVisibility enabled range activated.
@@ -152,9 +152,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get graphFillAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for graphFillAlpha is a double number..
+	 * @return Double Value for graphFillAlpha.
 	 */
-	abstract Object getGraphFillAlpha();
+	abstract Double getGraphFillAlpha();
 
 	/**
 	 * Set graphFillAlpha property.
@@ -182,9 +182,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get graphLineAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for graphLineAlpha is a double number.
+	 * @return Double Value for graphLineAlpha.
 	 */
-	abstract Object getGraphLineAlpha();
+	abstract Double getGraphLineAlpha();
 
 	/**
 	 * Set graphLineAlpha property.
@@ -225,9 +225,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get gridAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for gridAlpha is a double number.
+	 * @return Double Value for gridAlpha.
 	 */
-	abstract Object getGridAlpha();
+	abstract Double getGridAlpha();
 
 	/**
 	 * Set gridAlpha property.
@@ -253,9 +253,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get gridCount property.<br>
 	 * Default: 0.
-	 * @return Object Value for gridCount is an integer number.
+	 * @return Integer Value for gridCount.
 	 */
-	abstract Object getGridCount();
+	abstract Integer getGridCount();
 
 	/**
 	 * Set gridCount property.With improvedVisibility enabled range activated.
@@ -292,9 +292,9 @@ public abstract interface IChartScrollbarController {
 
 	/**
 	 * Get maximum property.
-	 * @return Object Value for maximum is an integer number.
+	 * @return Integer Value for maximum.
 	 */
-	abstract Object getMaximum();
+	abstract Integer getMaximum();
 
 	/**
 	 * Set maximum property.
@@ -305,9 +305,9 @@ public abstract interface IChartScrollbarController {
 
 	/**
 	 * Get minimum property.
-	 * @return Object Value for minimum is an integer number.
+	 * @return Integer Value for minimum.
 	 */
-	abstract Object getMinimum();
+	abstract Integer getMinimum();
 
 	/**
 	 * Set minimum property.
@@ -319,9 +319,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get offset property.<br>
 	 * Default: 0.
-	 * @return Object Value for offset is an integer number.
+	 * @return Integer Value for offset.
 	 */
-	abstract Object getOffset();
+	abstract Integer getOffset();
 
 	/**
 	 * Set offset property.With improvedVisibility enabled range activated.
@@ -359,9 +359,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get scrollbarHeight property.<br>
 	 * Default: 20.
-	 * @return Value for scrollbarHeight is an integer number.
+	 * @return Integer Value for scrollbarHeight.
 	 */
-	abstract Object getScrollbarHeight();
+	abstract Integer getScrollbarHeight();
 
 	/**
 	 * Set scrollbarHeight property.With improvedVisibility enabled range activated.
@@ -374,9 +374,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get scrollDuration property.<br>
 	 * Default: 1.
-	 * @return Object Value for scrollDuration is an integer number.
+	 * @return Integer Value for scrollDuration.
 	 */
-	abstract Object getScrollDuration();
+	abstract Integer getScrollDuration();
 
 	/**
 	 * Set scrollDuration property.
@@ -389,9 +389,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get selectedBackgroundAlpha.<br>
 	 * Default: 1.
-	 * @return Object Value for selectedBackgroundAlpha is a double number.
+	 * @return Double Value for selectedBackgroundAlpha.
 	 */
-	abstract Object getSelectedBackgroundAlpha();
+	abstract Double getSelectedBackgroundAlpha();
 
 	/**
 	 * Set selectedBackgroundAlpha property.
@@ -419,9 +419,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get selectedGraphFillAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for selectedGraphFillAlpha is a double number.
+	 * @return Double Value for selectedGraphFillAlpha.
 	 */
-	abstract Object getSelectedGraphFillAlpha();
+	abstract Double getSelectedGraphFillAlpha();
 
 	/**
 	 * Set selectedGraphFillAlpha property.
@@ -449,9 +449,9 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get selectedGraphLineAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for selectedGraphLineAlpha is a double number.
+	 * @return Double Value for selectedGraphLineAlpha.
 	 */
-	abstract Object getSelectedGraphLineAlpha();
+	abstract Double getSelectedGraphLineAlpha();
 
 	/**
 	 * Set selectedGraphLineAlpha property.

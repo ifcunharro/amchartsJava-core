@@ -57,9 +57,9 @@ public abstract interface IImageController {
 	/**
 	 * Get height property.<br>
 	 * Default: 20.
-	 * @return Object Value for height is an integer number.
+	 * @return Integer Value for height.
 	 */
-	abstract Object getHeight();
+	abstract Integer getHeight();
 
 	/**
 	 * Set height property.With improvedVisibility enabled range activated.
@@ -71,9 +71,9 @@ public abstract interface IImageController {
 	/**
 	 * Get offsetX property.<br>
 	 * Default: 0.
-	 * @return Object Value for offsetX is an integer number.
+	 * @return Integer Value for offsetX.
 	 */
-	abstract Object getOffsetX();
+	abstract Integer getOffsetX();
 
 	/**
 	 * Set offsetX property.
@@ -85,7 +85,7 @@ public abstract interface IImageController {
 	/**
 	 * Get offsetY property.<br>
 	 * Default: 0.
-	 * @return Object Value for offsetY is an integer number.
+	 * @return Integer Value for offsetY.
 	 */
 	abstract Object getOffsetY();
 
@@ -112,9 +112,9 @@ public abstract interface IImageController {
 	/**
 	 * Get rotation property.<br>
 	 * Default: 0.
-	 * @return Object Value for rotation is an integer number.
+	 * @return Integer Value for rotation.
 	 */
-	abstract Object getRotation();
+	abstract Integer getRotation();
 
 	/**
 	 * Set rotation property.
@@ -140,9 +140,9 @@ public abstract interface IImageController {
 	/**
 	 * Get width property.<br>
 	 * Default: 20.
-	 * @return Object Value for width is an integer number.
+	 * @return Integer Value for width.
 	 */
-	abstract Object getWidth();
+	abstract Integer getWidth();
 
 	/**
 	 * Set width property.With improvedVisibility enabled range activated.

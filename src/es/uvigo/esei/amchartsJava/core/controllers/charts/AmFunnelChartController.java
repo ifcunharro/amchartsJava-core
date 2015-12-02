@@ -23,8 +23,10 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 		setType(AmchartsConstants.CHART_TYPES.getFunnel());
 	}
 	
-	public Object getAngle(){
-		return amchart.getFeature("angle");
+	public Integer getAngle(){
+		Object angle = amchart.getFeature("angle");
+		
+		return angle != null ? ((Number)angle).intValue() : null;
 	}
 	
 	public void setAngle(Number angle) throws OutOfRangeException{
@@ -56,8 +58,10 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 		}
 	}
 	
-	public Object getDepth3D(){
-		return amchart.getFeature("depth3D");
+	public Integer getDepth3D(){
+		Object depth3D = amchart.getFeature("depth3D");
+		
+		return depth3D != null ? ((Number)depth3D).intValue() : null;
 	}
 	
 	public void setDepth3D(Number depth3D) throws OutOfRangeException{
@@ -145,8 +149,10 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 		amchart.setFeature("rotate", rotate);
 	}
 	
-	public Object getStartX(){
-		return amchart.getFeature("startX");
+	public Integer getStartX(){
+		Object startX = amchart.getFeature("startX");
+		
+		return startX != null ? ((Number)startX).intValue() : null;
 	}
 	
 	public void setStartX(Number startX) throws IntegerException{
@@ -155,8 +161,10 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 		}
 	}
 	
-	public Object getStartY(){
-		return amchart.getFeature("startY");
+	public Integer getStartY(){
+		Object startY = amchart.getFeature("startY");
+		
+		return startY != null ? ((Number)startY).intValue() : null;
 	}
 	
 	public void setStartY(Number startY) throws IntegerException{

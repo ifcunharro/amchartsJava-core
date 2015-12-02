@@ -18,9 +18,9 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 
 	/**
 	 * Get autoRotateAngle property.
-	 * @return Object Value for autoRotateAngle is an integer number.
+	 * @return Integer Value for autoRotateAngle.
 	 */
-	abstract Object getAutoRotateAngle();
+	abstract Integer getAutoRotateAngle();
 
 	/**
 	 * Set autoRotateAngle property.
@@ -32,9 +32,9 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 
 	/**
 	 * Get autoRotateCount property.
-	 * @return Object Value for autoRotateCount is an integer number.
+	 * @return Integer Value for autoRotateCount.
 	 */
-	abstract Object getAutoRotateCount();
+	abstract Integer getAutoRotateCount();
 
 	/**
 	 * Set autoRotateCount property.
@@ -111,9 +111,9 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get firstDayOfWeek property.<br>
 	 * Default: 1.
-	 * @return Object Value for firstDayOfWeek is an integer number.
+	 * @return Integer Value for firstDayOfWeek.
 	 */
-	abstract Object getFirstDayOfWeek();
+	abstract Integer getFirstDayOfWeek();
 
 	/**
 	 * Set firstDayOfWeek property.

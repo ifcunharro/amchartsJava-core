@@ -51,9 +51,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get backgroundAlpha property.<br>
 	 * Default: 0
-	 * @return Object Value for backgroundAlpha is a double number.
+	 * @return Double Value for backgroundAlpha.
 	 */
-	abstract Object getBackgroundAlpha();
+	abstract Double getBackgroundAlpha();
 
 	/**
 	 * Set backgroundAlpha property.
@@ -81,9 +81,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get borderAlpha property.<br>
 	 * Default: 0
-	 * @return Object Value for borderAlpha is a double number.
+	 * @return Doulbe Value for borderAlpha.
 	 */
-	abstract Object getBorderAlpha();
+	abstract Double getBorderAlpha();
 
 	/**
 	 * Set borderAlpha property.
@@ -108,9 +108,9 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get bottom property.
-	 * @return Object Value for bottom is an integer number.
+	 * @return Integer Value for bottom.
 	 */
-	abstract Object getBottom();
+	abstract Integer getBottom();
 
 	/**
 	 * Set bottom property.
@@ -174,9 +174,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get fontSize property.<br>
 	 * Default: 11
-	 * @return Object Value for fontSize is an integer number.
+	 * @return Integer Value for fontSize.
 	 */
-	abstract Object getFontSize();
+	abstract Integer getFontSize();
 
 	/**
 	 * Set fontSize property.With improvedVisibility enabled range activated.
@@ -201,9 +201,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get horizontalGap property.<br>
 	 * Default: 0
-	 * @return Object Value for horizontalGap is an integer number.
+	 * @return Integer Value for horizontalGap.
 	 */
-	abstract Object getHorizontalGap();
+	abstract Integer getHorizontalGap();
 
 	/**
 	 * Set horizontalGap property.
@@ -229,7 +229,7 @@ public abstract interface IAmLegendController  {
 	 * Get labelWidth property
 	 * @return Object Value for labelWidth is an integer number.
 	 */
-	abstract Object getLabelWidth();
+	abstract Integer getLabelWidth();
 
 	/**
 	 * Set labelWidth property.
@@ -242,7 +242,7 @@ public abstract interface IAmLegendController  {
 	 * Get left property.
 	 * @return Object Value for left.
 	 */
-	abstract Object getLeft();
+	abstract Integer getLeft();
 
 	/**
 	 * Set left property.
@@ -254,9 +254,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 0
-	 * @return Object Value for marginBottom is an integer number.
+	 * @return Object Value for marginBottom.
 	 */
-	abstract Object getMarginBottom();
+	abstract Integer getMarginBottom();
 
 	/**
 	 * Set marginBottom property.
@@ -268,9 +268,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 20
-	 * @return Object Value for marginLeft is an integer number.
+	 * @return Object Value for marginLeft.
 	 */
-	abstract Object getMarginLeft();
+	abstract Integer getMarginLeft();
 
 	/**
 	 * Set marginLeft property.
@@ -282,9 +282,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 20
-	 * @return Object Value for marginRight is an integer number.
+	 * @return Object Value for marginRight.
 	 */
-	abstract Object getMarginRight();
+	abstract Integer getMarginRight();
 
 	/**
 	 * Set marginRight property.
@@ -296,9 +296,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 0
-	 * @return Object Value for marginTop is an integer number.
+	 * @return Object Value for marginTop.
 	 */
-	abstract Object getMarginTop();
+	abstract Integer getMarginTop();
 
 	/**
 	 * Set marginTop property.
@@ -310,9 +310,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerBorderAlpha property.
 	 * Default: 1
-	 * @return Object Value for markerBorderAlpha is a double number.
+	 * @return Object Value for markerBorderAlpha.
 	 */
-	abstract Object getMarkerBorderAlpha();
+	abstract Double getMarkerBorderAlpha();
 
 	/**
 	 * Set markerBorderAlpha property.
@@ -340,9 +340,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerBorderThickness property.
 	 * Default: 1
-	 * @return Object Value for markerBorderThickness is an integer number.
+	 * @return Object Value for markerBorderThickness.
 	 */
-	abstract Object getMarkerBorderThickness();
+	abstract Integer getMarkerBorderThickness();
 
 	/**
 	 * Set markerBorderThickness property.With improvedVisibility enabled range activated.
@@ -370,9 +370,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerLabelGap property.<br>
 	 * Default: 5
-	 * @return Object Value for markerLabelGap is an integer number.
+	 * @return Object Value for markerLabelGap.
 	 */
-	abstract Object getMarkerLabelGap();
+	abstract Integer getMarkerLabelGap();
 
 	/**
 	 * Set markerLabelGa property.With improvedVisibility enabled range activated.
@@ -385,9 +385,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerSize property.
 	 * Default: 16
-	 * @return Object Value for markerSize is an integer number.
+	 * @return Object Value for markerSize.
 	 */
-	abstract Object getMarkerSize();
+	abstract Integer getMarkerSize();
 
 	/**
 	 * Set markerSize property.With improvedVisibility enabled range activated.
@@ -411,9 +411,9 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get maxColumns property.
-	 * @return Object Value for maxColumns is an integer number.
+	 * @return Object Value for maxColumns.
 	 */
-	abstract Object getMaxColumns();
+	abstract Integer getMaxColumns();
 
 	/**
 	 * Set maxColumns property.With improvedVisibility enabled range activated.
@@ -462,9 +462,9 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get right property.
-	 * @return Value for right is an integer number.
+	 * @return Value for right.
 	 */
-	abstract Object getRight();
+	abstract Integer getRight();
 	
 	/**
 	 * Set right property.
@@ -490,9 +490,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get rollOverGraphAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for rollOverGraphAlpha is a double number.
+	 * @return Object Value for rollOverGraphAlpha.
 	 */
-	abstract Object getRollOverGraphAlpha();
+	abstract Double getRollOverGraphAlpha();
 
 	/**
 	 * Set rollOverGraphAlpha property.
@@ -518,9 +518,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get spacing property.<br>
 	 * Default: 10
-	 * @return Object Value for spacing is an integer number.
+	 * @return Object Value for spacing.
 	 */
-	abstract Object getSpacing();
+	abstract Integer getSpacing();
 	
 	/**
 	 * Set spacing property.With improvedVisibility enabled range activated.
@@ -584,9 +584,9 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get top property.
-	 * @return Object Value for top is an integer number.
+	 * @return Object Value for top.
 	 */
-	abstract Object getTop();
+	abstract Integer getTop();
 
 	/**
 	 * Set top property.
@@ -675,9 +675,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get valueWidth property.<br>
 	 * Default: 50.
-	 * @return Object Value for valueWidth is an integer number.
+	 * @return Object Value for valueWidth.
 	 */
-	abstract Object getValueWidth();
+	abstract Integer getValueWidth();
 
 	/**
 	 * Set valueWidth property.With improvedVisibility enabled range activated.
@@ -689,9 +689,9 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get verticalGap property.<br>
 	 * Default: 10
-	 * @return Object Value for verticalGap is an integer number.
+	 * @return Object Value for verticalGap.
 	 */
-	abstract Object getVerticalGap();
+	abstract Integer getVerticalGap();
 
 	/**
 	 * Set verticalGap property.With improvedVisibility enabled range activated.
@@ -702,9 +702,9 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get width property.
-	 * @return Object Value for width is an integer number.
+	 * @return Object Value for width.
 	 */
-	abstract Object getWidth();
+	abstract Integer getWidth();
 
 	/**
 	 * Set width property.

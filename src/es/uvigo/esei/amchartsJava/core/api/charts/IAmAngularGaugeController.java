@@ -63,9 +63,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get faceAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for faceAlpha is a double number.
+	 * @return Double Value for faceAlpha.
 	 */
-	abstract Object getFaceAlpha();
+	abstract Double getFaceAlpha();
 
 	/**
 	 * Set faceAlpha property.
@@ -77,9 +77,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get faceBorderAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for faceBorderAlpha is a double number.
+	 * @return Double Value for faceBorderAlpha.
 	 */
-	abstract Object getFaceBorderAlpha();
+	abstract Double getFaceBorderAlpha();
 
 	/**
 	 * Set faceBorderAlpha property.
@@ -107,9 +107,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get faceBorderWidth property.<br>
 	 * Default: 1.
-	 * @return Object Value for faceBorderWidth is an integer number.
+	 * @return Integer Value for faceBorderWidth.
 	 */
-	abstract Object getFaceBorderWidth();
+	abstract Integer getFaceBorderWidth();
 
 	/**
 	 * Set faceBorderWidth property.With improvedVisibility enabled range activated.
@@ -149,9 +149,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 
 	/**
 	 * Get gaugeX property.
-	 * @return Object Value for gaugeX is an integer number.
+	 * @return Integer Value for gaugeX.
 	 */
-	abstract Object getGaugeX();
+	abstract Integer getGaugeX();
 
 	/**
 	 * Set gaugeX property.
@@ -162,9 +162,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 
 	/**
 	 * Get gaugeY property.
-	 * @return Object Value for gaugeY property is an integer number.
+	 * @return Integer Value for gaugeY property.
 	 */
-	abstract Object getGaugeY();
+	abstract Integer getGaugeY();
 
 	/**
 	 * Set gaugeY property.
@@ -176,9 +176,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 10.
-	 * @return Object Value for marginBottom is an integer number.
+	 * @return Integer Value for marginBottom.
 	 */
-	abstract Object getMarginBottom();
+	abstract Integer getMarginBottom();
 
 	/**
 	 * Set marginBottom property.
@@ -190,9 +190,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 10.
-	 * @return Object Value for marginLeft is an integer number.
+	 * @return Integer Value for marginLeft.
 	 */
-	abstract Object getMarginLeft();
+	abstract Integer getMarginLeft();
 
 	/**
 	 * Set marginLeft property.
@@ -204,9 +204,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 10.
-	 * @return Object Value for marginRight is an integer number.
+	 * @return Integer Value for marginRight.
 	 */
-	abstract Object getMarginRight();
+	abstract Integer getMarginRight();
 
 	/**
 	 * Set marginRight property.
@@ -218,9 +218,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 10.
-	 * @return Object Value for marginTop is an integer number.
+	 * @return Integer Value for marginTop.
 	 */
-	abstract Object getMarginTop();
+	abstract Integer getMarginTop();
 
 	/**
 	 * Set marginTop property.
@@ -232,9 +232,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get minRadius property.<br>
 	 * Default: 10.
-	 * @return Object Value for minRadius.
+	 * @return Double Value for minRadius.
 	 */
-	abstract Object getMinRadius();
+	abstract Double getMinRadius();
 
 	/**
 	 * Set minRadius property.
@@ -245,9 +245,9 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get startDuration property.<br>
 	 * Default: 1.
-	 * @return Object Value for startDuration is an integer number.
+	 * @return Integer Value for startDuration.
 	 */
-	abstract Object getStartDuration();
+	abstract Integer getStartDuration();
 
 	/**
 	 * Set startDuration property.With improvedVisibility enabled range activated.

@@ -17,9 +17,9 @@ public abstract interface ITitleController {
 	/**
 	 * Get alpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for alpha is a double number.
+	 * @return Double Value for alpha.
 	 */
-	abstract Object getAlpha();
+	abstract Double getAlpha();
 
 	/**
 	 * Set alpha property.
@@ -62,9 +62,9 @@ public abstract interface ITitleController {
 
 	/**
 	 * Get size property.
-	 * @return Object Value for size is an integer number.
+	 * @return Integer Value for size.
 	 */
-	abstract Object getSize();
+	abstract Integer getSize();
 
 	/**
 	 * Set size property.With improvedVisibility enabled range activated.

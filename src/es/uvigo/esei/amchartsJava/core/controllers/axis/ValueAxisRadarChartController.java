@@ -21,8 +21,10 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 		setRadarCategoriesEnabled(true);
 	}
 
-	public Object getAxisTitleOffset(){
-		return axes.getFeature("axisTitleOffset");
+	public Integer getAxisTitleOffset(){
+		Object axisTitleOffset = axes.getFeature("axisTitleOffset");
+		
+		return axisTitleOffset != null ? ((Number)axisTitleOffset).intValue() : null;
 	}
 	
 	public void setAxixTitleOffset(Number axisTitleOffset) throws OutOfRangeException{

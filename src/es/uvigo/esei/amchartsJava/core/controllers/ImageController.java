@@ -57,8 +57,10 @@ public class ImageController implements Serializable, IImageController {
 		}
 	}
 	
-	public Object getHeight(){
-		return image.getFeature("height");
+	public Integer getHeight(){
+		Object height = image.getFeature("height");
+		
+		return height != null ? ((Number)height).intValue() : null;
 	}
 	
 	public void setHeight(Number height) throws OutOfRangeException{
@@ -71,8 +73,10 @@ public class ImageController implements Serializable, IImageController {
 		}
 	}
 	
-	public Object getOffsetX(){
-		return image.getFeature("offsetX");
+	public Integer getOffsetX(){
+		Object offsetX = image.getFeature("offsetX");
+		
+		return offsetX != null ? ((Number)offsetX).intValue() : null;
 	}
 	
 	public void setOffsetX(Number offsetX) throws IntegerException{
@@ -101,8 +105,10 @@ public class ImageController implements Serializable, IImageController {
 		}
 	}
 	
-	public Object getRotation(){
-		return image.getFeature("rotation");
+	public Integer getRotation(){
+		Object rotation = image.getFeature("rotation");
+		
+		return rotation != null ? ((Number)rotation).intValue() : null;
 	}
 	
 	public void setRotation(Number rotation) throws OutOfRangeException{
@@ -127,8 +133,10 @@ public class ImageController implements Serializable, IImageController {
 		
 	}
 	
-	public Object getWidth(){
-		return image.getFeature("width");
+	public Integer getWidth(){
+		Object width = image.getFeature("width");
+		
+		return width != null ? ((Number)width).intValue() : null;
 	}
 	
 	public void setWidth(Number width) throws OutOfRangeException{

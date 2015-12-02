@@ -5,7 +5,8 @@ import es.uvigo.esei.amchartsJava.core.constants.ShowAtConstant.ShowAt;
 /**
  * 
  * Interface for AmGraphCandleOhlcController.This interface contains common methods to
- * AmGraph used in candle and ohlc charts. Details of AmGraph and its methods in AmCharts API.
+ * graphs used in candle and ohlc charts. 
+ * Details of AmGraph and its methods in AmCharts API.
  * 
  * @author Iago Fernández Cuñarro
  *

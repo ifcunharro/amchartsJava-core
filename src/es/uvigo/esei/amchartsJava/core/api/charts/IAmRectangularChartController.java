@@ -28,9 +28,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get angle property.<br>
 	 * Default: 0.
-	 * @return Object Value for angle is an integer number.
+	 * @return Integer Value for angle.
 	 */
-	abstract Object getAngle();
+	abstract Integer getAngle();
 
 	/**
 	 * Set angle property.
@@ -42,9 +42,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get autoMarginOffset property.<br>
 	 * Default: 10.
-	 * @return Object Value for autoMarginOffset is an integer number.
+	 * @return Integer Value for autoMarginOffset.
 	 */
-	abstract Object getAutoMarginOffset();
+	abstract Integer getAutoMarginOffset();
 
 	/**
 	 * Set autoMarginOffset property.With improvedVisibility enabled range activated.
@@ -70,9 +70,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get depth3D property.<br>
 	 * Default: 0.
-	 * @return Object Value for depth3D is an integer number.
+	 * @return Integer Value for depth3D.
 	 */
-	abstract Object getDepth3D();
+	abstract Integer getDepth3D();
 
 	/**
 	 * Set depth3D property.
@@ -84,9 +84,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 20.
-	 * @return Object Value for marginBottom is an integer number.
+	 * @return Integer Value for marginBottom.
 	 */
-	abstract Object getMarginBottom();
+	abstract Integer getMarginBottom();
 
 	/**
 	 * Set marginBottom property.
@@ -98,9 +98,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 20.
-	 * @return Object Value for marginLeft is an integer number.
+	 * @return Integer Value for marginLeft.
 	 */
-	abstract Object getMarginLeft();
+	abstract Integer getMarginLeft();
 
 	/**
 	 * Set marginLeft property.
@@ -112,9 +112,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 20.
-	 * @return Object Value for marginRight is an integer number.
+	 * @return Integer Value for marginRight.
 	 */
-	abstract Object getMarginRight();
+	abstract Integer getMarginRight();
 
 	/**
 	 * Set marginRight property.
@@ -139,9 +139,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 20.
-	 * @return Object Value for marginTop is an integer number.
+	 * @return Integer Value for marginTop.
 	 */
-	abstract Object getMarginTop();
+	abstract Integer getMarginTop();
 
 	/**
 	 * Set marginTop property.
@@ -153,9 +153,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get plotAreaBorderAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for plotAreaBorderAlpha is a double number.
+	 * @return Double Value for plotAreaBorderAlpha.
 	 */
-	abstract Object getPlotAreaBorderAlpha();
+	abstract Double getPlotAreaBorderAlpha();
 
 	/**
 	 * Set plotAreaBorderAlpha property.
@@ -226,9 +226,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtomAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for zoomOutButtomAlpha is a double number.
+	 * @return Double Value for zoomOutButtomAlpha.
 	 */
-	abstract Object getZoomOutButtomAlpha();
+	abstract Double getZoomOutButtomAlpha();
 
 	/**
 	 * Set zoomOutButtonAlpha property.
@@ -270,9 +270,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtonImageSize property.<br>
 	 * Default: 17.
-	 * @return Object Value for zoomOutButtonImageSize is an integer number.
+	 * @return Integer Value for zoomOutButtonImageSize.
 	 */
-	abstract Object getZoomOutButtonImageSize();
+	abstract Integer getZoomOutButtonImageSize();
 
 	/**
 	 * Set zoomOutButtonImageSize property.With improvedVisibility enabled range activated.
@@ -285,9 +285,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtonPadding property.<br>
 	 * Default: 8.
-	 * @return Object Value for zoomOutButtonPadding is an integer number.
+	 * @return Integer Value for zoomOutButtonPadding.
 	 */
-	abstract Object getZoomOutButtonPadding();
+	abstract Integer getZoomOutButtonPadding();
 
 	/**
 	 * Set zoomOutButtonPadding property.With improvedVisibility enabled range activated.
@@ -300,9 +300,9 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtonRollOverAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for zoomOutButtonRollOverAlpha is a double number.
+	 * @return Double Value for zoomOutButtonRollOverAlpha.
 	 */
-	abstract Object getZoomOutButtonRollOverAlpha();
+	abstract Double getZoomOutButtonRollOverAlpha();
 
 	/**
 	 * Set zoomOutButtonRollOverAlpha property.

@@ -45,8 +45,10 @@ public class GaugeAxisController
 		gaugeAxis.setFeature("id", id);
 	}
 	
-	public Object getAxisAlpha(){
-		return gaugeAxis.getFeature("axisAlpha");
+	public Double getAxisAlpha(){
+		Object axisAlpha = gaugeAxis.getFeature("axisAlpha");
+		
+		return axisAlpha != null ? ((Number)axisAlpha).doubleValue() : null;
 	}
 	
 	public void setAxisAlpha(Number axisAlpha) throws OutOfRangeException{
@@ -65,8 +67,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getAxisThickness(){
-		return gaugeAxis.getFeature("axisThickness");
+	public Integer getAxisThickness(){
+		Object axisThickness = gaugeAxis.getFeature("axisThickness");
+		
+		return axisThickness != null ? ((Number)axisThickness).intValue() : null;
 	}
 	
 	public void setAxisThickness(Number axisThickness) throws OutOfRangeException{
@@ -79,8 +83,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getBandAlpha(){
-		return gaugeAxis.getFeature("bandAlpha");
+	public Double getBandAlpha(){
+		Object bandAlpha = gaugeAxis.getFeature("bandAlpha");
+		
+		return bandAlpha != null ? ((Number)bandAlpha).doubleValue() : null;
 	}
 	
 	public void setBandAlpha(Number bandAlpha) throws OutOfRangeException{
@@ -89,8 +95,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getBandOutlineAlpha(){
-		return gaugeAxis.getFeature("bandOutlineAlpha");
+	public Double getBandOutlineAlpha(){
+		Object bandOulineAlpha = gaugeAxis.getFeature("bandOutlineAlpha");
+		
+		return bandOulineAlpha != null ? ((Number)bandOulineAlpha).doubleValue() : null;
 	}
 	
 	public void setBandOutlineAlpha(Number bandOutlineAlpha) throws OutOfRangeException{
@@ -109,8 +117,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getBandOutlineThickness(){
-		return gaugeAxis.getFeature("bandOutlineThickness");
+	public Integer getBandOutlineThickness(){
+		Object bandOutlineThickness = gaugeAxis.getFeature("bandOutlineThickness");
+		
+		return bandOutlineThickness != null ? ((Number)bandOutlineThickness).intValue() : null;
 	}
 	
 	public void setBandOutlineThickness(Number bandOutlineThickness) throws OutOfRangeException{
@@ -159,8 +169,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getBottomTextFontSize(){
-		return gaugeAxis.getFeature("bottomTextFontSize");
+	public Integer getBottomTextFontSize(){
+		Object bottomTextFontSize = gaugeAxis.getFeature("bottomTextFontSize");
+		
+		return bottomTextFontSize != null ? ((Number)bottomTextFontSize).intValue() : null;
 	}
 	
 	public void setBottomTextFontSize(Number bottomTextFontSize) throws OutOfRangeException{
@@ -173,8 +185,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getBottomTextYOffset(){
-		return gaugeAxis.getFeature("bottomTextYOffset");
+	public Integer getBottomTextYOffset(){
+		Object bottomTextYOffset = gaugeAxis.getFeature("bottomTextYOffset");
+		
+		return bottomTextYOffset != null ? ((Number)bottomTextYOffset).intValue() : null;
 	}
 	
 	public void setBottomTextYOffset(Number bottomTextYOffset) throws IntegerException{
@@ -203,8 +217,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getEndAngle(){
-		return gaugeAxis.getFeature("endAngle");
+	public Integer getEndAngle(){
+		Object endAngle = gaugeAxis.getFeature("endAngle");
+		
+		return endAngle != null ? ((Number)endAngle).intValue() : null;
 	}
 	
 	public void setEndAngle(Number endAngle) throws OutOfRangeException{
@@ -213,8 +229,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getEndValue(){
-		return gaugeAxis.getFeature("endValue");
+	public Integer getEndValue(){
+		Object endValue = gaugeAxis.getFeature("endValue");
+		
+		return endValue != null ? ((Number)endValue).intValue() : null;
 	}
 	
 	public void setEndValue(Number endValue) throws IntegerException{
@@ -223,8 +241,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getGridCount(){
-		return gaugeAxis.getFeature("gridCount");
+	public Integer getGridCount(){
+		Object gridCount = gaugeAxis.getFeature("gridCount");
+		
+		return gridCount != null ? ((Number)gridCount).intValue() : null;
 	}
 	
 	public void setGridCount(Number gridCount) throws OutOfRangeException{
@@ -259,8 +279,10 @@ public class GaugeAxisController
 		gaugeAxis.setFeature("inside", inside);
 	}
 	
-	public Object getLabelFrequency(){
-		return gaugeAxis.getFeature("labelFrequency");
+	public Integer getLabelFrequency(){
+		Object labelFrequency = gaugeAxis.getFeature("labelFrequency");
+		
+		return labelFrequency != null ? ((Number)labelFrequency).intValue() : null;
 	}
 	
 	public void setLabelFrequency(Number labelFrequency) throws OutOfRangeException{
@@ -281,8 +303,10 @@ public class GaugeAxisController
 		gaugeAxis.setFeature("labelFunction", labelFunction);
 	}
 	
-	public Object getLabelOffset(){
-		return gaugeAxis.getFeature("labelOffset");
+	public Integer getLabelOffset(){
+		Object labelOffset = gaugeAxis.getFeature("labelOffset");
+		
+		return labelOffset != null ? ((Number)labelOffset).intValue() : null;
 	}
 	
 	public void setLabelOffset(Number labelOffset) throws IntegerException{
@@ -302,8 +326,10 @@ public class GaugeAxisController
 	
 	//listeners
 	
-	public Object getMinorTickInterval(){
-		return gaugeAxis.getFeature("minorTickInterval");
+	public Integer getMinorTickInterval(){
+		Object minorTickInterval = gaugeAxis.getFeature("minorTickInterval");
+		
+		return minorTickInterval != null ? ((Number)minorTickInterval).intValue() : null;
 	}
 	
 	public void setMinorTickInterval(Number minorTickInterval) throws OutOfRangeException{
@@ -316,8 +342,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getMinorTickLength(){
-		return gaugeAxis.getFeature("minorTickLength");
+	public Integer getMinorTickLength(){
+		Object minorTickLength = gaugeAxis.getFeature("minorTickLength");
+		
+		return minorTickLength != null ? ((Number)minorTickLength).intValue() : null;
 	}
 	
 	public void setMinorTickLength(Number minorTickLength) throws OutOfRangeException{
@@ -362,8 +390,10 @@ public class GaugeAxisController
 		gaugeAxis.setFeature("showLastLabel", showLastLabel);
 	}
 	
-	public Object getStartAngle(){
-		return gaugeAxis.getFeature("startAngle");
+	public Integer getStartAngle(){
+		Object startAngle = gaugeAxis.getFeature("startAngle");
+		
+		return startAngle != null ? ((Number)startAngle).intValue() : null;
 	}
 	
 	public void setStartAngle(Number startAngle) throws OutOfRangeException{
@@ -372,8 +402,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getStartValue(){
-		return gaugeAxis.getFeature("startValue");
+	public Integer getStartValue(){
+		Object startValue = gaugeAxis.getFeature("startValue");
+		
+		return startValue != null ? ((Number)startValue).intValue() : null;
 	}
 	
 	public void setStartValue(Number startValue) throws IntegerException{
@@ -382,8 +414,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getTickAlpha(){
-		return gaugeAxis.getFeature("tickAlpha");
+	public Double getTickAlpha(){
+		Object tickAlpha = gaugeAxis.getFeature("tickAlpha");
+		
+		return tickAlpha != null ? ((Number)tickAlpha).doubleValue() : null;
 	}
 	
 	public void setTickAlpha(Number tickAlpha) throws OutOfRangeException{
@@ -402,8 +436,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getTickLength(){
-		return gaugeAxis.getFeature("tickLength");
+	public Integer getTickLength(){
+		Object tickLength = gaugeAxis.getFeature("tickLength");
+		
+		return tickLength != null ? ((Number)tickLength).intValue() : null;
 	}
 	
 	public void setTickLength(Number tickLength) throws OutOfRangeException{
@@ -416,8 +452,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getTickThickness(){
-		return gaugeAxis.getFeature("tickThickness");
+	public Integer getTickThickness(){
+		Object tickThickness = gaugeAxis.getFeature("tickThickness");
+		
+		return tickThickness != null ? ((Number)tickThickness).intValue() : null;
 	}
 	
 	public void setTickThickness(Number tickThickness) throws OutOfRangeException{
@@ -457,8 +495,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getTopTextFontSize(){
-		return gaugeAxis.getFeature("topTextFontSize");
+	public Integer getTopTextFontSize(){
+		Object topTextFontSize = gaugeAxis.getFeature("topTextFontSize");
+		
+		return topTextFontSize != null ? ((Number)topTextFontSize).intValue() : null;
 	}
 	
 	public void setTopTextFontSize(Number topTextFontSize) throws OutOfRangeException{
@@ -471,8 +511,10 @@ public class GaugeAxisController
 		}
 	}
 	
-	public Object getTopTextYOffset(){
-		return gaugeAxis.getFeature("topTextYOffset");
+	public Integer getTopTextYOffset(){
+		Object topTextYOffset = gaugeAxis.getFeature("topTextYOffset");
+		
+		return topTextYOffset != null ? ((Number)topTextYOffset).intValue() : null;
 	}
 	
 	public void setTopTextYOffset(Number topTextYOffset) throws IntegerException{
@@ -506,8 +548,10 @@ public class GaugeAxisController
 		gaugeAxis.setFeature("usePrefixes", usePrefixes);
 	}
 	
-	public Object getValueInterval(){
-		return gaugeAxis.getFeature("valueInterval");
+	public Double getValueInterval(){
+		Object valueInterval = gaugeAxis.getFeature("valueInterval");
+		
+		return valueInterval != null ? ((Number)valueInterval).doubleValue() : null;
 	}
 	
 	public void setValueInterval(Number valueInterval){

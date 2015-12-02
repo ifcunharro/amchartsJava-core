@@ -22,9 +22,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get axisAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for axisAlpha is a double number.
+	 * @return Double Value for axisAlpha.
 	 */
-	abstract Object getAxisAlpha();
+	abstract Double getAxisAlpha();
 
 	/**
 	 * Set axisAlpha property.
@@ -50,9 +50,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get axisThickness property.<br>
 	 * Default: 1.
-	 * @return Object Value for axisThickness is an integer number.
+	 * @return Integer Value for axisThickness.
 	 */
-	abstract Object getAxisThickness();
+	abstract Integer getAxisThickness();
 
 	/**
 	 * Set axisThickness property.With improvedVisibility enabled range activated.
@@ -65,9 +65,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bandAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for bandAlpha is a double number.
+	 * @return Double Value for bandAlpha.
 	 */
-	abstract Object getBandAlpha();
+	abstract Double getBandAlpha();
 
 	/**
 	 * Set bandAlpha property.
@@ -79,9 +79,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bandOutlineAlpha property.<br>
 	 * Default: 0.
-	 * @return bandOutlineAlpha Value for bandOutlineAlpha is a double number.
+	 * @return Double Value for bandOutlineAlpha.
 	 */
-	abstract Object getBandOutlineAlpha();
+	abstract Double getBandOutlineAlpha();
 
 	/**
 	 * Set bandOutlineAlpha property.
@@ -109,9 +109,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bandOutlineThickness property.<br>
 	 * Default: 0.
-	 * @return Object Value for bandOutlineThickness is an integer number.
+	 * @return Integer Value for bandOutlineThickness.
 	 */
-	abstract Object getBandOutlineThickness();
+	abstract Integer getBandOutlineThickness();
 
 	/**
 	 * Set bandOutlineThickness property.With improvedVisibility enabled range activated.
@@ -168,9 +168,9 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get bottomTextFontSize property.
-	 * @return Object Value for bottomTextFontSize is an integer number.
+	 * @return Integer Value for bottomTextFontSize.
 	 */
-	abstract Object getBottomTextFontSize();
+	abstract Integer getBottomTextFontSize();
 
 	/**
 	 * Set bottomTextFontSize property.With improvedVisibility enabled range activated.
@@ -183,9 +183,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bottomTextYOffset property.<br>
 	 * Default: 0.
-	 * @return Object Value for bottomTextYOffset is an integer number.
+	 * @return Integer Value for bottomTextYOffset.
 	 */
-	abstract Object getBottomTextYOffset();
+	abstract Integer getBottomTextYOffset();
 
 	/**
 	 * Set bottomTextYOffset property.
@@ -226,9 +226,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get endAngle property.<br>
 	 * Default: 120.
-	 * @return Object Value for endAngle is an integer number.
+	 * @return Integer Value for endAngle.
 	 */
-	abstract Object getEndAngle();
+	abstract Integer getEndAngle();
 
 	/**
 	 * Set endAngle property.
@@ -239,9 +239,9 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get endValue proeperty.
-	 * @return Object Value for endValue is an integer number.
+	 * @return Integer Value for endValue.
 	 */
-	abstract Object getEndValue();
+	abstract Integer getEndValue();
 
 	/**
 	 * Set endValue property.
@@ -253,9 +253,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get gridCount property.<br>
 	 * Default: 5.
-	 * @return Object Value for gridCount is an integer number.
+	 * @return Integer Value for gridCount.
 	 */
-	abstract Object getGridCount();
+	abstract Integer getGridCount();
 
 	/**
 	 * Set gridCount property.With improvedVisibility enabled range activated.
@@ -299,9 +299,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get labelFrequency property.<br>
 	 * Default: 1.
-	 * @return Object Valie for labelFrequency is an integer number.
+	 * @return Integer Value for labelFrequency.
 	 */
-	abstract Object getLabelFrequency();
+	abstract Integer getLabelFrequency();
 
 	/**
 	 * Set labelFrequency property.With improvedVisibility enabled range activated.
@@ -326,9 +326,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get labelOffset property.<br>
 	 * Default: 15.
-	 * @return Object Value for labelOffset is an integer number.
+	 * @return Integer Value for labelOffset.
 	 */
-	abstract Object getLabelOffset();
+	abstract Integer getLabelOffset();
 
 	/**
 	 * Set labelOffset property.
@@ -352,9 +352,9 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get minorTickInterval property.
-	 * @return Object Value for minorTickInterval is an integer number.
+	 * @return Integer Value for minorTickInterval.
 	 */
-	abstract Object getMinorTickInterval();
+	abstract Integer getMinorTickInterval();
 
 	/**
 	 * Set minorTickInterval property.With improvedVisibility enabled range activated.
@@ -367,9 +367,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get minorTickLength property.<br>
 	 * Default: 5.
-	 * @return Object Value for minorTickLength is an integer number.
+	 * @return Integer Value for minorTickLength.
 	 */
-	abstract Object getMinorTickLength();
+	abstract Integer getMinorTickLength();
 
 	/**
 	 * Set minorTickLength property.
@@ -422,9 +422,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get startAngle property.<br>
 	 * Default: -120.
-	 * @return Object Value for startAngle is an integer number.
+	 * @return Integer Value for startAngle.
 	 */
-	abstract Object getStartAngle();
+	abstract Integer getStartAngle();
 
 	/**
 	 * Set startAngle property.
@@ -436,9 +436,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get startValue property.<br>
 	 * Default: 0.
-	 * @return Object Value for startValue is an integer number.
+	 * @return Integer Value for startValue.
 	 */
-	abstract Object getStartValue();
+	abstract Integer getStartValue();
 
 	/**
 	 * Set startValue property.
@@ -450,9 +450,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get tickAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for tickAlpha is a double number.
+	 * @return Double Value for tickAlpha.
 	 */
-	abstract Object getTickAlpha();
+	abstract Double getTickAlpha();
 
 	/**
 	 * Set tickAlpha property.
@@ -478,9 +478,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get tickLength property.<br>
 	 * Default: 10.
-	 * @return Object Value for tickLength is an integer number.
+	 * @return Integer Value for tickLength.
 	 */
-	abstract Object getTickLength();
+	abstract Integer getTickLength();
 
 	/**
 	 * Set tickLength property.With improvedVisibility enabled range activated.
@@ -492,9 +492,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get tickThickness property.<br>
 	 * Default: 1.
-	 * @return Object Value for tickThickness is an integer number.
+	 * @return Integer Value for tickThickness.
 	 */
-	abstract Object getTickThickness();
+	abstract Integer getTickThickness();
 
 	/**
 	 * Set tickThickness property.With improvedVisibility enabled range activated.
@@ -544,9 +544,9 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get topTextFontSize property.
-	 * @return Object Value for topTextFontSize is an integer number.
+	 * @return Integer Value for topTextFontSize.
 	 */
-	abstract Object getTopTextFontSize();
+	abstract Integer getTopTextFontSize();
 
 	/**
 	 * Set topTextFontSize property.With improvedVisibility enabled range activated.
@@ -559,9 +559,9 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get topTextYOffset property.<br>
 	 * Default: 0.
-	 * @return Object Value for topTextYoffset is an integet number.
+	 * @return Integer Value for topTextYoffset.
 	 */
-	abstract Object getTopTextYOffset();
+	abstract Integer getTopTextYOffset();
 
 	/**
 	 * Set topTextYOffset property.
@@ -612,9 +612,9 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get valueInterval property.
-	 * @return Object Value for valueInterval.
+	 * @return Double Value for valueInterval.
 	 */
-	abstract Object getValueInterval();
+	abstract Double getValueInterval();
 
 	/**
 	 * Set valueInterval property.

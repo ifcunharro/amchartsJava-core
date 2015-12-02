@@ -32,8 +32,10 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		amchart.setFeature("adjustPrecision", adjustPrecision);
 	}
 	
-	public Object getAngle(){
-		return amchart.getFeature("angle");
+	public Integer getAngle(){
+		Object angle = amchart.getFeature("angle");
+		
+		return angle != null ? ((Number)angle).intValue() : null;
 	}
 	
 	public void setAngle(Number angle) throws OutOfRangeException{
@@ -51,8 +53,10 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		amchart.setFeature("balloonText", balloonText);
 	}
 	
-	public Object getDepth3D(){
-		return amchart.getFeature("depth3D");
+	public Integer getDepth3D(){
+		Object depth3D = amchart.getFeature("depth3D");
+		
+		return depth3D != null ? ((Number)depth3D).intValue() : null;
 	}
 	
 	public void setDepth3D(Number depth3D) throws OutOfRangeException{
@@ -75,8 +79,10 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getLabelRadius(){
-		return amchart.getFeature("labelRadius");
+	public Integer getLabelRadius(){
+		Object labelRadius = amchart.getFeature("labelRadius");
+		
+		return labelRadius != null ? ((Number)labelRadius).intValue() : null;
 	}
 	
 	public void setLabelRadius(Number labelRadius) throws OutOfRangeException{
@@ -106,8 +112,10 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		amchart.setFeature("labelText", labelText);
 	}
 	
-	public Object getMinRadius(){
-		return amchart.getFeature("minRadius");
+	public Integer getMinRadius(){
+		Object minRadius = amchart.getFeature("minRadius");
+		
+		return minRadius != null ? ((Number)minRadius).intValue() : null;
 	}
 	
 	public void setMinRadius(Number minRadius) throws IntegerException{
@@ -116,8 +124,10 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getPieAlpha(){
-		return amchart.getFeature("pieAlpha");
+	public Double getPieAlpha(){
+		Object pieAlpha = amchart.getFeature("pieAlpha");
+		
+		return pieAlpha != null ? ((Number)pieAlpha).doubleValue() : null;
 	}
 	
 	public void setPieAlpha(Number pieAlpha) throws OutOfRangeException{
@@ -166,8 +176,10 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		}
 	}
 	
-	public Object getStartAngle(){
-		return amchart.getFeature("startAngle");
+	public Integer getStartAngle(){
+		Object startAngle = amchart.getFeature("startAngle");
+		
+		return startAngle != null ? ((Number)startAngle).intValue() : null;
 	}
 	
 	public void setStartAngle(Number startAngle) throws OutOfRangeException{

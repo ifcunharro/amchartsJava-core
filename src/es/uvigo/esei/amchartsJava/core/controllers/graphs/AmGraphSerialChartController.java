@@ -47,12 +47,14 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		amGraph.setFeature("clustered", clustered);
 	}
 	
-	public Object getColumnWidth(){
-		return amGraph.getFeature("columnWidth");
+	public Double getColumnWidth(){
+		Object columnWidth = amGraph.getFeature("columnWidth");
+		
+		return columnWidth != null ? ((Number)columnWidth).doubleValue() : null;
 	}
 	
 	public void setColumnWidth(Number columnWidth) throws OutOfRangeException{
-		if(NumberValidator.rangeIntegerValidator(columnWidth, 0, 1)){
+		if(NumberValidator.rangeDoubleValidator(columnWidth, 0, 1)){
 			amGraph.setFeature("columnWidth", columnWidth);
 		}
 	}
@@ -67,8 +69,10 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		}
 	}
 	
-	public Object getDashLength(){
-		return amGraph.getFeature("dashLength");
+	public Double getDashLength(){
+		Object dashLength = amGraph.getFeature("dashLength");
+		
+		return dashLength != null ? ((Number)dashLength).doubleValue() : null;
 	}
 	
 	public void setDashLength(Number dashLength){
@@ -84,8 +88,10 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		amGraph.addGraphField("dashLengthField", dashLengthField);
 	}
 	
-	public Object getFixedColumnWidth(){
-		return amGraph.getFeature("fixedColumnWidth");
+	public Integer getFixedColumnWidth(){
+		Object fixedColumnWidth = amGraph.getFeature("fixedColumnWidth");
+		
+		return fixedColumnWidth != null ? ((Number)fixedColumnWidth).intValue() : null;
 	}
 	
 	public void setFixedColumnWidth(Number fixedColumnWidth) throws IntegerException{
@@ -114,8 +120,10 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		amGraph.addGraphField("lineColorField", lineColorField);
 	}
 	
-	public Object getLineThickness(){
-		return amGraph.getFeature("lineThickness");
+	public Integer getLineThickness(){
+		Object lineThickness = amGraph.getFeature("lineThickness");
+		
+		return lineThickness != null ? ((Number)lineThickness).intValue() : null;
 	}
 	
 	public void setLineThickness(Number lineThickness) throws OutOfRangeException{
@@ -128,8 +136,10 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		}
 	}
 	
-	public Object getNegativeLineAlpha(){
-		return amGraph.getFeature("negativeLineAlpha");
+	public Double getNegativeLineAlpha(){
+		Object negativeLineAlpha = amGraph.getFeature("negativeLineAlpha");
+		
+		return negativeLineAlpha != null ? ((Number)negativeLineAlpha).doubleValue() : null;
 	}
 	
 	public void setNegativeLineAlpha(Number negativeLineAlpha) throws OutOfRangeException{
@@ -180,8 +190,10 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		amGraph.setFeature("showBalloonAt", showBalloonAt.toString());
 	}
 	
-	public Object getTopRadius(){
-		return amGraph.getFeature("topRadius");
+	public Double getTopRadius(){
+		Object topRadius = amGraph.getFeature("topRadius");
+		
+		return topRadius != null ? ((Number)topRadius).doubleValue() : null;
 	}
 	
 	public void setTopRadius(Number topRadius) throws OutOfRangeException{

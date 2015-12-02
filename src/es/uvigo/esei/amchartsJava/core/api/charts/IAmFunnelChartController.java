@@ -19,9 +19,9 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 
 	/**
 	 * Get angle property.
-	 * @return Object Value for angle is an integer number.
+	 * @return Integer Value for angle.
 	 */
-	abstract Object getAngle();
+	abstract Integer getAngle();
 
 	/**
 	 * Set angle property.
@@ -60,9 +60,9 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get depth3D property.<br>
 	 * Default: 0.
-	 * @return Value for depth3D is an integer number.
+	 * @return Integer Value for depth3D.
 	 */
-	abstract Object getDepth3D();
+	abstract Integer getDepth3D();
 
 	/**
 	 * Set depth3D property.With improvedVisibility enabled range activated.
@@ -155,9 +155,9 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get startX property.<br>
 	 * Default: 0.
-	 * @return Object Value for startX is an integer number.
+	 * @return Integer Value for startX.
 	 */
-	abstract Object getStartX();
+	abstract Integer getStartX();
 
 	/**
 	 * Set startX property.
@@ -169,9 +169,9 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get startY property.<br>
 	 * Default: 0.
-	 * @return Object Value for startY is an integer number.
+	 * @return Integer Value for startY.
 	 */
-	abstract Object getStartY();
+	abstract Integer getStartY();
 
 	/**
 	 * Set startY property.

@@ -52,8 +52,10 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		amchart.setFeature("sequencedAnimation", sequencedAnimation);
 	}
 	
-	public Object getStartAlpha(){
-		return amchart.getFeature("startAlpha");
+	public Double getStartAlpha(){
+		Object startAlpha = amchart.getFeature("startAlpha");
+		
+		return startAlpha != null ? ((Number)startAlpha).doubleValue() : null;
 	}
 	
 	public void setStartAlpha(Number startAlpha) throws OutOfRangeException{
@@ -62,8 +64,10 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		}
 	}
 	
-	public Object getStartDuration(){
-		return amchart.getFeature("startDuration");
+	public Integer getStartDuration(){
+		Object startDuration = amchart.getFeature("startDuration");
+		
+		return startDuration != null ? ((Number)startDuration).intValue() : null;
 	}
 	
 	public void setStartDuration(Number startDuration) throws OutOfRangeException{

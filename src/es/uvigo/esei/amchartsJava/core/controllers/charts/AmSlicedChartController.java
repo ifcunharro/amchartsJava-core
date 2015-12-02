@@ -30,8 +30,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		super(chart);
 	}
 	
-	public Object getAlpha(){
-		return amchart.getFeature("alpha");
+	public Double getAlpha(){
+		Object alpha = amchart.getFeature("alpha");
+		
+		return alpha != null ? ((Number)alpha).doubleValue() : null;
 	}
 	
 	public void setAlpha(Number alpha) throws OutOfRangeException{
@@ -82,7 +84,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void addColor(String color) throws ColorException{
-		if(ColorValidator.checkFormatColor(color){	
+		if(ColorValidator.checkFormatColor(color)){	
 			amchart.addColor(color);
 		}
 	}
@@ -110,8 +112,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		amchart.setGradientRatio(gradientRatio);
 	}
 	
-	public Object getGroupedAlpha(){
-		return amchart.getFeature("groupedAlpha");
+	public Double getGroupedAlpha(){
+		Object groupedAlpha = amchart.getFeature("groupedAlpha");
+		
+		return groupedAlpha != null ? ((Number)groupedAlpha).doubleValue() : null;
 	}
 	
 	public void setGroupedAlpha(Number groupedAlpha) throws OutOfRangeException{
@@ -155,8 +159,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		amchart.setFeature("groupedTitle", groupedTitle);
 	}
 	
-	public Object getGroupPercent(){
-		return amchart.getFeature("groupPercent");
+	public Integer getGroupPercent(){
+		Object groupPercent = amchart.getFeature("groupPercent");
+		
+		return groupPercent != null ? ((Number)groupPercent).intValue() : null;
 	}
 	
 	public void setGroupPercent(Number groupPercent) throws IntegerException{
@@ -165,8 +171,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getHideLabelsPercent(){
-		return amchart.getFeature("hideLabelsPercent");
+	public Integer getHideLabelsPercent(){
+		Object hideLabelsPercent = amchart.getFeature("hideLabelsPercent");
+		
+		return hideLabelsPercent != null ? ((Number)hideLabelsPercent).intValue() : null;
 	}
 	
 	public void setHideLabelsPercent(Number hideLabelsPercent) throws IntegerException{
@@ -175,8 +183,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getHoverAlpha(){
-		return amchart.getFeature("hoverAlpha");
+	public Double getHoverAlpha(){
+		Object hoverAlpha = amchart.getFeature("hoverAlpha");
+		
+		return hoverAlpha != null ? ((Number)hoverAlpha).doubleValue() : null;
 	}
 	
 	public void setHoverAlpha(Number hoverAlpha) throws OutOfRangeException{
@@ -202,8 +212,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		amchart.setFeature("labelsEnabled", labelsEnabled);
 	}
 	
-	public Object getLabelTickAlpha(){
-		return amchart.getFeature("labelTickAlpha");
+	public Double getLabelTickAlpha(){
+		Object labelTickAlpha = amchart.getFeature("labelTickAlpha");
+		
+		return labelTickAlpha != null ? ((Number)labelTickAlpha).doubleValue() : null;
 	}
 	
 	public void setLabelTickAlpha(Number labelTickAlpha) throws OutOfRangeException{
@@ -222,8 +234,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getMarginBottom(){
-		return amchart.getFeature("marginBottom");
+	public Integer getMarginBottom(){
+		Object marginBottom = amchart.getFeature("marginBottom");
+		
+		return marginBottom != null ? ((Number)marginBottom).intValue() : null;
 	}
 	
 	public void setMarginBottom(Number marginBottom) throws IntegerException{
@@ -232,8 +246,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getMarginLeft(){
-		return amchart.getFeature("marginLeft");
+	public Integer getMarginLeft(){
+		Object marginLeft = amchart.getFeature("marginLeft");
+		
+		return marginLeft != null ? ((Number)marginLeft).intValue() : null;
 	}
 	
 	public void setMarginLeft(Number marginLeft) throws IntegerException{
@@ -242,8 +258,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getMarginRight(){
-		return amchart.getFeature("marginRight");
+	public Integer getMarginRight(){
+		Object marginRight = amchart.getFeature("marginRight");
+		
+		return marginRight != null ? ((Number)marginRight).intValue() : null;
 	}
 	
 	public void setMarginRight(Number marginRight) throws IntegerException{
@@ -252,8 +270,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getMarginTop(){
-		return amchart.getFeature("marginTop");
+	public Integer getMarginTop(){
+		Object marginTop = amchart.getFeature("marginTop");
+		
+		return marginTop != null ? ((Number)marginTop).intValue() : null;
 	}
 	
 	public void setMarginTop(Number marginTop) throws IntegerException{
@@ -262,8 +282,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getMaxLabelWidth(){
-		return amchart.getFeature("maxLabelWidth");
+	public Integer getMaxLabelWidth(){
+		Object maxLabelWidth = amchart.getFeature("maxLabelWidth");
+		
+		return maxLabelWidth != null ? ((Number)maxLabelWidth).intValue() : null;
 	}
 	
 	public void setMaxLabelWidth(Number maxLabelWidth) throws IntegerException{
@@ -272,8 +294,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getOutlineAlpha(){
-		return amchart.getFeature("outlineAlpha");
+	public Double getOutlineAlpha(){
+		Object outlineAlpha = amchart.getFeature("outlineAlpha");
+		
+		return outlineAlpha != null ? ((Number)outlineAlpha).doubleValue() : null;
 	}
 	
 	public void setOutlineAlpha(Number outlineAlpha) throws OutOfRangeException{
@@ -292,8 +316,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getOutlineThickness(){
-		return amchart.getFeature("outlineThickness");
+	public Integer getOutlineThickness(){
+		Object outlineThickness = amchart.getFeature("outlineThickness");
+		
+		return outlineThickness != null ? ((Number)outlineThickness).intValue() : null;
 	}
 	
 	public void setOutlineThickness(Number outlineThickness) throws OutOfRangeException{
@@ -324,8 +350,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		amchart.addField("pulledField", pulledField);
 	}
 	
-	public Object getPullOutDuration(){
-		return amchart.getFeature("pullOutDuration");
+	public Integer getPullOutDuration(){
+		Object pullOutDuration = amchart.getFeature("pullOutDuration");
+		
+		return pullOutDuration != null ? ((Number)pullOutDuration).intValue() : null;
 	}
 	
 	public void setPullOutDuration(Number pullOutDuration) throws OutOfRangeException{
@@ -373,8 +401,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		amchart.setFeature("showZeroSlices", showZeroSlices);
 	}
 	
-	public Object getStartAlpha(){
-		return amchart.getFeature("startAlpha");
+	public Double getStartAlpha(){
+		Object startAlpha = amchart.getFeature("startAlpha");
+		
+		return startAlpha != null ? ((Number)startAlpha).doubleValue() : null;
 	}
 	
 	public void setStartAlpha(Number startAlpha) throws OutOfRangeException{
@@ -383,8 +413,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	public Object getStartDuration(){
-		return amchart.getFeature("startDuration");
+	public Integer getStartDuration(){
+		Object startDuration = amchart.getFeature("startDuration");
+		
+		return startDuration != null ? ((Number)startDuration).intValue() : null;
 	}
 	
 	public void setStartDuration(Number startDuration) throws OutOfRangeException{

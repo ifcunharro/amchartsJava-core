@@ -37,8 +37,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		balloon.setFeature("adjustBorderColor", adjustBorderColor);
 	}
 	
-	public Object getAnimationDuration(){
-		return balloon.getFeature("animationDuration");
+	public Double getAnimationDuration(){
+		Object animationDuration = balloon.getFeature("animationDuration");
+		
+		return animationDuration != null ? ((Number)animationDuration).doubleValue() : null;
 	}
 	
 	public void setAnimationDuration(Number animationDuration) throws OutOfRangeException{
@@ -51,8 +53,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getBorderAlpha(){
-		return balloon.getFeature("borderAlpha");
+	public Double getBorderAlpha(){
+		Object borderAlpha = balloon.getFeature("borderAlpha");
+		
+		return borderAlpha != null ? ((Number)borderAlpha).doubleValue() : null;
 	}
 	
 	public void setBorderAlpha(Number borderAlpha) throws OutOfRangeException{
@@ -71,8 +75,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getBorderThickness(){
-		return balloon.getFeature("borderThickness");
+	public Integer getBorderThickness(){
+		Object borderThickness = balloon.getFeature("borderThickness");
+		
+		return borderThickness != null ? ((Number)borderThickness).intValue() : null;
 	}
 	
 	public void setBorderThickness(Number borderThickness) throws OutOfRangeException{
@@ -95,8 +101,11 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getCornerRadius(){
-		return balloon.getFeature("cornerRadius");
+	public Integer getCornerRadius(){
+		Object cornerRadius = balloon.getFeature("cornerRadius");
+		
+		return cornerRadius != null ? ((Number)cornerRadius).intValue() : null;
+		
 	}
 	
 	public void setCornerRadius(Number cornerRadius) throws OutOfRangeException{
@@ -119,8 +128,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		balloon.setFeature("disableMouseEvents", disableMouseEvents);
 	}
 	
-	public Object getFadeOutDuration(){
-		return balloon.getFeature("fadeOutDuration");
+	public Double getFadeOutDuration(){
+		Object fadeOutDuration = balloon.getFeature("fadeOutDuration");
+		
+		return fadeOutDuration != null ? ((Number)fadeOutDuration).doubleValue() : null;
 	}
 	
 	public void setFadeOutDuration(Number fadeOutDuration) throws OutOfRangeException{
@@ -133,8 +144,12 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getFillAlpha(){
-		return balloon.getFeature("fillAlpha");
+	public Double getFillAlpha(){
+		Object fillAlpha = balloon.getFeature("fillAlpha");
+		
+		return fillAlpha != null ? ((Number)fillAlpha).doubleValue() : null;
+		
+		
 	}
 	
 	public void setFillAlpha(Number fillAlpha) throws OutOfRangeException{
@@ -162,8 +177,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		balloon.setFeature("fixedPosition", fixedPosition);
 	}
 	
-	public Object getFontSize(){
-		return balloon.getFeature("fontSize");
+	public Integer getFontSize(){
+		Object fontSize = balloon.getFeature("fontSize");
+		
+		return fontSize != null ? ((Number)fontSize).intValue() : null;
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
@@ -176,8 +193,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getHorizontalPadding(){
-		return balloon.getFeature("horizontalPadding");
+	public Integer getHorizontalPadding(){
+		Object horizontalPadding = balloon.getFeature("horizontalPadding");
+		
+		return horizontalPadding != null ? ((Number)horizontalPadding).intValue() : null;
 	}
 	
 	public void setHorizontalPadding(Number horizontalPadding) throws OutOfRangeException{
@@ -190,8 +209,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getMaxWidth(){
-		return balloon.getFeature("maxWidth");
+	public Integer getMaxWidth(){
+		Object maxWidth = balloon.getFeature("maxWidth");
+		
+		return maxWidth != null ? ((Number)maxWidth).intValue() : null;
 	}
 	
 	public void setMaxWidth(Number maxWidth) throws IntegerException{
@@ -200,8 +221,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getOffsetX(){
-		return balloon.getFeature("offsetX");
+	public Integer getOffsetX(){
+		Object offsetX = balloon.getFeature("offsetX");
+		
+		return offsetX != null ? ((Number)balloon.getFeature("offsetX")).intValue() : null;
 	}
 	
 	public void setOffsetX(Number offsetX) throws IntegerException{
@@ -210,8 +233,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getOffsetY(){
-		return balloon.getFeature("offsetY");
+	public Integer getOffsetY(){
+		Object offsetY = balloon.getFeature("offsetY");
+		
+		return offsetY != null ? ((Number)offsetY).intValue() : null;
 	}
 	
 	public void setOffsetY(Number offsetY) throws IntegerException{
@@ -220,8 +245,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getPointerWidth(){
-		return balloon.getFeature("pointerWidth");
+	public Integer getPointerWidth(){
+		Object pointerWidth = balloon.getFeature("pointerWidth");
+		
+		return pointerWidth != null ? ((Number)pointerWidth).intValue() : null;
 	}
 	
 	public void setPointerWidth(Number pointerWidth) throws OutOfRangeException{
@@ -234,8 +261,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		}
 	}
 	
-	public Object getShadowAlpha(){
-		return balloon.getFeature("shadowAlpha");
+	public Double getShadowAlpha(){
+		Object shadowAlpha = balloon.getFeature("shadowAlpha");
+		
+		return shadowAlpha != null ? ((Number)shadowAlpha).doubleValue() : null;
 	}
 	
 	public void setShadowAlpha(Number shadowAlpha) throws OutOfRangeException{
@@ -271,8 +300,10 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 		balloon.setFeature("textAlign", textAlign.toString());
 	}
 	
-	public Object getVerticalPadding(){
-		return balloon.getFeature("verticalPadding");
+	public Integer getVerticalPadding(){
+		Object verticalPadding = balloon.getFeature("verticalPadding");
+		
+		return verticalPadding != null ? ((Number)verticalPadding).intValue() : null;
 	}
 	
 	public void setVerticalPadding(Number verticalPadding) throws OutOfRangeException{

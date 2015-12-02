@@ -42,9 +42,9 @@ public abstract interface IAmXyChartController extends IAmRectangularChartContro
 	/**
 	 * Get maxZoomFactor property.<br>
 	 * Default: 20.
-	 * @return Object Value for maxZoomFactor is an integer number.
+	 * @return Integer Value for maxZoomFactor.
 	 */
-	abstract Object getMaxZoomFactor();
+	abstract Integer getMaxZoomFactor();
 
 	/**
 	 * Set maxZoomFactor property.With improvedVisibility enabled range activated.

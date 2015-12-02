@@ -35,9 +35,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get axisAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for axisAlpha is a double number.
+	 * @return Double Value for axisAlpha.
 	 */
-	abstract Object getAxisAlpha();
+	abstract Double getAxisAlpha();
 
 	/**
 	 * Set axisAlpha property.
@@ -63,9 +63,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get axisThickness property.<br>
 	 * Default: 1.
-	 * @return Object Value for axisThickness is an integer number.
+	 * @return Integer Value for axisThickness.
 	 */
-	abstract Object getAxisThickness();
+	abstract Integer getAxisThickness();
 
 	/**
 	 * Set axisThickness property.With improvedVisibility enabled range activated.
@@ -116,9 +116,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get dashLength property.<br>
 	 * Default: 0.
-	 * @return Object Value for dashLength is an integer number.
+	 * @return Integer Value for dashLength.
 	 */
-	abstract Object getDashLength();
+	abstract Integer getDashLength();
 
 	/**
 	 * Set dashLength property.With improvedVisibility enabled range activated.
@@ -136,9 +136,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get fillAlpha property.<br>
 	 * Default: 0.
-	 * @return Object Value for fillAlpha is a double number.
+	 * @return Double Value for fillAlpha.
 	 */
-	abstract Object getFillAlpha();
+	abstract Double getFillAlpha();
 
 	/**
 	 * Set fillAlpha property.
@@ -163,9 +163,9 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get fontSize property.
-	 * @return Object Value for fontSize is an integer number.
+	 * @return Integer Value for fontSize.
 	 */
-	abstract Object getFontSize();
+	abstract Integer getFontSize();
 
 	/**
 	 * Set fontSize property.With improvedVisibility enabled range activated.
@@ -177,9 +177,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get gridAlpha property.<br>
 	 * Default: 0.15.
-	 * @return Object Valeu for gridAlpha is a double number.
+	 * @return Double Value for gridAlpha.
 	 */
-	abstract Object getGridAlpha();
+	abstract Double getGridAlpha();
 
 	/**
 	 * Set gridAlpha property.
@@ -205,9 +205,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get gridCount property.<br>
 	 * Default: 5.
-	 * @return Object Value for gridCount is an integer number.
+	 * @return Integer Value for gridCount.
 	 */
-	abstract Object getGridCount();
+	abstract Integer getGridCount();
 
 	/**
 	 * Set gridCount property.With improvedVisibility enabled range activated.
@@ -219,9 +219,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get gridThickness property.<br>
 	 * Default: 1.
-	 * @return Object Value for gridThickness is an integer number.
+	 * @return Integer Value for gridThickness.
 	 */
-	abstract Object getGridThickness();
+	abstract Integer getGridThickness();
 
 	/**
 	 * Set gridThickness property.With improvedVisibility enabled range activated.
@@ -259,9 +259,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get labelFrequency property.<br>
 	 * Default: 1.
-	 * @return Object Value for labelFrequency is an integer number.
+	 * @return Integer Value for labelFrequency.
 	 */
-	abstract Object getLabelFrequency();
+	abstract Integer getLabelFrequency();
 
 	/**
 	 * Set labelFrequency property.With improvedVisibility enabled range activated.
@@ -274,9 +274,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get labelOffset property.<br>
 	 * Default: 0.
-	 * @return Object Value for labelOffset is an integer number.
+	 * @return Integer Value for labelOffset.
 	 */
-	abstract Object getLabelOffset();
+	abstract Integer getLabelOffset();
 
 	/**
 	 * Set labelOffset property.With improvedVisibility enabled range activated.
@@ -288,9 +288,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get labelRotation property.<br>
 	 * Default: 0.
-	 * @return Object Value for labelRotation is an integer number.
+	 * @return Integer Value for labelRotation.
 	 */
-	abstract Object getLabelRotation();
+	abstract Integer getLabelRotation();
 
 	/**
 	 * Set labelRotation property.
@@ -316,9 +316,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minHorizontalGap property.<br>
 	 * Default: 75.
-	 * ®return Object Value for minHorizontalGap is an integer number.
+	 * ®return Integer Value for minHorizontalGap.
 	 */
-	abstract Object getMinHorizontalGap();
+	abstract Integer getMinHorizontalGap();
 
 	/**
 	 * Set minHorizontalGap property.
@@ -331,9 +331,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minorGridAlpha property.<br>
 	 * Default: 0.07.
-	 * @return Object Value for minorGridAlpha is a double number.
+	 * @return Double Value for minorGridAlpha.
 	 */
-	abstract Object getMinorGridAlpha();
+	abstract Double getMinorGridAlpha();
 
 	/**
 	 * Set minorGridAlpha property.
@@ -359,9 +359,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minorTickLength property.<br>
 	 * Default: 0.
-	 * @return Object Value for minorTickLength is an integer number.
+	 * @return Integer Value for minorTickLength.
 	 */
-	abstract Object getMinorTickLength();
+	abstract Integer getMinorTickLength();
 	
 	/**
 	 * Set minorTickLength property.With improvedVisibility enabled range activated.
@@ -374,22 +374,23 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minVerticalGap property.<br>
 	 * Default: 35.
-	 * @return Object Value for minVerticalGap is an integer number.
+	 * @return Integer Value for minVerticalGap .
 	 */
-	abstract Object getMinVerticalGap();
+	abstract Integer getMinVerticalGap();
 
 	/**
 	 * Set minVerticalGap property.
 	 * @param minVerticalGap Value for minVerticalGap.
+	 * @throws IntegerException Value for minVerticalGap is not an integer number.
 	 */
-	abstract void setMinVerticalGap(Number minVerticalGap);
+	abstract void setMinVerticalGap(Number minVerticalGap) throws IntegerException;
 
 	/**
 	 * Get offset property.<br>
 	 * Default: 0.
-	 * @return Object Value for offset is an integer number.
+	 * @return Integer Value for offset.
 	 */
-	abstract Object getOffset();
+	abstract Integer getOffset();
 
 	/**
 	 * Set offset property.With improvedVisibility enabled range activated.
@@ -440,9 +441,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get tickLength property.<br>
 	 * Default: 5.
-	 * @return Object Value for tickLength is an integer number.
+	 * @return Integer Value for tickLength.
 	 */
-	abstract Object getTickLength();
+	abstract Integer getTickLength();
 
 	/**
 	 * Set tickLength property.With improvedVisibility enabled range activated.
@@ -491,9 +492,9 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get titleFontSize property.
-	 * @return Object Value for titleFontSize is an integer number.
+	 * @return Integer Value for titleFontSize.
 	 */
-	abstract Object getTitleFontSize();
+	abstract Integer getTitleFontSize();
 
 	/**
 	 * Set titleFontSize property.With improvedVisibility enabled range activated.
@@ -506,9 +507,9 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get titleRotation property.<br>
 	 * Default: 0.
-	 * @return Object Value for titleRotation.
+	 * @return Integer Value for titleRotation.
 	 */
-	abstract Object getTitleRotation();
+	abstract Integer getTitleRotation();
 	
 	/**
 	 * Set titleRotation property.

@@ -34,8 +34,10 @@ public class AmGraphStepController extends AmGraphSerialChartController
 		amGraph.setFeature("noStepRisers", noStepRisers);
 	}
 	
-	public Object getPeriodSpan(){
-		return amGraph.getFeature("periodSpan");
+	public Integer getPeriodSpan(){
+		Object periodSpan = amGraph.getFeature("periodSpan");
+		
+		return periodSpan != null ? ((Number)periodSpan).intValue() : null;
 	}
 	
 	public void setPeriodSpan(Number periodSpan) throws OutOfRangeException{

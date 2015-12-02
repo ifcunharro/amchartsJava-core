@@ -48,8 +48,10 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		amchart.addField("categoryField", categoryField);
 	}
 	
-	public Object getColumnSpacing(){
-		return amchart.getFeature("columnSpacing");
+	public Integer getColumnSpacing(){
+		Object columnSpacing = amchart.getFeature("columnSpacing");
+		
+		return columnSpacing != null ? ((Number)columnSpacing).intValue() : null;
 	}
 	
 	public void setColumnSpacing(Number columnSpacing) throws IntegerException{
@@ -58,8 +60,10 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		}
 	}
 	
-	public Object getColumnSpacing3D(){
-		return amchart.getFeature("columnSpacing3D");
+	public Integer getColumnSpacing3D(){
+		Object columnSpacing3D = amchart.getFeature("columnSpacing3D");
+		
+		return columnSpacing3D != null ? ((Number)columnSpacing3D).intValue() : null;
 	}
 	
 	public void setColumnSpacing3D(Number columnSpacing3D) throws IntegerException{
@@ -68,8 +72,10 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		}
 	}
 	
-	public Object getColumnWidth(){
-		return amchart.getFeature("columnWidth");
+	public Double getColumnWidth(){
+		Object columnWidth = amchart.getFeature("columnWidth");
+		
+		return columnWidth != null ? ((Number)columnWidth).doubleValue() : null;
 	}
 	
 	public void setColumnWidth(Number columnWidth) throws OutOfRangeException{
@@ -88,8 +94,10 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		}
 	}
 	
-	public Object getMaxSelectedSeries(){
-		return amchart.getFeature("maxSelectedSeries");
+	public Integer getMaxSelectedSeries(){
+		Object maxSelectedSeries = amchart.getFeature("maxSelectedSeries");
+		
+		return maxSelectedSeries != null ? ((Number)maxSelectedSeries).intValue() : null;
 	}
 	
 	public void setMaxSelectedSeries(Number maxSelectedSeries) throws IntegerException{
@@ -98,8 +106,10 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		}
 	}
 	
-	public Object getMaxSelectedTime(){
-		return amchart.getFeature("maxSelectedTime");
+	public Integer getMaxSelectedTime(){
+		Object maxSelectedTime = amchart.getFeature("maxSelectedTime");
+		
+		return maxSelectedTime != null ? ((Number)maxSelectedTime).intValue() : null;
 	}
 	
 	public void setMaxSelectedTime(Number maxSelectedTime) throws OutOfRangeException{
@@ -108,8 +118,10 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 		}
 	}
 	
-	public Object getMinSelectedTime(){
-		return amchart.getFeature("minSelectedTime");
+	public Integer getMinSelectedTime(){
+		Object minSelectedTime = amchart.getFeature("minSelectedTime");
+		
+		return minSelectedTime != null ? ((Number)minSelectedTime).intValue() : null;
 	}
 	
 	public void setMinSelectedTime(Number minSelectedTime) throws OutOfRangeException{

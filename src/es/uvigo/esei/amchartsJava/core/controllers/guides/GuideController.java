@@ -98,8 +98,10 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getDashLength(){
-		return guide.getFeature("dashLength");
+	public Integer getDashLength(){
+		Object dashLength = guide.getFeature("dashLength");
+		
+		return dashLength != null ? ((Number)dashLength).intValue() : null;
 	}
 	
 	public void setDashLength(Number dashLength) throws OutOfRangeException{
@@ -112,8 +114,10 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getFillAlpha(){
-		return guide.getFeature("fillAlpha");
+	public Double getFillAlpha(){
+		Object fillAlpha = guide.getFeature("fillAlpha");
+		
+		return fillAlpha != null ? ((Number)fillAlpha).doubleValue() : null;
 	}
 	
 	public void setFillAlpha(Number fillAlpha) throws OutOfRangeException{
@@ -132,8 +136,10 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getFontSize(){
-		return guide.getFeature("fontSize");
+	public Integer getFontSize(){
+		Object fontSize = guide.getFeature("fontSize");
+		
+		return fontSize != null ? ((Number)fontSize).intValue() : null;
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
@@ -159,6 +165,10 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		return (Boolean) guide.getFeature("inside");
 	}
 	
+	public void setInside(Boolean inside){
+		guide.setFeature("inside", inside);
+	}
+	
 	public String getLabel(){
 		return (String) guide.getFeature("label");
 	}
@@ -167,8 +177,10 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		guide.setFeature("label", label);
 	}
 	
-	public Object getLabelRotation(){
-		return guide.getFeature("rotation");
+	public Integer getLabelRotation(){
+		Object labelRotation = guide.getFeature("rotation");
+		
+		return labelRotation != null ? ((Number)labelRotation).intValue() : null;
 	}
 	
 	public void setLabelRotation(Number labelRotation) throws OutOfRangeException{
@@ -177,8 +189,10 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getLineAlpha(){
-		return guide.getFeature("lineAlpha");
+	public Double getLineAlpha(){
+		Object lineAlpha = guide.getFeature("lineAlpha");
+		
+		return lineAlpha != null ? ((Number)lineAlpha).doubleValue() : null;
 	}
 	
 	public void setLineAlpha(Number lineAlpha) throws OutOfRangeException{
@@ -197,8 +211,10 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
-	public Object getLineThickness(){
-		return guide.getFeature("lineThickness");
+	public Integer getLineThickness(){
+		Object lineThickness = guide.getFeature("lineThickness");
+		
+		return lineThickness != null ? ((Number)lineThickness).intValue() : null;
 	}
 	
 	public void setLineThickness(Number lineThickness) throws OutOfRangeException{
@@ -219,8 +235,10 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		guide.setFeature("position", position.toString());
 	}
 	
-	public Object getTickLength(){
-		return guide.getFeature("tickLength");
+	public Integer getTickLength(){
+		Object tickLength = guide.getFeature("tickLength");
+		
+		return tickLength != null ? ((Number)tickLength).intValue() : null;
 	}
 	
 	public void setTickLength(Number tickLength) throws OutOfRangeException{

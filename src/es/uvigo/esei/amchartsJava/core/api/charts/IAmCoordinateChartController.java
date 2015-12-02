@@ -53,9 +53,9 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	/**
 	 * Get startAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for startAlpha is a double number.
+	 * @return Double Value for startAlpha.
 	 */
-	abstract Object getStartAlpha();
+	abstract Double getStartAlpha();
 
 	/**
 	 * Set startAlpha property.
@@ -67,9 +67,9 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	/**
 	 * Get startDuration property.<br>
 	 * Default: 0.
-	 * @return Object Value for startDuration is an integer number.
+	 * @return Integer Value for startDuration.
 	 */
-	abstract Object getStartDuration();
+	abstract Integer getStartDuration();
 
 	/**
 	 * Set startDuration property.With improvedVisibility enabled range activated.

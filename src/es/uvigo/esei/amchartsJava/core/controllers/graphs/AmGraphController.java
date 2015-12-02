@@ -144,8 +144,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("bullet", bullet.toString());
 	}
 	
-	public Object getBulletAlpha(){
-		return amGraph.getFeature("bulletAlpha");
+	public Double getBulletAlpha(){
+		Object bulletAlpha = amGraph.getFeature("bulletAlpha");
+		
+		return bulletAlpha != null ? ((Number)bulletAlpha).doubleValue() : null;
 	}
 	
 	public void setBulletAlpha(Number bulletAlpha) throws OutOfRangeException{
@@ -154,8 +156,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getBulletBorderAlpha(){
-		return amGraph.getFeature("bulletBorderAlpha");
+	public Double getBulletBorderAlpha(){
+		Object bulletBorderAlpha = amGraph.getFeature("bulletBorderAlpha");
+		
+		return bulletBorderAlpha != null ? ((Number)bulletBorderAlpha).doubleValue() : null;
 	}
 	
 	public void setBulletBorderAlpha(Number bulletBorderAlpha) throws OutOfRangeException{
@@ -172,8 +176,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("bulletBorderColor", bulletBorderColor.toString());
 	}
 	
-	public Object getBulletBorderThickness(){
-		return amGraph.getFeature("bulletBorderThickness");
+	public Integer getBulletBorderThickness(){
+		Object bulletBorderThickness = amGraph.getFeature("bulletBorderThickness");
+		
+		return bulletBorderThickness != null ? ((Number)bulletBorderThickness).intValue() : null;
 	}
 	
 	public void setBulletBorderThickness(Number bulletBorderThickness) throws OutOfRangeException{
@@ -203,8 +209,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.addGraphField("bulletField", bulletField);
 	}
 	
-	public Object getBulletOffset(){
-		return amGraph.getFeature("bulletOffset");
+	public Integer getBulletOffset(){
+		Object bulletOffset = amGraph.getFeature("bulletOffset");
+		
+		return bulletOffset != null ? ((Number)bulletOffset).intValue() : null;
 	}
 	
 	public void setBulletOffset(Number bulletOffset) throws OutOfRangeException{
@@ -217,8 +225,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getBulletSize(){
-		return amGraph.getFeature("bulletSize");
+	public Integer getBulletSize(){
+		Object bulletSize = amGraph.getFeature("bulletSize");
+		
+		return bulletSize != null ? ((Number)bulletSize).intValue() : null;
 	}
 	
 	public void setBulletSize(Number bulletSize) throws OutOfRangeException{
@@ -266,8 +276,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.addGraphField("colorField", colorField);
 	}
 	
-	public Object getCursorBulletAlpha(){
-		return amGraph.getFeature("cursorBulletAlpha");
+	public Double getCursorBulletAlpha(){
+		Object cursorBulletAlpha = amGraph.getFeature("cursorBulletAlpha");
+		
+		return cursorBulletAlpha != null ? ((Number)cursorBulletAlpha).doubleValue() : null;
 	}
 	
 	public void setCursorBulletAlpha(Number cursorBulletAlpha) throws OutOfRangeException{
@@ -331,8 +343,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.addGraphField("errorField", errorField);
 	}
 	
-	public Object getFillAlphas(){
-		return amGraph.getFeature("fillAlphas");
+	public Double getFillAlphas(){
+		Object fillAlphas = amGraph.getFeature("fillAlphas");
+		
+		return fillAlphas != null ? ((Number)fillAlphas).doubleValue() : null;
 	}
 	
 	public void setFillAlphas(Number fillAlphas) throws OutOfRangeException{
@@ -364,8 +378,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("fillToGraph", fillToGraph);
 	}
 	
-	public Object getFontSize(){
-		return amGraph.getFeature("fontSize");
+	public Integer getFontSize(){
+		Object fontSize = amGraph.getFeature("fontSize");
+		
+		return fontSize != null ? ((Number)fontSize).intValue() : null;
 	}
 	
 	public void setFontSize(Number fontSize) throws OutOfRangeException{
@@ -378,8 +394,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getGapPeriod(){
-		return amGraph.getFeature("gapPeriod");
+	public Double getGapPeriod(){
+		Object gapPeriod = amGraph.getFeature("gapPeriod");
+		
+		return gapPeriod != null ? ((Number)gapPeriod).doubleValue() : null;
 	}
 	
 	public void setGapPeriod(Number gapPeriod) throws DoubleException{
@@ -405,8 +423,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("hidden", hidden);
 	}
 	
-	public Object getHideBulletsCount(){
-		return amGraph.getFeature("hideBulletsCount");
+	public Integer getHideBulletsCount(){
+		Object hideBulletsCount = amGraph.getFeature("hideBulletsCount");
+		
+		return hideBulletsCount != null ? ((Number)hideBulletsCount).intValue() : null;
 	}
 	
 	public void setHideBulletsCount(Number hideBulletsCount) throws IntegerException{
@@ -449,8 +469,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("labelFunction", labelFunction);
 	}
 	
-	public Object getLabelOffset(){
-		return amGraph.getFeature("labelOffset");
+	public Integer getLabelOffset(){
+		Object labelOffset = amGraph.getFeature("labelOffset");
+		
+		return labelOffset != null ? ((Number)labelOffset).intValue() : null;
 	}
 	
 	public void setLabelOffset(Number labelOffset) throws OutOfRangeException{
@@ -471,8 +493,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("labelPosition", labelPosition.toString());
 	}
 	
-	public Object getLabelRotation(){
-		return amGraph.getFeature("labelRotation");
+	public Integer getLabelRotation(){
+		Object labelRotation = amGraph.getFeature("labelRotation");
+		
+		return labelRotation != null ? ((Number)labelRotation).intValue() : null;
 	}
 	
 	public void setLabelRotation(Number labelRotation) throws OutOfRangeException{
@@ -489,8 +513,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("labelText", labelText.toString());
 	}
 	
-	public Object getLegendAlpha(){
-		return amGraph.getFeature("legendAlpha");
+	public Double getLegendAlpha(){
+		Object legendAlpha = amGraph.getFeature("legendAlpha");
+		
+		return legendAlpha != null ? ((Number)legendAlpha).doubleValue() : null;
 	}
 	
 	public void setLegendAlpha(Number legendAlpha) throws OutOfRangeException{
@@ -523,8 +549,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("legendValueText", legendValueText.toString());
 	}
 	
-	public Object getLineAlpha(){
-		return amGraph.getFeature("lineAlpha");
+	public Double getLineAlpha(){
+		Object lineAlpha = amGraph.getFeature("lineAlpha");
+		
+		return lineAlpha != null ? ((Number)lineAlpha).doubleValue() : null;
 	}
 	
 	public void setLineAlpha(Number lineAlpha) throws OutOfRangeException{
@@ -541,8 +569,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.setFeature("markerType", markerType.toString());
 	}
 	
-	public Object getMinDistance(){
-		return amGraph.getFeature("minDistance");
+	public Integer getMinDistance(){
+		Object minDistance = amGraph.getFeature("minDistance");
+		
+		return minDistance != null ? ((Number)minDistance).intValue() : null;
 	}
 	
 	public void setMinDistance(Number minDistance) throws OutOfRangeException{
@@ -555,8 +585,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getNegativeBase(){
-		return amGraph.getFeature("negativeBase");
+	public Integer getNegativeBase(){
+		Object negativeBase = amGraph.getFeature("negativeBase");
+		
+		return negativeBase != null ? ((Number)negativeBase).intValue() : null;
 	}
 	
 	public void setNegativeBase(Number negativeBase) throws IntegerException{
@@ -565,8 +597,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
-	public Object getNegativeFillAlphas(){
-		return amGraph.getFeature("negativeFillAlphas");
+	public Double getNegativeFillAlphas(){
+		Object negativeFillAlphas = amGraph.getFeature("negativeFillAlphas");
+		
+		return negativeFillAlphas != null ? ((Number)negativeFillAlphas).doubleValue() : null;
 	}
 	
 	public void setNegativeFillAlphas(Number negativeFillAlhas) throws OutOfRangeException{
@@ -607,8 +641,10 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		amGraph.addGraphField("patternField", patternField);
 	}
 	
-	public Object getPrecision(){
-		return amGraph.getFeature("precision");
+	public Integer getPrecision(){
+		Object precision = amGraph.getFeature("precision");
+		
+		return precision != null ? ((Number)precision).intValue() : null;
 	}
 	
 	public void setPrecision(Number precision) throws OutOfRangeException{
