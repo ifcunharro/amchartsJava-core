@@ -4,9 +4,6 @@ package es.uvigo.esei.amchartsJava.core.constants;
 public final class StepDirectionConstant {
 	
 	
-	/**
-	 *  Default Contructor
-	 */
 	private StepDirectionConstant(){
 		
 	}
@@ -18,7 +15,7 @@ public final class StepDirectionConstant {
 	/**
 	 * Method to get a instance of this class
 	 * 
-	 * @return instance of StepDirectionConstant
+	 * @return StepDirectionConstant instance of StepDirectionConstant
 	 */
 	public static StepDirectionConstant getInstance(){
 		return InitSingleton.INSTANCE;

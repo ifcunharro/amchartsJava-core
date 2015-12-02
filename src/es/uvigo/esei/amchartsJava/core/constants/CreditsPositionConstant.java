@@ -11,6 +11,11 @@ public final class CreditsPositionConstant {
 		private static final CreditsPositionConstant INSTANCE = new CreditsPositionConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return CreditsPositionConstant instance of CreditsPositionConstant
+	 */
 	public static CreditsPositionConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

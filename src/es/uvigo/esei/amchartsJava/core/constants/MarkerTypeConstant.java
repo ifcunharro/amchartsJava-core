@@ -9,12 +9,17 @@ public final class MarkerTypeConstant {
 		
 	}
 	
+	private static class InitSingleton{
+		private static MarkerTypeConstant INSTANCE = new MarkerTypeConstant();
+	}
+	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return MarkerTypeConstant instance of MarkerTypeConstant
+	 */
 	public static MarkerTypeConstant getInstance(){
-		if(instance==null){
-			instance = new MarkerTypeConstant(); 
-			
-		}
-		return instance;
+		return InitSingleton.INSTANCE;
 	}
 	
 	public enum MarkerType{

@@ -9,11 +9,17 @@ public final class SeparatorConstant {
 		
 	}
 	
+	private static class InitSingleton{
+		private static SeparatorConstant INSTANCE = new SeparatorConstant();
+	}
+	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return SeparatorConstant instance of SeparatorConstant
+	 */
 	public static SeparatorConstant getInstance(){
-		if(instance==null){
-			instance = new SeparatorConstant(); 
-		}
-		return instance;
+		return InitSingleton.INSTANCE;
 	}
 	
 	public enum Separator{

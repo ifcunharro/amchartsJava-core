@@ -11,6 +11,11 @@ public final class PointPositionAxisRadarConstant {
 		private static final PointPositionAxisRadarConstant INSTANCE = new PointPositionAxisRadarConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return PointPositionAxisRadarConstant instance of PointPositionAxisRadarConstant
+	 */
 	public static PointPositionAxisRadarConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

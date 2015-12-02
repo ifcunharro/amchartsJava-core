@@ -13,7 +13,12 @@ import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 
 
-
+/**
+ * 
+ * This class load properties with params config and configure log.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public final class Config {
 
     private static final Properties CONFIG = new Properties();
@@ -44,6 +49,11 @@ public final class Config {
 		}
 	}
 
+    /**
+     * Get parameter of configuration.
+     * @param key Name of parameter of configuration.
+     * @return String Value asociated to parameter of configuration.
+     */
     public static String getString(final String key) {
         if (CONFIG.containsKey(key))
             return CONFIG.getProperty(key);
@@ -53,6 +63,11 @@ public final class Config {
         );
     }
     
+    /**
+     * Configure log using pattern for log.
+     * @param logPattern Pattern for entry log.
+     * @param fileLog File of log.
+     */
     public static void configureLog(String logPattern,String fileLog){
 		try {
 			BasicConfigurator.configure(new FileAppender(
@@ -64,6 +79,9 @@ public final class Config {
 		}
 	}
 	
+    /**
+     * Default configuration for log.
+     */
 	public static void defaultConfigureLog(){
 		try {
 			BasicConfigurator.configure(new FileAppender(

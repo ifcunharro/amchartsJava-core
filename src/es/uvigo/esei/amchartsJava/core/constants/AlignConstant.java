@@ -2,17 +2,12 @@ package es.uvigo.esei.amchartsJava.core.constants;
 
 /**
  * 
- * This class provides values to property Align 
- * 
- * @author iago
+ * @author Iago Fernández Cuñarro
  *
  */
 public final class AlignConstant {
 	
 	
-	/**
-	 *  Default Contructor
-	 */
 	private AlignConstant(){
 		
 	}
@@ -24,7 +19,7 @@ public final class AlignConstant {
 	/**
 	 * Method to get a instance of this class
 	 * 
-	 * @return instance of AlignConstant
+	 * @return AlignConstant instance of AlignConstant
 	 */
 	public static AlignConstant getInstance(){
 		return InitSingleton.INSTANCE;

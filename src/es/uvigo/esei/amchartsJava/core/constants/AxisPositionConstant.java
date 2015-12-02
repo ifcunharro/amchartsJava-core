@@ -11,6 +11,11 @@ public final class AxisPositionConstant {
 		private static final AxisPositionConstant INSTANCE = new AxisPositionConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return AxisPositionConstant instance of AxisPositionConstant
+	 */
 	public static AxisPositionConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

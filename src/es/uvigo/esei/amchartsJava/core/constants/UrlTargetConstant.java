@@ -11,6 +11,11 @@ public final class UrlTargetConstant {
 		private static final UrlTargetConstant INSTANCE = new UrlTargetConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return UrlTargetConstant instance of UrlTargetConstant
+	 */
 	public static UrlTargetConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

@@ -11,6 +11,11 @@ public final class PointPositionGraphConstant {
 		private static final PointPositionGraphConstant INSTANCE = new PointPositionGraphConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return PointPositionGraphConstant instance of PointPositionGraphConstant
+	 */
 	public static PointPositionGraphConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

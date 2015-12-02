@@ -1,6 +1,10 @@
 package es.uvigo.esei.amchartsJava.core.exceptions;
 
-
+/**
+ * Custom exception for not double number.
+ * @author iagofernandezcunarro
+ *
+ */
 public class DoubleException extends Exception {
 
 	private static final long serialVersionUID = 1L;

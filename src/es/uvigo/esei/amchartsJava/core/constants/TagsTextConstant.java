@@ -11,6 +11,11 @@ public final class TagsTextConstant {
 		private static final TagsTextConstant INSTANCE = new TagsTextConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return TagsTextConstant instance of TagsTextConstant
+	 */
 	public static TagsTextConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

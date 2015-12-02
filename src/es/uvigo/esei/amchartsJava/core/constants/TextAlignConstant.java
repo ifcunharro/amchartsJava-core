@@ -23,7 +23,7 @@ public final class TextAlignConstant {
 	/**
 	 * Method to get a instance of this class
 	 * 
-	 * @return instance of TextAlignConstant
+	 * @return TextAlignConstan instance of TextAlignConstant
 	 */
 	public static TextAlignConstant getInstance(){
 		return InitSingleton.INSTANCE;

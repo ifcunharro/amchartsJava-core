@@ -11,6 +11,11 @@ public final class BulletConstant {
 		private static BulletConstant INSTANCE = new BulletConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return BulletConstant instance of BulletConstant
+	 */
 	public static BulletConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

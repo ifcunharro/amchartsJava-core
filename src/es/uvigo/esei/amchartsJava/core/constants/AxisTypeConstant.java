@@ -11,6 +11,11 @@ public final class AxisTypeConstant {
 		private static AxisTypeConstant INSTANCE = new AxisTypeConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return AxisTypeConstant instance of AxisTypeConstant
+	 */
 	public static AxisTypeConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

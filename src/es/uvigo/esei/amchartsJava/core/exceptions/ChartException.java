@@ -1,6 +1,11 @@
 package es.uvigo.esei.amchartsJava.core.exceptions;
 
 
+/**
+ * Custom exception for chart doesn't contain that component.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class ChartException extends Exception {
 
 	private static final long serialVersionUID = 1L;

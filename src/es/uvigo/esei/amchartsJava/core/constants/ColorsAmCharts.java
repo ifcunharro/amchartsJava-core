@@ -3,6 +3,11 @@ package es.uvigo.esei.amchartsJava.core.constants;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+/**
+ * This class contains default colors used by amcharts.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public enum ColorsAmCharts{
 	//nombres de colores inventados, puestos por semejanza visual
 	ORANGE("#ff6600"),YELLOW("#fcd202"),LIME("#b0de09"),BLUE("#0d8ecf"),

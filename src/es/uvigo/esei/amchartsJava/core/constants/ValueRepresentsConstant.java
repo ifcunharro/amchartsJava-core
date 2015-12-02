@@ -6,9 +6,6 @@ package es.uvigo.esei.amchartsJava.core.constants;
 public final class ValueRepresentsConstant {
 	
 	
-	/**
-	 *  Default Contructor
-	 */
 	private ValueRepresentsConstant(){
 		
 	}
@@ -17,7 +14,11 @@ public final class ValueRepresentsConstant {
 		private static final ValueRepresentsConstant INSTANCE = new ValueRepresentsConstant();
 	}
 	
-	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return ValueRepresentsConstant instance of ValueRepresentsConstant
+	 */
 	public static ValueRepresentsConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

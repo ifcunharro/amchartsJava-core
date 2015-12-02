@@ -3,7 +3,11 @@ package es.uvigo.esei.amchartsJava.core.constants.lang;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * This class contains all texts used by amchharts core in english idiom.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class EN implements Idiom {
 
 	private static Map<String,String> textsEN = new HashMap<String,String>();
@@ -36,16 +40,22 @@ public class EN implements Idiom {
 		
 	}
 	
-	
-	
 	private static class InitSingleton{
 		private static EN INSTANCE = new EN();
 	}
 	
+	/**
+	 * Get a singleton of this class.
+	 */
 	public static Idiom getInstance(){
 		return InitSingleton.INSTANCE;
 	}
 	
+	/**
+	 * Get a text in english.
+	 * @param key Key asociated to text searched.
+	 * @retun String Text searched.
+	 */
 	public String get(String key){
 		return  textsEN.get(key);
 	}

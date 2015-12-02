@@ -1,6 +1,12 @@
 package es.uvigo.esei.amchartsJava.core.exceptions;
 
 
+/**
+ * Custom exception for format color error.
+ * 
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class ColorException extends Exception {
 
 	private static final long serialVersionUID = 1L;

@@ -3,7 +3,12 @@ package es.uvigo.esei.amchartsJava.core.constants.lang;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * 
+ * This class contains text used by amcharts core in spanish.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class ES implements Idiom {
 
 	private static Map<String,String> textsES = new HashMap<String,String>();
@@ -40,10 +45,19 @@ public class ES implements Idiom {
 		private static ES INSTANCE = new ES();
 	}
 	
+	/**
+	 * Get a singleton of this class.
+	 * @return Idiom Singleton of Idiom used by app.
+	 */
 	public static Idiom getInstance(){
 		return InitSingleton.INSTANCE;
 	}
 	
+	/**
+	 * Get a text in spanish.
+	 * @param key Key asociated to text searched.
+	 * @return String Text searched.
+	 */
 	public String get(String key){
 		return  textsES.get(key);
 	}

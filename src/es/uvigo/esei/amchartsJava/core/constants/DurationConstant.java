@@ -12,6 +12,11 @@ public final class DurationConstant {
 		private static final DurationConstant INSTANCE = new DurationConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return DurationConstant instance of DurationConstant
+	 */
 	public static DurationConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

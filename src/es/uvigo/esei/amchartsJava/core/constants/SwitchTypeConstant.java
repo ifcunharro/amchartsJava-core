@@ -10,11 +10,17 @@ public final class SwitchTypeConstant {
 		
 	}
 	
+	private static class InitSingleton{
+		private static final SwitchTypeConstant INSTANCE = new SwitchTypeConstant();
+	}
+	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return SwitchTypeConstant instance of SwitchTypeConstant
+	 */
 	public static SwitchTypeConstant getInstance(){
-		if(instance==null){
-			instance = new SwitchTypeConstant(); 
-		}
-		return instance;
+		return InitSingleton.INSTANCE;
 	}
 	
 	public enum SwitchType{

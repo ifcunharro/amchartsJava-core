@@ -10,6 +10,11 @@ public final class ChartTypesConstant {
 		private static ChartTypesConstant INSTANCE = new ChartTypesConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return ChartTypesConstant instance of ChartTypesConstant
+	 */
 	public static ChartTypesConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

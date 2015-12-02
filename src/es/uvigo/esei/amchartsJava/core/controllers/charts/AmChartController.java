@@ -38,9 +38,6 @@ import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 public abstract class AmChartController<E extends AmChart> 
 	implements Serializable, IAmchartController<AmChart>{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7092242905740908767L;
 	protected E amchart;
 	
@@ -76,7 +73,8 @@ public abstract class AmChartController<E extends AmChart>
 		return amchart.getExport();
 	}
 	
-	//se asigna valor por defecto, este metodo solo existe para deserializar export, no borrar
+	//se asigna valor por defecto, este metodo solo existe para deserializar export, no borrar, daría
+	//error
 	public void setExport(Object export){
 		
 	}

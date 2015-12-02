@@ -11,6 +11,11 @@ public final class CategoryBalloonTextConstant {
 		private static final CategoryBalloonTextConstant INSTANCE = new CategoryBalloonTextConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return CategoryBalloonTextConstant instance of CategoryBalloonTextConstant
+	 */
 	public static CategoryBalloonTextConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

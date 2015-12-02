@@ -11,6 +11,11 @@ public final class GridTypesConstant {
 		private static GridTypesConstant INSTANCE = new GridTypesConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return GridTypesConstant instance of GridTypesConstant
+	 */
 	public static GridTypesConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

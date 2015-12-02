@@ -1,6 +1,12 @@
 package es.uvigo.esei.amchartsJava.core.exceptions;
 
 
+/**
+ * Custom exception for value out of range
+ * 
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class OutOfRangeException extends Exception {
 
 	private static final long serialVersionUID = 1L;

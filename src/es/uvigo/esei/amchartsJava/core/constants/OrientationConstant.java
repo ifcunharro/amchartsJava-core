@@ -11,6 +11,11 @@ public final class OrientationConstant {
 		private static OrientationConstant INSTANCE = new OrientationConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return OrientationConstant instance of OrientationConstant
+	 */
 	public static OrientationConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}
