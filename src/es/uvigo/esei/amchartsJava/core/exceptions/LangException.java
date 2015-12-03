@@ -1,6 +1,13 @@
 package es.uvigo.esei.amchartsJava.core.exceptions;
 
 
+/**
+ * 
+ * Custom exception idiom not supported.
+ * 
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class LangException extends Exception {
 
 	private static final long serialVersionUID = 1L;

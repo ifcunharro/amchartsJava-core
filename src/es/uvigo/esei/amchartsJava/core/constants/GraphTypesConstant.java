@@ -11,6 +11,11 @@ public final class GraphTypesConstant {
 		private static GraphTypesConstant INSTANCE = new GraphTypesConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return GraphTypesConstant instance of GraphTypesConstant
+	 */
 	public static GraphTypesConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

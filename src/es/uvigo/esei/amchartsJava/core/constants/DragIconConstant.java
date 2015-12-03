@@ -11,6 +11,11 @@ public final class DragIconConstant {
 		private static DragIconConstant INSTANCE = new DragIconConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return DragIconConstant instance of DragIconConstant
+	 */
 	public static DragIconConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

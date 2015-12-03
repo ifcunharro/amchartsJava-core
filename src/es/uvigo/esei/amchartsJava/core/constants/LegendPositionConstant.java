@@ -11,6 +11,11 @@ public final class LegendPositionConstant {
 		private static final LegendPositionConstant INSTANCE = new LegendPositionConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return LegendPositionConstant instance of LegendPositionConstant
+	 */
 	public static LegendPositionConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

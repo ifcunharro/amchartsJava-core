@@ -12,6 +12,11 @@ public final class CursorPositionConstant {
 		private static final CursorPositionConstant INSTANCE = new CursorPositionConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return CursorPositionConstant instance of CursorPositionConstant
+	 */
 	public static CursorPositionConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

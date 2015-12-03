@@ -1,5 +1,10 @@
 package es.uvigo.esei.amchartsJava.core.constants;
 
+/**
+ * Default colors used by AmSlicedChart
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public enum ColorsSlicedCharts {
 	//nombres de colores inventados, puestos por semejanza visual
 	RED("#FF0F00"),ORANGE("#FF6600"),LIGHTORANGE("#FF9E01"),YELLOW("#FCD202"),
@@ -16,5 +21,15 @@ public enum ColorsSlicedCharts {
 	
 	public String toString(){
 		return color;
+	}
+	
+	@JsonValue
+	private String getColorSlicedCharts(){
+		return color;
+	}
+	
+	@JsonSetter
+	private void setColorSlicedCharts(String nombre){
+		color = nombre.toLowerCase();
 	}
 }

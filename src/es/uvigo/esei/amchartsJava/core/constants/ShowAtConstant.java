@@ -11,6 +11,11 @@ public final class ShowAtConstant {
 		private static final ShowAtConstant INSTANCE = new ShowAtConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return ShowAtConstant instance of ShowAtConstant
+	 */
 	public static ShowAtConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

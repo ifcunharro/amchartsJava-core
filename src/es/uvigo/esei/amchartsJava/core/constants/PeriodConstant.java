@@ -13,6 +13,11 @@ public final class PeriodConstant {
 	}
 	
 
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return PeriodConstant instance of PeriodConstant
+	 */
 	public static PeriodConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

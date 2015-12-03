@@ -3,7 +3,11 @@ package es.uvigo.esei.amchartsJava.core.constants;
 import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 
 
-
+/**
+ * This class contains all constants used by app and constant log and visibility loaded from properties
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmchartsConstants {
 	
 	//not delete these two variables, if change name variables, update references in code

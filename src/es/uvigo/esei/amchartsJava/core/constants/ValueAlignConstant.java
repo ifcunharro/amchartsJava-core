@@ -5,9 +5,6 @@ package es.uvigo.esei.amchartsJava.core.constants;
 public final class ValueAlignConstant {
 	
 	
-	/**
-	 *  Default Contructor
-	 */
 	private ValueAlignConstant(){
 		
 	}
@@ -19,7 +16,7 @@ public final class ValueAlignConstant {
 	/**
 	 * Method to get a instance of this class
 	 * 
-	 * @return instance of ValueALignConstant
+	 * @return ValueAlignConstant instance of ValueALignConstant
 	 */
 	public static ValueAlignConstant getInstance(){
 		return InitSingleton.INSTANCE;

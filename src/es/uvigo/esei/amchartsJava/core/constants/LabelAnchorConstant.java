@@ -11,6 +11,11 @@ public final class LabelAnchorConstant {
 		private static final LabelAnchorConstant INSTANCE = new LabelAnchorConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return LabelAnchorConstant instance of LabelAnchorConstant
+	 */
 	public static LabelAnchorConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

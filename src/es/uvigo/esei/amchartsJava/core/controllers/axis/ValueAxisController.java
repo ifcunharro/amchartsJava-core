@@ -39,6 +39,10 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	
 	
 	
+	
+	/**
+	 * Set id of valueAxis to be add to chart. Id of valueAxis auto increment.
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 		this.setId("ValueAxis-"+arg.toString());	
@@ -347,7 +351,7 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		axes.setFeature("useScientificNotation", useScientificNotation);
 	}
 	
-	//para deserializar json
+	//para deserializar totalText value from json
 	@SuppressWarnings("unused")
 	private void setTotalText(String total){
 		axes.setFeature("totalText", total);

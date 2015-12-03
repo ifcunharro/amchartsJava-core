@@ -12,6 +12,11 @@ public final class GradientAngleConstant {
 		private static final GradientAngleConstant INSTANCE = new GradientAngleConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return GradientAngleConstant instance of GradientAngleConstant
+	 */
 	public static GradientAngleConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

@@ -11,6 +11,11 @@ public final class LabelPositionConstant {
 		private static final LabelPositionConstant INSTANCE = new LabelPositionConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return LabelPositionConstant instance of LabelPositionConstant
+	 */
 	public static LabelPositionConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

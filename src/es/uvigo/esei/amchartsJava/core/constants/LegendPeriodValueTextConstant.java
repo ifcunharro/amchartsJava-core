@@ -11,6 +11,11 @@ public final class LegendPeriodValueTextConstant {
 		private static final LegendPeriodValueTextConstant INSTANCE = new LegendPeriodValueTextConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return LegenPeriodValueTextConstant instance of LegendPeriodValueTextConstant
+	 */
 	public static LegendPeriodValueTextConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

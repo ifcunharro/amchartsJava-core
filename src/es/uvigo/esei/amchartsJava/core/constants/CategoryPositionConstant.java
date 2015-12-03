@@ -11,6 +11,11 @@ public final class CategoryPositionConstant {
 		private static final CategoryPositionConstant INSTANCE = new CategoryPositionConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return CategoryPositionConstant instance of CategoryPositionConstant
+	 */
 	public static CategoryPositionConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

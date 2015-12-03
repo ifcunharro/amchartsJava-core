@@ -11,6 +11,11 @@ public final class PositionConstant {
 		private static PositionConstant INSTANCE = new PositionConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return PositionConstant instance of PositionConstant
+	 */
 	public static PositionConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

@@ -11,6 +11,11 @@ public final class StackTypeConstant {
 		private static StackTypeConstant INSTANCE = new StackTypeConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return StackTypeConstant instance of StackTypeConstant
+	 */
 	public static StackTypeConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

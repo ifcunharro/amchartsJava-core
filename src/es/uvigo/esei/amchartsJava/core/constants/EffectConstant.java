@@ -11,6 +11,11 @@ public final class EffectConstant {
 		private static final EffectConstant INSTANCE = new EffectConstant();
 	}
 	
+	/**
+	 * Method to get a instance of this class
+	 * 
+	 * @return EffectConstant instance of EffectConstant
+	 */
 	public static EffectConstant getInstance(){
 		return InitSingleton.INSTANCE;
 	}

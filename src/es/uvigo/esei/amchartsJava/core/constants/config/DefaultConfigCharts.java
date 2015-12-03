@@ -16,9 +16,20 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
+/**
+ * 
+ * This class contains default configuration to charts of amcharts.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class DefaultConfigCharts {
 	
 	//used by GRUBBS, LEVENE, BARLETT Y KRUSKAL-WALLIS en BEW
+	/**
+	 * Create default CandleStickGraph(boxplot)
+	 * @param chart AmSerialChart to be configure.
+	 * @return AmSerialChartController Controller for AmSerialChart just configured.
+	 */
 	public static AmSerialChartController initDefaultCandleStickGraphToBEW(AmSerialChartController chart){
 		
 		
@@ -146,6 +157,14 @@ public class DefaultConfigCharts {
 		
 	}
 	
+	/**
+	 * Create default AmXyChart with trendLine.
+	 * @param chart AmXyChart to be configure.
+	 * @param titleAxisX Text for axisX.
+	 * @param titleAxisY Text for axisY.
+	 * @param titlePlot Title of plot.
+	 * @return AmXyChartController Controller for AmXyChart just configured.
+	 */
 	public static AmXyChartController initDefaultXYGraphToBew(
 			AmXyChartController chart, String titleAxisX, String titleAxisY, String titlePlot){
 		
