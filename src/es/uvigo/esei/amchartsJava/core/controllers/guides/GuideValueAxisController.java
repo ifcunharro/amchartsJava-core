@@ -11,8 +11,10 @@ public class GuideValueAxisController extends GuideController implements IGuideV
 	 */
 	private static final long serialVersionUID = -7932113405386773028L;
 
-	public Object getToValue(){
-		return guide.getFeature("toValue");
+	public Double getToValue(){
+		Object toValue = guide.getFeature("toValue");
+		
+		return toValue != null ? ((Number)toValue).doubleValue() : null;
 	}
 	
 	public void setToValue(Number toValue) throws DoubleException{
@@ -21,8 +23,10 @@ public class GuideValueAxisController extends GuideController implements IGuideV
 		}
 	}
 	
-	public Object getValue(){
-		return guide.getFeature("value");
+	public Double getValue(){
+		Object value = guide.getFeature("value");
+		
+		return value != null ? ((Number)value).doubleValue() : null;
 	}
 	
 	public void setValue(Number value) throws DoubleException{

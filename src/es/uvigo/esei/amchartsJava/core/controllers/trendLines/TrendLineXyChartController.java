@@ -23,16 +23,20 @@ public class TrendLineXyChartController extends TrendLineSerialChartController i
 		setInitialXValue(0);
 	}
 	
-	public Object getFinalXValue(){
-		return trendLine.getFeature("finalXValue");
+	public Double getFinalXValue(){
+		Object finalXValue = trendLine.getFeature("finalXValue");
+		
+		return finalXValue != null ? ((Number)finalXValue).doubleValue() : null;
 	}
 	
 	public void setFinalXValue(Number finalXValue){
 		trendLine.setFeature("finalXValue", finalXValue);
 	}
 	
-	public Object getInitialXValue(){
-		return trendLine.getFeature("initialXValue");
+	public Double getInitialXValue(){
+		Object initialXValue = trendLine.getFeature("initialXValue");
+		
+		return initialXValue != null ? ((Number)initialXValue).doubleValue() : null;
 	}
 	
 	public void setInitialXValue(Number initialXValue){

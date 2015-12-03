@@ -315,27 +315,6 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	
-	/*
-	
-	PREFIXES NECESITA DE UN OBSERVER Y COMPROBACION DE COLISIONES
-	*/
-	/*public Object getPrefixesOfBigNumbers(){
-		return amchart.getBigPrefixes();
-	}
-	
-	public void addPrefixBigNumber(Number number, String prefix){
-		amchart.addBigPrefix(number, prefix);
-	}
-	
-	public Object getPrefixesOfSmallNumbers(){
-		return amchart.getBigPrefixes();
-	}
-	
-	public void addPrefixSmallNumber(Number number, String prefix){
-		amchart.addSmallPrefix(number, prefix);
-	}*/
-	
 	//nombre file js in folder themes sin extension,
 	//se puede crear el tuyo propio
 	public String getTheme(){

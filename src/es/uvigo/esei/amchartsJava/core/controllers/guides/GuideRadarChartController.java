@@ -20,8 +20,10 @@ public class GuideRadarChartController extends GuideController implements IGuide
 		}
 	}
 
-	public Object getAngle(){
-		return guide.getFeature("angle");
+	public Integer getAngle(){
+		Object angle = guide.getFeature("angle");
+		
+		return angle != null ? ((Number)angle).intValue() : null;
 	}
 	
 	public void setAngle(Number angle) throws OutOfRangeException{
@@ -30,8 +32,10 @@ public class GuideRadarChartController extends GuideController implements IGuide
 		}
 	}
 	
-	public Object getToAngle(){
-		return guide.getFeature("toAngle");
+	public Integer getToAngle(){
+		Object toAngle = guide.getFeature("toAngle");
+		
+		return toAngle != null ? ((Number)toAngle).intValue() : null;
 	}
 	
 	public void setToAngle(Number toAngle) throws OutOfRangeException{

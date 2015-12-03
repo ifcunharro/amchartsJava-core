@@ -28,9 +28,7 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 @JsonInclude(Include.NON_NULL)
 public class TrendLineSerialChartController implements Observer, Serializable, ITrendLineSerialChartController {
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -8070134263297552359L;
 	protected TrendLine trendLine;
 	protected AmRectangularChart amchart;
@@ -56,8 +54,10 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 			
 	}
 
-	public Object getDashLength(){
-		return trendLine.getFeature("dashLength");
+	public Integer getDashLength(){
+		Object dashLength = trendLine.getFeature("dashLength");
+		
+		return dashLength != null ? ((Number)dashLength).intValue() : null;
 	}
 	
 	public void setDashLength(Number dashLength) throws OutOfRangeException{
@@ -86,8 +86,10 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		trendLine.setFeature("finalDate", finalDate.toString());
 	}
 	
-	public Object getFinalValue(){
-		return trendLine.getFeature("finalValue");
+	public Double getFinalValue(){
+		Object finalValue = trendLine.getFeature("finalValue");
+		
+		return finalValue != null ? ((Number)finalValue).doubleValue() : null;
 	}
 	
 	public void setFinalValue(Number finalValue){
@@ -115,16 +117,20 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		
 	}
 	
-	public Object getInitialValue(){
-		return trendLine.getFeature("initialValue");
+	public Double getInitialValue(){
+		Object initialValue = trendLine.getFeature("initialValue");
+		
+		return initialValue != null ? ((Number)initialValue).doubleValue() : null;
 	}
 	
 	public void setInitialValue(Number initialValue){
 		trendLine.setFeature("initialValue", initialValue);
 	}
 	
-	public Object getLineAlpha(){
-		return trendLine.getFeature("lineAlpha");
+	public Double getLineAlpha(){
+		Object lineAlpha = trendLine.getFeature("lineAlpha");
+		
+		return lineAlpha != null ? ((Number)lineAlpha).doubleValue() : null;
 	}
 	
 	public void setLineAlpha(Number lineAlpha) throws OutOfRangeException{
@@ -143,8 +149,10 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		}
 	}
 	
-	public Object getLineThickness(){
-		return trendLine.getFeature("lineThickness");
+	public Integer getLineThickness(){
+		Object lineThickness = trendLine.getFeature("lineThickness");
+		
+		return lineThickness != null ? ((Number)lineThickness).intValue() : null;
 	}
 	
 	public void setLineThickness(Number lineThickness) throws OutOfRangeException{

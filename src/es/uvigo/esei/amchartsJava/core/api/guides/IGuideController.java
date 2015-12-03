@@ -10,7 +10,7 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 
 /**
  * 
- * Interface for controller of Guide. Details of AmBalloon and 
+ * Interface for controller of Guide. Details of Guide and 
  *  its properties in AmCharts API.
  * 
  * @author Iago Fernández Cuñarro

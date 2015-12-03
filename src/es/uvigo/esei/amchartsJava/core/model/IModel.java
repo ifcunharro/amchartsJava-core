@@ -4,6 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
 
+/**
+ * Model classes must extend this class. This class have methods to save values to properties of model objects.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public abstract class IModel extends Observable {
 	protected Map<String,Object> config;
 	

@@ -8,9 +8,7 @@ import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 
 public class AmGraphCandleController extends AmGraphCandleOhlcController implements IAmGraphCandleOhlcController {
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -6225507455268146232L;
 
 	{

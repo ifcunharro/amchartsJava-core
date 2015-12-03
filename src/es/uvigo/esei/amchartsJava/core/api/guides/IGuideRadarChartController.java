@@ -2,14 +2,40 @@ package es.uvigo.esei.amchartsJava.core.api.guides;
 
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
+/**
+ * 
+ * Interface for GuideRadarChartController. This interface contains properties of guide only used by radarChart. 
+ * Details of Guide and its properties in AmCharts API.
+ * 
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public abstract interface IGuideRadarChartController extends IGuideController {
 
-	abstract Object getAngle();
+	/**
+	 * Get angle property.
+	 * @return Integer Value for angle.
+	 */
+	abstract Integer getAngle();
 
+	/**
+	 * Set angle property.
+	 * @param angle Value for angle.
+	 * @throws OutOfRangeException Value out of range admitted: 0-360.
+	 */
 	abstract void setAngle(Number angle) throws OutOfRangeException;
 
-	abstract Object getToAngle();
+	/**
+	 * Get toAngle property.
+	 * @return Integer Value for toAngle.
+	 */
+	abstract Integer getToAngle();
 
+	/**
+	 * Set toAngle property.
+	 * @param toAngle Value for toAngle.
+	 * @throws OutOfRangeException Value out of range admitted: 0-360
+	 */
 	abstract void setToAngle(Number toAngle) throws OutOfRangeException;
 
 }
