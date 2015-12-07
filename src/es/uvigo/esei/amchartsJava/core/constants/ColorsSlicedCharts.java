@@ -1,5 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.constants;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 /**
  * Default colors used by AmSlicedChart
  * @author Iago Fernández Cuñarro

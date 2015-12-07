@@ -33,11 +33,18 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 	private ChartScrollbarController scrollbar;
 	private TrendLines trendLines;
 	
-	
+	/**
+	 * Get plotAreaFillColors.
+	 * @return List<String> List of colors.
+	 */
 	public List<String> getPlotAreaFillColors(){
 		return plotAreaFillColors;
 	}
 	
+	/**
+	 * Add new colors to plotAreaFillColors.
+	 * @param colors Value for colors.
+	 */
 	public void addPlotAreaFillColors(String... colors){
 		if(plotAreaFillColors == null){
 			plotAreaFillColors = new ArrayList<String>();
@@ -46,26 +53,46 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		plotAreaFillColors.addAll(Arrays.asList(colors));
 	}
 	
+	/**
+	 * Get plotAreaFillAlphas.
+	 * @return List<Number> List of alphas.
+	 */
 	public List<Number> getPlotAreaFillAlphas(){
 		return plotAreaFillAlphas;
 	}
 	
-	public void addPlotAreaFillAlphas(Number... colors){
+	/**
+	 * Add new alphas to plotAreaFillAlphas.
+	 * @param alphas Values for alphas.
+	 */
+	public void addPlotAreaFillAlphas(Number... alphas){
 		if(plotAreaFillAlphas == null){
 			plotAreaFillAlphas = new ArrayList<Number>();
 		}
 		plotAreaFillAlphas.clear();
-		plotAreaFillAlphas.addAll(Arrays.asList(colors));
+		plotAreaFillAlphas.addAll(Arrays.asList(alphas));
 	}
 	
+	/**
+	 * Get chartCursor.
+	 * @return ChartCursorController Controller for ChartCursor.
+	 */
 	public ChartCursorController getChartCursor(){
 		return chartCursor;
 	}
 	
+	/**
+	 * Get chartScrollbar.
+	 * @return ChartScrollbarController Controller for ChartScrollbar.
+	 */
 	public ChartScrollbarController getChartScrollbar(){
 		return scrollbar;
 	}
 	
+	/**
+	 * Get TrendLines.
+	 * @return Object List of TrendLines.
+	 */
 	public Object getTrendLines(){
 		if(trendLines == null){
 			return null;
@@ -75,17 +102,34 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 
 	}
 	
+	/**
+	 * Add a chartCursor to chart.
+	 * @param chartCursorController Controller for ChartCursor.
+	 */
 	public void addChartCursor(ChartCursorController chartCursorController){
 		chartCursor = chartCursorController;
 	}
 	
+	/**
+	 * Add a chartScrollbar to chart.
+	 * @param chartScrollbarController Controller for ChartScrollbar.
+	 */
 	public void addChartScrollbar(ChartScrollbarController chartScrollbarController){
 		chartScrollbarController.setChart(this);
 		scrollbar = chartScrollbarController;
 	}
 	
+	/**
+	 * Add a TrendLine to chart.
+	 * @param trendLineController Controller for TrendLine.
+	 * @throws NotSupportedException TrendLine is not supported by chart.
+	 */
 	public abstract <T extends TrendLineSerialChartController> void addTrendLine(T trendLineController) throws NotSupportedException;
 	
+	/**
+	 * Add a TrendLine to chart of type serial.
+	 * @param trendLineSerialChartController Controller for TrendLine of type serial.
+	 */
 	protected void addTrendLineSerial(TrendLineSerialChartController trendLineSerialChartController) {
 		if(trendLines==null){
 			trendLines = new TrendLines();
@@ -102,6 +146,10 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		
 	}
 	
+	/**
+	 * Add a TrendLine to chart of type xy.
+	 * @param trendLineXyChartController Controllef for TrendLine of type xy.
+	 */
 	protected void addTrendLineXy(TrendLineXyChartController trendLineXyChartController) {
 		if(trendLines==null){
 			trendLines = new TrendLines();
@@ -118,16 +166,26 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		
 	}
 	
+	/**
+	 * Remove ChartCursor from chart.
+	 */
 	public void removeChartCursor(){
 		chartCursor = null;
 		System.gc();
 	}
 	
+	/**
+	 * Remove ChartScrollbar from chart.
+	 */
 	public void removeChartScrollbar(){
 		scrollbar = null;
 		System.gc();
 	}
 	
+	/**
+	 * Remove TrendLine from chart.
+	 * @param idTrendLine TrendLine id.
+	 */
 	public void removeTrendLine(String idTrendLine){
 		if(trendLines.getTrendLineSerialIds().contains(idTrendLine)){
 			removeTrendLineSerial(idTrendLine);
@@ -136,8 +194,10 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		}
 	}
 	
-	
-	
+	/**
+	 * Remove TrendLine from chart of type serial.
+	 * @param idTrendLine TrendLine id.
+	 */
 	private void removeTrendLineSerial(String idTrendLine){
 		if(trendLines.isNotEmptyTrendLineSerial()){
 			trendLines.removeTrendLineSerial(idTrendLine);
@@ -148,6 +208,10 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		}
 	}
 	
+	/**
+	 * Remove TrendLine from chart of type xy.
+	 * @param idTrendLine TrendLine id.
+	 */
 	private void removeTrendLineXy(String idTrendLine){
 		if(trendLines.isNotEmptyTrendLineXy()){
 			trendLines.removeTrendLineXy(idTrendLine);
@@ -158,6 +222,11 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 		}
 	}
 	
+	/**
+	 * Check exist TrendLine.
+	 * @param idTrendLine TrendLine id.
+	 * @return boolean Exist or doesn't exist TrendLine.
+	 */
 	public boolean existTrendLine(String idTrendLine){
 		if(trendLines != null){
 			return trendLines.existTrendLine(idTrendLine);

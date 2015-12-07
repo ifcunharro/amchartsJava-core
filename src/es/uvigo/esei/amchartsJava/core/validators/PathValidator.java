@@ -3,15 +3,26 @@ package es.uvigo.esei.amchartsJava.core.validators;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
-import es.uvigo.esei.amchartsJava.core.filters.ImageExtensions;
 
+import es.uvigo.esei.amchartsJava.core.constants.ImageExtensions;
+import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
+
+/**
+ * This class contains validators to path.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class PathValidator {
 	
 	private PathValidator(){
 		
 	}
 	
+	/**
+	 * Check image exist in images folder.
+	 * @param image Name of image file with or without file extension.
+	 * @return String Name of image file with extension or empty string if doesn't exist.
+	 */
 	public static String imageExist(String image){
 		
 		URL resourcesPath = null;
@@ -43,6 +54,11 @@ public class PathValidator {
 		
 	}
 	
+	/**
+	 * Check icon exist in images folder.
+	 * @param icon Name of icon with or without file extension.
+	 * @return String Name of icon without extension or empty string if doesn't exist.
+	 */
 	public static String dragIconExist(String icon){
 		
 		URL resourcesPath = null;
@@ -75,6 +91,11 @@ public class PathValidator {
 	}
 	
 	//theme es nombre de javascript file sin extensión
+	/**
+	 * Check theme exist in themes folder.
+	 * @param theme Name of theme without extension.
+	 * @return boolean Exist or doesn't exist in themes folder.
+	 */
 	public static boolean themeExist(String theme){
 		
 		URL resourcesPath = null;
@@ -92,6 +113,12 @@ public class PathValidator {
 		return new File(resourcesPath.getFile()).exists();
 	}
 	
+	/**
+	 * Check pattern exist in patterns folder.
+	 * @param directoryPattern Folder into pattern folder where is pattern.
+	 * @param pattern Name of pattern with or without extension. Only admitted png extension.
+	 * @return String Path complete to pattern or empty string if doesn't exist.
+	 */
 	public static String patternExist(String directoryPattern, String pattern){
 		
 		URL resourcesPath = null;
@@ -102,7 +129,7 @@ public class PathValidator {
 
 		try {
 			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern);
-			//se ha pasado icon con extension
+			
 			if(new File(resourcesPath.getFile()).exists()){
 				return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern;
 			}else if(pattern.lastIndexOf(".") != pattern.length()-4){
@@ -120,6 +147,11 @@ public class PathValidator {
 		return "";
 	}
 	
+	/**
+	 * Check file exist in temp folder.
+	 * @param jsonFile Name of json file with or without file extension.
+	 * @return String path complete to temp file.
+	 */
 	public static String tempFileExist(String jsonFile){
 		
 		URL resourcesPath = null;
@@ -131,7 +163,7 @@ public class PathValidator {
 		try {
 			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY+jsonFile);
 			
-			//se ha pasado icon con extension
+			
 			if(new File(resourcesPath.getFile()).exists()){
 				//se elimina protocolo file:/ al devolver la ruta completa
 				return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
@@ -152,6 +184,10 @@ public class PathValidator {
 		return "";
 	}
 	
+	/**
+	 * Get path to temp folder.
+	 * @return String path to temp folder.
+	 */
 	public static String getJsonDirectoryToSave(){
 		URL resourcesPath = null;
 		

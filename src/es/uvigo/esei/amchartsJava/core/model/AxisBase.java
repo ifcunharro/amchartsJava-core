@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Model class for CategoryAxis and ValueAxis
- * @author iago
+ * @author Iago Fernández Cuñarro
  *
  */
 public class AxisBase extends IModel {

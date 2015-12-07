@@ -7,6 +7,7 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 @JsonInclude(Include.NON_NULL)
 public class DataController implements Serializable {
@@ -26,7 +27,7 @@ public class DataController implements Serializable {
 	}
 	
 	
-	@SuppressWarnings("unused")
+	@JsonSetter
 	private void setData(Map<String,Object> datas){
 		if(data == null){
 			data = new HashMap<String,Object>();

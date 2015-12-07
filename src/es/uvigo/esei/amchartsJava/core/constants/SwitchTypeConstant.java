@@ -3,9 +3,7 @@ package es.uvigo.esei.amchartsJava.core.constants;
 
 public final class SwitchTypeConstant {
 	
-	private static SwitchTypeConstant instance;
-	
-	
+
 	private SwitchTypeConstant(){
 		
 	}

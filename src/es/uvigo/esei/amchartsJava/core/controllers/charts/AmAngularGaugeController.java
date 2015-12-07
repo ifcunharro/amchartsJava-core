@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmAngularGaugeController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -51,7 +52,8 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		return amchart.getArrows();
 	}
 	
-	@SuppressWarnings("unused")
+	//Used to deserialize json
+	@JsonSetter
 	private void setArrows(List<GaugeArrowController> arrows){
 		amchart.setArrows(arrows);
 	}
@@ -60,7 +62,8 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		return amchart.getAxes();
 	}
 	
-	@SuppressWarnings("unused")
+	//Used to deserialize json
+	@JsonSetter
 	private void setAxes(List<GaugeAxisController> axes){
 		amchart.setAxes(axes);
 	}

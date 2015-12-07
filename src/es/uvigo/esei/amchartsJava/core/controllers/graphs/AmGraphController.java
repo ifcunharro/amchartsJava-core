@@ -66,6 +66,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		
 	}
 	
+	//Set id and title from chart
 	@Override
 	public void update(Observable o, Object arg) {
 		this.setId("AmGraph-"+arg.toString());
@@ -373,6 +374,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
+	//Used to deserialize json
 	@JsonSetter(value="fillToGraph")
 	private void setJsonFillToGraph(String fillToGraph){
 		amGraph.setFeature("fillToGraph", fillToGraph);
@@ -767,6 +769,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		}
 	}
 	
+	//Used to deserialize json
 	@JsonSetter(value="valueAxis")
 	private void setJsonValueAxis(String valueAxis){
 		amGraph.setFeature("valueAxis", valueAxis);

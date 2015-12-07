@@ -10,6 +10,11 @@ import es.uvigo.esei.amchartsJava.core.constants.lang.Idiom;
 import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.exceptions.LangException;
 
+/**
+ * This class contains validator to chose idiom.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class IdiomValidator {
 	
 	private static final Logger logger = Logger.getLogger(IdiomValidator.class.getName());
@@ -19,6 +24,12 @@ public class IdiomValidator {
 		
 	}
 	
+	/**
+	 * Chose an idiom supported by app.
+	 * @param language Value for language.
+	 * @return Idiom Instance of language of app.
+	 * @throws LangException Idiom is not supported by app.
+	 */
 	public static Idiom checkIdiom(String language) throws LangException{
 		
 		try{

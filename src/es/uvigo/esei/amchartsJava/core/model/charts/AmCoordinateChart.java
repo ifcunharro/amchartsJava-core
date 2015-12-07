@@ -40,16 +40,27 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
+	/**
+	 * Get colors.
+	 * @return List<String> List of colors.
+	 */
 	public List<String> getColors(){
 		return colors;
 	}
 	
 	//usado para deserializar json
+	/**
+	 * Set colors from json.
+	 * @param c List of colors.
+	 */
 	public void setColors(List<String> c){
 		colors = c;
 	}
 	
-	
+	/**
+	 * Get graphs.
+	 * @return List<AmGraphController> List of AmGraphs.
+	 */
 	public List<AmGraphController> getGraphs() {
 		if(graphs==null){
 			return null;
@@ -59,6 +70,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		
 	}
 	
+	/**
+	 * Get guides.
+	 * @return List<GuideController> List of Guides.
+	 */
 	public List<GuideController> getGuides(){
 		if(guides==null){
 			return null;
@@ -67,6 +82,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
+	/**
+	 * Get valueAxis.
+	 * @return Object List of ValueAxis.
+	 */
 	public Object getValueAxes(){
 		if(valueAxes==null){
 			return null;
@@ -75,18 +94,34 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
+	/**
+	 * Change default colors.
+	 * @param newColors Value for colors.
+	 */
 	public void changeColorsDefault(String... newColors){
 		colors.clear();
 		colors.addAll(Arrays.asList(newColors));
 	}
 	
+	/**
+	 * Add a color.
+	 * @param color Value for color.
+	 */
 	public void addColor(String color){
 		colors.add(color);
 	}
 	
+	/**
+	 * Add a graph to chart.
+	 * @param amGraphController Controller for amGraph.
+	 * @throws NotSupportedException Graph is not supported by chart.
+	 */
 	public abstract <T extends AmGraphController> void addGraph(T amGraphController) throws NotSupportedException;
 	
-	
+	/**
+	 * Remove graph from chart.
+	 * @param idGraph AmGraph id.
+	 */
 	public void removeGraph(String idGraph){
 		if(graphs.getAmGraphSerialIds().contains(idGraph)){
 			removeGraphSerial(idGraph);
@@ -101,6 +136,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 
+	/**
+	 * Add an AmGraph type serial to chart.
+	 * @param amGraphSerialController Controller for AmGraph of type serial.
+	 */
 	protected void addGraphSerial(AmGraphSerialController amGraphSerialController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
@@ -116,6 +155,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		
 	}
 	
+	/**
+	 * Add an AmGraph type step to chart.
+	 * @param amGraphStepController Controller for AmGraph of type step.
+	 */
 	protected void addGraphStep(AmGraphStepController amGraphStepController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
@@ -130,6 +173,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		deleteObservers();
 	}
 	
+	/**
+	 * Add an AmGraph type xy to chart.
+	 * @param amGraphXyController Controller for AmGraph of type xy.
+	 */
 	protected void addGraphXy(AmGraphXyController amGraphXyController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
@@ -144,6 +191,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		deleteObservers();
 	}
 	
+	/**
+	 * Add an AmGraph type candle to chart.
+	 * @param amGraphCandleController Controller for AmGraph of type candlestick.
+	 */
 	protected void addGraphCandle(AmGraphCandleController amGraphCandleController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
@@ -158,6 +209,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		deleteObservers();
 	}
 	
+	/**
+	 * Add an AmGraph type ohlc to chart.
+	 * @param amGraphOhlcController Controller for AmGraph of type ohlc.
+	 */
 	protected void addGraphOhlc(AmGraphOhlcController amGraphOhlcController) {
 		if(graphs==null){
 			graphs = new AmGraphs();
@@ -172,9 +227,17 @@ public abstract class AmCoordinateChart extends AmChart{
 		deleteObservers();
 	}
 	
+	/**
+	 * Add a Guide to chart.
+	 * @param guideController Controller for Guide
+	 * @throws NotSupportedException Guide is not supported by chart.
+	 */
 	public abstract <T extends GuideController> void addGuide(T guideController) throws NotSupportedException;
 	
-	
+	/**
+	 * Add a Guide to CategoryAxis.
+	 * @param guideCategoryAxisController Controller for GuideCategoryAxis.
+	 */
 	protected void addGuideCategoryAxis(GuideCategoryAxisController guideCategoryAxisController){
 		if(guides==null){
 			guides = new Guides();
@@ -189,6 +252,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		deleteObservers();
 	}
 	
+	/**
+	 * Add a Guide to radarChart.
+	 * @param guideRadarChartController Controller for Guide of radarChart.
+	 */
 	protected void addGuideRadarChart(GuideRadarChartController guideRadarChartController){
 		if(guides==null){
 			guides = new Guides();
@@ -203,6 +270,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		deleteObservers();
 	}
 	
+	/**
+	 * Add a Guide to valueAxis.
+	 * @param guideValueAxisController Controller for Guide of valueAxis.
+	 */
 	protected void addGuideValueAxis(GuideValueAxisController guideValueAxisController){
 		if(guides==null){
 			guides = new Guides();
@@ -217,10 +288,17 @@ public abstract class AmCoordinateChart extends AmChart{
 		deleteObservers();
 	}
 	
-	
+	/**
+	 * Add a type of valueAxis to chart.
+	 * @param valueAxisController Controller for valueAxis.
+	 * @throws NotSupportedException ValueAxis is not supported by chart.
+	 */
 	public abstract <T extends AxisBaseController> void addValueAxis(T valueAxisController) throws NotSupportedException;
 	
-	
+	/**
+	 * Add a valueAxis to chart.
+	 * @param valueAxisController Controller for valueAxis.
+	 */
 	protected void addValueAxisController(ValueAxisController valueAxisController){
 		if(valueAxes==null){
 			valueAxes = new ValueAxis();
@@ -236,6 +314,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		deleteObservers();
 	}
 	
+	/**
+	 * Add a valueAxis to radarChart.
+	 * @param valueAxisRadarChartController Controller for valueAxis og radar chart.
+	 */
 	protected void addValueAxisRadarController(ValueAxisRadarChartController valueAxisRadarChartController){
 		if(valueAxes==null){
 			valueAxes = new ValueAxis();
@@ -251,8 +333,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		deleteObservers();
 	}
 	
-	
-	
+	/**
+	 * Remove graph from chart type serial.
+	 * @param idGraphSerial AmGraph id.
+	 */
 	private void removeGraphSerial(String idGraphSerial) {
 		if(graphs.isNotEmptyAmGraphSerial()){
 			graphs.removeAmGraphSerial(idGraphSerial);
@@ -263,6 +347,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
+	/**
+	 * Remove graph from chart type step.
+	 * @param idGraphStep AmGraph id.
+	 */
 	private void removeGraphStep(String idGraphStep) {
 		if(graphs.isNotEmptyAmGraphStep()){
 			graphs.removeAmGraphStep(idGraphStep);
@@ -274,6 +362,10 @@ public abstract class AmCoordinateChart extends AmChart{
 
 	}
 	
+	/**
+	 * Remove graph from chart type xy.
+	 * @param idGraphXy AmGraph id.
+	 */
 	private void removeGraphXy(String idGraphXy) {
 		if(graphs.isNotEmptyAmGraphXy()){
 			graphs.removeAmGraphXy(idGraphXy);
@@ -285,6 +377,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		
 	}
 	
+	/**
+	 * Remove graph from chart type candlestick.
+	 * @param idGraphCandle AmGraph id.
+	 */
 	private void removeGraphCandle(String idGraphCandle) {
 		if(graphs.isNotEmptyAmGraphCandle()){
 			graphs.removeAmGraphCandle(idGraphCandle);
@@ -295,6 +391,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
+	/**
+	 * Remove graph from chart type ohlc.
+	 * @param idGraphOhlc AmGraph id.
+	 */
 	private void removeGraphOhlc(String idGraphOhlc) {
 		if(graphs.isNotEmptyAmGraphOhlc()){
 			graphs.removeAmGraphOhlc(idGraphOhlc);
@@ -306,6 +406,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		
 	}
 	
+	/**
+	 * Remove Guide from chart.
+	 * @param idGuide Guide id.
+	 */
 	public void removeGuide(String idGuide) {
 		if(guides.getGuideCategoryAxisIds().contains(idGuide)){
 			removeGuideCategoryAxis(idGuide);
@@ -316,6 +420,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
+	/**
+	 * Remove Guide to categoryAxis
+	 * @param idGuideCategoryAxis Guide id.
+	 */
 	private void removeGuideCategoryAxis(String idGuideCategoryAxis){
 		if(guides.isNotEmptyGuideCategoryAxis()){
 			guides.removeGuideCategoryAxis(idGuideCategoryAxis);
@@ -326,6 +434,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
+	/**
+	 * Remove Guide to radar chart.
+	 * @param idGuideRadarChart Guide id.
+	 */
 	private void removeGuideRadarChart(String idGuideRadarChart){
 		if(guides.isNotEmptyGuideRadarChart()){
 			guides.removeGuideRadarChart(idGuideRadarChart);
@@ -336,6 +448,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
+	/**
+	 * Remove Guide to valueAxis. 
+	 * @param idGuideValueAxis Guide id.
+	 */
 	private void removeGuideValueAxis(String idGuideValueAxis){
 		if(guides.isNotEmptyGuideValueAxis()){
 			guides.removeGuideValueAxis(idGuideValueAxis);
@@ -345,8 +461,11 @@ public abstract class AmCoordinateChart extends AmChart{
 			System.gc();
 		}
 	}
-		
 	
+	/**
+	 * Remove ValueAxis.
+	 * @param idValueAxis ValueAxis id.
+	 */
 	public void removeValueAxis(String idValueAxis){
 		if(valueAxes.getValueAxisIds().contains(idValueAxis)){
 			removeValueAxisController(idValueAxis);
@@ -355,7 +474,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
-	
+	/**
+	 * Remove valueAxis from chart not radar chart.
+	 * @param idValueAxis ValueAxis id.
+	 */
 	private void removeValueAxisController(String idValueAxis) {
 		if(valueAxes.isNotEmptyValueAxis()){
 			valueAxes.removeValueAxis(idValueAxis);	
@@ -367,6 +489,10 @@ public abstract class AmCoordinateChart extends AmChart{
 		
 	}
 	
+	/**
+	 * Remove valueAxis from radar chart.
+	 * @param idValueAxisRadar ValueAxis id.
+	 */
 	private void removeValueAxisRadarController(String idValueAxisRadar) {
 		if(valueAxes.isNotEmptyValueAxisRadarChart()){
 			valueAxes.removeValueAxisRadar(idValueAxisRadar);
@@ -377,7 +503,11 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 
-	
+	/**
+	 * Check exist AmGraph.
+	 * @param idGraph AmGraph id.
+	 * @return boolean Exist or doesn't exist AmGraph.
+	 */
 	public boolean existGraph(String idGraph){
 		if(graphs != null){
 			return graphs.existGraph(idGraph);
@@ -386,6 +516,11 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 	
+	/**
+	 * Check exist ValueAxis.
+	 * @param idValueAxis ValueAxis id.
+	 * @return boolean Exist or doesn't exist ValueAxis.
+	 */
 	public boolean existValueAxis(String idValueAxis){
 		if(valueAxes != null){
 			return valueAxes.existValueAxis(idValueAxis);
@@ -394,6 +529,11 @@ public abstract class AmCoordinateChart extends AmChart{
 		}
 	}
 
+	/**
+	 * Check exist Guide.
+	 * @param idGuide Guide id.
+	 * @return boolean Exist or doesn't exist Guide.
+	 */
 	public boolean existGuide(String idGuide) {
 		if(guides != null){
 			return guides.existGuide(idGuide);

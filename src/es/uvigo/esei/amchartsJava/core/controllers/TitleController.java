@@ -28,7 +28,7 @@ public class TitleController implements Observer, ITitleController, Serializable
 		title = new Title();
 	}
 	
-	
+	//Set id from chart
 	@Override
 	public void update(Observable o, Object arg) {
 		this.setId("Title-"+arg.toString());

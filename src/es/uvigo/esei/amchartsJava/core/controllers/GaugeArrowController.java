@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.IGaugeArrowController;
@@ -44,6 +45,7 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 		gaugeArrow = new GaugeArrow();
 	}
 
+	//Set id from chart
 	@Override
 	public void update(Observable o, Object arg) {
 		this.setId("GaugeArrow-"+arg.toString());	
@@ -88,7 +90,7 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	}
 	
 	//this method only use to deserialize json
-	@SuppressWarnings("unused")
+	@JsonSetter
 	private void setAxis(String axis){
 		gaugeArrow.setFeature("axis", axis);	
 	}

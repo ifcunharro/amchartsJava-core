@@ -36,6 +36,7 @@ public class GaugeAxisController
 		gaugeAxis = new GaugeAxis();
 	}
 	
+	//Set id from chart
 	@Override
 	public void update(Observable o, Object arg) {
 		this.setId("GaugeAxis-"+arg.toString());	
@@ -137,6 +138,7 @@ public class GaugeAxisController
 		return gaugeAxis.getBands();
 	}
 	
+	//Used to desearialize json
 	@SuppressWarnings("unused")
 	private void setBands(List<GaugeBandController> gaugeBands){
 		gaugeAxis.setBands(gaugeBands);
@@ -323,8 +325,6 @@ public class GaugeAxisController
 	public void setLabelsEnabled(Boolean labelsEnabled){
 		gaugeAxis.setFeature("labelsEnabled", labelsEnabled);
 	}
-	
-	//listeners
 	
 	public Integer getMinorTickInterval(){
 		Object minorTickInterval = gaugeAxis.getFeature("minorTickInterval");

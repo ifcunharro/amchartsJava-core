@@ -6,16 +6,28 @@ import java.util.Map;
 
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 
-
+/**
+ * Model class for AmGraph
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmGraph extends IModel  {
 	private PatternController pattern;
 	//guarda todos los fields activados para graph y el nombre asociado
 	private Map<String,String> graphFields;
 
+	/**
+	 * Get graphFields used by user.
+	 * @return Map<String,String> Map or relation nameField amcharts- nameField user.
+	 */
 	public Map<String,String> getGraphFields(){
 		return graphFields;
 	}
 	
+	/**
+	 * Save a relation between nameFields used by user and nameFields amcharts.
+	 * @param graphFields Map with key equals to nameField amcharts and value nameField used by user.
+	 */
 	public void setGraphFields(Map<String,String> nameFields){
 		if(graphFields == null){
 			graphFields = new HashMap<String, String>();
@@ -23,7 +35,9 @@ public class AmGraph extends IModel  {
 		graphFields = nameFields;
 		setupFields();
 	}
-	
+
+	//used to set nameFields used by user in properties amgraph. Values can be loaded from
+	//json file
 	private void setupFields() {
 			Iterator<String> nameFields = graphFields.keySet().iterator();
 			
@@ -94,8 +108,11 @@ public class AmGraph extends IModel  {
 			
 	}
 		
-	
-
+	/**
+	 * Add a relation nameField amcharts-nameField used by user.
+	 * @param nameField name of field amcharts
+	 * @param valueField name of field used by user
+	 */
 	public void addGraphField(String nameField,String valueField){
 		if(graphFields == null){
 			graphFields = new HashMap<String, String>();
@@ -103,10 +120,18 @@ public class AmGraph extends IModel  {
 		graphFields.put(nameField, valueField);
 	}
 	
+	/**
+	 * Get graph pattern.
+	 * @return PatternController Controller for pattern.
+	 */
 	public PatternController getPattern() {
 		return pattern;
 	}
 	
+	/**
+	 * Add a pattern to amgraph.
+	 * @param patternController Controller for pattern.
+	 */
 	public void addPattern(PatternController patternController){
 		pattern = patternController;
 	}

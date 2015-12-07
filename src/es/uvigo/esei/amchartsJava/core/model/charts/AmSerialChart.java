@@ -25,11 +25,18 @@ public class AmSerialChart extends AmRectangularChart {
 
 	
 	
-	
+	/**
+	 * Add a CategoryAxis to chart.
+	 * @param categoryAxisController Controller for CategoryAxis.
+	 */
 	public void addCategoryAxis(CategoryAxisController categoryAxisController){
 		categoryAxis = categoryAxisController;
 	}
 	
+	/**
+	 * Get CategoryAxis.
+	 * @return CategoryAxisController Controller for CategoryAxis.
+	 */
 	public CategoryAxisController getCategoryAxis(){
 		return categoryAxis;
 	}

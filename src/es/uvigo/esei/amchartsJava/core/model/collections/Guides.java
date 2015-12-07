@@ -10,6 +10,11 @@ import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisController;
 
+/**
+ * Collection of Guides.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class Guides {
 	
 	private Map<String,Object> guides;
@@ -26,10 +31,18 @@ public class Guides {
 		deleteGuides = 0;
 	}
 	
+	/**
+	 * Get number of Guides added to chart.
+	 * @return int Number of Guides.
+	 */
 	public int sizeGuides(){
 		return sizeGuides;
 	}
 	
+	/**
+	 * Get number of Guides to CategoryAxis.
+	 * @return int Number of GuideCategoryAxisController.
+	 */
 	public int sizeGuidesCategoryAxis(){
 		if(isNotEmptyGuideCategoryAxis()){
 			return getGuideCategoryAxis().size();
@@ -37,6 +50,10 @@ public class Guides {
 		return 0;
 	}
 	
+	/**
+	 * Get number of Guides to radar chart.
+	 * @return int Number of GuideRadarChartController.
+	 */
 	public int sizeGuidesRadarChart(){
 		if(isNotEmptyGuideRadarChart()){
 			return getGuideRadarChart().size();
@@ -44,6 +61,10 @@ public class Guides {
 		return 0;
 	}
 	
+	/**
+	 * Get number of Guides to ValueAxis.
+	 * @return int Number of GuideValueAxisController.
+	 */
 	public int sizeGuidesValueAxis(){
 		if(isNotEmptyGuideValueAxis()){
 			return getGuideValueAxis().size();
@@ -51,31 +72,59 @@ public class Guides {
 		return 0;
 	}
 	
+	/**
+	 * Get delete Guides.
+	 * @return int Number of delete Guides.
+	 */
 	public int deleteGuides(){
 		return deleteGuides;
 	}
 	
+	/**
+	 * Check exist Guide in collection.
+	 * @param idGuide Guide id.
+	 * @return boolean Exist or doesn't exist Guide in collection.
+	 */
 	public boolean existGuide(String idGuide) {
 		return getAllGuidesIds().contains(idGuide);
 	}
 	
+	/**
+	 * Check exist any Guide to CategoryAxis.
+	 * @return boolean List of GuideCategoryAxisController initialized.
+	 */
 	public boolean isNotEmptyGuideCategoryAxis(){
 		return getGuideCategoryAxis()!=null;
 	}
 	
+	/**
+	 * Check exist any Guide to radar chart.
+	 * @return boolean List of GuideRadarChartController initialized.
+	 */
 	public boolean isNotEmptyGuideRadarChart(){
 		return getGuideRadarChart()!=null;
 	}
 	
+	/**
+	 * Check exist any Guide to ValueAxis.
+	 * @return boolean List of GuideValueAxisController initialized.
+	 */
 	public boolean isNotEmptyGuideValueAxis(){
 		return getGuideValueAxis()!=null;
 	}
 	
+	/**
+	 * Get Guide ids.
+	 * @return List<String> List of Guide ids.
+	 */
 	public List<String> getAllGuidesIds(){
 		return idGuides;
 	}
 	
-	
+	/**
+	 * Get Guide ids to CategoryAxis. 
+	 * @return List<String> Guide ids.
+	 */
 	public List<String> getGuideCategoryAxisIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyGuideCategoryAxis()){
@@ -86,6 +135,10 @@ public class Guides {
 		return ids;
 	}
 	
+	/**
+	 * Get Guide ids to radar chart. 
+	 * @return List<String> Guide ids.
+	 */
 	public List<String> getGuideRadarChartIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyGuideRadarChart()){
@@ -96,6 +149,10 @@ public class Guides {
 		return ids;
 	}
 	
+	/**
+	 * Get Guide ids to ValueAxis. 
+	 * @return List<String> Guide ids.
+	 */
 	public List<String> getGuideValueAxisIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyGuideValueAxis()){
@@ -106,6 +163,10 @@ public class Guides {
 		return ids;
 	}
 	
+	/**
+	 * Get Guides.
+	 * @return List<GuideController> List of Guides.
+	 */
 	public List<GuideController> getGuides(){
 		List<GuideController> guideControllers = new ArrayList<GuideController>();
 		if(isNotEmptyGuideCategoryAxis()){
@@ -128,6 +189,11 @@ public class Guides {
 		return guideControllers;
 	}
 	
+
+	/**
+	 * Add a GuideCategoryAxis to collection.
+	 * @param guideCategoryAxisController Controller for Guide to CategoryAxis.
+	 */
 	public void addGuideCategoryAxis(GuideCategoryAxisController guideCategoryAxisController){
 		if(getGuideCategoryAxis()==null){
 			initGuideCategoryAxis();
@@ -139,6 +205,11 @@ public class Guides {
 		sizeGuides++;
 	}
 	
+
+	/**
+	 * Add a GuideRadarChart to collection.
+	 * @param guideRadarChartController Controller for Guide to radar chart.
+	 */
 	public void addGuideRadarChart(GuideRadarChartController guideRadarChartController){
 		if(getGuideRadarChart()==null){
 			initGuideRadarChart();
@@ -150,7 +221,10 @@ public class Guides {
 		sizeGuides++;
 	}
 
-	
+	/**
+	 * Add a GuideValueAxis to collection.
+	 * @param guideValueAxisController Controller for Guide to ValueAxis.
+	 */
 	public void addGuideValueAxis(GuideValueAxisController guideValueAxisController){
 		if(getGuideValueAxis()==null){
 			initGuideValueAxis();
@@ -162,6 +236,10 @@ public class Guides {
 		sizeGuides++;
 	}
 	
+	/**
+	 * Remove a GuideCategoryAxis. 
+	 * @param idGuideCategoryAxis Guide id.
+	 */
 	public void removeGuideCategoryAxis(String idGuideCategoryAxis) {
 		int position = positionsGuides.get(idGuideCategoryAxis);
 		this.getGuideCategoryAxis().remove(position);
@@ -175,6 +253,10 @@ public class Guides {
 		
 	}
 	
+	/**
+	 * Remove a GuideRadarChart.
+	 * @param idGuideRadarChart Guide id.
+	 */
 	public void removeGuideRadarChart(String idGuideRadarChart) {
 		int position = positionsGuides.get(idGuideRadarChart);
 		this.getGuideRadarChart().remove(position);
@@ -187,6 +269,10 @@ public class Guides {
 		positionsGuides.remove(idGuideRadarChart);
 	}
 	
+	/**
+	 * Remove a GuideValueAxis.
+	 * @param idGuideValueAxis Guide id.
+	 */
 	public void removeGuideValueAxis(String idGuideValueAxis) {
 		int position = positionsGuides.get(idGuideValueAxis);
 		this.getGuideValueAxis().remove(position);
@@ -200,41 +286,70 @@ public class Guides {
 		
 	}
 	
+	/**
+	 * Initialize list of GuideCategoryAxisController.
+	 */
 	private void initGuideCategoryAxis(){
 		guides.put("GuideCategoryAxisController", new ArrayList<GuideCategoryAxisController>());
 	}
 	
+	/**
+	 * Initialize list of GuideRadarChartController.
+	 */
 	private void initGuideRadarChart(){
 		guides.put("GuideRadarChartController", new ArrayList<GuideRadarChartController>());
 	}
 	
+	/**
+	 * Initialize list of GuideValueAxisController.
+	 */
 	private void initGuideValueAxis(){
 		guides.put("GuideValueAxisController", new ArrayList<GuideValueAxisController>());
 	}
 	
-	
+	/**
+	 * Remove list of GuideCategoryAxisController.
+	 */
 	private void deleteGuideCategoryAxis(){
 		guides.remove("GuideCategoryAxisController");
 	}
 	
+	/**
+	 * Remove list of GuideRadarChartController.
+	 */
 	private void deleteGuideRadarChart(){
 		guides.remove("GuideRadarChartController");
 	}
 	
+	/**
+	 * Remove list of GuideValueAxisController.
+	 */
 	private void deleteGuideValueAxis(){
 		guides.remove("GuideValueAxisController");
 	}
 	
+	/**
+	 * Get list of GuideCategoryAxisController.
+	 * @return List<GuideCategoryAxisController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<GuideCategoryAxisController> getGuideCategoryAxis(){
 		return (List<GuideCategoryAxisController>) guides.get("GuideCategoryAxisController");
 	}
 	
+	/**
+	 * Get list of GuideRadarChartController.
+	 * @return List<GuideRadarChartController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<GuideRadarChartController> getGuideRadarChart(){
 		return (List<GuideRadarChartController>) guides.get("GuideRadarChartController");
 	}
 	
+	/**
+	 * Get list of GuideValueAxisController.
+	 * @return List<GuideValueAxisController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<GuideValueAxisController> getGuideValueAxis(){
 		return (List<GuideValueAxisController>) guides.get("GuideValueAxisController");

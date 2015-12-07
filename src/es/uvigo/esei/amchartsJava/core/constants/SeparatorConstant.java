@@ -2,8 +2,6 @@ package es.uvigo.esei.amchartsJava.core.constants;
 
 public final class SeparatorConstant {
 	
-	private static SeparatorConstant instance;
-	
 	
 	private SeparatorConstant(){
 		

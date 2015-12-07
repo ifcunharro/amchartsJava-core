@@ -1,4 +1,4 @@
-package es.uvigo.esei.amchartsJava.core.filters;
+package es.uvigo.esei.amchartsJava.core.constants;
 
 /**
  * Image types supported by app.

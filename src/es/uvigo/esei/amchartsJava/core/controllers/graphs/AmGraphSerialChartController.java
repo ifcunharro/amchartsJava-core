@@ -109,8 +109,6 @@ public abstract class AmGraphSerialChartController extends AmGraphController
 		amGraph.setFeature("lineColor", lineColor.toString());
 	}
 	
-	
-	
 	public String getLineColorField(){
 		return (String) amGraph.getFeature("lineColorField");
 	}

@@ -73,8 +73,6 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		axes.setFeature("duration", duration.toString());
 	}
 	
-	//durationUnits por defecto
-	
 	public String getId() {
 		return (String) axes.getFeature("id");
 	}
@@ -255,12 +253,11 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		}
 	}
 	
+	//Used to deserialize json
 	@JsonSetter(value="synchronizeWith")
 	private void setJsonSynchronizeWith(String synchronizeWith){
 		axes.setFeature("synchronizeWith", synchronizeWith);
 	}
-	
-	
 	
 	public String getTotalText(){
 		return (String) axes.getFeature("totalText");

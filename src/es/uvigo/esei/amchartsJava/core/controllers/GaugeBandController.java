@@ -31,6 +31,7 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 		gaugeBand = new GaugeBand();
 	}
 	
+	//Set id from chart
 	@Override
 	public void update(Observable o, Object arg) {
 		this.setId("GaugeBand-"+arg.toString());

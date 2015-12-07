@@ -50,6 +50,7 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
+	//Used by deserialize json
 	@JsonSetter(value="bulletAxis")
 	private void setJsonBulletAxis(String bulletAxis){
 		amGraph.setFeature("bulletAxis", bulletAxis);	
@@ -72,6 +73,7 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
+	//Use to deserialize json
 	@JsonSetter(value="fillToAxis")
 	private void setJsonFillToAxis(String fillToAxis){
 		amGraph.setFeature("fillToAxis", fillToAxis);
@@ -122,6 +124,7 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
+	//Used to deserialize json
 	@JsonSetter(value="xAxis")
 	private void setJsonXAxis(String xAxis){
 		amGraph.setFeature("xAxis", xAxis);
@@ -153,6 +156,7 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
+	//Used to deserialize json
 	@JsonSetter(value="yAxis")
 	private void setJsonYAxis(String yAxis){
 		amGraph.setFeature("yAxis", yAxis);

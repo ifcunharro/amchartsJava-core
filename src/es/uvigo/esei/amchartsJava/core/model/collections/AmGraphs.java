@@ -12,6 +12,11 @@ import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphSerialControlle
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphStepController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
 
+/**
+ * Collection of AmGraphs.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmGraphs {
 	
 	private Map<String,Object> amgraphs;
@@ -28,10 +33,18 @@ public class AmGraphs {
 		deleteAmGraphs = 0;
 	}
 	
+	/**
+	 * Get number of AmGraphs added to chart.
+	 * @return int Number of AmGraphs.
+	 */
 	public int sizeAmGraphs(){
 		return sizeAmGraphs;
 	}
 	
+	/**
+	 * Get number of AmGraphs of chart type serial.
+	 * @return int Number of AmGraphSerialController.
+	 */
 	public int sizeAmGraphsSerial(){
 		if(isNotEmptyAmGraphSerial()){
 			return getAmGraphSerial().size();
@@ -39,6 +52,10 @@ public class AmGraphs {
 		return 0;
 	}
 	
+	/**
+	 * Get number of AmGraphs of chart type step.
+	 * @return int Number of AmGraphStepController.
+	 */
 	public int sizeAmGraphsStep(){
 		if(isNotEmptyAmGraphStep()){
 			return getAmGraphStep().size();
@@ -46,6 +63,10 @@ public class AmGraphs {
 		return 0;
 	}
 	
+	/**
+	 * Get number of AmGraphs of chart type xy.
+	 * @return int Number of AmGraphXyController.
+	 */
 	public int sizeAmGraphsXy(){
 		if(isNotEmptyAmGraphXy()){
 			return getAmGraphXy().size();
@@ -53,6 +74,10 @@ public class AmGraphs {
 		return 0;
 	}
 	
+	/**
+	 * Get number of AmGraphs of chart type candle.
+	 * @return int Number of AmGraphCandleController.
+	 */
 	public int sizeAmGraphsCandle(){
 		if(isNotEmptyAmGraphCandle()){
 			return getAmGraphCandle().size();
@@ -60,6 +85,10 @@ public class AmGraphs {
 		return 0;
 	}
 	
+	/**
+	 * Get number of AmGraphs of chart type ohlc.
+	 * @return int Number of AmGraphOhlcController.
+	 */
 	public int sizeAmGraphsOhlc(){
 		if(isNotEmptyAmGraphOhlc()){
 			return getAmGraphOhlc().size();
@@ -67,39 +96,75 @@ public class AmGraphs {
 		return 0;
 	}
 	
+	/**
+	 * Get delete AmGraphs.
+	 * @return int Number of delete AmGraphs.
+	 */
 	public int deleteAmGraphs(){
 		return deleteAmGraphs;
 	}
 	
+	/**
+	 * Check exist AmGraph in collection.
+	 * @param idGraph AmGraph id.
+	 * @return boolean Exist or doesn't exist AmGraph in collection.
+	 */
 	public boolean existGraph(String idGraph) {
 		return getAllGraphsIds().contains(idGraph);
 	}
 	
+	/**
+	 * Check exist any AmGraph of chart type serial.
+	 * @return boolean List of AmGraphSerialController initialized.
+	 */
 	public boolean isNotEmptyAmGraphSerial(){
 		return getAmGraphSerial()!=null;
 	}
 	
+	/**
+	 * Check exist any AmGraph of chart type step.
+	 * @return boolean List of AmGraphStepController initialized.
+	 */
 	public boolean isNotEmptyAmGraphStep(){
 		return getAmGraphStep()!=null;
 	}
 	
+	/**
+	 * Check exist any AmGraph of chart type xy.
+	 * @return boolean List of AmGraphXyController initialized.
+	 */
 	public boolean isNotEmptyAmGraphXy(){
 		return getAmGraphXy()!=null;
 	}
 	
+	/**
+	 * Check exist any AmGraph of chart type candle.
+	 * @return boolean List of AmGraphCandleController initialized.
+	 */
 	public boolean isNotEmptyAmGraphCandle(){
 		return getAmGraphCandle()!=null;
 	}
 	
+	/**
+	 * Check exist any AmGraph of chart type ohlc.
+	 * @return boolean List of AmGraphOhlcController initialized.
+	 */
 	public boolean isNotEmptyAmGraphOhlc(){
 		return getAmGraphOhlc()!=null;
 	}
 	
+	/**
+	 * Get AmGraph ids.
+	 * @return List<String> List of AmGraph ids.
+	 */
 	public List<String> getAllGraphsIds(){
 		return idGraphs;
 	}
 	
-	
+	/**
+	 * Get AmGraph ids of chart type serial. 
+	 * @return List<String> AmGraph ids.
+	 */
 	public List<String> getAmGraphSerialIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphSerial()){
@@ -110,6 +175,10 @@ public class AmGraphs {
 		return ids;
 	}
 	
+	/**
+	 * Get AmGraph ids of chart type step. 
+	 * @return List<String> AmGraph ids.
+	 */
 	public List<String> getAmGraphStepIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphStep()){
@@ -120,6 +189,10 @@ public class AmGraphs {
 		return ids;
 	}
 	
+	/**
+	 * Get AmGraph ids of chart type xy. 
+	 * @return List<String> AmGraph ids.
+	 */
 	public List<String> getAmGraphXyIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphXy()){
@@ -130,6 +203,10 @@ public class AmGraphs {
 		return ids;
 	}
 	
+	/**
+	 * Get AmGraph ids of chart type candle. 
+	 * @return List<String> AmGraph ids.
+	 */
 	public List<String> getAmGraphCandleIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphCandle()){
@@ -140,6 +217,10 @@ public class AmGraphs {
 		return ids;
 	}
 	
+	/**
+	 * Get AmGraph ids of chart type ohlc. 
+	 * @return List<String> AmGraph ids.
+	 */
 	public List<String> getAmGraphOhlcIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphOhlc()){
@@ -150,6 +231,10 @@ public class AmGraphs {
 		return ids;
 	}
 	
+	/**
+	 * Get AmGraphs.
+	 * @return List<AmGraphController> List of AmGraphs.
+	 */
 	public List<AmGraphController> getGraphs(){
 		List<AmGraphController> amgraphControllers = new ArrayList<AmGraphController>();
 		if(isNotEmptyAmGraphSerial()){
@@ -181,6 +266,10 @@ public class AmGraphs {
 		return amgraphControllers;
 	}
 	
+	/**
+	 * Add a AmGraphSerial to collection.
+	 * @param amGraphSerialController Controller for AmGraph or type serial.
+	 */
 	public void addAmGraphSerial(AmGraphSerialController amGraphSerialController){
 		if(getAmGraphSerial()==null){
 			initAmGraphSerial();
@@ -192,6 +281,10 @@ public class AmGraphs {
 		sizeAmGraphs++;
 	}
 	
+	/**
+	 * Add a AmGraphStep to collection.
+	 * @param amGraphStepController Controller for AmGraph or type step.
+	 */
 	public void addAmGraphStep(AmGraphStepController amGraphStepController){
 		if(getAmGraphStep()==null){
 			initAmGraphStep();
@@ -203,7 +296,10 @@ public class AmGraphs {
 		sizeAmGraphs++;
 	}
 
-	
+	/**
+	 * Add a AmGraphXy to collection.
+	 * @param amGraphXyController Controller for AmGraph or type xy.
+	 */
 	public void addAmGraphXy(AmGraphXyController amGraphXyController){
 		if(getAmGraphXy()==null){
 			initAmGraphXy();
@@ -215,7 +311,10 @@ public class AmGraphs {
 		sizeAmGraphs++;
 	}
 	
-	
+	/**
+	 * Add a AmGraphCandle to collection.
+	 * @param amGraphCandleController Controller for AmGraph or type candle.
+	 */
 	public void addAmGraphCandle(AmGraphCandleController amGraphCandleController){
 		if(getAmGraphCandle()==null){
 			initAmGraphCandle();
@@ -227,7 +326,10 @@ public class AmGraphs {
 		sizeAmGraphs++;
 	}
 	
-	
+	/**
+	 * Add a AmGraphOhlc to collection.
+	 * @param amGraphOhlcController Controller for AmGraph or type ohlc.
+	 */
 	public void addAmGraphOhlc(AmGraphOhlcController amGraphOhlcController){
 		if(getAmGraphOhlc()==null){
 			initAmGraphOhlc();
@@ -240,128 +342,208 @@ public class AmGraphs {
 		
 	}
 	
+	/**
+	 * Remove an AmGraph of chart type serial.
+	 * @param idGraphSerial AmGraph id.
+	 */
 	public void removeAmGraphSerial(String idGraphSerial) {
-		int position = positionsAmGraphs.get(idGraphSerial);
-		this.getAmGraphSerial().remove(position);
-		if(sizeAmGraphsSerial()==0){
-			deleteAmGraphSerial();
+		Integer position = positionsAmGraphs.get(idGraphSerial);
+		if(position != null){
+			this.getAmGraphSerial().remove(position);
+			if(sizeAmGraphsSerial()==0){
+				deleteAmGraphSerial();
+			}
+			sizeAmGraphs--;
+			deleteAmGraphs++;
+			idGraphs.remove(idGraphSerial);
+			positionsAmGraphs.remove(idGraphSerial);
 		}
-		sizeAmGraphs--;
-		deleteAmGraphs++;
-		idGraphs.remove(idGraphSerial);
-		positionsAmGraphs.remove(idGraphSerial);
 		
 	}
 	
+	/**
+	 * Remove an AmGraph of chart type step.
+	 * @param idGraphStep AmGraph id.
+	 */
 	public void removeAmGraphStep(String idGraphStep) {
-		int position = positionsAmGraphs.get(idGraphStep);
-		this.getAmGraphStep().remove(position);
-		if(sizeAmGraphsStep()==0){
-			deleteAmGraphStep();
+		Integer position = positionsAmGraphs.get(idGraphStep);
+		if(position != null){
+			this.getAmGraphStep().remove(position);
+			if(sizeAmGraphsStep()==0){
+				deleteAmGraphStep();
+			}
+			sizeAmGraphs--;
+			deleteAmGraphs++;
+			idGraphs.remove(idGraphStep);
+			positionsAmGraphs.remove(idGraphStep);
 		}
-		sizeAmGraphs--;
-		deleteAmGraphs++;
-		idGraphs.remove(idGraphStep);
-		positionsAmGraphs.remove(idGraphStep);
 	}
 	
+	/**
+	 * Remove an AmGraph of chart type xy.
+	 * @param idGraphXy AmGraph id.
+	 */
 	public void removeAmGraphXy(String idGraphXy) {
-		int position = positionsAmGraphs.get(idGraphXy);
-		this.getAmGraphXy().remove(position);
-		if(sizeAmGraphsXy()==0){
-			deleteAmGraphXy();
+		Integer position = positionsAmGraphs.get(idGraphXy);
+		if(position != null){
+			this.getAmGraphXy().remove(position);
+			if(sizeAmGraphsXy()==0){
+				deleteAmGraphXy();
+			}
+			sizeAmGraphs--;
+			deleteAmGraphs++;
+			idGraphs.remove(idGraphXy);
+			positionsAmGraphs.remove(idGraphXy);
 		}
-		sizeAmGraphs--;
-		deleteAmGraphs++;
-		idGraphs.remove(idGraphXy);
-		positionsAmGraphs.remove(idGraphXy);
 		
 	}
 	
+	/**
+	 * Remove an AmGraph of chart type candle.
+	 * @param idGraphCandle AmGraph id.
+	 */
 	public void removeAmGraphCandle(String idGraphCandle) {
-		int position = positionsAmGraphs.get(idGraphCandle);
-		this.getAmGraphCandle().remove(position);
-		if(sizeAmGraphsCandle()==0){
-			deleteAmGraphCandle();
+		Integer position = positionsAmGraphs.get(idGraphCandle);
+		if(position != null){
+			this.getAmGraphCandle().remove(position);
+			if(sizeAmGraphsCandle()==0){
+				deleteAmGraphCandle();
+			}
+			sizeAmGraphs--;
+			deleteAmGraphs++;
+			idGraphs.remove(idGraphCandle);
+			positionsAmGraphs.remove(idGraphCandle);
 		}
-		sizeAmGraphs--;
-		deleteAmGraphs++;
-		idGraphs.remove(idGraphCandle);
-		positionsAmGraphs.remove(idGraphCandle);
 	}
 	
+	/**
+	 * Remove an AmGraph of chart type ohlc.
+	 * @param idGraphOhlc AmGraph id.
+	 */
 	public void removeAmGraphOhlc(String idGraphOhlc) {
-		int position = positionsAmGraphs.get(idGraphOhlc);
-		this.getAmGraphOhlc().remove(position);
-		if(sizeAmGraphsOhlc()==0){
-			deleteAmGraphOhlc();
+		Integer position = positionsAmGraphs.get(idGraphOhlc);
+		if(position != null){
+			this.getAmGraphOhlc().remove(position);
+			if(sizeAmGraphsOhlc()==0){
+				deleteAmGraphOhlc();
+			}
+			sizeAmGraphs--;
+			deleteAmGraphs++;
+			idGraphs.remove(idGraphOhlc);
+			positionsAmGraphs.remove(idGraphOhlc);
 		}
-		sizeAmGraphs--;
-		deleteAmGraphs++;
-		idGraphs.remove(idGraphOhlc);
-		positionsAmGraphs.remove(idGraphOhlc);
 	}
 	
+	/**
+	 * Initialize list of AmGraphSerialController.
+	 */
 	private void initAmGraphSerial(){
 		amgraphs.put("AmGraphSerialController", new ArrayList<AmGraphSerialController>());
 	}
 	
+	/**
+	 * Initialize list of AmGraphStepController.
+	 */
 	private void initAmGraphStep(){
 		amgraphs.put("AmGraphStepController", new ArrayList<AmGraphStepController>());
 	}
 	
+	/**
+	 * Initialize list of AmGraphXyController.
+	 */
 	private void initAmGraphXy(){
 		amgraphs.put("AmGraphXyController", new ArrayList<AmGraphXyController>());
 	}
 	
+	/**
+	 * Initialize list of AmGraphCandleController.
+	 */
 	private void initAmGraphCandle(){
 		amgraphs.put("AmGraphCandleController", new ArrayList<AmGraphCandleController>());
 	}
 	
+	/**
+	 * Initialize list of AmGraphOhlcController.
+	 */
 	private void initAmGraphOhlc(){
 		amgraphs.put("AmGraphOhlcController", new ArrayList<AmGraphOhlcController>());
 	}
 	
+	/**
+	 * Remove list of AmGraphSerialController.
+	 */
 	private void deleteAmGraphSerial(){
 		amgraphs.remove("AmGraphSerialController");
 	}
 	
+	/**
+	 * Remove list of AmGraphStepController.
+	 */
 	private void deleteAmGraphStep(){
 		amgraphs.remove("AmGraphStepController");
 	}
 	
+	/**
+	 * Remove list of AmGraphXyController.
+	 */
 	private void deleteAmGraphXy(){
 		amgraphs.remove("AmGraphXyController");
 	}
 	
+	/**
+	 * Remove list of AmGraphCandleController.
+	 */
 	private void deleteAmGraphCandle(){
 		amgraphs.remove("AmGraphCandleController");
 	}
 	
+	/**
+	 * Remove list of AmGraphOhlcController.
+	 */
 	private void deleteAmGraphOhlc(){
 		amgraphs.remove("AmGraphOhlcController");
 	}
 	
+	/**
+	 * Get list of AmGraphSerialController.
+	 * @return List<AmGraphSerialController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<AmGraphSerialController> getAmGraphSerial(){
 		return (List<AmGraphSerialController>) amgraphs.get("AmGraphSerialController");
 	}
 	
+	/**
+	 * Get list of AmGraphStepController.
+	 * @return List<AmGraphStepController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<AmGraphStepController> getAmGraphStep(){
 		return (List<AmGraphStepController>) amgraphs.get("AmGraphStepController");
 	}
 	
+	/**
+	 * Get list of AmGraphXyController.
+	 * @return List<AmGraphXyController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<AmGraphXyController> getAmGraphXy(){
 		return (List<AmGraphXyController>) amgraphs.get("AmGraphXyController");
 	}
 	
+	/**
+	 * Get list of AmGraphCandleController.
+	 * @return List<AmGraphCandleController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<AmGraphCandleController> getAmGraphCandle(){
 		return (List<AmGraphCandleController>) amgraphs.get("AmGraphCandleController");
 	}
 	
+	/**
+	 * Get list of AmGraphOhlcController.
+	 * @return List<AmGraphOhlcController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<AmGraphOhlcController> getAmGraphOhlc(){
 		return (List<AmGraphOhlcController>) amgraphs.get("AmGraphOhlcController");

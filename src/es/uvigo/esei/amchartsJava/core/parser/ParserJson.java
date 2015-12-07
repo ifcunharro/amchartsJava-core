@@ -53,8 +53,19 @@ import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartCo
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
+/**
+ * This class save and load config from app to temp folder in json format. This class support export
+ * to amcharts library but doesn't generate html, which is neccesary to be visualized in browser or in app.  
+ * 
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class ParserJson {
 	
+	/**
+	 * Get parser to parse to json.
+	 * @return ObjectMapper Parser to json.
+	 */
 	private static ObjectMapper getParserJson(){
 		 ObjectMapper mapper = new ObjectMapper();
 		 mapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -68,6 +79,13 @@ public class ParserJson {
   	   	 return mapper;
 	}
 	
+	/**
+	 * Save config in json to console.
+	 * @param chartController Controller for chart.
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static void saveJsonToConsole(Object chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
@@ -76,6 +94,14 @@ public class ParserJson {
 	}
 	
 	//evitar sobreescribir existente se hace antes de llamar a este método
+	/**
+	 * Save amcharts config as json in temp folder.  
+	 * @param nameFileJson
+	 * @param chartController
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static void saveJsonToTemp(String nameFileJson,Object chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
@@ -154,7 +180,14 @@ public class ParserJson {
 	}
 	
 	
-	
+	/**
+	 * Deserialize AmSerialChart from temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @return AmSerialChartController Controller for AmSerialChart configured.
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static AmSerialChartController loadAmSerialChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
@@ -192,6 +225,14 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize AmXyChart from temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @return AmXyChartController Controller for AmXyChart configured.
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static AmXyChartController loadAmXyChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
@@ -223,6 +264,14 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize AmRadarChart from temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @return AmRadarChartController Controller for AmRadarChart configured. 
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static AmRadarChartController loadAmRadarChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
@@ -254,6 +303,14 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize AmFunnelChart from temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @return AmFunnelChartController Controller for AmFunnelChart configured.
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static AmFunnelChartController loadAmFunnelChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
@@ -281,6 +338,14 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize AmPieChart from temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @return AmPieChartController Controller for AmPieChart configured.
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static AmPieChartController loadAmPieChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
@@ -308,6 +373,14 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize AmAngularGauge from temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @return AmAngularGaugeController Controller for AmAngularGauge configured.
+	 * @throws JsonParseException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
 	public static AmAngularGaugeController loadAmAngularGauge(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
@@ -337,133 +410,177 @@ public class ParserJson {
 	
 	//usar siempre que se use saveJsonToTemp para tener ademas de la configuracion
 		//del chart los valores definidos por el usuario para los fields y poder recuperarlos
-		private static void saveFieldsFromAmSerialChartToTemp(String nameFileJson, AmSerialChartController serialChart) 
-				throws JsonGenerationException, JsonMappingException, IOException
-		{
-			String tempDirectory = PathValidator.getJsonDirectoryToSave();
-			ObjectMapper mapper = getParserJson();
-			Map<String,Object> map = new HashMap<>();
-			Map<String,String> temp = null;
-			
-			nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-			
-			map.put("chartFields", serialChart.getChartFields());
-			List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
-			@SuppressWarnings("unchecked")
-			List<AmGraphController> graphs = (List<AmGraphController>)serialChart.getGraphs();
-			for(AmGraphController graph: graphs){
-				temp = graph.getGraphFields();
-				if(temp != null){
-					graphFields.add(temp);
-				}
-			}
-			if(!graphFields.isEmpty()){
-				map.put("graphFields", graphFields);
-			}
-			
-			CategoryAxisController categoryAxis = serialChart.getCategoryAxis();
-			if(categoryAxis != null){
-				Map<String,String> axesFields = categoryAxis.getAxesFields();
-				if(axesFields != null){
-					map.put("categoryAxisFields", serialChart.getCategoryAxis().getAxesFields());
-				}
-			}
+	/**
+	 * Save fields used by user in AmSerialChart to temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @param serialChart chart own of fields.
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
+	private static void saveFieldsFromAmSerialChartToTemp(String nameFileJson, AmSerialChartController serialChart) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		ObjectMapper mapper = getParserJson();
+		Map<String,Object> map = new HashMap<>();
+		Map<String,String> temp = null;
 		
-			
-			mapper.writeValue(new File(tempDirectory+nameFileJson), map);
-			
+		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
+		
+		map.put("chartFields", serialChart.getChartFields());
+		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
+		@SuppressWarnings("unchecked")
+		List<AmGraphController> graphs = (List<AmGraphController>)serialChart.getGraphs();
+		for(AmGraphController graph: graphs){
+			temp = graph.getGraphFields();
+			if(temp != null){
+				graphFields.add(temp);
+			}
+		}
+		if(!graphFields.isEmpty()){
+			map.put("graphFields", graphFields);
 		}
 		
-		private static void saveFieldsFromAmXyChartToTemp(String nameFileJson, AmXyChartController xyChart) 
-				throws JsonGenerationException, JsonMappingException, IOException
-		{
-			String tempDirectory = PathValidator.getJsonDirectoryToSave();
-			ObjectMapper mapper = getParserJson();
-			Map<String,Object> map = new HashMap<>();
-			Map<String,String> temp = null;
-			
-			nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-			
-			map.put("chartFields", xyChart.getChartFields());
-			List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
-			@SuppressWarnings("unchecked")
-			List<AmGraphController> graphs = (List<AmGraphController>)xyChart.getGraphs();
-			for(AmGraphController graph: graphs){
-				temp = graph.getGraphFields();
-				if(temp != null){
-					graphFields.add(temp);
-				}
+		CategoryAxisController categoryAxis = serialChart.getCategoryAxis();
+		if(categoryAxis != null){
+			Map<String,String> axesFields = categoryAxis.getAxesFields();
+			if(axesFields != null){
+				map.put("categoryAxisFields", serialChart.getCategoryAxis().getAxesFields());
 			}
-			if(!graphFields.isEmpty()){
-				map.put("graphFields", graphFields);
-			}
-			
-			mapper.writeValue(new File(tempDirectory+nameFileJson), map);
-			
 		}
-		
-		private static void saveFieldsFromAmRadarChartToTemp(String nameFileJson, AmRadarChartController radarChart) 
-				throws JsonGenerationException, JsonMappingException, IOException
-		{
-			String tempDirectory = PathValidator.getJsonDirectoryToSave();
-			ObjectMapper mapper = getParserJson();
-			Map<String,Object> map = new HashMap<>();
-			Map<String,String> temp = null;
-			
-			nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-			
-			map.put("chartFields", radarChart.getChartFields());
-			List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
-			@SuppressWarnings("unchecked")
-			List<AmGraphController> graphs = (List<AmGraphController>)radarChart.getGraphs();
-			for(AmGraphController graph: graphs){
-				temp = graph.getGraphFields();
-				if(temp != null){
-					graphFields.add(temp);
-				}
-			}
-			if(!graphFields.isEmpty()){
-				map.put("graphFields", graphFields);
-			}
-			
-			mapper.writeValue(new File(tempDirectory+nameFileJson), map);
-			
-		}
-		
-		private static void saveFieldsFromAmFunnelChartToTemp(String nameFileJson, AmFunnelChartController funnelChart) 
-				throws JsonGenerationException, JsonMappingException, IOException
-		{
-			String tempDirectory = PathValidator.getJsonDirectoryToSave();
-			ObjectMapper mapper = getParserJson();
-			Map<String,Object> map = new HashMap<>();
-			
-			
-			nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-			
-			map.put("chartFields", funnelChart.getChartFields());
-			
-			mapper.writeValue(new File(tempDirectory+nameFileJson), map);
-			
-		}
-		
-		private static void saveFieldsFromAmPieChartToTemp(String nameFileJson, AmPieChartController pieChart) 
-				throws JsonGenerationException, JsonMappingException, IOException
-		{
-			String tempDirectory = PathValidator.getJsonDirectoryToSave();
-			ObjectMapper mapper = getParserJson();
-			Map<String,Object> map = new HashMap<>();
-		
-			nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-			
-			map.put("chartFields", pieChart.getChartFields());
-			
-			mapper.writeValue(new File(tempDirectory+nameFileJson), map);
-			
-		}
-		
-		
 	
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
+		
+	}
 	
+	/**
+	 * Save fields used by user in AmXyChart to temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @param xyChart chart own of fields.
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
+	private static void saveFieldsFromAmXyChartToTemp(String nameFileJson, AmXyChartController xyChart) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		ObjectMapper mapper = getParserJson();
+		Map<String,Object> map = new HashMap<>();
+		Map<String,String> temp = null;
+		
+		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
+		
+		map.put("chartFields", xyChart.getChartFields());
+		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
+		@SuppressWarnings("unchecked")
+		List<AmGraphController> graphs = (List<AmGraphController>)xyChart.getGraphs();
+		for(AmGraphController graph: graphs){
+			temp = graph.getGraphFields();
+			if(temp != null){
+				graphFields.add(temp);
+			}
+		}
+		if(!graphFields.isEmpty()){
+			map.put("graphFields", graphFields);
+		}
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
+		
+	}
+	
+	/**
+	 * Save fields used by user in AmRadarChart to temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @param radarChart chart own of fields.
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
+	private static void saveFieldsFromAmRadarChartToTemp(String nameFileJson, AmRadarChartController radarChart) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		ObjectMapper mapper = getParserJson();
+		Map<String,Object> map = new HashMap<>();
+		Map<String,String> temp = null;
+		
+		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
+		
+		map.put("chartFields", radarChart.getChartFields());
+		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
+		@SuppressWarnings("unchecked")
+		List<AmGraphController> graphs = (List<AmGraphController>)radarChart.getGraphs();
+		for(AmGraphController graph: graphs){
+			temp = graph.getGraphFields();
+			if(temp != null){
+				graphFields.add(temp);
+			}
+		}
+		if(!graphFields.isEmpty()){
+			map.put("graphFields", graphFields);
+		}
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
+		
+	}
+	
+	/**
+	 * Save fields used by user in AmFunnelChart to temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @param funnelChart chart own of fields.
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
+	private static void saveFieldsFromAmFunnelChartToTemp(String nameFileJson, AmFunnelChartController funnelChart) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		ObjectMapper mapper = getParserJson();
+		Map<String,Object> map = new HashMap<>();
+		
+		
+		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
+		
+		map.put("chartFields", funnelChart.getChartFields());
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
+		
+	}
+		
+	/**
+	 * Save fields used by user in AmPieChart to temp folder.
+	 * @param nameFileJson name of amcharts config file.
+	 * @param pieChart chart own of fields.
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
+	private static void saveFieldsFromAmPieChartToTemp(String nameFileJson, AmPieChartController pieChart) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		ObjectMapper mapper = getParserJson();
+		Map<String,Object> map = new HashMap<>();
+	
+		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
+		
+		map.put("chartFields", pieChart.getChartFields());
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
+		
+	}
+		
+	/**
+	 * Deserialize dataProvider and fields to AmSerialChart.
+	 * @param serialChartController chart own of dataProvider and fields.
+	 * @param tempFile name of amSerialChart config file.
+	 * @throws JsonProcessingException
+	 * @throws IOException
+	 */
 	@SuppressWarnings("unchecked")
 	private static void addDataProviderFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile) 
 			throws JsonProcessingException, IOException
@@ -534,6 +651,13 @@ public class ParserJson {
 		serialChartController.setDataProvider(dataProvider);		
 	}
 	
+	/**
+	 * Deserialize dataProvider and fields to AmXyChart.
+	 * @param xyChartController chart own of dataProvider and fields.
+	 * @param tempFile name of amXyChart config file.
+	 * @throws JsonProcessingException
+	 * @throws IOException
+	 */
 	@SuppressWarnings("unchecked")
 	private static void addDataProviderFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile) 
 			throws JsonProcessingException, IOException
@@ -589,6 +713,13 @@ public class ParserJson {
 		xyChartController.setDataProvider(dataProvider);		
 	}
 	
+	/**
+	 * Deserialize dataProvider and fields to AmRadarChart.
+	 * @param radarChartController chart own of dataProvider and fields.
+	 * @param tempFile name of AmRadarChart config file.
+	 * @throws JsonProcessingException
+	 * @throws IOException
+	 */
 	@SuppressWarnings("unchecked")
 	private static void addDataProviderFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile) 
 			throws JsonProcessingException, IOException
@@ -644,6 +775,13 @@ public class ParserJson {
 		radarChartController.setDataProvider(dataProvider);		
 	}
 	
+	/**
+	 * Deserialize dataProvider and fields to AmFunnelChart.
+	 * @param funnelChartController chart own of dataProvider and fields.
+	 * @param tempFile name of AmFunnelChart config file.
+	 * @throws JsonProcessingException
+	 * @throws IOException
+	 */
 	@SuppressWarnings("unchecked")
 	private static void addDataProviderFromJsonToAmFunnelChart(AmFunnelChartController funnelChartController, String tempFile) 
 			throws JsonProcessingException, IOException
@@ -678,6 +816,13 @@ public class ParserJson {
 		funnelChartController.setDataProvider(dataProvider);		
 	}
 	
+	/**
+	 * Deserialize dataProvider and fields to AmPieChart.
+	 * @param pieChartController chart own of dataProvider and fields.
+	 * @param tempFile name of AmPieChart config file.
+	 * @throws JsonProcessingException
+	 * @throws IOException
+	 */
 	@SuppressWarnings("unchecked")
 	private static void addDataProviderFromJsonToAmPieChart(AmPieChartController pieChartController, String tempFile) 
 			throws JsonProcessingException, IOException
@@ -712,6 +857,13 @@ public class ParserJson {
 		pieChartController.setDataProvider(dataProvider);		
 	}
 	
+	/**
+	 * Deserialize dataProvider and fields to AmAngularGauge.
+	 * @param gaugeController chart own of dataProvider and fields.
+	 * @param tempFile name of AmAngularGauge config file.
+	 * @throws JsonProcessingException
+	 * @throws IOException
+	 */
 	@SuppressWarnings("unchecked")
 	private static void addDataProviderFromJsonToAmAngularGauge(AmAngularGaugeController gaugeController, String tempFile) 
 			throws JsonProcessingException, IOException
@@ -731,8 +883,12 @@ public class ParserJson {
 		gaugeController.setDataProvider(dataProvider);		
 	}
 	
-	
-	
+	/**
+	 * Deserialize graphs to AmSerialChart. If AmGraph type is step,candlestick or ohlc deserialize to
+	 * correct controller else always try load to AmGraphSerialController 
+	 * @param serialChartController chart own of graphs.
+	 * @param tempFile name of AmSerialChart config file.
+	 */
 	private static void addGraphsFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -784,6 +940,11 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize graphs to AmXyChart. AmXyChart must to have maxBulletSize property setted.
+	 * @param xyChartController chart own of graphs.
+	 * @param tempFile name of AmXyChart config file.
+	 */
 	private static void addGraphsFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -811,6 +972,12 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize graphs to AmRadarChart.If exist value to maxBulletSize graph will be treat as AmXyChart 
+	 * else as AmSerialChart.
+	 * @param radarChartController chart own of graphs.
+	 * @param tempFile name of AmRadarChart config file.
+	 */
 	private static void addGraphsFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -844,6 +1011,12 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize guides to AmSerialChart.Guides to CategoryAxis need value to expand,
+	 * guides to valueAxis can't have value to angle.
+	 * @param serialChartController chart own of guides.
+	 * @param tempFile name of AmSerialChart config file.
+	 */
 	private static void addGuidesFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -877,6 +1050,11 @@ public class ParserJson {
 	
 	}
 	
+	/**
+	 * Deserialize guides to AmXyChart.Guides can't have value to angle or expand.
+	 * @param xyChartController chart own of guides.
+	 * @param tempFile name of AmXyChart config file.
+	 */
 	private static void addGuidesFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -903,6 +1081,11 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize guides to AmRadarChart. Guides must have value to angle.
+	 * @param radarChartController chart own of guides.
+	 * @param tempFile name of AmRadarChart config file.
+	 */
 	private static void addGuidesFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -928,6 +1111,11 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize TrendLines to AmSerialChart.Trendlines can't have value to initialXValue.
+	 * @param serialChartController chart own of trendLines.
+	 * @param tempFile name of AmSerialChart config file.
+	 */
 	private static void addTrendLinesFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -953,6 +1141,11 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize TrendLines to AmXyChart.TrendLines need value to initialXValue.
+	 * @param xyChartController chart own of TrendLines.
+	 * @param tempFile name of AmXyChart config file.
+	 */
 	private static void addTrendLinesFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -978,6 +1171,11 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize valueAxis to AmSerialChart.ValueAxis can't have value to radarCategoriesEnabled.
+	 * @param serialChartController chart own of valueAxis.
+	 * @param tempFile name of AmSerialChart config file.
+	 */
 	private static void addValueAxisFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -1003,6 +1201,11 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize valueAxis to AmXyChart.ValueAxis can't have value to radarCategoriesEnabled.
+	 * @param xyChartController chart own of valueAxis.
+	 * @param tempFile name of AmXyChart config file.
+	 */
 	private static void addValueAxisFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;
@@ -1028,6 +1231,11 @@ public class ParserJson {
 		
 	}
 	
+	/**
+	 * Deserialize valueAxis to AmRadarChart.ValueAxis need value to radarCategoriesEnabled.
+	 * @param radarChartController chart own of valueAxis.
+	 * @param tempFile name of AmRadarChart config file.
+	 */
 	private static void addValueAxisFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile){
 		ObjectMapper mapper = getParserJson();
 		Object temp = null;

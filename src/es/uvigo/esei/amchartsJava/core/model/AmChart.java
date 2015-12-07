@@ -33,10 +33,6 @@ public abstract class AmChart extends IModel {
 	//guarda todos los fields activados para charts y el nombre asociado
 	protected Map<String,String> chartFields;
 	protected AmBalloonController balloon;
-	//cambiar por clase y no es map es List<Map>
-	//protected DataProvider dataProvider;
-	//para filtros svg
-	//protected Defs defs;
 	protected AmLegendController legend;
 	protected List<TitleController> titles;
 	protected DataProviderController dataProvider;

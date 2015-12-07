@@ -2,9 +2,6 @@ package es.uvigo.esei.amchartsJava.core.constants;
 
 public final class MarkerTypeConstant {
 	
-	private static MarkerTypeConstant instance;
-	
-	
 	private MarkerTypeConstant(){
 		
 	}

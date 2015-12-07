@@ -11,6 +11,11 @@ import es.uvigo.esei.amchartsJava.core.controllers.GaugeBandController;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
 
+/**
+ * Model class for AmAngularGauge.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmAngularGauge extends AmChart {
 	private List<GaugeArrowController> arrows;
 	private List<GaugeAxisController> axes;
@@ -30,15 +35,18 @@ public class AmAngularGauge extends AmChart {
 		deleteAxes = 0;
 	}
 	
-	
-	
-	
+	/**
+	 * Get GaugeArrows.
+	 * @return List<GaugeArrowController> List of GaugeArrows.
+	 */
 	public List<GaugeArrowController> getArrows(){
 		return arrows;
 	}
 	
-	
-
+	/**
+	 * Set GaugeArrows from json.
+	 * @param gaugeArrowControllers List of GaugeArrows.
+	 */
 	public void setArrows(List<GaugeArrowController> gaugeArrowControllers) {
 		if(arrows == null){
 			arrows = new ArrayList<GaugeArrowController>();
@@ -52,10 +60,18 @@ public class AmAngularGauge extends AmChart {
 		
 	}
 
+	/**
+	 * Get GaugeAxis.
+	 * @return List<GaugeAxisController> List of GaugeAxis.
+	 */
 	public List<GaugeAxisController> getAxes() {
 		return axes;
 	}
 
+	/**
+	 * Set GaugeAxis from json.
+	 * @param gaugeAxisControllers List of GaugeAxis.
+	 */
 	public void setAxes(List<GaugeAxisController> gaugeAxisControllers) {
 		if(axes == null){
 			axes = new ArrayList<GaugeAxisController>();
@@ -67,14 +83,26 @@ public class AmAngularGauge extends AmChart {
 		}
 	}
 
+	/**
+	 * Get facePattern.
+	 * @return PatternController Controller for pattern.
+	 */
 	public PatternController getFacePattern() {
 		return facePattern;	
 	}
 
+	/**
+	 * Set facePattern.
+	 * @param pattern Controller for pattern.
+	 */
 	public void setFacePattern(PatternController pattern) {
 		facePattern = pattern;
 	}
 
+	/**
+	 * Add a GaugeArrow.
+	 * @param gaugeArrowController Controller for GaugeArrow.
+	 */
 	public void addArrow(GaugeArrowController gaugeArrowController) {
 		if(arrows == null){
 			arrows = new ArrayList<GaugeArrowController>();
@@ -91,6 +119,10 @@ public class AmAngularGauge extends AmChart {
 		positionArrows.put(gaugeArrowController.getId(),arrows.size()-1);
 	}
 	
+	/**
+	 * Add a GaugeAxis.
+	 * @param gaugeAxisController Controller for GaugeAxis.
+	 */
 	public void addAxis(GaugeAxisController gaugeAxisController){
 		if(axes == null){
 			axes = new ArrayList<GaugeAxisController>();
@@ -111,7 +143,7 @@ public class AmAngularGauge extends AmChart {
 		
 	}
 	
-	
+	//Assign ids to GaugeBands for new GaugeAxis added to AmAngularGauge
 	private void asignIdToBands(GaugeAxisController gaugeAxisController){
 		if(idGaugeBands == null){
 			idGaugeBands = new ArrayList<String>();
@@ -127,6 +159,10 @@ public class AmAngularGauge extends AmChart {
 		}
 	}
 
+	/**
+	 * Remove GaugeArrow.
+	 * @param idArrow GaugeArrow id.
+	 */
 	public void removeArrow(String idArrow) {
 		if(arrows != null){
 			arrows.remove(positionArrows.get(idArrow));
@@ -139,6 +175,10 @@ public class AmAngularGauge extends AmChart {
 		}
 	}
 	
+	/**
+	 * Remove GaugeAxis.
+	 * @param idAxis GaugeAxis id.
+	 */
 	public void removeAxis(String idAxis){
 		if(axes != null){
 			axes.remove(positionAxes.get(idAxis));
@@ -152,6 +192,11 @@ public class AmAngularGauge extends AmChart {
 		}
 	}
 	
+	/**
+	 * Check exist GaugeBand.
+	 * @param idGaugeBand GaugeBand id.
+	 * @return boolean Exist or doesn't exist GaugeBand.
+	 */
 	public boolean existGaugeBand(String idGaugeBand){
 		if(idGaugeBands != null){
 			return idGaugeBands.contains(idGaugeBand);
@@ -160,6 +205,11 @@ public class AmAngularGauge extends AmChart {
 		}
 	}
 	
+	/**
+	 * Check exist GaugeAxis.
+	 * @param idAxis GaugeAxis id.
+	 * @return boolean Exist or doesn't exist GaugeAxis.
+	 */
 	public boolean existAxis(String idAxis){
 		if(idAxes != null){
 			return idAxes.contains(idAxis);
@@ -168,6 +218,11 @@ public class AmAngularGauge extends AmChart {
 		}
 	}
 	
+	/**
+	 * Check exist GaugeArrow.
+	 * @param idArrow GaugeArrow id.
+	 * @return boolean Exist or doesn't exist GaugeArrow.
+	 */
 	public boolean existArrow(String idArrow){
 		if(idArrows != null){
 			return idArrows.contains(idArrow);

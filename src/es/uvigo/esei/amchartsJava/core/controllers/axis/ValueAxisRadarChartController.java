@@ -17,7 +17,6 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 	private static final long serialVersionUID = 1235487736091161719L;
 	
 	{
-		//value only in radar, used by serialize to json and evit add field type to json.
 		setRadarCategoriesEnabled(true);
 	}
 

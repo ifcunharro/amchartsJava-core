@@ -41,6 +41,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 		
 	}
 	
+	//Set id from chart
 	@Override
 	public void update(Observable o, Object arg) {
 		this.setId("Label-"+arg.toString());

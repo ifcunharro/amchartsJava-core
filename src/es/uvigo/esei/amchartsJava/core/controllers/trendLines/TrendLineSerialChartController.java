@@ -182,6 +182,7 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 		}
 	}
 	
+	//Used to deserialize json
 	@JsonSetter(value="valueAxis")
 	private void setJsonValueAxis(String valueAxis){
 		trendLine.setFeature("valueAxis", valueAxis);

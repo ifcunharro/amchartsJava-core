@@ -276,6 +276,7 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 		}
 	}
 	
+	//Used to deserialize json
 	@JsonSetter(value="valueAxis")
 	private void setJsonValueAxis(String valueAxis){
 		guide.setFeature("valueAxis", valueAxis);

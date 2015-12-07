@@ -24,10 +24,18 @@ public class ValueAxis{
 		deleteAxis = 0;
 	}
 	
+	/**
+	 * Get number of ValueAxis added to chart.
+	 * @return int Number of ValueAxis.
+	 */
 	public int sizeAxis(){
 		return sizeAxis;
 	}
 	
+	/**
+	 * Get number of ValueAxis to not radar charts.
+	 * @return int Number of ValueAxisController.
+	 */
 	public int sizeValueAxis(){
 		if(isNotEmptyValueAxis()){
 			return this.getValueAxis().size();
@@ -35,6 +43,10 @@ public class ValueAxis{
 		return 0;
 	}
 	
+	/**
+	 * Get number of ValueAxis to radar chart.
+	 * @return int Number of ValueAxisRadarChartController.
+	 */
 	public int sizeValueAxisRadar(){
 		if(isNotEmptyValueAxisRadarChart()){
 			return this.getValueAxisRadar().size();
@@ -42,27 +54,51 @@ public class ValueAxis{
 		return 0;
 	}
 	
-
+	/**
+	 * Get delete ValueAxis.
+	 * @return int Number of delete ValueAxis.
+	 */
 	public int getDeleteValueAxis(){
 		return deleteAxis;
 	}
 	
+	/**
+	 * Check exist ValueAxis in collection.
+	 * @param idValueAxis ValueAxis id.
+	 * @return boolean Exist or doesn't exist ValueAxis in collection.
+	 */
 	public boolean existValueAxis(String idValueAxis) {
 		return getAllAxisIds().contains(idValueAxis);
 	}
 	
+	/**
+	 * Check exist any ValueAxis to radar chart.
+	 * @return boolean List of ValueAxisRadarChartController initialized.
+	 */
 	public boolean isNotEmptyValueAxisRadarChart() {
 		return getValueAxisRadar()!=null;
 	}
 
+	/**
+	 * Check exist any ValueAxis to not radar chart.
+	 * @return boolean List of ValueAxisController initialized.
+	 */
 	public boolean isNotEmptyValueAxis() {
 		return getValueAxis()!=null;
 	}
 	
+	/**
+	 * Get ValueAxis ids.
+	 * @return List<String> ValueAxis ids.
+	 */
 	public List<String> getAllAxisIds(){
 		return idValueAxes;
 	}
 	
+	/**
+	 * Get ValueAxis ids to not radar chart.
+	 * @return List<String> ValueAxis ids.
+	 */
 	public List<String> getValueAxisIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyValueAxis()){
@@ -73,6 +109,10 @@ public class ValueAxis{
 		return ids;
 	}
 	
+	/**
+	 * Get ValueAxis ids to radar chart.
+	 * @return List<String> ValueAxis ids.
+	 */
 	public List<String> getValueAxisRadarIds(){
 		List<String> ids = new ArrayList<String>();
 		if(isNotEmptyValueAxisRadarChart()){
@@ -83,6 +123,10 @@ public class ValueAxis{
 		return ids;
 	}
 	
+	/**
+	 * Get ValueAxis.
+	 * @return List<ValueAxisController> List of ValueAxis and ValueAxisRadarChart.
+	 */
 	public List<ValueAxisController> getValueAxes(){
 		List<ValueAxisController> valueAxisControllers = new ArrayList<ValueAxisController>();
 		if(isNotEmptyValueAxis()){
@@ -99,6 +143,10 @@ public class ValueAxis{
 		return valueAxisControllers;
 	}
 	
+	/**
+	 * Add a ValueAxis to collection.
+	 * @param valueAxisController Controller for ValueAxis.
+	 */
 	public void addValueAxis(ValueAxisController valueAxisController){
 		if(getValueAxis()==null){
 			initValueAxis();
@@ -111,6 +159,10 @@ public class ValueAxis{
 	
 	}
 	
+	/**
+	 * Add a ValueAxisRadarChart to collection.
+	 * @param valueAxisRadarChartController Controller for valueAxisRadarChart.
+	 */
 	public void addValueAxisRadar(ValueAxisRadarChartController valueAxisRadarChartController){
 		if(getValueAxisRadar()==null){
 			initValueAxisRadar();
@@ -122,6 +174,10 @@ public class ValueAxis{
 		sizeAxis++;
 	}
 	
+	/**
+	 * Remove a valueAxis from collection.
+	 * @param idValueAxis ValueAxis id.
+	 */
 	public void removeValueAxis(String idValueAxis) {
 		int position = positionsAxis.get(idValueAxis);
 		getValueAxis().remove(position);
@@ -135,6 +191,10 @@ public class ValueAxis{
 		
 	}
 	
+	/**
+	 * Remove a valueAxisRadarChart from collection.
+	 * @param idValueAxisRadar ValueAxis id.
+	 */
 	public void removeValueAxisRadar(String idValueAxisRadar) {
 		int position = positionsAxis.get(idValueAxisRadar);
 		getValueAxisRadar().remove(position);
@@ -147,27 +207,47 @@ public class ValueAxis{
 		positionsAxis.remove(idValueAxisRadar);
 	}
 
+	/**
+	 * Initialize list of ValueAxisController.
+	 */
 	private void initValueAxis(){
 		valueAxis.put("ValueAxisController", new ArrayList<ValueAxisController>());	
 	}
 	
+	/**
+	 * Initialize list of ValueAxisRadarChartController.
+	 */
 	private void initValueAxisRadar(){
 		valueAxis.put("ValueAxisRadarChartController", new ArrayList<ValueAxisRadarChartController>());
 	}
 	
+	/**
+	 * Remove list of ValueAxisController.
+	 */
 	private void deleteValueAxis() {
 		valueAxis.remove("ValueAxisController");
 	}
 	
+	/**
+	 * Remove list of ValueAxisRadarChartController.
+	 */
 	private void deleteValueAxisRadar() {
 		valueAxis.remove("ValueAxisRadarChartController");
 	}
 	
+	/**
+	 * Get list of ValueAxisController.
+	 * @return List<ValueAxisController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<ValueAxisController> getValueAxis(){
 		return (List<ValueAxisController>)(List<?>) valueAxis.get("ValueAxisController");
 	}
 	
+	/**
+	 * Get list of ValueAxisRadarChartController.
+	 * @return List<ValueAxisRadarChartController>
+	 */
 	@SuppressWarnings("unchecked")
 	private List<ValueAxisRadarChartController> getValueAxisRadar(){
 		return (List<ValueAxisRadarChartController>)(List<?>)valueAxis.get("ValueAxisRadarChartController");

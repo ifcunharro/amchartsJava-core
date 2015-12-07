@@ -60,6 +60,7 @@ public class TrendLineXyChartController extends TrendLineSerialChartController i
 		}
 	}
 	
+	//Used to deserialize json
 	@JsonSetter(value="valueAxisX")
 	private void setJsonValueAxisX(String valueAxisX){
 		trendLine.setFeature("valueAxisX", valueAxisX);
