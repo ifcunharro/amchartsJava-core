@@ -3,6 +3,7 @@ package es.uvigo.esei.amchartsJava.core.principal;
 
 
 import java.io.IOException;
+
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.config.DefaultConfigCharts;
@@ -86,12 +87,12 @@ public class Principal {
 		amcharts.addChart(chartsCandle);
 		
 		
-		try {
+		/*try {
 			ParserJson.saveJsonToConsole(chartsCandle);
 		} catch (IOException e15) {
 			// TODO Auto-generated catch block
 			e15.printStackTrace();
-		}
+		}*/
 		//amcharts.clear();
 		AmXyChartController chartsXY = new AmXyChartController();
 		DefaultConfigCharts.initDefaultXYGraphToBew(chartsXY, 
@@ -99,12 +100,12 @@ public class Principal {
 		
 		amcharts.addChart(chartsXY);
 		
-		try {
+		/*try {
 			ParserJson.saveJsonToConsole(chartsXY);
 		} catch (IOException e15) {
 			// TODO Auto-generated catch block
 			e15.printStackTrace();
-		}
+		}*/
 		
 		
 		
@@ -446,7 +447,7 @@ public class Principal {
 			//ParserJson.saveJsonToConsole(asc);
 			
 			//ParserJson.saveJsonToConsole(funnel);
-			//ParserJson.saveJsonToConsole(gaugec);
+			ParserJson.saveJsonToConsole(gaugec);
 		} catch (IOException e) {
 			
 			e.printStackTrace();
@@ -465,7 +466,7 @@ public class Principal {
 
 				//serialController = ParserJson.loadAmSerialChart("pruebaJson");
 				//rec = ParserJson.loadAmFunnelChart("pruebaFunnel");
-				regauge = ParserJson.loadAmAngularGauge("pruebaGauge.json");
+				regauge = ParserJson.loadAmAngularGauge("pruebaGauge");
 				//sample = ParserJson.loadAmXyChart("sample");
 				
 				// se añaden todos los charts
@@ -484,13 +485,16 @@ public class Principal {
 			//comprueba que se ha leido bien el controller de carpeta temp
 			ParserJson.saveJsonToConsole(regauge);
 			//ParserJson.saveJsonToConsole(rec);
-			//ParserJson.saveJsonToConsole(regauge);
 			
 			//ParserJson.saveJsonToConsole(sample);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		
+		
+		
 		
 		
 	}

@@ -1,16 +1,11 @@
 package es.uvigo.esei.amchartsJava.core.parser;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.commons.io.IOUtils;
 
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility;
@@ -51,6 +46,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.provider.DataProviderControll
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
+import es.uvigo.esei.amchartsJava.core.files.AmChartsIOUtils;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 /**
@@ -161,6 +157,7 @@ public class ParserJson {
 				if((AmPieChartController) chartController instanceof AmPieChartController){
 					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
 					saveFieldsFromAmPieChartToTemp(nameFileJson, (AmPieChartController)chartController);
+					match=true;
 				}
 			}catch(ClassCastException e1){
 				e1.printStackTrace();
@@ -201,14 +198,8 @@ public class ParserJson {
 			 *  no importa mucho pues export siempre recibe el mismo valor AmCharts.exportCFG y es el valor
 			 *  correcto, sin las comillas
 			 */
-			FileInputStream fis = new FileInputStream(tempFile);
-		    String content = IOUtils.toString(fis, Charset.defaultCharset());
-		    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
-		    
-		    FileOutputStream fos = new FileOutputStream(tempFile);
-		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
-		    fis.close();
-		    fos.close();
+			AmChartsIOUtils.changeExport(tempFile);
+			
 		
 			serialController = mapper.readValue(new File(tempFile), AmSerialChartController.class);
 			
@@ -217,7 +208,7 @@ public class ParserJson {
 			addGuidesFromJsonToAmSerialChart(serialController,tempFile);
 			addTrendLinesFromJsonToAmSerialChart(serialController,tempFile);
 			addDataProviderFromJsonToAmSerialChart(serialController,tempFile);
-			
+			AmChartsIOUtils.deleteTempFile(tempFile);
 			return serialController;
 		}else{
 			throw new IOException(I18n.get("JsonFileNotFoundException"));
@@ -241,13 +232,7 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmXyChartController xyController = null;
 			
-			FileInputStream fis = new FileInputStream(tempFile);
-		    String content = IOUtils.toString(fis, Charset.defaultCharset());
-		    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
-		    FileOutputStream fos = new FileOutputStream(tempFile);
-		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
-		    fis.close();
-		    fos.close();
+			AmChartsIOUtils.changeExport(tempFile);
 			
 			xyController = mapper.readValue(new File(tempFile), AmXyChartController.class);
 			
@@ -256,7 +241,7 @@ public class ParserJson {
 			addGuidesFromJsonToAmXyChart(xyController,tempFile);
 			addTrendLinesFromJsonToAmXyChart(xyController,tempFile);
 			addDataProviderFromJsonToAmXyChart(xyController,tempFile);
-			
+			AmChartsIOUtils.deleteTempFile(tempFile);
 			return xyController;
 		}else{
 			throw new IOException(I18n.get("JsonFileNotFoundException"));
@@ -280,13 +265,7 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmRadarChartController radarController = null;
 			
-			FileInputStream fis = new FileInputStream(tempFile);
-		    String content = IOUtils.toString(fis, Charset.defaultCharset());
-		    content = content.replaceAll("AmCharts.exportCFG","\"AmCharts.exportCFG\"");
-		    FileOutputStream fos = new FileOutputStream(tempFile);
-		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
-		    fis.close();
-		    fos.close();
+			AmChartsIOUtils.changeExport(tempFile);
 			
 			radarController = mapper.readValue(new File(tempFile), AmRadarChartController.class);
 			
@@ -294,7 +273,7 @@ public class ParserJson {
 			addGraphsFromJsonToAmRadarChart(radarController,tempFile);
 			addGuidesFromJsonToAmRadarChart(radarController,tempFile);
 			addDataProviderFromJsonToAmRadarChart(radarController,tempFile);
-			
+			AmChartsIOUtils.deleteTempFile(tempFile);
 			
 			return radarController;
 		}else{
@@ -319,18 +298,12 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmFunnelChartController funnelController = null;
 			
-			FileInputStream fis = new FileInputStream(tempFile);
-		    String content = IOUtils.toString(fis, Charset.defaultCharset());
-		    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
-		    FileOutputStream fos = new FileOutputStream(tempFile);
-		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
-		    fis.close();
-		    fos.close();
+			AmChartsIOUtils.changeExport(tempFile);
 			
 			funnelController = mapper.readValue(new File(tempFile), AmFunnelChartController.class);
 			
 			addDataProviderFromJsonToAmFunnelChart(funnelController,tempFile);
-			
+			AmChartsIOUtils.deleteTempFile(tempFile);
 			return funnelController;
 		}else{
 			throw new IOException(I18n.get("JsonFileNotFoundException"));
@@ -354,18 +327,12 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmPieChartController pieController = null;
 			
-			FileInputStream fis = new FileInputStream(tempFile);
-		    String content = IOUtils.toString(fis, Charset.defaultCharset());
-		    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
-		    FileOutputStream fos = new FileOutputStream(tempFile);
-		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
-		    fis.close();
-		    fos.close();
+			AmChartsIOUtils.changeExport(tempFile);
 			
 			pieController = mapper.readValue(new File(tempFile), AmPieChartController.class);
 			
 			addDataProviderFromJsonToAmPieChart(pieController,tempFile);
-			
+			AmChartsIOUtils.deleteTempFile(tempFile);
 			return pieController;
 		}else{
 			throw new IOException(I18n.get("JsonFileNotFoundException"));
@@ -389,18 +356,11 @@ public class ParserJson {
 			ObjectMapper mapper = getParserJson();
 			AmAngularGaugeController gaugeController = null;
 			
-			FileInputStream fis = new FileInputStream(tempFile);
-		    String content = IOUtils.toString(fis, Charset.defaultCharset());
-		    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
-		    FileOutputStream fos = new FileOutputStream(tempFile);
-		    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
-		    fis.close();
-		    fos.close();
+			AmChartsIOUtils.changeExport(tempFile);
 			
 			gaugeController = mapper.readValue(new File(tempFile), AmAngularGaugeController.class);
 			
-			addDataProviderFromJsonToAmAngularGauge(gaugeController,tempFile);
-			
+			AmChartsIOUtils.deleteTempFile(tempFile);
 			return gaugeController;
 		}else{
 			throw new IOException(I18n.get("JsonFileNotFoundException"));
@@ -427,8 +387,10 @@ public class ParserJson {
 		Map<String,String> temp = null;
 		
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-		
-		map.put("chartFields", serialChart.getChartFields());
+		Map<String,String> chartFields = serialChart.getChartFields();
+		if (chartFields != null){
+			map.put("chartFields", chartFields);
+		}
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
 		@SuppressWarnings("unchecked")
 		List<AmGraphController> graphs = (List<AmGraphController>)serialChart.getGraphs();
@@ -446,7 +408,7 @@ public class ParserJson {
 		if(categoryAxis != null){
 			Map<String,String> axesFields = categoryAxis.getAxesFields();
 			if(axesFields != null){
-				map.put("categoryAxisFields", serialChart.getCategoryAxis().getAxesFields());
+				map.put("categoryAxisFields", axesFields);
 			}
 		}
 	
@@ -472,8 +434,10 @@ public class ParserJson {
 		Map<String,String> temp = null;
 		
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-		
-		map.put("chartFields", xyChart.getChartFields());
+		Map<String,String> chartFields = xyChart.getChartFields();
+		if(chartFields != null){
+			map.put("chartFields", chartFields);
+		}
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
 		@SuppressWarnings("unchecked")
 		List<AmGraphController> graphs = (List<AmGraphController>)xyChart.getGraphs();
@@ -508,8 +472,10 @@ public class ParserJson {
 		Map<String,String> temp = null;
 		
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-		
-		map.put("chartFields", radarChart.getChartFields());
+		Map<String,String> chartFields = radarChart.getChartFields();
+		if(chartFields != null){
+			map.put("chartFields", chartFields);
+		}
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
 		@SuppressWarnings("unchecked")
 		List<AmGraphController> graphs = (List<AmGraphController>)radarChart.getGraphs();
@@ -544,9 +510,10 @@ public class ParserJson {
 		
 		
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-		
-		map.put("chartFields", funnelChart.getChartFields());
-		
+		Map<String,String> chartFields = funnelChart.getChartFields();
+		if(chartFields != null){
+			map.put("chartFields", chartFields);
+		}
 		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
 		
 	}
@@ -568,8 +535,10 @@ public class ParserJson {
 	
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
 		
-		map.put("chartFields", pieChart.getChartFields());
-		
+		Map<String,String> chartFields = pieChart.getChartFields();
+		if(chartFields != null){
+			map.put("chartFields", chartFields);
+		}
 		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
 		
 	}
@@ -607,12 +576,15 @@ public class ParserJson {
 		JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			
-			fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
-			
-			if(!fieldKeys.isEmpty()){
-				serialChartController.setChartFields(fieldKeys);
+			JsonNode chartsFieldsNode = nodeFields.path("chartFields");
+			if(!chartsFieldsNode.isMissingNode()){
+				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
+				if(!fieldKeys.isEmpty()){
+					serialChartController.setChartFields(fieldKeys);
+				}
 			}
+			
+			
 		}catch(IOException e1){
 			e1.printStackTrace();
 		}
@@ -648,7 +620,8 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		
-		serialChartController.setDataProvider(dataProvider);		
+		serialChartController.setDataProvider(dataProvider);	
+		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	
 	/**
@@ -683,11 +656,13 @@ public class ParserJson {
 		JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			
-			fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
-			
-			if(!fieldKeys.isEmpty()){
-				xyChartController.setChartFields(fieldKeys);
+			JsonNode chartFieldsNode = nodeFields.path("chartFields");
+			if(!chartFieldsNode.isMissingNode()){
+				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
+				
+				if(!fieldKeys.isEmpty()){
+					xyChartController.setChartFields(fieldKeys);
+				}
 			}
 		}catch(IOException e1){
 			e1.printStackTrace();
@@ -710,7 +685,8 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		
-		xyChartController.setDataProvider(dataProvider);		
+		xyChartController.setDataProvider(dataProvider);	
+		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	
 	/**
@@ -744,12 +720,15 @@ public class ParserJson {
 		JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			
-			fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
-			
-			if(!fieldKeys.isEmpty()){
-				radarChartController.setChartFields(fieldKeys);
+			JsonNode chartFields = nodeFields.path("chartFields");
+			if(!chartFields.isMissingNode()){
+				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
+				if(!fieldKeys.isEmpty()){
+					radarChartController.setChartFields(fieldKeys);
+				}
 			}
+			
+			
 		}catch(IOException e1){
 			e1.printStackTrace();
 		}
@@ -773,6 +752,7 @@ public class ParserJson {
 		
 		
 		radarChartController.setDataProvider(dataProvider);		
+		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	
 	/**
@@ -803,17 +783,20 @@ public class ParserJson {
 		JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			
-			fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
-			
-			if(!fieldKeys.isEmpty()){
-				funnelChartController.setChartFields(fieldKeys);
+			JsonNode chartFields = nodeFields.path("chartFields");
+			if(!chartFields.isMissingNode()){
+				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
+				
+				if(!fieldKeys.isEmpty()){
+					funnelChartController.setChartFields(fieldKeys);
+				}
 			}
 		}catch(IOException e1){
 			e1.printStackTrace();
 		}
 		
-		funnelChartController.setDataProvider(dataProvider);		
+		funnelChartController.setDataProvider(dataProvider);	
+		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	
 	/**
@@ -844,43 +827,21 @@ public class ParserJson {
 		JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			
-			fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
-			
-			if(!fieldKeys.isEmpty()){
-				pieChartController.setChartFields(fieldKeys);
+			JsonNode chartFields = nodeFields.path("chartFields");
+			if(!chartFields.isMissingNode()){
+				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
+				
+				if(!fieldKeys.isEmpty()){
+					pieChartController.setChartFields(fieldKeys);
+				}
 			}
+			
 		}catch(IOException e1){
 			e1.printStackTrace();
 		}
 		
 		pieChartController.setDataProvider(dataProvider);		
-	}
-	
-	/**
-	 * Deserialize dataProvider and fields to AmAngularGauge.
-	 * @param gaugeController chart own of dataProvider and fields.
-	 * @param tempFile name of AmAngularGauge config file.
-	 * @throws JsonProcessingException
-	 * @throws IOException
-	 */
-	@SuppressWarnings("unchecked")
-	private static void addDataProviderFromJsonToAmAngularGauge(AmAngularGaugeController gaugeController, String tempFile) 
-			throws JsonProcessingException, IOException
-	{
-		ObjectMapper mapper = getParserJson();
-		HashMap<String, Object> map = null;
-		
-		DataProviderController dataProvider = new DataProviderController();
-		
-		JsonNode node = mapper.readTree(new File(tempFile));
-		
-		for(int i = 0; i<node.path("dataProvider").size();i++){
-			map = mapper.treeToValue(node.path("dataProvider").path(i), HashMap.class);
-			dataProvider.addData(map);
-		}
-		
-		gaugeController.setDataProvider(dataProvider);		
+		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	
 	/**
