@@ -15,9 +15,9 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
-import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
-import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
+import es.uvigo.esei.amchartsJava.core.constants.ChartType;
+import es.uvigo.esei.amchartsJava.core.constants.CreditsPosition;
+import es.uvigo.esei.amchartsJava.core.constants.Separator;
 import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;

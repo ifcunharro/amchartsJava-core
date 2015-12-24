@@ -3,8 +3,8 @@ package es.uvigo.esei.amchartsJava.core.controllers.axis;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.axis.ICategoryAxisController;
-import es.uvigo.esei.amchartsJava.core.constants.CategoryPositionConstant.CategoryPosition;
-import es.uvigo.esei.amchartsJava.core.constants.PeriodConstant.Period;
+import es.uvigo.esei.amchartsJava.core.constants.CategoryPosition;
+import es.uvigo.esei.amchartsJava.core.constants.Period;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;

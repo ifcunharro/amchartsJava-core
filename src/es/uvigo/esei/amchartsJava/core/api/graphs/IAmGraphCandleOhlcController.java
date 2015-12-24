@@ -1,6 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.api.graphs;
 
-import es.uvigo.esei.amchartsJava.core.constants.ShowAtConstant.ShowAt;
+import es.uvigo.esei.amchartsJava.core.constants.ShowAt;
 
 /**
  * 
@@ -46,7 +46,7 @@ public abstract interface IAmGraphCandleOhlcController extends IAmGraphSerialCon
 	
 	/**
 	 * Set showBulletAt property.
-	 * @param Value for showBulletsAt.
+	 * @param showBulletsAt Value for showBulletsAt.
 	 */
 	abstract void setShowBulletsAt(ShowAt showBulletsAt);
 

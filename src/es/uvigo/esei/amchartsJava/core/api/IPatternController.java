@@ -61,7 +61,7 @@ public abstract interface IPatternController {
 	
 	/**
 	 * Set width property.With improvedVisibility enabled range activated.
-	 * @param height Value for width
+	 * @param width Value for width
 	 * @throws OutOfRangeException Value out of range admitted: 2-6.
 	 */
 	abstract void setWidth(Number width) throws OutOfRangeException;

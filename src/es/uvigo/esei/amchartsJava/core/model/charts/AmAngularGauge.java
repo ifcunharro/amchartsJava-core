@@ -37,7 +37,7 @@ public class AmAngularGauge extends AmChart {
 	
 	/**
 	 * Get GaugeArrows.
-	 * @return List<GaugeArrowController> List of GaugeArrows.
+	 * @return List of GaugeArrows.
 	 */
 	public List<GaugeArrowController> getArrows(){
 		return arrows;
@@ -62,7 +62,7 @@ public class AmAngularGauge extends AmChart {
 
 	/**
 	 * Get GaugeAxis.
-	 * @return List<GaugeAxisController> List of GaugeAxis.
+	 * @return List of GaugeAxis.
 	 */
 	public List<GaugeAxisController> getAxes() {
 		return axes;

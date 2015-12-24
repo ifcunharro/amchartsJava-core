@@ -78,9 +78,9 @@ public class ParserJson {
 	/**
 	 * Save config in json to console.
 	 * @param chartController Controller for chart.
-	 * @throws JsonGenerationException
-	 * @throws JsonMappingException
-	 * @throws IOException
+	 * @throws JsonGenerationException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
 	 */
 	public static void saveJsonToConsole(Object chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
@@ -92,11 +92,11 @@ public class ParserJson {
 	//evitar sobreescribir existente se hace antes de llamar a este método
 	/**
 	 * Save amcharts config as json in temp folder.  
-	 * @param nameFileJson
-	 * @param chartController
-	 * @throws JsonGenerationException
-	 * @throws JsonMappingException
-	 * @throws IOException
+	 * @param nameFileJson name of json file
+	 * @param chartController controller to chart.
+	 * @throws JsonGenerationException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
 	 */
 	public static void saveJsonToTemp(String nameFileJson,Object chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
@@ -181,9 +181,9 @@ public class ParserJson {
 	 * Deserialize AmSerialChart from temp folder.
 	 * @param nameFileJson name of amcharts config file.
 	 * @return AmSerialChartController Controller for AmSerialChart configured.
-	 * @throws JsonParseException
-	 * @throws JsonMappingException
-	 * @throws IOException
+	 * @throws JsonParseException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
 	 */
 	public static AmSerialChartController loadAmSerialChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
@@ -220,9 +220,9 @@ public class ParserJson {
 	 * Deserialize AmXyChart from temp folder.
 	 * @param nameFileJson name of amcharts config file.
 	 * @return AmXyChartController Controller for AmXyChart configured.
-	 * @throws JsonParseException
-	 * @throws JsonMappingException
-	 * @throws IOException
+	 * @throws JsonParseException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
 	 */
 	public static AmXyChartController loadAmXyChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
@@ -253,9 +253,9 @@ public class ParserJson {
 	 * Deserialize AmRadarChart from temp folder.
 	 * @param nameFileJson name of amcharts config file.
 	 * @return AmRadarChartController Controller for AmRadarChart configured. 
-	 * @throws JsonParseException
-	 * @throws JsonMappingException
-	 * @throws IOException
+	 * @throws JsonParseException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
 	 */
 	public static AmRadarChartController loadAmRadarChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
@@ -286,9 +286,9 @@ public class ParserJson {
 	 * Deserialize AmFunnelChart from temp folder.
 	 * @param nameFileJson name of amcharts config file.
 	 * @return AmFunnelChartController Controller for AmFunnelChart configured.
-	 * @throws JsonParseException
-	 * @throws JsonMappingException
-	 * @throws IOException
+	 * @throws JsonParseException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
 	 */
 	public static AmFunnelChartController loadAmFunnelChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
@@ -301,9 +301,14 @@ public class ParserJson {
 			AmChartsIOUtils.changeExport(tempFile);
 			
 			funnelController = mapper.readValue(new File(tempFile), AmFunnelChartController.class);
-			
-			addDataProviderFromJsonToAmFunnelChart(funnelController,tempFile);
 			AmChartsIOUtils.deleteTempFile(tempFile);
+			tempFile = tempFile.replace(".json", "_keys_fields.json");
+			tempFile = PathValidator.tempFileExist(tempFile);
+			if(!tempFile.isEmpty()){
+				addDataProviderFromJsonToAmFunnelChart(funnelController,tempFile);
+			}
+			
+			
 			return funnelController;
 		}else{
 			throw new IOException(I18n.get("JsonFileNotFoundException"));
@@ -315,9 +320,9 @@ public class ParserJson {
 	 * Deserialize AmPieChart from temp folder.
 	 * @param nameFileJson name of amcharts config file.
 	 * @return AmPieChartController Controller for AmPieChart configured.
-	 * @throws JsonParseException
-	 * @throws JsonMappingException
-	 * @throws IOException
+	 * @throws JsonParseException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
 	 */
 	public static AmPieChartController loadAmPieChart(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
@@ -344,9 +349,9 @@ public class ParserJson {
 	 * Deserialize AmAngularGauge from temp folder.
 	 * @param nameFileJson name of amcharts config file.
 	 * @return AmAngularGaugeController Controller for AmAngularGauge configured.
-	 * @throws JsonParseException
-	 * @throws JsonMappingException
-	 * @throws IOException
+	 * @throws JsonParseException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
 	 */
 	public static AmAngularGaugeController loadAmAngularGauge(String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
@@ -513,8 +518,9 @@ public class ParserJson {
 		Map<String,String> chartFields = funnelChart.getChartFields();
 		if(chartFields != null){
 			map.put("chartFields", chartFields);
+			mapper.writeValue(new File(tempDirectory+nameFileJson), map);
 		}
-		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
+		
 		
 	}
 		
@@ -796,6 +802,7 @@ public class ParserJson {
 		}
 		
 		funnelChartController.setDataProvider(dataProvider);	
+		
 		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	

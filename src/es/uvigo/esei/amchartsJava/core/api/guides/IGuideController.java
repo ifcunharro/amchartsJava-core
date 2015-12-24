@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.api.guides;
 
 import java.sql.Date;
 
-import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
+import es.uvigo.esei.amchartsJava.core.constants.Position;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -20,9 +20,9 @@ public abstract interface IGuideController {
 
 	/**
 	 * Set chart that use Guide.
-	 * @param Chart own of Guide.
+	 * @param chart Chart own of Guide.
 	 */
-	abstract void setChart(AmCoordinateChart c);
+	abstract void setChart(AmCoordinateChart chart);
 
 	/**
 	 * Get above property.<br>

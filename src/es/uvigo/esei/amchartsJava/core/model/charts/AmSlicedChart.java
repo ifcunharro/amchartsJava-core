@@ -23,7 +23,7 @@ public class AmSlicedChart extends AmChart {
 	
 	/**
 	 * Get colors.
-	 * @return List<String> List of colors.
+	 * @return List of colors.
 	 */
 	public List<String> getColors(){
 		return slicedColors;
@@ -57,7 +57,7 @@ public class AmSlicedChart extends AmChart {
 	
 	/**
 	 * Get gradientRatio.
-	 * @return List<Number> Values for gradient.
+	 * @return Values for gradient.
 	 */
 	public List<Number> getGradientRatio(){
 		return gradientRatio;

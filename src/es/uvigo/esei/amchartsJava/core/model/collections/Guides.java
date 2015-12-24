@@ -115,7 +115,7 @@ public class Guides {
 	
 	/**
 	 * Get Guide ids.
-	 * @return List<String> List of Guide ids.
+	 * @return List of Guide ids.
 	 */
 	public List<String> getAllGuidesIds(){
 		return idGuides;
@@ -123,7 +123,7 @@ public class Guides {
 	
 	/**
 	 * Get Guide ids to CategoryAxis. 
-	 * @return List<String> Guide ids.
+	 * @return Guide ids.
 	 */
 	public List<String> getGuideCategoryAxisIds(){
 		List<String> ids = new ArrayList<String>();
@@ -137,7 +137,7 @@ public class Guides {
 	
 	/**
 	 * Get Guide ids to radar chart. 
-	 * @return List<String> Guide ids.
+	 * @return Guide ids.
 	 */
 	public List<String> getGuideRadarChartIds(){
 		List<String> ids = new ArrayList<String>();
@@ -151,7 +151,7 @@ public class Guides {
 	
 	/**
 	 * Get Guide ids to ValueAxis. 
-	 * @return List<String> Guide ids.
+	 * @return Guide ids.
 	 */
 	public List<String> getGuideValueAxisIds(){
 		List<String> ids = new ArrayList<String>();
@@ -165,7 +165,7 @@ public class Guides {
 	
 	/**
 	 * Get Guides.
-	 * @return List<GuideController> List of Guides.
+	 * @return List of Guides.
 	 */
 	public List<GuideController> getGuides(){
 		List<GuideController> guideControllers = new ArrayList<GuideController>();

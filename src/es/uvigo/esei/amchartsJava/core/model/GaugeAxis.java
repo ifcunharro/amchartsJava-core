@@ -16,7 +16,7 @@ public class GaugeAxis extends IModel{
 	
 	/**
 	 * Get gaugeBands.
-	 * @return List<GaugeBandController> Controllers for gaugeBands.
+	 * @return Controllers for gaugeBands.
 	 */
 	public List<GaugeBandController> getBands(){
 		return gaugeBands;

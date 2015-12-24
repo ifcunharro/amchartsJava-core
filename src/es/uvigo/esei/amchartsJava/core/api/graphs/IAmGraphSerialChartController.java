@@ -3,8 +3,8 @@ package es.uvigo.esei.amchartsJava.core.api.graphs;
 
 
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
-import es.uvigo.esei.amchartsJava.core.constants.PointPositionGraphConstant.PointPositionGraph;
-import es.uvigo.esei.amchartsJava.core.constants.ShowAtConstant.ShowAt;
+import es.uvigo.esei.amchartsJava.core.constants.PointPositionGraph;
+import es.uvigo.esei.amchartsJava.core.constants.ShowAt;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;

@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 
 import java.util.List;
 
-import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
+import es.uvigo.esei.amchartsJava.core.constants.Effect;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeArrowController;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
@@ -37,13 +37,13 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 
 	/**
 	 * Get arrows of AmAngularGauge.
-	 * @return List<GaugeArrowController> Controllers of gauge arrows .
+	 * @return Controllers of gauge arrows .
 	 */
 	abstract List<GaugeArrowController> getArrows();
 
 	/**
 	 * Get axes of AmAngularGauge.
-	 * @return List<GaugeAxisController> Controllers of gauge gaugeAxis.
+	 * @return Controllers of gauge gaugeAxis.
 	 */
 	abstract List<GaugeAxisController> getAxes();
 

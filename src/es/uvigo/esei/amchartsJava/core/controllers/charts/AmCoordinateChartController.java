@@ -9,8 +9,8 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmCoordinateChartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
-import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
+import es.uvigo.esei.amchartsJava.core.constants.Effect;
+import es.uvigo.esei.amchartsJava.core.constants.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;

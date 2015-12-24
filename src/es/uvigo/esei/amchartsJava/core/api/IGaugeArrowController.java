@@ -119,7 +119,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Set nailAlpha property.
 	 * @param nailAlpha Value for nailAlpha.
-	 * @throws nailAlpha Value out of range admitted: 0.0-1.0.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
 	 */
 	abstract void setNailAlpha(Number nailAlpha) throws OutOfRangeException;
 

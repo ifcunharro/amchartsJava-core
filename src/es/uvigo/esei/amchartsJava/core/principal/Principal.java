@@ -4,7 +4,9 @@ package es.uvigo.esei.amchartsJava.core.principal;
 
 import java.io.IOException;
 
-import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.Align;
+import es.uvigo.esei.amchartsJava.core.constants.GridType;
+import es.uvigo.esei.amchartsJava.core.constants.TextAlign;
 import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.config.DefaultConfigCharts;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
@@ -237,7 +239,7 @@ public class Principal {
 		ValueAxisController va = new ValueAxisController();
 		
 		ValueAxisRadarChartController var = new ValueAxisRadarChartController();
-		var.setGridType(AmchartsConstants.GRID_TYPES.getCircles());
+		var.setGridType(GridType.circles);
 		va.enabledTotalText();
 		ags.setAlphaField("laaaa");
 		asc.setCategoryField("lola");
@@ -305,7 +307,7 @@ public class Principal {
 		}
 		AmBalloonController abc = new AmBalloonController();
 		abc.setAdjustBorderColor(true);
-		abc.setTextAlign(AmchartsConstants.TEXT_ALIGN.getTextAlignLeft());
+		abc.setTextAlign(TextAlign.left);
 		asc.addBalloon(abc);
 		ChartCursorController ccc = new ChartCursorController();
 		try {
@@ -359,7 +361,7 @@ public class Principal {
 			// TODO Auto-generated catch block
 			e4.printStackTrace();
 		} 
-		lab.setAlign(AmchartsConstants.ALIGN.getRight());
+		lab.setAlign(Align.right);
 		try {
 			lab.setAlpha(0.3);
 		} catch (OutOfRangeException e3) {
@@ -369,7 +371,7 @@ public class Principal {
 		lab.setBold(true);
 		
 		LabelController lab2 = new LabelController();
-		lab2.setAlign(AmchartsConstants.ALIGN.getRight());
+		lab2.setAlign(Align.right);
 		try {
 			lab2.setAlpha(0.6);
 		} catch (OutOfRangeException e3) {
@@ -387,7 +389,7 @@ public class Principal {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-		lc.setAlign(AmchartsConstants.ALIGN.getCenter());
+		lc.setAlign(Align.center);
 		
 	
 		
@@ -440,13 +442,13 @@ public class Principal {
 
 		try {
 			//escribe a fichero 
-			//ParserJson.saveJsonToTemp("pruebaJson.json", asc);
-			//ParserJson.saveJsonToTemp("pruebaFunnel", funnel);
+			ParserJson.saveJsonToTemp("pruebaJson.json", asc);
+			ParserJson.saveJsonToTemp("pruebaFunnel", funnel);
 			ParserJson.saveJsonToTemp("pruebaGauge", gaugec);
 			//escribe por consola
-			//ParserJson.saveJsonToConsole(asc);
+			ParserJson.saveJsonToConsole(asc);
 			
-			//ParserJson.saveJsonToConsole(funnel);
+			ParserJson.saveJsonToConsole(funnel);
 			ParserJson.saveJsonToConsole(gaugec);
 		} catch (IOException e) {
 			
@@ -464,14 +466,14 @@ public class Principal {
 		
 		try {
 
-				//serialController = ParserJson.loadAmSerialChart("pruebaJson");
-				//rec = ParserJson.loadAmFunnelChart("pruebaFunnel");
-				regauge = ParserJson.loadAmAngularGauge("pruebaGauge");
+				serialController = ParserJson.loadAmSerialChart("pruebaJson.json");
+				rec = ParserJson.loadAmFunnelChart("pruebaFunnel.json");
+				regauge = ParserJson.loadAmAngularGauge("pruebaGauge.json");
 				//sample = ParserJson.loadAmXyChart("sample");
 				
 				// se añaden todos los charts
-				//amController.addChart(serialController);
-				//amController.addChart(rec);
+				amController.addChart(serialController);
+				amController.addChart(rec);
 				amController.addChart(regauge);
 				//amController.addChart(sample);
 				
@@ -484,7 +486,7 @@ public class Principal {
 		try {
 			//comprueba que se ha leido bien el controller de carpeta temp
 			ParserJson.saveJsonToConsole(regauge);
-			//ParserJson.saveJsonToConsole(rec);
+			ParserJson.saveJsonToConsole(rec);
 			
 			//ParserJson.saveJsonToConsole(sample);
 			

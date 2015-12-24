@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmXyChartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.ChartType;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmXyChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
@@ -19,7 +20,7 @@ public class AmXyChartController extends AmRectangularChartController<AmXyChart>
 	
 	public AmXyChartController(){
 		super(new AmXyChart());
-		setType(AmchartsConstants.CHART_TYPES.getXY());
+		setType(ChartType.xy);
 	}
 	
 	@JsonProperty(value="hideXScrollbar")

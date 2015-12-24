@@ -89,7 +89,7 @@ public class ValueAxis{
 	
 	/**
 	 * Get ValueAxis ids.
-	 * @return List<String> ValueAxis ids.
+	 * @return ValueAxis ids.
 	 */
 	public List<String> getAllAxisIds(){
 		return idValueAxes;
@@ -97,7 +97,7 @@ public class ValueAxis{
 	
 	/**
 	 * Get ValueAxis ids to not radar chart.
-	 * @return List<String> ValueAxis ids.
+	 * @return ValueAxis ids.
 	 */
 	public List<String> getValueAxisIds(){
 		List<String> ids = new ArrayList<String>();
@@ -111,7 +111,7 @@ public class ValueAxis{
 	
 	/**
 	 * Get ValueAxis ids to radar chart.
-	 * @return List<String> ValueAxis ids.
+	 * @return ValueAxis ids.
 	 */
 	public List<String> getValueAxisRadarIds(){
 		List<String> ids = new ArrayList<String>();
@@ -125,7 +125,7 @@ public class ValueAxis{
 	
 	/**
 	 * Get ValueAxis.
-	 * @return List<ValueAxisController> List of ValueAxis and ValueAxisRadarChart.
+	 * @return List of ValueAxis and ValueAxisRadarChart.
 	 */
 	public List<ValueAxisController> getValueAxes(){
 		List<ValueAxisController> valueAxisControllers = new ArrayList<ValueAxisController>();

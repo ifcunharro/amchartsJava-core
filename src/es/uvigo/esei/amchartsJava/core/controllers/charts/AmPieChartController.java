@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmPieChartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.ChartType;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -20,7 +21,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 
 	public AmPieChartController() {
 		super(new AmSlicedChart());
-		setType(AmchartsConstants.CHART_TYPES.getPie());
+		setType(ChartType.pie);
 	}
 	
 	@JsonProperty(value="adjustPrecision")

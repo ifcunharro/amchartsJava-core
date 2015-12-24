@@ -20,7 +20,7 @@ public class AmChartsIOUtils {
 	/**
 	 * Change raw value for export in json file to String 
 	 * @param tempFile path to json file
-	 * @throws IOException
+	 * @throws IOException -
 	 */
 	public static void changeExport(String tempFile) throws IOException{
 		
@@ -29,7 +29,7 @@ public class AmChartsIOUtils {
 	    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
 	    
 	    FileOutputStream fos = new FileOutputStream(tempFile);
-	    IOUtils.write(content, new FileOutputStream(tempFile), Charset.defaultCharset());
+	    IOUtils.write(content, fos, Charset.defaultCharset());
 	    fis.close();
 	    fos.close();
 		
@@ -37,7 +37,6 @@ public class AmChartsIOUtils {
 	
 	/**
 	 * Clear temp directory.
-	 * @param path Path to directory
 	 */
 	public static void clearTempDirectory() {
 		File path = new File(PathValidator.getJsonDirectoryToSave());
@@ -51,7 +50,7 @@ public class AmChartsIOUtils {
 	
 	/**
 	 * Delete temp file.
-	 * @param path Path to directory
+	 * @param tempFile Path to directory
 	 */
 	public static void deleteTempFile(String tempFile) {
 		File path = new File(tempFile);

@@ -12,10 +12,10 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.axis.IValueAxisController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.AxisTypeConstant.AxisType;
-import es.uvigo.esei.amchartsJava.core.constants.DurationConstant.Duration;
-import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
-import es.uvigo.esei.amchartsJava.core.constants.StackTypeConstant.StackType;
+import es.uvigo.esei.amchartsJava.core.constants.AxisType;
+import es.uvigo.esei.amchartsJava.core.constants.Duration;
+import es.uvigo.esei.amchartsJava.core.constants.Position;
+import es.uvigo.esei.amchartsJava.core.constants.StackType;
 import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;

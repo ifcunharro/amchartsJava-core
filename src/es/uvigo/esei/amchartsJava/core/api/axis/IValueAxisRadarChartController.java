@@ -1,8 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.api.axis;
 
 
-import es.uvigo.esei.amchartsJava.core.constants.GridTypesConstant.GridType;
-import es.uvigo.esei.amchartsJava.core.constants.PointPositionAxisRadarConstant.PointPositionAxisRadar;
+import es.uvigo.esei.amchartsJava.core.constants.GridType;
+import es.uvigo.esei.amchartsJava.core.constants.PointPositionAxisRadar;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 /**

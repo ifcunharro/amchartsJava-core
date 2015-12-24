@@ -3,9 +3,10 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmFunnelChartController;
-import es.uvigo.esei.amchartsJava.core.constants.AlignConstant.Align;
+import es.uvigo.esei.amchartsJava.core.constants.Align;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.ValueRepresentsConstant.ValueRepresents;
+import es.uvigo.esei.amchartsJava.core.constants.ChartType;
+import es.uvigo.esei.amchartsJava.core.constants.ValueRepresents;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -20,7 +21,7 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 
 	public AmFunnelChartController() {
 		super(new AmSlicedChart());
-		setType(AmchartsConstants.CHART_TYPES.getFunnel());
+		setType(ChartType.funnel);
 	}
 	
 	public Integer getAngle(){

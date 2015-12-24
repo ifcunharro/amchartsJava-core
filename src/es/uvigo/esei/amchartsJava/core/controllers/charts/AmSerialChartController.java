@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmSerialChartController;
-import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.ChartType;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.CategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -26,7 +26,7 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 
 	public AmSerialChartController() {
 		super(new AmSerialChart());
-		setType(AmchartsConstants.CHART_TYPES.getSerial());
+		setType(ChartType.serial);
 	}
 	
 	public String getBalloonDateFormat(){

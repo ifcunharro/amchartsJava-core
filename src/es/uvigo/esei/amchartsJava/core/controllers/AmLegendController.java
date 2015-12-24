@@ -9,11 +9,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.AlignConstant.Align;
-import es.uvigo.esei.amchartsJava.core.constants.ValueAlignConstant.ValueAlign;
-import es.uvigo.esei.amchartsJava.core.constants.LegendPositionConstant.LegendPosition;
-import es.uvigo.esei.amchartsJava.core.constants.MarkerTypeConstant.MarkerType;
-import es.uvigo.esei.amchartsJava.core.constants.SwitchTypeConstant.SwitchType;
+import es.uvigo.esei.amchartsJava.core.constants.Align;
+import es.uvigo.esei.amchartsJava.core.constants.ValueAlign;
+import es.uvigo.esei.amchartsJava.core.constants.LegendPosition;
+import es.uvigo.esei.amchartsJava.core.constants.MarkerType;
+import es.uvigo.esei.amchartsJava.core.constants.SwitchType;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;

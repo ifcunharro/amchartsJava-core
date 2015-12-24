@@ -42,7 +42,7 @@ public abstract class AmCoordinateChart extends AmChart{
 	
 	/**
 	 * Get colors.
-	 * @return List<String> List of colors.
+	 * @return List of colors.
 	 */
 	public List<String> getColors(){
 		return colors;
@@ -59,7 +59,7 @@ public abstract class AmCoordinateChart extends AmChart{
 	
 	/**
 	 * Get graphs.
-	 * @return List<AmGraphController> List of AmGraphs.
+	 * @return List of AmGraphs.
 	 */
 	public List<AmGraphController> getGraphs() {
 		if(graphs==null){
@@ -72,7 +72,7 @@ public abstract class AmCoordinateChart extends AmChart{
 	
 	/**
 	 * Get guides.
-	 * @return List<GuideController> List of Guides.
+	 * @return List of Guides.
 	 */
 	public List<GuideController> getGuides(){
 		if(guides==null){
@@ -113,6 +113,7 @@ public abstract class AmCoordinateChart extends AmChart{
 	
 	/**
 	 * Add a graph to chart.
+	 * @param <T> Type of graph.
 	 * @param amGraphController Controller for amGraph.
 	 * @throws NotSupportedException Graph is not supported by chart.
 	 */
@@ -229,6 +230,7 @@ public abstract class AmCoordinateChart extends AmChart{
 	
 	/**
 	 * Add a Guide to chart.
+	 * @param <T> Type of guide.
 	 * @param guideController Controller for Guide
 	 * @throws NotSupportedException Guide is not supported by chart.
 	 */
@@ -290,6 +292,7 @@ public abstract class AmCoordinateChart extends AmChart{
 	
 	/**
 	 * Add a type of valueAxis to chart.
+	 * @param <T> Type of valueAxis.
 	 * @param valueAxisController Controller for valueAxis.
 	 * @throws NotSupportedException ValueAxis is not supported by chart.
 	 */

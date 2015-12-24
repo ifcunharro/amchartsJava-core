@@ -1,7 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api;
 
 
-import es.uvigo.esei.amchartsJava.core.constants.TextAlignConstant.TextAlign;
+import es.uvigo.esei.amchartsJava.core.constants.TextAlign;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;

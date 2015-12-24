@@ -5,15 +5,15 @@ package es.uvigo.esei.amchartsJava.core.api.graphs;
 import java.util.Map;
 
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
-import es.uvigo.esei.amchartsJava.core.constants.BulletConstant.Bullet;
-import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
-import es.uvigo.esei.amchartsJava.core.constants.GraphTypesConstant.GraphType;
-import es.uvigo.esei.amchartsJava.core.constants.LabelAnchorConstant.LabelAnchor;
-import es.uvigo.esei.amchartsJava.core.constants.LabelPositionConstant.LabelPosition;
-import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueTextConstant.LegendPeriodValueText;
-import es.uvigo.esei.amchartsJava.core.constants.MarkerTypeConstant.MarkerType;
-import es.uvigo.esei.amchartsJava.core.constants.TagsTextConstant.TagsText;
-import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
+import es.uvigo.esei.amchartsJava.core.constants.Bullet;
+import es.uvigo.esei.amchartsJava.core.constants.Orientation;
+import es.uvigo.esei.amchartsJava.core.constants.GraphType;
+import es.uvigo.esei.amchartsJava.core.constants.LabelAnchor;
+import es.uvigo.esei.amchartsJava.core.constants.LabelPosition;
+import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueText;
+import es.uvigo.esei.amchartsJava.core.constants.MarkerType;
+import es.uvigo.esei.amchartsJava.core.constants.TagsText;
+import es.uvigo.esei.amchartsJava.core.constants.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
@@ -102,7 +102,7 @@ public abstract interface IAmGraphController  {
 	
 	/**
 	 * Set balloonText property.
-	 * @param balloontext Value for ballonText.
+	 * @param balloonText Value for ballonText.
 	 */
 	abstract void setBalloonText(String balloonText);
 
@@ -115,7 +115,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Set bullet property.
-	 * @param Value for bullet.
+	 * @param bullet Value for bullet.
 	 */
 	abstract void setBullet(Bullet bullet);
 
@@ -340,7 +340,7 @@ public abstract interface IAmGraphController  {
 	// si se usa sin interfaz propia o sin ninguna interfaz no se realiza ningún cambio
 	/**
 	 * Set dateFormat property.
-	 * @param Value for dateFormat.
+	 * @param dateFormat Value for dateFormat.
 	 * @see es.uvigo.esei.amchartsJava.core.constants.DateFormatConstant
 	 */
 	abstract void setDateFormat(String dateFormat);
@@ -433,7 +433,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Set gradientOrientation property.
-	 * @param Value for gradientOrientation.
+	 * @param gradientOrientation Value for gradientOrientation.
 	 */
 	abstract void setGradientOrientation(Orientation gradientOrientation);
 
@@ -588,7 +588,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Set legendColor property.
-	 * @param Value for legendColor.
+	 * @param legendColor Value for legendColor.
 	 */
 	abstract void setLegendColor(ColorsAmCharts legendColor);
 
@@ -613,7 +613,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Set legendValueText property.
-	 * @param Value for legendValueText.
+	 * @param legendValueText Value for legendValueText.
 	 */
 	abstract void setLegendValueText(TagsText legendValueText);
 
@@ -682,7 +682,7 @@ public abstract interface IAmGraphController  {
 	 * @param negativeFillAlphas Value for negativeFillAlphas.
 	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
 	 */
-	abstract void setNegativeFillAlphas(Number negativeFillAlhas)
+	abstract void setNegativeFillAlphas(Number negativeFillAlphas)
 			throws OutOfRangeException;
 
 	/**
@@ -718,7 +718,7 @@ public abstract interface IAmGraphController  {
 	
 	/**
 	 * Set patternField property.
-	 * @param Value for patternField.
+	 * @param patternField Value for patternField.
 	 */
 	abstract void setPatternField(String patternField);
 
@@ -909,7 +909,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Set visibleInLegend property.
-	 * @param Show or don't show in legend.
+	 * @param visibleInLegend Show or don't show in legend.
 	 */
 	abstract void setVisibleInLegend(Boolean visibleInLegend);
 
@@ -921,7 +921,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get graphFields used by user.
-	 * @return Map<String,String> Map or relation nameField amcharts- nameField user.
+	 * @return Map or relation nameField amcharts- nameField user.
 	 */
 	abstract Map<String,String> getGraphFields();
 

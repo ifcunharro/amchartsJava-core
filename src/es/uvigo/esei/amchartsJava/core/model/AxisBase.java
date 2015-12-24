@@ -15,7 +15,7 @@ public class AxisBase extends IModel {
 
 	/**
 	 * Get nameFields used by user for axes.
-	 * @return Map<String,String> Relation fields amcharts with nameField user.
+	 * @return Relation fields amcharts with nameField user.
 	 */
 	public Map<String,String> getAxesFields(){
 		return axesFields;

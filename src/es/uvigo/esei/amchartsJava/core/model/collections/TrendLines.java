@@ -70,7 +70,7 @@ public class TrendLines {
 	
 	/**
 	 * Check exist TrendLine in collection.
-	 * @param idGraph TrendLine id.
+	 * @param idTrendLine TrendLine id.
 	 * @return boolean Exist or doesn't exist TrendLine in collection.
 	 */
 	public boolean existTrendLine(String idTrendLine){
@@ -95,7 +95,7 @@ public class TrendLines {
 
 	/**
 	 * Get TrendLine ids.
-	 * @return List<String> List of TrendLine ids.
+	 * @return List of TrendLine ids.
 	 */
 	public List<String> getAllIdsTrendLines() {
 		return idTrendLines;
@@ -103,7 +103,7 @@ public class TrendLines {
 
 	/**
 	 * Get TrendLine ids to chart type serial.
-	 * @return List<String> TrendLine ids.
+	 * @return TrendLine ids.
 	 */
 	public List<String> getTrendLineSerialIds(){
 		List<String> ids = new ArrayList<String>();
@@ -117,7 +117,7 @@ public class TrendLines {
 	
 	/**
 	 * Get TrendLine ids to chart type xy.
-	 * @return List<String> TrendLine ids.
+	 * @return TrendLine ids.
 	 */
 	public List<String> getTrendLineXyIds(){
 		List<String> ids = new ArrayList<String>();
@@ -131,7 +131,7 @@ public class TrendLines {
 	
 	/**
 	 * Get TrendLines.
-	 * @return List<TrendLineSerialChartController> List of TrendLines serial and xy.
+	 * @return List of TrendLines serial and xy.
 	 */
 	public List<TrendLineSerialChartController> getTrendLines(){
 		List<TrendLineSerialChartController> trendLineControllers = new ArrayList<TrendLineSerialChartController>();

@@ -155,7 +155,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get AmGraph ids.
-	 * @return List<String> List of AmGraph ids.
+	 * @return List of AmGraph ids.
 	 */
 	public List<String> getAllGraphsIds(){
 		return idGraphs;
@@ -163,7 +163,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get AmGraph ids of chart type serial. 
-	 * @return List<String> AmGraph ids.
+	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphSerialIds(){
 		List<String> ids = new ArrayList<String>();
@@ -177,7 +177,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get AmGraph ids of chart type step. 
-	 * @return List<String> AmGraph ids.
+	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphStepIds(){
 		List<String> ids = new ArrayList<String>();
@@ -191,7 +191,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get AmGraph ids of chart type xy. 
-	 * @return List<String> AmGraph ids.
+	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphXyIds(){
 		List<String> ids = new ArrayList<String>();
@@ -205,7 +205,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get AmGraph ids of chart type candle. 
-	 * @return List<String> AmGraph ids.
+	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphCandleIds(){
 		List<String> ids = new ArrayList<String>();
@@ -219,7 +219,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get AmGraph ids of chart type ohlc. 
-	 * @return List<String> AmGraph ids.
+	 * @return  AmGraph ids.
 	 */
 	public List<String> getAmGraphOhlcIds(){
 		List<String> ids = new ArrayList<String>();
@@ -233,7 +233,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get AmGraphs.
-	 * @return List<AmGraphController> List of AmGraphs.
+	 * @return List of AmGraphs.
 	 */
 	public List<AmGraphController> getGraphs(){
 		List<AmGraphController> amgraphControllers = new ArrayList<AmGraphController>();

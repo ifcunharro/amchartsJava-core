@@ -1,8 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.api.axis;
 
 
-import es.uvigo.esei.amchartsJava.core.constants.CategoryPositionConstant.CategoryPosition;
-import es.uvigo.esei.amchartsJava.core.constants.PeriodConstant.Period;
+import es.uvigo.esei.amchartsJava.core.constants.CategoryPosition;
+import es.uvigo.esei.amchartsJava.core.constants.Period;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 

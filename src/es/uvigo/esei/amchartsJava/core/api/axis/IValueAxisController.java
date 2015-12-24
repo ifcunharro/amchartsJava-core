@@ -6,10 +6,10 @@ import java.sql.Date;
 
 
 
-import es.uvigo.esei.amchartsJava.core.constants.AxisTypeConstant.AxisType;
-import es.uvigo.esei.amchartsJava.core.constants.DurationConstant.Duration;
-import es.uvigo.esei.amchartsJava.core.constants.PositionConstant.Position;
-import es.uvigo.esei.amchartsJava.core.constants.StackTypeConstant.StackType;
+import es.uvigo.esei.amchartsJava.core.constants.AxisType;
+import es.uvigo.esei.amchartsJava.core.constants.Duration;
+import es.uvigo.esei.amchartsJava.core.constants.Position;
+import es.uvigo.esei.amchartsJava.core.constants.StackType;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;

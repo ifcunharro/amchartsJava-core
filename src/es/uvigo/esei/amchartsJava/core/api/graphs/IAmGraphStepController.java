@@ -1,7 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api.graphs;
 
 
-import es.uvigo.esei.amchartsJava.core.constants.StepDirectionConstant.StepDirection;
+import es.uvigo.esei.amchartsJava.core.constants.StepDirection;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 /**

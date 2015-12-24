@@ -56,7 +56,7 @@ public abstract class AmChart extends IModel {
 	
 	/**
 	 * Get labels.
-	 * @return List<LabelController> List of labels.
+	 * @return List of labels.
 	 */
 	public List<LabelController> getLabels() {
 		return labels;
@@ -76,7 +76,7 @@ public abstract class AmChart extends IModel {
 	
 	/**
 	 * Get relation fields user-amcharts to charts.
-	 * @return Map<String,String> Relation user-amcharts nameFields.
+	 * @return Relation user-amcharts nameFields.
 	 */
 	public Map<String,String> getChartFields(){
 		return chartFields;
@@ -234,7 +234,7 @@ public abstract class AmChart extends IModel {
 	
 	/**
 	 * Get titles.
-	 * @return List<TitleController> List of titles.
+	 * @return List of titles.
 	 */
 	public List<TitleController> getTitles() {
 		return titles;

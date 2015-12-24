@@ -4,7 +4,7 @@ package es.uvigo.esei.amchartsJava.core.api.axis;
 import java.util.Map;
 
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
-import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
+import es.uvigo.esei.amchartsJava.core.constants.AxisPosition;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -28,7 +28,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Set autoGridCount property.
-	 * @param Enable or disable autoGridCount.
+	 * @param autoGridCount Enable or disable autoGridCount.
 	 */
 	abstract void setAutoGridCount(Boolean autoGridCount);
 
@@ -69,7 +69,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Set axisThickness property.With improvedVisibility enabled range activated.
-	 * @param Value for axisThickness.
+	 * @param axisThickness Value for axisThickness.
 	 * @throws OutOfRangeException Value out of range admitted: 0-2.
 	 */
 	abstract void setAxisThickness(Number axisThickness)
@@ -183,7 +183,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Set gridAlpha property.
-	 * @param Value for gridAlpha.
+	 * @param gridAlpha Value for gridAlpha.
 	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
 	 */
 	abstract void setGridAlpha(Number gridAlpha) throws OutOfRangeException;
@@ -316,7 +316,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minHorizontalGap property.<br>
 	 * Default: 75.
-	 * ®return Integer Value for minHorizontalGap.
+	 * @return Integer Value for minHorizontalGap.
 	 */
 	abstract Integer getMinHorizontalGap();
 
@@ -410,7 +410,7 @@ public abstract interface IAxisBaseController {
 	 * Set position property.
 	 * @param position Value for position.
 	 */
-	abstract void setPosition(Position position);
+	abstract void setPosition(AxisPosition position);
 
 	/**
 	 * Get showFirstLabel property.<br>
@@ -526,7 +526,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get user axesFields.
-	 * @return Map<String,String> Nameof axesFields used by user.
+	 * @return Name of axesFields used by user.
 	 */
 	abstract Map<String,String> getAxesFields();
 

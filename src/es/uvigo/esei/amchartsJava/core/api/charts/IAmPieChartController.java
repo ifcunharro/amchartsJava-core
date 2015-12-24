@@ -146,7 +146,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Set pieAlpha property.
 	 * @param pieAlpha Value for pieAlpha.
-	 * @throws OutOfRangeException. Value out of range admitted: 0.0-1.0.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
 	 */
 	abstract void setPieAlpha(Number pieAlpha) throws OutOfRangeException;
 
@@ -172,7 +172,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Set pieY property.
 	 * @param pieY Value for pieY.
-	 * @throws CoorException Value for pieY is not an integer number or a percent.
+	 * @throws CoordException Value for pieY is not an integer number or a percent.
 	 */
 	abstract void setPieY(String pieY) throws CoordException;
 
@@ -212,7 +212,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 
 	/**
 	 * Set startAngle property.
-	 * @param Value for startAngle.
+	 * @param startAngle Value for startAngle.
 	 * @throws OutOfRangeException Value out of range admitted: 0-360.
 	 */
 	abstract void setStartAngle(Number startAngle) throws OutOfRangeException;

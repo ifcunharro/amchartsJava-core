@@ -1,7 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.api.charts;
 
-import es.uvigo.esei.amchartsJava.core.constants.AlignConstant.Align;
-import es.uvigo.esei.amchartsJava.core.constants.ValueRepresentsConstant.ValueRepresents;
+import es.uvigo.esei.amchartsJava.core.constants.Align;
+import es.uvigo.esei.amchartsJava.core.constants.ValueRepresents;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -33,7 +33,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get balloonText property.<br>
 	 * Default: [[title]]:[[value]]\n[[description]]
-	 * @return
+	 * @return String Value for balloonText.
 	 */
 	abstract String getBalloonText();
 

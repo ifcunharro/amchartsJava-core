@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.api;
 
 import java.util.List;
 
-import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
+import es.uvigo.esei.amchartsJava.core.constants.Position;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeBandController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
@@ -123,7 +123,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get bands property.
-	 * @return List<GaugeBandController> List of GaugeBands.
+	 * @return List of GaugeBands.
 	 */
 	abstract List<GaugeBandController> getBands();
 
@@ -292,7 +292,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Set inside property.
-	 * @param Show labels inside or outside of axis.
+	 * @param inside Show labels inside or outside of axis.
 	 */
 	abstract void setInside(Boolean inside);
 
@@ -525,7 +525,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Set topTextBold property.
-	 * @param Enable or disable bold for topText.
+	 * @param topTextBold Enable or disable bold for topText.
 	 */
 	abstract void setTopTextBold(Boolean topTextBold);
 
@@ -538,7 +538,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Set topTextColor property.
 	 * @param topTextColor Value for topTextColor.
-	 * @throws ColorExceptionb Format color doesn't admitted, format admitted: #ffffff
+	 * @throws ColorException Format color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setTopTextColor(String topTextColor) throws ColorException;
 

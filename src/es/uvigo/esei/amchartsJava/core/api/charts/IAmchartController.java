@@ -14,9 +14,9 @@ import java.util.List;
 
 import java.util.Map;
 
-import es.uvigo.esei.amchartsJava.core.constants.ChartTypesConstant.ChartType;
-import es.uvigo.esei.amchartsJava.core.constants.CreditsPositionConstant.CreditsPosition;
-import es.uvigo.esei.amchartsJava.core.constants.SeparatorConstant.Separator;
+import es.uvigo.esei.amchartsJava.core.constants.ChartType;
+import es.uvigo.esei.amchartsJava.core.constants.CreditsPosition;
+import es.uvigo.esei.amchartsJava.core.constants.Separator;
 import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
@@ -40,7 +40,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	
 	/**
 	 * Get name of chartFields used by user.
-	 * @return Map<String,String> Relation between name of chartFields AmCharts and nameFields used by user.
+	 * @return Relation between name of chartFields AmCharts and nameFields used by user.
 	 */
 	abstract Map<String,String> getChartFields();
 	
@@ -415,13 +415,13 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	/**
 	 * Get titles property.
-	 * @return List<TitleController> Controllers for titles.
+	 * @return Controllers for titles.
 	 */
 	abstract List<TitleController> getTitles();
 
 	/**
 	 * Get allLabels property.
-	 * @return List<labelController> Controllers for labels.
+	 * @return Controllers for labels.
 	 */
 	abstract List<LabelController> getAllLabels();
 

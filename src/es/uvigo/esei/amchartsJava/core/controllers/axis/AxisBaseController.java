@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import es.uvigo.esei.amchartsJava.core.api.axis.IAxisBaseController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
-import es.uvigo.esei.amchartsJava.core.constants.AxisPositionConstant.Position;
+import es.uvigo.esei.amchartsJava.core.constants.AxisPosition;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -380,7 +380,7 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 		return (String) axes.getFeature("position");
 	}
 	
-	public void setPosition(Position position){
+	public void setPosition(AxisPosition position){
 		axes.setFeature("position", position.toString());
 	}
 	

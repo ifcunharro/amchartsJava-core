@@ -18,7 +18,7 @@ public class AmGraph extends IModel  {
 
 	/**
 	 * Get graphFields used by user.
-	 * @return Map<String,String> Map or relation nameField amcharts- nameField user.
+	 * @return Map or relation nameField amcharts- nameField user.
 	 */
 	public Map<String,String> getGraphFields(){
 		return graphFields;
@@ -26,7 +26,7 @@ public class AmGraph extends IModel  {
 	
 	/**
 	 * Save a relation between nameFields used by user and nameFields amcharts.
-	 * @param graphFields Map with key equals to nameField amcharts and value nameField used by user.
+	 * @param nameFields Map with key equals to nameField amcharts and value nameField used by user.
 	 */
 	public void setGraphFields(Map<String,String> nameFields){
 		if(graphFields == null){

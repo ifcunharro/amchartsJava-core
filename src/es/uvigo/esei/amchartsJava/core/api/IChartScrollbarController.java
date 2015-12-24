@@ -1,6 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.api;
 
-import es.uvigo.esei.amchartsJava.core.constants.GraphTypesConstant.GraphType;
+import es.uvigo.esei.amchartsJava.core.constants.GraphType;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -89,7 +89,7 @@ public abstract interface IChartScrollbarController {
 	 * Set dragIcon property.If dragIcon doesn't exist in images folder, amcharts try load dragIconRoundBig icon,
 	 * if that icon doesn't exist, no icon be show.
 	 * @param dragIcon Value for dragIcon. 
-	 * @see es.uvigo.esei.amchartsJava.core.constants.DragIconConstant
+	 * @see es.uvigo.esei.amchartsJava.core.constants.DragIcon
 	 */
 	abstract void setDragIcon(String dragIcon);
 

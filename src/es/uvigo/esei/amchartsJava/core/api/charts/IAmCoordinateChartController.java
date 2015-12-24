@@ -3,8 +3,8 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 
 import java.util.List;
 
-import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
-import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
+import es.uvigo.esei.amchartsJava.core.constants.Effect;
+import es.uvigo.esei.amchartsJava.core.constants.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
@@ -107,7 +107,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 
 	/**
 	 * Get colors property.
-	 * @return List<String> List of colors.
+	 * @return List of colors.
 	 */
 	abstract List<String> getColors();
 
@@ -145,7 +145,8 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	
 	/**
 	 * Add a graph to chart.
-	 * @param amGraphController Controller of a type of amGraph.
+	 * @param <T> Type of graph.
+	 * @param amGraphController is controller of a type of amGraph.
 	 * @throws NotSupportedException Chart doesn't support that type of graph.
 	 */
 	abstract  <T extends AmGraphController> void addGraph(T amGraphController) 
@@ -153,7 +154,8 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	
 	/**
 	 * Add a guide to chart.
-	 * @param guideController Controller of a type of guide.
+	 * @param <T> Type of guide.
+	 * @param guideController is a controller of a type of guide.
 	 * @throws NotSupportedException Chart doesn't support that type of guide.
 	 */
 	abstract <T extends GuideController> void addGuide(T guideController) 
@@ -161,6 +163,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 
 	/**
 	 * Add a valueAxis to chart.
+	 * @param <T> Type of valueAxis.
 	 * @param valueAxisController Controller of a type of valueAxis.
 	 * @throws NotSupportedException Chart doesn't support that type of valueAxis.
 	 */

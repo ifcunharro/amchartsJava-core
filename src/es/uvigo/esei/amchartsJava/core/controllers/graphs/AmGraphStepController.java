@@ -4,7 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphStepController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.StepDirectionConstant.StepDirection;
+import es.uvigo.esei.amchartsJava.core.constants.GraphType;
+import es.uvigo.esei.amchartsJava.core.constants.StepDirection;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
@@ -20,7 +21,7 @@ public class AmGraphStepController extends AmGraphSerialChartController
 
 
 	{
-		setType(AmchartsConstants.GRAPH_TYPES.getStep());	
+		setType(GraphType.step);	
 	}
 	
 	

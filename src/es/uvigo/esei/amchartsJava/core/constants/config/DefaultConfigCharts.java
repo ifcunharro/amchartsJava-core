@@ -1,7 +1,9 @@
 package es.uvigo.esei.amchartsJava.core.constants.config;
 
-import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.Align;
+import es.uvigo.esei.amchartsJava.core.constants.Bullet;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
+import es.uvigo.esei.amchartsJava.core.constants.AxisPosition;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
@@ -207,7 +209,7 @@ public class DefaultConfigCharts {
 		AmGraphXyController xyGraph = new AmGraphXyController();
 		
 		xyGraph.setBalloonText("x:<b>[[x]]</b> y:<b>[[y]]</b>");
-		xyGraph.setBullet(AmchartsConstants.BULLET.getDiamond());
+		xyGraph.setBullet(Bullet.diamond);
 		xyGraph.setBulletColor(ColorsAmCharts.LIME);
 		try {
 			xyGraph.setLineAlpha(0);
@@ -261,7 +263,7 @@ public class DefaultConfigCharts {
 		
 		ValueAxisController axisX = new ValueAxisController();
 		
-		axisX.setPosition(AmchartsConstants.AXIS_POSITION.getBottom());
+		axisX.setPosition(AxisPosition.bottom);
 		try {
 			axisX.setAxisAlpha(0);
 		} catch (OutOfRangeException e) {
@@ -293,7 +295,7 @@ public class DefaultConfigCharts {
 		
 		LabelController titleLabel = new LabelController();
 		
-		titleLabel.setAlign(AmchartsConstants.ALIGN.getCenter());
+		titleLabel.setAlign(Align.center);
 		titleLabel.setBold(true);
 		try {
 			titleLabel.setColor("#ff0000");

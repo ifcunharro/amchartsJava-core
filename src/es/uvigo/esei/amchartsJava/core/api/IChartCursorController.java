@@ -1,8 +1,8 @@
 package es.uvigo.esei.amchartsJava.core.api;
 
-import es.uvigo.esei.amchartsJava.core.constants.CategoryBalloonTextConstant.CategoryBalloonText;
-import es.uvigo.esei.amchartsJava.core.constants.CursorPositionConstant.CursorPosition;
-import es.uvigo.esei.amchartsJava.core.constants.OrientationConstant.Orientation;
+import es.uvigo.esei.amchartsJava.core.constants.CategoryBalloonText;
+import es.uvigo.esei.amchartsJava.core.constants.CursorPosition;
+import es.uvigo.esei.amchartsJava.core.constants.Orientation;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;

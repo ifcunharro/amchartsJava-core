@@ -35,7 +35,7 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 	
 	/**
 	 * Get plotAreaFillColors.
-	 * @return List<String> List of colors.
+	 * @return List of colors.
 	 */
 	public List<String> getPlotAreaFillColors(){
 		return plotAreaFillColors;
@@ -55,7 +55,7 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 	
 	/**
 	 * Get plotAreaFillAlphas.
-	 * @return List<Number> List of alphas.
+	 * @return List of alphas.
 	 */
 	public List<Number> getPlotAreaFillAlphas(){
 		return plotAreaFillAlphas;
@@ -121,6 +121,7 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 	
 	/**
 	 * Add a TrendLine to chart.
+	 * @param <T> Type of TrendLine.
 	 * @param trendLineController Controller for TrendLine.
 	 * @throws NotSupportedException TrendLine is not supported by chart.
 	 */

@@ -3,7 +3,7 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 
 import java.util.List;
 
-import es.uvigo.esei.amchartsJava.core.constants.GradientAngleConstant.GradientAngle;
+import es.uvigo.esei.amchartsJava.core.constants.GradientAngle;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollbarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
@@ -183,7 +183,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get plotAreaFillAlphas property.<br>
 	 * Default: 0.
-	 * @return List<Number> List of alphas to generate gradients.
+	 * @return List of alphas to generate gradients.
 	 */
 	abstract List<Number> getPlotAreaFillAlphas();
 
@@ -198,7 +198,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get plotAreaFillColors property.<br>
 	 * Default: #ffffff
-	 * @return List<String> List of colors to generate gradients.
+	 * @return List of colors to generate gradients.
 	 */
 	abstract List<String> getPlotAreaFillColors();
 
@@ -219,7 +219,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 
 	/**
 	 * Set plotAreaGradientAngle property.
-	 * @param Value for plotAreaGradientAngle.
+	 * @param plotAreaGradientAngle Value for plotAreaGradientAngle.
 	 */
 	abstract void setPlotAreaGradientAngle(GradientAngle plotAreaGradientAngle);
 
@@ -247,7 +247,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 
 	/**
 	 * Set zoomOutButtonColor property.
-	 * @param Value for zoomOutButtonColor.
+	 * @param zoomOutButtonColor Value for zoomOutButtonColor.
 	 * @throws ColorException Format color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void setZoomOutButtonColor(String zoomOutButtonColor)
@@ -351,12 +351,13 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 
 	/**
 	 * Add a chartScrollbar to chart.
-	 * @parar chartScrollbarController Controller for ChartScrollbar. 
+	 * @param chartScrollbarController Controller for ChartScrollbar. 
 	 */
 	abstract void addChartScrollbar(ChartScrollbarController chartScrollbarController);
 	
 	/**
 	 * Add a trendline to chart.
+	 * @param <T> Type of TrendLine.
 	 * @param trendLineController Controller of some type of trendline.
 	 * @throws NotSupportedException Trendline not supported by that chart.
 	 */

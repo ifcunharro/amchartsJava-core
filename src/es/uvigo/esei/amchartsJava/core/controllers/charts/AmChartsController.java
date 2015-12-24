@@ -70,7 +70,7 @@ public class AmChartsController implements Serializable {
 	/**
 	 * Set bezierY property.
 	 * @param bezierY Value for bezierY.
-	 * @throws Value for bezierY is not an integer number.
+	 * @throws IntegerException Value for bezierY is not an integer number.
 	 */
 	public void setBezierY(Number bezierY) throws IntegerException{
 		if(NumberValidator.integerValidator(bezierY)){
@@ -80,7 +80,7 @@ public class AmChartsController implements Serializable {
 	
 	/**
 	 * Get charts property.
-	 * @return List<AmChartController> List of charts.
+	 * @return List of charts.
 	 */
 	@SuppressWarnings("rawtypes")
 	public List<AmChartController> getCharts(){
@@ -89,10 +89,11 @@ public class AmChartsController implements Serializable {
 	
 	/**
 	 * Add chart to collection amcharts.
-	 * @param amchart chart to add.
+	 * @param <E> type of chart
+	 * @param amchart chart to add
 	 */
 	@SuppressWarnings("rawtypes")
-	public <E extends AmChartController>void addChart(E amchart){
+	public <E extends AmChartController> void addChart(E amchart){
 		amcharts.addChart(amchart);
 	}
 	
@@ -150,6 +151,7 @@ public class AmChartsController implements Serializable {
 	 * Get shortMonthNames property.<br>
 	 * Default: Dependient of idiom used by app.
 	 * Default amcharts: AmCharts.shortMonthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+	 * @return String Values for short months.
 	 */
 	public String getShortMonthNames(){
 		return "AmCharts.shortMonthNames = "+I18n.get("shortMonthNames");
@@ -159,6 +161,7 @@ public class AmChartsController implements Serializable {
 	 * Enable useUTC.<br>
 	 * Default: AmCharts.useUTC = false;.
 	 * @param enabled Value for enabledUseUTC.
+	 * @return String Enable or disable useUTC.
 	 */
 	public String enabledUseUTC(Boolean enabled){
 		return "AmCharts.useUTC = "+enabled.toString()+";";

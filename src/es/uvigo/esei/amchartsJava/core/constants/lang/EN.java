@@ -46,6 +46,7 @@ public class EN implements Idiom {
 	
 	/**
 	 * Get a singleton of this class.
+	 * @return Idiom Instance of app language.
 	 */
 	public static Idiom getInstance(){
 		return InitSingleton.INSTANCE;
@@ -54,7 +55,7 @@ public class EN implements Idiom {
 	/**
 	 * Get a text in english.
 	 * @param key Key asociated to text searched.
-	 * @retun String Text searched.
+	 * @return String Text searched.
 	 */
 	public String get(String key){
 		return  textsEN.get(key);

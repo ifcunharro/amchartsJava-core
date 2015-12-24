@@ -18,7 +18,7 @@ public class AmCharts extends IModel {
 
 	/**
 	 * Get charts.
-	 * @return List<AmChartController> List of charts.
+	 * @return List of charts.
 	 */
 	@SuppressWarnings("rawtypes")
 	public List<AmChartController> getCharts() {
@@ -31,6 +31,7 @@ public class AmCharts extends IModel {
 
 	/**
 	 * Add a chart.
+	 * @param <E> Type of chart.
 	 * @param amchart New chart.
 	 */
 	@SuppressWarnings("rawtypes")

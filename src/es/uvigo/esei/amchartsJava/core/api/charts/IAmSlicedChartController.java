@@ -2,8 +2,8 @@ package es.uvigo.esei.amchartsJava.core.api.charts;
 
 import java.util.List;
 
-import es.uvigo.esei.amchartsJava.core.constants.EffectConstant.Effect;
-import es.uvigo.esei.amchartsJava.core.constants.UrlTargetConstant.UrlTarget;
+import es.uvigo.esei.amchartsJava.core.constants.Effect;
+import es.uvigo.esei.amchartsJava.core.constants.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -85,7 +85,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get colors property.
-	 * @return List<String> List of colors.
+	 * @return List of colors.
 	 */
 	abstract List<String> getColors();
 
@@ -105,7 +105,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get descriptionField property.
-	 * @retun String Value for descriptionField.
+	 * @return String Value for descriptionField.
 	 */
 	abstract String getDescriptionField();
 
@@ -117,13 +117,13 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get gradientRatio property.
-	 * @return List<Number> List of gradients, a gradient is an integer number.
+	 * @return  List of gradients, a gradient is an integer number.
 	 */
 	abstract List<Number> getGradientRatio();
 
 	/**
 	 * Set gradientRatio property.
-	 * @param Values for gradientRatio.
+	 * @param gradientRatio Values for gradientRatio.
 	 */
 	abstract void setGradientRatio(Number... gradientRatio);
 
@@ -257,7 +257,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Set labelsEnabled property.
-	 * @param Enable or disable labels.
+	 * @param labelsEnabled Enable or disable labels.
 	 */
 	abstract void setLabelsEnabled(Boolean labelsEnabled);
 
@@ -355,7 +355,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Set makLabelWidth property.
-	 * @param Value for maxLabelWidth.
+	 * @param maxLabelWidth Value for maxLabelWidth.
 	 * @throws IntegerException Value for maxLabelWidth is not an integer number.
 	 */
 	abstract void setMaxLabelWidth(Number maxLabelWidth)
