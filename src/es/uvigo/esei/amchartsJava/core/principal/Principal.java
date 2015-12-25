@@ -72,6 +72,7 @@ public class Principal {
 			Config.defaultConfigureLog();
 		}
 		
+
 		//prueba de defualt charts to BEW, se prueba graph boxplot
 		AmSerialChartController chartsCandle = new AmSerialChartController();
 		DefaultConfigCharts.initDefaultCandleStickGraphToBEW(chartsCandle);

@@ -101,7 +101,7 @@ public class ParserJson {
 	public static void saveJsonToTemp(String nameFileJson,Object chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		boolean match = false;
 		if(!nameFileJson.contains(".json")){
 			nameFileJson = nameFileJson+".json";
@@ -386,7 +386,7 @@ public class ParserJson {
 	private static void saveFieldsFromAmSerialChartToTemp(String nameFileJson, AmSerialChartController serialChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 		Map<String,String> temp = null;
@@ -433,7 +433,7 @@ public class ParserJson {
 	private static void saveFieldsFromAmXyChartToTemp(String nameFileJson, AmXyChartController xyChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 		Map<String,String> temp = null;
@@ -471,7 +471,7 @@ public class ParserJson {
 	private static void saveFieldsFromAmRadarChartToTemp(String nameFileJson, AmRadarChartController radarChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 		Map<String,String> temp = null;
@@ -509,7 +509,7 @@ public class ParserJson {
 	private static void saveFieldsFromAmFunnelChartToTemp(String nameFileJson, AmFunnelChartController funnelChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 		
@@ -535,7 +535,7 @@ public class ParserJson {
 	private static void saveFieldsFromAmPieChartToTemp(String nameFileJson, AmPieChartController pieChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = PathValidator.getJsonDirectoryToSave();
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 	

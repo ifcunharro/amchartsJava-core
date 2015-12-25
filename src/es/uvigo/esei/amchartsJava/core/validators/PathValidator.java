@@ -183,26 +183,5 @@ public class PathValidator {
 		return "";
 	}
 	
-	/**
-	 * Get path to temp folder.
-	 * @return String path to temp folder.
-	 */
-	public static String getJsonDirectoryToSave(){
-		URL resourcesPath = null;
-		
-		resourcesPath = TypeValidator.class.getProtectionDomain()
-									   .getCodeSource()
-									   .getLocation();
-
-		try {
-				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY);
-		} catch (MalformedURLException e) {
-				e.printStackTrace();
-		}
-			
-		return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
-		
-	}
-	
 	
 }

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.IPatternController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -65,7 +66,7 @@ public class PatternController implements IPatternController, Serializable {
 
 	
 	//para deserializar json, usar addUrl para asignar una url
-	@SuppressWarnings("unused")
+	@JsonSetter
 	private void setUrl(String url) {
 		pattern.setFeature("url", url);
 	}
