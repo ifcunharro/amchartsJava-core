@@ -75,7 +75,7 @@ public class Principal {
 
 		//prueba de defualt charts to BEW, se prueba graph boxplot
 		AmSerialChartController chartsCandle = new AmSerialChartController();
-		DefaultConfigCharts.initDefaultCandleStickGraphToBEW(chartsCandle);
+		chartsCandle = DefaultConfigCharts.initDefaultCandleStickGraphToBEW();
 		
 		
 		DataProviderController provider = new DataProviderController();
@@ -98,7 +98,7 @@ public class Principal {
 		}*/
 		//amcharts.clear();
 		AmXyChartController chartsXY = new AmXyChartController();
-		DefaultConfigCharts.initDefaultXYGraphToBew(chartsXY, 
+		chartsXY = DefaultConfigCharts.initDefaultXYGraphToBew( 
 				"Theorical quantiles", "Sample quantiles", "Shapiro plot");
 		
 		amcharts.addChart(chartsXY);

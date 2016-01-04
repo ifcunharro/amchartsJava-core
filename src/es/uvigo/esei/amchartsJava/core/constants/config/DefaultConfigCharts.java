@@ -32,9 +32,9 @@ public class DefaultConfigCharts {
 	 * @param chart AmSerialChart to be configure.
 	 * @return AmSerialChartController Controller for AmSerialChart just configured.
 	 */
-	public static AmSerialChartController initDefaultCandleStickGraphToBEW(AmSerialChartController chart){
+	public static AmSerialChartController initDefaultCandleStickGraphToBEW(){
 		
-		
+		AmSerialChartController chart = new AmSerialChartController();
 		chart.setCategoryField("category");
 		try {
 			chart.setAngle(20);
@@ -168,9 +168,9 @@ public class DefaultConfigCharts {
 	 * @return AmXyChartController Controller for AmXyChart just configured.
 	 */
 	public static AmXyChartController initDefaultXYGraphToBew(
-			AmXyChartController chart, String titleAxisX, String titleAxisY, String titlePlot){
+			String titleAxisX, String titleAxisY, String titlePlot){
 		
-		
+		AmXyChartController chart = new AmXyChartController();
 		try {
 			chart.setMarginTop(35);
 		} catch (IntegerException e) {

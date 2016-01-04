@@ -6,19 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollbarController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;

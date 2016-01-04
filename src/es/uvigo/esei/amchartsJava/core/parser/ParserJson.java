@@ -93,87 +93,147 @@ public class ParserJson {
 	/**
 	 * Save amcharts config as json in temp folder.  
 	 * @param nameFileJson name of json file
-	 * @param chartController controller to chart.
+	 * @param chartController controller to AmSerialchart.
 	 * @throws JsonGenerationException -
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static void saveJsonToTemp(String nameFileJson,Object chartController) 
+	public static void saveJsonToTemp(String nameFileJson,AmSerialChartController chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
 		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
-		boolean match = false;
+		
 		if(!nameFileJson.contains(".json")){
 			nameFileJson = nameFileJson+".json";
 		}
 		
+		ObjectMapper mapper = getParserJson();
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+		saveFieldsFromAmSerialChartToTemp(nameFileJson, (AmSerialChartController)chartController);
+				
+			
+	}
+	
+	/**
+	 * Save amcharts config as json in temp folder.  
+	 * @param nameFileJson name of json file
+	 * @param chartController controller to AmRadarChart.
+	 * @throws JsonGenerationException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
+	 */
+	public static void saveJsonToTemp(String nameFileJson,AmRadarChartController chartController) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		
+		if(!nameFileJson.contains(".json")){
+			nameFileJson = nameFileJson+".json";
+		}
 		
 		ObjectMapper mapper = getParserJson();
-		try{
-			if((AmSerialChartController) chartController instanceof AmSerialChartController){
-				mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-				saveFieldsFromAmSerialChartToTemp(nameFileJson, (AmSerialChartController)chartController);
-				match = true;
-			}
-		}catch(ClassCastException e1){
-			e1.printStackTrace();
-		}
-		if(match == false){
-			try{
-				if((AmXyChartController) chartController instanceof AmXyChartController){
-					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-					saveFieldsFromAmXyChartToTemp(nameFileJson, (AmXyChartController)chartController);
-					match = true;
-				}
-			}catch(ClassCastException e1){
-				e1.printStackTrace();
-			}
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+		saveFieldsFromAmRadarChartToTemp(nameFileJson, chartController);
+						
+	}
+	
+	/**
+	 * Save amcharts config as json in temp folder.  
+	 * @param nameFileJson name of json file
+	 * @param chartController controller to AmFunnelChart.
+	 * @throws JsonGenerationException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
+	 */
+	public static void saveJsonToTemp(String nameFileJson,AmFunnelChartController chartController) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		
+		if(!nameFileJson.contains(".json")){
+			nameFileJson = nameFileJson+".json";
 		}
 		
-		if(match == false){
-			try{
-				if((AmRadarChartController) chartController instanceof AmRadarChartController){
-					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-					saveFieldsFromAmRadarChartToTemp(nameFileJson, (AmRadarChartController)chartController);
-					match = true;
-				}
-			}catch(ClassCastException e1){
-				e1.printStackTrace();
-			}
-		}
-		if(match == false){
-			try{
-				if((AmFunnelChartController) chartController instanceof AmFunnelChartController){
-					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-					saveFieldsFromAmFunnelChartToTemp(nameFileJson, (AmFunnelChartController)chartController);
-					match = true;
-				}
-			}catch(ClassCastException e1){
-				e1.printStackTrace();
-			}
-		}
-		if(match == false){
-			try{
-				if((AmPieChartController) chartController instanceof AmPieChartController){
-					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-					saveFieldsFromAmPieChartToTemp(nameFileJson, (AmPieChartController)chartController);
-					match=true;
-				}
-			}catch(ClassCastException e1){
-				e1.printStackTrace();
-			}
-		}
-		if(match == false){
-			try{
-				if((AmAngularGaugeController) chartController instanceof AmAngularGaugeController){
-					mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
-				}
-			}catch(ClassCastException e1){
-				e1.printStackTrace();
-			}
+		ObjectMapper mapper = getParserJson();
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+		saveFieldsFromAmFunnelChartToTemp(nameFileJson, chartController);
+						
+	}
+	
+	/**
+	 * Save amcharts config as json in temp folder.  
+	 * @param nameFileJson name of json file
+	 * @param chartController controller to AmPieChart.
+	 * @throws JsonGenerationException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
+	 */
+	public static void saveJsonToTemp(String nameFileJson,AmPieChartController chartController) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		
+		if(!nameFileJson.contains(".json")){
+			nameFileJson = nameFileJson+".json";
 		}
 		
-			
+		ObjectMapper mapper = getParserJson();
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+		saveFieldsFromAmPieChartToTemp(nameFileJson, chartController);
+						
+	}
+	
+	/**
+	 * Save amcharts config as json in temp folder.  
+	 * @param nameFileJson name of json file
+	 * @param chartController controller to AmAngularGauge.
+	 * @throws JsonGenerationException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
+	 */
+	public static void saveJsonToTemp(String nameFileJson,AmAngularGaugeController chartController) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		
+		if(!nameFileJson.contains(".json")){
+			nameFileJson = nameFileJson+".json";
+		}
+		
+		ObjectMapper mapper = getParserJson();
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+						
+	}
+	
+	
+	
+	/**
+	 * Save amcharts config as json in temp folder.  
+	 * @param nameFileJson name of json file
+	 * @param chartController controller to AmXyChart.
+	 * @throws JsonGenerationException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
+	 */
+	public static void saveJsonToTemp(String nameFileJson,AmXyChartController chartController) 
+			throws JsonGenerationException, JsonMappingException, IOException
+	{
+		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		
+		if(!nameFileJson.contains(".json")){
+			nameFileJson = nameFileJson+".json";
+		}
+		
+		ObjectMapper mapper = getParserJson();
+		
+		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
+		saveFieldsFromAmXyChartToTemp(nameFileJson, chartController);
+						
 	}
 	
 	
