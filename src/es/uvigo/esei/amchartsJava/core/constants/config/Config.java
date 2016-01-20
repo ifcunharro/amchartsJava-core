@@ -28,9 +28,11 @@ public final class Config {
 			URL localURL = Config.class.getProtectionDomain().getCodeSource()
 					.getLocation();
 			try {
-				//localURL = new URL(new URL(localURL.toString().replace("amchartsRunnable.jar", "")) + "resources/configuration.properties" );
+				//carga release si export como amchartsRunnable.jar
+				localURL = new URL(new URL(localURL.toString().replace("amchartsJava-core-3.15.1.jar", "")) + "resources/configuration.properties" );
 					
-					localURL = new URL(localURL,"../"+AmchartsJavaPaths.CONFIG_FILE_PATH );
+					//carga para debug de config
+				//localURL = new URL(localURL,"../"+AmchartsJavaPaths.CONFIG_FILE_PATH );
 					
 				try {
 					CONFIG.load(localURL.openStream());
@@ -69,10 +71,19 @@ public final class Config {
      * @param fileLog File of log.
      */
     public static void configureLog(String logPattern,String fileLog){
+    	URL logURL = null;
+		logURL = Config.class.getProtectionDomain()
+				   .getCodeSource()
+				   .getLocation();
+		try {
+			logURL = new URL(logURL,AmchartsJavaPaths.LOG_PATH+fileLog);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 		try {
 			BasicConfigurator.configure(new FileAppender(
 					new PatternLayout(logPattern), 
-					AmchartsJavaPaths.LOG_PATH+fileLog));
+					logURL.toString().substring(6)));
 		} catch (IOException e1) {
 			
 			e1.printStackTrace();
@@ -83,10 +94,19 @@ public final class Config {
      * Default configuration for log.
      */
 	public static void defaultConfigureLog(){
+		URL logURL = null;
+		logURL = Config.class.getProtectionDomain()
+				   .getCodeSource()
+				   .getLocation();
+		try {
+			logURL = new URL(logURL,AmchartsJavaPaths.LOG_PATH+"AMCHARTS.log");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 		try {
 			BasicConfigurator.configure(new FileAppender(
 					new PatternLayout("[%d{HH:mm:ss,SSS}] [%t] %-5p %c %x - %m%n"), 
-					AmchartsJavaPaths.LOG_PATH+"AMCHARTS.log"));
+					logURL.toString().substring(6)));
 		} catch (IOException e1) {
 			
 			e1.printStackTrace();

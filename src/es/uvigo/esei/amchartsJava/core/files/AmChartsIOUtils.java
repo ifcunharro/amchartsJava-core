@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 import org.apache.commons.io.IOUtils;
 
@@ -28,11 +28,11 @@ public class AmChartsIOUtils {
 	public static void changeExport(String tempFile) throws IOException{
 		
 		FileInputStream fis = new FileInputStream(tempFile);
-	    String content = IOUtils.toString(fis, Charset.defaultCharset());
+	    String content = IOUtils.toString(fis, StandardCharsets.UTF_8);
 	    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
 	    
 	    FileOutputStream fos = new FileOutputStream(tempFile);
-	    IOUtils.write(content, fos, Charset.defaultCharset());
+	    IOUtils.write(content, fos, StandardCharsets.UTF_8);
 	    fis.close();
 	    fos.close();
 		

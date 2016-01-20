@@ -457,16 +457,19 @@ public class ParserJson {
 			map.put("chartFields", chartFields);
 		}
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
+		
 		@SuppressWarnings("unchecked")
 		List<AmGraphController> graphs = (List<AmGraphController>)serialChart.getGraphs();
-		for(AmGraphController graph: graphs){
-			temp = graph.getGraphFields();
-			if(temp != null){
-				graphFields.add(temp);
+		if(graphs != null){
+			for(AmGraphController graph: graphs){
+				temp = graph.getGraphFields();
+				if(temp != null){
+					graphFields.add(temp);
+				}
 			}
-		}
-		if(!graphFields.isEmpty()){
-			map.put("graphFields", graphFields);
+			if(!graphFields.isEmpty()){
+				map.put("graphFields", graphFields);
+			}
 		}
 		
 		CategoryAxisController categoryAxis = serialChart.getCategoryAxis();
@@ -477,7 +480,6 @@ public class ParserJson {
 			}
 		}
 	
-		
 		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
 		
 	}
@@ -506,14 +508,17 @@ public class ParserJson {
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
 		@SuppressWarnings("unchecked")
 		List<AmGraphController> graphs = (List<AmGraphController>)xyChart.getGraphs();
-		for(AmGraphController graph: graphs){
-			temp = graph.getGraphFields();
-			if(temp != null){
-				graphFields.add(temp);
+		
+		if(graphs != null){
+			for(AmGraphController graph: graphs){
+				temp = graph.getGraphFields();
+				if(temp != null){
+					graphFields.add(temp);
+				}
 			}
-		}
-		if(!graphFields.isEmpty()){
-			map.put("graphFields", graphFields);
+			if(!graphFields.isEmpty()){
+				map.put("graphFields", graphFields);
+			}
 		}
 		
 		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
@@ -544,14 +549,16 @@ public class ParserJson {
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
 		@SuppressWarnings("unchecked")
 		List<AmGraphController> graphs = (List<AmGraphController>)radarChart.getGraphs();
-		for(AmGraphController graph: graphs){
-			temp = graph.getGraphFields();
-			if(temp != null){
-				graphFields.add(temp);
+		if(graphs != null){
+			for(AmGraphController graph: graphs){
+				temp = graph.getGraphFields();
+				if(temp != null){
+					graphFields.add(temp);
+				}
 			}
-		}
-		if(!graphFields.isEmpty()){
-			map.put("graphFields", graphFields);
+			if(!graphFields.isEmpty()){
+				map.put("graphFields", graphFields);
+			}
 		}
 		
 		mapper.writeValue(new File(tempDirectory+nameFileJson), map);
