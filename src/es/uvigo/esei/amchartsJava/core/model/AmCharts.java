@@ -1,6 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.model;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmChartController;
@@ -37,7 +37,7 @@ public class AmCharts extends IModel {
 	@SuppressWarnings("rawtypes")
 	public <E extends AmChartController>void addChart(E amchart) {
 		if(charts == null){
-			charts = new ArrayList<AmChartController>();
+			charts = new LinkedList<AmChartController>();
 		}
 		charts.add(amchart);
 		

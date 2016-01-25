@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonRawValue;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
@@ -34,9 +32,12 @@ public abstract class AmChart extends IModel {
 	 * Get dataProvider.
 	 * @return String DataProvider.
 	 */
-	@JsonUnwrapped
-	public String getDataProvider(){
-		return dataProvider.toString();
+	public DataProviderController getDataProvider(){
+		if(dataProvider != null){
+			return dataProvider;
+		}else{
+			return null;
+		}
 	}
 	
 	/**

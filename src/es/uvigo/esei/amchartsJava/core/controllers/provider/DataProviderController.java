@@ -22,27 +22,22 @@ public class DataProviderController implements Serializable {
 		dataProvider = new ArrayList<Map<String,Object>>();
 	}
 	
-	
 	public List<Map<String, Object>> getDataProvider(){
 		return dataProvider;
 	}
 	
-	public void setDataProvider(List<Map<String,Object>> provider){
+	public void setDataProvider(List<Map<String, Object>> provider){
 		dataProvider = provider;
 	}
 	
-	public void addData(Map<String,Object> dataController){
-		dataProvider.add(dataController);
+	public void addData(Map<String, Object> dataRow){
+		dataProvider.add(dataRow);
 	}
 	
 	@JsonIgnore
-	public void setFields(Map<String,String> nameFields){
-		
+	public boolean isEmpty(){
+		return dataProvider.isEmpty();
 	}
-	
-	
-	
-	
 	
 
 }

@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRawValue;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmchartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
@@ -35,6 +37,7 @@ import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 
 @JsonInclude(Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown=true)
 public abstract class AmChartController<E extends AmChart> 
 	implements Serializable, IAmchartController<AmChart>{
 	
@@ -49,12 +52,12 @@ public abstract class AmChartController<E extends AmChart>
 		this.setPathToImages(AmchartsJavaPaths.IMAGES_PATH);
 	}
 	
-	public String getDataProvider(){
+	@JsonUnwrapped//(no valida contenido del dataProvider)
+	public DataProviderController getDataProvider(){
 		return amchart.getDataProvider();
 	}
 	
-	@JsonIgnore
-	public void setDataProvider(DataProviderController provider){
+	public void setProvider(DataProviderController provider){
 		amchart.setDataProvider(provider);
 	}
 

@@ -2,8 +2,6 @@ package es.uvigo.esei.amchartsJava.core.constants.config;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.Properties;
@@ -113,7 +111,7 @@ public final class Config {
 		try {
 			BasicConfigurator.configure(new FileAppender(
 					new PatternLayout(logPattern), 
-					logURL.toString().substring(6)));
+					"/"+logURL.toString().substring(6,logURL.toString().length())));
 		} catch (IOException e1) {
 			
 			e1.printStackTrace();

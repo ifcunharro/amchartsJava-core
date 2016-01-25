@@ -460,7 +460,7 @@ public class ParserJson {
 		
 		@SuppressWarnings("unchecked")
 		List<AmGraphController> graphs = (List<AmGraphController>)serialChart.getGraphs();
-		if(graphs != null){
+		if(!graphs.isEmpty()){
 			for(AmGraphController graph: graphs){
 				temp = graph.getGraphFields();
 				if(temp != null){
@@ -509,7 +509,7 @@ public class ParserJson {
 		@SuppressWarnings("unchecked")
 		List<AmGraphController> graphs = (List<AmGraphController>)xyChart.getGraphs();
 		
-		if(graphs != null){
+		if(!graphs.isEmpty()){
 			for(AmGraphController graph: graphs){
 				temp = graph.getGraphFields();
 				if(temp != null){
@@ -549,7 +549,7 @@ public class ParserJson {
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
 		@SuppressWarnings("unchecked")
 		List<AmGraphController> graphs = (List<AmGraphController>)radarChart.getGraphs();
-		if(graphs != null){
+		if(!graphs.isEmpty()){
 			for(AmGraphController graph: graphs){
 				temp = graph.getGraphFields();
 				if(temp != null){
@@ -628,7 +628,7 @@ public class ParserJson {
 			throws JsonProcessingException, IOException
 	{
 		ObjectMapper mapper = getParserJson();
-		HashMap<String, Object> map = null;
+		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		//para cargar graphFields
 		List<HashMap<String,String>> listGraphFields = null;
@@ -693,7 +693,9 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		
-		serialChartController.setDataProvider(dataProvider);	
+		if(!dataProvider.isEmpty()){
+			serialChartController.setProvider(dataProvider);	
+		}
 		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	
@@ -709,7 +711,7 @@ public class ParserJson {
 			throws JsonProcessingException, IOException
 	{
 		ObjectMapper mapper = getParserJson();
-		HashMap<String, Object> map = null;
+		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		//para cargar graphFields
 		List<HashMap<String,String>> listGraphFields = null;
@@ -758,7 +760,9 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		
-		xyChartController.setDataProvider(dataProvider);	
+		if(!dataProvider.isEmpty()){
+			xyChartController.setProvider(dataProvider);	
+		}
 		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	
@@ -774,7 +778,7 @@ public class ParserJson {
 			throws JsonProcessingException, IOException
 	{
 		ObjectMapper mapper = getParserJson();
-		HashMap<String, Object> map = null;
+		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		//para cargar graphFields
 		List<HashMap<String,String>> listGraphFields = null;
@@ -823,8 +827,9 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		
-		
-		radarChartController.setDataProvider(dataProvider);		
+		if(!dataProvider.isEmpty()){
+			radarChartController.setProvider(dataProvider);		
+		}
 		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	
@@ -840,7 +845,7 @@ public class ParserJson {
 			throws JsonProcessingException, IOException
 	{
 		ObjectMapper mapper = getParserJson();
-		HashMap<String, Object> map = null;
+		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		
 		DataProviderController dataProvider = new DataProviderController();
@@ -867,8 +872,9 @@ public class ParserJson {
 		}catch(IOException e1){
 			e1.printStackTrace();
 		}
-		
-		funnelChartController.setDataProvider(dataProvider);	
+		if(!dataProvider.isEmpty()){
+			funnelChartController.setProvider(dataProvider);	
+		}
 		
 		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
@@ -885,7 +891,7 @@ public class ParserJson {
 			throws JsonProcessingException, IOException
 	{
 		ObjectMapper mapper = getParserJson();
-		HashMap<String, Object> map = null;
+		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		
 		DataProviderController dataProvider = new DataProviderController();
@@ -914,7 +920,9 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		
-		pieChartController.setDataProvider(dataProvider);		
+		if(!dataProvider.isEmpty()){
+			pieChartController.setProvider(dataProvider);	
+		}
 		AmChartsIOUtils.deleteTempFile(tempFile);
 	}
 	
