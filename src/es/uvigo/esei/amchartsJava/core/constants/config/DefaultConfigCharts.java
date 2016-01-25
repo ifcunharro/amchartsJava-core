@@ -29,7 +29,6 @@ public class DefaultConfigCharts {
 	//used by GRUBBS, LEVENE, BARLETT Y KRUSKAL-WALLIS en BEW
 	/**
 	 * Create default CandleStickGraph(boxplot)
-	 * @param chart AmSerialChart to be configure.
 	 * @return AmSerialChartController Controller for AmSerialChart just configured.
 	 */
 	public static AmSerialChartController initDefaultCandleStickGraphToBEW(){
@@ -161,7 +160,6 @@ public class DefaultConfigCharts {
 	
 	/**
 	 * Create default AmXyChart with trendLine.
-	 * @param chart AmXyChart to be configure.
 	 * @param titleAxisX Text for axisX.
 	 * @param titleAxisY Text for axisY.
 	 * @param titlePlot Title of plot.

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This class contains all texts used by amchharts core in english idiom.
+ * This class contains all texts used by amcharts core in english idiom.
  * @author Iago Fernández Cuñarro
  *
  */
