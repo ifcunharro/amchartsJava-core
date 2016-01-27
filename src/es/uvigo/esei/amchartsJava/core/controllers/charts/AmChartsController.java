@@ -25,20 +25,8 @@ public class AmChartsController implements Serializable, IAmChartsController {
 	private static final long serialVersionUID = 1L;
 	private AmCharts amcharts;
 	
-	private AmChartsController(){
+	{
 		amcharts = new AmCharts();
-	}
-	
-	private static class InitSingleton{
-		private static final AmChartsController INSTANCE = new AmChartsController();
-	}
-	
-	/**
-	 * Get an singleton instance of this class.
-	 * @return Instance of AmChartsController class.
-	 */
-	public static AmChartsController getInstance(){
-		return InitSingleton.INSTANCE;
 	}
 	
 	public String enabledBaseHref(Boolean enabled){
