@@ -27,14 +27,15 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
+/**
+ * This class is a controller for GaugeArrow.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class GaugeArrowController implements Serializable,Observer, IGaugeArrowController {
 
 	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 963880554698117462L;
 	private AmAngularGauge amchart;
 	private GaugeArrow gaugeArrow;

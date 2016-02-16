@@ -21,6 +21,11 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for AmCoordinateChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown=true)
 public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
@@ -96,8 +101,6 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		amchart.setFeature("urlTarget", urlTarget.toString());
 	}
 	
-	//methods
-	//colors problema tipo prefixes
 	public List<String> getColors(){
 		return amchart.getColors();
 	}
@@ -114,17 +117,14 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		}
 	}
 	
-	//graphs
 	public Object getGraphs(){
 		return amchart.getGraphs();
 	}
 	
-	//guides
 	public Object getGuides(){
 		return amchart.getGuides();
 	}
 	
-	//valueAxes
 	public Object getValueAxes(){
 		return amchart.getValueAxes();
 	}

@@ -9,13 +9,14 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmXyChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-
+/**
+ * This class is a controller for AmXyChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmXyChartController extends AmRectangularChartController<AmXyChart> 
 	implements IAmXyChartController {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6384139590503426071L;
 	
 	public AmXyChartController(){
@@ -56,7 +57,5 @@ public class AmXyChartController extends AmRectangularChartController<AmXyChart>
 			amchart.setFeature("maxZoomFactor", maxZoomFactor);
 		}
 	}
-
-	
 
 }

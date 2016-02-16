@@ -25,7 +25,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get align property.<br>
 	 * Default: left
-	 * @return String Value of align.
+	 * @return Value of align.
 	 */
 	abstract String getAlign();
 
@@ -38,7 +38,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get autoMargins property.<br>
 	 * Default: true
-	 * @return Boolean
+	 * @return Value of autoMargins.
 	 */
 	abstract Boolean isAutoMargins();
 
@@ -51,7 +51,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get backgroundAlpha property.<br>
 	 * Default: 0
-	 * @return Double Value for backgroundAlpha.
+	 * @return Value of backgroundAlpha.
 	 */
 	abstract Double getBackgroundAlpha();
 
@@ -66,7 +66,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get backgroundColor property.<br>
 	 * Default: #ffffff
-	 * @return String Value for backgroundColor.
+	 * @return Value of backgroundColor.
 	 */
 	abstract String getBackgroundColor();
 
@@ -81,7 +81,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get borderAlpha property.<br>
 	 * Default: 0
-	 * @return Doulbe Value for borderAlpha.
+	 * @return Value of borderAlpha.
 	 */
 	abstract Double getBorderAlpha();
 
@@ -95,7 +95,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get borderColor property.<br>
 	 * Default: #000000
-	 * @return String Value for borderColor.
+	 * @return Value of borderColor.
 	 */
 	abstract String getBorderColor();
 
@@ -108,7 +108,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get bottom property.
-	 * @return Integer Value for bottom.
+	 * @return Value of bottom.
 	 */
 	abstract Integer getBottom();
 
@@ -122,7 +122,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get color property.<br>
 	 * Default: #000000
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -135,7 +135,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get divId property.
-	 * @return String Value for divId.
+	 * @return Value of divId.
 	 */
 	abstract String getDivId();
 
@@ -148,7 +148,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get enabled property.<br>
 	 * Default: true
-	 * @return Boolean
+	 * @return Value of enabled.
 	 */
 	abstract Boolean isEnabled();
 
@@ -161,7 +161,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get equalWidths property.<br>
 	 * Default: true
-	 * @return Boolean
+	 * @return Value of equalWidths.
 	 */
 	abstract Boolean isEqualWidths();
 
@@ -174,7 +174,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get fontSize property.<br>
 	 * Default: 11
-	 * @return Integer Value for fontSize.
+	 * @return Value of fontSize.
 	 */
 	abstract Integer getFontSize();
 
@@ -188,7 +188,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get forceWidth property.<br>
 	 * Default false
-	 * @return Boolean
+	 * @return Value of forceWidth.
 	 */
 	abstract Boolean isForceWidth();
 
@@ -201,7 +201,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get horizontalGap property.<br>
 	 * Default: 0
-	 * @return Integer Value for horizontalGap.
+	 * @return Value of horizontalGap.
 	 */
 	abstract Integer getHorizontalGap();
 
@@ -215,7 +215,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get labelText property.<br>
 	 * Default: [[title]]
-	 * @return String Value for labelText.
+	 * @return Value of labelText.
 	 */
 	abstract String getLabelText();
 
@@ -227,7 +227,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get labelWidth property
-	 * @return Object Value for labelWidth is an integer number.
+	 * @return Value of labelWidth.
 	 */
 	abstract Integer getLabelWidth();
 
@@ -240,7 +240,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get left property.
-	 * @return Object Value for left.
+	 * @return Value of left.
 	 */
 	abstract Integer getLeft();
 
@@ -254,7 +254,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 0
-	 * @return Object Value for marginBottom.
+	 * @return Value of marginBottom.
 	 */
 	abstract Integer getMarginBottom();
 
@@ -268,7 +268,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 20
-	 * @return Object Value for marginLeft.
+	 * @return Value of marginLeft.
 	 */
 	abstract Integer getMarginLeft();
 
@@ -282,7 +282,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 20
-	 * @return Object Value for marginRight.
+	 * @return Value of marginRight.
 	 */
 	abstract Integer getMarginRight();
 
@@ -296,7 +296,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 0
-	 * @return Object Value for marginTop.
+	 * @return Value of marginTop.
 	 */
 	abstract Integer getMarginTop();
 
@@ -310,7 +310,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerBorderAlpha property.
 	 * Default: 1
-	 * @return Object Value for markerBorderAlpha.
+	 * @return Value of markerBorderAlpha.
 	 */
 	abstract Double getMarkerBorderAlpha();
 
@@ -325,7 +325,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerBorderColor property.
 	 * Default: Same color that marker.
-	 * @return String Value for markerBorderColor.
+	 * @return Value of markerBorderColor.
 	 */
 	abstract String getMarkerBorderColor();
 
@@ -340,7 +340,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerBorderThickness property.
 	 * Default: 1
-	 * @return Object Value for markerBorderThickness.
+	 * @return Value of markerBorderThickness.
 	 */
 	abstract Integer getMarkerBorderThickness();
 
@@ -355,7 +355,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerDisabledColor property.<br>
 	 * Default: #aab3b3
-	 * @return String Value for markerDisabledColor.
+	 * @return Value of markerDisabledColor.
 	 */
 	abstract String getMarkerDisabledColor();
 
@@ -370,7 +370,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerLabelGap property.<br>
 	 * Default: 5
-	 * @return Object Value for markerLabelGap.
+	 * @return Value of markerLabelGap.
 	 */
 	abstract Integer getMarkerLabelGap();
 
@@ -385,7 +385,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerSize property.
 	 * Default: 16
-	 * @return Object Value for markerSize.
+	 * @return Value of markerSize.
 	 */
 	abstract Integer getMarkerSize();
 
@@ -399,7 +399,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get markerType property.
 	 * Default: square
-	 * @return String Value for markerType.
+	 * @return Value of markerType.
 	 */
 	abstract String getMarkerType();
 
@@ -411,7 +411,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get maxColumns property.
-	 * @return Object Value for maxColumns.
+	 * @return Value of maxColumns.
 	 */
 	abstract Integer getMaxColumns();
 
@@ -424,7 +424,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get periodValueText property.
-	 * @return String Value for periodValueText.
+	 * @return Value of periodValueText.
 	 */
 	abstract String getPeriodValueText();
 
@@ -437,7 +437,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get position property.<br>
 	 * Default: bottom.
-	 * @return String Value for position.
+	 * @return Value of position.
 	 */
 	abstract String getPosition();
 	
@@ -450,12 +450,12 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get reversedOrder property.<br>
 	 * Default: false.
-	 * @return Boolean Value for reversedOrder.
+	 * @return Value of reversedOrder.
 	 */
 	abstract Boolean isReversedOrder();
 
 	/**
-	 * Set reversed
+	 * Set reversed property.
 	 * @param reversedOrder Enable or disable reversedOrder.
 	 */
 	abstract void setReversedOrder(Boolean reversedOrder);
@@ -476,7 +476,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get rollOverColor property.<br>
 	 * Default: #cc0000
-	 * @return String Valiue for rollOverColor.
+	 * @return Value for rollOverColor.
 	 */
 	abstract String getRollOverColor();
 
@@ -490,7 +490,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get rollOverGraphAlpha property.<br>
 	 * Default: 1.
-	 * @return Object Value for rollOverGraphAlpha.
+	 * @return Value of rollOverGraphAlpha.
 	 */
 	abstract Double getRollOverGraphAlpha();
 
@@ -505,7 +505,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get showEntries property.<br>
 	 * Default: true.
-	 * @return Boolean Value for showEntries.
+	 * @return Value of showEntries.
 	 */
 	abstract Boolean isShowEntries();
 
@@ -518,7 +518,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get spacing property.<br>
 	 * Default: 10
-	 * @return Object Value for spacing.
+	 * @return Value of spacing.
 	 */
 	abstract Integer getSpacing();
 	
@@ -532,7 +532,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get switchable property.<br>
 	 * Default: true.
-	 * @return Boolean Value for switchable.
+	 * @return Value of switchable.
 	 */
 	abstract Boolean isSwitchable();
 
@@ -545,7 +545,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get switchColor property.<br>
 	 * Default: #ffffff
-	 * @return String Value for switchColor.
+	 * @return Value of switchColor.
 	 */
 	abstract String getSwitchColor();
 
@@ -559,7 +559,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get switchType property.<br>
 	 * Default: x.
-	 * @return String Value for switchType.
+	 * @return Value of switchType.
 	 */
 	abstract String getSwitchType();
 
@@ -572,7 +572,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get textClickEnabled property.<br>
 	 * Default: false.
-	 * @return Boolean Value for textClickEnabled.
+	 * @return Value of textClickEnabled.
 	 */
 	abstract Boolean isTextClickEnabled();
 
@@ -584,7 +584,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get top property.
-	 * @return Object Value for top.
+	 * @return Value of top.
 	 */
 	abstract Integer getTop();
 
@@ -598,7 +598,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get useGraphSettings property.<br>
 	 * Default: false.
-	 * @return Boolean Value for useGraphSettings.
+	 * @return Value of useGraphSettings.
 	 */
 	abstract Boolean isUseGraphSettings();
 
@@ -611,7 +611,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get useMarkerColorForLabels property.<br>
 	 * Default: false.
-	 * @return Boolean Value for useMarkerColorForLabels.
+	 * @return Value of useMarkerColorForLabels.
 	 */
 	abstract Boolean isUseMarkerColorForLabels();
 
@@ -624,7 +624,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get useMarkerColorForValues property.<br>
 	 * Default: false.
-	 * @return Boolean Value for useMarkerColorForValues.
+	 * @return Value of useMarkerColorForValues.
 	 */
 	abstract Boolean isUseMarkerColorForValues();
 
@@ -637,7 +637,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get valueAlign property.<br>
 	 * Default: right.
-	 * @return String Value for valueAlign.
+	 * @return Value of valueAlign.
 	 */
 	abstract String getValueAlign();
 
@@ -649,7 +649,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get valueFunction property.
-	 * @return String Value for valueFunction.
+	 * @return Value of valueFunction.
 	 */
 	abstract String getValueFunction();
 
@@ -662,7 +662,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get valueText property.<br>
 	 * Default: [[value]]
-	 * @return String Value for valueText.
+	 * @return Value of valueText.
 	 */
 	abstract String getValueText();
 
@@ -675,7 +675,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get valueWidth property.<br>
 	 * Default: 50.
-	 * @return Object Value for valueWidth.
+	 * @return Value of valueWidth.
 	 */
 	abstract Integer getValueWidth();
 
@@ -689,7 +689,7 @@ public abstract interface IAmLegendController  {
 	/**
 	 * Get verticalGap property.<br>
 	 * Default: 10
-	 * @return Object Value for verticalGap.
+	 * @return Value of verticalGap.
 	 */
 	abstract Integer getVerticalGap();
 
@@ -702,7 +702,7 @@ public abstract interface IAmLegendController  {
 
 	/**
 	 * Get width property.
-	 * @return Object Value for width.
+	 * @return Value of width.
 	 */
 	abstract Integer getWidth();
 

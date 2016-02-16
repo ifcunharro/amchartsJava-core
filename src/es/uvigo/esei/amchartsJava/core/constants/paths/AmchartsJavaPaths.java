@@ -14,20 +14,34 @@ public final class AmchartsJavaPaths {
 		
 	}
 	
-	//path to folder amcharts.
+	/**
+	 * Path to folder amcharts.
+	 */
 	public static final String AMCHARTS_PATH;
-	//para pathToImages, deprecated usar AMCHARTS_PATH en propieda path de amcharts,
-	//se conserva para validar imagen en carpeta images
+	/**
+	 * Path to images folder, this path is used by pathToImages property, that property
+	 * is deprecated but this path is used to validate that image exist in images folder.
+	 */
 	public static final String IMAGES_PATH;
-	//path to folder themes
+	/**
+	 * Path to themes folder.
+	 */
 	public static final String THEMES_PATH;
-	//path to folder patterns
+	/**
+	 * Path to patterns folder
+	 */
 	public static final String URL_PATTERNS;
-	//path to directory temp, used to save temp files of app
+	/**
+	 * Path to directory temp, used to save temp files of app.
+	 */
 	public static final String TEMP_DIRECTORY;
-	//path to properties
+	/**
+	 * Path to properties used to configure app.
+	 */
 	public static final String CONFIG_FILE_PATH;
-	//path to folder where save logs
+	/**
+	 * Path to log folder.
+	 */
 	public static final String LOG_PATH;
 	
 	static{

@@ -28,6 +28,7 @@ public class ES implements Idiom {
 		textsES.put("JsonFileNotFoundException", "Archivo json no encontrado en directorio temp");
 		textsES.put("PropertiesException", "No encontrado configuration.properties en carpeta resources");
 		textsES.put("ConfigKeyException", "no encontrada en archivo de configuración");
+		textsES.put("ChartCastException","No se puede convertir a chart");
 		
 		textsES.put("dayNames", "['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];");
 		textsES.put("shortDayNames","['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];");

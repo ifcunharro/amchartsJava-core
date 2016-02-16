@@ -4,11 +4,13 @@ import es.uvigo.esei.amchartsJava.core.api.guides.IGuideValueAxisController;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for Guide used by ValueAxis.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class GuideValueAxisController extends GuideController implements IGuideValueAxisController {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7932113405386773028L;
 
 	public Double getToValue(){

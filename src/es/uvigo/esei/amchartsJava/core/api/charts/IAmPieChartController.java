@@ -18,7 +18,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get adjustPrecision property.<br>
 	 * Default: false.
-	 * @return Boolean Value for adjustPrecision.
+	 * @return Value of adjustPrecision.
 	 */
 	abstract Boolean isAdjustPrecision();
 
@@ -31,7 +31,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get angle property.<br>
 	 * Default: 0.
-	 * @return Integer Value for angle.
+	 * @return Value of angle.
 	 */
 	abstract Integer getAngle();
 
@@ -45,7 +45,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get balloonText property.<br>
 	 * Default: [[title]]: [[percents]]% ([[value]])\n[[description]]
-	 * @return String Value for balloonText.
+	 * @return Value of balloonText.
 	 */
 	abstract String getBalloonText();
 
@@ -58,7 +58,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get depth3D property.<br>
 	 * Default: 0.
-	 * @return Integer Value for depth3D.
+	 * @return Value of depth3D.
 	 */
 	abstract Integer getDepth3D();
 
@@ -72,21 +72,21 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get innerRadius property.<br>
 	 * Default: 0.
-	 * @return String Value for innerRadius is an integer number or a percent.
+	 * @return Value of innerRadius.
 	 */
 	abstract String getInnerRadius();
 
 	/**
 	 * Set innerRadius property.
 	 * @param innerRadius Value for innerRadius.
-	 * @throws CoordException Value for innerRadius is not an integer number or a percnent.
+	 * @throws CoordException Value for innerRadius is not an integer number or a percent.
 	 */
 	abstract void setInnerRadius(String innerRadius) throws CoordException;
 
 	/**
 	 * Get labelRadius property.<br>
 	 * Default: 20.
-	 * @return Integer Value for labelRadius.
+	 * @return Value of labelRadius.
 	 */
 	abstract Integer getLabelRadius();
 
@@ -99,7 +99,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 
 	/**
 	 * Get labelRadiusField property.
-	 * @return String Value for labelRadiusField.
+	 * @return Value of labelRadiusField.
 	 */
 	abstract String getLabelRadiusField();
 
@@ -112,7 +112,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get labelText property.<br>
 	 * Default: [[title]]: [[percents]]%
-	 * @return String Value for labelText.
+	 * @return Value of labelText.
 	 */
 	abstract String getLabelText();
 
@@ -125,7 +125,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get minRadius property.<br>
 	 * Default: 10.
-	 * @return Integer Value for minRadius.
+	 * @return Value of minRadius.
 	 */
 	abstract Integer getMinRadius();
 
@@ -139,7 +139,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get pieAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for pieAlpha.
+	 * @return Value of pieAlpha.
 	 */
 	abstract Double getPieAlpha();
 
@@ -152,7 +152,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 
 	/**
 	 * Get pieX property.
-	 * @return String Value for pieX is an integer number or a percent.
+	 * @return Value of pieX.
 	 */
 	abstract String getPieX();
 
@@ -165,7 +165,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 
 	/**
 	 * Get pieY property.
-	 * @return String Value for pieY is an integer number or a percent.
+	 * @return Value of pieY.
 	 */
 	abstract String getPieY();
 
@@ -179,7 +179,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get pullOutRadius property.<br>
 	 * Default: 20%.
-	 * @return String Value for pullOutRadius is an integer number or a percent.
+	 * @return Value of pullOutRadius.
 	 */
 	abstract String getPullOutRadius();
 
@@ -192,7 +192,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 
 	/**
 	 * Get radius property.
-	 * @return String Value for radius is an integer number or a percent.
+	 * @return Value of radius.
 	 */
 	abstract String getRadius();
 
@@ -206,7 +206,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get startAngle property.<br>
 	 * Default: 90.
-	 * @return Integer Value for startAngle.
+	 * @return Value of startAngle.
 	 */
 	abstract Integer getStartAngle();
 
@@ -220,7 +220,7 @@ public abstract interface IAmPieChartController extends IAmSlicedChartController
 	/**
 	 * Get startRadius property.<br>
 	 * Default: 500%.
-	 * @return String Value for startRadius is an integer number or a percent.
+	 * @return Value of startRadius.
 	 */
 	abstract String getStartRadius();
 

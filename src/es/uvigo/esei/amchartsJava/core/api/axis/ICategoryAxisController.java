@@ -18,7 +18,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 
 	/**
 	 * Get autoRotateAngle property.
-	 * @return Integer Value for autoRotateAngle.
+	 * @return Value of autoRotateAngle.
 	 */
 	abstract Integer getAutoRotateAngle();
 
@@ -32,7 +32,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 
 	/**
 	 * Get autoRotateCount property.
-	 * @return Integer Value for autoRotateCount.
+	 * @return Value of autoRotateCount.
 	 */
 	abstract Integer getAutoRotateCount();
 
@@ -47,7 +47,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get autoWrap property.<br>
 	 * Default: false.
-	 * @return Boolean Value for autoWrap.
+	 * @return Value of autoWrap.
 	 */
 	abstract Boolean isAutoWrap();
 
@@ -60,7 +60,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get boldPeriodBeginning property.<br>
 	 * Default: true.
-	 * @return Boolean Value for boldPeriodBeginning.
+	 * @return Value of boldPeriodBeginning.
 	 */
 	abstract Boolean isBoldPeriodBeginning();
 
@@ -72,7 +72,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 
 	/**
 	 * Get categoryFunction property.
-	 * @return String Value for categoryFunction.
+	 * @return Value of categoryFunction.
 	 */
 	abstract String getCategoryFunction();
 
@@ -85,7 +85,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get centerLabelOnFullPeriod property.<br>
 	 * Default: true.
-	 * @return Boolean Value for centerLabelOnFullPeriod.
+	 * @return Value of centerLabelOnFullPeriod.
 	 */
 	abstract Boolean isCenterLabelOnFullPeriod();
 
@@ -98,7 +98,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get equalSpacing property.<br>
 	 * Default: false.
-	 * @return Boolean Value for equalSpacing.
+	 * @return Value of equalSpacing.
 	 */
 	abstract Boolean isEqualSpacing();
 
@@ -111,7 +111,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get firstDayOfWeek property.<br>
 	 * Default: 1.
-	 * @return Integer Value for firstDayOfWeek.
+	 * @return Value of firstDayOfWeek.
 	 */
 	abstract Integer getFirstDayOfWeek();
 
@@ -125,7 +125,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 
 	/**
 	 * Get forceShowField property.
-	 * @return String Value for forceShowField.
+	 * @return Value of forceShowField.
 	 */
 	abstract String getForceShowField();
 
@@ -138,7 +138,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get gridPosition property.<br>
 	 * Default: middle.
-	 * @return String Value for gridPosition.
+	 * @return Value of gridPosition.
 	 */
 	abstract String getGridPosition();
 
@@ -150,7 +150,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 
 	/**
 	 * Get labelColorField property.
-	 * @return String Value for labelColorField.
+	 * @return Value of labelColorField.
 	 */
 	abstract String getLabelColorField();
 
@@ -162,7 +162,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 
 	/**
 	 * Get labelFunction property.
-	 * @return String Value for labelFunction.
+	 * @return Value of labelFunction.
 	 */
 	abstract String getLabelFunction();
 
@@ -175,7 +175,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get markPeriodChange property.<br>
 	 * Default: true.
-	 * @return Boolean Value for markPeriodChange.
+	 * @return Value of markPeriodChange.
 	 */
 	abstract Boolean isMarkPeriodChange();
 
@@ -188,7 +188,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get minPeriod property.<br>
 	 * Default: DD.
-	 * @return String Value for minPeriod.
+	 * @return Value of minPeriod.
 	 */
 	abstract String getMinPeriod();
 
@@ -201,7 +201,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get parseDates property.<br>
 	 * Default: false.
-	 * @return Boolean Value for parseDates.
+	 * @return Value of parseDates.
 	 */
 	abstract Boolean isParseDates();
 
@@ -214,7 +214,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get startOnAxis property.<br>
 	 * Default: false.
-	 * @return Boolean Value for startOnAxis.
+	 * @return Value of startOnAxis.
 	 */
 	abstract Boolean isStartOnAxis();
 
@@ -227,7 +227,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get tickPosition property.<br>
 	 * Default: middle.
-	 * @return String Value for tickPosition.
+	 * @return Value of tickPosition.
 	 */
 	abstract String getTickPosition();
 
@@ -240,7 +240,7 @@ public abstract interface ICategoryAxisController extends IAxisBaseController {
 	/**
 	 * Get twoLineMode property.<br>
 	 * Default: false.
-	 * @return Boolean Value for twoLineMode.
+	 * @return Value of twoLineMode.
 	 */
 	abstract Boolean isTwoLineMode();
 

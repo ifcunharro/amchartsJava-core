@@ -17,6 +17,11 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmSlicedChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for AmSlicedChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public abstract class AmSlicedChartController<F extends AmSlicedChart> extends AmChartController<F> 
 	implements IAmSlicedChartController<F> {

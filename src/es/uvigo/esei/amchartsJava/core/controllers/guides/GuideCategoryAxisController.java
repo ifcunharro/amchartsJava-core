@@ -6,15 +6,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.guides.IGuideCategoryAxisController;
 
+/**
+ * This class is a controller for Guide used by CategoryAxis
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class GuideCategoryAxisController extends GuideController 
 	implements IGuideCategoryAxisController {
 	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -370496836869918203L;
 	
 	{
+		//property used only by Guide used by CategoyAxis. Used to deserialize Guide to this class
 		setExpand(false);
 	}
 
@@ -47,7 +51,6 @@ public class GuideCategoryAxisController extends GuideController
 		return (String) guide.getFeature("toCategory");
 	}
 	
-	//falta comprobar categoria existente dataProvider
 	public void setToCategory(String toCategory){
 		guide.setFeature("toCategory", toCategory);
 	}

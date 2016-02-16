@@ -16,14 +16,15 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
+/**
+ * This class is a controller for GaugeBand.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class GaugeBandController implements Serializable, Observer, IGaugeBandController {
 	
 	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1728461584920562660L;
 	private GaugeBand gaugeBand;
 

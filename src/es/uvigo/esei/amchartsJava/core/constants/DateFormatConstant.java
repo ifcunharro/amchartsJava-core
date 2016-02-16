@@ -19,7 +19,7 @@ public final class DateFormatConstant {
 	 * Get dateFormat values.
 	 * @return String[] dateFormat values.
 	 */
-	public static String[] getDateFormat() {
+	static String[] getDateFormat() {
 		return DateFormat;
 	}
 

@@ -16,12 +16,15 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
+/**
+ * This class is a controller for Image.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class ImageController implements Serializable, IImageController {
 	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -9178942548336014702L;
 	private Image image;
 	
@@ -85,8 +88,10 @@ public class ImageController implements Serializable, IImageController {
 		}
 	}
 	
-	public Object getOffsetY(){
-		return image.getFeature("offsetY");
+	public Integer getOffsetY(){
+		Object offsetY = image.getFeature("offsetY");
+		
+		return offsetY != null ? ((Number)offsetY).intValue() : null;
 	}
 	
 	public void setOffsetY(Number offsetY) throws IntegerException{
@@ -117,14 +122,10 @@ public class ImageController implements Serializable, IImageController {
 		}
 	}
 	
-	//svgPath
-	
 	public String getUrl(){
 		return (String) image.getFeature("url");
 	}
 	
-	//en vez de url, introduce solo nombre imagen con su extensión o sin ella, la url se completa con
-	//IMAGES_PATH definido en AmchartsJavaPaths
 	public void setUrl(String nameImage){
 		String nameImageValidated = PathValidator.imageExist(AmchartsJavaPaths.IMAGES_PATH+nameImage);
 		if(nameImageValidated.length()>0){

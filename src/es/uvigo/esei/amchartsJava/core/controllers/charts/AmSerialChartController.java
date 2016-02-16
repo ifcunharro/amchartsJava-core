@@ -14,13 +14,14 @@ import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
 
 
-
+/**
+ * This class is controller for AmSerialChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmSerialChartController extends AmRectangularChartController<AmSerialChart> 
 	implements IAmSerialChartController {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4770522225786632974L;
 	
 

@@ -19,7 +19,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get adjustBorderColor property.<br>
 	 * Default: true
-	 * @return Boolean 
+	 * @return Value of adjustBorderColor.
 	 */
 	abstract Boolean isAdjustBorderColor();
 
@@ -32,7 +32,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get animationDuration property.<br>
 	 * Default: 0.3
-	 * @return Double Value for animationDuration.
+	 * @return Value of animationDuration.
 	 */
 	abstract Double getAnimationDuration();
 
@@ -47,7 +47,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get borderAlpha property.<br>
 	 * Default: 1
-	 * @return Double Value for borderAlpha.
+	 * @return Value of borderAlpha.
 	 */
 	abstract Double getBorderAlpha();
 
@@ -61,7 +61,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get borderColor property.<br>
 	 * Default: #ffffff
-	 * @return String Value of borderColor.
+	 * @return Value of borderColor.
 	 */
 	abstract String getBorderColor();
 
@@ -75,7 +75,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get borderThickness property.<br>
 	 * Default: 2
-	 * @return Integer Value for borderThickness.
+	 * @return Value of borderThickness.
 	 */
 	abstract Integer getBorderThickness();
 
@@ -90,7 +90,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get color property.<br>
 	 * Default: #000000
-	 * @return String Value of Color.
+	 * @return Value of Color.
 	 */
 	abstract String getColor();
 
@@ -104,7 +104,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get cornerRadius property.<br>
 	 * Default: 0
-	 * @return Integer Value of corneRadius.
+	 * @return Value of cornerRadius.
 	 */
 	abstract Integer getCornerRadius();
 
@@ -118,7 +118,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get disableMouseEvents property.<br>
 	 * Default: true
-	 * @return Boolean
+	 * @return Value of disableMouseEvents.
 	 */
 	abstract Boolean isDisableMouseEvents();
 	
@@ -131,7 +131,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get fadeOutDuration property.<br>
 	 * Default: 0.3
-	 * @return Double Value for fadeOutDuration.
+	 * @return Value of fadeOutDuration.
 	 */
 	abstract Double getFadeOutDuration();
 
@@ -146,7 +146,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get fillAlpha property.<br>
 	 * Default: 0.8
-	 * @return Double Value of fillAlpha.
+	 * @return Value of fillAlpha.
 	 */
 	abstract Double getFillAlpha();
 
@@ -160,7 +160,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get fillColor property.<br>
 	 * Default: #ffffff
-	 * @return String Value for fillColor.
+	 * @return Value of fillColor.
 	 */
 	abstract String getFillColor();
 	
@@ -174,7 +174,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get fixedPosition property.<br>
 	 * Default: false
-	 * @return Boolean
+	 * @return Value of fixedPosition.
 	 */
 	abstract Boolean isFixedPosition();
 
@@ -187,7 +187,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get fontSize property.<br>
 	 * Default: fontSize of chart
-	 * @return Integer Value of fontSize.
+	 * @return Value of fontSize.
 	 */
 	abstract Integer getFontSize();
 
@@ -201,7 +201,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get horizontalPadding property.<br>
 	 * Default: 8
-	 * @return Integer Value of horizontalPadding.
+	 * @return Value of horizontalPadding.
 	 */
 	abstract Integer getHorizontalPadding();
 
@@ -215,7 +215,7 @@ public abstract interface IAmBalloonController {
 
 	/**
 	 * Get maxWidth property.
-	 * @return Integer Value for maxWidth.
+	 * @return Value of maxWidth.
 	 */
 	abstract Integer getMaxWidth();
 
@@ -229,7 +229,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get offsetX property.<br>
 	 * Default: 1
-	 * @return Integer Value of offsetX.
+	 * @return Value of offsetX.
 	 */
 	abstract Integer getOffsetX();
 
@@ -243,7 +243,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get offsetY property.<br>
 	 * Default: 6
-	 * @return Integer Value for offsetY.
+	 * @return Value of offsetY.
 	 */
 	abstract Integer getOffsetY();
 
@@ -257,7 +257,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get pointerWidth property.<br>
 	 * Default: 6
-	 * @return Integer Value for pointerWidth.
+	 * @return Value of pointerWidth.
 	 */
 	abstract Integer getPointerWidth();
 
@@ -271,7 +271,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get shadowAlpha property.<br>
 	 * Default: 0.4
-	 * @return Double Value for shadowAlpha.
+	 * @return Value of shadowAlpha.
 	 */
 	abstract Double getShadowAlpha();
 
@@ -285,7 +285,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get shadowColor property.<br>
 	 * Default: #000000
-	 * @return String Value for shadowColor
+	 * @return Value of shadowColor.
 	 */
 	abstract String getShadowColor();
 
@@ -299,7 +299,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get showBullet property.<br>
 	 * Default: false
-	 * @return Boolean
+	 * @return Value of showBullet.
 	 */
 	abstract Boolean isShowBullet();
 
@@ -312,7 +312,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get textAlign property.<br>
 	 * Default: middle
-	 * @return String Value for textAlign.
+	 * @return Value of textAlign.
 	 */
 	abstract String getTextAlign();
 
@@ -325,7 +325,7 @@ public abstract interface IAmBalloonController {
 	/**
 	 * Get verticalPadding property.<br>
 	 * Default: 4
-	 * @return Integer Value for verticalPadding.
+	 * @return Value of verticalPadding.
 	 */
 	abstract Integer getVerticalPadding();
 

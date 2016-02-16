@@ -16,7 +16,7 @@ public abstract interface IPatternController {
 	
 	/**
 	 * Get color property.
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 	
@@ -29,7 +29,7 @@ public abstract interface IPatternController {
 	
 	/**
 	 * Get height property.
-	 * @return Integer Value for height.
+	 * @return Value of height.
 	 */
 	abstract Integer getHeight();
 	
@@ -42,20 +42,20 @@ public abstract interface IPatternController {
 	
 	/**
 	 * Get url property.
-	 * @return String Value for url.
+	 * @return Value of url.
 	 */
 	abstract String getUrl();
 	
 	/**
 	 * Add url to pattern.
-	 * @param directoryPattern Folder that containt patterns into pattern folde amcharts.
+	 * @param directoryPattern Folder that contain patterns into pattern folder amcharts.
 	 * @param namePattern File name of pattern.
 	 */
 	abstract void addUrl(String directoryPattern, String namePattern);
 	
 	/**
 	 * Get width property.
-	 * @return Integer Value for width.
+	 * @return Value of width.
 	 */
 	abstract Integer getWidth();
 	

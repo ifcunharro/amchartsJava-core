@@ -27,6 +27,11 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for ValueAxis, this controller is used by charts distinct of AmRadarChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class ValueAxisController extends AxisBaseController implements Observer, IValueAxisController {
 
 	/**
@@ -36,10 +41,6 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	private AmCoordinateChart chart;
 	private static final Logger logger = Logger.getLogger(ValueAxisController.class.getName());
 
-	
-	
-	
-	
 	/**
 	 * Set id of valueAxis to be add to chart. Id of valueAxis auto increment.
 	 */

@@ -9,14 +9,19 @@ import es.uvigo.esei.amchartsJava.core.constants.PointPositionAxisRadar;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for ValueAxis used in AmRadarChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class ValueAxisRadarChartController extends ValueAxisController implements IValueAxisRadarChartController {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1235487736091161719L;
 	
 	{
+		//set to default value amcharts, this property only is used by valueAxis in AmRadarChart,
+		//to deserialize from json to this class is added to serialize this class instead of add to json
+		//name of class. Json generated of this manner is valid json to amcharts, with name of class is not valid. 
 		setRadarCategoriesEnabled(true);
 	}
 

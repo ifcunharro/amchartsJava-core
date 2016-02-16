@@ -25,7 +25,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get adjustSize property.<br>
 	 * Default: true.
-	 * @return Boolean Value for adjustSize.
+	 * @return Value of adjustSize.
 	 */
 	abstract Boolean isAdjustSize();
 
@@ -50,7 +50,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get clockWiseOnly property.<br>
 	 * Default: false.
-	 * @return Boolean Value for clockWiseOnly.
+	 * @return Value of clockWiseOnly.
 	 */
 	abstract Boolean isClockWiseOnly();
 
@@ -63,7 +63,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get faceAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for faceAlpha.
+	 * @return Value of faceAlpha.
 	 */
 	abstract Double getFaceAlpha();
 
@@ -77,7 +77,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get faceBorderAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for faceBorderAlpha.
+	 * @return Value of faceBorderAlpha.
 	 */
 	abstract Double getFaceBorderAlpha();
 
@@ -92,7 +92,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get faceBorderColor property.<br>
 	 * Default: #555555
-	 * @return String Value for faceBorderColor.
+	 * @return Value of faceBorderColor.
 	 */
 	abstract String getFaceBorderColor();
 
@@ -107,7 +107,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get faceBorderWidth property.<br>
 	 * Default: 1.
-	 * @return Integer Value for faceBorderWidth.
+	 * @return Value of faceBorderWidth.
 	 */
 	abstract Integer getFaceBorderWidth();
 
@@ -122,7 +122,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get faceColor property.<br>
 	 * Default: #fafafa
-	 * @return String Value for faceColor.
+	 * @return Value of faceColor.
 	 */
 	abstract String getFaceColor();
 
@@ -149,7 +149,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 
 	/**
 	 * Get gaugeX property.
-	 * @return Integer Value for gaugeX.
+	 * @return Value of gaugeX.
 	 */
 	abstract Integer getGaugeX();
 
@@ -162,7 +162,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 
 	/**
 	 * Get gaugeY property.
-	 * @return Integer Value for gaugeY property.
+	 * @return Value of gaugeY.
 	 */
 	abstract Integer getGaugeY();
 
@@ -176,7 +176,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 10.
-	 * @return Integer Value for marginBottom.
+	 * @return Value of marginBottom.
 	 */
 	abstract Integer getMarginBottom();
 
@@ -190,7 +190,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 10.
-	 * @return Integer Value for marginLeft.
+	 * @return Value of marginLeft.
 	 */
 	abstract Integer getMarginLeft();
 
@@ -204,7 +204,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 10.
-	 * @return Integer Value for marginRight.
+	 * @return Value of marginRight.
 	 */
 	abstract Integer getMarginRight();
 
@@ -218,7 +218,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 10.
-	 * @return Integer Value for marginTop.
+	 * @return Value of marginTop.
 	 */
 	abstract Integer getMarginTop();
 
@@ -232,7 +232,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get minRadius property.<br>
 	 * Default: 10.
-	 * @return Double Value for minRadius.
+	 * @return Value of minRadius.
 	 */
 	abstract Double getMinRadius();
 
@@ -245,7 +245,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get startDuration property.<br>
 	 * Default: 1.
-	 * @return Integer Value for startDuration.
+	 * @return Value of startDuration.
 	 */
 	abstract Integer getStartDuration();
 
@@ -260,7 +260,7 @@ public abstract interface IAmAngularGaugeController extends IAmchartController<A
 	/**
 	 * Get startEffect property.<br>
 	 * Default: easeInSine.
-	 * @return String Value for startEffect.
+	 * @return Value of startEffect.
 	 */
 	abstract String getStartEffect();
 

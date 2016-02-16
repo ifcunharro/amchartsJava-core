@@ -33,7 +33,7 @@ public class Guides {
 	
 	/**
 	 * Get number of Guides added to chart.
-	 * @return int Number of Guides.
+	 * @return Number of Guides.
 	 */
 	public int sizeGuides(){
 		return sizeGuides;
@@ -41,7 +41,7 @@ public class Guides {
 	
 	/**
 	 * Get number of Guides to CategoryAxis.
-	 * @return int Number of GuideCategoryAxisController.
+	 * @return Number of GuideCategoryAxisController.
 	 */
 	public int sizeGuidesCategoryAxis(){
 		if(isNotEmptyGuideCategoryAxis()){
@@ -52,7 +52,7 @@ public class Guides {
 	
 	/**
 	 * Get number of Guides to radar chart.
-	 * @return int Number of GuideRadarChartController.
+	 * @return Number of GuideRadarChartController.
 	 */
 	public int sizeGuidesRadarChart(){
 		if(isNotEmptyGuideRadarChart()){
@@ -63,7 +63,7 @@ public class Guides {
 	
 	/**
 	 * Get number of Guides to ValueAxis.
-	 * @return int Number of GuideValueAxisController.
+	 * @return Number of GuideValueAxisController.
 	 */
 	public int sizeGuidesValueAxis(){
 		if(isNotEmptyGuideValueAxis()){
@@ -74,7 +74,7 @@ public class Guides {
 	
 	/**
 	 * Get delete Guides.
-	 * @return int Number of delete Guides.
+	 * @return Number of delete Guides.
 	 */
 	public int deleteGuides(){
 		return deleteGuides;
@@ -83,7 +83,7 @@ public class Guides {
 	/**
 	 * Check exist Guide in collection.
 	 * @param idGuide Guide id.
-	 * @return boolean Exist or doesn't exist Guide in collection.
+	 * @return Exist or doesn't exist Guide in collection.
 	 */
 	public boolean existGuide(String idGuide) {
 		return getAllGuidesIds().contains(idGuide);
@@ -91,7 +91,7 @@ public class Guides {
 	
 	/**
 	 * Check exist any Guide to CategoryAxis.
-	 * @return boolean List of GuideCategoryAxisController initialized.
+	 * @return List of GuideCategoryAxisController initialized.
 	 */
 	public boolean isNotEmptyGuideCategoryAxis(){
 		return getGuideCategoryAxis()!=null;
@@ -99,7 +99,7 @@ public class Guides {
 	
 	/**
 	 * Check exist any Guide to radar chart.
-	 * @return boolean List of GuideRadarChartController initialized.
+	 * @return List of GuideRadarChartController initialized.
 	 */
 	public boolean isNotEmptyGuideRadarChart(){
 		return getGuideRadarChart()!=null;
@@ -107,7 +107,7 @@ public class Guides {
 	
 	/**
 	 * Check exist any Guide to ValueAxis.
-	 * @return boolean List of GuideValueAxisController initialized.
+	 * @return List of GuideValueAxisController initialized.
 	 */
 	public boolean isNotEmptyGuideValueAxis(){
 		return getGuideValueAxis()!=null;

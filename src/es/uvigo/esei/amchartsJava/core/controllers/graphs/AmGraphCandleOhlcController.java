@@ -3,13 +3,14 @@ package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphCandleOhlcController;
 import es.uvigo.esei.amchartsJava.core.constants.ShowAt;
 
-
+/**
+ * This class is class base for controllers of candles and ohlc graphs
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public abstract class AmGraphCandleOhlcController extends AmGraphSerialController 
 	implements IAmGraphCandleOhlcController {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6119951844854863121L;
 
 	public String getHighField(){

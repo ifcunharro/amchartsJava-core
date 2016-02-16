@@ -11,12 +11,12 @@ import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
  * @author Iago Fernández Cuñarro
  *
  */
-public abstract interface IAmGraphSerialController extends IAmGraphSerialChartController {
+public abstract interface IAmGraphSerialController extends IAmGraphController {
 
 	/**
 	 * Get connect property.<br>
 	 * Default: true.
-	 * @return Boolean Value for connect.
+	 * @return Value of connect.
 	 */
 	abstract Boolean isConnect();
 
@@ -28,7 +28,7 @@ public abstract interface IAmGraphSerialController extends IAmGraphSerialChartCo
 	
 	/**
 	 * Get fillColors property.
-	 * @return String Value for fillColors.
+	 * @return Value of fillColors.
 	 */
 	abstract String getFillColors();
 
@@ -40,7 +40,7 @@ public abstract interface IAmGraphSerialController extends IAmGraphSerialChartCo
 
 	/**
 	 * Get fillColorsField property.
-	 * @return String Value for fillColorsField.
+	 * @return Value of fillColorsField.
 	 */
 	abstract String getFillColorsField();
 
@@ -58,7 +58,7 @@ public abstract interface IAmGraphSerialController extends IAmGraphSerialChartCo
 
 	/**
 	 * Get gapField property.
-	 * @return String Value for gapField.
+	 * @return Value of gapField.
 	 */
 	abstract String getGapField();
 

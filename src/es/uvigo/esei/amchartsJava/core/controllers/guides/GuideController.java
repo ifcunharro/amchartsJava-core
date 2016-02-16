@@ -26,12 +26,14 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for Guide.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public abstract class GuideController implements Observer, Serializable, IGuideController {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5144456903786410897L;
 	protected Guide guide;
 	private AmCoordinateChart chart;

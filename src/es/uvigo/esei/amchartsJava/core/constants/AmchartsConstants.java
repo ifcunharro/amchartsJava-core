@@ -4,7 +4,7 @@ import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 
 
 /**
- * This class contains all constants used by app and constant log and visibility loaded from properties
+ * This class contains constant log and visibility loaded from properties and format of dates
  * @author Iago Fernández Cuñarro
  *
  */
@@ -23,6 +23,9 @@ public class AmchartsConstants {
 		LOGGING = Config.getString("log");
 	}
 
+	/**
+	 * DateFormat used by amcharts
+	 */
 	public static final String[] DATE_FORMAT = DateFormatConstant.getDateFormat();
 	
 	

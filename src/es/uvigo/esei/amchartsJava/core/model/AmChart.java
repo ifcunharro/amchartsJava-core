@@ -30,7 +30,7 @@ public abstract class AmChart extends IModel {
 	
 	/**
 	 * Get dataProvider.
-	 * @return String DataProvider.
+	 * @return DataProviderController Controller for dataProvider.
 	 */
 	public DataProviderController getDataProvider(){
 		if(dataProvider != null){
@@ -178,7 +178,7 @@ public abstract class AmChart extends IModel {
 
 	/**
 	 * Get export config.
-	 * @return String Value for export.
+	 * @return Value for export.
 	 */
 	@JsonRawValue
 	public String getExport() {
@@ -200,14 +200,6 @@ public abstract class AmChart extends IModel {
 	public void addBalloon(AmBalloonController amBalloon) {
 			balloon = amBalloon;	
 	}
-
-	/*public Object getDataProvider() {
-		return dataProvider;
-	}
-	
-	public void addDataToProvider(IData dat){
-		dataProvider.addData(dat);
-	}*/
 
 	/**
 	 * Get legend.

@@ -9,18 +9,20 @@ import es.uvigo.esei.amchartsJava.core.constants.StepDirection;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-public class AmGraphStepController extends AmGraphSerialChartController 
+/**
+ * This class is a controller for AmGraph of type step.
+ * @author Iago Fernández Cuñarro
+ *
+ */
+public class AmGraphStepController extends AmGraphController 
 	implements IAmGraphStepController {
 	
 	
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6400252053765498795L;
 
 
 	{
+		//used to deserialize from json to this class
 		setType(GraphType.step);	
 	}
 	

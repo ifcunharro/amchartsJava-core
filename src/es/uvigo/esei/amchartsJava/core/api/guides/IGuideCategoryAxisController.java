@@ -14,7 +14,7 @@ public abstract interface IGuideCategoryAxisController extends IGuideController 
 
 	/**
 	 * Get category property.
-	 * @return String Value for category.
+	 * @return Value of category.
 	 */
 	abstract String getCategory();
 
@@ -26,7 +26,7 @@ public abstract interface IGuideCategoryAxisController extends IGuideController 
 	
 	/**
 	 * Get date property.
-	 * @return String Value for date.
+	 * @return Value of date.
 	 */
 	abstract String getDate();
 
@@ -39,7 +39,7 @@ public abstract interface IGuideCategoryAxisController extends IGuideController 
 	/**
 	 * Get expand property.<br>
 	 * Default: false.
-	 * @return Boolean Value for expand.
+	 * @return Value of expand.
 	 */
 	abstract Boolean isExpand();
 
@@ -51,11 +51,10 @@ public abstract interface IGuideCategoryAxisController extends IGuideController 
 
 	/**
 	 * Get toCategory property.
-	 * @return String Value for toCategory.
+	 * @return Value of toCategory.
 	 */
 	abstract String getToCategory();
 
-	//falta comprobar categoria existente dataProvider
 	/**
 	 * Set toCategory property.
 	 * @param toCategory Value for toCategory.

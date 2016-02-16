@@ -14,6 +14,11 @@ import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialCha
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 
+/**
+ * Model class for AmXyChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmXyChart extends AmRectangularChart {
 
 	private static final Logger logger = Logger.getLogger(AmXyChart.class.getName());

@@ -14,7 +14,7 @@ public abstract interface IGuideRadarChartController extends IGuideController {
 
 	/**
 	 * Get angle property.
-	 * @return Integer Value for angle.
+	 * @return Value of angle.
 	 */
 	abstract Integer getAngle();
 
@@ -27,7 +27,7 @@ public abstract interface IGuideRadarChartController extends IGuideController {
 
 	/**
 	 * Get toAngle property.
-	 * @return Integer Value for toAngle.
+	 * @return Value of toAngle.
 	 */
 	abstract Integer getToAngle();
 

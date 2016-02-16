@@ -24,12 +24,14 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
+/**
+ * This class is a controller for ChartScrollbar.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class ChartScrollbarController implements Serializable, IChartScrollbarController {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1262906027402512218L;
 	private ChartScrollbar scrollbar;
 	private AmRectangularChart amchart;

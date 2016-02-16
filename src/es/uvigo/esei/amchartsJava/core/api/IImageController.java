@@ -17,7 +17,7 @@ public abstract interface IImageController {
 	/**
 	 * Get balloonColor property.<br>
 	 * Default: #000000.
-	 * @return String Value for balloonColor.
+	 * @return Value of balloonColor.
 	 */
 	abstract String getBalloonColor();
 
@@ -30,7 +30,7 @@ public abstract interface IImageController {
 
 	/**
 	 * Get balloonText property.
-	 * @return String Value for balloonText.
+	 * @return Value of balloonText.
 	 */
 	abstract String getBalloonText();
 
@@ -43,7 +43,7 @@ public abstract interface IImageController {
 	/**
 	 * Get color property.<br>
 	 * Default: #000000
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -57,7 +57,7 @@ public abstract interface IImageController {
 	/**
 	 * Get height property.<br>
 	 * Default: 20.
-	 * @return Integer Value for height.
+	 * @return Value of height.
 	 */
 	abstract Integer getHeight();
 
@@ -71,7 +71,7 @@ public abstract interface IImageController {
 	/**
 	 * Get offsetX property.<br>
 	 * Default: 0.
-	 * @return Integer Value for offsetX.
+	 * @return Value of offsetX.
 	 */
 	abstract Integer getOffsetX();
 
@@ -85,9 +85,9 @@ public abstract interface IImageController {
 	/**
 	 * Get offsetY property.<br>
 	 * Default: 0.
-	 * @return Integer Value for offsetY.
+	 * @return Value of offsetY.
 	 */
-	abstract Object getOffsetY();
+	abstract Integer getOffsetY();
 
 	/**
 	 * Set offsetY property.
@@ -98,7 +98,7 @@ public abstract interface IImageController {
 
 	/**
 	 * Get outlineColor property.
-	 * @return String Value for outlineColor.
+	 * @return Value of outlineColor.
 	 */
 	abstract String getOutlineColor();
 
@@ -112,7 +112,7 @@ public abstract interface IImageController {
 	/**
 	 * Get rotation property.<br>
 	 * Default: 0.
-	 * @return Integer Value for rotation.
+	 * @return Value of rotation.
 	 */
 	abstract Integer getRotation();
 
@@ -125,22 +125,23 @@ public abstract interface IImageController {
 
 	/**
 	 * Get url property.
-	 * @return String Value for url.
+	 * @return Value for url.
 	 */
 	abstract String getUrl();
 
-	//en vez de url, introduce solo nombre imagen con su extensión, la url se completa con
-	//IMAGES_PATH definido en AmchartsJavaPaths
 	/**
-	 * Set url property.
-	 * @param nameImage Name of image file with extension.
+	 * Set url property.<br>
+	 * Image with name equals to nameImage must to exist in images folder, if exist 
+	 * two images with same name, nameImage must to carry file extension.
+	 * @param nameImage Name of image file with or without file extension.
+	 * @see es.uvigo.esei.amchartsJava.core.constants.ImageExtensions
 	 */
 	abstract void setUrl(String nameImage);
 
 	/**
 	 * Get width property.<br>
 	 * Default: 20.
-	 * @return Integer Value for width.
+	 * @return Value for width.
 	 */
 	abstract Integer getWidth();
 

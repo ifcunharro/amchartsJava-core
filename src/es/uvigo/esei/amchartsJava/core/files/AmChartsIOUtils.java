@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 
 import org.apache.commons.io.IOUtils;
@@ -62,7 +64,7 @@ public class AmChartsIOUtils {
 
 	/**
 	 * Get path to temp folder.
-	 * @return String path to temp folder.
+	 * @return path to temp folder.
 	 */
 	public static String getJsonDirectoryToSave(){
 		URL resourcesPath = null;
@@ -72,8 +74,9 @@ public class AmChartsIOUtils {
 									   .getLocation();
 	
 		try {
-				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY);
-		} catch (MalformedURLException e) {
+			resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
+			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY);
+		} catch (MalformedURLException | UnsupportedEncodingException e) {
 				e.printStackTrace();
 		}
 			

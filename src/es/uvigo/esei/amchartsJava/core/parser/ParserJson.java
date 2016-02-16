@@ -28,6 +28,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.axis.CategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmAngularGaugeController;
+import es.uvigo.esei.amchartsJava.core.controllers.charts.AmChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmFunnelChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmPieChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmRadarChartController;
@@ -47,6 +48,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialCha
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.files.AmChartsIOUtils;
+import es.uvigo.esei.amchartsJava.core.validators.ChartValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 /**
@@ -89,7 +91,55 @@ public class ParserJson {
 		mapper.writeValue(System.out, chartController);
 	}
 	
-	//evitar sobreescribir existente se hace antes de llamar a este método
+	/**
+	 * Save any type of chart to temp folder.
+	 * @param nameFileJson name of json file
+	 * @param chart controller to any concrete chart
+	 * @throws JsonGenerationException -
+	 * @throws JsonMappingException -
+	 * @throws IOException -
+	 * @throws ClassCastException Can't cast Object to chart.
+	 */
+	public static void saveJsonToTemp(String nameFileJson, Object chart) throws JsonGenerationException, JsonMappingException, IOException{
+		if(chart != null){
+			AmChartController<?> anyChart;
+			boolean check = false;
+			try{
+				anyChart = (AmChartController<?>) chart;
+			}catch(ClassCastException e){
+				throw new ClassCastException(I18n.get("ChartCastException"));
+			}
+			String typeChart = ChartValidator.getChartClassName(anyChart);
+			switch (typeChart) {
+				case "AmSerialChartController":
+					AmSerialChartController serial = ChartValidator.castToAmSerial(anyChart);
+					saveJsonToTemp(nameFileJson, serial);
+					break;
+				case "AmXyChartController":
+					AmXyChartController xy = ChartValidator.castToAmXY(anyChart);
+					saveJsonToTemp(nameFileJson, xy);
+					break;
+				case "AmPieChartController":
+					AmPieChartController pie = ChartValidator.castToAmPie(anyChart);
+					saveJsonToTemp(nameFileJson, pie);
+					break;
+				case "AmRadarChartController":
+					AmRadarChartController radar = ChartValidator.castToAmRadar(anyChart);
+					saveJsonToTemp(nameFileJson, radar);
+					break;
+				case "AmFunnelChartController":
+					AmFunnelChartController funnel = ChartValidator.castToAmFunnel(anyChart);
+					saveJsonToTemp(nameFileJson, funnel);
+					break;
+				case "AmAngularGaugeController":
+					AmAngularGaugeController gauge = ChartValidator.castToAmAngularGauge(anyChart);
+					saveJsonToTemp(nameFileJson, gauge);
+					break;
+			}
+		}
+		
+	}
+	
 	/**
 	 * Save amcharts config as json in temp folder.  
 	 * @param nameFileJson name of json file

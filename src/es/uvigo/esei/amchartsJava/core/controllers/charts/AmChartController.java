@@ -20,7 +20,6 @@ import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.Separator;
-import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
@@ -36,6 +35,11 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
 
+/**
+ * This class is a controller for AmChart
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown=true)
 public abstract class AmChartController<E extends AmChart> 
@@ -70,7 +74,6 @@ public abstract class AmChartController<E extends AmChart>
 		amchart.setChartFields(map);
 	}
 	
-	//properties
 	@JsonRawValue
 	public Object getExport(){
 		return amchart.getExport();
@@ -173,7 +176,7 @@ public abstract class AmChartController<E extends AmChart>
 	public String getDecimalSeparator(){
 		return (String) amchart.getFeature("decimalSeparator");
 	}
-	//punto o coma, ningun otro para evitar conflictos
+	//punto o coma, ningun otro para evitar conflictos, amcharts los detecta mal
 	public void setDecimalSeparator(Separator decimalSeparator){
 		amchart.setFeature("decimalSeparator",decimalSeparator.toString());
 	}
@@ -255,16 +258,17 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	//necesario un archivo js de idioma escogido
-	public String getLanguage(){
-		return (String) amchart.getFeature("language");
-	}
+	/*amcharts use language to load js file to translate names of months and days of week,
+	in this app these traductions are in es.uvigo.esei.amchartsJava.core.constants.lang and
+	by default are loaded from AmChartsController*/
 	
-	public void setLanguage(Idioms language){
-		amchart.setFeature("language", language.toString());
-	}
-	
-	//listeners
+//	public String getLanguage(){
+//		return (String) amchart.getFeature("language");
+//	}
+//	
+//	public void setLanguage(Idioms language){
+//		amchart.setFeature("language", language.toString());
+//	}
 	
 	@JsonProperty(value = "panEventsEnabled")
 	public Boolean isPanEventsEnabled(){
@@ -287,7 +291,7 @@ public abstract class AmChartController<E extends AmChart>
 		return (String) amchart.getFeature("pathToImages");
 	}
 	
-	//FALTA VALIDAR PATH, SE DA UNO POR DEFECTO ../amcharts/images
+	//FALTA VALIDAR PATH, SE DA UNO POR DEFECTO
 	public void setPathToImages(String pathToImages){
 		amchart.setFeature("pathToImages", pathToImages);
 	}
@@ -354,9 +358,6 @@ public abstract class AmChartController<E extends AmChart>
 		amchart.setFeature("usePrefixes", usePrefixes);
 	}
 	
-	//methods 
-	
-	//propio
 	public List<LabelController> getAllLabels(){
 		return amchart.getLabels();
 	}
@@ -365,52 +366,36 @@ public abstract class AmChartController<E extends AmChart>
 		return amchart.getTitles();
 	}
 	
-	//propio
 	public AmBalloonController getBalloon(){
 		return amchart.getBalloon();
 	}
 	
-	//propio
 	public AmLegendController getLegend(){
 		return amchart.getLegend();
 	}
 	
-	//propio
-	/*public Object getDataProvider(){
-		return amchart.getDataProvider();
-	}*/
-	
-
-	//propio
-	/*public Object getDefs(){
-		return amchart.getDefs();
-	}*/
-	
-	//method amcharts
 	public void addLabel(LabelController labelController){
 		amchart.addLabel(labelController);
 	}
-	//method amcharts
+	
 	@JsonSetter(value="legend")
 	public void addLegend(AmLegendController amLegendController){
 		amchart.addLegend(amLegendController);
 	}
-	//method amcharts
+	
 	public void addTitle(TitleController titleController){
 		amchart.addTitle(titleController);
 	}
 	
-	//propio
 	@JsonSetter(value="balloon")
 	public void addBalloon(AmBalloonController amBalloon){
 		amchart.addBalloon(amBalloon);
 	}
 
-	//method amcharts
 	public void clearLabels(){
 		amchart.clearLabels();
 	}
-	//method amcharts
+	
 	public void removeLegend(){
 		amchart.removeLegend();
 	}
@@ -427,4 +412,5 @@ public abstract class AmChartController<E extends AmChart>
 		amchart.setTitles(titles);
 	}
 	
+
 }

@@ -28,7 +28,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get angle property.<br>
 	 * Default: 0.
-	 * @return Integer Value for angle.
+	 * @return Value of angle.
 	 */
 	abstract Integer getAngle();
 
@@ -42,7 +42,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get autoMarginOffset property.<br>
 	 * Default: 10.
-	 * @return Integer Value for autoMarginOffset.
+	 * @return Value of autoMarginOffset.
 	 */
 	abstract Integer getAutoMarginOffset();
 
@@ -57,7 +57,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get autoMargins property.<br>
 	 * Default: true.
-	 * @return Boolean Value for autoMargins.
+	 * @return Value of autoMargins.
 	 */
 	abstract Boolean isAutoMargins();
 
@@ -70,7 +70,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get depth3D property.<br>
 	 * Default: 0.
-	 * @return Integer Value for depth3D.
+	 * @return Value of depth3D.
 	 */
 	abstract Integer getDepth3D();
 
@@ -84,7 +84,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 20.
-	 * @return Integer Value for marginBottom.
+	 * @return Value of marginBottom.
 	 */
 	abstract Integer getMarginBottom();
 
@@ -98,7 +98,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 20.
-	 * @return Integer Value for marginLeft.
+	 * @return Value of marginLeft.
 	 */
 	abstract Integer getMarginLeft();
 
@@ -112,7 +112,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 20.
-	 * @return Integer Value for marginRight.
+	 * @return Value of marginRight.
 	 */
 	abstract Integer getMarginRight();
 
@@ -126,7 +126,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get marginsUpdated property.<br>
 	 * Default: false.
-	 * @return Boolean Value for marginsUpdated.
+	 * @return Value of marginsUpdated.
 	 */
 	abstract Boolean isMarginsUpdated();
 
@@ -139,7 +139,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 20.
-	 * @return Integer Value for marginTop.
+	 * @return Value of marginTop.
 	 */
 	abstract Integer getMarginTop();
 
@@ -153,7 +153,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get plotAreaBorderAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for plotAreaBorderAlpha.
+	 * @return Value of plotAreaBorderAlpha.
 	 */
 	abstract Double getPlotAreaBorderAlpha();
 
@@ -168,7 +168,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get plotAreaBorderColor property.<br>
 	 * Default: #000000
-	 * @return String Value for plotAreaBorderColor.
+	 * @return Value of plotAreaBorderColor.
 	 */
 	abstract String getPlotAreaBorderColor();
 
@@ -213,7 +213,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get plotAreaGradientAngle property.<br>
 	 * Default: 0.
-	 * @return String Value for plotAreaGradientAngle.
+	 * @return Value of plotAreaGradientAngle.
 	 */
 	abstract String getPlotAreaGradientAngle();
 
@@ -226,7 +226,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtomAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for zoomOutButtomAlpha.
+	 * @return Value of zoomOutButtomAlpha.
 	 */
 	abstract Double getZoomOutButtomAlpha();
 
@@ -241,7 +241,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtonColor property.<br>
 	 * Default: #e5e5e5.
-	 * @return String Value for zoomOutButtonColor.
+	 * @return Value of zoomOutButtonColor.
 	 */
 	abstract String getZoomOutButtonColor();
 
@@ -256,7 +256,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtonImage property.<br>
 	 * Default: lens.png.
-	 * @return String Value for zoomOutButtonImage.
+	 * @return Value of zoomOutButtonImage.
 	 */
 	abstract String getZoomOutButtonImage();
 
@@ -270,7 +270,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtonImageSize property.<br>
 	 * Default: 17.
-	 * @return Integer Value for zoomOutButtonImageSize.
+	 * @return Value of zoomOutButtonImageSize.
 	 */
 	abstract Integer getZoomOutButtonImageSize();
 
@@ -285,7 +285,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtonPadding property.<br>
 	 * Default: 8.
-	 * @return Integer Value for zoomOutButtonPadding.
+	 * @return Value of zoomOutButtonPadding.
 	 */
 	abstract Integer getZoomOutButtonPadding();
 
@@ -300,7 +300,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutButtonRollOverAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for zoomOutButtonRollOverAlpha.
+	 * @return Value of zoomOutButtonRollOverAlpha.
 	 */
 	abstract Double getZoomOutButtonRollOverAlpha();
 
@@ -315,7 +315,7 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	/**
 	 * Get zoomOutText property.<br>
 	 * Default: Show all.
-	 * @return String Value for zoomOutText.
+	 * @return Value of zoomOutText.
 	 */
 	abstract String getZoomOutText();
 
@@ -339,7 +339,8 @@ public abstract interface IAmRectangularChartController<G extends AmRectangularC
 	
 	/**
 	 * Get trendLines property.
-	 * @return Object List of Trendlines.
+	 * @return List of Trendlines. Use {@link es.uvigo.esei.amchartsJava.core.validators.TrendLineValidator TrendLineValidator} to obtain list of trendLines and
+	 * concrete trendLine.
 	 */
 	abstract Object getTrendLines();
 	

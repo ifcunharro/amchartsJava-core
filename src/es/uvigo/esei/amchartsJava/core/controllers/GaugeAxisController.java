@@ -21,13 +21,15 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
+/**
+ * This class is a controller for GaugeAxis.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class GaugeAxisController 
 		implements Serializable, Observer, IGaugeAxisController{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1432463462678411858L;
 	private GaugeAxis gaugeAxis;
 

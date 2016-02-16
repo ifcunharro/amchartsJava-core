@@ -16,7 +16,7 @@ public abstract interface IAmXyChartController extends IAmRectangularChartContro
 	/**
 	 * Get hideXScrollbar property.<br>
 	 * Default: false.
-	 * @return Boolean Value for hideXScrollbar.
+	 * @return Value of hideXScrollbar.
 	 */
 	abstract Boolean isHideXScrollbar();
 
@@ -29,7 +29,7 @@ public abstract interface IAmXyChartController extends IAmRectangularChartContro
 	/**
 	 * Get hideYScrollbar property.<br>
 	 * Default: false.
-	 * @return Boolean Value for hideYScrollbar.
+	 * @return Value of hideYScrollbar.
 	 */
 	abstract Boolean isHideYScrollbar();
 
@@ -42,7 +42,7 @@ public abstract interface IAmXyChartController extends IAmRectangularChartContro
 	/**
 	 * Get maxZoomFactor property.<br>
 	 * Default: 20.
-	 * @return Integer Value for maxZoomFactor.
+	 * @return Value of maxZoomFactor.
 	 */
 	abstract Integer getMaxZoomFactor();
 

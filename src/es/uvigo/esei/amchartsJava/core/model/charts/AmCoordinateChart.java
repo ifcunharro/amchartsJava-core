@@ -25,6 +25,11 @@ import es.uvigo.esei.amchartsJava.core.model.collections.AmGraphs;
 import es.uvigo.esei.amchartsJava.core.model.collections.Guides;
 import es.uvigo.esei.amchartsJava.core.model.collections.ValueAxis;
 
+/**
+ * Model class for AmCoordinateChart
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public abstract class AmCoordinateChart extends AmChart{
 	
 	private List<String> colors;
@@ -509,7 +514,7 @@ public abstract class AmCoordinateChart extends AmChart{
 	/**
 	 * Check exist AmGraph.
 	 * @param idGraph AmGraph id.
-	 * @return boolean Exist or doesn't exist AmGraph.
+	 * @return Exist or doesn't exist AmGraph.
 	 */
 	public boolean existGraph(String idGraph){
 		if(graphs != null){
@@ -522,7 +527,7 @@ public abstract class AmCoordinateChart extends AmChart{
 	/**
 	 * Check exist ValueAxis.
 	 * @param idValueAxis ValueAxis id.
-	 * @return boolean Exist or doesn't exist ValueAxis.
+	 * @return Exist or doesn't exist ValueAxis.
 	 */
 	public boolean existValueAxis(String idValueAxis){
 		if(valueAxes != null){
@@ -535,7 +540,7 @@ public abstract class AmCoordinateChart extends AmChart{
 	/**
 	 * Check exist Guide.
 	 * @param idGuide Guide id.
-	 * @return boolean Exist or doesn't exist Guide.
+	 * @return Exist or doesn't exist Guide.
 	 */
 	public boolean existGuide(String idGuide) {
 		if(guides != null){

@@ -32,7 +32,7 @@ public class TrendLines {
 	
 	/**
 	 * Get number of TrendLines added to chart.
-	 * @return int Number of TrendLines.
+	 * @return Number of TrendLines.
 	 */
 	public int getSizeTrendLines(){
 		return sizeTrendLines;
@@ -40,7 +40,7 @@ public class TrendLines {
 	
 	/**
 	 * Get number of TrendLines to chart type serial.
-	 * @return int Number of TrendLineSerialChartController.
+	 * @return Number of TrendLineSerialChartController.
 	 */
 	public int sizeTrendLineSerial(){
 		if(getTrendLinesSerial()!=null){
@@ -51,7 +51,7 @@ public class TrendLines {
 	
 	/**
 	 * Get number of TrendLines to chart type xy.
-	 * @return int Number of TrendLineXyChartController.
+	 * @return Number of TrendLineXyChartController.
 	 */
 	public int sizeTrendLineXy(){
 		if(getTrendLinesXy()!=null){
@@ -62,7 +62,7 @@ public class TrendLines {
 	
 	/**
 	 * Get delete TrendLines.
-	 * @return int Number of delete TrendLines.
+	 * @return Number of delete TrendLines.
 	 */
 	public int getDeleteTrendLines(){
 		return deleteTrendLines;
@@ -71,7 +71,7 @@ public class TrendLines {
 	/**
 	 * Check exist TrendLine in collection.
 	 * @param idTrendLine TrendLine id.
-	 * @return boolean Exist or doesn't exist TrendLine in collection.
+	 * @return Exist or doesn't exist TrendLine in collection.
 	 */
 	public boolean existTrendLine(String idTrendLine){
 		return getAllIdsTrendLines().contains(idTrendLine);
@@ -79,7 +79,7 @@ public class TrendLines {
 	
 	/**
 	 * Check exist any TrendLine to chart type xy.
-	 * @return boolean List of TrendLineXyChartController initialized.
+	 * @return List of TrendLineXyChartController initialized.
 	 */
 	public boolean isNotEmptyTrendLineXy() {
 		return getTrendLinesXy() != null;
@@ -87,7 +87,7 @@ public class TrendLines {
 
 	/**
 	 * Check exist any TrendLine to chart type serial.
-	 * @return boolean List of TrendLineSerialChartController initialized.
+	 * @return List of TrendLineSerialChartController initialized.
 	 */
 	public boolean isNotEmptyTrendLineSerial() {
 		return getTrendLinesSerial() != null;

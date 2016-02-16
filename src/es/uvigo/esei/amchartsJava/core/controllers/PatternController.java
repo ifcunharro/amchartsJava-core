@@ -15,13 +15,15 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
+/**
+ * This class is a controller for Pattern. Pattern is a property in amcharts, this controller
+ * help to build correctly that property.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class PatternController implements IPatternController, Serializable {
 
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 131484065003455161L;
 	private Pattern pattern;
 	

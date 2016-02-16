@@ -23,7 +23,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get alpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for alpha.
+	 * @return Value of alpha.
 	 */
 	abstract Double getAlpha();
 
@@ -36,7 +36,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get alphaField property.
-	 * @return String Value for alphaField.
+	 * @return Value of alphaField.
 	 */
 	abstract String getAlphaField();
 
@@ -48,7 +48,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get baseColor property.
-	 * @return String Value for baseColor.
+	 * @return Value of baseColor.
 	 */
 	abstract String getBaseColor();
 
@@ -61,7 +61,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get classNameField property.
-	 * @return String Value for classNameField.
+	 * @return Value of classNameField.
 	 */
 	abstract String getClassNameField();
 
@@ -73,7 +73,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get colorField property.
-	 * @return String Value for colorField.
+	 * @return Value of colorField.
 	 */
 	abstract String getColorField();
 
@@ -105,7 +105,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get descriptionField property.
-	 * @return String Value for descriptionField.
+	 * @return Value of descriptionField.
 	 */
 	abstract String getDescriptionField();
 
@@ -130,7 +130,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get groupedAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for groupedAlpha.
+	 * @return Value of groupedAlpha.
 	 */
 	abstract Double getGroupedAlpha();
 
@@ -144,7 +144,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get groupedColor property.
-	 * @return String Value for groupedColor.
+	 * @return Value of groupedColor.
 	 */
 	abstract String getGroupedColor();
 
@@ -157,7 +157,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get groupedDescription property.
-	 * @return String Value for groupedDescription.
+	 * @return Value of groupedDescription.
 	 */
 	abstract String getGroupedDescription();
 
@@ -170,7 +170,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get groupedPulled property.<br>
 	 * Default: false.
-	 * @return Boolean Value for groupedPulled.
+	 * @return Value of groupedPulled.
 	 */
 	abstract Boolean isGroupedPulled();
 
@@ -183,7 +183,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get groupedTitle property.<br>
 	 * Default: Other.
-	 * @return String Value for groupedTitle.
+	 * @return Value of groupedTitle.
 	 */
 	abstract String getGroupedTitle();
 
@@ -196,7 +196,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get groupPercent property.<br>
 	 * Default: 0.
-	 * @return Integer Value for groupPercent.
+	 * @return Value of groupPercent.
 	 */
 	abstract Integer getGroupPercent();
 
@@ -210,7 +210,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get hideLabelsPercent property.<br>
 	 * Default: 0.
-	 * @return Integer Value for hideLabelsPercent.
+	 * @return Value of hideLabelsPercent.
 	 */
 	abstract Integer getHideLabelsPercent();
 
@@ -225,7 +225,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get hoverAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for hoverAlpha.
+	 * @return Value of hoverAlpha.
 	 */
 	abstract Double getHoverAlpha();
 
@@ -238,7 +238,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get labelFunction property.
-	 * @return String Value for labelFunction.
+	 * @return Value of labelFunction.
 	 */
 	abstract String getLabelFunction();
 
@@ -251,7 +251,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get labelsEnabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for labelsEnabled.
+	 * @return Value of labelsEnabled.
 	 */
 	abstract Boolean isLabelsEnabled();
 
@@ -264,7 +264,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get labelTickAlpha property.<br>
 	 * Default: 0.2.
-	 * @return Double Value for labelTickAlpha.
+	 * @return Value of labelTickAlpha.
 	 */
 	abstract Double getLabelTickAlpha();
 
@@ -278,7 +278,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get labelTickColor property.<br>
 	 * Default: #000000.
-	 * @return String Value for labelTickColor.
+	 * @return Value of labelTickColor.
 	 */
 	abstract String getLabelTickColor();
 
@@ -293,7 +293,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 10.
-	 * @return Integer Value for marginBottom.
+	 * @return Value of marginBottom.
 	 */
 	abstract Integer getMarginBottom();
 
@@ -307,7 +307,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 0.
-	 * @return Integer Value for marginLeft.
+	 * @return Value of marginLeft.
 	 */
 	abstract Integer getMarginLeft();
 
@@ -321,7 +321,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 0.
-	 * @return Integer Value for marginRight.
+	 * @return Value of marginRight.
 	 */
 	abstract Integer getMarginRight();
 
@@ -335,7 +335,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 10.
-	 * @return Integer Value for marginTop.
+	 * @return Value of marginTop.
 	 */
 	abstract Integer getMarginTop();
 
@@ -349,7 +349,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get maxLabelWidth property.<br>
 	 * Default: 200.
-	 * @return Integer Value for maxLabelWidth.
+	 * @return Value of maxLabelWidth.
 	 */
 	abstract Integer getMaxLabelWidth();
 
@@ -364,7 +364,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get outlineAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for outlineAlpha.
+	 * @return Value of outlineAlpha.
 	 */
 	abstract Double getOutlineAlpha();
 
@@ -379,7 +379,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get outlineColor property.<br>
 	 * Default: #ffffff
-	 * @return String Value for outlineColor.
+	 * @return Value of outlineColor.
 	 */
 	abstract String getOutlineColor();
 
@@ -393,7 +393,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get outlineThickness property.<br>
 	 * Default: 1.
-	 * @return Integer Value for outlineThickness.
+	 * @return Value of outlineThickness.
 	 */
 	abstract Integer getOutlineThickness();
 
@@ -407,7 +407,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get patternField property.
-	 * @return String Value for patternField.
+	 * @return Value of patternField.
 	 */
 	abstract String getPatternField();
 
@@ -419,7 +419,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get pulledField property.
-	 * @return String Value for pulledField.
+	 * @return Value of pulledField.
 	 */
 	abstract String getPulledField();
 
@@ -432,7 +432,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get pullOutDuration property.<br>
 	 * Default: 1.
-	 * @return Integer Value for pullOutDuration.
+	 * @return Value of pullOutDuration.
 	 */
 	abstract Integer getPullOutDuration();
 
@@ -447,7 +447,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get pullOutEffect property.<br>
 	 * Default: bounce.
-	 * @return String Value for pullOutEffect.
+	 * @return Value of pullOutEffect.
 	 */
 	abstract String getPullOutEffect();
 
@@ -460,7 +460,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get pullOutOnlyOne property.<br>
 	 * Default: false.
-	 * @return Boolean Value for pullOutOnlyOne.
+	 * @return Value of pullOutOnlyOne.
 	 */
 	abstract Boolean isPullOutOnlyOne();
 
@@ -473,7 +473,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get sequencedAnimation property.<br>
 	 * Default: true.
-	 * @return Boolean Value for sequencedAnimation.
+	 * @return Value of sequencedAnimation.
 	 */
 	abstract Boolean isSequencedAnimation();
 
@@ -486,7 +486,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get showZeroSlices property.<br>
 	 * Default: false.
-	 * @return Boolean Value for showZeroSlices.
+	 * @return Value of showZeroSlices.
 	 */
 	abstract Boolean isShowZeroSlices();
 
@@ -499,7 +499,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get startAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for startAlpha.
+	 * @return Value of startAlpha.
 	 */
 	abstract Double getStartAlpha();
 
@@ -513,7 +513,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get startDuration property.<br>
 	 * Default: 1.
-	 * @return Integer Value for startDuration.
+	 * @return Value of startDuration.
 	 */
 	abstract Integer getStartDuration();
 
@@ -528,7 +528,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get startEffect property.<br>
 	 * Default: bounce.
-	 * @return String Value for startEffect.
+	 * @return Value of startEffect.
 	 */
 	abstract String getStartEffect();
 
@@ -540,7 +540,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get titleField property.
-	 * @return String Value for titleField.
+	 * @return Value of titleField.
 	 */
 	abstract String getTitleField();
 
@@ -552,7 +552,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get urlField property.
-	 * @return String Value for urlField.
+	 * @return Value of urlField.
 	 */
 	abstract String getUrlField();
 
@@ -565,7 +565,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 	/**
 	 * Get urlTarger property.<br>
 	 * Default: _self.
-	 * @return String Value for urlTarget.
+	 * @return Value of urlTarget.
 	 */
 	abstract String getUrlTarget();
 
@@ -577,7 +577,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get valueField property.
-	 * @return String Value for valueField.
+	 * @return Value of valueField.
 	 */
 	abstract String getValueField();
 
@@ -589,7 +589,7 @@ public abstract interface IAmSlicedChartController<F extends AmSlicedChart> exte
 
 	/**
 	 * Get visibleInLegendField property.
-	 * @return String Value for visibleInLegendField.
+	 * @return Value of visibleInLegendField.
 	 */
 	abstract String getVisibleInLegendField();
 

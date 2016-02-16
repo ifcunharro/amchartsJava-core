@@ -22,7 +22,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get autoGridCount property.<br>
 	 * Default: true.
-	 * @return Boolean Value for autoGridCount.
+	 * @return Value of autoGridCount.
 	 */
 	abstract Boolean isAutoGridCount();
 
@@ -35,7 +35,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get axisAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for axisAlpha.
+	 * @return Value of axisAlpha.
 	 */
 	abstract Double getAxisAlpha();
 
@@ -49,7 +49,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get axisColor property.<br>
 	 * Default: #000000
-	 * @return String Value for axisColor.
+	 * @return Value of axisColor.
 	 */
 	abstract String getAxisColor();
 
@@ -63,7 +63,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get axisThickness property.<br>
 	 * Default: 1.
-	 * @return Integer Value for axisThickness.
+	 * @return Value of axisThickness.
 	 */
 	abstract Integer getAxisThickness();
 
@@ -78,7 +78,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get boldLabels property.<br>
 	 * Default: false.
-	 * @return Boolean Value for boldLabels.
+	 * @return Value of boldLabels.
 	 */
 	abstract Boolean isBoldLabels();
 
@@ -91,7 +91,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get centerLabels property.<br>
 	 * Default: false.
-	 * @return Boolean Value for centerLabels.
+	 * @return Value of centerLabels.
 	 */
 	abstract Boolean isCenterLabels();
 	
@@ -103,7 +103,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get color property.
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -116,7 +116,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get dashLength property.<br>
 	 * Default: 0.
-	 * @return Integer Value for dashLength.
+	 * @return Value of dashLength.
 	 */
 	abstract Integer getDashLength();
 
@@ -129,14 +129,14 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get dateFormats property.
-	 * @return String[] Format of dates.
+	 * @return Format of dates.
 	 */
 	abstract String[] getDateFormats();
 
 	/**
 	 * Get fillAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for fillAlpha.
+	 * @return Value of fillAlpha.
 	 */
 	abstract Double getFillAlpha();
 
@@ -150,7 +150,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get fillColor property.<br>
 	 * Default: #ffffff.
-	 * @return String Value for fillColor.
+	 * @return Value of fillColor.
 	 */
 	abstract String getFillColor();
 
@@ -163,7 +163,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get fontSize property.
-	 * @return Integer Value for fontSize.
+	 * @return Value of fontSize.
 	 */
 	abstract Integer getFontSize();
 
@@ -177,7 +177,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get gridAlpha property.<br>
 	 * Default: 0.15.
-	 * @return Double Value for gridAlpha.
+	 * @return Value of gridAlpha.
 	 */
 	abstract Double getGridAlpha();
 
@@ -191,7 +191,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get gridColor property.<br>
 	 * Default: #000000.
-	 * @return String Value for gridColor.
+	 * @return Value of gridColor.
 	 */
 	abstract String getGridColor();
 
@@ -205,7 +205,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get gridCount property.<br>
 	 * Default: 5.
-	 * @return Integer Value for gridCount.
+	 * @return Value of gridCount.
 	 */
 	abstract Integer getGridCount();
 
@@ -219,7 +219,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get gridThickness property.<br>
 	 * Default: 1.
-	 * @return Integer Value for gridThickness.
+	 * @return Value of gridThickness.
 	 */
 	abstract Integer getGridThickness();
 
@@ -233,7 +233,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get ignoreAxisWidth property.<br>
 	 * Default: false.
-	 * @return Boolean Value for ignoreAxisWidth.
+	 * @return Value of ignoreAxisWidth.
 	 */
 	abstract Boolean isIgnoreAxisWidth();
 
@@ -246,7 +246,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get inside property.<br>
 	 * Default: false.
-	 * @return Boolean Value for inside.
+	 * @return Value of inside.
 	 */
 	abstract Boolean isInside();
 
@@ -259,7 +259,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get labelFrequency property.<br>
 	 * Default: 1.
-	 * @return Integer Value for labelFrequency.
+	 * @return Value of labelFrequency.
 	 */
 	abstract Integer getLabelFrequency();
 
@@ -274,7 +274,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get labelOffset property.<br>
 	 * Default: 0.
-	 * @return Integer Value for labelOffset.
+	 * @return Value of labelOffset.
 	 */
 	abstract Integer getLabelOffset();
 
@@ -288,7 +288,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get labelRotation property.<br>
 	 * Default: 0.
-	 * @return Integer Value for labelRotation.
+	 * @return Value of labelRotation.
 	 */
 	abstract Integer getLabelRotation();
 
@@ -303,7 +303,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get labelsEnabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for labelsEnabled.
+	 * @return Value of labelsEnabled.
 	 */
 	abstract Boolean isLabelsEnabled();
 
@@ -316,7 +316,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minHorizontalGap property.<br>
 	 * Default: 75.
-	 * @return Integer Value for minHorizontalGap.
+	 * @return Value of minHorizontalGap.
 	 */
 	abstract Integer getMinHorizontalGap();
 
@@ -331,7 +331,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minorGridAlpha property.<br>
 	 * Default: 0.07.
-	 * @return Double Value for minorGridAlpha.
+	 * @return Value of minorGridAlpha.
 	 */
 	abstract Double getMinorGridAlpha();
 
@@ -346,7 +346,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minorGridEnabled property.<br>
 	 * Default: false.
-	 * @return Boolean Value for minorGridEnabled.
+	 * @return Value of minorGridEnabled.
 	 */
 	abstract Boolean isMinorGridEnabled();
 
@@ -359,7 +359,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minorTickLength property.<br>
 	 * Default: 0.
-	 * @return Integer Value for minorTickLength.
+	 * @return Value of minorTickLength.
 	 */
 	abstract Integer getMinorTickLength();
 	
@@ -374,7 +374,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get minVerticalGap property.<br>
 	 * Default: 35.
-	 * @return Integer Value for minVerticalGap .
+	 * @return Value of minVerticalGap .
 	 */
 	abstract Integer getMinVerticalGap();
 
@@ -388,7 +388,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get offset property.<br>
 	 * Default: 0.
-	 * @return Integer Value for offset.
+	 * @return Value of offset.
 	 */
 	abstract Integer getOffset();
 
@@ -402,7 +402,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get position property.<br>
 	 * Default: bottom.
-	 * @return String Value for position.
+	 * @return Value of position.
 	 */
 	abstract String getPosition();
 
@@ -415,7 +415,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get showFirstLabel property.<br>
 	 * Default: true.
-	 * @return Boolean Value for showFirstLabel.
+	 * @return Value of showFirstLabel.
 	 */
 	abstract Boolean isShowFirstLabel();
 
@@ -428,7 +428,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get showLastLabel property.<br>
 	 * Default: true.
-	 * @return Boolean Value for showLastLabel.
+	 * @return Value of showLastLabel.
 	 */
 	abstract Boolean isShowLastLabel();
 
@@ -441,7 +441,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get tickLength property.<br>
 	 * Default: 5.
-	 * @return Integer Value for tickLength.
+	 * @return Value of tickLength.
 	 */
 	abstract Integer getTickLength();
 
@@ -454,7 +454,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get title property.
-	 * @return String Axis title.
+	 * @return Axis title.
 	 */
 	abstract String getTitle();
 
@@ -467,7 +467,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get titleBold property.<br>
 	 * Default: true.
-	 * @return Boolean Value for titleBold.
+	 * @return Value of titleBold.
 	 */
 	abstract Boolean isTitleBold();
 
@@ -479,7 +479,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get titleColor property.
-	 * @return String Value for titleColor.
+	 * @return Value of titleColor.
 	 */
 	abstract String getTitleColor();
 
@@ -492,7 +492,7 @@ public abstract interface IAxisBaseController {
 
 	/**
 	 * Get titleFontSize property.
-	 * @return Integer Value for titleFontSize.
+	 * @return Value of titleFontSize.
 	 */
 	abstract Integer getTitleFontSize();
 
@@ -507,7 +507,7 @@ public abstract interface IAxisBaseController {
 	/**
 	 * Get titleRotation property.<br>
 	 * Default: 0.
-	 * @return Integer Value for titleRotation.
+	 * @return Value of titleRotation.
 	 */
 	abstract Integer getTitleRotation();
 	

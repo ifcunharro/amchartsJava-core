@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
-import es.uvigo.esei.amchartsJava.core.constants.DateFormatConstant;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
@@ -48,7 +48,7 @@ public class TypeValidator {
 	 * @return boolean Value is date format correct or incorrect.
 	 */
 	public static boolean checkDateFormat(String dateFormat){
-		return Arrays.asList(DateFormatConstant.getDateFormat()).contains(dateFormat);
+		return Arrays.asList(AmchartsConstants.DATE_FORMAT).contains(dateFormat);
 	}
 	
 	/**

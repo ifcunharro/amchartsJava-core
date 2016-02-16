@@ -27,7 +27,7 @@ public abstract interface IGuideController {
 	/**
 	 * Get above property.<br>
 	 * Default: false.
-	 * @return Boolean Value for above. 
+	 * @return Value of above. 
 	 */
 	abstract Boolean isAbove();
 
@@ -39,7 +39,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get balloonColor property.
-	 * @return String Value for balloonColor.
+	 * @return Value of balloonColor.
 	 */
 	abstract String getBalloonColor();
 
@@ -52,7 +52,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get balloonText property.
-	 * @return String Value for balloonText.
+	 * @return Value of balloonText.
 	 */
 	abstract String getBalloonText();
 
@@ -65,7 +65,7 @@ public abstract interface IGuideController {
 	/**
 	 * Get boldLabel property.<br>
 	 * Default: false.
-	 * @return Boolean Value for boldLabel.
+	 * @return Value of boldLabel.
 	 */
 	abstract Boolean isBoldLabel();
 
@@ -77,7 +77,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get color property.
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -90,7 +90,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get dashLength property.
-	 * @return Integer Value for dashLength.
+	 * @return Value of dashLength.
 	 */
 	abstract Integer getDashLength();
 
@@ -103,7 +103,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get fillAlpha property.
-	 * @return Double Value for fillAlpha.
+	 * @return Value of fillAlpha.
 	 */
 	abstract Double getFillAlpha();
 
@@ -116,7 +116,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get fillColor property.
-	 * @return String Value for fillColor.
+	 * @return Value of fillColor.
 	 */
 	abstract String getFillColor();
 
@@ -129,7 +129,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get fontSize property.
-	 * @return Integer Value for fontSize.
+	 * @return Value of fontSize.
 	 */
 	abstract Integer getFontSize();
 
@@ -142,13 +142,13 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get id property.
-	 * @return String Guide id.
+	 * @return Guide id.
 	 */
 	abstract String getId();
 
 	/**
 	 * Get inside property.
-	 * @return Boolean Value for inside.
+	 * @return Value of inside.
 	 */
 	abstract Boolean isInside();
 	
@@ -160,7 +160,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get label property
-	 * @return String Value for label.
+	 * @return Value of label.
 	 */
 	abstract String getLabel();
 
@@ -172,7 +172,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get labelRotation property.
-	 * @return Integer Value for labelRotation.
+	 * @return Value of labelRotation.
 	 */
 	abstract Integer getLabelRotation();
 
@@ -186,7 +186,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get lineAlpha property.
-	 * @return Double Value for lineAlpha.
+	 * @return Value of lineAlpha.
 	 */
 	abstract Double getLineAlpha();
 
@@ -199,7 +199,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get lineColor property.
-	 * @return String Value for lineColor.
+	 * @return Value of lineColor.
 	 */
 	abstract String getLineColor();
 
@@ -212,7 +212,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get lineThickness property.
-	 * @return Integer Value for lineThickness.
+	 * @return Value of lineThickness.
 	 */
 	abstract Integer getLineThickness();
 
@@ -226,7 +226,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get position property.
-	 * @return String Value for position.
+	 * @return Value of position.
 	 */
 	abstract String getPosition();
 
@@ -238,7 +238,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get tickLength property.
-	 * @return Integer Value for tickLength.
+	 * @return Value of tickLength.
 	 */
 	abstract Integer getTickLength();
 
@@ -251,7 +251,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get toDate property.
-	 * @return String Value for toDate.
+	 * @return Value of toDate.
 	 */
 	abstract String getToDate();
 
@@ -263,7 +263,7 @@ public abstract interface IGuideController {
 
 	/**
 	 * Get valueAxis property.
-	 * @return String ValueAxis id.
+	 * @return ValueAxis id.
 	 */
 	abstract String getValueAxis();
 

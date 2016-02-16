@@ -19,7 +19,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 
 	/**
 	 * Get angle property.
-	 * @return Integer Value for angle.
+	 * @return Value of angle.
 	 */
 	abstract Integer getAngle();
 
@@ -33,7 +33,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get balloonText property.<br>
 	 * Default: [[title]]:[[value]]\n[[description]]
-	 * @return String Value for balloonText.
+	 * @return Value of balloonText.
 	 */
 	abstract String getBalloonText();
 
@@ -46,7 +46,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get baseWidth property.<br>
 	 * Default: 100%.
-	 * @return String Value for baseWidth is an integer number or a percent.
+	 * @return Value of baseWidth.
 	 */
 	abstract String getBaseWidth();
 
@@ -60,7 +60,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get depth3D property.<br>
 	 * Default: 0.
-	 * @return Integer Value for depth3D.
+	 * @return Value of depth3D.
 	 */
 	abstract Integer getDepth3D();
 
@@ -74,7 +74,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get labelPosition property.<br>
 	 * Default: center.
-	 * @return String Value for labelPosition.
+	 * @return Value of labelPosition.
 	 */
 	abstract String getLabelPosition();
 
@@ -87,7 +87,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get labelText property.<br>
 	 * Default: [[title]]:[[value]]
-	 * @return String Value for labelText.
+	 * @return Value of labelText.
 	 */
 	abstract String getLabelText();
 
@@ -100,7 +100,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get neckHeight property.<br>
 	 * Default: 0.
-	 * @return String Value for neckHeight is an integer number or a percent.
+	 * @return Value of neckHeight.
 	 */
 	abstract String getNeckHeight();
 
@@ -114,7 +114,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get neckWidth property.<br>
 	 * Default: 0.
-	 * @return String Value for neckWidth is an integer number or a percent.
+	 * @return Value of neckWidth.
 	 */
 	abstract String getNeckWidth();
 
@@ -128,7 +128,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get pullDistance property.<br>
 	 * Default: 30.
-	 * @return String Value for pullDistance is an integer number or a percent.
+	 * @return Value of pullDistance.
 	 */
 	abstract String getPullDistance();
 
@@ -142,7 +142,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get rotate property.<br>
 	 * Default: false
-	 * @return Boolean Value for rotate.
+	 * @return Value of rotate.
 	 */
 	abstract Boolean isRotate();
 
@@ -155,7 +155,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get startX property.<br>
 	 * Default: 0.
-	 * @return Integer Value for startX.
+	 * @return Value of startX.
 	 */
 	abstract Integer getStartX();
 
@@ -169,7 +169,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get startY property.<br>
 	 * Default: 0.
-	 * @return Integer Value for startY.
+	 * @return Value of startY.
 	 */
 	abstract Integer getStartY();
 
@@ -183,7 +183,7 @@ public abstract interface IAmFunnelChartController extends IAmSlicedChartControl
 	/**
 	 * Get valueRepresents property.<br>
 	 * Default: height.
-	 * @return String Value for valueRepresents.
+	 * @return Value of valueRepresents.
 	 */
 	abstract String getValueRepresents();
 

@@ -4,6 +4,11 @@ import es.uvigo.esei.amchartsJava.core.api.guides.IGuideRadarChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for Guide used by AmRadarChart
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class GuideRadarChartController extends GuideController implements IGuideRadarChartController {
 	
 	/**
@@ -13,6 +18,7 @@ public class GuideRadarChartController extends GuideController implements IGuide
 	
 	{
 		try{
+			//properties only used by AmRadarChart. Used to deserialize Guide to this class
 			setAngle(0);
 			setToAngle(0);
 		}catch (Exception e) {

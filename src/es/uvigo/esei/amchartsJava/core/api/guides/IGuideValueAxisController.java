@@ -14,7 +14,7 @@ public abstract interface IGuideValueAxisController extends IGuideController {
 
 	/**
 	 * Get toValue property.
-	 * @return Double Value for toValue.
+	 * @return Value of toValue.
 	 */
 	abstract Double getToValue();
 
@@ -27,7 +27,7 @@ public abstract interface IGuideValueAxisController extends IGuideController {
 
 	/**
 	 * Get value property.
-	 * @return Double Value for value.
+	 * @return Value of value.
 	 */
 	abstract Double getValue();
 

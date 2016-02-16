@@ -21,14 +21,15 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
+/**
+ * This class i a controller for Label
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class LabelController implements Observer, ILabelController, Serializable {
 	
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 35109066885532425L;
 	private Label label;
 	

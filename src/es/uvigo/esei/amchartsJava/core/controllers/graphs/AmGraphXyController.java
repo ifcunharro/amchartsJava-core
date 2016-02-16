@@ -12,20 +12,22 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-public class AmGraphXyController extends AmGraphSerialChartController 
+/**
+ * This class is a controller for AmGraph of type line used in AmXyChart
+ * @author Iago Fernández Cuñarro
+ *
+ */
+public class AmGraphXyController extends AmGraphController 
 	implements IAmGraphXyController {
 
 	
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -1740784739849045134L;
 
 
 	{
 		setType(GraphType.line);
 		try {
+			//property only used by AmXyChart, used to deserialize from json to this class
 			setMaxBulletSize(50);
 		} catch (OutOfRangeException e) {
 			e.printStackTrace();
@@ -74,7 +76,7 @@ public class AmGraphXyController extends AmGraphSerialChartController
 		}
 	}
 	
-	//Use to deserialize json
+	//Used to deserialize json
 	@JsonSetter(value="fillToAxis")
 	private void setJsonFillToAxis(String fillToAxis){
 		amGraph.setFeature("fillToAxis", fillToAxis);

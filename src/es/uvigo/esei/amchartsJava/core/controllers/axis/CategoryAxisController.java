@@ -9,12 +9,13 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
-
+/**
+ * This class is a controller for CategoryAxis.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class CategoryAxisController extends AxisBaseController implements ICategoryAxisController {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2203487257864745560L;
 
 	public Integer getAutoRotateAngle(){

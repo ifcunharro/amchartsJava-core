@@ -18,7 +18,7 @@ public abstract interface IValueAxisRadarChartController extends IValueAxisContr
 	/**
 	 * Get axisTitleOffset property.<br>
 	 * Default: 10.
-	 * @return Integer Value for axisTitleOffset.
+	 * @return Value of axisTitleOffset.
 	 */
 	abstract Integer getAxisTitleOffset();
 
@@ -33,7 +33,7 @@ public abstract interface IValueAxisRadarChartController extends IValueAxisContr
 	/**
 	 * Get gridType property.<br>
 	 * Default: polygons.
-	 * @return String Value for gridType.
+	 * @return Value of gridType.
 	 */
 	abstract String getGridType();
 
@@ -46,7 +46,7 @@ public abstract interface IValueAxisRadarChartController extends IValueAxisContr
 	/**
 	 * Get pointPosition property.<br>
 	 * Default: axis.
-	 * @return String Value for pointPosition.
+	 * @return Value of pointPosition.
 	 */
 	abstract String getPointPosition();
 	
@@ -59,13 +59,13 @@ public abstract interface IValueAxisRadarChartController extends IValueAxisContr
 	/**
 	 * Get radarCategoriesEnabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for radarCategoriesEnabled.
+	 * @return Value of radarCategoriesEnabled.
 	 */
 	abstract Boolean isRadarCategoriesEnabled();
 
 	/**
 	 * Set radarCategoriesEnabled property.
-	 * @param radarCategoriesEnabled Enable or disable radat categories.
+	 * @param radarCategoriesEnabled Enable or disable radar categories.
 	 */
 	abstract void setRadarCategoriesEnabled(Boolean radarCategoriesEnabled);
 

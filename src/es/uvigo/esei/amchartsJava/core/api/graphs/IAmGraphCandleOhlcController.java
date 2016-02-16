@@ -15,7 +15,7 @@ public abstract interface IAmGraphCandleOhlcController extends IAmGraphSerialCon
 
 	/**
 	 * Get highField property.
-	 * @return String Value for highField.
+	 * @return Value of highField.
 	 */
 	abstract String getHighField();
 
@@ -27,7 +27,7 @@ public abstract interface IAmGraphCandleOhlcController extends IAmGraphSerialCon
 
 	/**
 	 * Get lowField property.
-	 * @return String Value for lowField.
+	 * @return Value of lowField.
 	 */
 	abstract String getLowField();
 
@@ -40,7 +40,7 @@ public abstract interface IAmGraphCandleOhlcController extends IAmGraphSerialCon
 	/**
 	 * Get showBulletsAt property.<br>
 	 * Default: close.
-	 * @return String Value for showBulletsAt.
+	 * @return Value of showBulletsAt.
 	 */
 	abstract String getShowBulletsAt();
 	

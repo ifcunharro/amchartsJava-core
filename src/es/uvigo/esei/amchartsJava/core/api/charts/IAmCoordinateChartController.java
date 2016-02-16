@@ -27,7 +27,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	/**
 	 * Get gridAboveGraphs property.<br>
 	 * Default: false.
-	 * @return Boolean Value for gridAboveGraphs.
+	 * @return Value of gridAboveGraphs.
 	 */
 	abstract Boolean isGridAboveGraphs();
 
@@ -40,7 +40,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	/**
 	 * Get sequencedAnimation property.<br>
 	 * Default: true.
-	 * @return Boolean Value for sequencedAnimation.
+	 * @return Value of sequencedAnimation.
 	 */
 	abstract Boolean isSequencedAnimation();
 
@@ -53,7 +53,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	/**
 	 * Get startAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for startAlpha.
+	 * @return Value of startAlpha.
 	 */
 	abstract Double getStartAlpha();
 
@@ -67,7 +67,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	/**
 	 * Get startDuration property.<br>
 	 * Default: 0.
-	 * @return Integer Value for startDuration.
+	 * @return Value of startDuration.
 	 */
 	abstract Integer getStartDuration();
 
@@ -82,7 +82,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	/**
 	 * Get startEffect property.<br>
 	 * Default: elastic.
-	 * @return String Value for startEffec.
+	 * @return Value of startEffect.
 	 */
 	abstract String getStartEffect();
 
@@ -95,7 +95,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	/**
 	 * Get urlTarger property.<br>
 	 * Default: _self.
-	 * @return String Value for urlTarget.
+	 * @return Value of urlTarget.
 	 */
 	abstract String getUrlTarget();
 
@@ -114,7 +114,7 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	/**
 	 * Add a color to chart.
 	 * @param color Value for color.
-	 * @throws ColorException Formar color doesn't admitted, format admitted: #ffffff
+	 * @throws ColorException Format color doesn't admitted, format admitted: #ffffff
 	 */
 	abstract void addColor(String color) throws ColorException;
 
@@ -127,19 +127,22 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 
 	/**
 	 * Get graphs property.
-	 * @return Object List of graphs.
+	 * @return List of graphs. Use {@link es.uvigo.esei.amchartsJava.core.validators.GraphValidator GraphValidator} to obtain graphs and
+	 * concrete graph.
 	 */
 	abstract Object getGraphs();
 
 	/**
 	 * Get guides property.
-	 * @return List of guides.
+	 * @return List of guides. Use {@link es.uvigo.esei.amchartsJava.core.validators.GuideValidator GuideValidator} to obtain guides and 
+	 * concrete guide.
 	 */
 	abstract Object getGuides();
 	
 	/**
 	 * Get valueAxes property.
-	 * @return Object List of valueAxes.
+	 * @return List of valueAxes. Use {@link es.uvigo.esei.amchartsJava.core.validators.AxisValidator AxisValidator} to obtain list of axis and
+	 * concrete axis.
 	 */
 	abstract Object getValueAxes();
 	

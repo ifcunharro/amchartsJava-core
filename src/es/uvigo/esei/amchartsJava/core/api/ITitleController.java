@@ -17,7 +17,7 @@ public abstract interface ITitleController {
 	/**
 	 * Get alpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for alpha.
+	 * @return Value of alpha.
 	 */
 	abstract Double getAlpha();
 
@@ -31,7 +31,7 @@ public abstract interface ITitleController {
 	/**
 	 * Get bold property.<br>
 	 * Default: false.
-	 * @return Boolean Value for bold.
+	 * @return Value of bold.
 	 */
 	abstract Boolean isBold();
 
@@ -43,7 +43,7 @@ public abstract interface ITitleController {
 
 	/**
 	 * Get color property.
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -56,13 +56,13 @@ public abstract interface ITitleController {
 
 	/**
 	 * Get id property.
-	 * @return String Title id.
+	 * @return Title id.
 	 */
 	abstract String getId();
 
 	/**
 	 * Get size property.
-	 * @return Integer Value for size.
+	 * @return Value of size.
 	 */
 	abstract Integer getSize();
 
@@ -75,7 +75,7 @@ public abstract interface ITitleController {
 
 	/**
 	 * Get text property.
-	 * @return String Value for text.
+	 * @return Value of text.
 	 */
 	abstract String getText();
 

@@ -12,11 +12,11 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
  * @author Iago Fernández Cuñarro
  *
  */
-public abstract interface IAmGraphXyController extends IAmGraphSerialChartController {
+public abstract interface IAmGraphXyController extends IAmGraphController {
 
 	/**
 	 * Get bulletAxis property.
-	 * @return String ValueAxis id.
+	 * @return ValueAxis id.
 	 */
 	abstract String getBulletAxis();
 	
@@ -29,7 +29,7 @@ public abstract interface IAmGraphXyController extends IAmGraphSerialChartContro
 	
 	/**
 	 * Get fillToAxis property.
-	 * @return String ValueAxis id.
+	 * @return ValueAxis id.
 	 */
 	abstract String getFillToAxis();
 	
@@ -43,7 +43,7 @@ public abstract interface IAmGraphXyController extends IAmGraphSerialChartContro
 	/**
 	 * Get maxBulletSize property.<br>
 	 * Default: 50.
-	 * @return Integer Value for maxBulletSize.
+	 * @return Value of maxBulletSize.
 	 */
 	abstract Integer getMaxBulletSize();
 
@@ -57,7 +57,7 @@ public abstract interface IAmGraphXyController extends IAmGraphSerialChartContro
 	/**
 	 * Get minBulletSize property.<br>
 	 * Default: 0.
-	 * @return Integer Value for minBulletSize.
+	 * @return Value of minBulletSize.
 	 */
 	abstract Integer getMinBulletSize();
 
@@ -70,7 +70,7 @@ public abstract interface IAmGraphXyController extends IAmGraphSerialChartContro
 	
 	/**
 	 * Get xAxis property.
-	 * @return String ValueAxis id.
+	 * @return ValueAxis id.
 	 */
 	abstract String getXAxis();
 	
@@ -83,7 +83,7 @@ public abstract interface IAmGraphXyController extends IAmGraphSerialChartContro
 	
 	/**
 	 * Get xField property.
-	 * @return String Value for xField.
+	 * @return Value of xField.
 	 */
 	abstract String getXField();
 
@@ -95,7 +95,7 @@ public abstract interface IAmGraphXyController extends IAmGraphSerialChartContro
 	
 	/**
 	 * Get yAxis property.
-	 * @return String ValueAxis id.
+	 * @return ValueAxis id.
 	 */
 	abstract String getYAxis();
 	
@@ -108,7 +108,7 @@ public abstract interface IAmGraphXyController extends IAmGraphSerialChartContro
 
 	/**
 	 * Get yField property.
-	 * @return String Value for yField.
+	 * @return Value of yField.
 	 */
 	abstract String getYField();
 

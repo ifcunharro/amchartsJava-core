@@ -12,12 +12,12 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
  * @author Iago Fernández Cuñarro
  *
  */
-public abstract interface IAmGraphStepController extends IAmGraphSerialChartController {
+public abstract interface IAmGraphStepController extends IAmGraphController {
 
 	/**
 	 * Get noStepRisers property.<br>
 	 * Default: false.
-	 * @return Boolean Value for noStepRisers.
+	 * @return Value of noStepRisers.
 	 */
 	abstract Boolean isNoStepRisers();
 
@@ -30,7 +30,7 @@ public abstract interface IAmGraphStepController extends IAmGraphSerialChartCont
 	/**
 	 * Get periodSpan property.<br>
 	 * Default: 1.
-	 * @return Integer Value for periodSpan.
+	 * @return Value of periodSpan.
 	 */
 	abstract Integer getPeriodSpan();
 
@@ -44,7 +44,7 @@ public abstract interface IAmGraphStepController extends IAmGraphSerialChartCont
 	/**
 	 * Get stepDirection property.<br>
 	 * Default: right.
-	 * @return String Value for stepDirection.
+	 * @return Value of stepDirection.
 	 */
 	abstract String getStepDirection();
 

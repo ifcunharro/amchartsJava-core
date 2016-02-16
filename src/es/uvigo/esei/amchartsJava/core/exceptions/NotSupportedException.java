@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.exceptions;
 
 
 /**
- * Custom exception for component not supoorted.
+ * Custom exception for component not supported.
  * 
  * @author Iago Fernández Cuñarro
  *

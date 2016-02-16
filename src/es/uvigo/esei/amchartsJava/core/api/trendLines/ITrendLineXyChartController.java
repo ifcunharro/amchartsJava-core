@@ -14,7 +14,7 @@ public abstract interface ITrendLineXyChartController extends ITrendLineSerialCh
 
 	/**
 	 * Get finalXValue property.
-	 * @return Double Value for finalXValue.
+	 * @return Value of finalXValue.
 	 */
 	abstract Double getFinalXValue();
 
@@ -26,7 +26,7 @@ public abstract interface ITrendLineXyChartController extends ITrendLineSerialCh
 
 	/**
 	 * Get initialXValue property.
-	 * @return Double Value for initialXValue.
+	 * @return Value of initialXValue.
 	 */
 	abstract Double getInitialXValue();
 
@@ -38,7 +38,7 @@ public abstract interface ITrendLineXyChartController extends ITrendLineSerialCh
 
 	/**
 	 * Get valueAxisX property.
-	 * @return String Value for valueAxisX.
+	 * @return Value of valueAxisX.
 	 */
 	abstract String getValueAxisX();
 

@@ -36,7 +36,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get baseValue property.<br>
 	 * Default: 0.
-	 * @return Integer Value for baseValue.
+	 * @return Value of baseValue.
 	 */
 	abstract Integer getBaseValue();
 
@@ -49,7 +49,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get duration property.
-	 * @return String Value for duration.
+	 * @return Value of duration.
 	 */
 	abstract String getDuration();
 
@@ -61,14 +61,14 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get id property.
-	 * @return String ValueAxis id.
+	 * @return ValueAxis id.
 	 */
 	abstract String getId();
 
 	/**
 	 * Get includeGuideInMinMax property.<br>
 	 * Default: false.
-	 * @return Boolean Value for includeGuideesInMinMax.
+	 * @return Value of includeGuidesInMinMax.
 	 */
 	abstract Boolean isIncludeGuidesInMinMax();
 
@@ -81,7 +81,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get includeHidden property.<br>
 	 * Default: false.
-	 * @return Boolean Value for includeHidden.
+	 * @return Value of includeHidden.
 	 */
 	abstract Boolean isIncludeHidden();
 	
@@ -94,7 +94,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get integersOnly property.<br>
 	 * Default: false.
-	 * @return Boolean Value for integersOnly.
+	 * @return Value of integersOnly.
 	 */
 	abstract Boolean isIntegersOnly();
 
@@ -106,7 +106,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get labelFunction property.
-	 * @return String Value for labelFunction.
+	 * @return Value of labelFunction.
 	 */
 	abstract String getLabelFunction();
 
@@ -119,7 +119,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get logarithmic property.<br>
 	 * Default: false.
-	 * @return Boolean Value for lograrithmic.
+	 * @return Value of logarithmic.
 	 */
 	abstract Boolean isLogarithmic();
 
@@ -131,7 +131,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get maximum property.
-	 * @return Double Value for maximum.
+	 * @return Value of maximum.
 	 */
 	abstract Double getMaximum();
 
@@ -144,7 +144,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get maximumDate property.
-	 * @return String Value for maximumDate.
+	 * @return Value of maximumDate.
 	 */
 	abstract String getMaximumDate();
 
@@ -156,7 +156,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get minimum property.
-	 * @return Double Value for minimum.
+	 * @return Value of minimum.
 	 */
 	abstract Double getMinimum();
 
@@ -169,7 +169,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get minimunDate property.
-	 * @return String Value for minimumDate.
+	 * @return Value of minimumDate.
 	 */
 	abstract String getMinimumDate();
 
@@ -182,7 +182,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get minMaxMultiplier property.<br>
 	 * Default: 1.
-	 * @return Double Value for minMaxMultiplier.
+	 * @return Value of minMaxMultiplier.
 	 */
 	abstract Double getMinMaxMultiplier();
 
@@ -196,7 +196,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get precision property.
-	 * @return Integer Value for precision.
+	 * @return Value of precision.
 	 */
 	abstract Integer getPrecision();
 
@@ -210,7 +210,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get recalculateToPercents property.<br>
 	 * Default: false.
-	 * @return Boolean Value for recalculateToPercents.
+	 * @return Value of recalculateToPercents.
 	 */
 	abstract Boolean isRecalculateToPercents();
 
@@ -221,9 +221,9 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	abstract void setRecalculateToPercents(Boolean recalculateToPercents);
 
 	/**
-	 * Get revesed property.<br>
+	 * Get reversed property.<br>
 	 * Default: false.
-	 * @return Boolean Value for reversed.
+	 * @return Value for reversed.
 	 */
 	abstract Boolean isReversed();
 
@@ -236,7 +236,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get stackType property.<br>
 	 * Default: none.
-	 * @return String Value for stactType.
+	 * @return Value of stactType.
 	 */
 	abstract String getStackType();
 
@@ -249,7 +249,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get strictMinMax property.<br>
 	 * Default: false.
-	 * @return Boolean Value for strictMinMax.
+	 * @return Value of strictMinMax.
 	 */
 	abstract Boolean isStrictMinMax();
 
@@ -261,7 +261,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get synchronizationMultiplier property.
-	 * @return Double Value for synchronizationMultiplier.
+	 * @return Value of synchronizationMultiplier.
 	 */
 	abstract Double getSynchronizationMultiplier();
 
@@ -275,7 +275,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get synchronizeWith property.
-	 * @return String Value for synchronizeWith is a ValueAxis id.
+	 * @return Value of synchronizeWith is a ValueAxis id.
 	 */
 	abstract String getSynchronizeWith();
 
@@ -288,7 +288,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get totalText property.
-	 * @return String Value for totalText.
+	 * @return Value of totalText.
 	 */
 	abstract String getTotalText();
 
@@ -300,7 +300,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get totalTextColor property.
-	 * @return String Value for totalTextColor.
+	 * @return Value of totalTextColor.
 	 */
 	abstract String getTotalTextColor();
 
@@ -314,7 +314,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get totalTextOffset property.<br>
 	 * Default: 0.
-	 * @return Integer Value for totalTextOffset.
+	 * @return Value of totalTextOffset.
 	 */
 	abstract Integer getTotalTextOffset();
 
@@ -329,7 +329,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get treatZeroAs property.<br>
 	 * Default: 0.
-	 * @return Integer Value for treaZeroAs.
+	 * @return Value of treatZeroAs.
 	 */
 	abstract Integer getTreatZeroAs();
 
@@ -343,7 +343,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get type property.<br>
 	 * Default: numeric.
-	 * @return Value for type.
+	 * @return Value of type.
 	 */
 	abstract String getType();
 
@@ -355,7 +355,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 
 	/**
 	 * Get unit property.
-	 * @return String Value for unit.
+	 * @return Value of unit.
 	 */
 	abstract String getUnit();
 
@@ -368,7 +368,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get unitPosition property.<br>
 	 * Default: right.
-	 * @return String Value for unitPosition.
+	 * @return Value of unitPosition.
 	 */
 	abstract String getUnitPosition();
 
@@ -381,7 +381,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get usePrefixes property.<br>
 	 * Default: false.
-	 * @return Boolean Value for usePrefixes.
+	 * @return Value of usePrefixes.
 	 */
 	abstract Boolean isUsePrefixes();
 
@@ -394,7 +394,7 @@ public abstract interface IValueAxisController extends IAxisBaseController {
 	/**
 	 * Get useScientificNotation property.<br>
 	 * Default: false.
-	 * @return Boolean Value for useScientificNotation.
+	 * @return Value of useScientificNotation.
 	 */
 	abstract Boolean isUseScientificNotation();
 

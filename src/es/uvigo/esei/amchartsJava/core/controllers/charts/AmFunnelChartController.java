@@ -14,6 +14,11 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmSlicedChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
+/**
+ * This class is a controller for AmFunnelChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmFunnelChartController extends AmSlicedChartController<AmSlicedChart> implements IAmFunnelChartController {
 
 	
@@ -181,5 +186,5 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	public void setValueRepresents(ValueRepresents valueRepresents){
 		amchart.setFeature("valueRepresents", valueRepresents.toString());
 	}
-	
+
 }

@@ -13,6 +13,11 @@ import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartCo
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.model.collections.TrendLines;
 
+/**
+ * Model class for AmRectangularChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public abstract class AmRectangularChart extends AmCoordinateChart {
 	private List<String> plotAreaFillColors;
 	private List<Number> plotAreaFillAlphas;
@@ -78,7 +83,7 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 	
 	/**
 	 * Get TrendLines.
-	 * @return Object List of TrendLines.
+	 * @return List of TrendLines.
 	 */
 	public Object getTrendLines(){
 		if(trendLines == null){

@@ -13,6 +13,11 @@ import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideRadarChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 
+/**
+ * Model class for AmRadarChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmRadarChart extends AmCoordinateChart {
 	
 	private static final Logger logger = Logger.getLogger(AmRadarChart.class.getName());

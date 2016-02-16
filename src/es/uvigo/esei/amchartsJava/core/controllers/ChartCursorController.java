@@ -27,12 +27,14 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
+/**
+ * This class is a controller for ChartCursor
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class ChartCursorController implements Serializable, IChartCursorController {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1995587507218823504L;
 	private ChartCursor chartCursor;
 	private AmRectangularChart chart;

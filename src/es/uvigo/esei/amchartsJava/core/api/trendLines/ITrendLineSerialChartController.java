@@ -27,7 +27,7 @@ public abstract interface ITrendLineSerialChartController {
 	/**
 	 * Get dashLength property.<br>
 	 * Default: 0.
-	 * @return Integer Value for dashLength.
+	 * @return Value of dashLength.
 	 */
 	abstract Integer getDashLength();
 
@@ -40,7 +40,7 @@ public abstract interface ITrendLineSerialChartController {
 
 	/**
 	 * Get finalCategory property.
-	 * @return String Value for finalCategory.
+	 * @return Value of finalCategory.
 	 */
 	abstract String getFinalCategory();
 
@@ -52,7 +52,7 @@ public abstract interface ITrendLineSerialChartController {
 
 	/**
 	 * Get finalDate property.
-	 * @return String Value for finalDate.
+	 * @return Value of finalDate.
 	 */
 	abstract String getFinalDate();
 
@@ -64,7 +64,7 @@ public abstract interface ITrendLineSerialChartController {
 
 	/**
 	 * Get finalValue property.
-	 * @return Double Value for finalValue.
+	 * @return Value of finalValue.
 	 */
 	abstract Double getFinalValue();
 
@@ -76,13 +76,13 @@ public abstract interface ITrendLineSerialChartController {
 
 	/**
 	 * Get id property.
-	 * @return String TrendLine id.
+	 * @return TrendLine id.
 	 */
 	abstract String getId();
 
 	/**
 	 * Get initialCategory property.
-	 * @return String Value for initialCategory.
+	 * @return Value of initialCategory.
 	 */
 	abstract String getInitialCategory();
 
@@ -94,7 +94,7 @@ public abstract interface ITrendLineSerialChartController {
 
 	/**
 	 * Get initialDate property.
-	 * @return String Value for initialDate.
+	 * @return Value of initialDate.
 	 */
 	abstract String getInitialDate();
 
@@ -106,7 +106,7 @@ public abstract interface ITrendLineSerialChartController {
 
 	/**
 	 * Get initialValue property.
-	 * @return Double Value for initialValue.
+	 * @return Value of initialValue.
 	 */
 	abstract Double getInitialValue();
 
@@ -118,7 +118,7 @@ public abstract interface ITrendLineSerialChartController {
 
 	/**
 	 * Get lineAlpha property.
-	 * @return Double Value for lineAlpha.
+	 * @return Value of lineAlpha.
 	 */
 	abstract Double getLineAlpha();
 
@@ -133,7 +133,7 @@ public abstract interface ITrendLineSerialChartController {
 	/**
 	 * Get lineColor property.<br>
 	 * Default: #00cc00.
-	 * @return String Value for lineColor.
+	 * @return Value of lineColor.
 	 */
 	abstract String getLineColor();
 
@@ -147,7 +147,7 @@ public abstract interface ITrendLineSerialChartController {
 	/**
 	 * Get lineThickness property.<br>
 	 * Default: 1.
-	 * @return Integer Value for lineThickness.
+	 * @return Value of lineThickness.
 	 */
 	abstract Integer getLineThickness();
 
@@ -161,7 +161,7 @@ public abstract interface ITrendLineSerialChartController {
 
 	/**
 	 * Get valueAxis property.
-	 * @return String ValueAxis id.
+	 * @return ValueAxis id.
 	 */
 	abstract String getValueAxis();
 

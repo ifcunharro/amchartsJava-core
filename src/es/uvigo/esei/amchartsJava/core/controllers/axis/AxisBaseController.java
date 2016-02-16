@@ -19,12 +19,14 @@ import es.uvigo.esei.amchartsJava.core.model.AxisBase;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for AxisBase.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public abstract class AxisBaseController implements IAxisBaseController, Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 4422241246218914866L;
 	protected AxisBase axes;
 	

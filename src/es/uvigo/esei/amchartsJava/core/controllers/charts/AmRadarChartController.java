@@ -9,6 +9,11 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmRadarChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
+/**
+ * This class is a controller for AmRadarChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmRadarChartController extends AmCoordinateChartController<AmCoordinateChart> 
 		implements IAmRadarChartController {
 

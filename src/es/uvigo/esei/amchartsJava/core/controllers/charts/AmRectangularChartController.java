@@ -23,15 +23,15 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
 
+/**
+ * This class is a controller for AmRectangularChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public abstract class AmRectangularChartController<G extends AmRectangularChart> 
 				extends AmCoordinateChartController<G> implements IAmRectangularChartController<AmRectangularChart>{
 
-	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 3477512389234890479L;
 
 	protected AmRectangularChartController(G chart) {

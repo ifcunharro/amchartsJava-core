@@ -16,7 +16,7 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 
 	/**
 	 * Get categoryField property.
-	 * @return String Value for categoryField.
+	 * @return Value of categoryField.
 	 */
 	abstract String getCategoryField();
 
@@ -29,7 +29,7 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 	/**
 	 * Get marginBottom property.<br>
 	 * Default: 0.
-	 * @return Integer Value for marginBottom.
+	 * @return Value of marginBottom.
 	 */
 	abstract Integer getMarginBottom();
 
@@ -43,7 +43,7 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 	/**
 	 * Get marginLeft property.<br>
 	 * Default: 0.
-	 * @return Integer Value for marginLeft.
+	 * @return Value of marginLeft.
 	 */
 	abstract Integer getMarginLeft();
 
@@ -57,7 +57,7 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 	/**
 	 * Get marginRight property.<br>
 	 * Default: 0.
-	 * @return Integer Value for marginRight.
+	 * @return Value of marginRight.
 	 */
 	abstract Integer getMarginRight();
 
@@ -71,7 +71,7 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 	/**
 	 * Get marginTop property.<br>
 	 * Default: 0.
-	 * @return Integer Value for marginTop.
+	 * @return Value of marginTop.
 	 */
 	abstract Integer getMarginTop();
 
@@ -85,7 +85,7 @@ public abstract interface IAmRadarChartController extends IAmCoordinateChartCont
 	/**
 	 * Get radius property.<br>
 	 * Default: 35%.
-	 * @return String Value for radius is an integer number or a percent.
+	 * @return Value of radius.
 	 */
 	abstract String getRadius();
 

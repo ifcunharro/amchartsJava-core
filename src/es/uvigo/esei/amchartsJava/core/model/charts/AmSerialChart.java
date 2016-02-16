@@ -18,6 +18,11 @@ import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisControll
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 
+/**
+ * Model class for AmSerialChart
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmSerialChart extends AmRectangularChart {
 	
 	private CategoryAxisController categoryAxis;

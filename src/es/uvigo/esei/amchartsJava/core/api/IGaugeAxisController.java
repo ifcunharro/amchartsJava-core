@@ -22,7 +22,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get axisAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for axisAlpha.
+	 * @return Value of axisAlpha.
 	 */
 	abstract Double getAxisAlpha();
 
@@ -36,7 +36,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get axisColor property.<br>
 	 * Default: #000000.
-	 * @return String Value for axisColor.
+	 * @return Value of axisColor.
 	 */
 	abstract String getAxisColor();
 
@@ -50,7 +50,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get axisThickness property.<br>
 	 * Default: 1.
-	 * @return Integer Value for axisThickness.
+	 * @return Value of axisThickness.
 	 */
 	abstract Integer getAxisThickness();
 
@@ -65,7 +65,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bandAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for bandAlpha.
+	 * @return Value of bandAlpha.
 	 */
 	abstract Double getBandAlpha();
 
@@ -79,7 +79,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bandOutlineAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for bandOutlineAlpha.
+	 * @return Value of bandOutlineAlpha.
 	 */
 	abstract Double getBandOutlineAlpha();
 
@@ -94,7 +94,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bandOutlineColor property.<br>
 	 * Default: #000000
-	 * @return String Value for bandOutlineColor.
+	 * @return Value of bandOutlineColor.
 	 */
 	abstract String getBandOutlineColor();
 
@@ -109,7 +109,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bandOutlineThickness property.<br>
 	 * Default: 0.
-	 * @return Integer Value for bandOutlineThickness.
+	 * @return Value of bandOutlineThickness.
 	 */
 	abstract Integer getBandOutlineThickness();
 
@@ -129,7 +129,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get bottomText property.
-	 * @return String Value for bottomText.
+	 * @return Value of bottomText.
 	 */
 	abstract String getBottomText();
 
@@ -142,7 +142,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bottomTextBold property.<br>
 	 * Default: true.
-	 * @return Boolean Value for bottomTextBold.
+	 * @return Value of bottomTextBold.
 	 */
 	abstract Boolean isBottomTextBold();
 
@@ -154,7 +154,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get bottomTextColor property.
-	 * @return String Value for bottomTextColor.
+	 * @return Value of bottomTextColor.
 	 */
 	abstract String getBottomTextColor();
 
@@ -168,7 +168,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get bottomTextFontSize property.
-	 * @return Integer Value for bottomTextFontSize.
+	 * @return Value of bottomTextFontSize.
 	 */
 	abstract Integer getBottomTextFontSize();
 
@@ -183,7 +183,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get bottomTextYOffset property.<br>
 	 * Default: 0.
-	 * @return Integer Value for bottomTextYOffset.
+	 * @return Value of bottomTextYOffset.
 	 */
 	abstract Integer getBottomTextYOffset();
 
@@ -198,7 +198,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get centerX property.<br>
 	 * Default: 0%.
-	 * @return String Value for centerX is an integer number or a percent.
+	 * @return Value of centerX.
 	 */
 	abstract String getCenterX();
 
@@ -212,7 +212,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get centerY property.<br>
 	 * Default: 0%.
-	 * @return String Value for centerY is an integer number or a percent.
+	 * @return Value of centerY.
 	 */
 	abstract String getCenterY();
 
@@ -226,7 +226,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get endAngle property.<br>
 	 * Default: 120.
-	 * @return Integer Value for endAngle.
+	 * @return Value of endAngle.
 	 */
 	abstract Integer getEndAngle();
 
@@ -238,8 +238,8 @@ public abstract interface IGaugeAxisController {
 	abstract void setEndAngle(Number endAngle) throws OutOfRangeException;
 
 	/**
-	 * Get endValue proeperty.
-	 * @return Integer Value for endValue.
+	 * Get endValue property.
+	 * @return Value of endValue.
 	 */
 	abstract Integer getEndValue();
 
@@ -253,7 +253,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get gridCount property.<br>
 	 * Default: 5.
-	 * @return Integer Value for gridCount.
+	 * @return Value of gridCount.
 	 */
 	abstract Integer getGridCount();
 
@@ -267,7 +267,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get gridInside property.<br>
 	 * Default: true.
-	 * @return Boolean Value for gridInside.
+	 * @return Value of gridInside.
 	 */
 	abstract Boolean isGridInside();
 
@@ -279,14 +279,14 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get id property.
-	 * @return String GaugeAxis id.
+	 * @return GaugeAxis id.
 	 */
 	abstract String getId();
 
 	/**
 	 * Get inside property.<br>
 	 * Default: true.
-	 * @return Boolean Value for inside.
+	 * @return Value of inside.
 	 */
 	abstract Boolean isInside();
 
@@ -299,7 +299,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get labelFrequency property.<br>
 	 * Default: 1.
-	 * @return Integer Value for labelFrequency.
+	 * @return Value of labelFrequency.
 	 */
 	abstract Integer getLabelFrequency();
 
@@ -313,7 +313,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get labelFunction property.
-	 * @return String Value for labelFunction.
+	 * @return Value of labelFunction.
 	 */
 	abstract String getLabelFunction();
 
@@ -326,7 +326,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get labelOffset property.<br>
 	 * Default: 15.
-	 * @return Integer Value for labelOffset.
+	 * @return Value of labelOffset.
 	 */
 	abstract Integer getLabelOffset();
 
@@ -340,7 +340,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get labelsEnabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for labelsEnabled.
+	 * @return Value of labelsEnabled.
 	 */
 	abstract Boolean isLabelsEnabled();
 
@@ -352,7 +352,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get minorTickInterval property.
-	 * @return Integer Value for minorTickInterval.
+	 * @return Value of minorTickInterval.
 	 */
 	abstract Integer getMinorTickInterval();
 
@@ -367,7 +367,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get minorTickLength property.<br>
 	 * Default: 5.
-	 * @return Integer Value for minorTickLength.
+	 * @return Value of minorTickLength.
 	 */
 	abstract Integer getMinorTickLength();
 
@@ -382,7 +382,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get radius property.<br>
 	 * Default: 95%.
-	 * @return String Value for radius is an integer number or a percent.
+	 * @return Value of radius.
 	 */
 	abstract String getRadius();
 
@@ -396,7 +396,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get showFirstLabel property.<br>
 	 * Default: true.
-	 * @return Boolean Value for showFirstLabel.
+	 * @return Value of showFirstLabel.
 	 */
 	abstract Boolean isShowFirstLabel();
 
@@ -409,7 +409,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get showLastLabel property.
 	 * Default: true.
-	 * @return Boolean Value for showLastLabel.
+	 * @return Value of showLastLabel.
 	 */
 	abstract Boolean isShowLastLabel();
 
@@ -422,7 +422,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get startAngle property.<br>
 	 * Default: -120.
-	 * @return Integer Value for startAngle.
+	 * @return Value of startAngle.
 	 */
 	abstract Integer getStartAngle();
 
@@ -436,7 +436,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get startValue property.<br>
 	 * Default: 0.
-	 * @return Integer Value for startValue.
+	 * @return Value of startValue.
 	 */
 	abstract Integer getStartValue();
 
@@ -450,7 +450,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get tickAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for tickAlpha.
+	 * @return Value of tickAlpha.
 	 */
 	abstract Double getTickAlpha();
 
@@ -464,7 +464,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get tickColor property.<br>
 	 * Default: #555555
-	 * @return String Value for tickColor.
+	 * @return Value of tickColor.
 	 */
 	abstract String getTickColor();
 
@@ -478,7 +478,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get tickLength property.<br>
 	 * Default: 10.
-	 * @return Integer Value for tickLength.
+	 * @return Value of tickLength.
 	 */
 	abstract Integer getTickLength();
 
@@ -492,7 +492,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get tickThickness property.<br>
 	 * Default: 1.
-	 * @return Integer Value for tickThickness.
+	 * @return Value of tickThickness.
 	 */
 	abstract Integer getTickThickness();
 
@@ -506,7 +506,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get topText property.
-	 * @return String Value for topText.
+	 * @return Value of topText.
 	 */
 	abstract String getTopText();
 
@@ -519,7 +519,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get topTextBold property.<br>
 	 * Default: true.
-	 * @return Boolean Value for topTextBold.
+	 * @return Value of topTextBold.
 	 */
 	abstract Boolean isTopTextBold();
 
@@ -531,7 +531,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get topTextColor property.
-	 * @return String Value for topTextColor.
+	 * @return Value of topTextColor.
 	 */
 	abstract String getTopTextColor();
 
@@ -544,7 +544,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get topTextFontSize property.
-	 * @return Integer Value for topTextFontSize.
+	 * @return Value of topTextFontSize.
 	 */
 	abstract Integer getTopTextFontSize();
 
@@ -559,7 +559,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get topTextYOffset property.<br>
 	 * Default: 0.
-	 * @return Integer Value for topTextYoffset.
+	 * @return Value of topTextYoffset.
 	 */
 	abstract Integer getTopTextYOffset();
 
@@ -573,7 +573,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get unit property.
-	 * @return String Value for unit.
+	 * @return Value of unit.
 	 */
 	abstract String getUnit();
 
@@ -587,7 +587,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get unitPosition property.<br>
 	 * Default: right.
-	 * @return String Value for unitPosition.
+	 * @return Value of unitPosition.
 	 */
 	abstract String getUnitPosition();
 
@@ -600,7 +600,7 @@ public abstract interface IGaugeAxisController {
 	/**
 	 * Get usePrefixes property.<br>
 	 * Default: false.
-	 * @return Boolean Value for usePrefixes.
+	 * @return Value of usePrefixes.
 	 */
 	abstract Boolean isUsePrefixes();
 
@@ -612,7 +612,7 @@ public abstract interface IGaugeAxisController {
 
 	/**
 	 * Get valueInterval property.
-	 * @return Double Value for valueInterval.
+	 * @return Value of valueInterval.
 	 */
 	abstract Double getValueInterval();
 

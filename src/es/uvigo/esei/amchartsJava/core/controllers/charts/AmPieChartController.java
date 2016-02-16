@@ -12,11 +12,13 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmSlicedChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
+/**
+ * This class is a controller for AmPieChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmPieChartController extends AmSlicedChartController<AmSlicedChart> implements IAmPieChartController {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2014181511231582610L;
 
 	public AmPieChartController() {
@@ -198,4 +200,5 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 			amchart.setFeature("startRadius", startRadius);
 		}
 	}
+
 }

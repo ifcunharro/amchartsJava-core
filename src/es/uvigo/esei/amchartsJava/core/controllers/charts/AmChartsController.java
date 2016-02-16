@@ -10,10 +10,7 @@ import es.uvigo.esei.amchartsJava.core.model.AmCharts;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
 /**
- * 
- * Controller of AmCharts. Details of AmCharts and its properties in AmCharts API.
- * This class save charts created in app.
- * 
+ * This class is a controller for AmCharts.
  * @author Iago Fernández Cuñarro
  *
  */

@@ -9,17 +9,19 @@ import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 
-
+/**
+ * This class is a controller for TrendLine used by AmXyChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class TrendLineXyChartController extends TrendLineSerialChartController implements ITrendLineXyChartController {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -9162444480552470659L;
 	private static final Logger logger = Logger.getLogger(TrendLineXyChartController.class.getName());
 
 	
 	{
+		//property only used in AmXyChart. Used to deserialize json to this class
 		setInitialXValue(0);
 	}
 	

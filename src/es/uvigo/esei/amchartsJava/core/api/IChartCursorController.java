@@ -27,14 +27,13 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get adjustment property.<br>
 	 * Default: 0.
-	 * @return Integer Value for adjustment.
+	 * @return Value of adjustment.
 	 */
 	abstract Integer getAdjustment();
 
-	//no se recomienda cambiar esta propiedad, es la distancia entre el cursor y
-	//el mensaje del balloon que aparece
 	/**
-	 * Set adjustment property.
+	 * Set adjustment property.<br>
+	 * Adjustment property control the distance between cursor and balloon. 
 	 * @param adjustment Value for adjustment.
 	 * @throws IntegerException Value for adjustment is not an integer number.
 	 */
@@ -43,7 +42,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get animationDuration property.<br>
 	 * Default: 0.3.
-	 * @return Double Value for animationDuration.
+	 * @return Value of animationDuration.
 	 */
 	abstract Double getAnimationDuration();
 
@@ -58,7 +57,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get avoidBalloonOverlapping property.<br>
 	 * Default: true.
-	 * @return Boolean Value for avoidBalloonOverlapping.
+	 * @return Value of avoidBalloonOverlapping.
 	 */
 	abstract Boolean isAvoidBalloonOverlapping();
 
@@ -71,7 +70,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get balloonPointerOrientation property.<br>
 	 * Default: horizontal.
-	 * @return String Value for balloonPointerOrientation.
+	 * @return Value of balloonPointerOrientation.
 	 */
 	abstract String getBalloonPointerOrientation();
 
@@ -85,7 +84,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get bulletsEnabled property.<br>
 	 * Default: false.
-	 * @return Boolean Value for bulletsEnabled.
+	 * @return Value of bulletsEnabled.
 	 */
 	abstract Boolean isBulletsEnabled();
 
@@ -98,7 +97,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get bulletSize property.<br>
 	 * Default: 8.
-	 * @return Integer Value for bulletSize.
+	 * @return Value of bulletSize.
 	 */
 	abstract Integer getBulletSize();
 
@@ -112,7 +111,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get categoryBalloonAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for categoryBalloonAlpha.
+	 * @return Value of categoryBalloonAlpha.
 	 */
 	abstract Double getCategoryBalloonAlpha();
 
@@ -127,7 +126,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get categoryBalloonColor property.<br>
 	 * Default: color of categoryBalloon
-	 * @return String Value for categoryBalloonColor.
+	 * @return Value of categoryBalloonColor.
 	 */
 	abstract String getCategoryBalloonColor();
 
@@ -142,7 +141,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get categoryBalloonDateFormat property.<br>
 	 * Default: MMM DD, YYYY
-	 * @return String Value for categoryBalloonDateFormat.
+	 * @return Value of categoryBalloonDateFormat.
 	 */
 	abstract String getCategoryBalloonDateFormat();
 
@@ -156,7 +155,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get categoryBalloonEnabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for categoryBalloonEnabled.
+	 * @return Value of categoryBalloonEnabled.
 	 */
 	abstract Boolean isCategoryBalloonEnabled();
 
@@ -168,7 +167,7 @@ public abstract interface IChartCursorController {
 
 	/**
 	 * Get categoryBalloonFunction property.
-	 * @return String Value for categoryBalloonFunction.
+	 * @return Value of categoryBalloonFunction.
 	 */
 	abstract String getCategoryBalloonFunction();
 
@@ -181,7 +180,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get categoryBalloonText property.<br>
 	 * Default: [[category]]
-	 * @return String Value for categoryBalloonText.
+	 * @return Value of categoryBalloonText.
 	 */
 	abstract String getCategoryBalloonText();
 	
@@ -194,7 +193,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get color property.<br>
 	 * Default: #ffffff
-	 * @return Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -208,7 +207,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get cursorAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for cursorAlpha.
+	 * @return Value of cursorAlpha.
 	 */
 	abstract Double getCursorAlpha();
 
@@ -222,7 +221,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get cursorColor property.<br>
 	 * Default: #cc0000
-	 * @return String Value for cursorColor.
+	 * @return Value of cursorColor.
 	 */
 	abstract String getCursorColor();
 
@@ -236,7 +235,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get cursorPosition property.<br>
 	 * Default: middle.
-	 * @return String Value for cursorPosition.
+	 * @return Value of cursorPosition.
 	 */
 	abstract String getCursorPosition();
 
@@ -249,7 +248,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get enabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for enabled.
+	 * @return Value of enabled.
 	 */
 	abstract Boolean isEnabled();
 
@@ -262,7 +261,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get fullWidth property.<br>
 	 * Default: false.
-	 * @return Boolean Value for fullWidth.
+	 * @return Value of fullWidth.
 	 */
 	abstract Boolean isFullWidth();
 
@@ -274,7 +273,7 @@ public abstract interface IChartCursorController {
 
 	/**
 	 * Get graphBulletAlpha property.
-	 * @return Double Value for graphBulletAlpha.
+	 * @return Value of graphBulletAlpha.
 	 */
 	abstract Double getGraphBulletAlpha();
 
@@ -289,7 +288,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get graphBulletSize property.<br>
 	 * Default: 1.7(amcharts default, app only admitted integer number for this size)
-	 * @return Integer Value for graphBulletSize.
+	 * @return Value of graphBulletSize.
 	 */
 	abstract Integer getGraphBulletSize();
 
@@ -304,7 +303,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get leaveCursor property.<br>
 	 * Default: false.
-	 * @return Boolean Value for leaveCursor.
+	 * @return Value of leaveCursor.
 	 */
 	abstract Boolean isLeaveCursor();
 
@@ -317,7 +316,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get oneBalloonOnly property.<br>
 	 * Default: false.
-	 * @return Boolean Value for oneBalloonOnly.
+	 * @return Value of oneBalloonOnly.
 	 */
 	abstract Boolean isOneBalloonOnly();
 
@@ -330,7 +329,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get pan property.<br>
 	 * Default: false.
-	 * @return Boolean Value for pan.
+	 * @return Value of pan.
 	 */
 	abstract Boolean isPan();
 
@@ -343,7 +342,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get selectionAlpha property.<br>
 	 * Default: 0.2.
-	 * @return Double Value for selectionAlpha.
+	 * @return Value of selectionAlpha.
 	 */
 	abstract Double getSelectionAlpha();
 
@@ -358,7 +357,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get selectWithoutZooming property.<br>
 	 * Default: false.
-	 * @return Boolean Value for selectWithoutZooming
+	 * @return Value of selectWithoutZooming
 	 */
 	abstract Boolean isSelectWithoutZooming();
 
@@ -371,7 +370,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get showNextAvailable property.<br>
 	 * Default: false.
-	 * @return Boolean Value for showNextAvailable.
+	 * @return Value of showNextAvailable.
 	 */
 	abstract Boolean isShowNextAvailable();
 
@@ -384,7 +383,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get valueBalloonsEnabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for valueBalloonsEnabled.
+	 * @return Value of valueBalloonsEnabled.
 	 */
 	abstract Boolean isValueBalloonsEnabled();
 
@@ -397,7 +396,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get valueLineAlpha property.<br>
 	 * Default: cursorAlpha.
-	 * @return Double Value for valueLineAlpha.
+	 * @return Value of valueLineAlpha.
 	 */
 	abstract Double getValueLineAlpha();
 
@@ -411,7 +410,7 @@ public abstract interface IChartCursorController {
 
 	/**
 	 * Get valueLineAxis property.
-	 * @return String Value for valueLineAxis.
+	 * @return Value of valueLineAxis.
 	 */
 	abstract String getValueLineAxis();
 
@@ -425,7 +424,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get valueLineBalloonEnabled property.<br>
 	 * Default: false.
-	 * @return Boolean Value for valueLineBalloonEnabled.
+	 * @return Value of valueLineBalloonEnabled.
 	 */
 	abstract Boolean isValueLineBalloonEnabled();
 
@@ -438,7 +437,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get valueLineEnabled property.<br>
 	 * Default: false.
-	 * @return Boolean Value for valueLineEnabled.
+	 * @return Value of valueLineEnabled.
 	 */
 	abstract Boolean isValueLineEnabled();
 
@@ -451,7 +450,7 @@ public abstract interface IChartCursorController {
 	/**
 	 * Get zoomable property.<br>
 	 * Default: true.
-	 * @return Boolean Value for zoomable.
+	 * @return Value of zoomable.
 	 */
 	abstract Boolean isZoomable();
 

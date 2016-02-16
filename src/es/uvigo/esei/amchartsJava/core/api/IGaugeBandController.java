@@ -16,7 +16,7 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get alpha property.
-	 * @return Double Value for alpha.
+	 * @return Value of alpha.
 	 */
 	abstract Double getAlpha();
 
@@ -29,7 +29,7 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get balloonText property.
-	 * @return String Value for balloonText.
+	 * @return Value of balloonText.
 	 */
 	abstract String getBalloonText();
 
@@ -41,7 +41,7 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get color property.
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -54,7 +54,7 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get endValue property.
-	 * @return Double Value for endValue.
+	 * @return Value of endValue.
 	 */
 	abstract Double getEndValue();
 
@@ -66,13 +66,13 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get id property.
-	 * @return String GaugeBand id.
+	 * @return GaugeBand id.
 	 */
 	abstract String getId();
 
 	/**
 	 * Get innerRadius property.
-	 * @return String Value for innerRadius is an integer number or a percent.
+	 * @return Value of innerRadius.
 	 */
 	abstract String getInnerRadius();
 
@@ -85,7 +85,7 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get radius property.
-	 * @return String Value for radius is an integer number or a percent.
+	 * @return Value of radius.
 	 */
 	abstract String getRadius();
 
@@ -98,7 +98,7 @@ public abstract interface IGaugeBandController {
 
 	/**
 	 * Get startValue property.
-	 * @return Double Value for startValue.
+	 * @return Value of startValue.
 	 */
 	abstract Double getStartValue();
 

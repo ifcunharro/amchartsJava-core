@@ -12,10 +12,13 @@ import es.uvigo.esei.amchartsJava.core.constants.LabelAnchor;
 import es.uvigo.esei.amchartsJava.core.constants.LabelPosition;
 import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueText;
 import es.uvigo.esei.amchartsJava.core.constants.MarkerType;
+import es.uvigo.esei.amchartsJava.core.constants.PointPositionGraph;
+import es.uvigo.esei.amchartsJava.core.constants.ShowAt;
 import es.uvigo.esei.amchartsJava.core.constants.TagsText;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTarget;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
+import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.MalFormedPatternException;
@@ -40,13 +43,13 @@ public abstract interface IAmGraphController  {
 	
 	/**
 	 * Get id property.
-	 * @return String AmGraph id.
+	 * @return AmGraph id.
 	 */
 	abstract String getId();
 
 	/**
 	 * Get alphaField property.
-	 * @return String Value for alphaField property.
+	 * @return Value of alphaField.
 	 */
 	abstract String getAlphaField();
 
@@ -59,7 +62,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get animationPlayed property.<br>
 	 * Default: false.
-	 * @return Boolean Value for animationPlayed.
+	 * @return Value of animationPlayed.
 	 */
 	abstract Boolean isAnimationPlayed();
 
@@ -71,7 +74,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get balloonColor property.
-	 * @return String Value for balloonColor.
+	 * @return Value of balloonColor.
 	 */
 	abstract String getBalloonColor();
 
@@ -83,7 +86,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get balloonFunction property.
-	 * @return String Value for balloonFunction.
+	 * @return Value of balloonFunction.
 	 */
 	abstract String getBalloonFunction();
 
@@ -96,7 +99,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get balloonText property.<br>
 	 * Default: [[value]]
-	 * @return String Value for balloonText.
+	 * @return Value of balloonText.
 	 */
 	abstract String getBalloonText();
 	
@@ -109,7 +112,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bullet property.<br>
 	 * Default: none.
-	 * @return String Value for bullet.
+	 * @return Value of bullet.
 	 */
 	abstract String getBullet();
 
@@ -122,7 +125,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for bulletAlpha.
+	 * @return Value of bulletAlpha.
 	 */
 	abstract Double getBulletAlpha();
 
@@ -136,7 +139,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletBorderAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for bulletBorderAlpha.
+	 * @return Value of bulletBorderAlpha.
 	 */
 	abstract Double getBulletBorderAlpha();
 
@@ -150,7 +153,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get bulletBorderColor property.
-	 * @return String Value for bulletBorderColor.
+	 * @return Value of bulletBorderColor.
 	 */
 	abstract String getBulletBordeColor();
 
@@ -163,7 +166,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletBorderThickness property.<br>
 	 * Default: 2.
-	 * @return Integer Value for bulletBorderThickness.
+	 * @return Value of bulletBorderThickness.
 	 */
 	abstract Integer getBulletBorderThickness();
 
@@ -177,7 +180,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get bulletColor property.
-	 * @return String Value for bulletColor.
+	 * @return Value of bulletColor.
 	 */
 	abstract String getBulletColor();
 
@@ -189,7 +192,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get bulletField property.
-	 * @return String Value for bulletField.
+	 * @return Value of bulletField.
 	 */
 	abstract String getBulletField();
 
@@ -202,7 +205,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletOffset property.<br>
 	 * Default: 0.
-	 * @return Integer Value for bulletOffset.
+	 * @return Value of bulletOffset.
 	 */
 	abstract Integer getBulletOffset();
 
@@ -216,7 +219,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get bulletSize property.<br>
 	 * Default: 8.
-	 * @return Integer Value for bulletSize.
+	 * @return Value of bulletSize.
 	 */
 	abstract Integer getBulletSize();
 
@@ -229,7 +232,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get bulletSizeField property.
-	 * @return String Value for bulletSizeField.
+	 * @return Value of bulletSizeField.
 	 */
 	abstract String getBulletSizeField();
 
@@ -241,7 +244,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get closeField property.
-	 * @return String Value for closeField.
+	 * @return Value of closeField.
 	 */
 	abstract String getCloseField();
 
@@ -253,7 +256,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get color property.
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -265,7 +268,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get colorField property.
-	 * @return String Value for colorField.
+	 * @return Value of colorField.
 	 */
 	abstract String getColorField();
 
@@ -278,7 +281,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get cursorBulletAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for cursorBulletAlpha.
+	 * @return Value of cursorBulletAlpha.
 	 */
 	abstract Double getCursorBulletAlpha();
 
@@ -290,23 +293,21 @@ public abstract interface IAmGraphController  {
 	abstract void setCursorBulletAlpha(Number cursorBulletAlpha)
 			throws OutOfRangeException;
 
-	//path to image custom bullet
 	/**
 	 * Get customBullet property.
-	 * @return String Value for customBullet.
+	 * @return Value of customBullet.
 	 */
 	abstract String getCustomBullet();
 
-	//FALTA VALIDAR PATH
 	/**
 	 * Set customBullet property.
-	 * @param customBullet Value for customBullet.
+	 * @param customBullet Value for customBullet is name image used as bullet.
 	 */
 	abstract void setCustomBullet(String customBullet);
 
 	/**
 	 * Get customBulletField property.
-	 * @return String Value for customBulletField.
+	 * @return String Value of customBulletField.
 	 */
 	abstract String getCustomBulletField();
 
@@ -316,28 +317,25 @@ public abstract interface IAmGraphController  {
 	 */
 	abstract void setCustomBulletField(String customBulletField);
 
-	//FALTA VALIDAR PATH
 	/**
 	 * Get customMarker property.
-	 * @return String Value for customMarker.
+	 * @return Value of customMarker.
 	 */
 	abstract String getCustomMarker();
 
 	/**
 	 * Set customMarker property.
-	 * @param customMarker Value for customMarker. 
+	 * @param customMarker Value for customMarker is name image used as marker. 
 	 */
 	abstract void setCustomMarker(String customMarker);
 
 	/**
 	 * Get dateFormat property.<br>
 	 * Default: MMM DD, YYYY
-	 * @return String Value for dateFormat.
+	 * @return Value of dateFormat.
 	 */
 	abstract String getDateFormat();
 
-	//escogido de DateFormatConstant, filtrar a nivel interfaz, 
-	// si se usa sin interfaz propia o sin ninguna interfaz no se realiza ningún cambio
 	/**
 	 * Set dateFormat property.
 	 * @param dateFormat Value for dateFormat.
@@ -347,7 +345,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get descriptionField property.
-	 * @return String Value for descriptionField.
+	 * @return Value of descriptionField.
 	 */
 	abstract String getDescriptionField();
 
@@ -359,7 +357,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get errorField property.
-	 * @return String Value for errorField.
+	 * @return Value of errorField.
 	 */
 	abstract String getErrorField();
 
@@ -372,7 +370,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get fillAlphas property.<br>
 	 * Default: 0.
-	 * @return Double Value for fillAlphas.
+	 * @return Value of fillAlphas.
 	 */
 	abstract Double getFillAlphas();
 
@@ -385,7 +383,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get fillToGraph property.
-	 * @return String AmGraph id.
+	 * @return AmGraph id.
 	 */
 	abstract String getFillToGraph();
 
@@ -399,7 +397,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get fontSize property.
-	 * @return Integer Value for fontSize.
+	 * @return Value of fontSize.
 	 */
 	abstract Integer getFontSize();
 
@@ -413,7 +411,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get gapPeriod property.<br>
 	 * Default: 1.1.
-	 * @return Double Value for gapPeriod.
+	 * @return Value of gapPeriod.
 	 */
 	abstract Double getGapPeriod();
 
@@ -427,7 +425,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get gradientOrientation property.<br>
 	 * Default: vertical.
-	 * @return String Value for gradientOrientation.
+	 * @return Value of gradientOrientation.
 	 */
 	abstract String getGradientOrientation();
 
@@ -440,7 +438,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get hidden property.<br>
 	 * Default: false.
-	 * @return Boolean Value for hidden.
+	 * @return Value of hidden.
 	 */
 	abstract Boolean isHidden();
 
@@ -453,7 +451,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get hideBulletsCount property.<br>
 	 * Default: 0.
-	 * @return Integer Value for hideBulletsCount property.
+	 * @return Value of hideBulletsCount.
 	 */
 	abstract Integer getHideBulletsCount();
 
@@ -468,7 +466,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get includeInMinMax property.<br>
 	 * Default: true.
-	 * @return Boolean Value for includeInMinMax.
+	 * @return Value of includeInMinMax.
 	 */
 	abstract Boolean isIncludeInMinMax();
 
@@ -481,7 +479,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get labelAnchor property.<br>
 	 * Default: auto.
-	 * @return String Value for labelAnchor.
+	 * @return Value of labelAnchor.
 	 */
 	abstract String getLabelAnchor();
 
@@ -493,7 +491,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get labelColorField property.
-	 * @return String Value for labelColorField.
+	 * @return Value of labelColorField.
 	 */
 	abstract String getLabelColorField();
 
@@ -505,7 +503,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get labelFunction property.
-	 * @return String Value for labelFunction.
+	 * @return Value of labelFunction.
 	 */
 	abstract String getLabelFunction();
 
@@ -518,7 +516,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get labelOffset property.<br>
 	 * Default: 0.
-	 * @return Integer Value for labelOffset.
+	 * @return Value of labelOffset.
 	 */
 	abstract Integer getLabelOffset();
 
@@ -531,7 +529,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get labelPosition property.
-	 * @return String Value for labelPosition.
+	 * @return Value of labelPosition.
 	 */
 	abstract String getLabelPosition();
 
@@ -543,7 +541,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get labelRotation property.
-	 * @return Integer Value for labelRotation.
+	 * @return Value of labelRotation.
 	 */
 	abstract Integer getLabelRotation();
 
@@ -557,7 +555,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get labelText property.
-	 * @return String Value for labelText.
+	 * @return Value of labelText.
 	 */
 	abstract String getLabelText();
 
@@ -569,7 +567,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get legendAlpha property.
-	 * @return Double Value for legendAlpha.
+	 * @return Value of legendAlpha.
 	 */
 	abstract Double getLegendAlpha();
 
@@ -582,7 +580,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get legendColor property.
-	 * @return String Value for legendColor.
+	 * @return Value of legendColor.
 	 */
 	abstract String getLegendColor();
 
@@ -594,7 +592,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get legendPeriodValueText property.
-	 * @return String Value for legendPeriodValueText.
+	 * @return Value of legendPeriodValueText.
 	 */
 	abstract String getLegendPeriodValueText();
 
@@ -607,7 +605,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get legendValueText property.
-	 * @return String Value for legendValueText.
+	 * @return Value of legendValueText.
 	 */
 	abstract String getLegendValueText();
 
@@ -620,7 +618,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get lineAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for lineAlpha.
+	 * @return Value of lineAlpha.
 	 */
 	abstract Double getLineAlpha();
 
@@ -633,7 +631,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get markerType property.
-	 * @return String Value for markerType.
+	 * @return Value of markerType.
 	 */
 	abstract String getMakerType();
 
@@ -646,7 +644,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get minDistance property.<br>
 	 * Default: 1.
-	 * @return Integer Value for minDistance.
+	 * @return Value of minDistance.
 	 */
 	abstract Integer getMinDistance();
 
@@ -660,7 +658,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get negativeBase property.<br>
 	 * Default: 0.
-	 * @return Integer Value for negativeBase.
+	 * @return Value of negativeBase.
 	 */
 	abstract Integer getNegativeBase();
 
@@ -673,7 +671,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get negativeFillAlphas property.
-	 * @return Double Value for negativeFillAlphas.
+	 * @return Value of negativeFillAlphas.
 	 */
 	abstract Double getNegativeFillAlphas();
 
@@ -687,7 +685,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get negativeFillColors property.
-	 * @return String Value for negativeFillColors.
+	 * @return Value of negativeFillColors.
 	 */
 	abstract String getNegativeFillColors();
 
@@ -712,7 +710,7 @@ public abstract interface IAmGraphController  {
 	
 	/**
 	 * Get patternField property.
-	 * @return String Value for patternField.
+	 * @return Value of patternField.
 	 */
 	abstract String getPatternField();
 	
@@ -724,7 +722,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get precision property.
-	 * @return Integer Value for precision.
+	 * @return Value of precision.
 	 */
 	abstract Integer getPrecision();
 
@@ -738,7 +736,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get proCandleSticks property.<br>
 	 * Default: false.
-	 * @return Boolean Value for proCandleSticks.
+	 * @return Value of proCandleSticks.
 	 */
 	abstract Boolean isProCandleSticks();
 
@@ -751,7 +749,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get showAllValueLabels property.<br>
 	 * Default: false.
-	 * @return Boolean Value for showAllValueLabels.
+	 * @return Value of showAllValueLabels.
 	 */
 	abstract Boolean isShowAllValueLabels();
 
@@ -764,7 +762,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get showBalloon property.<br>
 	 * Default: true.
-	 * @return Boolean Value for showBalloon.
+	 * @return Value of showBalloon.
 	 */
 	abstract Boolean isShowBalloon();
 
@@ -777,7 +775,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get showHandOnHover property.<br>
 	 * Default: false.
-	 * @return Boolean Value for showHandOnHover.
+	 * @return Value of showHandOnHover.
 	 */
 	abstract Boolean isShowHandOnHover();
 
@@ -790,7 +788,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get showOnAxis property.<br>
 	 * Default: false.
-	 * @return Boolean Value for showOnAxis.
+	 * @return Value of showOnAxis.
 	 */
 	abstract Boolean isShowOnAxis();
 
@@ -803,7 +801,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get stackable property.<br>
 	 * Default: true.
-	 * @return Boolean Value for stackable.
+	 * @return Value of stackable.
 	 */
 	abstract Boolean isStackable();
 
@@ -816,7 +814,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get switchable property.<br>
 	 * Default: true.
-	 * @return Boolean Value for switchable.
+	 * @return Value of switchable.
 	 */
 	abstract Boolean isSwitchable();
 
@@ -828,7 +826,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get title property.
-	 * @return String Graph title.
+	 * @return Graph title.
 	 */
 	abstract String getTitle();
 
@@ -841,7 +839,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get type property.<br>
 	 * Default: line.
-	 * @return String Value for type.
+	 * @return Value of type.
 	 */
 	abstract String getType();
 
@@ -853,7 +851,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get urlField property.
-	 * @return String Value for urlField.
+	 * @return Value of urlField.
 	 */
 	abstract String getUrlField();
 
@@ -865,7 +863,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get urlTargert property.
-	 * @return String Value for urlTarget.
+	 * @return Value of urlTarget.
 	 */
 	abstract String getUrlTarget();
 
@@ -877,7 +875,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get valueAxis property.
-	 * @return String ValueAxis id.
+	 * @return ValueAxis id.
 	 */
 	abstract String getValueAxis();
 
@@ -890,7 +888,7 @@ public abstract interface IAmGraphController  {
 
 	/**
 	 * Get valueField property.
-	 * @return String Value for valueField.
+	 * @return Value of valueField.
 	 */
 	abstract String getValueField();
 
@@ -903,7 +901,7 @@ public abstract interface IAmGraphController  {
 	/**
 	 * Get visibleInLegend property.<br>
 	 * Default: true.
-	 * @return Boolean Value for visibleInLegend.
+	 * @return Value of visibleInLegend.
 	 */
 	abstract Boolean isVisibleInLegend();
 
@@ -924,5 +922,240 @@ public abstract interface IAmGraphController  {
 	 * @return Map or relation nameField amcharts- nameField user.
 	 */
 	abstract Map<String,String> getGraphFields();
+	
+	/**
+	 * Get behindColumns property.<br>
+	 * Default: false.
+	 * @return Value of behindColumns.
+	 */
+	abstract Boolean isBehindColumns();
+
+	/**
+	 * Set behindColumns property.
+	 * @param behindColumns Enable or disable behindColumns.
+	 */
+	abstract void setBehindColumns(Boolean behindColumns);
+
+	/**
+	 * Get clustered property.<br>
+	 * Default: true.
+	 * @return Value of clustered.
+	 */
+	abstract Boolean isClustered();
+
+	/**
+	 * Set clustered property.
+	 * @param clustered Enable or disable clustered.
+	 */
+	abstract void setClustered(Boolean clustered);
+
+	/**
+	 * Get columnWidth property.
+	 * @return Value of columnWidth.
+	 */
+	abstract Double getColumnWidth();
+
+	/**
+	 * Set columnWidth property.
+	 * @param columnWidth Value for columWidth.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
+	 */
+	abstract void setColumnWidth(Number columnWidth) throws OutOfRangeException;
+
+	/**
+	 * Get cornerRadiusTop property.<br>
+	 * Default: 0.
+	 * @return Value of cornerRadiusTop.
+	 */
+	abstract String getCornerRadiusTop();
+
+	/**
+	 * Set cornerRadiusTop property.
+	 * @param cornerRadiusTop Value for cornerRadiusTop.
+	 * @throws CoordException Value for cornerRadiusTop is not an integer number or a percent.
+	 */
+	abstract void setCornerRadiusTop(String cornerRadiusTop)
+			throws CoordException;
+
+	/**
+	 * Get dashLength property.<br>
+	 * Default: 0.
+	 * @return Value of dashLength.
+	 */
+	abstract Double getDashLength();
+
+	/**
+	 * Set dashLength property.
+	 * @param dashLength Value for dashLength.
+	 */
+	abstract void setDashLength(Number dashLength);
+
+	/**
+	 * Get dashLengthField property.
+	 * @return Value of dashLengthField.
+	 */
+	abstract String getDashLengthField();
+
+	/**
+	 * Set dashLengthField property.
+	 * @param dashLengthField Value for dashLengthField.
+	 */
+	abstract void setDashLengthField(String dashLengthField);
+
+	/**
+	 * Get fixedColumnWidth property.
+	 * @return Value of fixedColumnWidth.
+	 */
+	abstract Integer getFixedColumnWidth();
+
+	/**
+	 * Set fixedColumnWidth property.
+	 * @param fixedColumnWidth Value for fixedColumnWidth.
+	 * @throws IntegerException Value for fixedColumnWidth is not an integer number.
+	 */
+	abstract void setFixedColumnWidth(Number fixedColumnWidth)
+			throws IntegerException;
+
+	/**
+	 * Get lineColor property.
+	 * @return Value of lineColor.
+	 */
+	abstract String getLineColor();
+
+	/**
+	 * Set lineColor property.
+	 * @param lineColor Value for lineColor.
+	 */
+	abstract void setLineColor(ColorsAmCharts lineColor);
+
+	/**
+	 * Get lineColorField property.
+	 * @return Value of lineColorField.
+	 */
+	abstract String getLineColorField();
+
+	/**
+	 * Set lineColorField property.
+	 * @param lineColorField Value for lineColorField.
+	 */
+	abstract void setLineColorField(String lineColorField);
+
+	/**
+	 * Get lineThickness property.<br>
+	 * Default: 1.
+	 * @return Value of lineThickness.
+	 */
+	abstract Integer getLineThickness();
+
+	/**
+	 * Set lineThickness property.With improvedVisibility enabled, range activated.
+	 * @param lineThickness Value for lineThickness.
+	 * @throws OutOfRangeException Value out of range admitted: 0-12.
+	 */
+	abstract void setLineThickness(Number lineThickness) throws OutOfRangeException;
+
+	/**
+	 * Get negativeLineAlpha property.<br>
+	 * Default: 1.
+	 * @return Value of negativeLineAlpha.
+	 */
+	abstract Double getNegativeLineAlpha();
+
+	/**
+	 * Set negativeLineAlpha property.
+	 * @param negativeLineAlpha Value for negativeLineAlpha.
+	 * @throws OutOfRangeException Value out of range admitted: 0.0-1.0.
+	 */
+	abstract void setNegativeLineAlpha(Number negativeLineAlpha)
+			throws OutOfRangeException;
+
+	/**
+	 * Get negativeLineColor property.
+	 * @return Value of negativeLineColor.
+	 */
+	abstract String getNegativeLineColor();
+
+	/**
+	 * Set negativeLineColor property.
+	 * @param negativeLineColor Value for negativeLineColor.
+	 */
+	abstract void setNegativeLineColor(ColorsAmCharts negativeLineColor);
+
+	/**
+	 * Get newStack property.<br>
+	 * Default: false.
+	 * @return Value of newStack.
+	 */
+	abstract Boolean isNewStack();
+
+	/**
+	 * Set newStack property.
+	 * @param newStack Enable or disable newStack.
+	 */
+	abstract void setNewStack(Boolean newStack);
+
+	/**
+	 * Get openField property.
+	 * @return Value of openField.
+	 */
+	abstract String getOpenField();
+
+	/**
+	 * Set openField property.
+	 * @param openField Value for openField.
+	 */
+	abstract void setOpenField(String openField);
+
+	/**
+	 * Get pointPosition property.<br>
+	 * Default: middle.
+	 * @return Value of pointPosition.
+	 */
+	abstract String getPointPosition();
+
+	/**
+	 * Set pointPosition property.
+	 * @param pointPosition Value for pointPosition.
+	 */
+	abstract void setPointPosition(PointPositionGraph pointPosition);
+
+	/**
+	 * Get showBalloonAt property.<br>
+	 * Default: close.
+	 * @return Value of showBalloonAt.
+	 */
+	abstract String getShowBalloonAt();
+
+	/**
+	 * Set showBalloonAt property.
+	 * @param showBalloonAt Value for showBalloonAt.
+	 */
+	abstract void setShowBalloonAt(ShowAt showBalloonAt);
+
+	/**
+	 * Get topRadius property.
+	 * @return Value of topRadius.
+	 */
+	abstract Double getTopRadius();
+
+	/**
+	 * Set topRadius property.With improvedVisibility enabled, range activated.
+	 * @param topRadius Value for topRadius.
+	 * @throws OutOfRangeException Value out of range admitted: 0-2.
+	 */
+	abstract void setTopRadius(Number topRadius) throws OutOfRangeException;
+
+	/**
+	 * Get useNegativeColorIfDown property.<br>
+	 * Default: false.
+	 * @return Value for useNegativeColorIfDown.
+	 */
+	abstract Boolean isUseNegativeColorIfDown();
+
+	/**
+	 * Set useNegativeColorIfDown property.
+	 * @param useNegativeColorIfDown Enable or disable negativeColorIfDown.
+	 */
+	abstract void setUseNegativeColorIfDown(Boolean useNegativeColorIfDown);
 
 }

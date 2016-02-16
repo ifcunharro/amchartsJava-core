@@ -24,7 +24,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get alpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for alpha.
+	 * @return Value of alpha.
 	 */
 	abstract Double getAlpha();
 
@@ -37,7 +37,7 @@ public abstract interface IGaugeArrowController {
 
 	/**
 	 * Get axis property.
-	 * @return String Id of gaugeAxis.
+	 * @return Id of gaugeAxis.
 	 */
 	abstract String getAxis();
 
@@ -51,7 +51,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get borderAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for borderAlpha.
+	 * @return Value of borderAlpha.
 	 */
 	abstract Double getBorderAlpha();
 
@@ -65,7 +65,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get clockWiseOnly property.<br>
 	 * Default: false.
-	 * @return Boolean Value for clockWiseOnly.
+	 * @return Value of clockWiseOnly.
 	 */
 	abstract Boolean isClockWiseOnly();
 
@@ -78,7 +78,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get color property.<br>
 	 * Default: #000000
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -91,14 +91,14 @@ public abstract interface IGaugeArrowController {
 
 	/**
 	 * Get id property.
-	 * @return String Arrow id.
+	 * @return Arrow id.
 	 */
 	abstract String getId();
 
 	/**
 	 * Get innerRadius property.<br>
 	 * Default: 0.
-	 * @return String Value for innerRadius.
+	 * @return Value of innerRadius.
 	 */
 	abstract String getInnerRadius();
 
@@ -112,7 +112,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get nailAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for nailAlpha.
+	 * @return Value of nailAlpha.
 	 */
 	abstract Double getNailAlpha();
 
@@ -126,7 +126,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get nailBorderAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for nailBorderAlpha.
+	 * @return Value of nailBorderAlpha.
 	 */
 	abstract Double getNailBorderAlpha();
 
@@ -141,7 +141,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get nailBorderThickness property.<br>
 	 * Default: 1.
-	 * @return Integer Value for nailBorderThickness.
+	 * @return Value of nailBorderThickness.
 	 */
 	abstract Integer getNailBorderThickness();
 
@@ -156,7 +156,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get nailRadius property.<br>
 	 * Default: 8.
-	 * @return Integer Value for nailRadius.
+	 * @return Value of nailRadius.
 	 */
 	abstract Integer getNailRadius();
 
@@ -170,7 +170,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get radius property.<br>
 	 * Default: 90%.
-	 * @return String Value for radius.
+	 * @return Value of radius.
 	 */
 	abstract String getRadius();
 
@@ -184,7 +184,7 @@ public abstract interface IGaugeArrowController {
 	/**
 	 * Get startWidth property.<br>
 	 * Default: 8.
-	 * @return Double Value for startWidth.
+	 * @return Value of startWidth.
 	 */
 	abstract Double getStartWidth();
 
@@ -196,7 +196,7 @@ public abstract interface IGaugeArrowController {
 
 	/**
 	 * Get value property.
-	 * @return Integer Value for value.
+	 * @return Value of value.
 	 */
 	abstract Integer getValue();
 

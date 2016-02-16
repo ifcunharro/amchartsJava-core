@@ -25,12 +25,15 @@ import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
 
+/**
+ * This class is a controller for AmAngularGauge.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmAngularGaugeController extends AmChartController<AmAngularGauge> 
 		implements IAmAngularGaugeController {
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = -7923112909942594021L;
 	private static final Logger logger = Logger.getLogger(AmAngularGaugeController.class.getName());
 
@@ -280,4 +283,5 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 			amchart.removeAxis(idAxis);
 		}
 	}
+
 }

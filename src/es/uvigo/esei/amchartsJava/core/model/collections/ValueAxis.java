@@ -26,7 +26,7 @@ public class ValueAxis{
 	
 	/**
 	 * Get number of ValueAxis added to chart.
-	 * @return int Number of ValueAxis.
+	 * @return Number of ValueAxis.
 	 */
 	public int sizeAxis(){
 		return sizeAxis;
@@ -34,7 +34,7 @@ public class ValueAxis{
 	
 	/**
 	 * Get number of ValueAxis to not radar charts.
-	 * @return int Number of ValueAxisController.
+	 * @return Number of ValueAxisController.
 	 */
 	public int sizeValueAxis(){
 		if(isNotEmptyValueAxis()){
@@ -45,7 +45,7 @@ public class ValueAxis{
 	
 	/**
 	 * Get number of ValueAxis to radar chart.
-	 * @return int Number of ValueAxisRadarChartController.
+	 * @return Number of ValueAxisRadarChartController.
 	 */
 	public int sizeValueAxisRadar(){
 		if(isNotEmptyValueAxisRadarChart()){
@@ -56,7 +56,7 @@ public class ValueAxis{
 	
 	/**
 	 * Get delete ValueAxis.
-	 * @return int Number of delete ValueAxis.
+	 * @return Number of delete ValueAxis.
 	 */
 	public int getDeleteValueAxis(){
 		return deleteAxis;
@@ -65,7 +65,7 @@ public class ValueAxis{
 	/**
 	 * Check exist ValueAxis in collection.
 	 * @param idValueAxis ValueAxis id.
-	 * @return boolean Exist or doesn't exist ValueAxis in collection.
+	 * @return Exist or doesn't exist ValueAxis in collection.
 	 */
 	public boolean existValueAxis(String idValueAxis) {
 		return getAllAxisIds().contains(idValueAxis);
@@ -73,7 +73,7 @@ public class ValueAxis{
 	
 	/**
 	 * Check exist any ValueAxis to radar chart.
-	 * @return boolean List of ValueAxisRadarChartController initialized.
+	 * @return List of ValueAxisRadarChartController initialized.
 	 */
 	public boolean isNotEmptyValueAxisRadarChart() {
 		return getValueAxisRadar()!=null;
@@ -81,7 +81,7 @@ public class ValueAxis{
 
 	/**
 	 * Check exist any ValueAxis to not radar chart.
-	 * @return boolean List of ValueAxisController initialized.
+	 * @return List of ValueAxisController initialized.
 	 */
 	public boolean isNotEmptyValueAxis() {
 		return getValueAxis()!=null;

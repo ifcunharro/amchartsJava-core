@@ -18,7 +18,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get balloonDateFormat property.<br>
 	 * Default: MMM DD, YYYY
-	 * @return String Value for balloonDateFormat.
+	 * @return Value of balloonDateFormat.
 	 */
 	abstract String getBalloonDateFormat();
 
@@ -31,7 +31,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 
 	/**
 	 * Get categoryField property.
-	 * @return String Value for categoryField.
+	 * @return Value of categoryField.
 	 */
 	abstract String getCategoryField();
 
@@ -44,7 +44,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get columnSpacing property.<br>
 	 * Default: 5.
-	 * @return Integer Value for columnSpacing.
+	 * @return Value of columnSpacing.
 	 */
 	abstract Integer getColumnSpacing();
 
@@ -58,7 +58,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get columnSpacing3D property.<br>
 	 * Default: 0.
-	 * @return Integer Value for columnSpacing3D.
+	 * @return Value of columnSpacing3D.
 	 */
 	abstract Integer getColumnSpacing3D();
 
@@ -73,7 +73,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get columnWidth property.<br>
 	 * Default: 0.8.
-	 * @return Double Value for columnWidth.
+	 * @return Value of columnWidth.
 	 */
 	abstract Double getColumnWidth();
 
@@ -86,7 +86,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 
 	/**
 	 * Get dataDateFormat property.
-	 * @return String Value for dataDateFormat.
+	 * @return Value of dataDateFormat.
 	 */
 	abstract String getDataDateFormat();
 
@@ -98,7 +98,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 
 	/**
 	 * Get maxSelectedSeries property.
-	 * @return Integer Value for maxSelectedSeries.
+	 * @return Value of maxSelectedSeries.
 	 */
 	abstract Integer getMaxSelectedSeries();
 
@@ -112,7 +112,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 
 	/**
 	 * Get maxSelectedTime property.
-	 * @return Integer Value for maxSelectedTime.
+	 * @return Value of maxSelectedTime.
 	 */
 	abstract Integer getMaxSelectedTime();
 
@@ -127,7 +127,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get minSelectedTime property.
 	 * Default: 0.
-	 * @return Integer Value for minSelectedTime.
+	 * @return Value of minSelectedTime.
 	 */
 	abstract Integer getMinSelectedTime();
 
@@ -142,7 +142,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get mouseWheelScrollEnabled property.<br>
 	 * Default: false.
-	 * @return Boolean Value for mouseWheelScrollEnabled.
+	 * @return Value of mouseWheelScrollEnabled.
 	 */
 	abstract Boolean isMouseWheelScrollEnabled();
 
@@ -155,7 +155,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get mouseWheelZoomEnabled property.<br>
 	 * Default: false.
-	 * @return Boolean Value for mouseWheelZoomEnabled.
+	 * @return Value of mouseWheelZoomEnabled.
 	 */
 	abstract Boolean isMouseWheelZoomEnabled();
 
@@ -168,7 +168,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get rotate property.<br>
 	 * Default: false.
-	 * @return Boolean Value for rotate.
+	 * @return Value of rotate.
 	 */
 	abstract Boolean isRotate();
 
@@ -181,7 +181,7 @@ public abstract interface IAmSerialChartController extends IAmRectangularChartCo
 	/**
 	 * Get zoomOutOnDataUpdated property.<br>
 	 * Default: true.
-	 * @return Boolean Value for zoomOutOnDataUpdated.
+	 * @return Value of zoomOutOnDataUpdated.
 	 */
 	abstract Boolean isZoomOutOnDataUpdated();
 

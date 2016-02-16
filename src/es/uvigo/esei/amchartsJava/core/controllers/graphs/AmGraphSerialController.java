@@ -5,14 +5,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphSerialController;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
 
-
-public class AmGraphSerialController extends AmGraphSerialChartController 
+/**
+ * This class is a controller for AmGraph of type serial, used by type line,column or smoothedLine
+ * @author Iago Fernández Cuñarro
+ *
+ */
+public class AmGraphSerialController extends AmGraphController 
 	implements IAmGraphSerialController {
 
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 3990193025590250473L;
 	
 	

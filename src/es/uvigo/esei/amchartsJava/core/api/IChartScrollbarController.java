@@ -24,7 +24,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get autoGridCount property.<br>
 	 * Default: false.
-	 * @return Boolean Value for autoGridCount.
+	 * @return Value of autoGridCount.
 	 */
 	abstract Boolean isAutoGridCount();
 
@@ -37,7 +37,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get backgroundAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for backgroundAlpha.
+	 * @return Value of backgroundAlpha.
 	 */
 	abstract Double getBackgroundAlpha();
 
@@ -52,7 +52,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get backgroundColor property.<br>
 	 * Default: #d4d4d4
-	 * @return String Value for backgroundColor.
+	 * @return Value of backgroundColor.
 	 */
 	abstract String getBackgroundColor();
 
@@ -67,7 +67,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get color property.<br>
 	 * Default: #ffffff
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -81,7 +81,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get dragIcon property.<br>
 	 * Default: dragIconRoundBig.
-	 * @return String Value for dragIcon.
+	 * @return Value of dragIcon.
 	 */
 	abstract String getDragIcon();
 
@@ -96,7 +96,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get dragIconHeight property.<br>
 	 * Default: 35.
-	 * @return Integer Value for dragIconHeight.
+	 * @return Value of dragIconHeight.
 	 */
 	abstract Integer getDragIconHeight();
 
@@ -111,7 +111,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get dragIconWidth property.<br>
 	 * Default: 35.
-	 * @return Integer Value for dragIconWidth.
+	 * @return Value of dragIconWidth.
 	 */
 	abstract Integer getDragIconWidth();
 
@@ -126,7 +126,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get enabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for enabled.
+	 * @return Value of enabled.
 	 */
 	abstract Boolean isEnabled();
 
@@ -138,7 +138,7 @@ public abstract interface IChartScrollbarController {
 
 	/**
 	 * Get graph property.
-	 * @return Strint Graph id.
+	 * @return Graph id.
 	 */
 	abstract String getGraph();
 
@@ -152,7 +152,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get graphFillAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for graphFillAlpha.
+	 * @return Value of graphFillAlpha.
 	 */
 	abstract Double getGraphFillAlpha();
 
@@ -167,7 +167,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get graphFillColor property.<br>
 	 * Default: #bbbbbb
-	 * @return String Value for graphFillColor.
+	 * @return Value of graphFillColor.
 	 */
 	abstract String getGraphFillColor();
 
@@ -182,7 +182,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get graphLineAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for graphLineAlpha.
+	 * @return Value of graphLineAlpha.
 	 */
 	abstract Double getGraphLineAlpha();
 
@@ -197,7 +197,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get graphLineColor property.<br>
 	 * Default: #bbbbbb
-	 * @return String Value for graphLineColor.
+	 * @return Value of graphLineColor.
 	 */
 	abstract String getGraphLineColor();
 
@@ -212,7 +212,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get graphType property.<br>
 	 * Default: graph type.
-	 * @return String Value for graphType.
+	 * @return Value of graphType.
 	 */
 	abstract String getGraphType();
 
@@ -225,7 +225,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get gridAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for gridAlpha.
+	 * @return Value of gridAlpha.
 	 */
 	abstract Double getGridAlpha();
 
@@ -239,7 +239,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get gridColor property.<br>
 	 * Default: #ffffff
-	 * @return String Value for gridColor.
+	 * @return Value of gridColor.
 	 */
 	abstract String getGridColor();
 
@@ -253,7 +253,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get gridCount property.<br>
 	 * Default: 0.
-	 * @return Integer Value for gridCount.
+	 * @return Value of gridCount.
 	 */
 	abstract Integer getGridCount();
 
@@ -267,7 +267,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get hideResizeGrips property.<br>
 	 * Default: false.
-	 * @return Boolean Value for hideResizeGrips.
+	 * @return Value of hideResizeGrips.
 	 */
 	abstract Boolean isHideResizeGrips();
 
@@ -280,7 +280,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get ignoreCustomColors property.<br>
 	 * Default: false.
-	 * @return Boolean Value for ignoreCustomColors.
+	 * @return Value of ignoreCustomColors.
 	 */
 	abstract Boolean isIgnoreCustomColors();
 
@@ -292,7 +292,7 @@ public abstract interface IChartScrollbarController {
 
 	/**
 	 * Get maximum property.
-	 * @return Integer Value for maximum.
+	 * @return Value of maximum.
 	 */
 	abstract Integer getMaximum();
 
@@ -305,7 +305,7 @@ public abstract interface IChartScrollbarController {
 
 	/**
 	 * Get minimum property.
-	 * @return Integer Value for minimum.
+	 * @return Value of minimum.
 	 */
 	abstract Integer getMinimum();
 
@@ -319,7 +319,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get offset property.<br>
 	 * Default: 0.
-	 * @return Integer Value for offset.
+	 * @return Value of offset.
 	 */
 	abstract Integer getOffset();
 
@@ -333,7 +333,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get oppositeAxis property.<br>
 	 * Default: true.
-	 * @return Boolean Value for oppositeAxis.
+	 * @return Value of oppositeAxis.
 	 */
 	abstract Boolean isOppositeAxis();
 
@@ -346,7 +346,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get resizeEnabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for resizeEnabled.
+	 * @return Value of resizeEnabled.
 	 */
 	abstract Boolean isResizeEnabled();
 
@@ -359,7 +359,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get scrollbarHeight property.<br>
 	 * Default: 20.
-	 * @return Integer Value for scrollbarHeight.
+	 * @return Value of scrollbarHeight.
 	 */
 	abstract Integer getScrollbarHeight();
 
@@ -374,7 +374,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get scrollDuration property.<br>
 	 * Default: 1.
-	 * @return Integer Value for scrollDuration.
+	 * @return Value of scrollDuration.
 	 */
 	abstract Integer getScrollDuration();
 
@@ -389,7 +389,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get selectedBackgroundAlpha.<br>
 	 * Default: 1.
-	 * @return Double Value for selectedBackgroundAlpha.
+	 * @return Value of selectedBackgroundAlpha.
 	 */
 	abstract Double getSelectedBackgroundAlpha();
 
@@ -404,7 +404,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get selectedBackgroundColor property.<br>
 	 * Default: #efefef
-	 * @return String Value for selectedBackgroundColor.
+	 * @return Value of selectedBackgroundColor.
 	 */
 	abstract String getSelectedBackgroundColor();
 
@@ -419,7 +419,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get selectedGraphFillAlpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for selectedGraphFillAlpha.
+	 * @return Value of selectedGraphFillAlpha.
 	 */
 	abstract Double getSelectedGraphFillAlpha();
 
@@ -434,7 +434,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get selectedGraphFillColor property.<br>
 	 * Default: #888888
-	 * @return String Value for selectedGraphFillColor.
+	 * @return Value of selectedGraphFillColor.
 	 */
 	abstract String getSelectedGraphFillColor();
 
@@ -449,7 +449,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get selectedGraphLineAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for selectedGraphLineAlpha.
+	 * @return Value of selectedGraphLineAlpha.
 	 */
 	abstract Double getSelectedGraphLineAlpha();
 
@@ -464,7 +464,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get selectedGraphLineColor property.<br>
 	 * Default: #888888
-	 * @return String Value for selectedGraphLineColor.
+	 * @return Value of selectedGraphLineColor.
 	 */
 	abstract String getSelectedGraphLineColor();
 
@@ -479,7 +479,7 @@ public abstract interface IChartScrollbarController {
 	/**
 	 * Get updateOnReleaseOnly property.<br>
 	 * Default: false.
-	 * @return Boolean Value for updateOnReleaseOnly.
+	 * @return Value of updateOnReleaseOnly.
 	 */
 	abstract Boolean isUpdateOnReleaseOnly();
 

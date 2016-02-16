@@ -1,8 +1,10 @@
 package es.uvigo.esei.amchartsJava.core.constants.config;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.nio.file.Paths;
 import java.util.Properties;
 
@@ -24,34 +26,6 @@ public final class Config {
 
     private static final Properties CONFIG = new Properties();
 
-//    static {
-//		try {
-//			URL localURL = Config.class.getProtectionDomain().getCodeSource()
-//					.getLocation();
-//			try {
-//				//carga release si export como amchartsRunnable.jar
-//				localURL = new URL(new URL(localURL.toString().replace("amchartsJava-core-3.15.1.jar", "")) + "resources/configuration.properties" );
-//					
-//					//carga para debug de config
-//				//localURL = new URL(localURL,"../"+AmchartsJavaPaths.CONFIG_FILE_PATH );
-//					
-//				try {
-//					CONFIG.load(localURL.openStream());
-//				} catch (IOException e) {
-//					throw new RuntimeException(
-//							I18n.get("propertiesException"));
-//				}
-//			} catch (MalformedURLException localMalformedURLException) {
-//				throw new RuntimeException(
-//						I18n.get("propertiesException")
-//								+ " "+localURL.getFile());
-//			}
-//		} catch (NullPointerException localNullPointerException) {
-//			throw new RuntimeException(
-//					I18n.get("propertiesException"));
-//		}
-//	}
-    
     static {
     		
 			try {
@@ -59,10 +33,10 @@ public final class Config {
 				String OS = System.getProperty("os.name").toLowerCase();
 				URL localURL;
 				if(OS.indexOf("win")>=0){
-					localURL = new URL("file:/"+Paths.get(".").toAbsolutePath().normalize().toString() + "\\resources\\configuration.properties" );
+					localURL = new URL(URLDecoder.decode("file:/"+Paths.get(".").toAbsolutePath().normalize().toString() + "\\resources\\configuration.properties","UTF-8" ));
 				}
 				else{
-					localURL = new URL("file:"+Paths.get(".").toAbsolutePath().normalize().toString() + "/resources/configuration.properties" );
+					localURL = new URL(URLDecoder.decode("file:"+Paths.get(".").toAbsolutePath().normalize().toString() + "/resources/configuration.properties" ,"UTF-8"));
 					
 				}
 				try {
@@ -71,7 +45,7 @@ public final class Config {
 					throw new RuntimeException(
 							I18n.get("propertiesException"));
 				}
-			} catch (MalformedURLException localMalformedURLException) {
+			} catch (MalformedURLException | UnsupportedEncodingException URLException) {
 				throw new RuntimeException(
 						I18n.get("propertiesException"));
 			}
@@ -103,9 +77,9 @@ public final class Config {
 				   .getCodeSource()
 				   .getLocation();
 		try {
-			//FORMAR UNA URL CON UNA / DE MAS PARA LINUX 
+			logURL = new URL(URLDecoder.decode(logURL.toString(),"UTF-8"));
 			logURL = new URL(logURL,AmchartsJavaPaths.LOG_PATH+fileLog);
-		} catch (MalformedURLException e) {
+		} catch (MalformedURLException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		try {
@@ -127,8 +101,9 @@ public final class Config {
 				   .getCodeSource()
 				   .getLocation();
 		try {
+			logURL = new URL(URLDecoder.decode(logURL.toString(),"UTF-8"));
 			logURL = new URL(logURL,AmchartsJavaPaths.LOG_PATH+"AMCHARTS.log");
-		} catch (MalformedURLException e) {
+		} catch (MalformedURLException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		try {

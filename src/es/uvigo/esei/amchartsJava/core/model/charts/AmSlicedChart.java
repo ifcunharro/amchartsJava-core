@@ -8,6 +8,11 @@ import java.util.List;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsSlicedCharts;
 import es.uvigo.esei.amchartsJava.core.model.AmChart;
 
+/**
+ * Model class for AmSlicedChart.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 public class AmSlicedChart extends AmChart {
 	
 	private List<String> slicedColors;

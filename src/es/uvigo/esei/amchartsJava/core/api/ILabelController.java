@@ -19,7 +19,7 @@ public abstract interface ILabelController  {
 	/**
 	 * Get align property.<br>
 	 * Default: left.
-	 * @return String Value for align.
+	 * @return Value of align.
 	 */
 	abstract String getAlign();
 
@@ -32,7 +32,7 @@ public abstract interface ILabelController  {
 	/**
 	 * Get alpha property.<br>
 	 * Default: 1.
-	 * @return Double Value for alpha.
+	 * @return Value of alpha.
 	 */
 	abstract Double getAlpha();
 
@@ -46,7 +46,7 @@ public abstract interface ILabelController  {
 	/**
 	 * Get bold property.<br>
 	 * Default: false.
-	 * @return Boolean Value for bold.
+	 * @return Value of bold.
 	 */
 	abstract Boolean isBold();
 
@@ -58,7 +58,7 @@ public abstract interface ILabelController  {
 
 	/**
 	 * Get color property.
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -71,14 +71,14 @@ public abstract interface ILabelController  {
 
 	/**
 	 * Get id property.
-	 * @return String Label id.
+	 * @return Label id.
 	 */
 	abstract String getId();
 
 	/**
 	 * Get rotation property.<br>
 	 * Default: 0.
-	 * @return Integer Value for rotation.
+	 * @return Value of rotation.
 	 */
 	abstract Integer getRotation();
 
@@ -91,7 +91,7 @@ public abstract interface ILabelController  {
 
 	/**
 	 * Get size property.
-	 * @return Integer Value for size.
+	 * @return Value of size.
 	 */
 	abstract Integer getSize();
 
@@ -104,7 +104,7 @@ public abstract interface ILabelController  {
 
 	/**
 	 * Get text property.
-	 * @return String Value for text.
+	 * @return Value of text.
 	 */
 	abstract String getText();
 
@@ -116,7 +116,7 @@ public abstract interface ILabelController  {
 
 	/**
 	 * Get url property.
-	 * @return String Value for url.
+	 * @return Value of url.
 	 */
 	abstract String getUrl();
 
@@ -128,7 +128,7 @@ public abstract interface ILabelController  {
 
 	/**
 	 * Get X property.
-	 * @return String Value for X is an integer number or a percent.
+	 * @return Value of X.
 	 */
 	abstract String getX();
 
@@ -141,7 +141,7 @@ public abstract interface ILabelController  {
 
 	/**
 	 * Get Y property.
-	 * @return String Value for Y is an integer number or a percent.
+	 * @return Value of Y.
 	 */
 	abstract String getY();
 

@@ -35,7 +35,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get number of AmGraphs added to chart.
-	 * @return int Number of AmGraphs.
+	 * @return Number of AmGraphs.
 	 */
 	public int sizeAmGraphs(){
 		return sizeAmGraphs;
@@ -43,7 +43,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get number of AmGraphs of chart type serial.
-	 * @return int Number of AmGraphSerialController.
+	 * @return Number of AmGraphSerialController.
 	 */
 	public int sizeAmGraphsSerial(){
 		if(isNotEmptyAmGraphSerial()){
@@ -54,7 +54,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get number of AmGraphs of chart type step.
-	 * @return int Number of AmGraphStepController.
+	 * @return Number of AmGraphStepController.
 	 */
 	public int sizeAmGraphsStep(){
 		if(isNotEmptyAmGraphStep()){
@@ -65,7 +65,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get number of AmGraphs of chart type xy.
-	 * @return int Number of AmGraphXyController.
+	 * @return Number of AmGraphXyController.
 	 */
 	public int sizeAmGraphsXy(){
 		if(isNotEmptyAmGraphXy()){
@@ -76,7 +76,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get number of AmGraphs of chart type candle.
-	 * @return int Number of AmGraphCandleController.
+	 * @return Number of AmGraphCandleController.
 	 */
 	public int sizeAmGraphsCandle(){
 		if(isNotEmptyAmGraphCandle()){
@@ -87,7 +87,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get number of AmGraphs of chart type ohlc.
-	 * @return int Number of AmGraphOhlcController.
+	 * @return Number of AmGraphOhlcController.
 	 */
 	public int sizeAmGraphsOhlc(){
 		if(isNotEmptyAmGraphOhlc()){
@@ -98,7 +98,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get delete AmGraphs.
-	 * @return int Number of delete AmGraphs.
+	 * @return Number of delete AmGraphs.
 	 */
 	public int deleteAmGraphs(){
 		return deleteAmGraphs;
@@ -107,7 +107,7 @@ public class AmGraphs {
 	/**
 	 * Check exist AmGraph in collection.
 	 * @param idGraph AmGraph id.
-	 * @return boolean Exist or doesn't exist AmGraph in collection.
+	 * @return Exist or doesn't exist AmGraph in collection.
 	 */
 	public boolean existGraph(String idGraph) {
 		return getAllGraphsIds().contains(idGraph);
@@ -115,7 +115,7 @@ public class AmGraphs {
 	
 	/**
 	 * Check exist any AmGraph of chart type serial.
-	 * @return boolean List of AmGraphSerialController initialized.
+	 * @return List of AmGraphSerialController initialized.
 	 */
 	public boolean isNotEmptyAmGraphSerial(){
 		return getAmGraphSerial()!=null;
@@ -123,7 +123,7 @@ public class AmGraphs {
 	
 	/**
 	 * Check exist any AmGraph of chart type step.
-	 * @return boolean List of AmGraphStepController initialized.
+	 * @return List of AmGraphStepController initialized.
 	 */
 	public boolean isNotEmptyAmGraphStep(){
 		return getAmGraphStep()!=null;
@@ -131,7 +131,7 @@ public class AmGraphs {
 	
 	/**
 	 * Check exist any AmGraph of chart type xy.
-	 * @return boolean List of AmGraphXyController initialized.
+	 * @return List of AmGraphXyController initialized.
 	 */
 	public boolean isNotEmptyAmGraphXy(){
 		return getAmGraphXy()!=null;
@@ -139,7 +139,7 @@ public class AmGraphs {
 	
 	/**
 	 * Check exist any AmGraph of chart type candle.
-	 * @return boolean List of AmGraphCandleController initialized.
+	 * @return List of AmGraphCandleController initialized.
 	 */
 	public boolean isNotEmptyAmGraphCandle(){
 		return getAmGraphCandle()!=null;
@@ -147,7 +147,7 @@ public class AmGraphs {
 	
 	/**
 	 * Check exist any AmGraph of chart type ohlc.
-	 * @return boolean List of AmGraphOhlcController initialized.
+	 * @return List of AmGraphOhlcController initialized.
 	 */
 	public boolean isNotEmptyAmGraphOhlc(){
 		return getAmGraphOhlc()!=null;
@@ -219,7 +219,7 @@ public class AmGraphs {
 	
 	/**
 	 * Get AmGraph ids of chart type ohlc. 
-	 * @return  AmGraph ids.
+	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphOhlcIds(){
 		List<String> ids = new ArrayList<String>();

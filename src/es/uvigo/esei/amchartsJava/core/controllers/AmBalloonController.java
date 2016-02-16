@@ -16,6 +16,11 @@ import es.uvigo.esei.amchartsJava.core.model.AmBalloon;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for AmBalloon.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class AmBalloonController implements IAmBalloonController, Serializable {
 	/**

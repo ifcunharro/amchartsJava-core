@@ -21,13 +21,15 @@ import es.uvigo.esei.amchartsJava.core.model.AmLegend;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 
+/**
+ * This class is a controller for AmLegend.
+ * @author Iago Fernández Cuñarro
+ *
+ */
 @JsonInclude(Include.NON_NULL)
 public class AmLegendController implements IAmLegendController, Serializable{
 	
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5442430660954968452L;
 	private AmLegend legend;
 

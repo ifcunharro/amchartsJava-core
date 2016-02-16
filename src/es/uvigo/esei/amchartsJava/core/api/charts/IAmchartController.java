@@ -9,7 +9,6 @@ import java.util.Map;
 import es.uvigo.esei.amchartsJava.core.constants.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.Separator;
-import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
@@ -44,14 +43,14 @@ public abstract interface IAmchartController<E extends AmChart> {
 	
 	/**
 	 * Get export property.
-	 * @return Object Config of export as rawString, always is AmCharts.exportCFG
+	 * @return Config of export as rawString, always is AmCharts.exportCFG
 	 */
 	abstract Object getExport();
 	
 	/**
 	 * Get addClassNames property.<br>
 	 * Default: false.
-	 * @return Boolean Value for addClassNames.
+	 * @return Value of addClassNames.
 	 */
 	abstract Boolean IsAddClassNames();
 
@@ -64,7 +63,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get autoResize property.<br>
 	 * Default: true.
-	 * @return Boolean Value for autoResize.
+	 * @return Value of autoResize.
 	 */
 	abstract Boolean isAutoResize();
 	
@@ -77,7 +76,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get backgroundAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for backgroundAlpha.
+	 * @return Value of backgroundAlpha.
 	 */
 	abstract Double getBackgroundAlpha();
 
@@ -92,7 +91,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get backgroundColor property.<br>
 	 * Default: #ffffff
-	 * @return String Value for backgroundColor.
+	 * @return Value of backgroundColor.
 	 */
 	abstract String getBackgroundColor();
 
@@ -107,7 +106,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get borderAlpha property.<br>
 	 * Default: 0.
-	 * @return Double Value for borderAlpha.
+	 * @return Value of borderAlpha.
 	 */
 	abstract Double getBorderAlpha();
 
@@ -121,7 +120,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get borderColor property.<br>
 	 * Default: #000000
-	 * @return String Value for borderColor.
+	 * @return Value of borderColor.
 	 */
 	abstract String getBorderColor();
 
@@ -135,7 +134,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get classNamePrefix property.<br>
 	 * Default: amcharts.
-	 * @return String Value for classNamePrefix.
+	 * @return Value of classNamePrefix.
 	 */
 	abstract String getClassNamePrefix();
 
@@ -148,7 +147,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get color property.<br>
 	 * Default: #000000.
-	 * @return String Value for color.
+	 * @return Value of color.
 	 */
 	abstract String getColor();
 
@@ -162,7 +161,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get creditsPosition property.<br>
 	 * Default: top-left.
-	 * @return String Value for creditsPosition.
+	 * @return Value of creditsPosition.
 	 */
 	abstract String getCreditsPosition();
 
@@ -175,7 +174,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get decimalSeparator property.<br>
 	 * Default: .
-	 * @return String Value for decimalSeparator.
+	 * @return Value of decimalSeparator.
 	 */
 	abstract String getDecimalSeparator();
 
@@ -188,7 +187,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get fontFamily property.<br>
 	 * Default: Verdana.
-	 * @return String Value for fontFamily.
+	 * @return Value of fontFamily.
 	 */
 	abstract String getFontFamily();
 
@@ -201,7 +200,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get fontSize property.<br>
 	 * Default: 11.
-	 * @return Integer Value for fontSize.
+	 * @return Value of fontSize.
 	 */
 	abstract Integer getFontSize();
 
@@ -215,7 +214,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get handDrawn property.<br>
 	 * Default: false.
-	 * @return Boolean Value for handDrawn.
+	 * @return Value of handDrawn.
 	 */
 	abstract Boolean isHandDrawn();
 
@@ -228,7 +227,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get handDrawScatter property.<br>
 	 * Default: 2.
-	 * @return Integer Value for handDrawScatter.
+	 * @return Value of handDrawScatter.
 	 */
 	abstract Integer getHandDrawScatter();
 
@@ -243,7 +242,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get handDrawThickness property.<br>
 	 * Default: 1.
-	 * @return Value for handDrawThickness.
+	 * @return Value of handDrawThickness.
 	 */
 	abstract Integer getHandDrawThickness();
 
@@ -258,7 +257,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get hideBalloonTime property.<br>
 	 * Default: 150.
-	 * @return Integer Value for hideBalloonTime.
+	 * @return Value of hideBalloonTime.
 	 */
 	abstract Integer getHideBalloonTime();
 
@@ -271,21 +270,9 @@ public abstract interface IAmchartController<E extends AmChart> {
 			throws IntegerException;
 
 	/**
-	 * Get language property.
-	 * @return String Value for language.
-	 */
-	abstract String getLanguage();
-
-	/**
-	 * Set language property.
-	 * @param language Value for language.
-	 */
-	abstract void setLanguage(Idioms language);
-
-	/**
 	 * Get panEventsEnabled property.<br>
 	 * Default: true.
-	 * @return Boolean Value for panEventsEnabled.
+	 * @return Value of panEventsEnabled.
 	 */
 	abstract Boolean isPanEventsEnabled();
 
@@ -298,8 +285,8 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get path property.<br>
 	 * Default: ./amcharts/amcharts.
-	 * @return String Value for path.
-	 * @see es.uvigo.esei.amchartsJava.core.constants.paths
+	 * @return Value for path.
+	 * @see es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths
 	 */
 	abstract String getPath();
 	
@@ -312,7 +299,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get pathToImages property.
 	 * @deprecated Since amcharts version 3.14.12 pathToImages is set auto related to path property.
-	 * @return String Value for pathToImages.
+	 * @return Value of pathToImages.
 	 */
 	abstract String getPathToImages();
 
@@ -326,7 +313,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get percentPrecision property.<br>
 	 * Default: 2.
-	 * @return Integer Value for percentPrecision.
+	 * @return Value of percentPrecision.
 	 */
 	abstract Integer getPercentPrecision();
 
@@ -341,7 +328,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get precision property.<br>
 	 * Default: -1.
-	 * @return Integer Value for precision.
+	 * @return Value of precision.
 	 */
 	abstract Integer getPrecision();
 
@@ -352,12 +339,10 @@ public abstract interface IAmchartController<E extends AmChart> {
 	 */
 	abstract void setPrecision(Number precision) throws OutOfRangeException;
 
-	//nombre file js in folder themes sin extension,
-	//se puede crear el tuyo propio
 	/**
 	 * Get theme property.<br>
 	 * Default: none.
-	 * @return String Value for theme.
+	 * @return Value of theme.
 	 */
 	abstract String getTheme();
 
@@ -370,7 +355,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get thousandsSeparator property.<br>
 	 * Default: ,
-	 * @return String Value for thousandsSeparator.
+	 * @return Value of thousandsSeparator.
 	 */
 	abstract String getThousandsSeparator();
 
@@ -382,7 +367,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	/**
 	 * Get type property.
-	 * @return String Value for type.
+	 * @return Value of type.
 	 */
 	abstract String getType();
 
@@ -395,7 +380,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 	/**
 	 * Get usePrefixes property.<br>
 	 * Default: false.
-	 * @return Boolean Value for usePrefixes.
+	 * @return Value of usePrefixes.
 	 */
 	abstract Boolean isUsePrefixes();
 
@@ -419,7 +404,7 @@ public abstract interface IAmchartController<E extends AmChart> {
 
 	/**
 	 * Get balloon property.
-	 * @return AmBalloonController Controller fo AmBalloon.
+	 * @return AmBalloonController Controller for AmBalloon.
 	 */
 	abstract AmBalloonController getBalloon();
 
