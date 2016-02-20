@@ -141,7 +141,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 
 	public String getX(){
-		return (String) label.getFeature("xCoord");
+		return (String) label.getFeature("x");
 	}
 	
 	public void setX(String xCoord) throws CoordException{
@@ -151,7 +151,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public String getY(){
-		return (String) label.getFeature("yCoord");
+		return (String) label.getFeature("y");
 	}
 	
 	public void setY(String yCoord) throws CoordException{

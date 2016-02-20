@@ -4,6 +4,7 @@ package es.uvigo.esei.amchartsJava.core.api;
 
 
 import es.uvigo.esei.amchartsJava.core.constants.Align;
+import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueText;
 import es.uvigo.esei.amchartsJava.core.constants.LegendPosition;
 import es.uvigo.esei.amchartsJava.core.constants.MarkerType;
 import es.uvigo.esei.amchartsJava.core.constants.SwitchType;
@@ -432,7 +433,7 @@ public abstract interface IAmLegendController  {
 	 * Set periodValueText property.
 	 * @param periodValueText Value for periodValueText.
 	 */
-	abstract void setPeriodValueText(String periodValueText);
+	abstract void setPeriodValueText(LegendPeriodValueText periodValueText);
 
 	/**
 	 * Get position property.<br>

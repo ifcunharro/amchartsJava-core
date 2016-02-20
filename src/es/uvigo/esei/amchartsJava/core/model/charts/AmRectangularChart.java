@@ -99,6 +99,7 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 	 * @param chartCursorController Controller for ChartCursor.
 	 */
 	public void addChartCursor(ChartCursorController chartCursorController){
+		chartCursorController.setChart(this);
 		chartCursor = chartCursorController;
 	}
 	

@@ -19,13 +19,18 @@ public class ChartValidator {
 		
 	}
 	
+	/**
+	 * Get name of chart subclass.
+	 * @param chart Some chart.
+	 * @return Name of concrete chart.
+	 */
 	public static String getChartClassName(AmChartController<?> chart){
 		if(chart != null){
 			return chart
 					.getClass()
 					.getSimpleName();
 		}else{
-			return "";
+			return null;
 		}
 	}
 	

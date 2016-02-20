@@ -90,6 +90,7 @@ public abstract interface IChartScrollbarController {
 	 * if that icon doesn't exist, no icon be show.
 	 * @param dragIcon Value for dragIcon. 
 	 * @see es.uvigo.esei.amchartsJava.core.constants.DragIcon
+	 * @see es.uvigo.esei.amchartsJava.core.constants.ImageExtensions
 	 */
 	abstract void setDragIcon(String dragIcon);
 

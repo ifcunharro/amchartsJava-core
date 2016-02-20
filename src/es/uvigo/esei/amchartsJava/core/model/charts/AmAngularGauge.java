@@ -28,6 +28,7 @@ public class AmAngularGauge extends AmChart {
 	private int sizeBands;
 	private int deleteArrows;
 	private int deleteAxes;
+
 	
 	{
 		sizeBands = 0;
@@ -104,37 +105,49 @@ public class AmAngularGauge extends AmChart {
 	 * @param gaugeArrowController Controller for GaugeArrow.
 	 */
 	public void addArrow(GaugeArrowController gaugeArrowController) {
+		if(gaugeArrowController.getId()!=null){
+			removeArrow(gaugeArrowController.getId());
+		}
 		if(arrows == null){
 			arrows = new ArrayList<GaugeArrowController>();
 			idArrows = new ArrayList<String>();
 			positionArrows = new HashMap<String,Integer>();
 		}
-		addObserver(gaugeArrowController);
-		setChanged();
-		notifyObservers(arrows.size()+1+deleteArrows);
-		deleteObservers();
-		gaugeArrowController.setChart(this);
+		synchronized (this) {
+			addObserver(gaugeArrowController);
+			setChanged();
+			notifyObservers(arrows.size()+1+deleteArrows);
+			deleteObservers();
+			gaugeArrowController.setChart(this);
+		}
+		
 		arrows.add(gaugeArrowController);
 		idArrows.add(gaugeArrowController.getId());
 		positionArrows.put(gaugeArrowController.getId(),arrows.size()-1);
 	}
+	
 	
 	/**
 	 * Add a GaugeAxis.
 	 * @param gaugeAxisController Controller for GaugeAxis.
 	 */
 	public void addAxis(GaugeAxisController gaugeAxisController){
+		if(gaugeAxisController.getId() != null){
+			removeAxis(gaugeAxisController.getId());
+		}
 		if(axes == null){
 			axes = new ArrayList<GaugeAxisController>();
 			idAxes = new ArrayList<String>();
 			positionAxes = new HashMap<String, Integer>();
 		}
-		addObserver(gaugeAxisController);
-		setChanged();
-		notifyObservers(axes.size()+1+deleteAxes);
-		deleteObservers();
-		if(gaugeAxisController.getBands() != null){
-			asignIdToBands(gaugeAxisController);
+		synchronized (this) {
+			addObserver(gaugeAxisController);
+			setChanged();
+			notifyObservers(axes.size()+1+deleteAxes);
+			deleteObservers();
+			if(gaugeAxisController.getBands() != null){
+				asignIdToBands(gaugeAxisController);
+			}
 		}
 		axes.add(gaugeAxisController);
 		idAxes.add(gaugeAxisController.getId());
@@ -143,19 +156,22 @@ public class AmAngularGauge extends AmChart {
 		
 	}
 	
-	//Assign ids to GaugeBands for new GaugeAxis added to AmAngularGauge
+	//Assign ids to GaugeBands for new GaugeAxis added to AmAngularGauge, to
+	//GaugeBand added twice only one id is assigned to it
 	private void asignIdToBands(GaugeAxisController gaugeAxisController){
 		if(idGaugeBands == null){
 			idGaugeBands = new ArrayList<String>();
 		}
 		List<GaugeBandController> bands = gaugeAxisController.getBands();
 		for(GaugeBandController band: bands){
-			sizeBands++;
-			addObserver(band);
-			setChanged();
-			notifyObservers(sizeBands);
-			idGaugeBands.add("GaugeBand-"+sizeBands);
-			deleteObservers();
+			if(!existGaugeBand(band.getId())){
+				sizeBands++;
+				addObserver(band);
+				setChanged();
+				notifyObservers(sizeBands);
+				idGaugeBands.add("GaugeBand-"+sizeBands);
+				deleteObservers();
+			}
 		}
 	}
 
@@ -165,14 +181,18 @@ public class AmAngularGauge extends AmChart {
 	 */
 	public void removeArrow(String idArrow) {
 		if(arrows != null){
-			arrows.remove(positionArrows.get(idArrow));
+			arrows.remove(positionArrows.get(idArrow).intValue());
+			idArrows.remove(idArrow);
+			positionArrows.remove(idArrow);
+			deleteArrows++;
+			if(arrows.size() == 0){
+				arrows = null;
+				idArrows = null;
+				positionArrows = null;
+				System.gc();
+			}
 		}
-		if(arrows.size() == 0){
-			arrows = null;
-			idArrows = null;
-			positionArrows = null;
-			System.gc();
-		}
+		
 	}
 	
 	/**
@@ -181,15 +201,19 @@ public class AmAngularGauge extends AmChart {
 	 */
 	public void removeAxis(String idAxis){
 		if(axes != null){
-			axes.remove(positionAxes.get(idAxis));
+			axes.remove(positionAxes.get(idAxis).intValue());
+			idAxes.remove(idAxis);
+			positionAxes.remove(idAxis);
+			deleteAxes++;
+			if(axes.size() == 0){
+				axes = null;
+				idAxes = null;
+				positionAxes = null;
+				idGaugeBands = null;
+				System.gc();
+			}
 		}
-		if(axes.size() == 0){
-			axes = null;
-			idAxes = null;
-			positionAxes = null;
-			idGaugeBands = null;
-			System.gc();
-		}
+		
 	}
 	
 	/**

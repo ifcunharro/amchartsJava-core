@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import es.uvigo.esei.amchartsJava.core.api.IAmLegendController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.Align;
+import es.uvigo.esei.amchartsJava.core.constants.LegendPeriodValueText;
 import es.uvigo.esei.amchartsJava.core.constants.ValueAlign;
 import es.uvigo.esei.amchartsJava.core.constants.LegendPosition;
 import es.uvigo.esei.amchartsJava.core.constants.MarkerType;
@@ -375,8 +376,8 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return (String) legend.getFeature("periodValueText");
 	}
 	
-	public void setPeriodValueText(String periodValueText){
-		legend.setFeature("periodValueText", periodValueText);
+	public void setPeriodValueText(LegendPeriodValueText periodValueText){
+		legend.setFeature("periodValueText", periodValueText.toString());
 	}
 	
 	public String getPosition(){

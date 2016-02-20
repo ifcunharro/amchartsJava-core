@@ -26,31 +26,32 @@ public class PathValidator {
 	 * @return String Name of image file with extension or empty string if doesn't exist.
 	 */
 	public static String imageExist(String image){
-		
-		URL resourcesPath = null;
-		
-		resourcesPath = PathValidator.class.getProtectionDomain()
-									   .getCodeSource()
-									   .getLocation();
-
-		try {
-			resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
-			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+image);
-			//se ha pasado image con extension
-			if(new File(resourcesPath.getFile()).exists()){
-				return image;
-			}else if(image.lastIndexOf(".") != image.length()-4){
-				
-				//se comprueba con todas las extensiones soportadas para imagen
-				for(ImageExtensions extension: ImageExtensions.values()){
-					resourcesPath = new URL(resourcesPath,image+"."+extension.toString());
-					if(new File(resourcesPath.getFile()).exists()){
-						return image+"."+extension.toString();
+		if(image != null && !image.isEmpty()){
+			URL resourcesPath = null;
+			
+			resourcesPath = PathValidator.class.getProtectionDomain()
+										   .getCodeSource()
+										   .getLocation();
+	
+			try {
+				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
+				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+image);
+				//se ha pasado image con extension
+				if(new File(resourcesPath.getFile()).exists()){
+					return image;
+				}else if(image.lastIndexOf(".") != image.length()-4){
+					
+					//se comprueba con todas las extensiones soportadas para imagen
+					for(ImageExtensions extension: ImageExtensions.values()){
+						resourcesPath = new URL(resourcesPath,image+"."+extension.toString());
+						if(new File(resourcesPath.getFile()).exists()){
+							return image+"."+extension.toString();
+						}
 					}
 				}
+			} catch (MalformedURLException | UnsupportedEncodingException e) {
+				return "";
 			}
-		} catch (MalformedURLException | UnsupportedEncodingException e) {
-			return "";
 		}
 		
 		return "";
@@ -63,31 +64,32 @@ public class PathValidator {
 	 * @return String Name of icon without extension or empty string if doesn't exist.
 	 */
 	public static String dragIconExist(String icon){
-		
-		URL resourcesPath = null;
-		
-		resourcesPath = PathValidator.class.getProtectionDomain()
-									   .getCodeSource()
-									   .getLocation();
-
-		try {
-			resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
-			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+icon);
-			//se ha pasado icon con extension
-			if(new File(resourcesPath.getFile()).exists()){
-				return icon.substring(0, icon.length()-4);
-			}else if(icon.lastIndexOf(".") != icon.length()-4){
-				
-				//se comprueba con todas las extensiones soportadas para imagen
-				for(ImageExtensions extension: ImageExtensions.values()){
-					resourcesPath = new URL(resourcesPath,icon+"."+extension.toString());
-					if(new File(resourcesPath.getFile()).exists()){
-						return icon;
+		if(icon != null && !icon.isEmpty()){
+			URL resourcesPath = null;
+			
+			resourcesPath = PathValidator.class.getProtectionDomain()
+										   .getCodeSource()
+										   .getLocation();
+	
+			try {
+				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
+				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+icon);
+				//se ha pasado icon con extension
+				if(new File(resourcesPath.getFile()).exists()){
+					return icon.substring(0, icon.length()-4);
+				}else if(icon.lastIndexOf(".") != icon.length()-4){
+					
+					//se comprueba con todas las extensiones soportadas para imagen
+					for(ImageExtensions extension: ImageExtensions.values()){
+						resourcesPath = new URL(resourcesPath,icon+"."+extension.toString());
+						if(new File(resourcesPath.getFile()).exists()){
+							return icon;
+						}
 					}
 				}
+			} catch (MalformedURLException | UnsupportedEncodingException e) {
+				return "";
 			}
-		} catch (MalformedURLException | UnsupportedEncodingException e) {
-			return "";
 		}
 		
 		return "";
@@ -100,21 +102,23 @@ public class PathValidator {
 	 * @return boolean Exist or doesn't exist in themes folder.
 	 */
 	public static boolean themeExist(String theme){
-		
-		URL resourcesPath = null;
-		
-		resourcesPath = PathValidator.class.getProtectionDomain()
-									   .getCodeSource()
-									   .getLocation();
-		
-		try {
-			resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
-			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.THEMES_PATH+theme+".js");			
-		} catch (MalformedURLException | UnsupportedEncodingException e) {
-			return false;
+		if(theme != null && !theme.isEmpty()){
+			URL resourcesPath = null;
+			
+			resourcesPath = PathValidator.class.getProtectionDomain()
+										   .getCodeSource()
+										   .getLocation();
+			
+			try {
+				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
+				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.THEMES_PATH+theme+".js");			
+			} catch (MalformedURLException | UnsupportedEncodingException e) {
+				return false;
+			}
+			
+			return new File(resourcesPath.getFile()).exists();
 		}
-		
-		return new File(resourcesPath.getFile()).exists();
+		return false;
 	}
 	
 	/**
@@ -124,29 +128,34 @@ public class PathValidator {
 	 * @return String Path complete to pattern or empty string if doesn't exist.
 	 */
 	public static String patternExist(String directoryPattern, String pattern){
-		
-		URL resourcesPath = null;
-		
-		resourcesPath = PathValidator.class.getProtectionDomain()
-									   .getCodeSource()
-									   .getLocation();
-
-		try {
-			resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
-			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern);
+		if(pattern != null && !pattern.isEmpty()){
+			URL resourcesPath = null;
 			
-			if(new File(resourcesPath.getFile()).exists()){
-				return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern;
-			}else if(pattern.lastIndexOf(".") != pattern.length()-4){
+			resourcesPath = PathValidator.class.getProtectionDomain()
+										   .getCodeSource()
+										   .getLocation();
+	
+			try {
+				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
+				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern);
 				
-				resourcesPath = new URL(resourcesPath,pattern+".png");
 				if(new File(resourcesPath.getFile()).exists()){
-					return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern+".png";
+					return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern;
+				}else if(pattern.lastIndexOf(".") != pattern.length()-4){
+					
+					
+					for(ImageExtensions extension: ImageExtensions.values()){
+						resourcesPath = new URL(resourcesPath,pattern+"."+extension.toString());
+						if(new File(resourcesPath.getFile()).exists()){
+							return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern;
+						}
+					}
+					
+					
 				}
-				
+			} catch (MalformedURLException | UnsupportedEncodingException e) {
+				return "";
 			}
-		} catch (MalformedURLException | UnsupportedEncodingException e) {
-			return "";
 		}
 		
 		return "";
@@ -158,32 +167,33 @@ public class PathValidator {
 	 * @return String path complete to temp file.
 	 */
 	public static String tempFileExist(String jsonFile){
-		
-		URL resourcesPath = null;
-		
-		resourcesPath = PathValidator.class.getProtectionDomain()
-									   .getCodeSource()
-									   .getLocation();
-
-		try {
-			resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
-			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY+jsonFile);
+		if(jsonFile != null && !jsonFile.isEmpty()){
+			URL resourcesPath = null;
 			
-			if(new File(resourcesPath.getFile()).exists()){
-				//se elimina protocolo file:/ al devolver la ruta completa
-				return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
-			}else if(jsonFile.lastIndexOf(".") != jsonFile.length()-5){
-				
-				resourcesPath = new URL(resourcesPath,jsonFile+".json");
+			resourcesPath = PathValidator.class.getProtectionDomain()
+										   .getCodeSource()
+										   .getLocation();
+	
+			try {
+				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
+				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY+jsonFile);
 				
 				if(new File(resourcesPath.getFile()).exists()){
-					return "/"+resourcesPath.toString().
-							substring(6, resourcesPath.toString().length());
+					//se elimina protocolo file:/ al devolver la ruta completa
+					return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
+				}else if(jsonFile.lastIndexOf(".") != jsonFile.length()-5){
+					
+					resourcesPath = new URL(resourcesPath,jsonFile+".json");
+					
+					if(new File(resourcesPath.getFile()).exists()){
+						return "/"+resourcesPath.toString().
+								substring(6, resourcesPath.toString().length());
+					}
+					
 				}
-				
+			} catch (MalformedURLException | UnsupportedEncodingException e) {
+				return "";
 			}
-		} catch (MalformedURLException | UnsupportedEncodingException e) {
-			return "";
 		}
 		
 		return "";
@@ -195,32 +205,33 @@ public class PathValidator {
 	 * @return Path of bullet/marker or empty string if doesn't exist.
 	 */
 	public static String customBulletOrMarkerExist(String custom){
-		
-		URL resourcesPath = null;
-		
-		resourcesPath = PathValidator.class.getProtectionDomain()
-									   .getCodeSource()
-									   .getLocation();
-
-		try {
-			resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
-			resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+custom);
-			//se ha pasado bullet con extension
-			if(new File(resourcesPath.getFile()).exists()){
-				//se elimina protocolo file
-				return resourcesPath.toString().substring(6);
-			}else if(custom.lastIndexOf(".") != custom.length()-4){
-				
-				//se comprueba con todas las extensiones soportadas para imagen
-				for(ImageExtensions extension: ImageExtensions.values()){
-					resourcesPath = new URL(resourcesPath,custom+"."+extension.toString());
-					if(new File(resourcesPath.getFile()).exists()){
-						return resourcesPath.toString().substring(6);
+		if(custom != null && !custom.isEmpty()){
+			URL resourcesPath = null;
+			
+			resourcesPath = PathValidator.class.getProtectionDomain()
+										   .getCodeSource()
+										   .getLocation();
+	
+			try {
+				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
+				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+custom);
+				//se ha pasado bullet con extension
+				if(new File(resourcesPath.getFile()).exists()){
+					//se elimina protocolo file
+					return resourcesPath.toString().substring(6);
+				}else if(custom.lastIndexOf(".") != custom.length()-4){
+					
+					//se comprueba con todas las extensiones soportadas para imagen
+					for(ImageExtensions extension: ImageExtensions.values()){
+						resourcesPath = new URL(resourcesPath,custom+"."+extension.toString());
+						if(new File(resourcesPath.getFile()).exists()){
+							return resourcesPath.toString().substring(6);
+						}
 					}
 				}
+			} catch (MalformedURLException | UnsupportedEncodingException e) {
+				return "";
 			}
-		} catch (MalformedURLException | UnsupportedEncodingException e) {
-			return "";
 		}
 		
 		return "";

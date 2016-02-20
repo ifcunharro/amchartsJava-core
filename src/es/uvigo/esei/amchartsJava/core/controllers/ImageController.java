@@ -127,7 +127,7 @@ public class ImageController implements Serializable, IImageController {
 	}
 	
 	public void setUrl(String nameImage){
-		String nameImageValidated = PathValidator.imageExist(AmchartsJavaPaths.IMAGES_PATH+nameImage);
+		String nameImageValidated = PathValidator.imageExist(nameImage);
 		if(nameImageValidated.length()>0){
 			image.setFeature("url", AmchartsJavaPaths.IMAGES_PATH+nameImageValidated);
 		}

@@ -100,10 +100,9 @@ public class ParserJson {
 	 * @throws IOException -
 	 * @throws ClassCastException Can't cast Object to chart.
 	 */
-	public static void saveJsonToTemp(String nameFileJson, Object chart) throws JsonGenerationException, JsonMappingException, IOException{
+	public static void saveAnyChartToTemp(String nameFileJson, Object chart) throws JsonGenerationException, JsonMappingException, IOException{
 		if(chart != null){
 			AmChartController<?> anyChart;
-			boolean check = false;
 			try{
 				anyChart = (AmChartController<?>) chart;
 			}catch(ClassCastException e){

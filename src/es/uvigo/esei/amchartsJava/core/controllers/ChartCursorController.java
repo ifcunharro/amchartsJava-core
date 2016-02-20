@@ -47,7 +47,6 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	@JsonIgnore
 	public void setChart(AmRectangularChart c) {
 		chart = c;
-		
 	}
 	
 	public Integer getAdjustment(){

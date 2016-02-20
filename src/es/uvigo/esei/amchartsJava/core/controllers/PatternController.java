@@ -89,7 +89,7 @@ public class PatternController implements IPatternController, Serializable {
 	
 	public void setWidth(Number width) throws OutOfRangeException {
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
-			if(NumberValidator.rangeDoubleValidator(width, 2, 6)){
+			if(NumberValidator.rangeIntegerValidator(width, 2, 6)){
 				pattern.setFeature("width", width);
 			}
 		}else{

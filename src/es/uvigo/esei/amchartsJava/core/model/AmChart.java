@@ -167,12 +167,15 @@ public abstract class AmChart extends IModel {
 		if(labels==null){
 			labels = new ArrayList<LabelController>();
 		}
-		
-		addObserver(labelController);
-		setChanged();
-		notifyObservers(labels.size()+1);
-		labels.add(labelController);
-		deleteObservers();
+		if(labelController.getId()==null){
+			synchronized (this) {
+				addObserver(labelController);
+				setChanged();
+				notifyObservers(labels.size()+1);
+				labels.add(labelController);
+				deleteObservers();
+			}
+		}
 		
 	}
 
@@ -234,11 +237,15 @@ public abstract class AmChart extends IModel {
 		if(titles==null){
 			titles = new ArrayList<TitleController>();
 		}
-		addObserver(titleController);
-		setChanged();
-		notifyObservers(titles.size()+1);
-		titles.add(titleController);
-		deleteObservers();
+		if(titleController.getId()==null){
+			synchronized (this) {
+				addObserver(titleController);
+				setChanged();
+				notifyObservers(titles.size()+1);
+				titles.add(titleController);
+				deleteObservers();
+			}
+		}
 		
 	}
 	
