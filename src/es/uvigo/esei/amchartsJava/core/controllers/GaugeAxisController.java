@@ -6,6 +6,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -141,7 +142,7 @@ public class GaugeAxisController
 	}
 	
 	//Used to desearialize json
-	@SuppressWarnings("unused")
+	@JsonSetter(value="bands")
 	private void setBands(List<GaugeBandController> gaugeBands){
 		gaugeAxis.setBands(gaugeBands);
 	}

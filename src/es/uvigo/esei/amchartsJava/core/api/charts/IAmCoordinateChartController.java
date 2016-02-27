@@ -148,29 +148,26 @@ public abstract interface IAmCoordinateChartController<F extends AmCoordinateCha
 	
 	/**
 	 * Add a graph to chart.
-	 * @param <T> Type of graph.
 	 * @param amGraphController is controller of a type of amGraph.
 	 * @throws NotSupportedException Chart doesn't support that type of graph.
 	 */
-	abstract  <T extends AmGraphController> void addGraph(T amGraphController) 
+	abstract void addGraph(AmGraphController amGraphController) 
 			throws NotSupportedException;
 	
 	/**
 	 * Add a guide to chart.
-	 * @param <T> Type of guide.
 	 * @param guideController is a controller of a type of guide.
 	 * @throws NotSupportedException Chart doesn't support that type of guide.
 	 */
-	abstract <T extends GuideController> void addGuide(T guideController) 
+	abstract void addGuide(GuideController guideController) 
 			throws NotSupportedException;
 
 	/**
 	 * Add a valueAxis to chart.
-	 * @param <T> Type of valueAxis.
 	 * @param valueAxisController Controller of a type of valueAxis.
 	 * @throws NotSupportedException Chart doesn't support that type of valueAxis.
 	 */
-	abstract <T extends AxisBaseController> void addValueAxis(T valueAxisController) 
+	abstract void addValueAxis(AxisBaseController valueAxisController) 
 			throws NotSupportedException;
 	
 	/**

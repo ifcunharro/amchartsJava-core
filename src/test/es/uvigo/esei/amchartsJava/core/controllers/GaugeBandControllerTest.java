@@ -26,7 +26,7 @@ public class GaugeBandControllerTest {
 		
 		gaugeBand.setAlpha(1);
 		
-		assertEquals(1.0, gaugeBand.getAlpha(),0.001);
+		assertEquals(1.0, gaugeBand.getAlpha(),0);
 		
 	}
 	
@@ -82,8 +82,8 @@ public class GaugeBandControllerTest {
 		gaugeBand.setEndValue(1.2);
 		gaugeBand.setStartValue(1);
 		
-		assertEquals(1.2, gaugeBand.getEndValue(),0.001);
-		assertEquals(1.0, gaugeBand.getStartValue(),0.001);
+		assertEquals(1.2, gaugeBand.getEndValue(),0);
+		assertEquals(1.0, gaugeBand.getStartValue(),0);
 	}
 	
 	@Test

@@ -45,7 +45,7 @@ public class ChartCursorControllerTest {
 		
 		cursor.setCategoryBalloonAlpha(1);
 		
-		assertEquals(1.0, cursor.getCategoryBalloonAlpha(),0.001);
+		assertEquals(1.0, cursor.getCategoryBalloonAlpha(),0);
 		
 	}
 	
@@ -237,7 +237,7 @@ public class ChartCursorControllerTest {
 		
 		cursor.setBalloonPointerOrientation(Orientation.horizontal);
 		
-		assertEquals("horizontal", cursor.getBalloonPointerOrientation());
+		assertEquals(Orientation.horizontal.toString(), cursor.getBalloonPointerOrientation());
 	}
 	
 	@Test

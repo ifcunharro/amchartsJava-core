@@ -243,7 +243,7 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	
 	public void setSynchronizeWith(String synchronizeWith) throws ChartException{
 		if(chart != null){
-			if(chart.existValueAxis(synchronizeWith)){
+			if(chart.existValueAxis(synchronizeWith) && !this.getId().equals(synchronizeWith)){
 				axes.setFeature("synchronizeWith", synchronizeWith);
 			}
 		}else{
@@ -350,7 +350,7 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	//para deserializar totalText value from json
-	@SuppressWarnings("unused")
+	@JsonSetter(value="totalText")
 	private void setTotalText(String total){
 		axes.setFeature("totalText", total);
 	}

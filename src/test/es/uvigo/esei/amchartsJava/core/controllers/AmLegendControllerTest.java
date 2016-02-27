@@ -40,7 +40,7 @@ public class AmLegendControllerTest {
 		
 		legend.setBackgroundAlpha(1);
 		
-		assertEquals(1.0, legend.getBackgroundAlpha(),0.001);
+		assertEquals(1.0, legend.getBackgroundAlpha(),0);
 		
 	}
 	
@@ -169,7 +169,7 @@ public class AmLegendControllerTest {
 		
 		legend.setAlign(Align.center);
 		
-		assertEquals("center", legend.getAlign());
+		assertEquals(Align.center.toString(), legend.getAlign());
 	}
 	
 	@Test

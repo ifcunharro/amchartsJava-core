@@ -47,7 +47,7 @@ public class GaugeAxisControllerTest {
 		
 		gaugeAxis.setAxisAlpha(1);
 		
-		assertEquals(1.0, gaugeAxis.getAxisAlpha(),0.001);
+		assertEquals(1.0, gaugeAxis.getAxisAlpha(),0);
 		
 	}
 	
@@ -223,7 +223,7 @@ public class GaugeAxisControllerTest {
 		
 		gaugeAxis.setValueInterval(6);
 		
-		assertEquals(6.0, gaugeAxis.getValueInterval(),0.001);
+		assertEquals(6.0, gaugeAxis.getValueInterval(),0);
 	}
 	
 	@Test

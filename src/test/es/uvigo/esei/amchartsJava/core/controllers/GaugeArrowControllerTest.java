@@ -46,7 +46,7 @@ public class GaugeArrowControllerTest {
 		
 		gaugeArrow.setBorderAlpha(1);
 		
-		assertEquals(1.0, gaugeArrow.getBorderAlpha(),0.001);
+		assertEquals(1.0, gaugeArrow.getBorderAlpha(),0);
 		
 	}
 	

@@ -43,7 +43,7 @@ public class LabelControllerTest {
 		
 		label.setAlpha(1);
 		
-		assertEquals(1.0, label.getAlpha(),0.001);
+		assertEquals(1.0, label.getAlpha(),0);
 		
 	}
 	

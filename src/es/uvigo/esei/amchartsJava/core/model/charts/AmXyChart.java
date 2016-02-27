@@ -13,6 +13,8 @@ import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisControll
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
+import es.uvigo.esei.amchartsJava.core.validators.AxisValidator;
+import es.uvigo.esei.amchartsJava.core.validators.GraphValidator;
 
 /**
  * Model class for AmXyChart.
@@ -24,9 +26,10 @@ public class AmXyChart extends AmRectangularChart {
 	private static final Logger logger = Logger.getLogger(AmXyChart.class.getName());
 
 	
-	public <T extends AmGraphController> void addGraph(T amGraphController) throws NotSupportedException {
-		if(amGraphController instanceof AmGraphXyController){
-			addGraphXy((AmGraphXyController)amGraphController);
+	public void addGraph(AmGraphController amGraphController) throws NotSupportedException {
+		AmGraphXyController graphXy = GraphValidator.castToAmGraphXy(amGraphController);
+		if(graphXy != null){
+			addGraphXy(graphXy);
 		}else{
 			if(Config.getString("log").equals("file")){
 				logger.info(amGraphController.getClass().getSimpleName()
@@ -38,7 +41,7 @@ public class AmXyChart extends AmRectangularChart {
 	}
 	
 	
-	public <T extends GuideController> void addGuide(T guideController) throws NotSupportedException {
+	public void addGuide(GuideController guideController) throws NotSupportedException {
 		if(guideController instanceof GuideValueAxisController){
 			addGuideValueAxis((GuideValueAxisController)guideController);
 		}else{
@@ -55,9 +58,10 @@ public class AmXyChart extends AmRectangularChart {
 		}
 	}
 	
-	public <T extends AxisBaseController> void addValueAxis(T valueAxisController) throws NotSupportedException {
-		if(valueAxisController.getClass().getSimpleName().equals("ValueAxisController")){
-			addValueAxisController((ValueAxisController)valueAxisController);
+	public void addValueAxis(AxisBaseController valueAxisController) throws NotSupportedException {
+		ValueAxisController valueAxis = AxisValidator.castToValueAxis(valueAxisController);
+		if(valueAxis != null){
+			addValueAxisController(valueAxis);
 		}else{
 			if(Config.getString("log").equals("file")){
 				logger.info(valueAxisController.getClass().getSimpleName()

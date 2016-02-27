@@ -5,6 +5,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.charts.IAmCoordinateChartController;
@@ -129,15 +130,15 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		return amchart.getValueAxes();
 	}
 		
-	public <T extends AmGraphController> void addGraph(T amGraphController) throws NotSupportedException{
+	public void addGraph(AmGraphController amGraphController) throws NotSupportedException{
 		amchart.addGraph(amGraphController);
 	}
 	
-	public <T extends GuideController> void addGuide(T guideController) throws NotSupportedException{
+	public void addGuide(GuideController guideController) throws NotSupportedException{
 		amchart.addGuide(guideController);
 	}
 	
-	public <T extends AxisBaseController> void addValueAxis(T va) throws NotSupportedException{
+	public void addValueAxis(AxisBaseController va) throws NotSupportedException{
 		amchart.addValueAxis(va);
 	}
 	
@@ -161,7 +162,7 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	//usado solo para deserializar json
-	@SuppressWarnings("unused")
+	@JsonSetter(value="colors")
 	private void setColors(List<String> colors){
 		amchart.setColors(colors);
 	}

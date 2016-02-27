@@ -52,7 +52,7 @@ public class ChartScrollbarControllerTest {
 		
 		scrollbar.setBackgroundAlpha(1);
 		
-		assertEquals(1.0, scrollbar.getBackgroundAlpha(),0.001);
+		assertEquals(1.0, scrollbar.getBackgroundAlpha(),0);
 		
 	}
 	
@@ -155,7 +155,7 @@ public class ChartScrollbarControllerTest {
 		
 		scrollbar.setGraphType(GraphType.line);
 		
-		assertEquals("line", scrollbar.getGraphType());
+		assertEquals(GraphType.line.toString(), scrollbar.getGraphType());
 	}
 	
 	@Test

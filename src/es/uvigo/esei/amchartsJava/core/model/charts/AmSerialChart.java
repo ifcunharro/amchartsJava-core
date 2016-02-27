@@ -17,6 +17,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideController;
 import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
+import es.uvigo.esei.amchartsJava.core.validators.AxisValidator;
 
 /**
  * Model class for AmSerialChart
@@ -46,7 +47,7 @@ public class AmSerialChart extends AmRectangularChart {
 		return categoryAxis;
 	}
 	
-	public <T extends AmGraphController> void addGraph(T amGraphController) throws NotSupportedException{
+	public void addGraph(AmGraphController amGraphController) throws NotSupportedException{
 		if(amGraphController instanceof AmGraphStepController){
 			addGraphStep((AmGraphStepController)amGraphController);
 		}else if(amGraphController instanceof AmGraphCandleController){
@@ -68,7 +69,7 @@ public class AmSerialChart extends AmRectangularChart {
 		}
 	}
 	
-	public <T extends GuideController> void addGuide(T guideController) throws NotSupportedException {
+	public void addGuide(GuideController guideController) throws NotSupportedException {
 		if(guideController instanceof GuideValueAxisController){
 			addGuideValueAxis((GuideValueAxisController)guideController);
 		}else if(guideController instanceof GuideCategoryAxisController){
@@ -86,9 +87,10 @@ public class AmSerialChart extends AmRectangularChart {
 		}
 	}
 
-	public <T extends AxisBaseController> void addValueAxis(T valueAxisController) throws NotSupportedException {
-		if(valueAxisController.getClass().getSimpleName().equals("ValueAxisController")){
-			addValueAxisController((ValueAxisController)valueAxisController);
+	public  void addValueAxis(AxisBaseController valueAxisController) throws NotSupportedException {
+		ValueAxisController valueAxis = AxisValidator.castToValueAxis(valueAxisController);
+		if(valueAxis != null){
+			addValueAxisController(valueAxis);
 		}else{
 			if(Config.getString("log").equals("file")){
 				logger.info(valueAxisController.getClass().getSimpleName()

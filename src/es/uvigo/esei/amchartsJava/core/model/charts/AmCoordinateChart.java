@@ -118,11 +118,10 @@ public abstract class AmCoordinateChart extends AmChart{
 	
 	/**
 	 * Add a graph to chart.
-	 * @param <T> Type of graph.
 	 * @param amGraphController Controller for amGraph.
 	 * @throws NotSupportedException Graph is not supported by chart.
 	 */
-	public abstract <T extends AmGraphController> void addGraph(T amGraphController) throws NotSupportedException;
+	public abstract void addGraph(AmGraphController amGraphController) throws NotSupportedException;
 	
 	/**
 	 * Remove graph from chart.
@@ -151,11 +150,13 @@ public abstract class AmCoordinateChart extends AmChart{
 			graphs = new AmGraphs();
 		}
 		if(amGraphSerialController.getId()==null){
-			addObserver(amGraphSerialController);
-			setChanged();
-			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+			synchronized (this) {
+				addObserver(amGraphSerialController);
+				setChanged();
+				notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+				amGraphSerialController.setChart(this);
+			}
 		}
-		amGraphSerialController.setChart(this);
 		graphs.addAmGraphSerial(amGraphSerialController);
 		deleteObservers();
 		
@@ -170,11 +171,13 @@ public abstract class AmCoordinateChart extends AmChart{
 			graphs = new AmGraphs();
 		}
 		if(amGraphStepController.getId()==null){
-			addObserver(amGraphStepController);
-			setChanged();
-			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+			synchronized (this) {
+				addObserver(amGraphStepController);
+				setChanged();
+				notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+				amGraphStepController.setChart(this);
+			}
 		}
-		amGraphStepController.setChart(this);
 		graphs.addAmGraphStep(amGraphStepController);
 		deleteObservers();
 	}
@@ -188,11 +191,13 @@ public abstract class AmCoordinateChart extends AmChart{
 			graphs = new AmGraphs();
 		}
 		if(amGraphXyController.getId()==null){
-			addObserver(amGraphXyController);
-			setChanged();
-			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+			synchronized (this) {
+				addObserver(amGraphXyController);
+				setChanged();
+				notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+				amGraphXyController.setChart(this);
+			}
 		}
-		amGraphXyController.setChart(this);
 		graphs.addAmGraphXy(amGraphXyController);
 		deleteObservers();
 	}
@@ -206,11 +211,13 @@ public abstract class AmCoordinateChart extends AmChart{
 			graphs = new AmGraphs();
 		}
 		if(amGraphCandleController.getId()==null){
-			addObserver(amGraphCandleController);
-			setChanged();
-			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+			synchronized (this) {
+				addObserver(amGraphCandleController);
+				setChanged();
+				notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+				amGraphCandleController.setChart(this);
+			}
 		}
-		amGraphCandleController.setChart(this);
 		graphs.addAmGraphCandle(amGraphCandleController);
 		deleteObservers();
 	}
@@ -224,22 +231,23 @@ public abstract class AmCoordinateChart extends AmChart{
 			graphs = new AmGraphs();
 		}
 		if(amGraphOhlcController.getId()==null){
-			addObserver(amGraphOhlcController);
-			setChanged();
-			notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+			synchronized (this) {
+				addObserver(amGraphOhlcController);
+				setChanged();
+				notifyObservers(graphs.sizeAmGraphs()+1+graphs.deleteAmGraphs());
+				amGraphOhlcController.setChart(this);
+			}
 		}
-		amGraphOhlcController.setChart(this);
 		graphs.addAmGraphOhlc(amGraphOhlcController);
 		deleteObservers();
 	}
 	
 	/**
 	 * Add a Guide to chart.
-	 * @param <T> Type of guide.
 	 * @param guideController Controller for Guide
 	 * @throws NotSupportedException Guide is not supported by chart.
 	 */
-	public abstract <T extends GuideController> void addGuide(T guideController) throws NotSupportedException;
+	public abstract void addGuide(GuideController guideController) throws NotSupportedException;
 	
 	/**
 	 * Add a Guide to CategoryAxis.
@@ -250,11 +258,13 @@ public abstract class AmCoordinateChart extends AmChart{
 			guides = new Guides();
 		}
 		if(guideCategoryAxisController.getId()==null){
-			addObserver(guideCategoryAxisController);
-			setChanged();
-			notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+			synchronized (this) {
+				addObserver(guideCategoryAxisController);
+				setChanged();
+				notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+				guideCategoryAxisController.setChart(this);
+			}
 		}
-		guideCategoryAxisController.setChart(this);
 		guides.addGuideCategoryAxis(guideCategoryAxisController);
 		deleteObservers();
 	}
@@ -268,11 +278,13 @@ public abstract class AmCoordinateChart extends AmChart{
 			guides = new Guides();
 		}
 		if(guideRadarChartController.getId()==null){
-			addObserver(guideRadarChartController);
-			setChanged();
-			notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+			synchronized (this) {
+				addObserver(guideRadarChartController);
+				setChanged();
+				notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+				guideRadarChartController.setChart(this);
+			}
 		}
-		guideRadarChartController.setChart(this);
 		guides.addGuideRadarChart(guideRadarChartController);
 		deleteObservers();
 	}
@@ -286,22 +298,23 @@ public abstract class AmCoordinateChart extends AmChart{
 			guides = new Guides();
 		}
 		if(guideValueAxisController.getId()==null){
-			addObserver(guideValueAxisController);
-			setChanged();
-			notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+			synchronized (this) {
+				addObserver(guideValueAxisController);
+				setChanged();
+				notifyObservers(guides.sizeGuides()+1+guides.deleteGuides());
+				guideValueAxisController.setChart(this);
+			}
 		}
-		guideValueAxisController.setChart(this);
 		guides.addGuideValueAxis(guideValueAxisController);
 		deleteObservers();
 	}
 	
 	/**
 	 * Add a type of valueAxis to chart.
-	 * @param <T> Type of valueAxis.
 	 * @param valueAxisController Controller for valueAxis.
 	 * @throws NotSupportedException ValueAxis is not supported by chart.
 	 */
-	public abstract <T extends AxisBaseController> void addValueAxis(T valueAxisController) throws NotSupportedException;
+	public abstract void addValueAxis(AxisBaseController valueAxisController) throws NotSupportedException;
 	
 	/**
 	 * Add a valueAxis to chart.
@@ -312,12 +325,13 @@ public abstract class AmCoordinateChart extends AmChart{
 			valueAxes = new ValueAxis();
 		}
 		if(valueAxisController.getId()==null){
-			addObserver(valueAxisController);
-			setChanged();
-			notifyObservers(valueAxes.sizeValueAxis()+1+valueAxes.getDeleteValueAxis());
+			synchronized (this) {
+				addObserver(valueAxisController);
+				setChanged();
+				notifyObservers(valueAxes.sizeValueAxis()+1+valueAxes.getDeleteValueAxis());
+				valueAxisController.setChart(this);
+			}
 		}
-		
-		valueAxisController.setChart(this);
 		valueAxes.addValueAxis(valueAxisController);
 		deleteObservers();
 	}
@@ -327,17 +341,19 @@ public abstract class AmCoordinateChart extends AmChart{
 	 * @param valueAxisRadarChartController Controller for valueAxis og radar chart.
 	 */
 	protected void addValueAxisRadarController(ValueAxisRadarChartController valueAxisRadarChartController){
+		
 		if(valueAxes==null){
 			valueAxes = new ValueAxis();
 		}
 		if(valueAxisRadarChartController.getId()==null){
-			addObserver(valueAxisRadarChartController);
-			setChanged();
-			notifyObservers(valueAxes.sizeValueAxisRadar()+1+valueAxes.getDeleteValueAxis());
+			synchronized (this) {
+				addObserver(valueAxisRadarChartController);
+				setChanged();
+				notifyObservers(valueAxes.sizeValueAxisRadar()+1+valueAxes.getDeleteValueAxis());
+				valueAxisRadarChartController.setChart(this);
+			}
 		}
-		
-		valueAxisRadarChartController.setChart(this);
-		valueAxes.addValueAxis(valueAxisRadarChartController);
+		valueAxes.addValueAxisRadar(valueAxisRadarChartController);
 		deleteObservers();
 	}
 	

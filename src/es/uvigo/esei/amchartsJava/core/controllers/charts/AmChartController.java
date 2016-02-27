@@ -401,13 +401,13 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	//usado solo para deserializar json
-	@SuppressWarnings("unused")
+	@JsonSetter(value="allLabels")
 	private void setAllLabels(List<LabelController> allLabels){
 		amchart.setAllLabels(allLabels);
 	}
 	
 	//usada solo para deserializar json
-	@SuppressWarnings("unused")
+	@JsonSetter(value="titles")
 	private void setTitles(List<TitleController> titles){
 		amchart.setTitles(titles);
 	}

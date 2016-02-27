@@ -41,7 +41,7 @@ public class AmBalloonControllerTest {
 		
 		balloon.setAnimationDuration(2);
 		
-		assertEquals(2.0, balloon.getAnimationDuration(),0.001);
+		assertEquals(2.0, balloon.getAnimationDuration(),0);
 		
 	}
 	
@@ -184,7 +184,7 @@ public class AmBalloonControllerTest {
 		
 		balloon.setTextAlign(TextAlign.left);
 		
-		assertEquals("left", balloon.getTextAlign());
+		assertEquals(TextAlign.left.toString(), balloon.getTextAlign());
 	}
 	
 	@Test
