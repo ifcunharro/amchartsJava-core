@@ -63,7 +63,9 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 	}
 	
 	public void setRadarCategoriesEnabled(Boolean radarCategoriesEnabled){
-		axes.setFeature("radarCategoriesEnabled", radarCategoriesEnabled);
+		if(radarCategoriesEnabled != null){
+			axes.setFeature("radarCategoriesEnabled", radarCategoriesEnabled);
+		}
 	}
 	
 }

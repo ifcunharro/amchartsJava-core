@@ -2,8 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
@@ -11,7 +9,6 @@ import es.uvigo.esei.amchartsJava.core.api.charts.IAmAngularGaugeController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.Effect;
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeArrowController;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeAxisController;
@@ -35,11 +32,10 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 
 	
 	private static final long serialVersionUID = -7923112909942594021L;
-	private static final Logger logger = Logger.getLogger(AmAngularGaugeController.class.getName());
-
 
 	public AmAngularGaugeController() {
 		super(new AmAngularGauge());
+		//AmAngularGaugeController always type gauge
 		setType(ChartType.gauge);
 	}
 	
@@ -149,9 +145,6 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 		if(TypeValidator.checkPattern(facePattern)){
 			amchart.setFacePattern(facePattern);
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(I18n.get("PatternException"));
-			}
 			throw new MalFormedPatternException(I18n.get("PatternException"));
 		}
 	}

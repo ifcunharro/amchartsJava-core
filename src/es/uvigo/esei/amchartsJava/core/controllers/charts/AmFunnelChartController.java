@@ -26,6 +26,7 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 
 	public AmFunnelChartController() {
 		super(new AmSlicedChart());
+		//AmFunnelChartController always type funnel
 		setType(ChartType.funnel);
 	}
 	
@@ -137,8 +138,8 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 				amchart.setFeature("pullDistance", "10%");
 			}
 			else if(!pullDistance.contains("%") 
-					&& Integer.valueOf(pullDistance.substring(0, pullDistance.length()-1) )>30){
-				amchart.setFeature("pullDistance", 30);
+					&& Integer.valueOf(pullDistance)>30){
+				amchart.setFeature("pullDistance", "30");
 			}
 			else{
 				amchart.setFeature("pullDistance", pullDistance);

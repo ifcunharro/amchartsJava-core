@@ -1,8 +1,5 @@
 package es.uvigo.esei.amchartsJava.core.model.charts;
 
-import org.apache.log4j.Logger;
-
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.AxisBaseController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.CategoryAxisController;
@@ -27,10 +24,7 @@ import es.uvigo.esei.amchartsJava.core.validators.AxisValidator;
 public class AmSerialChart extends AmRectangularChart {
 	
 	private CategoryAxisController categoryAxis;
-	private static final Logger logger = Logger.getLogger(AmSerialChart.class.getName());
 
-	
-	
 	/**
 	 * Add a CategoryAxis to chart.
 	 * @param categoryAxisController Controller for CategoryAxis.
@@ -57,11 +51,6 @@ public class AmSerialChart extends AmRectangularChart {
 		}else if(amGraphController instanceof AmGraphSerialController){
 			addGraphSerial((AmGraphSerialController)amGraphController);
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(amGraphController.getClass().getSimpleName()
-						+I18n.get("NotSupportedException")+
-						getClass().getSimpleName());
-			}
 			throw new NotSupportedException(
 					amGraphController.getClass().getSimpleName()+
 					I18n.get("NotSupportedException")+
@@ -75,11 +64,6 @@ public class AmSerialChart extends AmRectangularChart {
 		}else if(guideController instanceof GuideCategoryAxisController){
 			addGuideCategoryAxis((GuideCategoryAxisController)guideController);
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(guideController.getClass().getSimpleName()
-						+I18n.get("NotSupportedException")+
-						getClass().getSimpleName());
-			}
 			throw new NotSupportedException(
 					guideController.getClass().getSimpleName()+
 					I18n.get("NotSupportedException")+
@@ -92,11 +76,6 @@ public class AmSerialChart extends AmRectangularChart {
 		if(valueAxis != null){
 			addValueAxisController(valueAxis);
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(valueAxisController.getClass().getSimpleName()
-						+I18n.get("NotSupportedException")+
-						getClass().getSimpleName());
-			}
 			throw new NotSupportedException(
 					valueAxisController.getClass().getSimpleName()+
 					I18n.get("NotSupportedException")+
@@ -109,11 +88,6 @@ public class AmSerialChart extends AmRectangularChart {
 		if(trendLineController.getClass().getSimpleName().equals("TrendLineSerialChartController")){
 			addTrendLineSerial((TrendLineSerialChartController) trendLineController);
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(trendLineController.getClass().getSimpleName()
-						+I18n.get("NotSupportedException")+
-						getClass().getSimpleName());
-			}
 			throw new NotSupportedException(
 					trendLineController.getClass().getSimpleName()+
 					I18n.get("NotSupportedException")+

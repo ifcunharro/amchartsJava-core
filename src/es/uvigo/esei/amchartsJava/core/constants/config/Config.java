@@ -8,13 +8,7 @@ import java.net.URLDecoder;
 import java.nio.file.Paths;
 import java.util.Properties;
 
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.FileAppender;
-import org.apache.log4j.PatternLayout;
-
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
-import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
-
 
 /**
  * 
@@ -66,54 +60,4 @@ public final class Config {
         );
     }
     
-    /**
-     * Configure log using pattern for log.
-     * @param logPattern Pattern for entry log.
-     * @param fileLog File of log.
-     */
-    public static void configureLog(String logPattern,String fileLog){
-    	URL logURL = null;
-		logURL = Config.class.getProtectionDomain()
-				   .getCodeSource()
-				   .getLocation();
-		try {
-			logURL = new URL(URLDecoder.decode(logURL.toString(),"UTF-8"));
-			logURL = new URL(logURL,AmchartsJavaPaths.LOG_PATH+fileLog);
-		} catch (MalformedURLException | UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		try {
-			BasicConfigurator.configure(new FileAppender(
-					new PatternLayout(logPattern), 
-					"/"+logURL.toString().substring(6,logURL.toString().length())));
-		} catch (IOException e1) {
-			
-			e1.printStackTrace();
-		}
-	}
-	
-    /**
-     * Default configuration for log.
-     */
-	public static void defaultConfigureLog(){
-		URL logURL = null;
-		logURL = Config.class.getProtectionDomain()
-				   .getCodeSource()
-				   .getLocation();
-		try {
-			logURL = new URL(URLDecoder.decode(logURL.toString(),"UTF-8"));
-			logURL = new URL(logURL,AmchartsJavaPaths.LOG_PATH+"AMCHARTS.log");
-		} catch (MalformedURLException | UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		try {
-			BasicConfigurator.configure(new FileAppender(
-					new PatternLayout("[%d{HH:mm:ss,SSS}] [%t] %-5p %c %x - %m%n"), 
-					"/"+logURL.toString().substring(6,logURL.toString().length())));
-		} catch (IOException e1) {
-			
-			e1.printStackTrace();
-		}
-	}
-
 }

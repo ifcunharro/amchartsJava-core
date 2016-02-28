@@ -2,8 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import java.io.Serializable;
 
-import org.apache.log4j.Logger;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSetter;
@@ -15,7 +13,6 @@ import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.CategoryBalloonText;
 import es.uvigo.esei.amchartsJava.core.constants.CursorPosition;
 import es.uvigo.esei.amchartsJava.core.constants.Orientation;
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -38,7 +35,6 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	private static final long serialVersionUID = 1995587507218823504L;
 	private ChartCursor chartCursor;
 	private AmRectangularChart chart;
-	private static final Logger logger = Logger.getLogger(ChartCursorController.class.getName());
 	
 	{
 		chartCursor = new ChartCursor();
@@ -348,9 +344,6 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 				chartCursor.setFeature("valueLineAxis", valueLineAxis);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

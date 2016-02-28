@@ -5,8 +5,6 @@ import java.sql.Date;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.apache.log4j.Logger;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -14,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineSerialChartController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
@@ -37,7 +34,6 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	private static final long serialVersionUID = -8070134263297552359L;
 	protected TrendLine trendLine;
 	protected AmRectangularChart amchart;
-	private static final Logger logger = Logger.getLogger(TrendLineSerialChartController.class.getName());
 
 	
 	{
@@ -180,9 +176,6 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 				trendLine.setFeature("valueAxis", valueAxis);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

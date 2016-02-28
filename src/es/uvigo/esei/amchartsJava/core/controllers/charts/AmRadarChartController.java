@@ -24,6 +24,7 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 
 	public AmRadarChartController() {
 		super(new AmRadarChart());
+		//AmRadarChartController always type radar
 		setType(ChartType.radar);
 	}
 	

@@ -4,8 +4,6 @@ import java.sql.Date;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.apache.log4j.Logger;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
@@ -16,7 +14,6 @@ import es.uvigo.esei.amchartsJava.core.constants.AxisType;
 import es.uvigo.esei.amchartsJava.core.constants.Duration;
 import es.uvigo.esei.amchartsJava.core.constants.Position;
 import es.uvigo.esei.amchartsJava.core.constants.StackType;
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -39,7 +36,6 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	 */
 	private static final long serialVersionUID = -2266935966284026139L;
 	private AmCoordinateChart chart;
-	private static final Logger logger = Logger.getLogger(ValueAxisController.class.getName());
 
 	/**
 	 * Set id of valueAxis to be add to chart. Id of valueAxis auto increment.
@@ -247,9 +243,6 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 				axes.setFeature("synchronizeWith", synchronizeWith);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

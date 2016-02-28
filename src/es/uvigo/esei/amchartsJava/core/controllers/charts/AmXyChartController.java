@@ -21,7 +21,8 @@ public class AmXyChartController extends AmRectangularChartController<AmXyChart>
 	
 	public AmXyChartController(){
 		super(new AmXyChart());
-		setType(ChartType.xy);
+		//AmXyChartController always type xy
+		super.setType(ChartType.xy);
 	}
 	
 	@JsonProperty(value="hideXScrollbar")

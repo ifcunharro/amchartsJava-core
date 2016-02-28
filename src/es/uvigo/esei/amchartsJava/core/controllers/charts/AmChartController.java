@@ -345,8 +345,14 @@ public abstract class AmChartController<E extends AmChart>
 		return (String) amchart.getFeature("type");
 	}
 	
-	public void setType(ChartType type){
-		amchart.setFeature("type", type.toString());
+	/**
+	 * Set type property.
+	 * @param type Value for type.
+	 */
+	protected void setType(ChartType type){
+		if(type != null){
+			amchart.setFeature("type", type.toString());
+		}
 	}
 	
 	@JsonProperty(value = "usePrefixes")

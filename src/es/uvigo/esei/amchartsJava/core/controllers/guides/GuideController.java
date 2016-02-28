@@ -5,8 +5,6 @@ import java.sql.Date;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.apache.log4j.Logger;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonSetter;
@@ -16,7 +14,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import es.uvigo.esei.amchartsJava.core.api.guides.IGuideController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.Position;
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -37,7 +34,6 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	private static final long serialVersionUID = 5144456903786410897L;
 	protected Guide guide;
 	private AmCoordinateChart chart;
-	private static final Logger logger = Logger.getLogger(GuideController.class.getName());
 
 
 	{
@@ -271,9 +267,6 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 				guide.setFeature("valueAxis", valueAxis);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

@@ -16,9 +16,6 @@ import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
  */
 public class AmChartsController implements Serializable, IAmChartsController {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private AmCharts amcharts;
 	
@@ -27,7 +24,11 @@ public class AmChartsController implements Serializable, IAmChartsController {
 	}
 	
 	public String enabledBaseHref(Boolean enabled){
-		return "AmCharts.baseHref = "+enabled.toString()+";";
+		if(enabled != null){
+			return "AmCharts.baseHref = "+enabled.toString()+";";
+		}else{
+			return null;
+		}
 	}
 	
 	public String getBezierX(){
@@ -87,12 +88,15 @@ public class AmChartsController implements Serializable, IAmChartsController {
 	}
 	
 	public String enabledUseUTC(Boolean enabled){
-		return "AmCharts.useUTC = "+enabled.toString()+";";
+		if(enabled != null){
+			return "AmCharts.useUTC = "+enabled.toString()+";";
+		}else{
+			return null;
+		}
 	}
 	
 	public void clear(){
-		amcharts = null;
-		System.gc();
+		amcharts.clear();
 	}
 	
 

@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.apache.log4j.Logger;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import es.uvigo.esei.amchartsJava.core.api.IGaugeArrowController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -39,7 +36,6 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	private static final long serialVersionUID = 963880554698117462L;
 	private AmAngularGauge amchart;
 	private GaugeArrow gaugeArrow;
-	private static final Logger logger = Logger.getLogger(GaugeArrowController.class.getName());
 
 	
 	{
@@ -83,9 +79,6 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 				gaugeArrow.setFeature("axis", axis);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphXyController;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.GraphType;
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -46,9 +45,6 @@ public class AmGraphXyController extends AmGraphController
 				amGraph.setFeature("bulletAxis", bulletAxis);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
@@ -69,9 +65,6 @@ public class AmGraphXyController extends AmGraphController
 				amGraph.setFeature("fillToAxis", fillToAxis);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
@@ -120,9 +113,6 @@ public class AmGraphXyController extends AmGraphController
 				amGraph.setFeature("xAxis", xAxis);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
@@ -152,9 +142,6 @@ public class AmGraphXyController extends AmGraphController
 				amGraph.setFeature("yAxis", yAxis);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

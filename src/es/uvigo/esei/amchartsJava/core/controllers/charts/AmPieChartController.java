@@ -23,6 +23,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 
 	public AmPieChartController() {
 		super(new AmSlicedChart());
+		//AmPieChartController always type pie
 		setType(ChartType.pie);
 	}
 	

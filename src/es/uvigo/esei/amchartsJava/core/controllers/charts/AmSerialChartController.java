@@ -27,6 +27,7 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 
 	public AmSerialChartController() {
 		super(new AmSerialChart());
+		//AmSerialChartController always type serial
 		setType(ChartType.serial);
 	}
 	

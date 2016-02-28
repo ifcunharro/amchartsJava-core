@@ -49,6 +49,7 @@ public class AmCharts extends IModel {
 	public void clear() {
 		charts.clear();
 		charts = null;
+		System.gc();
 		
 		
 	}

@@ -5,8 +5,6 @@ import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.apache.log4j.Logger;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -28,7 +26,6 @@ import es.uvigo.esei.amchartsJava.core.constants.PointPositionGraph;
 import es.uvigo.esei.amchartsJava.core.constants.ShowAt;
 import es.uvigo.esei.amchartsJava.core.constants.TagsText;
 import es.uvigo.esei.amchartsJava.core.constants.UrlTarget;
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
@@ -62,9 +59,6 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	protected AmGraph amGraph;
 	//chart que usa el graph
 	protected AmCoordinateChart amchart;
-	protected static final Logger logger = Logger.getLogger(AmGraph.class.getName());
-
-	
 	
 	{
 		amGraph = new AmGraph();
@@ -439,9 +433,6 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 				amGraph.setFeature("fillToGraph", fillToGraph);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}
@@ -783,9 +774,6 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		if(TypeValidator.checkPattern(pattern)){
 			amGraph.addPattern(pattern);
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(I18n.get("PatternException"));
-			}
 			throw new MalFormedPatternException(I18n.get("PatternException"));
 		}
 	}
@@ -919,7 +907,9 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	}
 	
 	public void setType(GraphType type){
-		amGraph.setFeature("type", type.toString());
+		if(type != null){
+			amGraph.setFeature("type", type.toString());
+		}
 	}
 	
 	public String getUrlField(){
@@ -960,10 +950,6 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 				amGraph.setFeature("valueAxis", valueAxis);
 			}
 		}else{
-			if(Config.getString("log").equals("file")){
-				logger.info(getClass().getSimpleName()+I18n.get("ChartException"));
-			
-			}
 			throw new ChartException(getClass().getSimpleName()+I18n.get("ChartException"));
 		}
 	}

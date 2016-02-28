@@ -2,9 +2,6 @@ package es.uvigo.esei.amchartsJava.core.validators;
 
 import java.util.regex.Pattern;
 
-import org.apache.log4j.Logger;
-
-import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 
@@ -14,9 +11,6 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
  *
  */
 public class ColorValidator {
-	
-	private static final Logger logger = Logger.getLogger(ColorValidator.class.getName());
-
 	
 	private ColorValidator(){
 		
@@ -29,13 +23,15 @@ public class ColorValidator {
 	 * @throws ColorException Format color doesn't admitted, format admitted: #ffffff
 	 */
 	public static boolean checkFormatColor(String color) throws ColorException{
-		if(Pattern.matches("#[0-9A-Fa-f]{6}", color) == false){
-			if(Config.getString("log").equals("file")){
-				logger.info(I18n.get("ColorException"));
+		if(color != null){
+			if(Pattern.matches("#[0-9A-Fa-f]{6}", color) == false){
+				throw new ColorException(I18n.get("ColorException"));
+			}else{
+				return true;
 			}
+		}else{
 			throw new ColorException(I18n.get("ColorException"));
-		};
-		return true;
+		}
 	}
 	
 	/**

@@ -6,7 +6,6 @@ import java.util.List;
 
 import java.util.Map;
 
-import es.uvigo.esei.amchartsJava.core.constants.ChartType;
 import es.uvigo.esei.amchartsJava.core.constants.CreditsPosition;
 import es.uvigo.esei.amchartsJava.core.constants.Separator;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
@@ -370,12 +369,6 @@ public abstract interface IAmchartController<E extends AmChart> {
 	 * @return Value of type.
 	 */
 	abstract String getType();
-
-	/**
-	 * Set type property.
-	 * @param type Value for type.
-	 */
-	abstract void setType(ChartType type);
 
 	/**
 	 * Get usePrefixes property.<br>
