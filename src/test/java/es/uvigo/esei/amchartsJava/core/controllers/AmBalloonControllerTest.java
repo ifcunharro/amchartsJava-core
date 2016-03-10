@@ -2,7 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertNull;
 import org.junit.Rule;
 import org.junit.Test;
@@ -97,7 +96,7 @@ public class AmBalloonControllerTest {
 		
 		balloon.setBorderThickness(5);
 		
-		assertSame(5, balloon.getBorderThickness());
+		assertEquals(5, (Object)balloon.getBorderThickness());
 		
 	}
 	
@@ -125,7 +124,7 @@ public class AmBalloonControllerTest {
 		
 		balloon.setMaxWidth(90);
 		
-		assertSame(90, balloon.getMaxWidth());
+		assertEquals(90, (Object)balloon.getMaxWidth());
 		
 	}
 	
@@ -166,8 +165,8 @@ public class AmBalloonControllerTest {
 		balloon.setOffsetY(90);
 		balloon.setOffsetX(20);
 		
-		assertSame(90, balloon.getOffsetY());
-		assertSame(20, balloon.getOffsetX());
+		assertEquals(90, (Object)balloon.getOffsetY());
+		assertEquals(20, (Object)balloon.getOffsetX());
 	}
 	
 	@Test

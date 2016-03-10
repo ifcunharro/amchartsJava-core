@@ -3,7 +3,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -107,7 +106,7 @@ public class ChartScrollbarControllerTest {
 		
 		scrollbar.setDragIconHeight(10);
 		
-		assertSame(10, scrollbar.getDragIconHeight());
+		assertEquals(10, (Object)scrollbar.getDragIconHeight());
 		
 	}
 	
@@ -135,7 +134,7 @@ public class ChartScrollbarControllerTest {
 		
 		scrollbar.setMaximum(100);
 		
-		assertSame(100, scrollbar.getMaximum());
+		assertEquals(100, (Object)scrollbar.getMaximum());
 		
 	}
 	
@@ -171,7 +170,7 @@ public class ChartScrollbarControllerTest {
 		
 		scrollbar.setScrollDuration(0);
 		
-		assertSame(0,scrollbar.getScrollDuration());
+		assertEquals(0,(Object)scrollbar.getScrollDuration());
 	}
 	
 	@Test

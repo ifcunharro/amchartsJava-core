@@ -2,7 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Rule;
@@ -96,7 +95,7 @@ public class TitleControllerTest {
 		
 		title.setSize(10);;
 		
-		assertSame(10, title.getSize());
+		assertEquals(10, (Object)title.getSize());
 		
 	}
 	

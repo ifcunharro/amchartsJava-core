@@ -3,8 +3,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -59,7 +57,7 @@ public class ImageControllerTest {
 		
 		image.setHeight(24);
 		
-		assertSame(24, image.getHeight());
+		assertEquals(24, (Object)image.getHeight());
 		
 	}
 	

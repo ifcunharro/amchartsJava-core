@@ -2,7 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Rule;
@@ -98,7 +97,7 @@ public class LabelControllerTest {
 		
 		label.setRotation(-90);
 		
-		assertSame(-90, label.getRotation());
+		assertEquals(-90, (Object)label.getRotation());
 		
 	}
 	

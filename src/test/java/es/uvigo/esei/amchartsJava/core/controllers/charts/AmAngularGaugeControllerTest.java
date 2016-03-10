@@ -2,7 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -106,7 +105,7 @@ public class AmAngularGaugeControllerTest {
 		
 		amGauge.setStartDuration(5);
 		
-		assertSame(5, amGauge.getStartDuration());
+		assertEquals(5, (Object)amGauge.getStartDuration());
 		
 	}
 	
@@ -183,7 +182,7 @@ public class AmAngularGaugeControllerTest {
 		List<GaugeArrowController> arrows = amGauge.getArrows();
 		
 		assertTrue(arrows != null);
-		assertSame(1, arrows.size());
+		assertEquals(1, arrows.size());
 		
 	}
 	
@@ -205,7 +204,7 @@ public class AmAngularGaugeControllerTest {
 		List<GaugeAxisController> gaugeAxis = amGauge.getAxes();
 		
 		assertTrue(gaugeAxis != null);
-		assertSame(1, gaugeAxis.size());
+		assertEquals(1, (Object)gaugeAxis.size());
 		
 	}
 	
@@ -223,7 +222,7 @@ public class AmAngularGaugeControllerTest {
 		
 		amGauge.addArrow(arrow);
 		assertEquals("GaugeArrow-1",arrow.getId());
-		assertSame(1, amGauge.getArrows().size());
+		assertEquals(1, (Object)amGauge.getArrows().size());
 		
 		amGauge.removeArrow("GaugeArrow-1");
 		assertNull(amGauge.getArrows());
@@ -237,7 +236,7 @@ public class AmAngularGaugeControllerTest {
 		
 		amGauge.addAxis(axis);
 		assertEquals("GaugeAxis-1",axis.getId());
-		assertSame(1, amGauge.getAxes().size());
+		assertEquals(1, (Object)amGauge.getAxes().size());
 		
 		amGauge.removeAxis("GaugeAxis-1");
 		assertNull(amGauge.getAxes());
@@ -290,8 +289,8 @@ public class AmAngularGaugeControllerTest {
 		PatternController patternRecovery = amGauge.getFacePattern();
 		
 		assertTrue(patternRecovery != null);
-		assertSame(4, patternRecovery.getHeight());
-		assertSame(4, patternRecovery.getWidth());
+		assertEquals(4, (Object)patternRecovery.getHeight());
+		assertEquals(4, (Object)patternRecovery.getWidth());
 		assertEquals(AmchartsJavaPaths.URL_PATTERNS+patternFolderFound.getName()+"/"+patternFound, patternRecovery.getUrl());
 		
 	}

@@ -2,7 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers.axis;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Rule;
@@ -101,7 +100,7 @@ public class ValueAxisControllerTest {
 		
 		valueAxis.setLabelRotation(-90);
 		
-		assertSame(-90, valueAxis.getLabelRotation());
+		assertEquals(-90, (Object)valueAxis.getLabelRotation());
 		
 	}
 	

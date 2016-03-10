@@ -51,7 +51,7 @@ public class AmXyChartController extends AmRectangularChartController<AmXyChart>
 	
 	public void setMaxZoomFactor(Number maxZoomFactor) throws OutOfRangeException{
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
-			if(NumberValidator.rangeDoubleValidator(maxZoomFactor, 1, 20)){
+			if(NumberValidator.rangeIntegerValidator(maxZoomFactor, 1, 20)){
 				amchart.setFeature("maxZoomFactor", maxZoomFactor);
 			}
 		}else{

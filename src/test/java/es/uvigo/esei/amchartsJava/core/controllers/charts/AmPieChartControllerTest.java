@@ -2,7 +2,8 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
+
+import java.util.Map;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -68,7 +69,7 @@ public class AmPieChartControllerTest {
 		
 		amPie.setStartAngle(50);
 		
-		assertSame(50, amPie.getStartAngle());
+		assertEquals(50, (Object)amPie.getStartAngle());
 		
 	}
 	
@@ -116,6 +117,35 @@ public class AmPieChartControllerTest {
 		AmPieChartController amPie = new AmPieChartController();
 		
 		amPie.setPieX("90.9%");
+	}
+	
+	@Test
+	public void field_property_must_return_string_if_is_setted(){
+		AmPieChartController amPie = new AmPieChartController();
+		
+		amPie.setLabelRadiusField("myLabelRadiusFieldName");
+		assertEquals("myLabelRadiusFieldName",amPie.getLabelRadiusField());
+		
+	}
+	
+	@Test
+	public void field_property_save_relation_user_nameField_amcharts_nameField_if_is_setted(){
+		AmPieChartController amPie = new AmPieChartController();
+		
+		amPie.setLabelRadiusField("myLabelRadiusFieldName");
+		
+		
+		Map<String, String> chartFields = amPie.getChartFields();
+		assertEquals("myLabelRadiusFieldName",chartFields.get("labelRadiusField"));
+		
+	}
+	
+	@Test
+	public void field_property_must_return_null_if_is_not_setted(){
+		AmPieChartController amPie = new AmPieChartController();
+		
+		assertNull(amPie.getLabelRadiusField());
+		
 	}
 	
 	@Test

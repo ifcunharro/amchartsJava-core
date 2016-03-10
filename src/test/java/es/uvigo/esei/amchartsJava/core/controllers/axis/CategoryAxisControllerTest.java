@@ -2,8 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers.axis;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-
 import java.util.Map;
 
 import org.junit.Rule;
@@ -98,7 +96,7 @@ public class CategoryAxisControllerTest {
 		
 		categoryAxis.setLabelRotation(-90);
 		
-		assertSame(-90, categoryAxis.getLabelRotation());
+		assertEquals(-90, (Object)categoryAxis.getLabelRotation());
 		
 	}
 	

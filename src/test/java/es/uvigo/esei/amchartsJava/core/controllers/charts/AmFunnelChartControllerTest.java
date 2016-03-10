@@ -2,8 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -41,7 +39,7 @@ public class AmFunnelChartControllerTest {
 		
 		amFunnel.setDepth3D(30);
 		
-		assertSame(30, amFunnel.getDepth3D());
+		assertEquals(30, (Object)amFunnel.getDepth3D());
 		
 	}
 	

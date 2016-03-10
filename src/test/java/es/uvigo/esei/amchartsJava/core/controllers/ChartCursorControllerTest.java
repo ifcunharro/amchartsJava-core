@@ -1,7 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.controllers;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertNull;
 import org.junit.Rule;
 import org.junit.Test;
@@ -100,7 +99,7 @@ public class ChartCursorControllerTest {
 		
 		cursor.setBulletSize(10);
 		
-		assertSame(10, cursor.getBulletSize());
+		assertEquals(10, (Object)cursor.getBulletSize());
 		
 	}
 	
@@ -217,7 +216,7 @@ public class ChartCursorControllerTest {
 		
 		cursor.setAdjustment(100);
 		
-		assertSame(100, cursor.getAdjustment());
+		assertEquals(100, (Object)cursor.getAdjustment());
 		
 	}
 	

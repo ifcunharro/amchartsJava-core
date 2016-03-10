@@ -1,7 +1,6 @@
 package es.uvigo.esei.amchartsJava.core.controllers;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertNull;
 import org.junit.Rule;
 import org.junit.Test;
@@ -95,7 +94,7 @@ public class AmLegendControllerTest {
 		
 		legend.setMarkerLabelGap(7);
 		
-		assertSame(7, legend.getMarkerLabelGap());
+		assertEquals(7, (Object)legend.getMarkerLabelGap());
 		
 	}
 	
@@ -149,7 +148,7 @@ public class AmLegendControllerTest {
 		
 		legend.setLabelWidth(100);
 		
-		assertSame(100, legend.getLabelWidth());
+		assertEquals(100, (Object)legend.getLabelWidth());
 		
 	}
 	

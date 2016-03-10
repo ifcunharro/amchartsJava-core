@@ -2,8 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-
 import java.util.List;
 
 import org.junit.Rule;
@@ -101,7 +99,7 @@ public class GaugeArrowControllerTest {
 		
 		gaugeArrow.setNailBorderThickness(8);
 		
-		assertSame(8, gaugeArrow.getNailBorderThickness());
+		assertEquals(8, (Object)gaugeArrow.getNailBorderThickness());
 		
 	}
 	
@@ -128,7 +126,7 @@ public class GaugeArrowControllerTest {
 		GaugeArrowController gaugeArrow = new GaugeArrowController();
 		
 		gaugeArrow.setValue(90);
-		assertSame(90, gaugeArrow.getValue());
+		assertEquals(90, (Object)gaugeArrow.getValue());
 		
 	}
 	
@@ -258,7 +256,7 @@ public class GaugeArrowControllerTest {
 		
 		List<GaugeArrowController> arrows = gaugeChart.getArrows();
 		
-		assertSame(1, arrows.size());
+		assertEquals(1, (Object)arrows.size());
 		
 	}
 	

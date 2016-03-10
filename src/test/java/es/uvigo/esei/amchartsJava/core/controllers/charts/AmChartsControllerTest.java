@@ -2,7 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers.charts;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -108,7 +107,7 @@ public class AmChartsControllerTest {
 		List<AmChartController> charts = amcharts.getCharts();
 		assertTrue(charts != null);
 		
-		assertSame(6,charts.size());
+		assertEquals(6,(Object)charts.size());
 	}
 	
 	@Test

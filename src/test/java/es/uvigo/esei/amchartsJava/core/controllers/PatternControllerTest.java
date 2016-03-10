@@ -2,7 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
@@ -57,8 +56,8 @@ public class PatternControllerTest {
 		pattern.setHeight(4);
 		pattern.setWidth(6);
 		
-		assertSame(4, pattern.getHeight());
-		assertSame(6, pattern.getWidth());
+		assertEquals(4, (Object)pattern.getHeight());
+		assertEquals(6, (Object)pattern.getWidth());
 		
 	}
 	

@@ -2,7 +2,6 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -102,7 +101,7 @@ public class GaugeAxisControllerTest {
 		
 		gaugeAxis.setAxisThickness(4);
 		
-		assertSame(4, gaugeAxis.getAxisThickness());
+		assertEquals(4, (Object)gaugeAxis.getAxisThickness());
 		
 	}
 	
