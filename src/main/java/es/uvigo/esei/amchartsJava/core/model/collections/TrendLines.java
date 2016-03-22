@@ -69,7 +69,7 @@ public class TrendLines {
 	}
 	
 	/**
-	 * Check exist TrendLine in collection.
+	 * Check exists TrendLine in collection.
 	 * @param idTrendLine TrendLine id.
 	 * @return Exist or doesn't exist TrendLine in collection.
 	 */
@@ -78,7 +78,7 @@ public class TrendLines {
 	}
 	
 	/**
-	 * Check exist any TrendLine to chart type xy.
+	 * Check exists any TrendLine to chart type xy.
 	 * @return List of TrendLineXyChartController initialized.
 	 */
 	public boolean isNotEmptyTrendLineXy() {
@@ -86,7 +86,7 @@ public class TrendLines {
 	}
 
 	/**
-	 * Check exist any TrendLine to chart type serial.
+	 * Check exists any TrendLine to chart type serial.
 	 * @return List of TrendLineSerialChartController initialized.
 	 */
 	public boolean isNotEmptyTrendLineSerial() {

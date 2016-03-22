@@ -19,7 +19,6 @@ import es.uvigo.esei.amchartsJava.core.controllers.charts.AmRadarChartController
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
-import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public class AmChartsControllerTest {
 	
@@ -47,12 +46,16 @@ public class AmChartsControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_must_return_string_if_recive_integer_value() throws IntegerException{
+	public void property_numeric_must_return_string_if_recive_integer_value(){
 		AmChartsController amcharts = new AmChartsController();
 		
-		amcharts.setBezierX(10);
-		amcharts.setBezierY(20);
-		amcharts.setProcessDelay(30);
+		try {
+			amcharts.setBezierX(10);
+			amcharts.setBezierY(20);
+			amcharts.setProcessDelay(30);
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("AmCharts.bezierX = 10;",amcharts.getBezierX());
 		assertEquals("AmCharts.bezierY = 20;",amcharts.getBezierY());
@@ -61,7 +64,7 @@ public class AmChartsControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		AmChartsController amcharts = new AmChartsController();
 		
 		assertNull(amcharts.getBezierX());

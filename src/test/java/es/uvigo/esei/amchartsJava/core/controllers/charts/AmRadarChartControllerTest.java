@@ -11,7 +11,6 @@ import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
-import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public class AmRadarChartControllerTest {
 	
@@ -19,7 +18,7 @@ public class AmRadarChartControllerTest {
 	public final ExpectedException thrown = ExpectedException.none();
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		AmRadarChartController radar = new AmRadarChartController();
 		
 		assertNull(radar.getMarginBottom());
@@ -45,20 +44,24 @@ public class AmRadarChartControllerTest {
 	}
 	
 	@Test
-	public void radius_property_return_null_if_is_not_setted() throws CoordException{
+	public void radius_property_return_null_if_is_not_setted(){
 		AmRadarChartController radar = new AmRadarChartController();
 		
 		assertNull(radar.getRadius());
 	}
 	
 	@Test
-	public void radius_property_must_return_string_if_recive_integer_number_or_integer_percent_value_as_string() throws CoordException{
+	public void radius_property_must_return_string_if_recive_integer_number_or_integer_percent_value_as_string(){
 		AmRadarChartController radar = new AmRadarChartController();
 		
-		radar.setRadius("90%");
-		assertEquals("90%",radar.getRadius());
-		radar.setRadius("40");
-		assertEquals("40",radar.getRadius());
+		try {
+			radar.setRadius("90%");
+			assertEquals("90%",radar.getRadius());
+			radar.setRadius("40");
+			assertEquals("40",radar.getRadius());
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Test

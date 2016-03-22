@@ -10,6 +10,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.Position;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeBandController;
@@ -41,10 +42,14 @@ public class GaugeAxisControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
-		gaugeAxis.setAxisAlpha(1);
+		try {
+			gaugeAxis.setAxisAlpha(1);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(1.0, gaugeAxis.getAxisAlpha(),0);
 		
@@ -53,7 +58,7 @@ public class GaugeAxisControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 1");
+		thrown.expectMessage("Number out of range: must be between 0 and 1");
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
 		gaugeAxis.setBandAlpha(9);
@@ -61,17 +66,21 @@ public class GaugeAxisControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
 		assertNull(gaugeAxis.getTickAlpha());
 	}
 	
 	@Test
-	public void all_color_property_return_string_if_format_color_is_correct() throws ColorException{
+	public void all_color_property_return_string_if_format_color_is_correct(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
-		gaugeAxis.setAxisColor("#000000");
+		try {
+			gaugeAxis.setAxisColor("#000000");
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("#000000", gaugeAxis.getAxisColor());
 		
@@ -88,7 +97,7 @@ public class GaugeAxisControllerTest {
 	}
 	
 	@Test
-	public void all_color_property_return_null_if_is_not_setted() throws ColorException{
+	public void all_color_property_return_null_if_is_not_setted(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
 		assertNull(gaugeAxis.getTickColor());
@@ -96,27 +105,35 @@ public class GaugeAxisControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
-		gaugeAxis.setAxisThickness(4);
+		try {
+			gaugeAxis.setAxisThickness(4);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(4, (Object)gaugeAxis.getAxisThickness());
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
-		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 5");
+	public void property_numeric_with_value_integer_out_range_launch_exception_if_improvedVisibility_equals_true() throws OutOfRangeException{
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
-		
-		gaugeAxis.setAxisThickness(37);
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			thrown.expect(OutOfRangeException.class);
+			thrown.expectMessage("Number out of range: must be between 0 and 5");
+			
+			gaugeAxis.setAxisThickness(37);
+		}else{
+			gaugeAxis.setAxisThickness(37);
+		}
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
 		assertNull(gaugeAxis.getAxisThickness());
@@ -133,22 +150,38 @@ public class GaugeAxisControllerTest {
 	}
 	
 	@Test
-	public void centerX_and_centerY_properties_must_return_string_if_set_method_recive_integer_value_as_string() throws CoordException{
+	public void centerX_and_centerY_properties_must_return_string_if_set_method_recive_integer_value_as_string(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
-		gaugeAxis.setCenterX("500");
+		try {
+			gaugeAxis.setCenterX("500");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("500", gaugeAxis.getCenterX());
-		gaugeAxis.setCenterY("200");
+		try {
+			gaugeAxis.setCenterY("200");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("200", gaugeAxis.getCenterY());
 	}
 	
 	@Test
-	public void centerX_and_centerY_properties_must_return_string_if_set_method_recive_integer_percent_value_as_string() throws CoordException{
+	public void centerX_and_centerY_properties_must_return_string_if_set_method_recive_integer_percent_value_as_string(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
-		gaugeAxis.setCenterX("180%");
+		try {
+			gaugeAxis.setCenterX("180%");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("180%", gaugeAxis.getCenterX());
-		gaugeAxis.setCenterY("150%");
+		try {
+			gaugeAxis.setCenterY("150%");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("150%", gaugeAxis.getCenterY());
 		
 	}
@@ -164,27 +197,39 @@ public class GaugeAxisControllerTest {
 	}
 	
 	@Test
-	public void radius_property_must_return_string_if_set_method_recive_integer_value_as_string() throws CoordException{
+	public void radius_property_must_return_string_if_set_method_recive_integer_value_as_string(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
-		gaugeAxis.setRadius("500");
+		try {
+			gaugeAxis.setRadius("500");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("500", gaugeAxis.getRadius());
 	}
 	
 	@Test
-	public void radius_property_must_return_string_if_set_method_recive_integer_percent_value_as_string() throws CoordException{
+	public void radius_property_must_return_string_if_set_method_recive_integer_percent_value_as_string(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
-		gaugeAxis.setRadius("80%");
+		try {
+			gaugeAxis.setRadius("80%");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("80%", gaugeAxis.getRadius());
 		
 	}
 	
 	@Test
-	public void radius_property_must_return_100_percent_as_string_if_set_method_recive_percent_gt_100() throws CoordException{
+	public void radius_property_must_return_100_percent_as_string_if_set_method_recive_percent_gt_100(){
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
-		gaugeAxis.setRadius("120%");
+		try {
+			gaugeAxis.setRadius("120%");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("100%",gaugeAxis.getRadius());
 		
 	}

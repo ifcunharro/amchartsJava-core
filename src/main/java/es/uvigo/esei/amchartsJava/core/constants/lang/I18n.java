@@ -18,7 +18,6 @@ public final class I18n {
 		try {
 			lang = IdiomValidator.checkIdiom(Config.getString("lang"));
 		} catch (LangException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

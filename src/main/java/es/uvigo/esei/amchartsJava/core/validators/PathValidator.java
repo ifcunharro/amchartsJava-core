@@ -21,7 +21,7 @@ public class PathValidator {
 	}
 	
 	/**
-	 * Check image exist in images folder.
+	 * Check image exists in images folder.
 	 * @param image Name of image file with or without file extension.
 	 * @return String Name of image file with extension or empty string if doesn't exist.
 	 */
@@ -59,7 +59,7 @@ public class PathValidator {
 	}
 	
 	/**
-	 * Check icon exist in images folder.
+	 * Check icon exists in images folder.
 	 * @param icon Name of icon with or without file extension.
 	 * @return String Name of icon without extension or empty string if doesn't exist.
 	 */
@@ -97,7 +97,7 @@ public class PathValidator {
 	}
 	
 	/**
-	 * Check theme exist in themes folder.
+	 * Check theme exists in themes folder.
 	 * @param theme Name of theme without extension.
 	 * @return boolean Exist or doesn't exist in themes folder.
 	 */
@@ -122,13 +122,13 @@ public class PathValidator {
 	}
 	
 	/**
-	 * Check pattern exist in patterns folder.
+	 * Check pattern exists in patterns folder.
 	 * @param directoryPattern Folder into pattern folder where is pattern.
-	 * @param pattern Name of pattern with or without extension. Only admitted png extension.
+	 * @param pattern Name of pattern with or without extension.
 	 * @return String Path complete to pattern or empty string if doesn't exist.
 	 */
 	public static String patternExist(String directoryPattern, String pattern){
-		if(pattern != null && !pattern.isEmpty()){
+		if(directoryPattern != null && pattern != null && !directoryPattern.isEmpty() && !pattern.isEmpty()){
 			URL resourcesPath = null;
 			
 			resourcesPath = PathValidator.class.getProtectionDomain()
@@ -147,7 +147,7 @@ public class PathValidator {
 					for(ImageExtensions extension: ImageExtensions.values()){
 						resourcesPath = new URL(resourcesPath,pattern+"."+extension.toString());
 						if(new File(resourcesPath.getFile()).exists()){
-							return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern;
+							return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern+"."+extension;
 						}
 					}
 					
@@ -162,7 +162,7 @@ public class PathValidator {
 	}
 	
 	/**
-	 * Check file exist in temp folder.
+	 * Check file exists in temp folder.
 	 * @param jsonFile Name of json file with or without file extension.
 	 * @return String path complete to temp file.
 	 */
@@ -177,7 +177,7 @@ public class PathValidator {
 			try {
 				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
 				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY+jsonFile);
-				
+				System.out.println(resourcesPath);
 				if(new File(resourcesPath.getFile()).exists()){
 					//se elimina protocolo file:/ al devolver la ruta completa
 					return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
@@ -200,7 +200,7 @@ public class PathValidator {
 	}
 	
 	/**
-	 * Check custom bullet or custom marker exist in images folder.
+	 * Check custom bullet or custom marker exists in images folder.
 	 * @param custom Name of custom bullet or marker with or without file extension.
 	 * @return Path of bullet/marker or empty string if doesn't exist.
 	 */

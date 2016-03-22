@@ -81,16 +81,16 @@ public class Guides {
 	}
 	
 	/**
-	 * Check exist Guide in collection.
+	 * Check exists Guide in collection.
 	 * @param idGuide Guide id.
-	 * @return Exist or doesn't exist Guide in collection.
+	 * @return Exists or doesn't exist Guide in collection.
 	 */
 	public boolean existGuide(String idGuide) {
 		return getAllGuidesIds().contains(idGuide);
 	}
 	
 	/**
-	 * Check exist any Guide to CategoryAxis.
+	 * Check exists any Guide to CategoryAxis.
 	 * @return List of GuideCategoryAxisController initialized.
 	 */
 	public boolean isNotEmptyGuideCategoryAxis(){
@@ -98,7 +98,7 @@ public class Guides {
 	}
 	
 	/**
-	 * Check exist any Guide to radar chart.
+	 * Check exists any Guide to radar chart.
 	 * @return List of GuideRadarChartController initialized.
 	 */
 	public boolean isNotEmptyGuideRadarChart(){
@@ -106,7 +106,7 @@ public class Guides {
 	}
 	
 	/**
-	 * Check exist any Guide to ValueAxis.
+	 * Check exists any Guide to ValueAxis.
 	 * @return List of GuideValueAxisController initialized.
 	 */
 	public boolean isNotEmptyGuideValueAxis(){

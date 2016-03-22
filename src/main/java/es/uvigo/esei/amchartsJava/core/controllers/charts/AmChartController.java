@@ -79,8 +79,7 @@ public abstract class AmChartController<E extends AmChart>
 		return amchart.getExport();
 	}
 	
-	//se asigna valor por defecto, este metodo solo existe para deserializar export, no borrar, daría
-	//error
+	//assigned default value, this method exists to deserialize export, don't delete
 	public void setExport(Object export){
 		
 	}
@@ -291,7 +290,6 @@ public abstract class AmChartController<E extends AmChart>
 		return (String) amchart.getFeature("pathToImages");
 	}
 	
-	//FALTA VALIDAR PATH, SE DA UNO POR DEFECTO
 	public void setPathToImages(String pathToImages){
 		amchart.setFeature("pathToImages", pathToImages);
 	}
@@ -326,7 +324,6 @@ public abstract class AmChartController<E extends AmChart>
 		return (String) amchart.getFeature("theme");
 	}
 	
-	//debe existir file theme
 	public void setTheme(String theme){
 		if(PathValidator.themeExist(theme)){
 			amchart.setFeature("theme", theme);

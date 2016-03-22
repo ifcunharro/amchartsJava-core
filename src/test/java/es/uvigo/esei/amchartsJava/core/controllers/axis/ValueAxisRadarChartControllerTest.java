@@ -41,10 +41,14 @@ public class ValueAxisRadarChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		ValueAxisRadarChartController valueAxis = new ValueAxisRadarChartController();
 		
-		valueAxis.setFillAlpha(1);
+		try {
+			valueAxis.setFillAlpha(1);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(1.0, valueAxis.getFillAlpha(),0);
 		
@@ -53,7 +57,7 @@ public class ValueAxisRadarChartControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 1");
+		thrown.expectMessage("Number out of range: must be between 0 and 1");
 		ValueAxisRadarChartController valueAxis = new ValueAxisRadarChartController();
 		
 		valueAxis.setAxisAlpha(9);
@@ -61,14 +65,14 @@ public class ValueAxisRadarChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		ValueAxisRadarChartController valueAxis = new ValueAxisRadarChartController();
 		
 		assertNull(valueAxis.getFillAlpha());
 	}
 	
 	@Test
-	public void all_color_property_return_string_if_format_color_is_correct() throws ColorException{
+	public void all_color_property_return_string_if_format_color_is_correct(){
 		ValueAxisRadarChartController valueAxis = new ValueAxisRadarChartController();
 		
 		valueAxis.setColor(ColorsAmCharts.DARKGRAY);
@@ -87,7 +91,7 @@ public class ValueAxisRadarChartControllerTest {
 	}
 	
 	@Test
-	public void all_color_property_return_null_if_is_not_setted() throws ColorException{
+	public void all_color_property_return_null_if_is_not_setted(){
 		ValueAxisRadarChartController valueAxis = new ValueAxisRadarChartController();
 		
 		assertNull(valueAxis.getColor());
@@ -95,10 +99,14 @@ public class ValueAxisRadarChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		ValueAxisRadarChartController valueAxis = new ValueAxisRadarChartController();
 		
-		valueAxis.setLabelRotation(-90);
+		try {
+			valueAxis.setLabelRotation(-90);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(-90, (Object)valueAxis.getLabelRotation());
 		
@@ -115,7 +123,7 @@ public class ValueAxisRadarChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		ValueAxisRadarChartController valueAxis = new ValueAxisRadarChartController();
 		
 		assertNull(valueAxis.getFontSize());
@@ -203,7 +211,7 @@ public class ValueAxisRadarChartControllerTest {
 	}
 	
 	@Test
-	public void synchronizedWith_property_must_return_null_if_string_value_equals_to_id_ValueAxisRadarChartController() throws ChartException{
+	public void synchronizedWith_property_must_return_null_if_string_value_equals_to_id_ValueAxisRadarChartController(){
 		AmRadarChartController radar = new AmRadarChartController();
 		ValueAxisRadarChartController valueAxis = new ValueAxisRadarChartController();
 		
@@ -214,13 +222,17 @@ public class ValueAxisRadarChartControllerTest {
 			e.printStackTrace();
 		}
 		
-		valueAxis.setSynchronizeWith("ValueAxis-1");
+		try {
+			valueAxis.setSynchronizeWith("ValueAxis-1");
+		} catch (ChartException e) {
+			e.printStackTrace();
+		}
 		
 		assertNull(valueAxis.getSynchronizeWith());
 	}
 	
 	@Test
-	public void synchronizedWith_property_must_return_string_if_string_value_belong_to_other_ValueAxisRadarChartController_added_to_chart() throws ChartException{
+	public void synchronizedWith_property_must_return_string_if_string_value_belong_to_other_ValueAxisRadarChartController_added_to_chart(){
 		AmRadarChartController radar = new AmRadarChartController();
 		ValueAxisRadarChartController valueAxis = new ValueAxisRadarChartController();
 		ValueAxisRadarChartController valueAxis2 = new ValueAxisRadarChartController();
@@ -233,7 +245,11 @@ public class ValueAxisRadarChartControllerTest {
 			e.printStackTrace();
 		}
 		
-		valueAxis.setSynchronizeWith("ValueAxis-2");
+		try {
+			valueAxis.setSynchronizeWith("ValueAxis-2");
+		} catch (ChartException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("ValueAxis-2",valueAxis.getSynchronizeWith());
 	}

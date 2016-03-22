@@ -13,6 +13,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.Effect;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeArrowController;
@@ -46,10 +47,14 @@ public class AmAngularGaugeControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
 		
-		amGauge.setFaceBorderAlpha(1);
+		try {
+			amGauge.setFaceBorderAlpha(1);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(1.0, amGauge.getFaceBorderAlpha(),0);
 		
@@ -58,7 +63,7 @@ public class AmAngularGaugeControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 1");
+		thrown.expectMessage("Number out of range: must be between 0 and 1");
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
 		
 		amGauge.setFaceAlpha(9);
@@ -66,17 +71,21 @@ public class AmAngularGaugeControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
 		
 		assertNull(amGauge.getFaceBorderAlpha());
 	}
 	
 	@Test
-	public void all_color_property_return_string_if_format_color_is_correct() throws ColorException{
+	public void all_color_property_return_string_if_format_color_is_correct(){
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
 		
-		amGauge.setColor("#ffffff");
+		try {
+			amGauge.setColor("#ffffff");
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("#ffffff", amGauge.getColor());
 		
@@ -92,7 +101,7 @@ public class AmAngularGaugeControllerTest {
 	}
 	
 	@Test
-	public void all_color_property_return_null_if_is_not_setted() throws ColorException{
+	public void all_color_property_return_null_if_is_not_setted(){
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
 		
 		assertNull(amGauge.getFaceBorderColor());
@@ -100,27 +109,35 @@ public class AmAngularGaugeControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
 		
-		amGauge.setStartDuration(5);
+		try {
+			amGauge.setStartDuration(5);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(5, (Object)amGauge.getStartDuration());
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
-		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 10");
+	public void property_numeric_with_value_integer_out_range_launch_exception_if_improvedVisibility_equals_true() throws OutOfRangeException{
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
-		
-		amGauge.setStartDuration(-270);
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			thrown.expect(OutOfRangeException.class);
+			thrown.expectMessage("Number out of range: must be between 0 and 10");
+			
+			amGauge.setStartDuration(-270);
+		}else{
+			amGauge.setStartDuration(-270);
+		}
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
 		
 		assertNull(amGauge.getFontSize());
@@ -249,7 +266,7 @@ public class AmAngularGaugeControllerTest {
 	 * pattern
 	 */
 	@Test
-	public void facePattern_property_must_return_patternController_if_is_valid() throws MalFormedPatternException{
+	public void facePattern_property_must_return_patternController_if_is_valid(){
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
 		PatternController patternController = new PatternController();
 		
@@ -284,7 +301,11 @@ public class AmAngularGaugeControllerTest {
 			
 		}
 		
-		amGauge.setFacePattern(patternController);
+		try {
+			amGauge.setFacePattern(patternController);
+		} catch (MalFormedPatternException e) {
+			e.printStackTrace();
+		}
 		
 		PatternController patternRecovery = amGauge.getFacePattern();
 		

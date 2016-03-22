@@ -37,10 +37,14 @@ public class AmSerialChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		AmSerialChartController serial = new AmSerialChartController();
 		
-		serial.setColumnWidth(1);
+		try {
+			serial.setColumnWidth(1);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(1.0, serial.getColumnWidth(),0);
 		
@@ -49,7 +53,7 @@ public class AmSerialChartControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 1");
+		thrown.expectMessage("Number out of range: must be between 0 and 1");
 		AmSerialChartController serial = new AmSerialChartController();
 		
 		serial.setColumnWidth(9);
@@ -57,17 +61,21 @@ public class AmSerialChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		AmSerialChartController serial = new AmSerialChartController();
 		
 		assertNull(serial.getColumnWidth());
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		AmSerialChartController serial = new AmSerialChartController();
 		
-		serial.setMaxSelectedTime(200000);
+		try {
+			serial.setMaxSelectedTime(200000);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(200000, (Object)serial.getMaxSelectedTime());
 		
@@ -84,7 +92,7 @@ public class AmSerialChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		AmSerialChartController serial = new AmSerialChartController();
 		
 		assertNull(serial.getColumnSpacing3D());
@@ -101,13 +109,17 @@ public class AmSerialChartControllerTest {
 	}
 	
 	@Test
-	public void maxSelectedSeries_must_return_null_if_recive_integer_le_zero() throws IntegerException{
+	public void maxSelectedSeries_must_return_null_if_recive_integer_le_zero(){
 		AmSerialChartController serial = new AmSerialChartController();
 		
-		serial.setMaxSelectedSeries(0);
-		assertNull(serial.getMaxSelectedSeries());
-		serial.setMaxSelectedSeries(-90);
-		assertNull(serial.getMaxSelectedSeries());
+		try {
+			serial.setMaxSelectedSeries(0);
+			assertNull(serial.getMaxSelectedSeries());
+			serial.setMaxSelectedSeries(-90);
+			assertNull(serial.getMaxSelectedSeries());
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Test

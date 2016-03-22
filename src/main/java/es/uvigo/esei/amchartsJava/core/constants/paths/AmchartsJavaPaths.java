@@ -20,7 +20,7 @@ public final class AmchartsJavaPaths {
 	public static final String AMCHARTS_PATH;
 	/**
 	 * Path to images folder, this path is used by pathToImages property, that property
-	 * is deprecated but this path is used to validate that image exist in images folder.
+	 * is deprecated but this path is used to validate that image exists in images folder.
 	 */
 	public static final String IMAGES_PATH;
 	/**
@@ -39,10 +39,6 @@ public final class AmchartsJavaPaths {
 	 * Path to properties used to configure app.
 	 */
 	public static final String CONFIG_FILE_PATH;
-	/**
-	 * Path to log folder.
-	 */
-	public static final String LOG_PATH;
 	
 	static{
 		if("debug".equals(Config.getString("mode"))){
@@ -52,7 +48,6 @@ public final class AmchartsJavaPaths {
 			URL_PATTERNS = Config.getString("debugUrlPatterns");
 			TEMP_DIRECTORY = Config.getString("debugTempDirectory");
 			CONFIG_FILE_PATH = Config.getString("debugConfigFilePath");
-			LOG_PATH = Config.getString("debugLogPath");
 		}else{
 			AMCHARTS_PATH = Config.getString("releaseAmchartsPath");
 			IMAGES_PATH = Config.getString("releaseImagesPath");
@@ -60,7 +55,6 @@ public final class AmchartsJavaPaths {
 			URL_PATTERNS = Config.getString("releaseUrlPatterns");
 			TEMP_DIRECTORY = Config.getString("releaseTempDirectory");
 			CONFIG_FILE_PATH = Config.getString("releaseConfigFilePath");
-			LOG_PATH = Config.getString("releaseLogPath");
 		}
 	}
 

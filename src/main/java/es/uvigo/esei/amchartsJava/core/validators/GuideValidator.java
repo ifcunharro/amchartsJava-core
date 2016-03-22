@@ -24,7 +24,7 @@ public class GuideValidator {
 	 * @return List of generic guides or null if can't cast.
 	 */
 	@SuppressWarnings("unchecked")
-	public List<GuideController> castToListGuides(Object guides){
+	public static List<GuideController> castToListGuides(Object guides){
 		List<?> list;
 		if (guides == null) {
 			return null;

@@ -26,10 +26,10 @@ public class NumberValidator {
 	 */
 	public static boolean rangeDoubleValidator(Number number,int lo, int hi) throws OutOfRangeException{
 		if(number == null){
-			throw new OutOfRangeException(I18n.get("RangeDoubleException")+lo+I18n.get("and")+hi);
+			throw new OutOfRangeException(I18n.get("RangeException")+lo+I18n.get("and")+hi);
 		}
 		if(number.doubleValue()<lo || number.doubleValue()>hi){
-			throw new OutOfRangeException(I18n.get("RangeDoubleException")+lo+I18n.get("and")+hi);
+			throw new OutOfRangeException(I18n.get("RangeException")+lo+I18n.get("and")+hi);
 
 		}
 		return true;
@@ -45,10 +45,10 @@ public class NumberValidator {
 	 */
 	public static boolean rangeIntegerValidator(Number number,int lo, int hi) throws OutOfRangeException{
 		if(number == null){
-			throw new OutOfRangeException(I18n.get("RangeIntegerException")+lo+I18n.get("and")+hi);
+			throw new OutOfRangeException(I18n.get("RangeException")+lo+I18n.get("and")+hi);
 		}
 		if(number.intValue()<lo || number.intValue()>hi){
-			throw new OutOfRangeException(I18n.get("RangeIntegerException")+lo+I18n.get("and")+hi);
+			throw new OutOfRangeException(I18n.get("RangeException")+lo+I18n.get("and")+hi);
 		}
 		return true;
 	}
@@ -79,7 +79,7 @@ public class NumberValidator {
 		if(number == null){
 			throw new DoubleException(I18n.get("DoubleException"));
 		}
-		if(number instanceof Double){
+		if(number.getClass().getSimpleName().equals("Double")){
 			return true;
 		}
 		throw new DoubleException(I18n.get("DoubleException"));
@@ -92,6 +92,9 @@ public class NumberValidator {
 	 * @throws DoubleException Any value is not a double number.
 	 */
 	public static boolean checkArrayDoubles(Number... array) throws DoubleException{
+		if(array == null){
+			throw new DoubleException(I18n.get("DoubleException"));
+		}
 		for(Number value: array){
 			NumberValidator.doubleValidator(value);
 		}

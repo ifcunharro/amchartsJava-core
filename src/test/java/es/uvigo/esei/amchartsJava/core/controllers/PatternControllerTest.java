@@ -5,12 +5,16 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -22,10 +26,14 @@ public class PatternControllerTest {
 	public final ExpectedException thrown = ExpectedException.none();
 	
 	@Test
-	public void color_property_return_string_if_format_color_is_correct() throws ColorException{
+	public void color_property_return_string_if_format_color_is_correct(){
 		PatternController pattern = new PatternController();
 		
-		pattern.setColor("#000000");
+		try {
+			pattern.setColor("#000000");
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("#000000", pattern.getColor());
 		
@@ -42,7 +50,7 @@ public class PatternControllerTest {
 	}
 	
 	@Test
-	public void color_property_return_null_if_is_not_setted() throws ColorException{
+	public void color_property_return_null_if_is_not_setted(){
 		PatternController pattern = new PatternController();
 		
 		assertNull(pattern.getColor());
@@ -50,11 +58,15 @@ public class PatternControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		PatternController pattern = new PatternController();
 		
-		pattern.setHeight(4);
-		pattern.setWidth(6);
+		try {
+			pattern.setHeight(4);
+			pattern.setWidth(6);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(4, (Object)pattern.getHeight());
 		assertEquals(6, (Object)pattern.getWidth());
@@ -62,17 +74,21 @@ public class PatternControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
-		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 2 and 6");
+	public void property_numeric_with_value_integer_out_range_launch_exception_if_improvedVisibility_equals_true() throws OutOfRangeException{
 		PatternController pattern = new PatternController();
-		
-		pattern.setHeight(37);
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			thrown.expect(OutOfRangeException.class);
+			thrown.expectMessage("Number out of range: must be between 2 and 6");
+			
+			pattern.setHeight(37);
+		}else{
+			pattern.setHeight(37);
+		}
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		PatternController pattern = new PatternController();
 		
 		assertNull(pattern.getHeight());
@@ -87,8 +103,9 @@ public class PatternControllerTest {
 				   .getCodeSource()
 				   .getLocation();
 		try {
+			patternsPath = new URL(URLDecoder.decode(patternsPath.toString(), "UTF-8"));
 			patternsPath = new URL(patternsPath,AmchartsJavaPaths.URL_PATTERNS);
-		} catch (MalformedURLException e) {
+		} catch (MalformedURLException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		File[] patternsFolders = new File(patternsPath.getFile()).listFiles();
@@ -113,8 +130,9 @@ public class PatternControllerTest {
 				   .getCodeSource()
 				   .getLocation();
 		try {
+			patternsPath = new URL(URLDecoder.decode(patternsPath.toString(), "UTF-8"));
 			patternsPath = new URL(patternsPath,AmchartsJavaPaths.URL_PATTERNS);
-		} catch (MalformedURLException e) {
+		} catch (MalformedURLException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		

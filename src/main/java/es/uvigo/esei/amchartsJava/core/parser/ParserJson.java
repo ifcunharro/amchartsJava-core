@@ -1065,7 +1065,7 @@ public class ParserJson {
 	}
 	
 	/**
-	 * Deserialize graphs to AmRadarChart.If exist value to maxBulletSize graph will be treat as AmXyChart 
+	 * Deserialize graphs to AmRadarChart.If exists value to maxBulletSize graph will be treat as AmXyChart 
 	 * else as AmSerialChart.
 	 * @param radarChartController chart own of graphs.
 	 * @param tempFile name of AmRadarChart config file.

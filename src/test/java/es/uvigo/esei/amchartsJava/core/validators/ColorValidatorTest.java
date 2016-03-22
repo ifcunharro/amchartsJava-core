@@ -14,16 +14,24 @@ public class ColorValidatorTest {
 	public final ExpectedException thrown = ExpectedException.none();
 	
 	@Test
-	public void checkFormatColor_return_true_if_color_format_is_sharp_six_hexadecimal_numbers() throws ColorException{
+	public void checkFormatColor_return_true_if_color_format_is_sharp_six_hexadecimal_numbers(){
 		
-		assertEquals(true,ColorValidator.checkFormatColor("#ffaa00"));
+		try {
+			assertEquals(true,ColorValidator.checkFormatColor("#ffaa00"));
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
 	@Test
-	public void checkFormatColors_return_true_if_color_format_is_sharp_six_hexadecimal_numbers_in_all_colors() throws ColorException{
+	public void checkFormatColors_return_true_if_color_format_is_sharp_six_hexadecimal_numbers_in_all_colors(){
 		
-		assertEquals(true,ColorValidator.checkFormatColors("#ffaa00","#ffffff","#090909"));
+		try {
+			assertEquals(true,ColorValidator.checkFormatColors("#ffaa00","#ffffff","#090909"));
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 	}
 	

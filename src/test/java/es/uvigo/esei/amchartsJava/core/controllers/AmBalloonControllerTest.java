@@ -3,10 +3,12 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.TextAlign;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -35,27 +37,35 @@ public class AmBalloonControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		AmBalloonController balloon = new AmBalloonController();
 		
-		balloon.setAnimationDuration(2);
+		try {
+			balloon.setAnimationDuration(2);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(2.0, balloon.getAnimationDuration(),0);
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
-		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 2");
+	public void property_numeric_with_value_double_out_range_launch_exception_if_improvedVisibility_equals_true() throws OutOfRangeException{
 		AmBalloonController balloon = new AmBalloonController();
-		
-		balloon.setAnimationDuration(9);
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			thrown.expect(OutOfRangeException.class);
+			thrown.expectMessage("Number out of range: must be between 0 and 2");
+			
+			balloon.setAnimationDuration(9);
+		}else{
+			balloon.setAnimationDuration(9);
+		}
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		AmBalloonController balloon = new AmBalloonController();
 		
 		assertNull(balloon.getAnimationDuration());
@@ -63,10 +73,14 @@ public class AmBalloonControllerTest {
 	}
 	
 	@Test
-	public void all_property_to_color_return_string_if_format_color_is_correct() throws ColorException{
+	public void all_property_to_color_return_string_if_format_color_is_correct(){
 		AmBalloonController balloon = new AmBalloonController();
 		
-		balloon.setBorderColor("#000000");
+		try {
+			balloon.setBorderColor("#000000");
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("#000000", balloon.getBorderColor());
 		
@@ -83,7 +97,7 @@ public class AmBalloonControllerTest {
 	}
 	
 	@Test
-	public void all_property_to_color_return_null_if_is_not_setted() throws ColorException{
+	public void all_property_to_color_return_null_if_is_not_setted(){
 		AmBalloonController balloon = new AmBalloonController();
 		
 		assertNull(balloon.getBorderColor());
@@ -91,27 +105,36 @@ public class AmBalloonControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		AmBalloonController balloon = new AmBalloonController();
 		
-		balloon.setBorderThickness(5);
+		try {
+			balloon.setBorderThickness(5);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(5, (Object)balloon.getBorderThickness());
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
-		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 10");
+	public void property_numeric_with_value_integer_out_range_launch_exception_if_improvedVisibility_equals_true() throws OutOfRangeException{
 		AmBalloonController balloon = new AmBalloonController();
-		
-		balloon.setBorderThickness(900);
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			thrown.expect(OutOfRangeException.class);
+			thrown.expectMessage("Number out of range: must be between 0 and 10");
+			
+			balloon.setBorderThickness(900);
+			
+		}else{
+			balloon.setBorderThickness(900);
+		}
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		AmBalloonController balloon = new AmBalloonController();
 		
 		assertNull(balloon.getBorderThickness());
@@ -119,10 +142,14 @@ public class AmBalloonControllerTest {
 	}
 	
 	@Test
-	public void maxWidth_property_return_integer_if_set_method_recive_gt_zero_integer() throws IntegerException{
+	public void maxWidth_property_return_integer_if_set_method_recive_gt_zero_integer(){
 		AmBalloonController balloon = new AmBalloonController();
 		
-		balloon.setMaxWidth(90);
+		try {
+			balloon.setMaxWidth(90);
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(90, (Object)balloon.getMaxWidth());
 		
@@ -139,13 +166,21 @@ public class AmBalloonControllerTest {
 	}
 	
 	@Test
-	public void maxWidth_property_return_null_if_set_method_recive_integer_lt_1() throws IntegerException{
+	public void maxWidth_property_return_null_if_set_method_recive_integer_lt_1(){
 		AmBalloonController balloon = new AmBalloonController();
 		
-		balloon.setMaxWidth(-30);
+		try {
+			balloon.setMaxWidth(-30);
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 		
 		assertNull(balloon.getMaxWidth());
-		balloon.setMaxWidth(0);
+		try {
+			balloon.setMaxWidth(0);
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 		assertNull(balloon.getMaxWidth());
 	}
 	
@@ -156,21 +191,26 @@ public class AmBalloonControllerTest {
 		AmBalloonController balloon = new AmBalloonController();
 		
 		balloon.setOffsetX(90.88);
+		
 	}
 	
 	@Test
-	public void offsetX_and_offsetY_properties_return_integer_if_set_method_recive_integer() throws IntegerException{
+	public void offsetX_and_offsetY_properties_return_integer_if_set_method_recive_integer(){
 		AmBalloonController balloon = new AmBalloonController();
 		
-		balloon.setOffsetY(90);
-		balloon.setOffsetX(20);
+		try {
+			balloon.setOffsetY(90);
+			balloon.setOffsetX(20);
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(90, (Object)balloon.getOffsetY());
 		assertEquals(20, (Object)balloon.getOffsetX());
 	}
 	
 	@Test
-	public void offsetX_and_offsetY_properties_return_null_if_are_not_setted() throws IntegerException{
+	public void offsetX_and_offsetY_properties_return_null_if_are_not_setted(){
 		AmBalloonController balloon = new AmBalloonController();
 		
 		assertNull(balloon.getOffsetY());

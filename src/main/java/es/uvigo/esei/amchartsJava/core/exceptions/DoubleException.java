@@ -2,7 +2,7 @@ package es.uvigo.esei.amchartsJava.core.exceptions;
 
 /**
  * Custom exception for not double number.
- * @author iagofernandezcunarro
+ * @author Iago Fernández Cuñarro
  *
  */
 public class DoubleException extends Exception {

@@ -217,9 +217,9 @@ public abstract class AmRectangularChart extends AmCoordinateChart {
 	}
 	
 	/**
-	 * Check exist TrendLine.
+	 * Check exists TrendLine.
 	 * @param idTrendLine TrendLine id.
-	 * @return boolean Exist or doesn't exist TrendLine.
+	 * @return boolean Exists or doesn't exist TrendLine.
 	 */
 	public boolean existTrendLine(String idTrendLine){
 		if(trendLines != null){

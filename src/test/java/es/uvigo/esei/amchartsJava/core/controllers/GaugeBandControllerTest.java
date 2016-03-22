@@ -21,10 +21,14 @@ public class GaugeBandControllerTest {
 	public final ExpectedException thrown = ExpectedException.none();
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		GaugeBandController gaugeBand = new GaugeBandController();
 		
-		gaugeBand.setAlpha(1);
+		try {
+			gaugeBand.setAlpha(1);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(1.0, gaugeBand.getAlpha(),0);
 		
@@ -33,7 +37,7 @@ public class GaugeBandControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 1");
+		thrown.expectMessage("Number out of range: must be between 0 and 1");
 		GaugeBandController gaugeBand = new GaugeBandController();
 		
 		gaugeBand.setAlpha(9);
@@ -41,17 +45,21 @@ public class GaugeBandControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		GaugeBandController gaugeBand = new GaugeBandController();
 		
 		assertNull(gaugeBand.getAlpha());
 	}
 	
 	@Test
-	public void color_property_return_string_if_format_color_is_correct() throws ColorException{
+	public void color_property_return_string_if_format_color_is_correct(){
 		GaugeBandController gaugeBand = new GaugeBandController();
 		
-		gaugeBand.setColor("#000000");
+		try {
+			gaugeBand.setColor("#000000");
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("#000000", gaugeBand.getColor());
 		
@@ -68,7 +76,7 @@ public class GaugeBandControllerTest {
 	}
 	
 	@Test
-	public void color_property_return_null_if_is_not_setted() throws ColorException{
+	public void color_property_return_null_if_is_not_setted(){
 		GaugeBandController gaugeBand = new GaugeBandController();
 		
 		assertNull(gaugeBand.getColor());
@@ -87,21 +95,37 @@ public class GaugeBandControllerTest {
 	}
 	
 	@Test
-	public void radius_and_innerRadius_properties_must_return_string_if_set_method_recive_integer_value_as_string() throws CoordException{
+	public void radius_and_innerRadius_properties_must_return_string_if_set_method_recive_integer_value_as_string(){
 		GaugeBandController gaugeBand = new GaugeBandController();
 		
-		gaugeBand.setRadius("500");
-		gaugeBand.setInnerRadius("200");
+		try {
+			gaugeBand.setRadius("500");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
+		try {
+			gaugeBand.setInnerRadius("200");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("500", gaugeBand.getRadius());
 		assertEquals("200", gaugeBand.getInnerRadius());
 	}
 	
 	@Test
-	public void radius_and_innerRadius_properties_must_return_string_if_set_method_recive_integer_percent_value_as_string() throws CoordException{
+	public void radius_and_innerRadius_properties_must_return_string_if_set_method_recive_integer_percent_value_as_string(){
 		GaugeBandController gaugeBand = new GaugeBandController();
 		
-		gaugeBand.setRadius("80%");
-		gaugeBand.setInnerRadius("120%");
+		try {
+			gaugeBand.setRadius("80%");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
+		try {
+			gaugeBand.setInnerRadius("120%");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("80%", gaugeBand.getRadius());
 		assertEquals("120%", gaugeBand.getInnerRadius());
 		

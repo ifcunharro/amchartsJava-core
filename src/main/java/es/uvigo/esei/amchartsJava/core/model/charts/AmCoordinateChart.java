@@ -528,9 +528,9 @@ public abstract class AmCoordinateChart extends AmChart{
 	}
 
 	/**
-	 * Check exist AmGraph.
+	 * Check exists AmGraph.
 	 * @param idGraph AmGraph id.
-	 * @return Exist or doesn't exist AmGraph.
+	 * @return Exists or doesn't exist AmGraph.
 	 */
 	public boolean existGraph(String idGraph){
 		if(graphs != null){
@@ -541,9 +541,9 @@ public abstract class AmCoordinateChart extends AmChart{
 	}
 	
 	/**
-	 * Check exist ValueAxis.
+	 * Check exists ValueAxis.
 	 * @param idValueAxis ValueAxis id.
-	 * @return Exist or doesn't exist ValueAxis.
+	 * @return Exists or doesn't exist ValueAxis.
 	 */
 	public boolean existValueAxis(String idValueAxis){
 		if(valueAxes != null){
@@ -554,9 +554,9 @@ public abstract class AmCoordinateChart extends AmChart{
 	}
 
 	/**
-	 * Check exist Guide.
+	 * Check exists Guide.
 	 * @param idGuide Guide id.
-	 * @return Exist or doesn't exist Guide.
+	 * @return Exists or doesn't exist Guide.
 	 */
 	public boolean existGuide(String idGuide) {
 		if(guides != null){

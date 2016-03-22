@@ -37,10 +37,14 @@ public class CategoryAxisControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
-		categoryAxis.setFillAlpha(1);
+		try {
+			categoryAxis.setFillAlpha(1);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(1.0, categoryAxis.getFillAlpha(),0);
 		
@@ -49,7 +53,7 @@ public class CategoryAxisControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 1");
+		thrown.expectMessage("Number out of range: must be between 0 and 1");
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
 		categoryAxis.setAxisAlpha(9);
@@ -57,14 +61,14 @@ public class CategoryAxisControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
 		assertNull(categoryAxis.getFillAlpha());
 	}
 	
 	@Test
-	public void all_color_property_return_string_if_format_color_is_correct() throws ColorException{
+	public void all_color_property_return_string_if_format_color_is_correct(){
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
 		categoryAxis.setColor(ColorsAmCharts.DARKGRAY);
@@ -83,7 +87,7 @@ public class CategoryAxisControllerTest {
 	}
 	
 	@Test
-	public void all_color_property_return_null_if_is_not_setted() throws ColorException{
+	public void all_color_property_return_null_if_is_not_setted(){
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
 		assertNull(categoryAxis.getColor());
@@ -91,10 +95,14 @@ public class CategoryAxisControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
-		categoryAxis.setLabelRotation(-90);
+		try {
+			categoryAxis.setLabelRotation(-90);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(-90, (Object)categoryAxis.getLabelRotation());
 		
@@ -111,7 +119,7 @@ public class CategoryAxisControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
 		assertNull(categoryAxis.getFontSize());
@@ -167,7 +175,6 @@ public class CategoryAxisControllerTest {
 		try {
 			categoryAxis.setAutoRotateCount(-1);
 		} catch (IntegerException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		assertNull(categoryAxis.getAutoRotateCount());

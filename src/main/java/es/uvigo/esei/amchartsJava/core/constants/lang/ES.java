@@ -14,8 +14,7 @@ public class ES implements Idiom {
 	private static Map<String,String> textsES = new HashMap<String,String>();
 	
 	static{
-		textsES.put("RangeDoubleException", "El número debe estar entre ");
-		textsES.put("RangeIntegerException", "Número fuera de rango: debe estar entre ");
+		textsES.put("RangeException", "Número fuera de rango: debe estar entre ");
 		textsES.put("LanguageException", "El idioma no es válido");
 		textsES.put("ColorException", "El formato de color debe ser #000000");
 		textsES.put("IntegerException", "El número debe ser un entero");

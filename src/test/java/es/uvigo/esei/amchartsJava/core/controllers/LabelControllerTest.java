@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.Align;
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -37,10 +38,14 @@ public class LabelControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		LabelController label = new LabelController();
 		
-		label.setAlpha(1);
+		try {
+			label.setAlpha(1);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(1.0, label.getAlpha(),0);
 		
@@ -49,7 +54,7 @@ public class LabelControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 1");
+		thrown.expectMessage("Number out of range: must be between 0 and 1");
 		LabelController label = new LabelController();
 		
 		label.setAlpha(9);
@@ -57,17 +62,21 @@ public class LabelControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		LabelController label = new LabelController();
 		
 		assertNull(label.getAlpha());
 	}
 	
 	@Test
-	public void color_property_return_string_if_format_color_is_correct() throws ColorException{
+	public void color_property_return_string_if_format_color_is_correct(){
 		LabelController label = new LabelController();
 		
-		label.setColor("#000000");
+		try {
+			label.setColor("#000000");
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("#000000", label.getColor());
 		
@@ -84,7 +93,7 @@ public class LabelControllerTest {
 	}
 	
 	@Test
-	public void color_property_return_null_if_is_not_setted() throws ColorException{
+	public void color_property_return_null_if_is_not_setted(){
 		LabelController label = new LabelController();
 		
 		assertNull(label.getColor());
@@ -92,49 +101,73 @@ public class LabelControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		LabelController label = new LabelController();
 		
-		label.setRotation(-90);
+		try {
+			label.setRotation(-90);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(-90, (Object)label.getRotation());
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
-		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between -90 and 90");
+	public void size_property_with_value_integer_out_range_launch_exception_if_improvedVisibility_equals_true() throws OutOfRangeException{
 		LabelController label = new LabelController();
-		
-		label.setRotation(270);
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			thrown.expect(OutOfRangeException.class);
+			thrown.expectMessage("Number out of range: must be between 10 and 24");
+			
+			label.setSize(36);
+		}else{
+			label.setSize(36);
+		}
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		LabelController label = new LabelController();
 		
 		assertNull(label.getSize());
 	}
 	
 	@Test
-	public void x_and_y_properties_must_return_string_if_set_method_recive_integer_value_as_string() throws CoordException{
+	public void x_and_y_properties_must_return_string_if_set_method_recive_integer_value_as_string(){
 		LabelController label = new LabelController();
 		
-		label.setX("500");
+		try {
+			label.setX("500");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("500", label.getX());
-		label.setY("200");
+		try {
+			label.setY("200");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("200", label.getY());
 	}
 	
 	@Test
-	public void x_and_y_properties_must_return_string_if_set_method_recive_integer_percent_value_as_string() throws CoordException{
+	public void x_and_y_properties_must_return_string_if_set_method_recive_integer_percent_value_as_string(){
 		LabelController label = new LabelController();
 		
-		label.setX("180%");
+		try {
+			label.setX("180%");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("180%", label.getX());
-		label.setY("150%");
+		try {
+			label.setY("150%");
+		} catch (CoordException e) {
+			e.printStackTrace();
+		}
 		assertEquals("150%", label.getY());
 		
 	}

@@ -13,8 +13,7 @@ public class EN implements Idiom {
 	private static Map<String,String> textsEN = new HashMap<String,String>();
 	
 	static{
-		textsEN.put("RangeDoubleException", "Number must be between ");
-		textsEN.put("RangeIntegerException", "Number out of range: must be between ");
+		textsEN.put("RangeException", "Number out of range: must be between ");
 		textsEN.put("LanguageException", "Language not valid");
 		textsEN.put("ColorException", "Format color should be #000000");
 		textsEN.put("IntegerException", "Number must be an integer");

@@ -217,9 +217,9 @@ public class AmAngularGauge extends AmChart {
 	}
 	
 	/**
-	 * Check exist GaugeBand.
+	 * Check exists GaugeBand.
 	 * @param idGaugeBand GaugeBand id.
-	 * @return boolean Exist or doesn't exist GaugeBand.
+	 * @return boolean Exists or doesn't exist GaugeBand.
 	 */
 	public boolean existGaugeBand(String idGaugeBand){
 		if(idGaugeBands != null){
@@ -230,9 +230,9 @@ public class AmAngularGauge extends AmChart {
 	}
 	
 	/**
-	 * Check exist GaugeAxis.
+	 * Check exists GaugeAxis.
 	 * @param idAxis GaugeAxis id.
-	 * @return boolean Exist or doesn't exist GaugeAxis.
+	 * @return boolean Exists or doesn't exist GaugeAxis.
 	 */
 	public boolean existAxis(String idAxis){
 		if(idAxes != null){
@@ -243,9 +243,9 @@ public class AmAngularGauge extends AmChart {
 	}
 	
 	/**
-	 * Check exist GaugeArrow.
+	 * Check exists GaugeArrow.
 	 * @param idArrow GaugeArrow id.
-	 * @return boolean Exist or doesn't exist GaugeArrow.
+	 * @return boolean Exists or doesn't exist GaugeArrow.
 	 */
 	public boolean existArrow(String idArrow){
 		if(idArrows != null){

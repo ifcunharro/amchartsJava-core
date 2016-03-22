@@ -10,8 +10,7 @@ import es.uvigo.esei.amchartsJava.core.constants.config.Config;
  */
 public class AmchartsConstants {
 	
-	//not delete these two variables, if change name variables, update references in code
-	public static final String LOGGING;
+	//not delete this variable, if change name variable, update references in code
 	public static final String IMPROVED_VISIBILITY;
 
 	private AmchartsConstants(){
@@ -20,7 +19,6 @@ public class AmchartsConstants {
 	
 	static{
 		IMPROVED_VISIBILITY = Config.getString("enabledImprovedVisibility");
-		LOGGING = Config.getString("log");
 	}
 
 	/**

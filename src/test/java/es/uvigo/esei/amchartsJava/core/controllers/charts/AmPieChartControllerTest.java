@@ -37,10 +37,14 @@ public class AmPieChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		AmPieChartController amPie = new AmPieChartController();
 		
-		amPie.setPieAlpha(1);
+		try {
+			amPie.setPieAlpha(1);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(1.0, amPie.getPieAlpha(),0);
 		
@@ -49,7 +53,7 @@ public class AmPieChartControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 1");
+		thrown.expectMessage("Number out of range: must be between 0 and 1");
 		AmPieChartController amPie = new AmPieChartController();
 		
 		amPie.setPieAlpha(9);
@@ -57,17 +61,21 @@ public class AmPieChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		AmPieChartController amPie = new AmPieChartController();
 		
 		assertNull(amPie.getPieAlpha());
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		AmPieChartController amPie = new AmPieChartController();
 		
-		amPie.setStartAngle(50);
+		try {
+			amPie.setStartAngle(50);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(50, (Object)amPie.getStartAngle());
 		
@@ -84,7 +92,7 @@ public class AmPieChartControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		AmPieChartController amPie = new AmPieChartController();
 		
 		assertNull(amPie.getLabelRadius());
@@ -101,10 +109,14 @@ public class AmPieChartControllerTest {
 	}
 	
 	@Test
-	public void minRadius_property_must_return_null_if_set_method_recive_integer_value_lt_10() throws IntegerException{
+	public void minRadius_property_must_return_null_if_set_method_recive_integer_value_lt_10(){
 		AmPieChartController amPie = new AmPieChartController();
 		
-		amPie.setMinRadius(9);
+		try {
+			amPie.setMinRadius(9);
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 		
 		assertNull(amPie.getMinRadius());
 		

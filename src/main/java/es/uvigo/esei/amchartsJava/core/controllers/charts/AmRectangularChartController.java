@@ -222,7 +222,6 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		return (String) amchart.getFeature("zoomOutButtonImage");
 	}
 	
-	//debe existir en /amcharts/images
 	public void setZoomOutButtonImage(String zoomOutButtonImage){
 		String zoomOutButtonImageValidated = PathValidator.imageExist(zoomOutButtonImage);
 		if(zoomOutButtonImageValidated.length()>0){

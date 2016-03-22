@@ -63,16 +63,16 @@ public class ValueAxis{
 	}
 	
 	/**
-	 * Check exist ValueAxis in collection.
+	 * Check exists ValueAxis in collection.
 	 * @param idValueAxis ValueAxis id.
-	 * @return Exist or doesn't exist ValueAxis in collection.
+	 * @return Exists or doesn't exist ValueAxis in collection.
 	 */
 	public boolean existValueAxis(String idValueAxis) {
 		return getAllAxisIds().contains(idValueAxis);
 	}
 	
 	/**
-	 * Check exist any ValueAxis to radar chart.
+	 * Check exists any ValueAxis to radar chart.
 	 * @return List of ValueAxisRadarChartController initialized.
 	 */
 	public boolean isNotEmptyValueAxisRadarChart() {
@@ -80,7 +80,7 @@ public class ValueAxis{
 	}
 
 	/**
-	 * Check exist any ValueAxis to not radar chart.
+	 * Check exists any ValueAxis to not radar chart.
 	 * @return List of ValueAxisController initialized.
 	 */
 	public boolean isNotEmptyValueAxis() {

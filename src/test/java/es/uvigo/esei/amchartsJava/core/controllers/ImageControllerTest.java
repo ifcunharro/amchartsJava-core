@@ -3,15 +3,19 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.Arrays;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -24,10 +28,14 @@ public class ImageControllerTest {
 	public final ExpectedException thrown = ExpectedException.none();
 	
 	@Test
-	public void all_color_property_return_string_if_format_color_is_correct() throws ColorException{
+	public void all_color_property_return_string_if_format_color_is_correct(){
 		ImageController image = new ImageController();
 		
-		image.setColor("#000000");
+		try {
+			image.setColor("#000000");
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("#000000", image.getColor());
 		
@@ -44,7 +52,7 @@ public class ImageControllerTest {
 	}
 	
 	@Test
-	public void all_color_property_return_null_if_is_not_setted() throws ColorException{
+	public void all_color_property_return_null_if_is_not_setted(){
 		ImageController image = new ImageController();
 		
 		assertNull(image.getBalloonColor());
@@ -52,27 +60,35 @@ public class ImageControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		ImageController image = new ImageController();
 		
-		image.setHeight(24);
+		try {
+			image.setHeight(24);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(24, (Object)image.getHeight());
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
-		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 20 and 50");
+	public void property_numeric_with_value_integer_out_range_launch_exception_if_improvedVisibility_equals_true() throws OutOfRangeException{
 		ImageController image = new ImageController();
-		
-		image.setHeight(370);
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			thrown.expect(OutOfRangeException.class);
+			thrown.expectMessage("Number out of range: must be between 20 and 50");
+			
+			image.setHeight(370);
+		}else{
+			image.setHeight(370);
+		}
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		ImageController image = new ImageController();
 		
 		assertNull(image.getWidth());
@@ -96,8 +112,9 @@ public class ImageControllerTest {
 				   .getCodeSource()
 				   .getLocation();
 		try {
+			imagesPath = new URL(URLDecoder.decode(imagesPath.toString(),"UTF-8"));
 			imagesPath = new URL(imagesPath,AmchartsJavaPaths.IMAGES_PATH);
-		} catch (MalformedURLException e) {
+		} catch (MalformedURLException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		File[] images = new File(imagesPath.getFile()).listFiles();
@@ -118,8 +135,9 @@ public class ImageControllerTest {
 				   .getCodeSource()
 				   .getLocation();
 		try {
+			imagesPath = new URL(URLDecoder.decode(imagesPath.toString(), "UTF-8"));
 			imagesPath = new URL(imagesPath,AmchartsJavaPaths.IMAGES_PATH);
-		} catch (MalformedURLException e) {
+		} catch (MalformedURLException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		String[] images = new File(imagesPath.getFile()).list();

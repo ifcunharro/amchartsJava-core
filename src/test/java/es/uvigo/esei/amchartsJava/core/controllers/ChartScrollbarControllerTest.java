@@ -3,15 +3,19 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.Arrays;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.GraphType;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartScrollbarController;
@@ -46,10 +50,14 @@ public class ChartScrollbarControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_in_range_must_return_double() throws OutOfRangeException{
+	public void property_numeric_with_value_double_in_range_must_return_double(){
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
-		scrollbar.setBackgroundAlpha(1);
+		try {
+			scrollbar.setBackgroundAlpha(1);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(1.0, scrollbar.getBackgroundAlpha(),0);
 		
@@ -58,7 +66,7 @@ public class ChartScrollbarControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number must be between 0 and 1");
+		thrown.expectMessage("Number out of range: must be between 0 and 1");
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
 		scrollbar.setGraphFillAlpha(9);
@@ -66,17 +74,21 @@ public class ChartScrollbarControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_double_return_null_if_not_is_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_double_return_null_if_not_is_setted(){
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
 		assertNull(scrollbar.getBackgroundAlpha());
 	}
 	
 	@Test
-	public void all_property_to_color_return_string_if_format_color_is_correct() throws ColorException{
+	public void all_property_to_color_return_string_if_format_color_is_correct(){
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
-		scrollbar.setBackgroundColor("#000000");
+		try {
+			scrollbar.setBackgroundColor("#000000");
+		} catch (ColorException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals("#000000", scrollbar.getBackgroundColor());
 		
@@ -93,7 +105,7 @@ public class ChartScrollbarControllerTest {
 	}
 	
 	@Test
-	public void all_property_to_color_return_null_if_is_not_setted() throws ColorException{
+	public void all_property_to_color_return_null_if_is_not_setted(){
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
 		assertNull(scrollbar.getColor());
@@ -101,27 +113,35 @@ public class ChartScrollbarControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_in_range_must_return_integer() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_in_range_must_return_integer(){
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
-		scrollbar.setDragIconHeight(10);
+		try {
+			scrollbar.setDragIconHeight(10);
+		} catch (OutOfRangeException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(10, (Object)scrollbar.getDragIconHeight());
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
-		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 16 and 35");
+	public void property_numeric_with_value_integer_out_range_launch_exception_if_improvedVisibility_equals_true() throws OutOfRangeException{
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
-		
-		scrollbar.setDragIconWidth(37);
+		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
+			thrown.expect(OutOfRangeException.class);
+			thrown.expectMessage("Number out of range: must be between 16 and 35");
+			
+			scrollbar.setDragIconWidth(37);
+		}else{
+			scrollbar.setDragIconWidth(37);
+		}
 		
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_return_null_if_is_not_setted() throws OutOfRangeException{
+	public void property_numeric_with_value_integer_return_null_if_is_not_setted(){
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
 		assertNull(scrollbar.getDragIconHeight());
@@ -129,10 +149,14 @@ public class ChartScrollbarControllerTest {
 	}
 	
 	@Test
-	public void property_numeric_with_value_integer_without_range_limit_return_integer_if_set_method_recive_integer_value() throws IntegerException{
+	public void property_numeric_with_value_integer_without_range_limit_return_integer_if_set_method_recive_integer_value(){
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
-		scrollbar.setMaximum(100);
+		try {
+			scrollbar.setMaximum(100);
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(100, (Object)scrollbar.getMaximum());
 		
@@ -165,19 +189,27 @@ public class ChartScrollbarControllerTest {
 	}
 	
 	@Test
-	public void scrollDuration_property_must_return_integer_if_set_method_recive_positive_integer() throws IntegerException{
+	public void scrollDuration_property_must_return_integer_if_set_method_recive_positive_integer(){
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
-		scrollbar.setScrollDuration(0);
+		try {
+			scrollbar.setScrollDuration(0);
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 		
 		assertEquals(0,(Object)scrollbar.getScrollDuration());
 	}
 	
 	@Test
-	public void scrollDuration_property_must_return_null_if_set_method_recive_negative_integer() throws IntegerException{
+	public void scrollDuration_property_must_return_null_if_set_method_recive_negative_integer(){
 		ChartScrollbarController scrollbar = new ChartScrollbarController();
 		
-		scrollbar.setScrollDuration(-3);
+		try {
+			scrollbar.setScrollDuration(-3);
+		} catch (IntegerException e) {
+			e.printStackTrace();
+		}
 		
 		assertNull(scrollbar.getScrollDuration());
 	}
@@ -190,8 +222,9 @@ public class ChartScrollbarControllerTest {
 				   .getCodeSource()
 				   .getLocation();
 		try {
+			iconsPath = new URL(URLDecoder.decode(iconsPath.toString(), "UTF-8"));
 			iconsPath = new URL(iconsPath,AmchartsJavaPaths.IMAGES_PATH);
-		} catch (MalformedURLException e) {
+		} catch (MalformedURLException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		File[] images = new File(iconsPath.getFile()).listFiles();
@@ -212,8 +245,9 @@ public class ChartScrollbarControllerTest {
 				   .getCodeSource()
 				   .getLocation();
 		try {
+			iconsPath = new URL(URLDecoder.decode(iconsPath.toString(), "UTF-8"));
 			iconsPath = new URL(iconsPath,AmchartsJavaPaths.IMAGES_PATH);
-		} catch (MalformedURLException e) {
+		} catch (MalformedURLException | UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		String[] images = new File(iconsPath.getFile()).list();
@@ -235,7 +269,7 @@ public class ChartScrollbarControllerTest {
 	}
 	
 	@Test
-	public void graph_property_return_null_if_chart_not_contains_graph_with_that_id() throws ChartException{
+	public void graph_property_return_null_if_chart_not_contains_graph_with_that_id(){
 		AmSerialChartController serial = new AmSerialChartController();
 		AmGraphStepController stepGraph = new AmGraphStepController();
 		try {
@@ -247,13 +281,17 @@ public class ChartScrollbarControllerTest {
 		
 		serial.addChartScrollbar(scrollbar);
 		
-		scrollbar.setGraph("AmGraph-2");
+		try {
+			scrollbar.setGraph("AmGraph-2");
+		} catch (ChartException e) {
+			e.printStackTrace();
+		}
 		assertNull(scrollbar.getGraph());
 		assertEquals("AmGraph-1", stepGraph.getId());
 	}
 	
 	@Test
-	public void graph_property_return_string_if_chart_contains_graph_with_that_id() throws ChartException{
+	public void graph_property_return_string_if_chart_contains_graph_with_that_id(){
 		AmSerialChartController serial = new AmSerialChartController();
 		AmGraphStepController stepGraph = new AmGraphStepController();
 		AmGraphCandleController candleGraph = new AmGraphCandleController();
@@ -267,7 +305,11 @@ public class ChartScrollbarControllerTest {
 		
 		serial.addChartScrollbar(scrollbar);
 		
-		scrollbar.setGraph("AmGraph-2");
+		try {
+			scrollbar.setGraph("AmGraph-2");
+		} catch (ChartException e) {
+			e.printStackTrace();
+		}
 		assertEquals("AmGraph-2", scrollbar.getGraph());
 		assertEquals("AmGraph-1", stepGraph.getId());
 		assertEquals("AmGraph-2", candleGraph.getId());
