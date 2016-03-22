@@ -68,9 +68,6 @@
 //		prueba.json el json con la informacion del amcharts, como se observa el nombre
 //		solo difiere en el sufijo keys_fields*/
 //		
-//		if(Config.getString("log").equals("file")){
-//			Config.defaultConfigureLog();
-//		}
 //		
 //
 //		//prueba de defualt charts to BEW, se prueba graph boxplot
