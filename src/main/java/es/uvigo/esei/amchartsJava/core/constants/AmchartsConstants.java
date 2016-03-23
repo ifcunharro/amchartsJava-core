@@ -4,7 +4,7 @@ import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 
 
 /**
- * This class contains constant log and visibility loaded from properties and format of dates
+ * This class contains constant visibility loaded from properties and format of dates
  * @author Iago Fernández Cuñarro
  *
  */
