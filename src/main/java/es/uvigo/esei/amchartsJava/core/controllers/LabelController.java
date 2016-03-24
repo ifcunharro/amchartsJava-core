@@ -19,7 +19,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.Label;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class i a controller for Label
@@ -54,7 +54,9 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setAlign(Align labelAlign){
-		label.setFeature("align", labelAlign.toString());
+		if(labelAlign != null){
+			label.setFeature("align", labelAlign.toString());
+		}
 	}
 
 	public Double getAlpha(){
@@ -104,7 +106,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	
 	public void setRotation(Number rotation) throws OutOfRangeException{
 		if( NumberValidator.rangeIntegerValidator(rotation, -90, 90)){
-					label.setFeature("rotation", rotation);
+			label.setFeature("rotation", rotation);
 		}
 	}
 	
@@ -129,7 +131,9 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setText(String text){
-		label.setFeature("text", text);
+		if(PropertyValidator.isValidString(text)){
+			label.setFeature("text", text);
+		}
 	}
 	
 	public String getUrl(){
@@ -137,7 +141,9 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setUrl(String url){
-		label.setFeature("url", url);
+		if(PropertyValidator.isValidString(url)){
+			label.setFeature("url", url);
+		}
 	}
 
 	public String getX(){
@@ -145,7 +151,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setX(String xCoord) throws CoordException{
-		if(TypeValidator.pixelOrPercent(xCoord)){
+		if(PropertyValidator.pixelOrPercent(xCoord)){
 			label.setFeature("x", xCoord);
 		}
 	}
@@ -155,7 +161,7 @@ public class LabelController implements Observer, ILabelController, Serializable
 	}
 	
 	public void setY(String yCoord) throws CoordException{
-		if(TypeValidator.pixelOrPercent(yCoord)){
+		if(PropertyValidator.pixelOrPercent(yCoord)){
 			label.setFeature("y", yCoord);
 		}
 	}

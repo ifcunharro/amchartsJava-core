@@ -21,6 +21,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AmLegend;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AmLegend.
@@ -47,7 +48,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setAlign(Align align){
-		legend.setFeature("align", align.toString());
+		if(align != null){
+			legend.setFeature("align", align.toString());
+		}
 	}
 	
 	@JsonProperty(value="autoMargins")
@@ -130,7 +133,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setDivId(String divId){
-		legend.setFeature("divId", divId);
+		if(PropertyValidator.isValidString(divId)){
+			legend.setFeature("divId", divId);
+		}
 	}
 	
 	@JsonProperty(value="enabled")
@@ -194,7 +199,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	
 	//cualquier texto pero si es [[title]] muestra como texto el title del graph
 	public void setLabelText(String labelText){
-		legend.setFeature("labelText", labelText);
+		if(PropertyValidator.isValidString(labelText)){
+			legend.setFeature("labelText", labelText);
+		}
 	}
 	
 	public Integer getLabelWidth(){
@@ -353,7 +360,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setMarkerType(MarkerType markerType){
-		legend.setFeature("markerType", markerType.toString());
+		if(markerType != null){
+			legend.setFeature("markerType", markerType.toString());
+		}
 	}
 	
 	public Integer getMaxColumns(){
@@ -377,7 +386,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setPeriodValueText(LegendPeriodValueText periodValueText){
-		legend.setFeature("periodValueText", periodValueText.toString());
+		if(periodValueText != null){
+			legend.setFeature("periodValueText", periodValueText.toString());
+		}
 	}
 	
 	public String getPosition(){
@@ -385,7 +396,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setPosition(LegendPosition position){
-		legend.setFeature("position", position.toString());
+		if(position != null){
+			legend.setFeature("position", position.toString());
+		}
 	}
 	
 	@JsonProperty(value="reversedOrder")
@@ -480,7 +493,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setSwitchType(SwitchType switchType){
-		legend.setFeature("switchType", switchType.toString());
+		if(switchType != null){
+			legend.setFeature("switchType", switchType.toString());
+		}
 	}
 	
 	@JsonProperty(value="textClickEnabled")
@@ -536,7 +551,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setValueAlign(ValueAlign valueAlign){
-		legend.setFeature("valueAlign", valueAlign.toString());
+		if(valueAlign != null){
+			legend.setFeature("valueAlign", valueAlign.toString());
+		}
 	}
 	
 	public String getValueFunction(){
@@ -544,7 +561,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	}
 	
 	public void setValueFunction(String valueFunction){
-		legend.setFeature("valueFunction", valueFunction);
+		if(PropertyValidator.isValidString(valueFunction)){
+			legend.setFeature("valueFunction", valueFunction);
+		}
 	}
 	
 	public String getValueText(){
@@ -553,7 +572,9 @@ public class AmLegendController implements IAmLegendController, Serializable{
 	
 	//cualquier texto pero tiene más sentido dejarlo en blanco, usa el valueField
 	public void setValueText(String valueText){
-		legend.setFeature("valueText", valueText);
+		if(PropertyValidator.isValidString(valueText)){
+			legend.setFeature("valueText", valueText);
+		}
 	}
 	
 	public Integer getValueWidth(){

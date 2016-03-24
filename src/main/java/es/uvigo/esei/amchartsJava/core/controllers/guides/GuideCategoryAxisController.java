@@ -5,6 +5,7 @@ import java.sql.Date;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import es.uvigo.esei.amchartsJava.core.api.guides.IGuideCategoryAxisController;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for Guide used by CategoryAxis
@@ -27,7 +28,9 @@ public class GuideCategoryAxisController extends GuideController
 	}
 	
 	public void setCategory(String category){
-		guide.setFeature("category", category);
+		if(PropertyValidator.isValidString(category)){
+			guide.setFeature("category", category);
+		}
 	}
 	
 	public String getDate(){
@@ -35,7 +38,9 @@ public class GuideCategoryAxisController extends GuideController
 	}
 	
 	public void setDate(Date date){
-		guide.setFeature("date", date.toString());
+		if(date != null){
+			guide.setFeature("date", date.toString());
+		}
 	}
 	
 	@JsonProperty(value="expand")
@@ -52,7 +57,9 @@ public class GuideCategoryAxisController extends GuideController
 	}
 	
 	public void setToCategory(String toCategory){
-		guide.setFeature("toCategory", toCategory);
+		if(PropertyValidator.isValidString(toCategory)){
+			guide.setFeature("toCategory", toCategory);
+		}
 	}
 
 }

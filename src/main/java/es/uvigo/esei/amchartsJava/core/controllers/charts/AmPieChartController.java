@@ -10,7 +10,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmSlicedChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AmPieChart.
@@ -54,7 +54,9 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	
 	//formarlo con [[]] y htmltags
 	public void setBalloonText(String balloonText){
-		amchart.setFeature("balloonText", balloonText);
+		if(PropertyValidator.isValidString(balloonText)){
+			amchart.setFeature("balloonText", balloonText);
+		}
 	}
 	
 	public Integer getDepth3D(){
@@ -78,7 +80,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setInnerRadius(String innerRadius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(innerRadius)){
+		if(PropertyValidator.pixelOrPercent(innerRadius)){
 			amchart.setFeature("innerRadius", innerRadius);
 		}
 	}
@@ -104,8 +106,10 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setLabelRadiusField(String labelRadiusField){
-		amchart.setFeature("labelRadiusField", labelRadiusField);
-		amchart.addField("labelRadiusField",labelRadiusField);
+		if(PropertyValidator.isValidString(labelRadiusField)){
+			amchart.setFeature("labelRadiusField", labelRadiusField);
+			amchart.addField("labelRadiusField",labelRadiusField);
+		}
 	}
 	
 	public String getLabelText(){
@@ -113,7 +117,9 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setLabelText(String labelText){
-		amchart.setFeature("labelText", labelText);
+		if(PropertyValidator.isValidString(labelText)){
+			amchart.setFeature("labelText", labelText);
+		}
 	}
 	
 	public Integer getMinRadius(){
@@ -145,7 +151,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setPieX(String pieX) throws CoordException{
-		if(TypeValidator.pixelOrPercent(pieX)){
+		if(PropertyValidator.pixelOrPercent(pieX)){
 			amchart.setFeature("pieX", pieX);
 		}
 	}
@@ -155,7 +161,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setPieY(String pieY) throws CoordException{
-		if(TypeValidator.pixelOrPercent(pieY)){
+		if(PropertyValidator.pixelOrPercent(pieY)){
 			amchart.setFeature("pieY", pieY);
 		}
 	}
@@ -165,7 +171,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setPullOutRadius(String pullOutRadius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(pullOutRadius)){
+		if(PropertyValidator.pixelOrPercent(pullOutRadius)){
 			amchart.setFeature("pullOutRadius", pullOutRadius);
 		}
 	}
@@ -175,7 +181,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setRadius(String radius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(radius)){
+		if(PropertyValidator.pixelOrPercent(radius)){
 			amchart.setFeature("radius", radius);
 		}
 	}
@@ -197,7 +203,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 	}
 	
 	public void setStartRadius(String startRadius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(startRadius)){
+		if(PropertyValidator.pixelOrPercent(startRadius)){
 			amchart.setFeature("startRadius", startRadius);
 		}
 	}

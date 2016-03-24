@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 import org.apache.commons.io.IOUtils;
 
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class contains methods to manipulate temp files
@@ -28,15 +28,16 @@ public class AmChartsIOUtils {
 	 * @throws IOException -
 	 */
 	public static void changeExport(String tempFile) throws IOException{
-		
-		FileInputStream fis = new FileInputStream(tempFile);
-	    String content = IOUtils.toString(fis, StandardCharsets.UTF_8);
-	    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
-	    
-	    FileOutputStream fos = new FileOutputStream(tempFile);
-	    IOUtils.write(content, fos, StandardCharsets.UTF_8);
-	    fis.close();
-	    fos.close();
+		if(PropertyValidator.isValidString(tempFile)){
+			FileInputStream fis = new FileInputStream(tempFile);
+		    String content = IOUtils.toString(fis, StandardCharsets.UTF_8);
+		    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
+		    
+		    FileOutputStream fos = new FileOutputStream(tempFile);
+		    IOUtils.write(content, fos, StandardCharsets.UTF_8);
+		    fis.close();
+		    fos.close();
+		}
 		
 	}
 	
@@ -58,8 +59,10 @@ public class AmChartsIOUtils {
 	 * @param tempFile Path to directory
 	 */
 	public static void deleteTempFile(String tempFile) {
-		File path = new File(tempFile);
-	    path.delete();    
+		if(PropertyValidator.isValidString(tempFile)){
+			File path = new File(tempFile);
+		    path.delete();   
+		}
 	}
 
 	/**
@@ -69,7 +72,7 @@ public class AmChartsIOUtils {
 	public static String getJsonDirectoryToSave(){
 		URL resourcesPath = null;
 		
-		resourcesPath = TypeValidator.class.getProtectionDomain()
+		resourcesPath = PropertyValidator.class.getProtectionDomain()
 									   .getCodeSource()
 									   .getLocation();
 	
@@ -83,7 +86,5 @@ public class AmChartsIOUtils {
 		return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
 		
 	}
-	
-	
 
 }

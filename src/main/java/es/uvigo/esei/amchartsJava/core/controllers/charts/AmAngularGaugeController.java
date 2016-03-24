@@ -20,7 +20,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmAngularGauge;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AmAngularGauge.
@@ -142,7 +142,7 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 	}
 	
 	public void setFacePattern(PatternController facePattern) throws MalFormedPatternException{
-		if(TypeValidator.checkPattern(facePattern)){
+		if(PropertyValidator.checkPattern(facePattern)){
 			amchart.setFacePattern(facePattern);
 		}else{
 			throw new MalFormedPatternException(I18n.get("PatternException"));
@@ -228,7 +228,7 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 	}
 	
 	public void setMinRadius(Number minRadius){
-		if(minRadius.intValue()>=10){
+		if(minRadius != null && minRadius.intValue()>=10){
 			amchart.setFeature("minRadius", minRadius);
 		}
 	}
@@ -254,25 +254,31 @@ public class AmAngularGaugeController extends AmChartController<AmAngularGauge>
 	}
 	
 	public void setStartEffect(Effect startEffect){
-		amchart.setFeature("startEffect", startEffect.toString());
+		if(startEffect != null){
+			amchart.setFeature("startEffect", startEffect.toString());
+		}
 	}
 	
 	public void addArrow(GaugeArrowController arrow){
-		amchart.addArrow(arrow);
+		if(arrow != null){
+			amchart.addArrow(arrow);
+		}
 	}
 	
 	public void addAxis(GaugeAxisController axis){
-		amchart.addAxis(axis);
+		if(axis != null){
+			amchart.addAxis(axis);
+		}
 	}
 	
 	public void removeArrow(String idArrow){
-		if(amchart.existArrow(idArrow)){
+		if(PropertyValidator.isValidString(idArrow) && amchart.existArrow(idArrow)){
 			amchart.removeArrow(idArrow);
 		}
 	}
 	
 	public void removeAxis(String idAxis){
-		if(amchart.existAxis(idAxis)){
+		if(PropertyValidator.isValidString(idAxis) && amchart.existAxis(idAxis)){
 			amchart.removeAxis(idAxis);
 		}
 	}

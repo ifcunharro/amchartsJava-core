@@ -14,7 +14,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.GaugeBand;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for GaugeBand.
@@ -59,7 +59,9 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 	}
 	
 	public void setBalloonText(String balloonText){
-		gaugeBand.setFeature("balloonText", balloonText);
+		if(PropertyValidator.isValidString(balloonText)){
+			gaugeBand.setFeature("balloonText", balloonText);
+		}
 	}
 	
 	public String getColor(){
@@ -79,7 +81,7 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 	}
 	
 	public void setEndValue(Number endValue){
-		if(endValue.intValue()>0){
+		if(endValue != null && endValue.intValue()>0){
 			gaugeBand.setFeature("endValue", endValue);
 		}
 	}
@@ -93,7 +95,7 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 	}
 	
 	public void setInnerRadius(String innerRadius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(innerRadius)){
+		if(PropertyValidator.pixelOrPercent(innerRadius)){
 			gaugeBand.setFeature("innerRadius", innerRadius);
 		}
 	}
@@ -103,7 +105,7 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 	}
 	
 	public void setRadius(String radius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(radius)){
+		if(PropertyValidator.pixelOrPercent(radius)){
 			gaugeBand.setFeature("radius", radius);
 		}
 	}
@@ -115,7 +117,7 @@ public class GaugeBandController implements Serializable, Observer, IGaugeBandCo
 	}
 	
 	public void setStartValue(Number startValue){
-		if(startValue.intValue()>0){
+		if(startValue != null && startValue.intValue()>0){
 			gaugeBand.setFeature("startValue", startValue);
 		}
 	}

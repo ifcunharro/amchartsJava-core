@@ -51,7 +51,6 @@ public class AmCharts extends IModel {
 		charts = null;
 		System.gc();
 		
-		
 	}
 
 }

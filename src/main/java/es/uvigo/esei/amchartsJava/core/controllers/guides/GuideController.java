@@ -22,6 +22,7 @@ import es.uvigo.esei.amchartsJava.core.model.Guide;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for Guide.
@@ -74,7 +75,9 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setBalloonText(String balloonText){
-		guide.setFeature("balloonText", balloonText);
+		if(PropertyValidator.isValidString(balloonText)){
+			guide.setFeature("balloonText", balloonText);
+		}
 	}
 	
 	@JsonProperty(value="boldLabel")
@@ -172,7 +175,9 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setLabel(String label){
-		guide.setFeature("label", label);
+		if(PropertyValidator.isValidString(label)){
+			guide.setFeature("label", label);
+		}
 	}
 	
 	public Integer getLabelRotation(){
@@ -230,7 +235,9 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setPosition(Position position){
-		guide.setFeature("position", position.toString());
+		if(position != null){
+			guide.setFeature("position", position.toString());
+		}
 	}
 	
 	public Integer getTickLength(){
@@ -254,7 +261,9 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	}
 	
 	public void setToDate(Date toDate){
-		guide.setFeature("toDate", toDate.toString());
+		if(toDate != null){
+			guide.setFeature("toDate", toDate.toString());
+		}
 	}
 	
 	public String getValueAxis(){
@@ -263,7 +272,7 @@ public abstract class GuideController implements Observer, Serializable, IGuideC
 	
 	public void setValueAxis(String valueAxis) throws ChartException{
 		if(chart != null){
-			if(chart.existValueAxis(valueAxis)){
+			if(PropertyValidator.isValidString(valueAxis) && chart.existValueAxis(valueAxis)){
 				guide.setFeature("valueAxis", valueAxis);
 			}
 		}else{

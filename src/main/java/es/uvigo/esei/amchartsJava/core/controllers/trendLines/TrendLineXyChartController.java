@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import es.uvigo.esei.amchartsJava.core.api.trendLines.ITrendLineXyChartController;
 import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for TrendLine used by AmXyChart.
@@ -47,7 +48,7 @@ public class TrendLineXyChartController extends TrendLineSerialChartController i
 	
 	public void setValueAxisX(String valueAxisX) throws ChartException{
 		if(amchart != null){
-			if(amchart.existValueAxis(valueAxisX)){
+			if(PropertyValidator.isValidString(valueAxisX) && amchart.existValueAxis(valueAxisX)){
 				trendLine.setFeature("valueAxisX", valueAxisX);
 			}
 		}else{

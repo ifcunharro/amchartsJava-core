@@ -58,7 +58,9 @@ public class AmChartsController implements Serializable, IAmChartsController {
 	
 	@SuppressWarnings("rawtypes")
 	public <E extends AmChartController> void addChart(E amchart){
-		amcharts.addChart(amchart);
+		if(amchart != null){
+			amcharts.addChart(amchart);
+		}
 	}
 	
 	public String getDayNames(){

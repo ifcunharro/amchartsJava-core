@@ -9,14 +9,14 @@ import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 
 /**
- * This class contains especial type validators.
+ * This class contains string and pattern validators.
  * @author Iago Fernández Cuñarro
  *
  */
-public class TypeValidator {
+public class PropertyValidator {
 	
 
-	private TypeValidator(){
+	private PropertyValidator(){
 		
 	}
 	
@@ -44,6 +44,15 @@ public class TypeValidator {
 	 */
 	public static boolean checkDateFormat(String dateFormat){
 		return Arrays.asList(AmchartsConstants.DATE_FORMAT).contains(dateFormat);
+	}
+	
+	/**
+	 * Check value valid to property.
+	 * @param value value property to check
+	 * @return true if valid, false if invalid
+	 */
+	public static boolean isValidString(String value){
+		return value != null && !value.isEmpty();
 	}
 	
 	/**

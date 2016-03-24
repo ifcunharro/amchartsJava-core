@@ -302,7 +302,9 @@ public class AmBalloonController implements IAmBalloonController, Serializable {
 	}
 	
 	public void setTextAlign(TextAlign textAlign){
-		balloon.setFeature("textAlign", textAlign.toString());
+		if(textAlign != null){
+			balloon.setFeature("textAlign", textAlign.toString());
+		}
 	}
 	
 	public Integer getVerticalPadding(){

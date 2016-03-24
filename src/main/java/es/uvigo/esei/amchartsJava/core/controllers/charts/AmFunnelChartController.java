@@ -12,7 +12,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmSlicedChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AmFunnelChart.
@@ -47,7 +47,9 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	public void setBalloonText(String balloonText){
-		amchart.setFeature("balloonText", balloonText);
+		if(PropertyValidator.isValidString(balloonText)){
+			amchart.setFeature("balloonText", balloonText);
+		}
 	}
 	
 	public String getBaseWidth(){
@@ -55,7 +57,7 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	public void setBaseWidth(String baseWidth) throws CoordException{
-		if(TypeValidator.pixelOrPercent(baseWidth)){
+		if(PropertyValidator.pixelOrPercent(baseWidth)){
 			if(baseWidth.contains("%") 
 					&& Integer.valueOf(baseWidth.substring(0, baseWidth.length()-1) )>100){
 				amchart.setFeature("baseWidth", "100%");
@@ -86,7 +88,9 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	public void setLabelPosition(Align labelPosition){
-		amchart.setFeature("labelPosition", labelPosition.toString());
+		if(labelPosition != null){
+			amchart.setFeature("labelPosition", labelPosition.toString());
+		}
 	}
 	
 	public String getLabelText(){
@@ -94,7 +98,9 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	public void setLabelText(String labelText){
-		amchart.setFeature("labelText", labelText);
+		if(PropertyValidator.isValidString(labelText)){
+			amchart.setFeature("labelText", labelText);
+		}
 	}
 	
 	public String getNeckHeight(){
@@ -102,7 +108,7 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	public void setNeckHeight(String neckHeight) throws CoordException{
-		if(TypeValidator.pixelOrPercent(neckHeight)){
+		if(PropertyValidator.pixelOrPercent(neckHeight)){
 			if(neckHeight.contains("%") 
 					&& Integer.valueOf(neckHeight.substring(0, neckHeight.length()-1) )>100){
 				amchart.setFeature("neckHeight", "100%");
@@ -117,7 +123,7 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	public void setNeckWidth(String neckWidth) throws CoordException{
-		if(TypeValidator.pixelOrPercent(neckWidth)){
+		if(PropertyValidator.pixelOrPercent(neckWidth)){
 			if(neckWidth.contains("%") 
 					&& Integer.valueOf(neckWidth.substring(0, neckWidth.length()-1) )>100){
 				amchart.setFeature("neckWidth", "100%");
@@ -132,7 +138,7 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	public void setPullDistance(String pullDistance) throws CoordException{
-		if(TypeValidator.pixelOrPercent(pullDistance)){
+		if(PropertyValidator.pixelOrPercent(pullDistance)){
 			if(pullDistance.contains("%") 
 					&& Integer.valueOf(pullDistance.substring(0, pullDistance.length()-1) )>10){
 				amchart.setFeature("pullDistance", "10%");
@@ -185,7 +191,9 @@ public class AmFunnelChartController extends AmSlicedChartController<AmSlicedCha
 	}
 	
 	public void setValueRepresents(ValueRepresents valueRepresents){
-		amchart.setFeature("valueRepresents", valueRepresents.toString());
+		if(valueRepresents != null){
+			amchart.setFeature("valueRepresents", valueRepresents.toString());
+		}
 	}
 
 }

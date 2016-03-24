@@ -23,6 +23,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for ValueAxis, this controller is used by charts distinct of AmRadarChart.
@@ -67,7 +68,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	public void setDuration(Duration duration){
-		axes.setFeature("duration", duration.toString());
+		if(duration != null){
+			axes.setFeature("duration", duration.toString());
+		}
 	}
 	
 	public String getId() {
@@ -110,7 +113,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	public void setLabelFunction(String labelFunction){
-		axes.setFeature("labelFunction", labelFunction);
+		if(labelFunction != null){
+			axes.setFeature("labelFunction", labelFunction);
+		}
 	}
 	
 	@JsonProperty(value="logarithmic")
@@ -139,7 +144,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	public void setMaximunDate(Date maximumDate){
-		axes.setFeature("maximumDate", maximumDate.toString());
+		if(maximumDate != null){
+			axes.setFeature("maximumDate", maximumDate.toString());
+		}
 	}
 	
 	public Double getMinimum(){
@@ -159,7 +166,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	public void setMinimumDate(Date minimumDate){
-		axes.setFeature("minimumDate", minimumDate.toString());
+		if(minimumDate != null){
+			axes.setFeature("minimumDate", minimumDate.toString());
+		}
 	}
 	
 	public Double getMinMaxMultiplier(){
@@ -209,7 +218,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	public void setStackType(StackType stackType){
-		axes.setFeature("stackType", stackType.toString());
+		if(stackType != null){
+			axes.setFeature("stackType", stackType.toString());
+		}
 	}
 	
 	@JsonProperty(value="strictMinMax")
@@ -239,7 +250,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	
 	public void setSynchronizeWith(String synchronizeWith) throws ChartException{
 		if(chart != null){
-			if(chart.existValueAxis(synchronizeWith) && !this.getId().equals(synchronizeWith)){
+			if(PropertyValidator.isValidString(synchronizeWith) 
+					&&chart.existValueAxis(synchronizeWith) 
+					&& !this.getId().equals(synchronizeWith)){
 				axes.setFeature("synchronizeWith", synchronizeWith);
 			}
 		}else{
@@ -256,7 +269,6 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	public String getTotalText(){
 		return (String) axes.getFeature("totalText");
 	}
-	
 	
 	public void enabledTotalText(){
 		axes.setFeature("totalText", "[[total]]");
@@ -305,7 +317,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	public void setType(AxisType type){
-		axes.setFeature("type", type.toString());
+		if(type != null){
+			axes.setFeature("type", type.toString());
+		}
 	}
 	
 	public String getUnit(){
@@ -313,7 +327,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	public void setUnit(String unit){
-		axes.setFeature("unit", unit);
+		if(PropertyValidator.isValidString(unit)){
+			axes.setFeature("unit", unit);
+		}
 	}
 	
 	public String getUnitPosition(){
@@ -321,7 +337,9 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 	}
 	
 	public void setUnitPosition(Position unitPosition){
-		axes.setFeature("unitPosition", unitPosition.toString());
+		if(unitPosition != null){
+			axes.setFeature("unitPosition", unitPosition.toString());
+		}
 	}
 	
 	@JsonProperty(value="usePrefixes")

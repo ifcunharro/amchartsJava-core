@@ -22,7 +22,7 @@ import es.uvigo.esei.amchartsJava.core.model.GaugeArrow;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmAngularGauge;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for GaugeArrow.
@@ -75,7 +75,7 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	
 	public void addAxis(String axis) throws ChartException{
 		if(amchart != null){
-			if(amchart.existAxis(axis)){
+			if(PropertyValidator.isValidString(axis) && amchart.existAxis(axis)){
 				gaugeArrow.setFeature("axis", axis);
 			}
 		}else{
@@ -129,7 +129,7 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	}
 	
 	public void setInnerRadius(String innerRadius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(innerRadius)){
+		if(PropertyValidator.pixelOrPercent(innerRadius)){
 			gaugeArrow.setFeature("innerRadius", innerRadius);
 		}
 	}
@@ -195,7 +195,7 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	}
 	
 	public void setRadius(String radius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(radius)){
+		if(PropertyValidator.pixelOrPercent(radius)){
 			if(radius.contains("%") 
 					&& Integer.valueOf(radius.substring(0, radius.length()-1))>100){
 				gaugeArrow.setFeature("radius", "100%");
@@ -212,7 +212,7 @@ public class GaugeArrowController implements Serializable,Observer, IGaugeArrowC
 	}
 	
 	public void setStartWidth(Number startWidth){
-		if(startWidth.intValue()>=5){
+		if(startWidth != null && startWidth.intValue()>=5){
 			gaugeArrow.setFeature("startWidth", startWidth);
 		}
 	}

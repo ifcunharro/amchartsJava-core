@@ -20,7 +20,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.GaugeAxis;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for GaugeAxis.
@@ -152,7 +152,9 @@ public class GaugeAxisController
 	}
 	
 	public void setBottomText(String bottomText){
-		gaugeAxis.setFeature("bottomText", bottomText);
+		if(PropertyValidator.isValidString(bottomText)){
+			gaugeAxis.setFeature("bottomText", bottomText);
+		}
 	}
 	
 	@JsonProperty(value="bottomTextBold")
@@ -207,7 +209,7 @@ public class GaugeAxisController
 	}
 	
 	public void setCenterX(String centerX) throws CoordException{
-		if(TypeValidator.pixelOrPercent(centerX)){
+		if(PropertyValidator.pixelOrPercent(centerX)){
 			gaugeAxis.setFeature("centerX", centerX);
 		}
 	}
@@ -217,7 +219,7 @@ public class GaugeAxisController
 	}
 	
 	public void setCenterY(String centerY) throws CoordException{
-		if(TypeValidator.pixelOrPercent(centerY)){
+		if(PropertyValidator.pixelOrPercent(centerY)){
 			gaugeAxis.setFeature("centerY", centerY);
 		}
 	}
@@ -305,7 +307,9 @@ public class GaugeAxisController
 	}
 	
 	public void setLabelFunction(String labelFunction){
-		gaugeAxis.setFeature("labelFunction", labelFunction);
+		if(PropertyValidator.isValidString(labelFunction)){
+			gaugeAxis.setFeature("labelFunction", labelFunction);
+		}
 	}
 	
 	public Integer getLabelOffset(){
@@ -366,7 +370,7 @@ public class GaugeAxisController
 	}
 	
 	public void setRadius(String radius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(radius)){
+		if(PropertyValidator.pixelOrPercent(radius)){
 			if(radius.contains("%")
 					&& Integer.valueOf(radius.substring(0, radius.length()-1))>100){
 				gaugeAxis.setFeature("radius", "100%");
@@ -476,7 +480,9 @@ public class GaugeAxisController
 	}
 	
 	public void setTopText(String topText){
-		gaugeAxis.setFeature("topText", topText);
+		if(PropertyValidator.isValidString(topText)){
+			gaugeAxis.setFeature("topText", topText);
+		}
 	}
 	
 	@JsonProperty(value="topTextBold")
@@ -531,7 +537,9 @@ public class GaugeAxisController
 	}
 	
 	public void setUnit(String unit){
-		gaugeAxis.setFeature("unit", unit);
+		if(PropertyValidator.isValidString(unit)){
+			gaugeAxis.setFeature("unit", unit);
+		}
 	}
 	
 	public String getUnitPosition(){
@@ -539,7 +547,9 @@ public class GaugeAxisController
 	}
 	
 	public void setUnitPosition(Position unitPosition){
-		gaugeAxis.setFeature("unitPosition", unitPosition.toString());
+		if(unitPosition != null){
+			gaugeAxis.setFeature("unitPosition", unitPosition.toString());
+		}
 	}
 	
 	@JsonProperty(value="usePrefixes")
@@ -558,13 +568,17 @@ public class GaugeAxisController
 	}
 	
 	public void setValueInterval(Number valueInterval){
-		if(valueInterval.intValue()>1){
-			gaugeAxis.setFeature("valueInterval", valueInterval);
+		if(valueInterval != null){
+			if(valueInterval.intValue()>1){
+				gaugeAxis.setFeature("valueInterval", valueInterval);
+			}
 		}
 	}
 	
 	public void addBand(GaugeBandController gaugeBandController){
-		gaugeAxis.addBand(gaugeBandController);
+		if(gaugeBandController != null){
+			gaugeAxis.addBand(gaugeBandController);
+		}
 	}
 
 }

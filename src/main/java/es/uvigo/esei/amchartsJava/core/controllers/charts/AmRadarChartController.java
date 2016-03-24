@@ -7,7 +7,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRadarChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AmRadarChart.
@@ -33,8 +33,10 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 	}
 	
 	public void setCategoryField(String categoryField){
-		amchart.setFeature("categoryField", categoryField);
-		amchart.addField("categoryField", categoryField);
+		if(PropertyValidator.isValidString(categoryField)){
+			amchart.setFeature("categoryField", categoryField);
+			amchart.addField("categoryField", categoryField);
+		}
 	}
 	
 	public Integer getMarginBottom(){
@@ -90,7 +92,7 @@ public class AmRadarChartController extends AmCoordinateChartController<AmCoordi
 	}
 	
 	public void setRadius(String radius) throws CoordException{
-		if(TypeValidator.pixelOrPercent(radius)){
+		if(PropertyValidator.pixelOrPercent(radius)){
 			amchart.setFeature("radius", radius);
 		}
 	}

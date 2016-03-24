@@ -46,7 +46,9 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 	}
 	
 	public void setGridType(GridType gridType){
-		axes.setFeature("gridType", gridType.toString());
+		if(gridType != null){
+			axes.setFeature("gridType", gridType.toString());
+		}
 	}
 	
 	public String getPointPosition(){
@@ -54,7 +56,9 @@ public class ValueAxisRadarChartController extends ValueAxisController implement
 	}
 	
 	public void setPointPosition(PointPositionAxisRadar pointPosition){
-		axes.setFeature("pointPosition", pointPosition.toString());
+		if(pointPosition != null){
+			axes.setFeature("pointPosition", pointPosition.toString());
+		}
 	}
 	
 	@JsonProperty(value="radarCategoriesEnabled")

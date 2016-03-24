@@ -10,7 +10,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmSerialChart;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 
 
@@ -36,7 +36,7 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 
 	public void setBalloonDateFormat(String balloonDateFormat){
-		if(TypeValidator.checkDateFormat(balloonDateFormat)){
+		if(PropertyValidator.checkDateFormat(balloonDateFormat)){
 			amchart.setFeature("balloonDateFormat", balloonDateFormat);
 		}
 	}
@@ -46,8 +46,10 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 	
 	public void setCategoryField(String categoryField){
-		amchart.setFeature("categoryField", categoryField);
-		amchart.addField("categoryField", categoryField);
+		if(PropertyValidator.isValidString(categoryField)){
+			amchart.setFeature("categoryField", categoryField);
+			amchart.addField("categoryField", categoryField);
+		}
 	}
 	
 	public Integer getColumnSpacing(){
@@ -91,7 +93,7 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	}
 	
 	public void setDataDateFormat(String dataDateFormat){
-		if(TypeValidator.checkDateFormat(dataDateFormat)){
+		if(PropertyValidator.checkDateFormat(dataDateFormat)){
 			amchart.setFeature("dataDateFormat", dataDateFormat);
 		}
 	}
@@ -170,7 +172,9 @@ public class AmSerialChartController extends AmRectangularChartController<AmSeri
 	
 	@JsonSetter(value="categoryAxis")
 	public void addCategoryAxis(CategoryAxisController categoryAxisController){
-		amchart.addCategoryAxis(categoryAxisController);
+		if(categoryAxisController != null){
+			amchart.addCategoryAxis(categoryAxisController);
+		}
 	}
 	
 	public CategoryAxisController getCategoryAxis(){

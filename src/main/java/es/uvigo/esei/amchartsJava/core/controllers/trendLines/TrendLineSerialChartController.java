@@ -21,6 +21,7 @@ import es.uvigo.esei.amchartsJava.core.model.TrendLine;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for TrendLine used by serial charts.
@@ -52,7 +53,6 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	
 	private void setId(String id) {
 		trendLine.setFeature("id", id);
-			
 	}
 
 	public Integer getDashLength(){
@@ -76,7 +76,9 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	}
 	
 	public void setFinalCategory(String finalCategory){
-		trendLine.setFeature("finalCategory", finalCategory);
+		if(PropertyValidator.isValidString(finalCategory)){
+			trendLine.setFeature("finalCategory", finalCategory);
+		}
 	}
 	
 	public String getFinalDate(){
@@ -84,7 +86,9 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	}
 	
 	public void setFinalDate(Date finalDate){
-		trendLine.setFeature("finalDate", finalDate.toString());
+		if(finalDate != null){
+			trendLine.setFeature("finalDate", finalDate.toString());
+		}
 	}
 	
 	public Double getFinalValue(){
@@ -106,7 +110,9 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	}
 	
 	public void setInitialCategory(String initialCategory){
-		trendLine.setFeature("initialCategory", initialCategory);
+		if(PropertyValidator.isValidString(initialCategory)){
+			trendLine.setFeature("initialCategory", initialCategory);
+		}
 	}
 	
 	public String getInitialDate(){
@@ -114,8 +120,9 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	}
 	
 	public void setInitialDate(Date initialDate){
-		trendLine.setFeature("initialDate", initialDate.toString());
-		
+		if(initialDate != null){
+			trendLine.setFeature("initialDate", initialDate.toString());
+		}
 	}
 	
 	public Double getInitialValue(){
@@ -172,7 +179,7 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	
 	public void setValueAxis(String valueAxis) throws ChartException{
 		if(amchart != null){
-			if(amchart.existValueAxis(valueAxis)){
+			if(PropertyValidator.isValidString(valueAxis) && amchart.existValueAxis(valueAxis)){
 				trendLine.setFeature("valueAxis", valueAxis);
 			}
 		}else{
@@ -195,11 +202,15 @@ public class TrendLineSerialChartController implements Observer, Serializable, I
 	}
 	
 	public void addFinalImage(ImageController finalImage){
-		trendLine.addFinalImage(finalImage);
+		if(finalImage != null){
+			trendLine.addFinalImage(finalImage);
+		}
 	}
 	
 	public void addInitialImage(ImageController initialImage){
-		trendLine.addInitialImage(initialImage);
+		if(initialImage != null){
+			trendLine.addInitialImage(initialImage);
+		}
 	}
 
 }
