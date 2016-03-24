@@ -17,6 +17,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmSlicedChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AmSlicedChart.
@@ -53,8 +54,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setAlphaField(String alphaField){
-		amchart.setFeature("alphaField", alphaField);
-		amchart.addField("alphaField", alphaField);
+		if(PropertyValidator.isValidString(alphaField)){
+			amchart.setFeature("alphaField", alphaField);
+			amchart.addField("alphaField", alphaField);
+		}
 	}
 	
 	public String getBaseColor(){
@@ -72,8 +75,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setClassNameField(String classNameField){
-		amchart.setFeature("classNameField", classNameField);
-		amchart.addField("classNameField", classNameField);
+		if(PropertyValidator.isValidString(classNameField)){
+			amchart.setFeature("classNameField", classNameField);
+			amchart.addField("classNameField", classNameField);
+		}
 	}
 	
 	public String getColorField(){
@@ -81,8 +86,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setColorField(String colorField){
-		amchart.setFeature("colorField", colorField);
-		amchart.addField("colorField", colorField);
+		if(PropertyValidator.isValidString(colorField)){
+			amchart.setFeature("colorField", colorField);
+			amchart.addField("colorField", colorField);
+		}
 	}
 	
 	public List<String> getColors(){
@@ -106,8 +113,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setDescriptionField(String descriptionField){
-		amchart.setFeature("descriptionField", descriptionField);
-		amchart.addField("descriptionField", descriptionField);
+		if(PropertyValidator.isValidString(descriptionField)){
+			amchart.setFeature("descriptionField", descriptionField);
+			amchart.addField("descriptionField", descriptionField);
+		}
 	}
 	
 	public List<Number> getGradientRatio(){
@@ -115,7 +124,9 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setGradientRatio(Number... gradientRatio){
-		amchart.setGradientRatio(gradientRatio);
+		if(gradientRatio != null){
+			amchart.setGradientRatio(gradientRatio);
+		}
 	}
 	
 	public Double getGroupedAlpha(){
@@ -145,7 +156,9 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setGroupedDescription(String groupedDescription){
-		amchart.setFeature("groupedDescription", groupedDescription);
+		if(PropertyValidator.isValidString(groupedDescription)){
+			amchart.setFeature("groupedDescription", groupedDescription);
+		}
 	}
 	
 	@JsonProperty(value="groupedPulled")
@@ -162,7 +175,9 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setGroupedTitle(String groupedTitle){
-		amchart.setFeature("groupedTitle", groupedTitle);
+		if(PropertyValidator.isValidString(groupedTitle)){
+			amchart.setFeature("groupedTitle", groupedTitle);
+		}
 	}
 	
 	public Integer getGroupPercent(){
@@ -206,7 +221,9 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setLabelFunction(String labelFunction){
-		amchart.setFeature("labelFunction", labelFunction);
+		if(PropertyValidator.isValidString(labelFunction)){
+			amchart.setFeature("labelFunction", labelFunction);
+		}
 	}
 	
 	@JsonProperty(value="labelsEnabled")
@@ -343,8 +360,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setPatternField(String patternField){
-		amchart.setFeature("patternField", patternField);
-		amchart.addField("patternField", patternField);
+		if(PropertyValidator.isValidString(patternField)){
+			amchart.setFeature("patternField", patternField);
+			amchart.addField("patternField", patternField);
+		}
 	}
 	
 	public String getPulledField(){
@@ -352,8 +371,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setPulledField(String pulledField){
-		amchart.setFeature("pulledField", pulledField);
-		amchart.addField("pulledField", pulledField);
+		if(PropertyValidator.isValidString(pulledField)){
+			amchart.setFeature("pulledField", pulledField);
+			amchart.addField("pulledField", pulledField);
+		}
 	}
 	
 	public Integer getPullOutDuration(){
@@ -377,7 +398,9 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setPullOutEffect(Effect pullOutEffect){
-		amchart.setFeature("pullOutEffect", pullOutEffect.toString());
+		if(pullOutEffect != null){
+			amchart.setFeature("pullOutEffect", pullOutEffect.toString());
+		}
 	}
 	
 	@JsonProperty(value="pullOutOnlyOne")
@@ -440,7 +463,9 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setStartEffect(Effect startEffect){
-		amchart.setFeature("startEffect", startEffect.toString());
+		if(startEffect != null){
+			amchart.setFeature("startEffect", startEffect.toString());
+		}
 	}
 	
 	public String getTitleField(){
@@ -448,8 +473,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setTitleField(String titleField){
-		amchart.setFeature("titleField", titleField);
-		amchart.addField("titleField", titleField);
+		if(PropertyValidator.isValidString(titleField)){
+			amchart.setFeature("titleField", titleField);
+			amchart.addField("titleField", titleField);
+		}
 	}
 	
 	public String getUrlField(){
@@ -457,8 +484,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setUrlField(String urlField){
-		amchart.setFeature("urlField", urlField);
-		amchart.addField("urlField", urlField);
+		if(PropertyValidator.isValidString(urlField)){
+			amchart.setFeature("urlField", urlField);
+			amchart.addField("urlField", urlField);
+		}
 	}
 	
 	public String getUrlTarget(){
@@ -466,7 +495,9 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setUrlTarget(UrlTarget urlTarget){
-		amchart.setFeature("urlTarget", urlTarget.toString());
+		if(urlTarget != null){
+			amchart.setFeature("urlTarget", urlTarget.toString());
+		}
 	}
 	
 	public String getValueField(){
@@ -474,8 +505,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setValueField(String valueField){
-		amchart.setFeature("valueField", valueField);
-		amchart.addField("valueField", valueField);
+		if(PropertyValidator.isValidString(valueField)){
+			amchart.setFeature("valueField", valueField);
+			amchart.addField("valueField", valueField);
+		}
 	}
 	
 	public String getVisibleInLegendField(){
@@ -483,8 +516,10 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 	}
 	
 	public void setVisibleInLegendField(String visibleInLegendField){
-		amchart.setFeature("visibleInLegendField", visibleInLegendField);
-		amchart.addField("visibleInLegendField", visibleInLegendField);
+		if(PropertyValidator.isValidString(visibleInLegendField)){
+			amchart.setFeature("visibleInLegendField", visibleInLegendField);
+			amchart.addField("visibleInLegendField", visibleInLegendField);
+		}
 	}
 	
 	//usado solo para deserializar json

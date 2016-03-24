@@ -22,7 +22,7 @@ import es.uvigo.esei.amchartsJava.core.model.ChartCursor;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
-import es.uvigo.esei.amchartsJava.core.validators.TypeValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for ChartCursor
@@ -85,7 +85,9 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setBalloonPointerOrientation(Orientation balloonPointerOrientation){
-		chartCursor.setFeature("balloonPointerOrientation", balloonPointerOrientation.toString());
+		if(balloonPointerOrientation != null){
+			chartCursor.setFeature("balloonPointerOrientation", balloonPointerOrientation.toString());
+		}
 	}
 	
 	@JsonProperty(value="bulletsEnabled")
@@ -140,7 +142,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setCategoryBalloonDateFormat(String categoryBalloonDateFormat){
-		if(TypeValidator.checkDateFormat(categoryBalloonDateFormat)){
+		if(PropertyValidator.checkDateFormat(categoryBalloonDateFormat)){
 			chartCursor.setFeature("categoryBalloonDateFormat", categoryBalloonDateFormat);
 		}
 	}
@@ -159,7 +161,9 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setCategoryBalloonFunction(String categoryBalloonFunction){
-		chartCursor.setFeature("categoryBalloonFunction", categoryBalloonFunction);
+		if(PropertyValidator.isValidString(categoryBalloonFunction)){
+			chartCursor.setFeature("categoryBalloonFunction", categoryBalloonFunction);
+		}
 	}
 	
 	public String getCategoryBalloonText(){
@@ -167,7 +171,9 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setCategoryBalloonText(CategoryBalloonText categoryBalloonText){
-		chartCursor.setFeature("categoryBalloonText", categoryBalloonText.toString());
+		if(categoryBalloonText != null){
+			chartCursor.setFeature("categoryBalloonText", categoryBalloonText.toString());
+		}
 	}
 	
 	public String getColor(){
@@ -207,7 +213,9 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	}
 	
 	public void setCursorPosition(CursorPosition cursorPosition){
-		chartCursor.setFeature("cursorPosition", cursorPosition.toString());
+		if(cursorPosition != null){
+			chartCursor.setFeature("cursorPosition", cursorPosition.toString());
+		}
 	}
 	
 	@JsonProperty(value="enabled")
@@ -340,7 +348,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 	
 	public void setValueLineAxis(String valueLineAxis) throws ChartException{
 		if(chart != null){
-			if(chart.existValueAxis(valueLineAxis)){
+			if(PropertyValidator.isValidString(valueLineAxis) && chart.existValueAxis(valueLineAxis)){
 				chartCursor.setFeature("valueLineAxis", valueLineAxis);
 			}
 		}else{

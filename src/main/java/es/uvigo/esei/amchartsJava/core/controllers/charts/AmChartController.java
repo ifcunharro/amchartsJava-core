@@ -33,6 +33,7 @@ import es.uvigo.esei.amchartsJava.core.model.AmChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 
 /**
@@ -62,7 +63,9 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setProvider(DataProviderController provider){
-		amchart.setDataProvider(provider);
+		if(provider != null){
+			amchart.setDataProvider(provider);
+		}
 	}
 
 	@JsonIgnore
@@ -71,7 +74,9 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setChartFields(HashMap<String, String> map){
-		amchart.setChartFields(map);
+		if(map != null){
+			amchart.setChartFields(map);
+		}
 	}
 	
 	@JsonRawValue
@@ -151,7 +156,9 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setClassNamePrefix(String classNamePrefix){
-		amchart.setFeature("classNamePrefix",classNamePrefix);
+		if(PropertyValidator.isValidString(classNamePrefix)){
+			amchart.setFeature("classNamePrefix",classNamePrefix);
+		}
 	}
 	
 	public String getColor(){
@@ -169,7 +176,9 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setCreditsPosition(CreditsPosition creditsPosition){
-		amchart.setFeature("creditsPosition", creditsPosition.toString());
+		if(creditsPosition != null){
+			amchart.setFeature("creditsPosition", creditsPosition.toString());
+		}
 	}
 	
 	public String getDecimalSeparator(){
@@ -177,7 +186,9 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	//punto o coma, ningun otro para evitar conflictos, amcharts los detecta mal
 	public void setDecimalSeparator(Separator decimalSeparator){
-		amchart.setFeature("decimalSeparator",decimalSeparator.toString());
+		if(decimalSeparator != null){
+			amchart.setFeature("decimalSeparator",decimalSeparator.toString());
+		}
 	}
 	
 	public String getFontFamily(){
@@ -185,7 +196,9 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setFontFamily(String fontFamily){
-		amchart.setFeature("fontFamily", fontFamily);
+		if(PropertyValidator.isValidString(fontFamily)){
+			amchart.setFeature("fontFamily", fontFamily);
+		}
 	}
 	
 	public Integer getFontSize(){
@@ -283,7 +296,9 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setPath(String path){
-		amchart.setFeature("path", path);
+		if(PropertyValidator.isValidString(path)){
+			amchart.setFeature("path", path);
+		}
 	}
 	
 	public String getPathToImages(){
@@ -291,7 +306,9 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setPathToImages(String pathToImages){
-		amchart.setFeature("pathToImages", pathToImages);
+		if(PropertyValidator.isValidString(pathToImages)){
+			amchart.setFeature("pathToImages", pathToImages);
+		}
 	}
 	
 	public Integer getPercentPrecision(){
@@ -318,8 +335,6 @@ public abstract class AmChartController<E extends AmChart>
 		}
 	}
 	
-	//nombre file js in folder themes sin extension,
-	//se puede crear el tuyo propio
 	public String getTheme(){
 		return (String) amchart.getFeature("theme");
 	}
@@ -335,7 +350,9 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void setThousandsSeparator(Separator thousandsSeparator){
-		amchart.setFeature("thousandsSeparator", thousandsSeparator.toString());
+		if(thousandsSeparator != null){
+			amchart.setFeature("thousandsSeparator", thousandsSeparator.toString());
+		}
 	}
 	
 	public String getType(){
@@ -378,21 +395,29 @@ public abstract class AmChartController<E extends AmChart>
 	}
 	
 	public void addLabel(LabelController labelController){
-		amchart.addLabel(labelController);
+		if(labelController != null){
+			amchart.addLabel(labelController);
+		}
 	}
 	
 	@JsonSetter(value="legend")
 	public void addLegend(AmLegendController amLegendController){
-		amchart.addLegend(amLegendController);
+		if(amLegendController != null){
+			amchart.addLegend(amLegendController);
+		}
 	}
 	
 	public void addTitle(TitleController titleController){
-		amchart.addTitle(titleController);
+		if(titleController != null){
+			amchart.addTitle(titleController);
+		}
 	}
 	
 	@JsonSetter(value="balloon")
 	public void addBalloon(AmBalloonController amBalloon){
-		amchart.addBalloon(amBalloon);
+		if(amBalloon != null){
+			amchart.addBalloon(amBalloon);
+		}
 	}
 
 	public void clearLabels(){

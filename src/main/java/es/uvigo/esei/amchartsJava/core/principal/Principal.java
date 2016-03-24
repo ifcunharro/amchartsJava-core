@@ -37,7 +37,6 @@ public class Principal {
 		try {
 			IdiomValidator.checkIdiom(null);
 		} catch (LangException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		

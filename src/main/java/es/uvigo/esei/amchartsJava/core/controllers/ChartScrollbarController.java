@@ -20,6 +20,7 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for ChartScrollbar.
@@ -143,7 +144,7 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 	
 	public void setGraph(String graph) throws ChartException{
 		if(amchart != null){
-			if(amchart.existGraph(graph)){
+			if(PropertyValidator.isValidString(graph) && amchart.existGraph(graph)){
 				scrollbar.setFeature("graph", graph);
 			}
 		}else{
@@ -200,7 +201,9 @@ public class ChartScrollbarController implements Serializable, IChartScrollbarCo
 	}
 	
 	public void setGraphType(GraphType graphType){
-		scrollbar.setFeature("graphType", graphType.toString());
+		if(graphType != null){
+			scrollbar.setFeature("graphType", graphType.toString());
+		}
 	}
 	
 	public Double getGridAlpha(){

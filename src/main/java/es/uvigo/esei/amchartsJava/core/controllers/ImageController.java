@@ -15,6 +15,7 @@ import es.uvigo.esei.amchartsJava.core.model.Image;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for Image.
@@ -47,7 +48,9 @@ public class ImageController implements Serializable, IImageController {
 	}
 	
 	public void setBalloonText(String balloonText){
-		image.setFeature("balloonText", balloonText);
+		if(PropertyValidator.isValidString(balloonText)){
+			image.setFeature("balloonText", balloonText);
+		}
 	}
 	
 	public String getColor(){

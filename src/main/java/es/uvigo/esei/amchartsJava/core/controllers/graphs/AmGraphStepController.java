@@ -58,7 +58,9 @@ public class AmGraphStepController extends AmGraphController
 	}
 	
 	public void setStepDirection(StepDirection stepDirection){
-		amGraph.setFeature("stepDirection", stepDirection.toString());
+		if(stepDirection != null){
+			amGraph.setFeature("stepDirection", stepDirection.toString());
+		}
 	}
 
 }

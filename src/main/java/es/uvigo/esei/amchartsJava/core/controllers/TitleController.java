@@ -15,6 +15,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.Title;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 @JsonInclude(Include.NON_NULL)
 public class TitleController implements Observer, ITitleController, Serializable {
@@ -94,9 +95,9 @@ public class TitleController implements Observer, ITitleController, Serializable
 	}
 	
 	public void setText(String text){
-		title.setFeature("text", text);
+		if(PropertyValidator.isValidString(text)){
+			title.setFeature("text", text);
+		}
 	}
-
-	
 
 }

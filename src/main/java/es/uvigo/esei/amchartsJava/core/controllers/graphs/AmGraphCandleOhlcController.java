@@ -2,6 +2,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.graphs;
 
 import es.uvigo.esei.amchartsJava.core.api.graphs.IAmGraphCandleOhlcController;
 import es.uvigo.esei.amchartsJava.core.constants.ShowAt;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is class base for controllers of candles and ohlc graphs
@@ -18,8 +19,10 @@ public abstract class AmGraphCandleOhlcController extends AmGraphSerialControlle
 	}
 	
 	public void setHighField(String highField){
-		amGraph.setFeature("highField", highField);
-		amGraph.addGraphField("highField", highField);
+		if(PropertyValidator.isValidString(highField)){
+			amGraph.setFeature("highField", highField);
+			amGraph.addGraphField("highField", highField);
+		}
 	}
 	
 	public String getLowField(){
@@ -27,8 +30,10 @@ public abstract class AmGraphCandleOhlcController extends AmGraphSerialControlle
 	}
 	
 	public void setLowField(String lowField){
-		amGraph.setFeature("lowField", lowField);
-		amGraph.addGraphField("lowField", lowField);
+		if(PropertyValidator.isValidString(lowField)){
+			amGraph.setFeature("lowField", lowField);
+			amGraph.addGraphField("lowField", lowField);
+		}
 	}
 	
 	public String getShowBulletsAt(){
@@ -36,7 +41,9 @@ public abstract class AmGraphCandleOhlcController extends AmGraphSerialControlle
 	}
 	
 	public void setShowBulletsAt(ShowAt showBulletsAt){
-		amGraph.setFeature("showBulletsAt", showBulletsAt.toString());
+		if(showBulletsAt != null){
+			amGraph.setFeature("showBulletsAt", showBulletsAt.toString());
+		}
 	}
 	
 }

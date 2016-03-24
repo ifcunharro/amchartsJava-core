@@ -10,6 +10,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AmGraph of type line used in AmXyChart
@@ -41,7 +42,7 @@ public class AmGraphXyController extends AmGraphController
 	
 	public void setBulletAxis(String bulletAxis) throws ChartException{
 		if(amchart != null){
-			if(amchart.existValueAxis(bulletAxis)){
+			if(PropertyValidator.isValidString(bulletAxis) && amchart.existValueAxis(bulletAxis)){
 				amGraph.setFeature("bulletAxis", bulletAxis);
 			}
 		}else{
@@ -61,7 +62,7 @@ public class AmGraphXyController extends AmGraphController
 	
 	public void setFillToAxis(String fillToAxis) throws ChartException{
 		if(amchart != null){
-			if(amchart.existValueAxis(fillToAxis)){
+			if(PropertyValidator.isValidString(fillToAxis) && amchart.existValueAxis(fillToAxis)){
 				amGraph.setFeature("fillToAxis", fillToAxis);
 			}
 		}else{
@@ -109,7 +110,7 @@ public class AmGraphXyController extends AmGraphController
 	
 	public void setXAxis(String xAxis) throws ChartException{
 		if(amchart != null){
-			if(amchart.existValueAxis(xAxis)){
+			if(PropertyValidator.isValidString(xAxis) && amchart.existValueAxis(xAxis)){
 				amGraph.setFeature("xAxis", xAxis);
 			}
 		}else{
@@ -128,8 +129,10 @@ public class AmGraphXyController extends AmGraphController
 	}
 	
 	public void setXField(String xField){
-		amGraph.setFeature("xField", xField);
-		amGraph.addGraphField("xField", xField);
+		if(PropertyValidator.isValidString(xField)){
+			amGraph.setFeature("xField", xField);
+			amGraph.addGraphField("xField", xField);
+		}
 	}
 	
 	public String getYAxis(){
@@ -138,7 +141,7 @@ public class AmGraphXyController extends AmGraphController
 	
 	public void setYAxis(String yAxis) throws ChartException{
 		if(amchart != null){
-			if(amchart.existValueAxis(yAxis)){
+			if(PropertyValidator.isValidString(yAxis) && amchart.existValueAxis(yAxis)){
 				amGraph.setFeature("yAxis", yAxis);
 			}
 		}else{
@@ -157,10 +160,10 @@ public class AmGraphXyController extends AmGraphController
 	}
 	
 	public void setYField(String yField){
-		amGraph.setFeature("yField", yField);
-		amGraph.addGraphField("yField", yField);
+		if(PropertyValidator.isValidString(yField)){
+			amGraph.setFeature("yField", yField);
+			amGraph.addGraphField("yField", yField);
+		}
 	}
 
-	
-	
 }

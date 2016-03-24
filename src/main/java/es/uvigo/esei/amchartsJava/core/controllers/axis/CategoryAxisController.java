@@ -8,6 +8,7 @@ import es.uvigo.esei.amchartsJava.core.constants.Period;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for CategoryAxis.
@@ -65,7 +66,9 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	public void setCategoryFunction(String categoryFunction){
-		axes.setFeature("categoryFunction", categoryFunction);
+		if(PropertyValidator.isValidString(categoryFunction)){
+			axes.setFeature("categoryFunction", categoryFunction);
+		}
 	}
 	
 	@JsonProperty(value="centerLabelOnFullPeriod")
@@ -103,8 +106,10 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	public void setForceShowField(String forceShowField){
-		axes.setFeature("forceShowField", forceShowField);
-		axes.addAxesField("forceShowField",forceShowField);
+		if(PropertyValidator.isValidString(forceShowField)){
+			axes.setFeature("forceShowField", forceShowField);
+			axes.addAxesField("forceShowField",forceShowField);
+		}
 	}
 	
 	public String getGridPosition(){
@@ -112,7 +117,9 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	public void setGridPosition(CategoryPosition gridPosition){
-		axes.setFeature("gridPosition", gridPosition.toString());
+		if(gridPosition != null){
+			axes.setFeature("gridPosition", gridPosition.toString());
+		}
 	}
 	
 	public String getLabelColorField(){
@@ -120,8 +127,10 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	public void setLabelColorField(String labelColorField){
-		axes.setFeature("labelColorField", labelColorField);
-		axes.addAxesField("labelColorField", labelColorField);
+		if(PropertyValidator.isValidString(labelColorField)){
+			axes.setFeature("labelColorField", labelColorField);
+			axes.addAxesField("labelColorField", labelColorField);
+		}
 	}
 	
 	public String getLabelFunction(){
@@ -129,7 +138,9 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	public void setLabelFunction(String labelFunction){
-		axes.setFeature("labelFunction", labelFunction);
+		if(PropertyValidator.isValidString(labelFunction)){
+			axes.setFeature("labelFunction", labelFunction);
+		}
 	}
 	
 	@JsonProperty(value="markPeriodChange")
@@ -146,7 +157,9 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	public void setMinPeriod(Period minPeriod){
-		axes.setFeature("minPeriod", minPeriod.toString());
+		if(minPeriod != null){
+			axes.setFeature("minPeriod", minPeriod.toString());
+		}
 	}
 	
 	@JsonProperty(value="parseDates")
@@ -172,7 +185,9 @@ public class CategoryAxisController extends AxisBaseController implements ICateg
 	}
 	
 	public void setTickPosition(CategoryPosition tickPosition){
-		axes.setFeature("tickPosition", tickPosition.toString());
+		if(tickPosition != null){
+			axes.setFeature("tickPosition", tickPosition.toString());
+		}
 	}
 	
 	@JsonProperty(value="twoLineMode")

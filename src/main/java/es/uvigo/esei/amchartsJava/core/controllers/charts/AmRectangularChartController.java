@@ -22,6 +22,7 @@ import es.uvigo.esei.amchartsJava.core.model.charts.AmRectangularChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
 import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AmRectangularChart.
@@ -191,7 +192,9 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public void setPlotAreaGradientAngle(GradientAngle plotAreaGradientAngle){
-		amchart.setFeature("plotAreaGradientAngle", plotAreaGradientAngle.getNumber());
+		if(plotAreaGradientAngle != null){
+			amchart.setFeature("plotAreaGradientAngle", plotAreaGradientAngle.getNumber());
+		}
 	}
 	
 	//trendLines
@@ -278,10 +281,10 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public void setZoomOutText(String zoomOutText){
-		amchart.setFeature("zoomOutText", zoomOutText);
+		if(PropertyValidator.isValidString(zoomOutText)){
+			amchart.setFeature("zoomOutText", zoomOutText);
+		}
 	}
-	
-	//methods
 	
 	public ChartCursorController getChartCursor(){
 		return amchart.getChartCursor();
@@ -297,16 +300,22 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	
 	@JsonSetter(value="chartCursor")
 	public void addChartCursor(ChartCursorController chartCursorController){
-		amchart.addChartCursor(chartCursorController);
+		if(chartCursorController != null){
+			amchart.addChartCursor(chartCursorController);
+		}
 	}
 	
 	@JsonSetter(value="chartScrollbar")
 	public void addChartScrollbar(ChartScrollbarController chartScrollbarController){
-		amchart.addChartScrollbar(chartScrollbarController);
+		if(chartScrollbarController != null){
+			amchart.addChartScrollbar(chartScrollbarController);
+		}
 	}
 	
 	public <T extends TrendLineSerialChartController> void addTrendLine(T trendLineController) throws NotSupportedException{
-		amchart.addTrendLine(trendLineController);
+		if(trendLineController != null){
+			amchart.addTrendLine(trendLineController);
+		}
 	}
 	
 	public void removeChartCursor(){
@@ -318,7 +327,7 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 	}
 	
 	public void removeTrendLine(String trendLine){
-		if(amchart.existTrendLine(trendLine)){
+		if(PropertyValidator.isValidString(trendLine) && amchart.existTrendLine(trendLine)){
 			amchart.removeTrendLine(trendLine);
 		}
 	}

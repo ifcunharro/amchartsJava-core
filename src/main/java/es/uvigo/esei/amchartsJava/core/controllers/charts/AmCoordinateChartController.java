@@ -21,6 +21,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.charts.AmCoordinateChart;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AmCoordinateChart.
@@ -91,7 +92,9 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	public void setStartEffect(Effect startEffect){
-		amchart.setFeature("startEffect", startEffect.toString());
+		if(startEffect != null){
+			amchart.setFeature("startEffect", startEffect.toString());
+		}
 	}
 	
 	public String getUrlTarget(){
@@ -99,7 +102,9 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 	
 	public void setUrlTarget(UrlTarget urlTarget){
-		amchart.setFeature("urlTarget", urlTarget.toString());
+		if(urlTarget != null){
+			amchart.setFeature("urlTarget", urlTarget.toString());
+		}
 	}
 	
 	public List<String> getColors(){
@@ -131,32 +136,38 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 	}
 		
 	public void addGraph(AmGraphController amGraphController) throws NotSupportedException{
-		amchart.addGraph(amGraphController);
+		if(amGraphController != null){
+			amchart.addGraph(amGraphController);
+		}
 	}
 	
 	public void addGuide(GuideController guideController) throws NotSupportedException{
-		amchart.addGuide(guideController);
+		if(guideController != null){
+			amchart.addGuide(guideController);
+		}
 	}
 	
-	public void addValueAxis(AxisBaseController va) throws NotSupportedException{
-		amchart.addValueAxis(va);
+	public void addValueAxis(AxisBaseController valueAxis) throws NotSupportedException{
+		if(valueAxis != null){
+			amchart.addValueAxis(valueAxis);
+		}
 	}
 	
 	//remove by id
 	public void removeGraph(String idGraph){
-		if(amchart.existGraph(idGraph)){
+		if(PropertyValidator.isValidString(idGraph) && amchart.existGraph(idGraph)){
 			amchart.removeGraph(idGraph);
 		}
 	}
 	
 	public void removeGuide(String idGuide){
-		if(amchart.existGuide(idGuide)){
+		if(PropertyValidator.isValidString(idGuide) && amchart.existGuide(idGuide)){
 			amchart.removeGuide(idGuide);
 		}
 	}
 	
 	public void removeValueAxis(String idValueAxis){
-		if(amchart.existValueAxis(idValueAxis)){
+		if(PropertyValidator.isValidString(idValueAxis) && amchart.existValueAxis(idValueAxis)){
 			amchart.removeValueAxis(idValueAxis);
 		}
 	}

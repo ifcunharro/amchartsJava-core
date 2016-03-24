@@ -18,6 +18,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 import es.uvigo.esei.amchartsJava.core.model.AxisBase;
 import es.uvigo.esei.amchartsJava.core.validators.ColorValidator;
 import es.uvigo.esei.amchartsJava.core.validators.NumberValidator;
+import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
 
 /**
  * This class is a controller for AxisBase.
@@ -40,7 +41,9 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setAxesFields(Map<String,String> axesFields){
-		axes.setAxesFields(axesFields);
+		if(axesFields != null){
+			axes.setAxesFields(axesFields);
+		}
 	}
 	
 	@JsonProperty(value="autoGridCount")
@@ -113,7 +116,9 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setColor(ColorsAmCharts color){
-		axes.setFeature("color", color.toString());
+		if(color != null){
+			axes.setFeature("color", color.toString());
+		}
 	}
 	
 	public Integer getDashLength(){
@@ -383,7 +388,9 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setPosition(AxisPosition position){
-		axes.setFeature("position", position.toString());
+		if(position != null){
+			axes.setFeature("position", position.toString());
+		}
 	}
 	
 	@JsonProperty(value="showFirstLabel")
@@ -425,7 +432,9 @@ public abstract class AxisBaseController implements IAxisBaseController, Seriali
 	}
 	
 	public void setTitle(String title){
-		axes.setFeature("title", title);
+		if(PropertyValidator.isValidString(title)){
+			axes.setFeature("title", title);
+		}
 	}
 	
 	@JsonProperty(value="titleBold")
