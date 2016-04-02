@@ -21,7 +21,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.provider.DataProviderControll
  */
 public abstract class AmChart extends IModel {
 	protected List<LabelController> labels;
-	//guarda todos los fields activados para charts y el nombre asociado
+	//save all fields used to charts and associated name
 	protected Map<String,String> chartFields;
 	protected AmBalloonController balloon;
 	protected AmLegendController legend;
@@ -249,7 +249,7 @@ public abstract class AmChart extends IModel {
 		
 	}
 	
-	//usado para deserializar json
+	//used to deserialize json
 	/**
 	 * Set titles from json.
 	 * @param t Titles.

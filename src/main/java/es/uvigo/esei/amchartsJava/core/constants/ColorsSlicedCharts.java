@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
  *
  */
 public enum ColorsSlicedCharts {
-	//nombres de colores inventados, puestos por semejanza visual
 	RED("#FF0F00"),ORANGE("#FF6600"),LIGHTORANGE("#FF9E01"),YELLOW("#FCD202"),
 	BRIGHTYELLOW("#F8FF01"),LIME("#B0DE09"),GRASS("#04D215"),ELECTRICBLUE("#0D8ECF"),
 	SAPPHIRE("#0D52D1"),DARKBLUE("#2A0CD0"),DARKVIOLET("#8A0CCF"),DOGWOODROSE("#CD0D74"),

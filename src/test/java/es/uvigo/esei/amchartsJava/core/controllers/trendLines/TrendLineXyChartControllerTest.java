@@ -7,6 +7,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
@@ -27,8 +28,17 @@ public class TrendLineXyChartControllerTest {
 	@Test
 	public void valueAxisX_property_launch_exception_if_trendLineXyChart_is_not_added_to_chart() throws ChartException{
 		thrown.expect(ChartException.class);
-		thrown.expectMessage("TrendLineXyChartController needs to be added to "
-				+ "a chart to can be used that property");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("TrendLineXyChartController needs to be added to "
+						+ "a chart to can be used that property");
+				break;
+			case "es":
+				thrown.expectMessage("TrendLineXyChartController necesita añadirse a "
+						+ "un chart para poder usar esta propiedad");
+				break;
+		}
+		
 		TrendLineXyChartController trendLine = new TrendLineXyChartController();
 		
 		trendLine.setValueAxisX("ValueAxis-1");

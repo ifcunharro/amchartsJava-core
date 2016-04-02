@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
 
 public class AmXyChartControllerTest {
@@ -50,7 +51,14 @@ public class AmXyChartControllerTest {
 		AmXyChartController xy = new AmXyChartController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 1 and 20");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 1 and 20");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 1 y 20");
+					break;
+			}
 			
 			xy.setMaxZoomFactor(24);
 		}else{

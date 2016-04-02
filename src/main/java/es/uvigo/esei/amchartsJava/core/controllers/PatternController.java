@@ -67,7 +67,7 @@ public class PatternController implements IPatternController, Serializable {
 	}
 
 	
-	//para deserializar json, usar addUrl para asignar una url
+	//to deserialize json, use addUrl to assign an url
 	@JsonSetter
 	private void setUrl(String url) {
 		pattern.setFeature("url", url);

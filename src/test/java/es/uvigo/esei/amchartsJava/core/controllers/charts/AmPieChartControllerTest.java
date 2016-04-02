@@ -9,6 +9,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmAngularGaugeController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmPieChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
@@ -53,7 +54,14 @@ public class AmPieChartControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 1");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 1");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 1");
+				break;
+		}
 		AmPieChartController amPie = new AmPieChartController();
 		
 		amPie.setPieAlpha(9);
@@ -84,7 +92,14 @@ public class AmPieChartControllerTest {
 	@Test
 	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 360");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 360");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 360");
+				break;
+		}
 		AmPieChartController amPie = new AmPieChartController();
 		
 		amPie.setStartAngle(-270);
@@ -101,7 +116,14 @@ public class AmPieChartControllerTest {
 	@Test
 	public void minRadius_property_launch_exception_if_set_method_recive_not_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
 		AmAngularGaugeController amGauge = new AmAngularGaugeController();
 		
 		amGauge.setGaugeX(90.9);
@@ -125,7 +147,14 @@ public class AmPieChartControllerTest {
 	@Test
 	public void some_properties_launch_exception_if_set_method_no_recive_integer_value_or_integer_percent_as_string() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		AmPieChartController amPie = new AmPieChartController();
 		
 		amPie.setPieX("90.9%");

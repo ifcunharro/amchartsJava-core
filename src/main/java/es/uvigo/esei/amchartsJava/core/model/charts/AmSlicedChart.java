@@ -34,7 +34,7 @@ public class AmSlicedChart extends AmChart {
 		return slicedColors;
 	}
 	
-	//usado para deserializar json
+	//used to deserialize json
 	/**
 	 * Set colors from json.
 	 * @param c List of colors.

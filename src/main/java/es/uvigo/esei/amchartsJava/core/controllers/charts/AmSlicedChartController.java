@@ -522,7 +522,7 @@ public abstract class AmSlicedChartController<F extends AmSlicedChart> extends A
 		}
 	}
 	
-	//usado solo para deserializar json
+	//used to deserialize json
 	@JsonSetter(value="colors")
 	private void setColors(List<String> colors){
 		amchart.setColors(colors);

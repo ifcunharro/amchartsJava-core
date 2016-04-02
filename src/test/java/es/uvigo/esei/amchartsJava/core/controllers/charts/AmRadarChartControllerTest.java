@@ -9,6 +9,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 
@@ -27,7 +28,14 @@ public class AmRadarChartControllerTest {
 	@Test
 	public void some_property_launch_exception_if_set_method_recive_not_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
 		AmRadarChartController radar = new AmRadarChartController();
 		
 		radar.setMarginLeft(90.9);
@@ -37,7 +45,14 @@ public class AmRadarChartControllerTest {
 	@Test
 	public void radius_property_launch_exception_if_set_method_no_recive_integer_value_or_integer_percent_as_string() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		AmRadarChartController radar = new AmRadarChartController();
 		
 		radar.setRadius("90.9%");

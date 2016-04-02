@@ -2,12 +2,14 @@ package es.uvigo.esei.amchartsJava.core.controllers;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.Orientation;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.ChartCursorController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
@@ -55,7 +57,15 @@ public class ChartCursorControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 1");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 1");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 1");
+				break;
+		}
+		
 		ChartCursorController cursor = new ChartCursorController();
 		
 		cursor.setCursorAlpha(9);
@@ -86,7 +96,15 @@ public class ChartCursorControllerTest {
 	@Test
 	public void all_property_to_color_launch_exception_if_format_color_is_incorrect() throws ColorException{
 		thrown.expect(ColorException.class);
-		thrown.expectMessage("Format color should be #000000");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format color should be #000000");
+				break;
+			case "es":
+				thrown.expectMessage("El formato de color debe ser #000000");
+				break;
+		}
+		
 		ChartCursorController cursor = new ChartCursorController();
 		
 		cursor.setColor("255,255,255");
@@ -120,7 +138,16 @@ public class ChartCursorControllerTest {
 		ChartCursorController cursor = new ChartCursorController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 8 and 20");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 8 and 20");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 8 y 20");
+					break;
+			
+			}
+			
 			
 			cursor.setBulletSize(100);
 		}else{
@@ -178,8 +205,18 @@ public class ChartCursorControllerTest {
 	@Test
 	public void valueLineAxis_property_launch_exception_if_ChartCursorController_not_added_to_chart() throws ChartException{
 		thrown.expect(ChartException.class);
-		thrown.expectMessage("ChartCursorController needs to be added to "
-				+ "a chart to can be used that property");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("ChartCursorController needs to be added to "
+						+ "a chart to can be used that property");
+				break;
+			case "es":
+				thrown.expectMessage("ChartCursorController necesita añadirse a "
+						+ "un chart para poder usar esta propiedad");
+				break;
+		
+		}
+		
 		ChartCursorController cursor = new ChartCursorController();
 		
 		cursor.setValueLineAxis("ValueAxis-1");
@@ -249,7 +286,15 @@ public class ChartCursorControllerTest {
 	@Test
 	public void property_mumeric_with_value_integer_without_range_limit_launch_exception_if_set_method_recive_not_integer() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
+		
 		ChartCursorController cursor = new ChartCursorController();
 		
 		cursor.setAdjustment(9.6);

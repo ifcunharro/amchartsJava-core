@@ -7,6 +7,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.lang.Idiom;
 import es.uvigo.esei.amchartsJava.core.constants.lang.Idioms;
 import es.uvigo.esei.amchartsJava.core.exceptions.LangException;
@@ -44,7 +45,14 @@ public class IdiomValidatorTest {
 	@Test
 	public void checkIdiom_launch_exception_if_recive_idiom_not_supported() throws LangException{
 		thrown.expect(LangException.class);
-		thrown.expectMessage("Language not valid");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Language not valid");
+				break;
+			case "es":
+				thrown.expectMessage("El idioma no es válido");
+				break;
+		}
 		IdiomValidator.checkIdiom("pt");
 	}
 

@@ -7,6 +7,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmRadarChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -30,7 +31,14 @@ public class GuideRadarChartControllerTest {
 	@Test
 	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 360");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 360");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 360");
+				break;
+		}
 		GuideRadarChartController guide = new GuideRadarChartController();
 		
 		guide.setToAngle(-270);

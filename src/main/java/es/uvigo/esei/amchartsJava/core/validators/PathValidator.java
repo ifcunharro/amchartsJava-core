@@ -36,12 +36,12 @@ public class PathValidator {
 			try {
 				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
 				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+image);
-				//se ha pasado image con extension
+				//image with extension
 				if(new File(resourcesPath.getFile()).exists()){
 					return image;
 				}else if(image.lastIndexOf(".") != image.length()-4){
 					
-					//se comprueba con todas las extensiones soportadas para imagen
+					//check with extensions supported
 					for(ImageExtensions extension: ImageExtensions.values()){
 						resourcesPath = new URL(resourcesPath,image+"."+extension.toString());
 						if(new File(resourcesPath.getFile()).exists()){
@@ -74,12 +74,12 @@ public class PathValidator {
 			try {
 				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
 				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+icon);
-				//se ha pasado icon con extension
+				//icon with extension
 				if(new File(resourcesPath.getFile()).exists()){
 					return icon.substring(0, icon.length()-4);
 				}else if(icon.lastIndexOf(".") != icon.length()-4){
 					
-					//se comprueba con todas las extensiones soportadas para imagen
+					//check with extensions supported
 					for(ImageExtensions extension: ImageExtensions.values()){
 						resourcesPath = new URL(resourcesPath,icon+"."+extension.toString());
 						if(new File(resourcesPath.getFile()).exists()){
@@ -179,7 +179,7 @@ public class PathValidator {
 				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.TEMP_DIRECTORY+jsonFile);
 				System.out.println(resourcesPath);
 				if(new File(resourcesPath.getFile()).exists()){
-					//se elimina protocolo file:/ al devolver la ruta completa
+					//delete file:/ to return absolute path
 					return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
 				}else if(jsonFile.lastIndexOf(".") != jsonFile.length()-5){
 					
@@ -215,13 +215,13 @@ public class PathValidator {
 			try {
 				resourcesPath = new URL(URLDecoder.decode(resourcesPath.toString(),"UTF-8"));
 				resourcesPath = new URL(resourcesPath,AmchartsJavaPaths.IMAGES_PATH+custom);
-				//se ha pasado bullet con extension
+				//bullet with extension
 				if(new File(resourcesPath.getFile()).exists()){
-					//se elimina protocolo file
+					//delete file protocol
 					return resourcesPath.toString().substring(6);
 				}else if(custom.lastIndexOf(".") != custom.length()-4){
 					
-					//se comprueba con todas las extensiones soportadas para imagen
+					//check with extension supported
 					for(ImageExtensions extension: ImageExtensions.values()){
 						resourcesPath = new URL(resourcesPath,custom+"."+extension.toString());
 						if(new File(resourcesPath.getFile()).exists()){

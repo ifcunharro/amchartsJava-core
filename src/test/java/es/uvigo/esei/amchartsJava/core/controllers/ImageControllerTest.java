@@ -16,6 +16,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -44,7 +45,15 @@ public class ImageControllerTest {
 	@Test
 	public void all_color_property_launch_exception_if_format_color_is_incorrect() throws ColorException{
 		thrown.expect(ColorException.class);
-		thrown.expectMessage("Format color should be #000000");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format color should be #000000");
+				break;
+			case "es":
+				thrown.expectMessage("El formato de color debe ser #000000");
+				break;
+		}
+		
 		ImageController image = new ImageController();
 		
 		image.setColor("255,255,255");
@@ -78,7 +87,15 @@ public class ImageControllerTest {
 		ImageController image = new ImageController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 20 and 50");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 20 and 50");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 20 y 50");
+					break;
+			}
+			
 			
 			image.setHeight(370);
 		}else{
@@ -97,7 +114,15 @@ public class ImageControllerTest {
 	@Test
 	public void some_properties_launch_IntegerException_if_set_method_not_recive_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
+		
 		ImageController image = new ImageController();
 		
 		image.setOffsetX(90.9);

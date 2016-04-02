@@ -8,17 +8,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLDecoder;
 
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
-
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternControllerTest;
 
 public class PathValidatorTest {
-	
-	@Rule
-	public TemporaryFolder folder = new TemporaryFolder();
 	
 	@Test
 	public void imageExist_return_empty_string_if_recive_null_or_string_empty(){

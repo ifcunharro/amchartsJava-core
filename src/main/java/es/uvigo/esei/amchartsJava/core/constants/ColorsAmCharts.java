@@ -9,7 +9,6 @@ import com.fasterxml.jackson.annotation.JsonValue;
  *
  */
 public enum ColorsAmCharts{
-	//nombres de colores inventados, puestos por semejanza visual
 	ORANGE("#ff6600"),YELLOW("#fcd202"),LIME("#b0de09"),BLUE("#0d8ecf"),
 	INDIGO("#2a0cd0"),PINK("#cd0d74"),RED("#cc0000"),GRASS("#00cc00"),
 	NAVY("#0000cc"),GRAY("#dddddd"),STEEL("#999999"),DARKGRAY("#333333"),DARKRED("#990000");

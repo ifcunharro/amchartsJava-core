@@ -197,8 +197,6 @@ public abstract class AmRectangularChartController<G extends AmRectangularChart>
 		}
 	}
 	
-	//trendLines
-	
 	public Double getZoomOutButtomAlpha(){
 		Object zoomOutButtonAlpha = amchart.getFeature("zoomOutButtonAlpha");
 		

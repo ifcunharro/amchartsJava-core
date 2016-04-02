@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeArrowController;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmAngularGaugeController;
@@ -57,7 +58,16 @@ public class GaugeArrowControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 1");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 1");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 1");
+				break;
+
+		}
+		
 		GaugeArrowController gaugeArrow = new GaugeArrowController();
 		
 		gaugeArrow.setAlpha(9);
@@ -88,7 +98,16 @@ public class GaugeArrowControllerTest {
 	@Test
 	public void color_property_launch_exception_if_format_color_is_incorrect() throws ColorException{
 		thrown.expect(ColorException.class);
-		thrown.expectMessage("Format color should be #000000");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format color should be #000000");
+				break;
+			case "es":
+				thrown.expectMessage("El formato de color debe ser #000000");
+				break;
+	
+		}
+		
 		GaugeArrowController gaugeArrow = new GaugeArrowController();
 		
 		gaugeArrow.setColor("255,255,255");
@@ -122,7 +141,15 @@ public class GaugeArrowControllerTest {
 		GaugeArrowController gaugeArrow = new GaugeArrowController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 0 and 10");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 0 and 10");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 10");
+					break;
+			}
+			
 			
 			gaugeArrow.setNailBorderThickness(37);
 		}else{
@@ -155,7 +182,16 @@ public class GaugeArrowControllerTest {
 	@Test
 	public void value_property_launch_excpetion_if_set_method_not_recive_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		
+		}
+		
 		GaugeArrowController gaugeArrow = new GaugeArrowController();
 		
 		gaugeArrow.setValue(90.0);
@@ -212,7 +248,14 @@ public class GaugeArrowControllerTest {
 	@Test
 	public void radius_property_launch_exception_if_set_methot_not_recive_integer_or_integer_percent_as_string() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		GaugeArrowController gaugeArrow = new GaugeArrowController();
 		
 		gaugeArrow.setRadius("120%2");
@@ -247,7 +290,14 @@ public class GaugeArrowControllerTest {
 	@Test
 	public void innerRadius_property_launch_exception_if_set_methot_not_recive_integer_or_integer_percent_as_string() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		GaugeArrowController gaugeArrow = new GaugeArrowController();
 		
 		gaugeArrow.setInnerRadius("120.9");
@@ -327,7 +377,16 @@ public class GaugeArrowControllerTest {
 	@Test
 	public void axis_property_launch_exception_if_GaugeArrowController_is_not_added_to_chart() throws ChartException{
 		thrown.expect(ChartException.class);
-		thrown.expectMessage("GaugeArrowController needs to be added to a chart to can be used that property");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("GaugeArrowController needs to be added to "
+						+ "a chart to can be used that property");
+				break;
+			case "es":
+				thrown.expectMessage("GaugeArrowController necesita añadirse a "
+						+ "un chart para poder usar esta propiedad");
+				break;
+		}
 		AmAngularGaugeController gaugeChart = new AmAngularGaugeController();
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		GaugeArrowController gaugeArrow = new GaugeArrowController();

@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmXyChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ChartException;
@@ -25,7 +26,16 @@ public class AmGraphXyControllerTest {
 	@Test
 	public void axis_properties_launch_exception_if_AmGraphXyController_is_not_added_to_chart() throws ChartException{
 		thrown.expect(ChartException.class);
-		thrown.expectMessage("AmGraphXyController needs to be added to a chart to can be used that property");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("AmGraphXyController needs to be added to "
+						+ "a chart to can be used that property");
+				break;
+			case "es":
+				thrown.expectMessage("AmGraphXyController necesita añadirse a "
+						+ "un chart para poder usar esta propiedad");
+				break;
+		}
 		AmGraphXyController xy = new AmGraphXyController();
 		
 		xy.setBulletAxis("ValueAxis-1");
@@ -120,7 +130,14 @@ public class AmGraphXyControllerTest {
 		AmGraphXyController xy = new AmGraphXyController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 50 and 100");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 50 and 100");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 50 y 100");
+					break;
+			}
 			
 			xy.setMaxBulletSize(270);
 		}else{
@@ -148,7 +165,15 @@ public class AmGraphXyControllerTest {
 	@Test
 	public void minBulletSize_launch_exception_if_recive_not_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
+		
 		AmGraphXyController xy = new AmGraphXyController();
 		
 		xy.setMinBulletSize(9.4);

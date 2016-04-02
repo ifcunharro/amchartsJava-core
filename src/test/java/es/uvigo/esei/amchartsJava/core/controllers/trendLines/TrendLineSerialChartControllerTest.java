@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.ImageController;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
@@ -39,7 +40,14 @@ public class TrendLineSerialChartControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 1");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 1");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 1");
+				break;
+		}
 		TrendLineSerialChartController trendLine = new TrendLineSerialChartController();
 		
 		trendLine.setLineAlpha(9);
@@ -72,7 +80,14 @@ public class TrendLineSerialChartControllerTest {
 		TrendLineSerialChartController trendLine = new TrendLineSerialChartController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 0 and 10");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 0 and 10");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 10");
+					break;
+			}
 			
 			trendLine.setLineThickness(14);
 		}else{
@@ -91,8 +106,16 @@ public class TrendLineSerialChartControllerTest {
 	@Test
 	public void valueAxis_property_launch_exception_if_trendLineSerialChart_is_not_added_to_chart() throws ChartException{
 		thrown.expect(ChartException.class);
-		thrown.expectMessage("TrendLineSerialChartController needs to be added to "
-				+ "a chart to can be used that property");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("TrendLineSerialChartController needs to be added to "
+						+ "a chart to can be used that property");
+				break;
+			case "es":
+				thrown.expectMessage("TrendLineSerialChartController necesita añadirse a "
+						+ "un chart para poder usar esta propiedad");
+				break;
+		}
 		TrendLineSerialChartController trendLine = new TrendLineSerialChartController();
 		
 		trendLine.setValueAxis("ValueAxis-1");

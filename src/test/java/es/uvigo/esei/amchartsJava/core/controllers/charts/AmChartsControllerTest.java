@@ -10,6 +10,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmAngularGaugeController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmChartController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmChartsController;
@@ -75,7 +76,15 @@ public class AmChartsControllerTest {
 	@Test
 	public void some_property_launch_exception_if_set_method_recive_not_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
+		
 		AmChartsController amcharts = new AmChartsController();
 		
 		amcharts.setBezierX(90.8);

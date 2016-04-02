@@ -52,7 +52,7 @@ public class AmPieChartController extends AmSlicedChartController<AmSlicedChart>
 		return (String) amchart.getFeature("balloonText");
 	}
 	
-	//formarlo con [[]] y htmltags
+	//use [[]] and htmltags
 	public void setBalloonText(String balloonText){
 		if(PropertyValidator.isValidString(balloonText)){
 			amchart.setFeature("balloonText", balloonText);

@@ -57,7 +57,7 @@ public class Principal {
 		serial.setProvider(provider);
 		
 		try {
-			//escribe a fichero 
+			//write to file
 			ParserJson.saveJsonToTemp("pruebaJson.json", serial);
 			
 			ParserJson.saveJsonToConsole(serial);
@@ -66,7 +66,7 @@ public class Principal {
 			
 			e.printStackTrace();
 		}
-		//lee de fichero json a java
+		//read json to java
 		
 		AmSerialChartController serialController = null;
 		
@@ -77,8 +77,6 @@ public class Principal {
 
 				serialController = ParserJson.loadAmSerialChart("pruebaJson.json");
 			
-				
-				// se añaden todos los charts
 				amController.addChart(serialController);
 				
 			} catch (IOException e) {
@@ -87,11 +85,8 @@ public class Principal {
 			}
 		
 		try {
-			//comprueba que se ha leido bien el controller de carpeta temp
+			
 			ParserJson.saveJsonToConsole(serialController);
-			
-			
-			//ParserJson.saveJsonToConsole(sample);
 			
 		} catch (IOException e) {
 			e.printStackTrace();

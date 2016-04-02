@@ -197,7 +197,6 @@ public class AmLegendController implements IAmLegendController, Serializable{
 		return (String) legend.getFeature("labelText");
 	}
 	
-	//cualquier texto pero si es [[title]] muestra como texto el title del graph
 	public void setLabelText(String labelText){
 		if(PropertyValidator.isValidString(labelText)){
 			legend.setFeature("labelText", labelText);

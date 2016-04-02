@@ -26,7 +26,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
  */
 public class DefaultConfigCharts {
 	
-	//used by GRUBBS, LEVENE, BARLETT Y KRUSKAL-WALLIS en BEW
+	//used by GRUBBS, LEVENE, BARLETT Y KRUSKAL-WALLIS in BEW
 	/**
 	 * Create default CandleStickGraph(boxplot)
 	 * @return AmSerialChartController Controller for AmSerialChart just configured.

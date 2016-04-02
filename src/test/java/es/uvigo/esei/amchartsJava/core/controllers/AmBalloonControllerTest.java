@@ -10,6 +10,7 @@ import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.TextAlign;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.AmBalloonController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -55,7 +56,14 @@ public class AmBalloonControllerTest {
 		AmBalloonController balloon = new AmBalloonController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 0 and 2");
+			switch (Config.getString("lang")) {
+				case "en":
+						thrown.expectMessage("Number out of range: must be between 0 and 2");
+						break;
+				case "es":
+						thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 2");
+						break;
+			}
 			
 			balloon.setAnimationDuration(9);
 		}else{
@@ -89,7 +97,15 @@ public class AmBalloonControllerTest {
 	@Test
 	public void all_property_to_color_launch_exception_if_format_color_is_incorrect() throws ColorException{
 		thrown.expect(ColorException.class);
-		thrown.expectMessage("Format color should be #000000");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format color should be #000000");
+				break;
+			case "es":
+				thrown.expectMessage("El formato de color debe ser #000000");
+				break;
+		}
+		
 		AmBalloonController balloon = new AmBalloonController();
 		
 		balloon.setBorderColor("255,255,255");
@@ -123,7 +139,15 @@ public class AmBalloonControllerTest {
 		AmBalloonController balloon = new AmBalloonController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 0 and 10");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 0 and 10");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 10");
+			
+			}
+		
 			
 			balloon.setBorderThickness(900);
 			
@@ -158,7 +182,16 @@ public class AmBalloonControllerTest {
 	@Test
 	public void maxWidth_property_launch_exception_if_set_method_recive_not_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		
+		}
+		
 		AmBalloonController balloon = new AmBalloonController();
 		
 		balloon.setMaxWidth(90.9);
@@ -187,7 +220,15 @@ public class AmBalloonControllerTest {
 	@Test
 	public void offsetX_and_offsetY_properties_launch_exception_if_set_method_recive_not_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
+		
 		AmBalloonController balloon = new AmBalloonController();
 		
 		balloon.setOffsetX(90.88);

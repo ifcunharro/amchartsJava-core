@@ -57,7 +57,7 @@ public abstract class AmChartController<E extends AmChart>
 		this.setPathToImages(AmchartsJavaPaths.IMAGES_PATH);
 	}
 	
-	@JsonUnwrapped//(no valida contenido del dataProvider)
+	@JsonUnwrapped
 	public DataProviderController getDataProvider(){
 		return amchart.getDataProvider();
 	}
@@ -184,7 +184,7 @@ public abstract class AmChartController<E extends AmChart>
 	public String getDecimalSeparator(){
 		return (String) amchart.getFeature("decimalSeparator");
 	}
-	//punto o coma, ningun otro para evitar conflictos, amcharts los detecta mal
+	//dot or comma
 	public void setDecimalSeparator(Separator decimalSeparator){
 		if(decimalSeparator != null){
 			amchart.setFeature("decimalSeparator",decimalSeparator.toString());
@@ -269,18 +269,6 @@ public abstract class AmChartController<E extends AmChart>
 			amchart.setFeature("hideBalloonTime", hideBalloonTime);
 		}
 	}
-	
-	/*amcharts use language to load js file to translate names of months and days of week,
-	in this app these traductions are in es.uvigo.esei.amchartsJava.core.constants.lang and
-	by default are loaded from AmChartsController*/
-	
-//	public String getLanguage(){
-//		return (String) amchart.getFeature("language");
-//	}
-//	
-//	public void setLanguage(Idioms language){
-//		amchart.setFeature("language", language.toString());
-//	}
 	
 	@JsonProperty(value = "panEventsEnabled")
 	public Boolean isPanEventsEnabled(){
@@ -428,13 +416,13 @@ public abstract class AmChartController<E extends AmChart>
 		amchart.removeLegend();
 	}
 	
-	//usado solo para deserializar json
+	//used to deserialize json
 	@JsonSetter(value="allLabels")
 	private void setAllLabels(List<LabelController> allLabels){
 		amchart.setAllLabels(allLabels);
 	}
 	
-	//usada solo para deserializar json
+	//used to deserialize json
 	@JsonSetter(value="titles")
 	private void setTitles(List<TitleController> titles){
 		amchart.setTitles(titles);

@@ -7,6 +7,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.NotSupportedException;
@@ -38,7 +39,14 @@ public class GuideValueAxisControllerTest {
 	@Test
 	public void value_and_toValue_properties_launch_exception_if_recive_not_integer_value() throws DoubleException{
 		thrown.expect(DoubleException.class);
-		thrown.expectMessage("Number must be");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an double");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un real");
+				break;
+		}
 		GuideValueAxisController guide = new GuideValueAxisController();
 		
 		guide.setValue(9);

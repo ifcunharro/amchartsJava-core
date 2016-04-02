@@ -6,6 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.exceptions.DoubleException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
 import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
@@ -29,14 +30,28 @@ public class NumberValidatorTest {
 	@Test
 	public void rangeDoubleValidator_launch_exception_if_recive_null_as_number() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 10");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 10");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 10");
+				break;
+		}
 		NumberValidator.rangeDoubleValidator(null, 0, 10);
 	}
 	
 	@Test 
 	public void rangeDoubleValidator_launch_exception_if_number_is_not_between_lo_and_hi() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 10");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 10");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 10");
+				break;
+		}
 		NumberValidator.rangeDoubleValidator(20.8, 0, 10);
 	}
 	
@@ -52,14 +67,28 @@ public class NumberValidatorTest {
 	@Test
 	public void rangeIntegerValidator_launch_exception_if_recive_null_as_number() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 10");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 10");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 10");
+				break;
+		}
 		NumberValidator.rangeDoubleValidator(null, 0, 10);
 	}
 	
 	@Test 
 	public void rangeIntegerValidator_launch_exception_if_number_is_not_between_lo_and_hi() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 10");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 10");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 10");
+				break;
+		}
 		NumberValidator.rangeIntegerValidator(15, 0, 10);
 	}
 	
@@ -75,7 +104,14 @@ public class NumberValidatorTest {
 	@Test
 	public void integerValidator_launch_exception_if_recive_null() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
 		
 		NumberValidator.integerValidator(null);
 	}
@@ -83,7 +119,14 @@ public class NumberValidatorTest {
 	@Test
 	public void integerValidator_launch_exception_if_number_is_not_integer() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
 		
 		NumberValidator.integerValidator(7.9);
 	}
@@ -100,7 +143,14 @@ public class NumberValidatorTest {
 	@Test
 	public void doubleValidator_launch_exception_if_recive_null() throws DoubleException{
 		thrown.expect(DoubleException.class);
-		thrown.expectMessage("Number must be a double");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be a double");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un real");
+				break;
+		}
 		
 		NumberValidator.doubleValidator(null);
 	}
@@ -108,7 +158,14 @@ public class NumberValidatorTest {
 	@Test
 	public void doubleValidator_launch_exception_if_number_is_not_double() throws DoubleException{
 		thrown.expect(DoubleException.class);
-		thrown.expectMessage("Number must be a double");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be a double");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un real");
+				break;
+		}
 		
 		NumberValidator.doubleValidator(9);
 	}
@@ -126,7 +183,14 @@ public class NumberValidatorTest {
 	@Test
 	public void checkArrayDoubles_launch_exception_if_recive_null() throws DoubleException{
 		thrown.expect(DoubleException.class);
-		thrown.expectMessage("Number must be a double");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be a double");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un real");
+				break;
+		}
 		
 		NumberValidator.checkArrayDoubles((Number[])null);
 	}
@@ -134,7 +198,14 @@ public class NumberValidatorTest {
 	@Test
 	public void checkArrayDoubles_launch_exception_if_some_number_is_not_double() throws DoubleException{
 		thrown.expect(DoubleException.class);
-		thrown.expectMessage("Number must be a double");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be a double");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un real");
+				break;
+		}
 		
 		Number[] array = {9.0,79.5,333e+3,-4,Double.NaN};
 		NumberValidator.checkArrayDoubles(array);

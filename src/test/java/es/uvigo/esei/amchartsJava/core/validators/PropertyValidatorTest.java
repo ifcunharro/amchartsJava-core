@@ -13,6 +13,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
@@ -36,14 +37,28 @@ public class PropertyValidatorTest {
 	@Test
 	public void pixelOrPercent_launch_exception_if_recive_null() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		PropertyValidator.pixelOrPercent(null);
 	}
 	
 	@Test
 	public void pixelOrPercent_launch_exception_if_not_recive_integer_or_integer_percent() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		PropertyValidator.pixelOrPercent("90.8%");
 	}
 	

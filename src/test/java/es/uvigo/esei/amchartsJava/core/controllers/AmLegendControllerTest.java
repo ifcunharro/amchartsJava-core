@@ -9,6 +9,7 @@ import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.Align;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.AmLegendController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -52,7 +53,16 @@ public class AmLegendControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 1");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 1");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 1");
+				break;
+		
+		}
+		
 		AmLegendController legend = new AmLegendController();
 		
 		legend.setBackgroundAlpha(9);
@@ -83,7 +93,15 @@ public class AmLegendControllerTest {
 	@Test
 	public void all_property_to_color_launch_exception_if_format_color_is_incorrect() throws ColorException{
 		thrown.expect(ColorException.class);
-		thrown.expectMessage("Format color should be #000000");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format color should be #000000");
+				break;
+			case "es":
+				thrown.expectMessage("El formato de color debe ser #000000");
+				break;
+		}
+		
 		AmLegendController legend = new AmLegendController();
 		
 		legend.setMarkerDisabledColor("255,255,255");
@@ -117,7 +135,15 @@ public class AmLegendControllerTest {
 		AmLegendController legend = new AmLegendController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 1 and 36");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 1 and 36");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 1 y 36");
+					break;
+			}
+			
 			
 			legend.setMarkerSize(0);
 		}else{
@@ -181,7 +207,16 @@ public class AmLegendControllerTest {
 	@Test
 	public void property_mumeric_with_value_integer_without_range_limit_launch_exception_if_set_method_recive_not_integer() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		
+		}
+		
 		AmLegendController legend = new AmLegendController();
 		
 		legend.setLabelWidth(9.6);

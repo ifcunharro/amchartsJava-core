@@ -10,6 +10,7 @@ import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.Align;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.LabelController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmSerialChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -54,7 +55,15 @@ public class LabelControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 1");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 1");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 1");
+				break;
+		}
+		
 		LabelController label = new LabelController();
 		
 		label.setAlpha(9);
@@ -85,7 +94,15 @@ public class LabelControllerTest {
 	@Test
 	public void color_property_launch_exception_if_format_color_is_incorrect() throws ColorException{
 		thrown.expect(ColorException.class);
-		thrown.expectMessage("Format color should be #000000");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format color should be #000000");
+				break;
+			case "es":
+				thrown.expectMessage("El formato de color debe ser #000000");
+				break;
+		}
+		
 		LabelController label = new LabelController();
 		
 		label.setColor("255,255,255");
@@ -119,7 +136,15 @@ public class LabelControllerTest {
 		LabelController label = new LabelController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 10 and 24");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 10 and 24");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 10 y 24");
+					break;
+			}
+			
 			
 			label.setSize(36);
 		}else{
@@ -175,7 +200,14 @@ public class LabelControllerTest {
 	@Test
 	public void x_and_y_properties_launch_exception_if_set_methot_not_recive_integer_or_integer_percent_as_string() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		LabelController label = new LabelController();
 		
 		label.setX("120%2");

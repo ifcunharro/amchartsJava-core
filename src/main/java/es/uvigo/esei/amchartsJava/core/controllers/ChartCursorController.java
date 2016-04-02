@@ -50,9 +50,7 @@ public class ChartCursorController implements Serializable, IChartCursorControll
 		
 		return adjustment != null ? ((Number)adjustment).intValue() : null;
 	}
-	
-	//no se recomienda cambiar esta propiedad, es la distancia entre el cursor y
-	//el mensaje del balloon que aparece
+
 	public void setAdjustment(Number adjustment) throws IntegerException{
 		if(NumberValidator.integerValidator(adjustment)){
 			chartCursor.setFeature("adjustment", adjustment);

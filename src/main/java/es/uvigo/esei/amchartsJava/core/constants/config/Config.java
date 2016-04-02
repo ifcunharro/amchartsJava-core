@@ -12,7 +12,7 @@ import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 
 /**
  * 
- * This class load properties with params config and configure log.
+ * This class load properties with params config.
  * @author Iago Fernández Cuñarro
  *
  */
@@ -49,7 +49,7 @@ public final class Config {
     /**
      * Get parameter of configuration.
      * @param key Name of parameter of configuration.
-     * @return String Value asociated to parameter of configuration.
+     * @return String Value associated to parameter of configuration.
      */
     public static String getString(final String key) {
         if (CONFIG.containsKey(key))

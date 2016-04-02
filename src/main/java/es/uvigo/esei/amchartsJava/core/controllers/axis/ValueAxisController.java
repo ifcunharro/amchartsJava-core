@@ -305,7 +305,7 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		
 		return treatZeroAs != null ? ((Number)treatZeroAs).intValue() : null;
 	}
-	//donde va a comenzar el eje de coordenadas
+	
 	public void setTreatZeroAs(Number treatZeroAs) throws IntegerException{
 		if(NumberValidator.integerValidator(treatZeroAs)){
 			axes.setFeature("treatZeroAs", treatZeroAs);
@@ -360,7 +360,7 @@ public class ValueAxisController extends AxisBaseController implements Observer,
 		axes.setFeature("useScientificNotation", useScientificNotation);
 	}
 	
-	//para deserializar totalText value from json
+	//to deserialize totalText value from json
 	@JsonSetter(value="totalText")
 	private void setTotalText(String total){
 		axes.setFeature("totalText", total);

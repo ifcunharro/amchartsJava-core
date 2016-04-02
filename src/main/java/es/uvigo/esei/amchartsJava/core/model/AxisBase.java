@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class AxisBase extends IModel {
 	
-	//guarda todos los fields activados para axes y el nombre asociado
+	//save all fields used to axes and associated name
 	private Map<String,String> axesFields;
 
 	/**

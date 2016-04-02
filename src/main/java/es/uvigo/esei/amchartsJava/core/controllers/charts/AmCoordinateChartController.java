@@ -172,7 +172,7 @@ public abstract class AmCoordinateChartController<F extends AmCoordinateChart>
 		}
 	}
 	
-	//usado solo para deserializar json
+	//used to deserialize json
 	@JsonSetter(value="colors")
 	private void setColors(List<String> colors){
 		amchart.setColors(colors);

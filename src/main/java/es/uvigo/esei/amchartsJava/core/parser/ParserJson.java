@@ -481,9 +481,7 @@ public class ParserJson {
 		}
 		
 	}
-	
-	//usar siempre que se use saveJsonToTemp para tener ademas de la configuracion
-		//del chart los valores definidos por el usuario para los fields y poder recuperarlos
+
 	/**
 	 * Save fields used by user in AmSerialChart to temp folder.
 	 * @param nameFileJson name of amcharts config file.
@@ -679,10 +677,10 @@ public class ParserJson {
 		ObjectMapper mapper = getParserJson();
 		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
-		//para cargar graphFields
+		//to load graphFields
 		List<HashMap<String,String>> listGraphFields = null;
 		HashMap<String, String> graphFields = null;
-		//para cargar categoryAxisFields
+		//to load categoryAxisFields
 		HashMap<String,String> axesFields = null;
 		
 		DataProviderController dataProvider = new DataProviderController();
@@ -762,7 +760,7 @@ public class ParserJson {
 		ObjectMapper mapper = getParserJson();
 		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
-		//para cargar graphFields
+		//to load graphFields
 		List<HashMap<String,String>> listGraphFields = null;
 		HashMap<String, String> graphFields = null;
 		
@@ -829,7 +827,7 @@ public class ParserJson {
 		ObjectMapper mapper = getParserJson();
 		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
-		//para cargar graphFields
+		//to load graphFields
 		List<HashMap<String,String>> listGraphFields = null;
 		HashMap<String, String> graphFields = null;
 	

@@ -15,6 +15,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
 import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
@@ -42,7 +43,15 @@ public class PatternControllerTest {
 	@Test
 	public void color_property_launch_exception_if_format_color_is_incorrect() throws ColorException{
 		thrown.expect(ColorException.class);
-		thrown.expectMessage("Format color should be #000000");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format color should be #000000");
+				break;
+			case "es":
+				thrown.expectMessage("El formato de color debe ser #000000");
+				break;
+		}
+		
 		PatternController pattern = new PatternController();
 		
 		pattern.setColor("255,255,255");
@@ -78,7 +87,14 @@ public class PatternControllerTest {
 		PatternController pattern = new PatternController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 2 and 6");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 2 and 6");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 2 y 6");
+					break;
+			}
 			
 			pattern.setHeight(37);
 		}else{

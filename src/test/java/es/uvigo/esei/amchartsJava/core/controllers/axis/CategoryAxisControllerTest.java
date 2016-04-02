@@ -2,6 +2,7 @@ package es.uvigo.esei.amchartsJava.core.controllers.axis;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+
 import java.util.Map;
 
 import org.junit.Rule;
@@ -10,6 +11,7 @@ import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.CategoryPosition;
 import es.uvigo.esei.amchartsJava.core.constants.ColorsAmCharts;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.axis.CategoryAxisController;
 import es.uvigo.esei.amchartsJava.core.exceptions.ColorException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -53,7 +55,15 @@ public class CategoryAxisControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 1");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 1");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 1");
+				break;
+		}
+		
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
 		categoryAxis.setAxisAlpha(9);
@@ -80,7 +90,15 @@ public class CategoryAxisControllerTest {
 	@Test
 	public void all_color_property_launch_exception_if_format_color_is_incorrect() throws ColorException{
 		thrown.expect(ColorException.class);
-		thrown.expectMessage("Format color should be #000000");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format color should be #000000");
+				break;
+			case "es":
+				thrown.expectMessage("El formato de color debe ser #000000");
+				break;
+		}
+		
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
 		categoryAxis.setAxisColor("255,255,255");
@@ -111,7 +129,15 @@ public class CategoryAxisControllerTest {
 	@Test
 	public void property_numeric_with_value_integer_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between -90 and 90");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between -90 and 90");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre -90 y 90");
+				break;
+		}
+		
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
 		categoryAxis.setLabelRotation(270);
@@ -128,7 +154,15 @@ public class CategoryAxisControllerTest {
 	@Test
 	public void some_property_launch_exception_if_set_method_recive_not_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
+		
 		CategoryAxisController categoryAxis = new CategoryAxisController();
 		
 		categoryAxis.setMinVerticalGap(90.9);

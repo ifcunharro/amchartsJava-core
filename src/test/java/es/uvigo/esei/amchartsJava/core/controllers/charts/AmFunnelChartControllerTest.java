@@ -9,6 +9,7 @@ import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.Align;
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmFunnelChartController;
 import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
 import es.uvigo.esei.amchartsJava.core.exceptions.IntegerException;
@@ -54,7 +55,14 @@ public class AmFunnelChartControllerTest {
 		AmFunnelChartController amFunnel = new AmFunnelChartController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 0 and 50");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 0 and 50");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 50");
+					break;
+			}
 			
 			amFunnel.setDepth3D(80);
 		}else{
@@ -73,7 +81,15 @@ public class AmFunnelChartControllerTest {
 	@Test
 	public void some_property_launch_exception_if_set_method_recive_not_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
+		
 		AmFunnelChartController amFunnel = new AmFunnelChartController();
 		
 		amFunnel.setStartY(90.9);
@@ -141,7 +157,14 @@ public class AmFunnelChartControllerTest {
 	@Test
 	public void baseWidth_neckHeight_neckWidth_pullDistance_properties_launch_exception_if_recive_null_or_not_integer_no_integer_percent_value() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		AmFunnelChartController amFunnel = new AmFunnelChartController();
 		
 		amFunnel.setBaseWidth("90.9");

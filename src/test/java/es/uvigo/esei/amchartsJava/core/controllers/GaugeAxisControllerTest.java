@@ -12,6 +12,7 @@ import org.junit.rules.ExpectedException;
 
 import es.uvigo.esei.amchartsJava.core.constants.AmchartsConstants;
 import es.uvigo.esei.amchartsJava.core.constants.Position;
+import es.uvigo.esei.amchartsJava.core.constants.config.Config;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeAxisController;
 import es.uvigo.esei.amchartsJava.core.controllers.GaugeBandController;
 import es.uvigo.esei.amchartsJava.core.controllers.charts.AmAngularGaugeController;
@@ -58,7 +59,15 @@ public class GaugeAxisControllerTest {
 	@Test
 	public void property_numeric_with_value_double_out_range_launch_exception() throws OutOfRangeException{
 		thrown.expect(OutOfRangeException.class);
-		thrown.expectMessage("Number out of range: must be between 0 and 1");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number out of range: must be between 0 and 1");
+				break;
+			case "es":
+				thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 1");
+				break;
+		}
+		
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
 		gaugeAxis.setBandAlpha(9);
@@ -89,7 +98,15 @@ public class GaugeAxisControllerTest {
 	@Test
 	public void all_color_property_launch_exception_if_format_color_is_incorrect() throws ColorException{
 		thrown.expect(ColorException.class);
-		thrown.expectMessage("Format color should be #000000");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format color should be #000000");
+				break;
+			case "es":
+				thrown.expectMessage("El formato de color debe ser #000000");
+				break;
+		}
+		
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
 		gaugeAxis.setTopTextColor("255,255,255");
@@ -123,7 +140,14 @@ public class GaugeAxisControllerTest {
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		if(AmchartsConstants.IMPROVED_VISIBILITY.equals("true")){
 			thrown.expect(OutOfRangeException.class);
-			thrown.expectMessage("Number out of range: must be between 0 and 5");
+			switch (Config.getString("lang")) {
+				case "en":
+					thrown.expectMessage("Number out of range: must be between 0 and 5");
+					break;
+				case "es":
+					thrown.expectMessage("Número fuera de rango: debe estar entre 0 y 5");
+					break;
+			}
 			
 			gaugeAxis.setAxisThickness(37);
 		}else{
@@ -142,7 +166,15 @@ public class GaugeAxisControllerTest {
 	@Test
 	public void some_properties_launch_IntegerException_if_set_method_not_recive_integer_value() throws IntegerException{
 		thrown.expect(IntegerException.class);
-		thrown.expectMessage("Number must be an integer");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Number must be an integer");
+				break;
+			case "es":
+				thrown.expectMessage("El número debe ser un entero");
+				break;
+		}
+		
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
 		gaugeAxis.setEndValue(90.9);
@@ -189,7 +221,14 @@ public class GaugeAxisControllerTest {
 	@Test
 	public void centerX_and_centerY_properties_launch_exception_if_set_methot_not_recive_integer_or_integer_percent_as_string() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
 		gaugeAxis.setCenterX("120%2");
@@ -237,7 +276,14 @@ public class GaugeAxisControllerTest {
 	@Test
 	public void radius_property_launch_exception_if_set_methot_not_recive_integer_or_integer_percent_as_string() throws CoordException{
 		thrown.expect(CoordException.class);
-		thrown.expectMessage("Format coords must be an integer number or a percent");
+		switch (Config.getString("lang")) {
+			case "en":
+				thrown.expectMessage("Format coords must be an integer number or a percent");
+				break;
+			case "es":
+				thrown.expectMessage("Las coordenadas deben ser un entero o porcentaje");
+				break;
+		}
 		GaugeAxisController gaugeAxis = new GaugeAxisController();
 		
 		gaugeAxis.setRadius("120%2");

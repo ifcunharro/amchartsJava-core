@@ -38,7 +38,6 @@ public final class I18n {
 		try {
 			lang = IdiomValidator.checkIdiom(language);
 		} catch (LangException e) {
-			//muestra mensaje pero conserva el idioma actual del sistema
 			e.printStackTrace();
 		}
 	}

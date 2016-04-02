@@ -13,7 +13,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.PatternController;
  */
 public class AmGraph extends IModel  {
 	private PatternController pattern;
-	//guarda todos los fields activados para graph y el nombre asociado
+	//save all fields used to graph and associated name
 	private Map<String,String> graphFields;
 
 	/**

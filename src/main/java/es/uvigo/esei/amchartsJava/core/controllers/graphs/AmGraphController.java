@@ -57,7 +57,7 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 	 */
 	private static final long serialVersionUID = 5885650666487286522L;
 	protected AmGraph amGraph;
-	//chart que usa el graph
+	//chart that use this graph
 	protected AmCoordinateChart amchart;
 	
 	{
@@ -414,8 +414,6 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return (String) amGraph.getFeature("dateFormat");
 	}
 	
-	//escogido de DateFormatConstant, filtrar a nivel interfaz, 
-	// si se usa sin interfaz propia o sin ninguna interfaz no se realiza ningún cambio
 	public void setDateFormat(String dateFormat){
 		if(PropertyValidator.checkDateFormat(dateFormat)){
 			amGraph.setFeature("dateFormat", dateFormat);
@@ -460,7 +458,6 @@ public abstract class AmGraphController implements Observer, Serializable, IAmGr
 		return (String) amGraph.getFeature("fillToGraph");
 	}
 	
-	//debe ser el id de otro graph
 	public void setFillToGraph(String fillToGraph) throws ChartException{
 		if(amchart != null){
 			if(PropertyValidator.isValidString(fillToGraph) && amchart.existGraph(fillToGraph)){
