@@ -14,6 +14,10 @@ public final class I18n {
 	
 	private static Idiom lang = ES.getInstance();
 	
+	private I18n(){
+		
+	}
+	
 	static{
 		try {
 			lang = IdiomValidator.checkIdiom(Config.getString("lang"));
@@ -34,7 +38,7 @@ public final class I18n {
 	 * Set language app.
 	 * @param language Idiom of app.
 	 */
-	public static void setLanguage(String language){
+	public static void setLanguage(final String language){
 		try {
 			lang = IdiomValidator.checkIdiom(language);
 		} catch (LangException e) {
@@ -47,7 +51,7 @@ public final class I18n {
 	 * @param key Key asociated to text searched.
 	 * @return String Text searched.
 	 */
-	public static String get(String key) {
+	public static String get(final String key) {
 		return lang.get(key);
 	}
 	

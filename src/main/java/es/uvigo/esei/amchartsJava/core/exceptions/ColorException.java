@@ -17,7 +17,7 @@ public class ColorException extends Exception {
 	 * @param message
 	 *            String, custom message.
 	 */
-	public ColorException(String message) {
+	public ColorException(final String message) {
 		super(message);
 	}
 

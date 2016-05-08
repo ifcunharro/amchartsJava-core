@@ -12,7 +12,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.axis.ValueAxisRadarChartContr
  * @author Iago Fernández Cuñarro
  *
  */
-public class AxisValidator {
+public final class AxisValidator {
 	
 	private AxisValidator(){
 		
@@ -24,7 +24,7 @@ public class AxisValidator {
 	 * @return List of generic axis or null if can't cast.
 	 */
 	@SuppressWarnings("unchecked")
-	public static List<AxisBaseController> castToListValueAxes(Object axis){
+	public static List<AxisBaseController> castToListValueAxes(final Object axis){
 		List<?> list;
 		if(axis==null){
 			return null;
@@ -38,7 +38,7 @@ public class AxisValidator {
 			if(list.isEmpty()){
 				return null;
 			}
-			String nameClass = list.get(0).getClass().getSimpleName();
+			final String nameClass = list.get(0).getClass().getSimpleName();
 			return nameClass
 					.endsWith("Controller") 
 					&& (
@@ -58,7 +58,7 @@ public class AxisValidator {
 	 * @param axis Generic axis.
 	 * @return CategoryAxisController CategoryAxis or null if can't cast.
 	 */
-	public static CategoryAxisController castToCategoryAxis(AxisBaseController axis){
+	public static CategoryAxisController castToCategoryAxis(final AxisBaseController axis){
 		if(axis != null){
 			return axis
 				.getClass()
@@ -76,7 +76,7 @@ public class AxisValidator {
 	 * @param axis Generic axis.
 	 * @return ValueAxisController ValueAxis or null if can't cast.
 	 */
-	public static ValueAxisController castToValueAxis(AxisBaseController axis){
+	public static ValueAxisController castToValueAxis(final AxisBaseController axis){
 		if(axis != null){
 			return axis
 				.getClass()
@@ -95,7 +95,7 @@ public class AxisValidator {
 	 * @param axis Generic axis.
 	 * @return ValueAxisRadarChartController ValueAxis to radar chart or null if can't cast.
 	 */
-	public static ValueAxisRadarChartController castToValueAxisRadarChart(AxisBaseController axis){
+	public static ValueAxisRadarChartController castToValueAxisRadarChart(final AxisBaseController axis){
 		if(axis != null){
 			return axis
 				.getClass()

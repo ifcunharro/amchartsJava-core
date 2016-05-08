@@ -14,7 +14,7 @@ import es.uvigo.esei.amchartsJava.core.constants.paths.AmchartsJavaPaths;
  * @author Iago Fernández Cuñarro
  *
  */
-public class PathValidator {
+public final class PathValidator {
 	
 	private PathValidator(){
 		
@@ -25,7 +25,7 @@ public class PathValidator {
 	 * @param image Name of image file with or without file extension.
 	 * @return String Name of image file with extension or empty string if doesn't exist.
 	 */
-	public static String imageExist(String image){
+	public static String imageExist(final String image){
 		if(image != null && !image.isEmpty()){
 			URL resourcesPath = null;
 			
@@ -39,7 +39,7 @@ public class PathValidator {
 				//image with extension
 				if(new File(resourcesPath.getFile()).exists()){
 					return image;
-				}else if(image.lastIndexOf(".") != image.length()-4){
+				}else if(image.lastIndexOf('.') != image.length()-4){
 					
 					//check with extensions supported
 					for(ImageExtensions extension: ImageExtensions.values()){
@@ -63,7 +63,7 @@ public class PathValidator {
 	 * @param icon Name of icon with or without file extension.
 	 * @return String Name of icon without extension or empty string if doesn't exist.
 	 */
-	public static String dragIconExist(String icon){
+	public static String dragIconExist(final String icon){
 		if(icon != null && !icon.isEmpty()){
 			URL resourcesPath = null;
 			
@@ -77,7 +77,7 @@ public class PathValidator {
 				//icon with extension
 				if(new File(resourcesPath.getFile()).exists()){
 					return icon.substring(0, icon.length()-4);
-				}else if(icon.lastIndexOf(".") != icon.length()-4){
+				}else if(icon.lastIndexOf('.') != icon.length()-4){
 					
 					//check with extensions supported
 					for(ImageExtensions extension: ImageExtensions.values()){
@@ -101,7 +101,7 @@ public class PathValidator {
 	 * @param theme Name of theme without extension.
 	 * @return boolean Exist or doesn't exist in themes folder.
 	 */
-	public static boolean themeExist(String theme){
+	public static boolean themeExist(final String theme){
 		if(theme != null && !theme.isEmpty()){
 			URL resourcesPath = null;
 			
@@ -127,7 +127,7 @@ public class PathValidator {
 	 * @param pattern Name of pattern with or without extension.
 	 * @return String Path complete to pattern or empty string if doesn't exist.
 	 */
-	public static String patternExist(String directoryPattern, String pattern){
+	public static String patternExist(final String directoryPattern,final String pattern){
 		if(directoryPattern != null && pattern != null && !directoryPattern.isEmpty() && !pattern.isEmpty()){
 			URL resourcesPath = null;
 			
@@ -141,7 +141,7 @@ public class PathValidator {
 				
 				if(new File(resourcesPath.getFile()).exists()){
 					return AmchartsJavaPaths.URL_PATTERNS+directoryPattern+"/"+pattern;
-				}else if(pattern.lastIndexOf(".") != pattern.length()-4){
+				}else if(pattern.lastIndexOf('.') != pattern.length()-4){
 					
 					
 					for(ImageExtensions extension: ImageExtensions.values()){
@@ -166,7 +166,7 @@ public class PathValidator {
 	 * @param jsonFile Name of json file with or without file extension.
 	 * @return String path complete to temp file.
 	 */
-	public static String tempFileExist(String jsonFile){
+	public static String tempFileExist(final String jsonFile){
 		if(jsonFile != null && !jsonFile.isEmpty()){
 			URL resourcesPath = null;
 			
@@ -181,7 +181,7 @@ public class PathValidator {
 				if(new File(resourcesPath.getFile()).exists()){
 					//delete file:/ to return absolute path
 					return "/"+resourcesPath.toString().substring(6, resourcesPath.toString().length());
-				}else if(jsonFile.lastIndexOf(".") != jsonFile.length()-5){
+				}else if(jsonFile.lastIndexOf('.') != jsonFile.length()-5){
 					
 					resourcesPath = new URL(resourcesPath,jsonFile+".json");
 					
@@ -204,7 +204,7 @@ public class PathValidator {
 	 * @param custom Name of custom bullet or marker with or without file extension.
 	 * @return Path of bullet/marker or empty string if doesn't exist.
 	 */
-	public static String customBulletOrMarkerExist(String custom){
+	public static String customBulletOrMarkerExist(final String custom){
 		if(custom != null && !custom.isEmpty()){
 			URL resourcesPath = null;
 			
@@ -219,7 +219,7 @@ public class PathValidator {
 				if(new File(resourcesPath.getFile()).exists()){
 					//delete file protocol
 					return resourcesPath.toString().substring(6);
-				}else if(custom.lastIndexOf(".") != custom.length()-4){
+				}else if(custom.lastIndexOf('.') != custom.length()-4){
 					
 					//check with extension supported
 					for(ImageExtensions extension: ImageExtensions.values()){

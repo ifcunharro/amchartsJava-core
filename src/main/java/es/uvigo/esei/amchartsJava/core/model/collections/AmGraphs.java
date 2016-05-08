@@ -109,7 +109,7 @@ public class AmGraphs {
 	 * @param idGraph AmGraph id.
 	 * @return Exists or doesn't exist AmGraph in collection.
 	 */
-	public boolean existGraph(String idGraph) {
+	public boolean existGraph(final String idGraph) {
 		return getAllGraphsIds().contains(idGraph);
 	}
 	
@@ -166,7 +166,7 @@ public class AmGraphs {
 	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphSerialIds(){
-		List<String> ids = new ArrayList<String>();
+		final List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphSerial()){
 			for(AmGraphSerialController serial: getAmGraphSerial()){
 				ids.add(serial.getId());
@@ -180,7 +180,7 @@ public class AmGraphs {
 	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphStepIds(){
-		List<String> ids = new ArrayList<String>();
+		final List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphStep()){
 			for(AmGraphStepController step: getAmGraphStep()){
 				ids.add(step.getId());
@@ -194,7 +194,7 @@ public class AmGraphs {
 	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphXyIds(){
-		List<String> ids = new ArrayList<String>();
+		final List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphXy()){
 			for(AmGraphXyController xy: getAmGraphXy()){
 				ids.add(xy.getId());
@@ -208,7 +208,7 @@ public class AmGraphs {
 	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphCandleIds(){
-		List<String> ids = new ArrayList<String>();
+		final List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphCandle()){
 			for(AmGraphCandleController candle: getAmGraphCandle()){
 				ids.add(candle.getId());
@@ -222,7 +222,7 @@ public class AmGraphs {
 	 * @return AmGraph ids.
 	 */
 	public List<String> getAmGraphOhlcIds(){
-		List<String> ids = new ArrayList<String>();
+		final List<String> ids = new ArrayList<String>();
 		if(isNotEmptyAmGraphOhlc()){
 			for(AmGraphOhlcController ohlc: getAmGraphOhlc()){
 				ids.add(ohlc.getId());
@@ -347,7 +347,7 @@ public class AmGraphs {
 	 * @param idGraphSerial AmGraph id.
 	 */
 	public void removeAmGraphSerial(String idGraphSerial) {
-		Integer position = positionsAmGraphs.get(idGraphSerial);
+		final Integer position = positionsAmGraphs.get(idGraphSerial);
 		if(position != null){
 			this.getAmGraphSerial().remove(position);
 			if(sizeAmGraphsSerial()==0){
@@ -366,7 +366,7 @@ public class AmGraphs {
 	 * @param idGraphStep AmGraph id.
 	 */
 	public void removeAmGraphStep(String idGraphStep) {
-		Integer position = positionsAmGraphs.get(idGraphStep);
+		final Integer position = positionsAmGraphs.get(idGraphStep);
 		if(position != null){
 			this.getAmGraphStep().remove(position);
 			if(sizeAmGraphsStep()==0){
@@ -384,7 +384,7 @@ public class AmGraphs {
 	 * @param idGraphXy AmGraph id.
 	 */
 	public void removeAmGraphXy(String idGraphXy) {
-		Integer position = positionsAmGraphs.get(idGraphXy);
+		final Integer position = positionsAmGraphs.get(idGraphXy);
 		if(position != null){
 			this.getAmGraphXy().remove(position);
 			if(sizeAmGraphsXy()==0){
@@ -403,7 +403,7 @@ public class AmGraphs {
 	 * @param idGraphCandle AmGraph id.
 	 */
 	public void removeAmGraphCandle(String idGraphCandle) {
-		Integer position = positionsAmGraphs.get(idGraphCandle);
+		final Integer position = positionsAmGraphs.get(idGraphCandle);
 		if(position != null){
 			this.getAmGraphCandle().remove(position);
 			if(sizeAmGraphsCandle()==0){
@@ -421,7 +421,7 @@ public class AmGraphs {
 	 * @param idGraphOhlc AmGraph id.
 	 */
 	public void removeAmGraphOhlc(String idGraphOhlc) {
-		Integer position = positionsAmGraphs.get(idGraphOhlc);
+		final Integer position = positionsAmGraphs.get(idGraphOhlc);
 		if(position != null){
 			this.getAmGraphOhlc().remove(position);
 			if(sizeAmGraphsOhlc()==0){

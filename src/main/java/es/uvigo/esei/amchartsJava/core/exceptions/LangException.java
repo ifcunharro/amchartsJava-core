@@ -18,7 +18,7 @@ public class LangException extends Exception {
 	 * @param message
 	 *            String, custom message.
 	 */
-	public LangException(String message) {
+	public LangException(final String message) {
 		super(message);
 	}
 

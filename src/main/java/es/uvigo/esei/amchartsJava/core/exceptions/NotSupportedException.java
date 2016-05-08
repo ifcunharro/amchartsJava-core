@@ -17,7 +17,7 @@ public class NotSupportedException extends Exception {
 	 * @param message
 	 *            String, custom message.
 	 */
-	public NotSupportedException(String message) {
+	public NotSupportedException(final String message) {
 		super(message);
 	}
 

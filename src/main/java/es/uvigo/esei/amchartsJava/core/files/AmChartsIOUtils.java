@@ -20,20 +20,24 @@ import es.uvigo.esei.amchartsJava.core.validators.PropertyValidator;
  * @author Iago Fernández Cuñarro
  *
  */
-public class AmChartsIOUtils {
+public final class AmChartsIOUtils {
+	
+	private AmChartsIOUtils(){
+		
+	}
 	
 	/**
 	 * Change raw value for export in json file to String 
 	 * @param tempFile path to json file
 	 * @throws IOException -
 	 */
-	public static void changeExport(String tempFile) throws IOException{
+	public static void changeExport(final String tempFile) throws IOException{
 		if(PropertyValidator.isValidString(tempFile)){
-			FileInputStream fis = new FileInputStream(tempFile);
+			final FileInputStream fis = new FileInputStream(tempFile);
 		    String content = IOUtils.toString(fis, StandardCharsets.UTF_8);
 		    content = content.replaceAll("AmCharts.exportCFG", "\"AmCharts.exportCFG\"");
 		    
-		    FileOutputStream fos = new FileOutputStream(tempFile);
+		    final FileOutputStream fos = new FileOutputStream(tempFile);
 		    IOUtils.write(content, fos, StandardCharsets.UTF_8);
 		    fis.close();
 		    fos.close();
@@ -45,8 +49,8 @@ public class AmChartsIOUtils {
 	 * Clear temp directory.
 	 */
 	public static void clearTempDirectory() {
-		File path = new File(AmChartsIOUtils.getJsonDirectoryToSave());
-		File[] files = path.listFiles();
+		final File path = new File(AmChartsIOUtils.getJsonDirectoryToSave());
+		final File[] files = path.listFiles();
 	    for(int i=0; i<files.length; i++) {
 	    	if(!files[i].isDirectory()) {
 	    		files[i].delete();
@@ -58,9 +62,9 @@ public class AmChartsIOUtils {
 	 * Delete temp file.
 	 * @param tempFile Path to directory
 	 */
-	public static void deleteTempFile(String tempFile) {
+	public static void deleteTempFile(final String tempFile) {
 		if(PropertyValidator.isValidString(tempFile)){
-			File path = new File(tempFile);
+			final File path = new File(tempFile);
 		    path.delete();   
 		}
 	}

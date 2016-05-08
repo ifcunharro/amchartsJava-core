@@ -12,7 +12,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.guides.GuideValueAxisControll
  * @author Iago Fernández Cuñarro
  *
  */
-public class GuideValidator {
+public final class GuideValidator {
 	
 	private GuideValidator(){
 		
@@ -24,7 +24,7 @@ public class GuideValidator {
 	 * @return List of generic guides or null if can't cast.
 	 */
 	@SuppressWarnings("unchecked")
-	public static List<GuideController> castToListGuides(Object guides){
+	public static List<GuideController> castToListGuides(final Object guides){
 		List<?> list;
 		if (guides == null) {
 			return null;
@@ -38,7 +38,7 @@ public class GuideValidator {
 			if(list.isEmpty()){
 				return null;
 			}
-			String nameClass = list.get(0).getClass().getSimpleName();
+			final String nameClass = list.get(0).getClass().getSimpleName();
 			return nameClass
 					.endsWith("Controller")
 					&& nameClass
@@ -56,7 +56,7 @@ public class GuideValidator {
 	 * @param guide Generic guide.
 	 * @return GuideCategoryAxisController Guide to categoryAxis or null if can't cast.
 	 */
-	public static GuideCategoryAxisController castToGuideCategoryAxis(GuideController guide){
+	public static GuideCategoryAxisController castToGuideCategoryAxis(final GuideController guide){
 		if(guide != null){
 			return guide
 				.getClass()
@@ -74,7 +74,7 @@ public class GuideValidator {
 	 * @param guide Generic guide.
 	 * @return GuideRadarChartController Guide to radar chart or null if can't cast.
 	 */
-	public static GuideRadarChartController castToGuideRadarChart(GuideController guide){
+	public static GuideRadarChartController castToGuideRadarChart(final GuideController guide){
 		if(guide != null){
 			return guide
 				.getClass()
@@ -92,7 +92,7 @@ public class GuideValidator {
 	 * @param guide Generic guide.
 	 * @return GuideValueAxisController Guide to valueAxis or null if can't cast.
 	 */
-	public static GuideValueAxisController castToGuideValueAxis(GuideController guide){
+	public static GuideValueAxisController castToGuideValueAxis(final GuideController guide){
 		if(guide != null){
 			return guide
 				.getClass()

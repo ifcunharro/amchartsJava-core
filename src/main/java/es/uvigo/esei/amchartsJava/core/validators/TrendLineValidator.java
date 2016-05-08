@@ -10,7 +10,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.trendLines.TrendLineXyChartCo
  * @author Iago Fernández Cuñarro
  *
  */
-public class TrendLineValidator {
+public final class TrendLineValidator {
 	
 	private TrendLineValidator(){
 		
@@ -22,7 +22,7 @@ public class TrendLineValidator {
 	 * @return List of generic trendLines or null if can't cast.
 	 */
 	@SuppressWarnings("unchecked")
-	public static List<TrendLineSerialChartController> castToListTrendLines(Object trendLines){
+	public static List<TrendLineSerialChartController> castToListTrendLines(final Object trendLines){
 		List<?> list;
 		if(trendLines==null){
 			return null;
@@ -36,7 +36,7 @@ public class TrendLineValidator {
 			if(list.isEmpty()){
 				return null;
 			}
-			String nameClass = list.get(0).getClass().getSimpleName();
+			final String nameClass = list.get(0).getClass().getSimpleName();
 			return nameClass
 					.endsWith("Controller") 
 					&& nameClass
@@ -53,7 +53,7 @@ public class TrendLineValidator {
 	 * @param trendLine Generic trendLine.
 	 * @return TrendLineXyChartController TrendLine to xy chart or null if can't cast.
 	 */
-	public static TrendLineXyChartController castToTrendLineXyChart(TrendLineSerialChartController trendLine){
+	public static TrendLineXyChartController castToTrendLineXyChart(final TrendLineSerialChartController trendLine){
 		if(trendLine != null){
 			return trendLine
 				.getClass()

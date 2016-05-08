@@ -15,7 +15,7 @@ public class DoubleException extends Exception {
 	 * @param message
 	 *            String, custom message.
 	 */
-	public DoubleException(String message) {
+	public DoubleException(final String message) {
 		super(message);
 	}
 

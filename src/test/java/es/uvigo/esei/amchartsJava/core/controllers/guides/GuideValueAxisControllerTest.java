@@ -41,7 +41,7 @@ public class GuideValueAxisControllerTest {
 		thrown.expect(DoubleException.class);
 		switch (Config.getString("lang")) {
 			case "en":
-				thrown.expectMessage("Number must be an double");
+				thrown.expectMessage("Number must be a double");
 				break;
 			case "es":
 				thrown.expectMessage("El número debe ser un real");

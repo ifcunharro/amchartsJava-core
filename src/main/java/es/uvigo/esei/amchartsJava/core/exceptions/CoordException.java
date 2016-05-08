@@ -17,7 +17,7 @@ public class CoordException extends Exception {
 	 * @param message
 	 *            String, custom message.
 	 */
-	public CoordException(String message) {
+	public CoordException(final String message) {
 		super(message);
 	}
 

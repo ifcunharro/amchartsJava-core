@@ -1,7 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.constants.lang;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * This class contains all texts used by amcharts core in english idiom.
@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class EN implements Idiom {
 
-	private static Map<String,String> textsEN = new HashMap<String,String>();
+	private static Map<String,String> textsEN = new ConcurrentHashMap<String,String>();
 	
 	static{
 		textsEN.put("RangeException", "Number out of range: must be between ");
@@ -40,8 +40,8 @@ public class EN implements Idiom {
 		
 	}
 	
-	private static class InitSingleton{
-		private static EN INSTANCE = new EN();
+	private static final class InitSingleton{
+		private static final EN INSTANCE = new EN();
 	}
 	
 	/**
@@ -57,7 +57,7 @@ public class EN implements Idiom {
 	 * @param key Key asociated to text searched.
 	 * @return String Text searched.
 	 */
-	public String get(String key){
+	public String get(final String key){
 		return  textsEN.get(key);
 	}
 	

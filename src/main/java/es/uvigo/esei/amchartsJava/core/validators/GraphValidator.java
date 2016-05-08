@@ -14,7 +14,7 @@ import es.uvigo.esei.amchartsJava.core.controllers.graphs.AmGraphXyController;
  * @author Iago Fernández Cuñarro
  *
  */
-public class GraphValidator {
+public final class GraphValidator {
 	
 	private GraphValidator(){
 		
@@ -26,7 +26,7 @@ public class GraphValidator {
 	 * @return  List of generic graphs or null if can't cast.
 	 */
 	@SuppressWarnings("unchecked")
-	public static List<AmGraphController> castToListAmGraphs(Object graphs){
+	public static List<AmGraphController> castToListAmGraphs(final Object graphs){
 		List<?> list;
 		if(graphs==null){
 			return null;
@@ -40,7 +40,7 @@ public class GraphValidator {
 			if(list.isEmpty()){
 				return null;
 			}
-			String nameClass = list.get(0).getClass().getSimpleName();
+			final String nameClass = list.get(0).getClass().getSimpleName();
 			return nameClass
 					.endsWith("Controller") 
 					&& nameClass
@@ -57,7 +57,7 @@ public class GraphValidator {
 	 * @param graph Generic graph.
 	 * @return AmGraphCandleController AmGraph type candle or null if can't cast.
 	 */
-	public static AmGraphCandleController castToAmGraphCandle(AmGraphController graph){
+	public static AmGraphCandleController castToAmGraphCandle(final AmGraphController graph){
 		if(graph != null){
 			return graph
 				.getClass()
@@ -76,7 +76,7 @@ public class GraphValidator {
 	 * @param graph Generic graph.
 	 * @return AmGraphOhlcController AmGraph type ohlc or null if can't cast.
 	 */
-	public static AmGraphOhlcController castToAmGraphOhlc(AmGraphController graph){
+	public static AmGraphOhlcController castToAmGraphOhlc(final AmGraphController graph){
 		if(graph != null){
 			return graph
 				.getClass()
@@ -95,7 +95,7 @@ public class GraphValidator {
 	 * @param graph Generic graph.
 	 * @return AmGraphSerialController AmGraph type serial or null if can't cast.
 	 */
-	public static AmGraphSerialController castToAmGraphSerial(AmGraphController graph){
+	public static AmGraphSerialController castToAmGraphSerial(final AmGraphController graph){
 		if(graph != null){
 			return graph
 				.getClass()
@@ -114,7 +114,7 @@ public class GraphValidator {
 	 * @param graph Generic graph.
 	 * @return AmGraphStepController AmGraph type step or null if can't cast.
 	 */
-	public static AmGraphStepController castToAmGraphStep(AmGraphController graph){
+	public static AmGraphStepController castToAmGraphStep(final AmGraphController graph){
 		if(graph != null){
 			return graph
 				.getClass()
@@ -133,7 +133,7 @@ public class GraphValidator {
 	 * @param graph Generic graph.
 	 * @return AmGraphXyController AmGraph type xy or null if can't cast.
 	 */
-	public static AmGraphXyController castToAmGraphXy(AmGraphController graph){
+	public static AmGraphXyController castToAmGraphXy(final AmGraphController graph){
 		if(graph != null){
 			return graph
 				.getClass()

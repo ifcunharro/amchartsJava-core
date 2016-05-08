@@ -8,7 +8,7 @@ import es.uvigo.esei.amchartsJava.core.constants.config.Config;
  * @author Iago Fernández Cuñarro
  *
  */
-public class AmchartsConstants {
+public final class AmchartsConstants {
 	
 	//not delete this variable, if change name variable, update references in code
 	public static final String IMPROVED_VISIBILITY;

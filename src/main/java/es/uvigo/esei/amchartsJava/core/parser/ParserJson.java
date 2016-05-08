@@ -58,14 +58,18 @@ import es.uvigo.esei.amchartsJava.core.validators.PathValidator;
  * @author Iago Fernández Cuñarro
  *
  */
-public class ParserJson {
+public final class ParserJson {
+	
+	private ParserJson(){
+		
+	}
 	
 	/**
 	 * Get parser to parse to json.
 	 * @return ObjectMapper Parser to json.
 	 */
 	private static ObjectMapper getParserJson(){
-		 ObjectMapper mapper = new ObjectMapper();
+		 final ObjectMapper mapper = new ObjectMapper();
 		 mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		 mapper.configure(MapperFeature.AUTO_DETECT_IS_GETTERS,true);
   	   	 mapper.configure(SerializationFeature.WRITE_NULL_MAP_VALUES,false);
@@ -84,10 +88,10 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static void saveJsonToConsole(Object chartController) 
+	public static void saveJsonToConsole(final Object chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		mapper.writeValue(System.out, chartController);
 	}
 	
@@ -100,7 +104,7 @@ public class ParserJson {
 	 * @throws IOException -
 	 * @throws ClassCastException Can't cast Object to chart.
 	 */
-	public static void saveAnyChartToTemp(String nameFileJson, Object chart) throws JsonGenerationException, JsonMappingException, IOException{
+	public static void saveAnyChartToTemp(final String nameFileJson,final Object chart) throws JsonGenerationException, JsonMappingException, IOException{
 		if(chart != null){
 			AmChartController<?> anyChart;
 			try{
@@ -108,7 +112,7 @@ public class ParserJson {
 			}catch(ClassCastException e){
 				throw new ClassCastException(I18n.get("ChartCastException"));
 			}
-			String typeChart = ChartValidator.getChartClassName(anyChart);
+			final String typeChart = ChartValidator.getChartClassName(anyChart);
 			switch (typeChart) {
 				case "AmSerialChartController":
 					AmSerialChartController serial = ChartValidator.castToAmSerial(anyChart);
@@ -147,16 +151,16 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static void saveJsonToTemp(String nameFileJson,AmSerialChartController chartController) 
+	public static void saveJsonToTemp(String nameFileJson,final AmSerialChartController chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		
 		if(!nameFileJson.contains(".json")){
 			nameFileJson = nameFileJson+".json";
 		}
 		
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		
 		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
 		saveFieldsFromAmSerialChartToTemp(nameFileJson, (AmSerialChartController)chartController);
@@ -172,16 +176,16 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static void saveJsonToTemp(String nameFileJson,AmRadarChartController chartController) 
+	public static void saveJsonToTemp(String nameFileJson,final AmRadarChartController chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		
 		if(!nameFileJson.contains(".json")){
 			nameFileJson = nameFileJson+".json";
 		}
 		
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		
 		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
 		saveFieldsFromAmRadarChartToTemp(nameFileJson, chartController);
@@ -196,16 +200,16 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static void saveJsonToTemp(String nameFileJson,AmFunnelChartController chartController) 
+	public static void saveJsonToTemp(String nameFileJson,final AmFunnelChartController chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		
 		if(!nameFileJson.contains(".json")){
 			nameFileJson = nameFileJson+".json";
 		}
 		
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		
 		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
 		saveFieldsFromAmFunnelChartToTemp(nameFileJson, chartController);
@@ -220,16 +224,16 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static void saveJsonToTemp(String nameFileJson,AmPieChartController chartController) 
+	public static void saveJsonToTemp(String nameFileJson,final AmPieChartController chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		
 		if(!nameFileJson.contains(".json")){
 			nameFileJson = nameFileJson+".json";
 		}
 		
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		
 		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
 		saveFieldsFromAmPieChartToTemp(nameFileJson, chartController);
@@ -244,16 +248,16 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static void saveJsonToTemp(String nameFileJson,AmAngularGaugeController chartController) 
+	public static void saveJsonToTemp(String nameFileJson,final AmAngularGaugeController chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		
 		if(!nameFileJson.contains(".json")){
 			nameFileJson = nameFileJson+".json";
 		}
 		
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		
 		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
 						
@@ -269,16 +273,16 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static void saveJsonToTemp(String nameFileJson,AmXyChartController chartController) 
+	public static void saveJsonToTemp(String nameFileJson,final AmXyChartController chartController) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
 		
 		if(!nameFileJson.contains(".json")){
 			nameFileJson = nameFileJson+".json";
 		}
 		
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		
 		mapper.writeValue(new File(tempDirectory+nameFileJson), chartController);
 		saveFieldsFromAmXyChartToTemp(nameFileJson, chartController);
@@ -294,12 +298,12 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static AmSerialChartController loadAmSerialChart(String nameFileJson) 
+	public static AmSerialChartController loadAmSerialChart(final String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
-		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		final String tempFile = PathValidator.tempFileExist(nameFileJson);
 		if(!tempFile.isEmpty()){
-			ObjectMapper mapper = getParserJson();
+			final ObjectMapper mapper = getParserJson();
 			AmSerialChartController serialController = null;
 			
 			/* se espera valor incorrecto sin comillas para propiedad export en json se cambia por misma cadena pero
@@ -333,12 +337,12 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static AmXyChartController loadAmXyChart(String nameFileJson) 
+	public static AmXyChartController loadAmXyChart(final String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
-		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		final String tempFile = PathValidator.tempFileExist(nameFileJson);
 		if(!tempFile.isEmpty()){
-			ObjectMapper mapper = getParserJson();
+			final ObjectMapper mapper = getParserJson();
 			AmXyChartController xyController = null;
 			
 			AmChartsIOUtils.changeExport(tempFile);
@@ -366,12 +370,12 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static AmRadarChartController loadAmRadarChart(String nameFileJson) 
+	public static AmRadarChartController loadAmRadarChart(final String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
-		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		final String tempFile = PathValidator.tempFileExist(nameFileJson);
 		if(!tempFile.isEmpty()){
-			ObjectMapper mapper = getParserJson();
+			final ObjectMapper mapper = getParserJson();
 			AmRadarChartController radarController = null;
 			
 			AmChartsIOUtils.changeExport(tempFile);
@@ -399,12 +403,12 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static AmFunnelChartController loadAmFunnelChart(String nameFileJson) 
+	public static AmFunnelChartController loadAmFunnelChart(final String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
 		String tempFile = PathValidator.tempFileExist(nameFileJson);
 		if(!tempFile.isEmpty()){
-			ObjectMapper mapper = getParserJson();
+			final ObjectMapper mapper = getParserJson();
 			AmFunnelChartController funnelController = null;
 			
 			AmChartsIOUtils.changeExport(tempFile);
@@ -433,12 +437,12 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static AmPieChartController loadAmPieChart(String nameFileJson) 
+	public static AmPieChartController loadAmPieChart(final String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
-		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		final String tempFile = PathValidator.tempFileExist(nameFileJson);
 		if(!tempFile.isEmpty()){
-			ObjectMapper mapper = getParserJson();
+			final ObjectMapper mapper = getParserJson();
 			AmPieChartController pieController = null;
 			
 			AmChartsIOUtils.changeExport(tempFile);
@@ -462,12 +466,12 @@ public class ParserJson {
 	 * @throws JsonMappingException -
 	 * @throws IOException -
 	 */
-	public static AmAngularGaugeController loadAmAngularGauge(String nameFileJson) 
+	public static AmAngularGaugeController loadAmAngularGauge(final String nameFileJson) 
 			throws JsonParseException, JsonMappingException, IOException
 	{
-		String tempFile = PathValidator.tempFileExist(nameFileJson);
+		final String tempFile = PathValidator.tempFileExist(nameFileJson);
 		if(!tempFile.isEmpty()){
-			ObjectMapper mapper = getParserJson();
+			final ObjectMapper mapper = getParserJson();
 			AmAngularGaugeController gaugeController = null;
 			
 			AmChartsIOUtils.changeExport(tempFile);
@@ -490,23 +494,23 @@ public class ParserJson {
 	 * @throws JsonMappingException
 	 * @throws IOException
 	 */
-	private static void saveFieldsFromAmSerialChartToTemp(String nameFileJson, AmSerialChartController serialChart) 
+	private static void saveFieldsFromAmSerialChartToTemp(String nameFileJson, final AmSerialChartController serialChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
-		ObjectMapper mapper = getParserJson();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 		Map<String,String> temp = null;
 		
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-		Map<String,String> chartFields = serialChart.getChartFields();
+		final Map<String,String> chartFields = serialChart.getChartFields();
 		if (chartFields != null){
 			map.put("chartFields", chartFields);
 		}
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
 		
 		@SuppressWarnings("unchecked")
-		List<AmGraphController> graphs = (List<AmGraphController>)serialChart.getGraphs();
+		final List<AmGraphController> graphs = (List<AmGraphController>)serialChart.getGraphs();
 		if(!graphs.isEmpty()){
 			for(AmGraphController graph: graphs){
 				temp = graph.getGraphFields();
@@ -519,9 +523,9 @@ public class ParserJson {
 			}
 		}
 		
-		CategoryAxisController categoryAxis = serialChart.getCategoryAxis();
+		final CategoryAxisController categoryAxis = serialChart.getCategoryAxis();
 		if(categoryAxis != null){
-			Map<String,String> axesFields = categoryAxis.getAxesFields();
+			final Map<String,String> axesFields = categoryAxis.getAxesFields();
 			if(axesFields != null){
 				map.put("categoryAxisFields", axesFields);
 			}
@@ -539,22 +543,22 @@ public class ParserJson {
 	 * @throws JsonMappingException
 	 * @throws IOException
 	 */
-	private static void saveFieldsFromAmXyChartToTemp(String nameFileJson, AmXyChartController xyChart) 
+	private static void saveFieldsFromAmXyChartToTemp(String nameFileJson,final AmXyChartController xyChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
-		ObjectMapper mapper = getParserJson();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 		Map<String,String> temp = null;
 		
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-		Map<String,String> chartFields = xyChart.getChartFields();
+		final Map<String,String> chartFields = xyChart.getChartFields();
 		if(chartFields != null){
 			map.put("chartFields", chartFields);
 		}
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
 		@SuppressWarnings("unchecked")
-		List<AmGraphController> graphs = (List<AmGraphController>)xyChart.getGraphs();
+		final List<AmGraphController> graphs = (List<AmGraphController>)xyChart.getGraphs();
 		
 		if(!graphs.isEmpty()){
 			for(AmGraphController graph: graphs){
@@ -580,22 +584,22 @@ public class ParserJson {
 	 * @throws JsonMappingException
 	 * @throws IOException
 	 */
-	private static void saveFieldsFromAmRadarChartToTemp(String nameFileJson, AmRadarChartController radarChart) 
+	private static void saveFieldsFromAmRadarChartToTemp(String nameFileJson,final AmRadarChartController radarChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
-		ObjectMapper mapper = getParserJson();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 		Map<String,String> temp = null;
 		
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-		Map<String,String> chartFields = radarChart.getChartFields();
+		final Map<String,String> chartFields = radarChart.getChartFields();
 		if(chartFields != null){
 			map.put("chartFields", chartFields);
 		}
 		List<Map<String,String>> graphFields = new ArrayList<Map<String,String>>();
 		@SuppressWarnings("unchecked")
-		List<AmGraphController> graphs = (List<AmGraphController>)radarChart.getGraphs();
+		final List<AmGraphController> graphs = (List<AmGraphController>)radarChart.getGraphs();
 		if(!graphs.isEmpty()){
 			for(AmGraphController graph: graphs){
 				temp = graph.getGraphFields();
@@ -620,16 +624,16 @@ public class ParserJson {
 	 * @throws JsonMappingException
 	 * @throws IOException
 	 */
-	private static void saveFieldsFromAmFunnelChartToTemp(String nameFileJson, AmFunnelChartController funnelChart) 
+	private static void saveFieldsFromAmFunnelChartToTemp(String nameFileJson,final AmFunnelChartController funnelChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
-		ObjectMapper mapper = getParserJson();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 		
 		
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
-		Map<String,String> chartFields = funnelChart.getChartFields();
+		final Map<String,String> chartFields = funnelChart.getChartFields();
 		if(chartFields != null){
 			map.put("chartFields", chartFields);
 			mapper.writeValue(new File(tempDirectory+nameFileJson), map);
@@ -646,16 +650,16 @@ public class ParserJson {
 	 * @throws JsonMappingException
 	 * @throws IOException
 	 */
-	private static void saveFieldsFromAmPieChartToTemp(String nameFileJson, AmPieChartController pieChart) 
+	private static void saveFieldsFromAmPieChartToTemp(String nameFileJson,final AmPieChartController pieChart) 
 			throws JsonGenerationException, JsonMappingException, IOException
 	{
-		String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
-		ObjectMapper mapper = getParserJson();
+		final String tempDirectory = AmChartsIOUtils.getJsonDirectoryToSave();
+		final ObjectMapper mapper = getParserJson();
 		Map<String,Object> map = new HashMap<>();
 	
 		nameFileJson = nameFileJson.replace(".json", "_keys_fields.json");
 		
-		Map<String,String> chartFields = pieChart.getChartFields();
+		final Map<String,String> chartFields = pieChart.getChartFields();
 		if(chartFields != null){
 			map.put("chartFields", chartFields);
 		}
@@ -674,7 +678,7 @@ public class ParserJson {
 	private static void addDataProviderFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile) 
 			throws JsonProcessingException, IOException
 	{
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		//to load graphFields
@@ -685,7 +689,7 @@ public class ParserJson {
 		
 		DataProviderController dataProvider = new DataProviderController();
 		
-		JsonNode node = mapper.readTree(new File(tempFile));
+		final JsonNode node = mapper.readTree(new File(tempFile));
 		
 		for(int i = 0; i<node.path("dataProvider").size();i++){
 			map = mapper.treeToValue(node.path("dataProvider").path(i), HashMap.class);
@@ -693,10 +697,10 @@ public class ParserJson {
 		}
 		
 		tempFile = tempFile.replace(".json", "_keys_fields.json");
-		JsonNode nodeFields = mapper.readTree(new File(tempFile));
+		final JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			JsonNode chartsFieldsNode = nodeFields.path("chartFields");
+			final JsonNode chartsFieldsNode = nodeFields.path("chartFields");
 			if(!chartsFieldsNode.isMissingNode()){
 				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
 				if(!fieldKeys.isEmpty()){
@@ -709,13 +713,13 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		try{
-			JsonNode graphFieldsNode = nodeFields.path("graphFields");
+			final JsonNode graphFieldsNode = nodeFields.path("graphFields");
 			if(!graphFieldsNode.isMissingNode()){
 				listGraphFields = mapper.treeToValue(nodeFields.path("graphFields"), List.class);
 				if(!listGraphFields.isEmpty()){
-					List<AmGraphController> graphs = (List<AmGraphController>)serialChartController.getGraphs();
-					TypeFactory typeFactory = mapper.getTypeFactory();
-					MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
+					final List<AmGraphController> graphs = (List<AmGraphController>)serialChartController.getGraphs();
+					final TypeFactory typeFactory = mapper.getTypeFactory();
+					final MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
 					for(int i = 0;i < nodeFields.path("graphFields").size();i++){
 						graphFields = mapper.readValue(mapper.writeValueAsString(listGraphFields.get(i)), mapType);
 						graphs.get(i).setGraphFields(graphFields);
@@ -726,7 +730,7 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		try{
-			JsonNode categoryAxisFieldsNode = nodeFields.path("categoryAxisFields");
+			final JsonNode categoryAxisFieldsNode = nodeFields.path("categoryAxisFields");
 			if(!categoryAxisFieldsNode.isMissingNode()){
 				axesFields = mapper.treeToValue(nodeFields.path("categoryAxisFields"), HashMap.class);
 				if(!axesFields.isEmpty()){
@@ -757,7 +761,7 @@ public class ParserJson {
 	private static void addDataProviderFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile) 
 			throws JsonProcessingException, IOException
 	{
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		//to load graphFields
@@ -767,7 +771,7 @@ public class ParserJson {
 		
 		DataProviderController dataProvider = new DataProviderController();
 		
-		JsonNode node = mapper.readTree(new File(tempFile));
+		final JsonNode node = mapper.readTree(new File(tempFile));
 		
 		for(int i = 0; i<node.path("dataProvider").size();i++){
 			map = mapper.treeToValue(node.path("dataProvider").path(i), HashMap.class);
@@ -775,10 +779,10 @@ public class ParserJson {
 		}
 		
 		tempFile = tempFile.replace(".json", "_keys_fields.json");
-		JsonNode nodeFields = mapper.readTree(new File(tempFile));
+		final JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			JsonNode chartFieldsNode = nodeFields.path("chartFields");
+			final JsonNode chartFieldsNode = nodeFields.path("chartFields");
 			if(!chartFieldsNode.isMissingNode()){
 				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
 				
@@ -790,13 +794,13 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		try{
-			JsonNode graphFieldsNode = nodeFields.path("graphFields");
+			final JsonNode graphFieldsNode = nodeFields.path("graphFields");
 			if(!graphFieldsNode.isMissingNode()){
 				listGraphFields = mapper.treeToValue(nodeFields.path("graphFields"), List.class);
 				if(!listGraphFields.isEmpty()){
-					List<AmGraphController> graphs = (List<AmGraphController>)xyChartController.getGraphs();
-					TypeFactory typeFactory = mapper.getTypeFactory();
-					MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
+					final List<AmGraphController> graphs = (List<AmGraphController>)xyChartController.getGraphs();
+					final TypeFactory typeFactory = mapper.getTypeFactory();
+					final MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
 					for(int i = 0;i < nodeFields.path("graphFields").size();i++){
 						graphFields = mapper.readValue(mapper.writeValueAsString(listGraphFields.get(i)), mapType);
 						graphs.get(i).setGraphFields(graphFields);
@@ -824,7 +828,7 @@ public class ParserJson {
 	private static void addDataProviderFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile) 
 			throws JsonProcessingException, IOException
 	{
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		//to load graphFields
@@ -833,7 +837,7 @@ public class ParserJson {
 	
 		DataProviderController dataProvider = new DataProviderController();
 		
-		JsonNode node = mapper.readTree(new File(tempFile));
+		final JsonNode node = mapper.readTree(new File(tempFile));
 		
 		for(int i = 0; i<node.path("dataProvider").size();i++){
 			map = mapper.treeToValue(node.path("dataProvider").path(i), HashMap.class);
@@ -841,10 +845,10 @@ public class ParserJson {
 		}
 		
 		tempFile = tempFile.replace(".json", "_keys_fields.json");
-		JsonNode nodeFields = mapper.readTree(new File(tempFile));
+		final JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			JsonNode chartFields = nodeFields.path("chartFields");
+			final JsonNode chartFields = nodeFields.path("chartFields");
 			if(!chartFields.isMissingNode()){
 				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
 				if(!fieldKeys.isEmpty()){
@@ -857,13 +861,13 @@ public class ParserJson {
 			e1.printStackTrace();
 		}
 		try{
-			JsonNode graphFieldsNode = nodeFields.path("graphFields");
+			final JsonNode graphFieldsNode = nodeFields.path("graphFields");
 			if(!graphFieldsNode.isMissingNode()){
 				listGraphFields = mapper.treeToValue(nodeFields.path("graphFields"), List.class);
 				if(!listGraphFields.isEmpty()){
-					List<AmGraphController> graphs = (List<AmGraphController>)radarChartController.getGraphs();
-					TypeFactory typeFactory = mapper.getTypeFactory();
-					MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
+					final List<AmGraphController> graphs = (List<AmGraphController>)radarChartController.getGraphs();
+					final TypeFactory typeFactory = mapper.getTypeFactory();
+					final MapType mapType = typeFactory.constructMapType(HashMap.class, String.class, String.class);
 					for(int i = 0;i < nodeFields.path("graphFields").size();i++){
 						graphFields = mapper.readValue(mapper.writeValueAsString(listGraphFields.get(i)), mapType);
 						graphs.get(i).setGraphFields(graphFields);
@@ -891,13 +895,13 @@ public class ParserJson {
 	private static void addDataProviderFromJsonToAmFunnelChart(AmFunnelChartController funnelChartController, String tempFile) 
 			throws JsonProcessingException, IOException
 	{
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		
 		DataProviderController dataProvider = new DataProviderController();
 		
-		JsonNode node = mapper.readTree(new File(tempFile));
+		final JsonNode node = mapper.readTree(new File(tempFile));
 		
 		for(int i = 0; i<node.path("dataProvider").size();i++){
 			map = mapper.treeToValue(node.path("dataProvider").path(i), HashMap.class);
@@ -905,10 +909,10 @@ public class ParserJson {
 		}
 		
 		tempFile = tempFile.replace(".json", "_keys_fields.json");
-		JsonNode nodeFields = mapper.readTree(new File(tempFile));
+		final JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			JsonNode chartFields = nodeFields.path("chartFields");
+			final JsonNode chartFields = nodeFields.path("chartFields");
 			if(!chartFields.isMissingNode()){
 				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
 				
@@ -937,13 +941,13 @@ public class ParserJson {
 	private static void addDataProviderFromJsonToAmPieChart(AmPieChartController pieChartController, String tempFile) 
 			throws JsonProcessingException, IOException
 	{
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		HashMap<String,Object> map = null;
 		HashMap<String, String> fieldKeys = null;
 		
 		DataProviderController dataProvider = new DataProviderController();
 		
-		JsonNode node = mapper.readTree(new File(tempFile));
+		final JsonNode node = mapper.readTree(new File(tempFile));
 		
 		for(int i = 0; i<node.path("dataProvider").size();i++){
 			map = mapper.treeToValue(node.path("dataProvider").path(i), HashMap.class);
@@ -951,10 +955,10 @@ public class ParserJson {
 		}
 		
 		tempFile = tempFile.replace(".json", "_keys_fields.json");
-		JsonNode nodeFields = mapper.readTree(new File(tempFile));
+		final JsonNode nodeFields = mapper.readTree(new File(tempFile));
 		
 		try{
-			JsonNode chartFields = nodeFields.path("chartFields");
+			final JsonNode chartFields = nodeFields.path("chartFields");
 			if(!chartFields.isMissingNode()){
 				fieldKeys = mapper.treeToValue(nodeFields.path("chartFields"), HashMap.class);
 				
@@ -980,11 +984,11 @@ public class ParserJson {
 	 * @param tempFile name of AmSerialChart config file.
 	 */
 	private static void addGraphsFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("graphs").size();i++){
 				temp = mapper.treeToValue(node.path("graphs").path(i), Object.class);
 				
@@ -1036,11 +1040,11 @@ public class ParserJson {
 	 * @param tempFile name of AmXyChart config file.
 	 */
 	private static void addGraphsFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("graphs").size();i++){
 				temp = mapper.treeToValue(node.path("graphs").path(i), Object.class);
 				
@@ -1069,11 +1073,11 @@ public class ParserJson {
 	 * @param tempFile name of AmRadarChart config file.
 	 */
 	private static void addGraphsFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("graphs").size();i++){
 				temp = mapper.treeToValue(node.path("graphs").path(i), Object.class);
 				
@@ -1108,11 +1112,11 @@ public class ParserJson {
 	 * @param tempFile name of AmSerialChart config file.
 	 */
 	private static void addGuidesFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("guides").size();i++){
 				temp = mapper.treeToValue(node.path("guides").path(i), Object.class);
 				
@@ -1146,11 +1150,11 @@ public class ParserJson {
 	 * @param tempFile name of AmXyChart config file.
 	 */
 	private static void addGuidesFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("guides").size();i++){
 				temp = mapper.treeToValue(node.path("guides").path(i), Object.class);
 				
@@ -1177,11 +1181,11 @@ public class ParserJson {
 	 * @param tempFile name of AmRadarChart config file.
 	 */
 	private static void addGuidesFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("guides").size();i++){
 				temp = mapper.treeToValue(node.path("guides").path(i), Object.class);
 				
@@ -1207,11 +1211,11 @@ public class ParserJson {
 	 * @param tempFile name of AmSerialChart config file.
 	 */
 	private static void addTrendLinesFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("trendLines").size();i++){
 				temp = mapper.treeToValue(node.path("trendLines").path(i), Object.class);
 				
@@ -1237,11 +1241,11 @@ public class ParserJson {
 	 * @param tempFile name of AmXyChart config file.
 	 */
 	private static void addTrendLinesFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("trendLines").size();i++){
 				temp = mapper.treeToValue(node.path("trendLines").path(i), Object.class);
 				
@@ -1267,11 +1271,11 @@ public class ParserJson {
 	 * @param tempFile name of AmSerialChart config file.
 	 */
 	private static void addValueAxisFromJsonToAmSerialChart(AmSerialChartController serialChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("valueAxes").size();i++){
 				temp = mapper.treeToValue(node.path("valueAxes").path(i), Object.class);
 				
@@ -1297,11 +1301,11 @@ public class ParserJson {
 	 * @param tempFile name of AmXyChart config file.
 	 */
 	private static void addValueAxisFromJsonToAmXyChart(AmXyChartController xyChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("valueAxes").size();i++){
 				temp = mapper.treeToValue(node.path("valueAxes").path(i), Object.class);
 				
@@ -1327,11 +1331,11 @@ public class ParserJson {
 	 * @param tempFile name of AmRadarChart config file.
 	 */
 	private static void addValueAxisFromJsonToAmRadarChart(AmRadarChartController radarChartController, String tempFile){
-		ObjectMapper mapper = getParserJson();
+		final ObjectMapper mapper = getParserJson();
 		Object temp = null;
 		
 		try{
-			JsonNode node = mapper.readTree(new File(tempFile));
+			final JsonNode node = mapper.readTree(new File(tempFile));
 			for(int i = 0; i<node.path("valueAxes").size();i++){
 				temp = mapper.treeToValue(node.path("valueAxes").path(i), Object.class);
 				

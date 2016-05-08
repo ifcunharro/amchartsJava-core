@@ -17,7 +17,7 @@ public class OutOfRangeException extends Exception {
 	 * @param message
 	 *            String, custom message.
 	 */
-	public OutOfRangeException(String message) {
+	public OutOfRangeException(final String message) {
 		super(message);
 	}
 

@@ -17,7 +17,7 @@ public class IntegerException extends Exception {
 	 * @param message
 	 *            String, custom message.
 	 */
-	public IntegerException(String message) {
+	public IntegerException(final String message) {
 		super(message);
 	}
 

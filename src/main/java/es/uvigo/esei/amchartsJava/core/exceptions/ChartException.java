@@ -16,7 +16,7 @@ public class ChartException extends Exception {
 	 * @param message
 	 *            String, custom message.
 	 */
-	public ChartException(String message) {
+	public ChartException(final String message) {
 		super(message);
 	}
 

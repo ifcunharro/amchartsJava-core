@@ -5,7 +5,7 @@ public enum GradientAngle {
 	
 	private final Number number;
 
-	private GradientAngle(Number num){
+	private GradientAngle(final Number num){
 		number = num;
 		
 	}

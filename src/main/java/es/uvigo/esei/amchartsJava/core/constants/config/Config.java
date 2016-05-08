@@ -19,12 +19,16 @@ import es.uvigo.esei.amchartsJava.core.constants.lang.I18n;
 public final class Config {
 
     private static final Properties CONFIG = new Properties();
+    
+    private Config(){
+    	
+    }
 
     static {
     		
 			try {
 				//load url properties independent mode debug/release
-				String OS = System.getProperty("os.name").toLowerCase();
+				final String OS = System.getProperty("os.name").toLowerCase();
 				URL localURL;
 				if(OS.indexOf("win")>=0){
 					localURL = new URL(URLDecoder.decode("file:/"+Paths.get(".").toAbsolutePath().normalize().toString() + "\\resources\\configuration.properties","UTF-8" ));
@@ -52,8 +56,9 @@ public final class Config {
      * @return String Value associated to parameter of configuration.
      */
     public static String getString(final String key) {
-        if (CONFIG.containsKey(key))
+        if (CONFIG.containsKey(key)){
             return CONFIG.getProperty(key);
+        }
 
         throw new RuntimeException(
             "'" + key + "' "+I18n.get("ConfigKeyException")

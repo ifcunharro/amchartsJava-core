@@ -9,11 +9,6 @@ import es.uvigo.esei.amchartsJava.core.constants.config.Config;
  */
 public final class AmchartsJavaPaths {
 	
-
-	private AmchartsJavaPaths(){
-		
-	}
-	
 	/**
 	 * Path to folder amcharts.
 	 */
@@ -39,6 +34,10 @@ public final class AmchartsJavaPaths {
 	 * Path to properties used to configure app.
 	 */
 	public static final String CONFIG_FILE_PATH;
+	
+	private AmchartsJavaPaths(){
+		
+	}
 	
 	static{
 		if("debug".equals(Config.getString("mode"))){

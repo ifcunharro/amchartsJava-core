@@ -185,7 +185,7 @@ public class AmAngularGauge extends AmChart {
 			idArrows.remove(idArrow);
 			positionArrows.remove(idArrow);
 			deleteArrows++;
-			if(arrows.size() == 0){
+			if(arrows.isEmpty()){
 				arrows = null;
 				idArrows = null;
 				positionArrows = null;
@@ -205,7 +205,7 @@ public class AmAngularGauge extends AmChart {
 			idAxes.remove(idAxis);
 			positionAxes.remove(idAxis);
 			deleteAxes++;
-			if(axes.size() == 0){
+			if(axes.isEmpty()){
 				axes = null;
 				idAxes = null;
 				positionAxes = null;
@@ -221,7 +221,7 @@ public class AmAngularGauge extends AmChart {
 	 * @param idGaugeBand GaugeBand id.
 	 * @return boolean Exists or doesn't exist GaugeBand.
 	 */
-	public boolean existGaugeBand(String idGaugeBand){
+	public boolean existGaugeBand(final String idGaugeBand){
 		if(idGaugeBands != null){
 			return idGaugeBands.contains(idGaugeBand);
 		}else{
@@ -234,7 +234,7 @@ public class AmAngularGauge extends AmChart {
 	 * @param idAxis GaugeAxis id.
 	 * @return boolean Exists or doesn't exist GaugeAxis.
 	 */
-	public boolean existAxis(String idAxis){
+	public boolean existAxis(final String idAxis){
 		if(idAxes != null){
 			return idAxes.contains(idAxis);
 		}else{
@@ -247,7 +247,7 @@ public class AmAngularGauge extends AmChart {
 	 * @param idArrow GaugeArrow id.
 	 * @return boolean Exists or doesn't exist GaugeArrow.
 	 */
-	public boolean existArrow(String idArrow){
+	public boolean existArrow(final String idArrow){
 		if(idArrows != null){
 			return idArrows.contains(idArrow);
 		}else{

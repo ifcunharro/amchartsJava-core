@@ -17,7 +17,7 @@ public class MalFormedPatternException extends Exception {
 	 * @param message
 	 *            String, custom message.
 	 */
-	public MalFormedPatternException(String message) {
+	public MalFormedPatternException(final String message) {
 		super(message);
 	}
 

@@ -10,7 +10,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
  * @author Iago Fernández Cuñarro
  *
  */
-public class NumberValidator {
+public final class NumberValidator {
 
 	private NumberValidator(){
 		
@@ -24,7 +24,7 @@ public class NumberValidator {
 	 * @return boolean Number in range of values.
 	 * @throws OutOfRangeException Value out of range admitted, range admitted: lo-hi
 	 */
-	public static boolean rangeDoubleValidator(Number number,int lo, int hi) throws OutOfRangeException{
+	public static boolean rangeDoubleValidator(final Number number,final int lo,final int hi) throws OutOfRangeException{
 		if(number == null){
 			throw new OutOfRangeException(I18n.get("RangeException")+lo+I18n.get("and")+hi);
 		}
@@ -43,7 +43,7 @@ public class NumberValidator {
 	 * @return boolean Value in range of values.
 	 * @throws OutOfRangeException Value out of range admitted, range admitted: lo-hi.
 	 */
-	public static boolean rangeIntegerValidator(Number number,int lo, int hi) throws OutOfRangeException{
+	public static boolean rangeIntegerValidator(final Number number,final int lo,final int hi) throws OutOfRangeException{
 		if(number == null){
 			throw new OutOfRangeException(I18n.get("RangeException")+lo+I18n.get("and")+hi);
 		}
@@ -59,7 +59,7 @@ public class NumberValidator {
 	 * @return boolean Number is an integer number.
 	 * @throws IntegerException Value is not an integer number.
 	 */
-	public static boolean integerValidator(Number number) throws IntegerException{
+	public static boolean integerValidator(final Number number) throws IntegerException{
 		if(number == null){
 			throw new IntegerException(I18n.get("IntegerException"));
 		}
@@ -75,7 +75,7 @@ public class NumberValidator {
 	 * @return boolean Number is a double number.
 	 * @throws DoubleException Value is not a double number.
 	 */
-	public static boolean doubleValidator(Number number) throws DoubleException {
+	public static boolean doubleValidator(final Number number) throws DoubleException {
 		if(number == null){
 			throw new DoubleException(I18n.get("DoubleException"));
 		}
@@ -91,7 +91,7 @@ public class NumberValidator {
 	 * @return boolean Numbers are all double numbers.
 	 * @throws DoubleException Any value is not a double number.
 	 */
-	public static boolean checkArrayDoubles(Number... array) throws DoubleException{
+	public static boolean checkArrayDoubles(final Number... array) throws DoubleException{
 		if(array == null){
 			throw new DoubleException(I18n.get("DoubleException"));
 		}

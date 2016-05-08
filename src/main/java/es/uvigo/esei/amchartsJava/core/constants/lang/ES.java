@@ -1,7 +1,7 @@
 package es.uvigo.esei.amchartsJava.core.constants.lang;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 
@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class ES implements Idiom {
 
-	private static Map<String,String> textsES = new HashMap<String,String>();
+	private static Map<String,String> textsES = new ConcurrentHashMap<String,String>();
 	
 	static{
 		textsES.put("RangeException", "Número fuera de rango: debe estar entre ");
@@ -41,8 +41,8 @@ public class ES implements Idiom {
 		
 	}
 	
-	private static class InitSingleton{
-		private static ES INSTANCE = new ES();
+	private static final class InitSingleton{
+		private static final ES INSTANCE = new ES();
 	}
 	
 	/**
@@ -58,7 +58,7 @@ public class ES implements Idiom {
 	 * @param key Key asociated to text searched.
 	 * @return String Text searched.
 	 */
-	public String get(String key){
+	public String get(final String key){
 		return  textsES.get(key);
 	}
 	

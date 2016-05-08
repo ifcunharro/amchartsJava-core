@@ -17,7 +17,7 @@ public enum ColorsSlicedCharts {
 	
 	private String color;
 	
-	private ColorsSlicedCharts(String nombre){
+	private ColorsSlicedCharts(final String nombre){
 		color = nombre;
 	}
 	
@@ -31,7 +31,7 @@ public enum ColorsSlicedCharts {
 	}
 	
 	@JsonSetter
-	private void setColorSlicedCharts(String nombre){
+	private void setColorSlicedCharts(final String nombre){
 		color = nombre.toLowerCase();
 	}
 }

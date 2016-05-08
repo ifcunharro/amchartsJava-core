@@ -12,7 +12,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.LangException;
  * @author Iago Fernández Cuñarro
  *
  */
-public class IdiomValidator {
+public final class IdiomValidator {
 	
 	private IdiomValidator(){
 		
@@ -24,7 +24,7 @@ public class IdiomValidator {
 	 * @return Idiom Instance of language of app.
 	 * @throws LangException Idiom is not supported by app.
 	 */
-	public static Idiom checkIdiom(String language) throws LangException{
+	public static Idiom checkIdiom(final String language) throws LangException{
 		if(language == null){
 			return EN.getInstance();
 		}

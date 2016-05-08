@@ -29,7 +29,7 @@ public enum ColorsAmCharts{
 	}
 	
 	@JsonSetter
-	private void setColorAmCharts(String nombre){
+	private void setColorAmCharts(final String nombre){
 		color = nombre.toLowerCase();
 	}
 	

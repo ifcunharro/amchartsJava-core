@@ -13,7 +13,7 @@ import es.uvigo.esei.amchartsJava.core.exceptions.CoordException;
  * @author Iago Fernández Cuñarro
  *
  */
-public class PropertyValidator {
+public final class PropertyValidator {
 	
 
 	private PropertyValidator(){
@@ -26,7 +26,7 @@ public class PropertyValidator {
 	 * @return boolean Value is an integer number or a percent.
 	 * @throws CoordException Value is not an integer number or a percent.
 	 */
-	public static boolean pixelOrPercent(String coord) throws CoordException{
+	public static boolean pixelOrPercent(final String coord) throws CoordException{
 		if(coord == null){
 			throw new CoordException(I18n.get("CoordException"));
 		}
@@ -42,7 +42,7 @@ public class PropertyValidator {
 	 * @param dateFormat Value to check.
 	 * @return boolean Value is date format correct or incorrect.
 	 */
-	public static boolean checkDateFormat(String dateFormat){
+	public static boolean checkDateFormat(final String dateFormat){
 		return Arrays.asList(AmchartsConstants.DATE_FORMAT).contains(dateFormat);
 	}
 	
@@ -51,7 +51,7 @@ public class PropertyValidator {
 	 * @param value value property to check
 	 * @return true if valid, false if invalid
 	 */
-	public static boolean isValidString(String value){
+	public static boolean isValidString(final String value){
 		return value != null && !value.isEmpty();
 	}
 	
@@ -60,7 +60,7 @@ public class PropertyValidator {
 	 * @param pattern Pattern to check
 	 * @return boolean pattern correct or incorrect.
 	 */
-	public static boolean checkPattern(PatternController pattern){
+	public static boolean checkPattern(final PatternController pattern){
 		if(pattern == null){
 			return false;
 		}

@@ -24,7 +24,11 @@ import es.uvigo.esei.amchartsJava.core.exceptions.OutOfRangeException;
  * @author Iago Fernández Cuñarro
  *
  */
-public class DefaultConfigCharts {
+public final class DefaultConfigCharts {
+	
+	private DefaultConfigCharts(){
+		
+	}
 	
 	//used by GRUBBS, LEVENE, BARLETT Y KRUSKAL-WALLIS in BEW
 	/**
