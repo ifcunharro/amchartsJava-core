@@ -1,0 +1,16 @@
+package es.uvigo.esei.amchartsjava.core.constants;
+
+public enum CategoryBalloonText {
+	category, toCategory;
+	
+	public String toString(){
+		switch(this){
+			case category:
+				return "[[category]]";
+			case toCategory:
+				return "[[toCategory]]";
+		}
+		return null;
+	}
+
+}
